@@ -1,0 +1,61 @@
+{
+  "cSpell.words": [
+    "ACTORMODELS",
+    "Autofail",
+    "blindroll",
+    "charname",
+    "Crits",
+    "debuff",
+    "debuffs",
+    "dtype",
+    "elec",
+    "esmodules",
+    "flexcol",
+    "flexlarge",
+    "flexrow",
+    "flexshrink",
+    "foundryvtt",
+    "foundrytypes",
+    "fvtt",
+    "gmroll",
+    "greatsword",
+    "ITEMMODELS",
+    "kaja",
+    "kunda",
+    "macca",
+    "Magatama",
+    "makakaja",
+    "Megami",
+    "publicroll",
+    "rakukaja",
+    "rakunda",
+    "rollable",
+    "rulebook",
+    "Samael",
+    "selfroll",
+    "stackable",
+    "sukukaja",
+    "sukunda",
+    "tarukaja",
+    "tarunda",
+    "Tensei",
+    "tseslint",
+    "unstackable",
+    "wingfoot"
+  ],
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[handlebars]": {
+    "editor.tabSize": 2
+  }
+}
