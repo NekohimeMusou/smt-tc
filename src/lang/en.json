@@ -28,6 +28,58 @@
       "demon": "Demon",
       "fiend": "Fiend"
     },
+    "stats": {
+      "st": "Strength",
+      "ma": "Magic",
+      "vi": "Vitality",
+      "ag": "Agility",
+      "lu": "Luck",
+      "auto": "Auto"
+    },
+    "clans": {
+      "foul": "Foul",
+      "haunt": "Haunt",
+      "raptor": "Raptor",
+      "tyrant": "Tyrant",
+      "vile": "Vile",
+      "wilder": "Wilder",
+      "avatar": "Avatar",
+      "avian": "Avian",
+      "deity": "Deity",
+      "dragon": "Dragon",
+      "element": "Element",
+      "mitama": "Mitama",
+      "entity": "Entity",
+      "fury": "Fury",
+      "genma": "Genma",
+      "holy": "Holy",
+      "kishin": "Kishin",
+      "lady": "Lady",
+      "megami": "Megami",
+      "seraph": "Seraph",
+      "wargod": "Wargod",
+      "beast": "Beast",
+      "brute": "Brute",
+      "divine": "Divine",
+      "fairy": "Fairy",
+      "fallen": "Fallen",
+      "femme": "Femme",
+      "jirae": "Jirae",
+      "night": "Night",
+      "snake": "Snake",
+      "yoma": "Yoma",
+      "majin": "Majin",
+      "meta": "Meta"
+    },
+    "inheritTraits": {
+      "mouth": "Mouth",
+      "eye": "Eye",
+      "lunge": "Lunge",
+      "weapon": "Weapon",
+      "claw": "Claw",
+      "teeth": "Teeth",
+      "wing": "Wing"
+    },
     "affinityLevels": {
       "reflect": "Reflect",
       "drain": "Drain",
@@ -42,6 +94,14 @@
       "item": "Item",
       "equipment": "Equipment",
       "action": "Action"
+    },
+    "equipSlots": {
+      "head": "Head",
+      "torso": "Torso",
+      "legs": "Legs",
+      "weapon": "Weapon",
+      "gun": "Gun",
+      "magatama": "Magatama"
     },
     "settings": {
       "invertShiftBehavior": {

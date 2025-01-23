@@ -1,6 +1,6 @@
-import { SmtEquipmentData } from "./equipment.js";
+import { EquipmentData } from "../abstract/equipment.js";
 
-export class SmtArmorData extends SmtEquipmentData {
+export class ArmorData extends EquipmentData {
   override readonly type = "armor";
 
   static override defineSchema() {

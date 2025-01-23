@@ -1,14 +1,17 @@
 import { SmtActor } from "../../../document/actor/actor.js";
 import affinityFields from "../../shared/affinities.js";
 
-export abstract class SmtBaseActorModel extends foundry.abstract.TypeDataModel {
+export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
   abstract readonly type: CharacterClass;
 
   get lv(): number {
     const data = this._systemData;
     const levelTable = CONFIG.SMT.levelTables[this.type];
 
-    return levelTable.findLastIndex((xp) => xp < data.xp);
+    return Math.max(
+      levelTable.findLastIndex((xp) => xp < data.xp),
+      1,
+    );
   }
 
   get autoFailThreshold() {
@@ -25,7 +28,7 @@ export abstract class SmtBaseActorModel extends foundry.abstract.TypeDataModel {
     return 96;
   }
 
-  // // Status condition modifiers
+  // Status condition modifiers
   get ignorePhysAffinity() {
     const actor = this.parent as SmtActor;
 
@@ -80,16 +83,14 @@ export abstract class SmtBaseActorModel extends foundry.abstract.TypeDataModel {
     return actor.statuses.has("flied");
   }
 
+  get focused() {
+    const actor = this.parent as SmtActor;
+
+    return actor.statuses.has("focused");
+  }
+
   static override defineSchema() {
     const fields = foundry.data.fields;
-
-    const stats = new fields.SchemaField({
-      st: new fields.SchemaField(generateStatSchema()),
-      ma: new fields.SchemaField(generateStatSchema()),
-      vi: new fields.SchemaField(generateStatSchema()),
-      ag: new fields.SchemaField(generateStatSchema()),
-      lu: new fields.SchemaField(generateStatSchema()),
-    });
 
     const tn = new fields.SchemaField({
       st: new fields.NumberField({ integer: true }),
@@ -165,7 +166,6 @@ export abstract class SmtBaseActorModel extends foundry.abstract.TypeDataModel {
         accuracy: new fields.NumberField({ integer: true, min: 0 }),
         resist: new fields.NumberField({ integer: true, min: 0 }),
       }),
-      focused: new fields.BooleanField({ initial: false }),
     };
 
     return {
@@ -183,7 +183,13 @@ export abstract class SmtBaseActorModel extends foundry.abstract.TypeDataModel {
         positive: true,
         max: 3,
       }),
-      stats,
+      stats: new fields.SchemaField({
+        st: new fields.SchemaField(generateStatSchema()),
+        ma: new fields.SchemaField(generateStatSchema()),
+        vi: new fields.SchemaField(generateStatSchema()),
+        ag: new fields.SchemaField(generateStatSchema()),
+        lu: new fields.SchemaField(generateStatSchema()),
+      }),
       tn,
       power,
       resist,
@@ -204,8 +210,7 @@ export abstract class SmtBaseActorModel extends foundry.abstract.TypeDataModel {
     const stats = data.stats;
 
     for (const stat of Object.values(stats)) {
-      const magatamaBonus = data.type === "fiend" ? stat.magatama : 0;
-      stat.value = Math.max(stat.base + stat.lv + magatamaBonus, 1);
+      stat.value = Math.max(stat.base + stat.lv, 1);
     }
 
     const lv = this.lv;
@@ -249,9 +254,8 @@ function generateStatSchema() {
   const fields = foundry.data.fields;
 
   return {
-    base: new fields.NumberField({ integer: true, initial: 1 }),
-    magatama: new fields.NumberField({ integer: true }),
-    lv: new fields.NumberField({ integer: true }),
-    value: new fields.NumberField({ integer: true }),
+    base: new fields.NumberField({ integer: true, initial: 1, min: 1 }),
+    lv: new fields.NumberField({ integer: true, min: 0 }),
+    value: new fields.NumberField({ integer: true, min: 1 }),
   };
 }

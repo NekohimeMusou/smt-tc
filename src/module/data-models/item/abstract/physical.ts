@@ -1,6 +1,6 @@
 import { SmtBaseItemData } from "./base.js";
 
-export abstract class SmtPhysicalItemData extends SmtBaseItemData {
+export abstract class PhysicalItemData extends SmtBaseItemData {
   static override defineSchema() {
     const fields = foundry.data.fields;
 
