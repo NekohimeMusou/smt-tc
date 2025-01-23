@@ -28,8 +28,6 @@ const affinityLevels = {
   none: "SMT.affinityLevels.none",
 } as const;
 
-// fiendLevelTable.findLastIndex((xp) => xp < 1774)
-
 // Item data
 const itemTypes = {
   item: "SMT.itemTypes.item",

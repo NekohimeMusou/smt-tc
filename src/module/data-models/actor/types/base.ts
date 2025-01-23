@@ -1,19 +1,84 @@
+import { SmtActor } from "../../../document/actor/actor.js";
 import affinityFields from "../../shared/affinities.js";
 
 export abstract class SmtBaseActorModel extends foundry.abstract.TypeDataModel {
-  abstract get charClass(): CharacterClass;
+  abstract readonly type: CharacterClass;
 
-  abstract get level(): number;
-  abstract get autoFailThreshold(): number;
+  get lv(): number {
+    const data = this._systemData;
+    const levelTable = CONFIG.SMT.levelTables[this.type];
 
-  // Status condition modifiers
-  abstract get ignorePhysAffinity(): boolean;
-  abstract get physAttacksCrit(): boolean;
-  abstract get noActions(): boolean;
-  abstract get mute(): boolean;
-  abstract get poison(): boolean;
-  abstract get takeDoubleDamage(): boolean;
-  abstract get stone(): boolean;
+    return levelTable.findLastIndex((xp) => xp < data.xp);
+  }
+
+  get autoFailThreshold() {
+    const actor = this.parent as SmtActor;
+
+    if (actor.statuses.has("stun")) {
+      return 26;
+    }
+
+    if (actor.statuses.has("curse")) {
+      return 86;
+    }
+
+    return 96;
+  }
+
+  // // Status condition modifiers
+  get ignorePhysAffinity() {
+    const actor = this.parent as SmtActor;
+
+    return actor.statuses.has("freeze");
+  }
+
+  get physAttacksCrit() {
+    const actor = this.parent as SmtActor;
+
+    for (const status of ["shock", "freeze", "restrain"]) {
+      if (actor.statuses.has(status)) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  get noActions() {
+    const actor = this.parent as SmtActor;
+
+    for (const status of ["restrain", "freeze", "sleep", "shock"]) {
+      if (actor.statuses.has(status)) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  get mute() {
+    const actor = this.parent as SmtActor;
+
+    return actor.statuses.has("mute");
+  }
+
+  get poisoned() {
+    const actor = this.parent as SmtActor;
+
+    return actor.statuses.has("poison");
+  }
+
+  get stone() {
+    const actor = this.parent as SmtActor;
+
+    return actor.statuses.has("stone");
+  }
+
+  get takeDoubleDamage() {
+    const actor = this.parent as SmtActor;
+
+    return actor.statuses.has("flied");
+  }
 
   static override defineSchema() {
     const fields = foundry.data.fields;
@@ -125,6 +190,58 @@ export abstract class SmtBaseActorModel extends foundry.abstract.TypeDataModel {
       ...resources,
       ...modifiers,
     };
+  }
+
+  override prepareBaseData() {
+    super.prepareBaseData();
+    const data = this._systemData;
+
+    // @ts-expect-error This isn't readonly
+    data.hpMultiplier = data.type === "human" ? 4 : 6;
+    // @ts-expect-error This isn't readonly
+    data.mpMultiplier = data.type === "human" ? 2 : 3;
+
+    const stats = data.stats;
+
+    for (const stat of Object.values(stats)) {
+      const magatamaBonus = data.type === "fiend" ? stat.magatama : 0;
+      stat.value = Math.max(stat.base + stat.lv + magatamaBonus, 1);
+    }
+
+    const lv = this.lv;
+
+    data.resist.phys = Math.max(
+      Math.floor((stats.vi.value + lv) / 2) +
+        data.buffs.resist -
+        data.debuffs.resist +
+        data.resistBonus.phys,
+      0,
+    );
+    data.resist.mag = Math.max(
+      Math.floor((stats.ma.value + lv) / 2) +
+        data.buffs.resist -
+        data.debuffs.resist +
+        data.resistBonus.mag,
+      0,
+    );
+
+    // Calculate power and resistance
+    data.power.phys = Math.max(
+      stats.st.value + lv + data.buffs.physPower - data.debuffs.physPower,
+      0,
+    );
+    data.power.mag = Math.max(
+      stats.ma.value + lv + data.buffs.magPower - data.debuffs.magPower,
+      0,
+    );
+    data.power.gun = Math.max(
+      stats.ag.value + data.buffs.physPower - data.debuffs.physPower,
+      0,
+    );
+  }
+
+  protected get _systemData() {
+    return this as this & Subtype<SmtActor, this["type"]>["system"];
   }
 }
 

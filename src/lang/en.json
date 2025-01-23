@@ -16,16 +16,32 @@
       "newItem": "New {name}",
       "addItem": "Add Item",
       "editItem": "Edit Item",
-      "deleteItem": "Delete Item",
-      "price": "Price"
+      "deleteItem": "Delete Item"
     },
     "tabs": {
       "main": "Main",
       "notes": "Notes",
-      "options": "Options",
-      "effects": "Effects",
-      "effect": "Effect",
-      "inventory": "Inventory"
+      "effects": "Effects"
+    },
+    "charClasses": {
+      "human": "Human",
+      "demon": "Demon",
+      "fiend": "Fiend"
+    },
+    "affinityLevels": {
+      "reflect": "Reflect",
+      "drain": "Drain",
+      "null": "Null",
+      "resist": "Resist",
+      "weak": "Weak",
+      "none": "None"
+    },
+    "itemTypes": {
+      "skill": "Skill",
+      "weapon": "Weapon",
+      "item": "Item",
+      "equipment": "Equipment",
+      "action": "Action"
     },
     "settings": {
       "invertShiftBehavior": {
