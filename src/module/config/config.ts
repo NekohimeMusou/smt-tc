@@ -1,5 +1,6 @@
 declare global {
   type CharacterClass = keyof typeof charClasses;
+  type ItemType = keyof typeof itemTypes;
 }
 
 // HBS partials
@@ -30,13 +31,20 @@ const affinityLevels = {
 
 // Item data
 const itemTypes = {
-  item: "SMT.itemTypes.item",
-  weapon: "SMT.itemTypes.weapon",
-  gun: "SMT.itemTypes.gun",
+  // item: "SMT.itemTypes.item",
+  // weapon: "SMT.itemTypes.weapon",
+  // gun: "SMT.itemTypes.gun",
   armor: "SMT.itemTypes.armor",
-  magatama: "SMT.itemTypes.magatama",
-  card: "SMT.itemTypes.card",
-  skill: "SMT.itemTypes.skill",
+  // magatama: "SMT.itemTypes.magatama",
+  // card: "SMT.itemTypes.card",
+  // skill: "SMT.itemTypes.skill",
+} as const;
+
+const equipSlots = {
+  head: "SMT.equipSlots.head",
+  torso: "SMT.equipSlots.torso",
+  legs: "SMT.equipSlots.legs",
+  none: "SMT.equipSlots.none",
 } as const;
 
 export const SMT = {
@@ -49,4 +57,5 @@ export const SMT = {
   },
   affinityLevels,
   itemTypes,
+  equipSlots,
 } as const;
