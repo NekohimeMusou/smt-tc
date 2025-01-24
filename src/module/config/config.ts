@@ -1,7 +1,10 @@
 declare global {
   type CharacterClass = keyof typeof charClasses;
   type CharacterStat = keyof typeof stats;
+  type TargetNumber = keyof typeof targetNumbers;
   type ItemType = keyof typeof itemTypes;
+  type DamageType = keyof typeof damageTypes;
+  type PowerBoostType = keyof typeof powerBoostTypes;
 }
 
 // HBS partials
@@ -20,6 +23,17 @@ const stats = {
   vi: "SMT.stats.vi",
   ag: "SMT.stats.ag",
   lu: "SMT.stats.lu",
+} as const;
+
+const targetNumbers = {
+  st: "SMT.stats.st",
+  ma: "SMT.stats.ma",
+  vi: "SMT.stats.vi",
+  ag: "SMT.stats.ag",
+  lu: "SMT.stats.lu",
+  save: "SMT.stats.save",
+  dodge: "SMT.stats.dodge",
+  negotiation: "SMT.stats.negotiation",
 } as const;
 
 const fiendLevelTable = Array(101)
@@ -75,6 +89,26 @@ const inheritTraits = {
 } as const;
 
 // Affinity data
+const affinities = {
+  phys: "SMT.affinities.phys",
+  fire: "SMT.affinities.fire",
+  cold: "SMT.affinities.cold",
+  elec: "SMT.affinities.elec",
+  force: "SMT.affinities.force",
+  light: "SMT.affinities.light",
+  dark: "SMT.affinities.dark",
+  ruin: "SMT.affinities.ruin",
+  nerve: "SMT.affinities.nerve",
+  mind: "SMT.affinities.mind",
+  almighty: "SMT.affinities.almighty",
+  healing: "SMT.affinities.healing",
+  unique: "SMT.affinities.unique",
+  support: "SMT.affinities.support",
+  ailment: "SMT.affinities.ailment",
+  talk: "SMT.affinities.talk",
+  none: "SMT.affinities.none",
+} as const;
+
 const affinityLevels = {
   reflect: "SMT.affinityLevels.reflect",
   drain: "SMT.affinityLevels.drain",
@@ -84,15 +118,33 @@ const affinityLevels = {
   none: "SMT.affinityLevels.none",
 } as const;
 
+// Ailment data
+const ailments = {
+  dead: "SMT.ailments.dead",
+  stone: "SMT.ailments.stone",
+  flied: "SMT.ailments.flied",
+  stun: "SMT.ailments.stun",
+  charm: "SMT.ailments.charm",
+  poison: "SMT.ailments.poison",
+  mute: "SMT.ailments.mute",
+  restrain: "SMT.ailments.restrain",
+  freeze: "SMT.ailments.freeze",
+  sleep: "SMT.ailments.sleep",
+  panic: "SMT.ailments.panic",
+  shock: "SMT.ailments.shock",
+  curse: "SMT.ailments.curse",
+  instantKill: "SMT.ailments.instantKill",
+} as const;
+
 // Item data
 const itemTypes = {
   // item: "SMT.itemTypes.item",
-  // weapon: "SMT.itemTypes.weapon",
+  weapon: "SMT.itemTypes.weapon",
   // gun: "SMT.itemTypes.gun",
   armor: "SMT.itemTypes.armor",
   magatama: "SMT.itemTypes.magatama",
   // demonCard: "SMT.itemTypes.card",
-  // skill: "SMT.itemTypes.skill",
+  skill: "SMT.itemTypes.skill",
 } as const;
 
 const equipSlots = {
@@ -104,10 +156,40 @@ const equipSlots = {
   magatama: "SMT.equipSlots.magatama",
 } as const;
 
+// Skill data
+const skillTypes = {
+  phys: "SMT.skillTypes.phys",
+  mag: "SMT.skillTypes.mag",
+  spell: "SMT.skillTypes.spell",
+  passive: "SMT.skillTypes.passive",
+  talk: "SMT.skillTypes.talk",
+  item: "SMT.skillTypes.item",
+} as const;
+
+const damageTypes = {
+  phys: "SMT.damageTypes.phys",
+  mag: "SMT.damageTypes.mag",
+} as const;
+
+const targets = {
+  oneAlly: "SMT.targets.oneAlly",
+  oneEnemy: "SMT.targets.oneEnemy",
+  allAllies: "SMT.targets.allAllies",
+  allEnemies: "SMT.targets.allEnemies",
+  allCombatants: "SMT.targets.allCombatants",
+} as const;
+
+const powerBoostTypes = {
+  phys: "SMT.boostTypes.phys",
+  mag: "SMT.boostTypes.mag",
+  item: "SMT.boostTypes.item",
+} as const;
+
 export const SMT = {
   templatePaths,
   charClasses,
   stats,
+  targetNumbers,
   levelTables: {
     fiend: fiendLevelTable,
     demon: demonLevelTable,
@@ -115,7 +197,13 @@ export const SMT = {
   },
   clans,
   inheritTraits,
+  affinities,
   affinityLevels,
+  ailments,
   itemTypes,
   equipSlots,
+  skillTypes,
+  damageTypes,
+  targets,
+  powerBoostTypes,
 } as const;

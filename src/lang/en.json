@@ -36,6 +36,16 @@
       "lu": "Luck",
       "auto": "Auto"
     },
+    "targetNumbers": {
+      "st": "Strength",
+      "ma": "Magic",
+      "vi": "Vitality",
+      "ag": "Agility",
+      "lu": "Luck",
+      "save": "Save",
+      "dodge": "Dodge",
+      "negotiation": "Negotiation"
+    },
     "clans": {
       "foul": "Foul",
       "haunt": "Haunt",
@@ -80,6 +90,25 @@
       "teeth": "Teeth",
       "wing": "Wing"
     },
+    "affinities": {
+      "phys": "Phys",
+      "fire": "Fire",
+      "cold": "Cold",
+      "elec": "Elec",
+      "force": "Force",
+      "light": "Light",
+      "dark": "Dark",
+      "ruin": "Ruin",
+      "nerve": "Nerve",
+      "mind": "Mind",
+      "almighty": "Almighty",
+      "healing": "Healing",
+      "unique": "Unique",
+      "support": "Support",
+      "ailment": "Ailment",
+      "talk": "Talk",
+      "none": "—"
+    },
     "affinityLevels": {
       "reflect": "Reflect",
       "drain": "Drain",
@@ -87,6 +116,22 @@
       "resist": "Resist",
       "weak": "Weak",
       "none": "None"
+    },
+    "ailments": {
+      "dead": "Dead",
+      "stone": "Stone",
+      "flied": "Fly",
+      "stun": "Stun",
+      "charm": "Charm",
+      "poison": "Poison",
+      "mute": "Mute",
+      "restrain": "Restrain",
+      "freeze": "Freeze",
+      "sleep": "Sleep",
+      "panic": "Panic",
+      "shock": "Shock",
+      "curse": "Curse",
+      "instantKill": "Instant Death"
     },
     "itemTypes": {
       "skill": "Skill",
@@ -102,6 +147,30 @@
       "weapon": "Weapon",
       "gun": "Gun",
       "magatama": "Magatama"
+    },
+    "skillTypes": {
+      "phys": "Phys Attack",
+      "mag": "Mag Attack",
+      "spell": "Spell",
+      "passive": "Passive",
+      "talk": "Talk",
+      "item": "Item"
+    },
+    "damageTypes": {
+      "phys": "Phys",
+      "mag": "Mag"
+    },
+    "targets": {
+      "oneAlly": "1 ally",
+      "oneEnemy": "1 enemy",
+      "allAllies": "All allies",
+      "allEnemies": "All enemies",
+      "allCombatants": "All combatants"
+    },
+    "boostTypes": {
+      "phys": "Phys",
+      "mag": "Mag",
+      "item": "Item"
     },
     "settings": {
       "invertShiftBehavior": {
