@@ -77,6 +77,18 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
     return actor.statuses.has("stone");
   }
 
+  get panic() {
+    const actor = this.parent as SmtActor;
+
+    return actor.statuses.has("panic");
+  }
+
+  get curse() {
+    const actor = this.parent as SmtActor;
+
+    return actor.statuses.has("curse");
+  }
+
   get takeDoubleDamage() {
     const actor = this.parent as SmtActor;
 

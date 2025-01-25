@@ -1,4 +1,5 @@
 import { SMT } from "./config/config.js";
+import { configureStatusEffects } from "./config/statuses.js";
 
 declare global {
   interface CONFIG {
@@ -22,7 +23,7 @@ Hooks.once("init", async () => {
   // registerSheetApplications();
   registerSystemSettings();
   // registerHooks();
-  // configureStatusEffects();
+  configureStatusEffects();
 
   await preloadHandlebarsTemplates();
 });

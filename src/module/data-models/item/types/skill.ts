@@ -4,8 +4,12 @@ export class SkillData extends AttackData {
   override readonly type = "skill";
 
   static override defineSchema() {
+    const fields = foundry.data.fields;
+
     return {
       ...super.defineSchema(),
+      expended: new fields.BooleanField(),
+      inheritanceTraits: new fields.StringField(),
     } as const;
   }
 }
