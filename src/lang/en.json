@@ -161,6 +161,7 @@
       "mag": "Mag"
     },
     "targets": {
+      "self": "Self",
       "oneAlly": "1 ally",
       "oneEnemy": "1 enemy",
       "allAllies": "All allies",

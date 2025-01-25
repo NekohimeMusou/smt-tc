@@ -1,3 +1,5 @@
+import { statusEffects } from "./statuses.js";
+
 declare global {
   type CharacterClass = keyof typeof charClasses;
   type CharacterStat = keyof typeof stats;
@@ -172,6 +174,7 @@ const damageTypes = {
 } as const;
 
 const targets = {
+  self: "SMT.targets.self",
   oneAlly: "SMT.targets.oneAlly",
   oneEnemy: "SMT.targets.oneEnemy",
   allAllies: "SMT.targets.allAllies",
@@ -206,4 +209,5 @@ export const SMT = {
   damageTypes,
   targets,
   powerBoostTypes,
+  statusEffects,
 } as const;

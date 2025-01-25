@@ -1,4 +1,8 @@
-export type StatusEffect = typeof smtStatuses;
+declare global {
+  type StatusId = (typeof smtStatuses)[number]["id"];
+}
+
+type StatusLocObject = Record<StatusId, (typeof smtStatuses)[number]["name"]>;
 
 export function configureStatusEffects() {
   CONFIG.statusEffects = smtStatuses;
@@ -147,3 +151,7 @@ const smtStatuses = [
     icon: "icons/svg/aura.svg",
   },
 ] as const;
+
+export const statusEffects = Object.fromEntries(
+  smtStatuses.map(({ id, name }) => [id, name]),
+) as StatusLocObject;

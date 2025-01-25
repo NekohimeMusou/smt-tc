@@ -1,5 +1,6 @@
 import { AttackData } from "../abstract/attack.js";
 
+// TODO: Make a common "weapon" abstract class for melee and guns to descend from?
 export class WeaponData extends AttackData {
   override readonly type = "weapon";
 

@@ -18,9 +18,10 @@ export abstract class AttackData extends SmtBaseItemData {
     return data.skillType === "phys" ? "phys" : "mag";
   }
 
-  // TODO: Add "item" type
   get powerBoost(): boolean {
     const data = this._systemData;
+
+    // TODO: If type is "item" return "item"
 
     const boostType: PowerBoostType =
       data.skillType === "phys" ? "phys" : "mag";
@@ -106,6 +107,8 @@ export abstract class AttackData extends SmtBaseItemData {
       }),
       potency: new fields.NumberField({ integer: true, min: 0 }),
       ailment: new fields.EmbeddedDataField(AilmentData),
+      // Status to apply automatically to target/self
+      autoStatus: new fields.StringField({ choices: CONFIG.SMT.statusEffects }),
       innateCritBoost: new fields.BooleanField(),
       pinhole: new fields.BooleanField(),
     } as const;
