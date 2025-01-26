@@ -141,7 +141,7 @@ const ailments = {
 // Item data
 // This is only used as a type (keyof typeof) atm
 const itemTypes = {
-  // item: "SMT.itemTypes.item",
+  item: "SMT.itemTypes.item",
   melee: "SMT.itemTypes.weapon",
   gun: "SMT.itemTypes.gun",
   armor: "SMT.itemTypes.armor",
@@ -166,8 +166,6 @@ const skillTypes = {
   spell: "SMT.skillTypes.spell",
   passive: "SMT.skillTypes.passive",
   talk: "SMT.skillTypes.talk",
-  item: "SMT.skillTypes.item",
-  gun: "SMT.equipSlots.gun",
 } as const;
 
 const damageTypes = {

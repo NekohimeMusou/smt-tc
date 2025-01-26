@@ -2,7 +2,7 @@ import { SmtActor } from "../../../document/actor/actor.js";
 import { SmtBaseItemData } from "./base.js";
 
 export abstract class AttackData extends SmtBaseItemData {
-  declare type: "skill" | "melee" | "gun";
+  declare type: "skill" | "melee" | "gun" | "item";
 
   get pierce(): boolean {
     const data = this._systemData;
@@ -14,20 +14,19 @@ export abstract class AttackData extends SmtBaseItemData {
   get damageType(): DamageType {
     const data = this._systemData;
 
-    return data.skillType === "phys" || data.skillType === "gun"
-      ? "phys"
-      : "mag";
+    return data.type === "gun" || data.skillType === "phys" ? "phys" : "mag";
   }
 
   get powerBoost(): boolean {
+    const actor = this.parent?.parent as SmtActor;
     const data = this._systemData;
 
-    // TODO: If type is "item" return "item"
+    if (data.type === "item") {
+      return actor.system.powerBoost.item;
+    }
 
     const boostType: PowerBoostType =
-      data.skillType === "phys" || data.skillType === "gun" ? "phys" : "mag";
-
-    const actor = this.parent?.parent as SmtActor;
+      data.type === "gun" || data.skillType === "phys" ? "phys" : "mag";
 
     return actor.system.powerBoost[boostType];
   }
@@ -42,6 +41,10 @@ export abstract class AttackData extends SmtBaseItemData {
       return 100;
     }
 
+    if (data.type === "gun") {
+      tn = "ag";
+    }
+
     switch (data.skillType) {
       case "phys":
         tn = "st";
@@ -52,9 +55,6 @@ export abstract class AttackData extends SmtBaseItemData {
         break;
       case "talk":
         tn = "negotiation";
-        break;
-      case "gun":
-        tn = "ag";
         break;
       case "passive":
         return 100;

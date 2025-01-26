@@ -10,7 +10,6 @@ export abstract class EquipmentData extends SmtBaseItemData {
       equipSlot: new fields.StringField({
         choices: CONFIG.SMT.equipSlots,
       }),
-      price: new fields.NumberField({ integer: true, min: 0 }),
     } as const;
   }
 }
