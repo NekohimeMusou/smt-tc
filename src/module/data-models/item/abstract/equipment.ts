@@ -6,7 +6,6 @@ export abstract class EquipmentData extends SmtBaseItemData {
 
     return {
       ...super.defineSchema(),
-      equipped: new fields.BooleanField(),
       equipSlot: new fields.StringField({
         choices: CONFIG.SMT.equipSlots,
       }),

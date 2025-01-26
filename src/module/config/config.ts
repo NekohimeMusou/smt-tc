@@ -10,7 +10,10 @@ declare global {
 }
 
 // HBS partials
-const templatePaths: string[] = [] as const;
+const templatePaths: string[] = [
+  "systems/smt-tc/templates/parts/actor/tabs/main.hbs",
+  "systems/smt-tc/templates/parts/shared/effects.hbs",
+] as const;
 
 // Character data
 const charClasses = {

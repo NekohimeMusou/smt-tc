@@ -11,6 +11,7 @@ export abstract class SmtBaseItemData extends foundry.abstract.TypeDataModel {
       notes: new fields.HTMLField(),
       qty: new fields.NumberField({ integer: true, initial: 1 }),
       price: new fields.NumberField({ integer: true, min: 0 }),
+      equipped: new fields.BooleanField(),
     } as const;
   }
   protected get _systemData() {

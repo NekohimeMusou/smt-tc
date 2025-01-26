@@ -4,15 +4,6 @@ import { AttackData } from "./attack.js";
 export abstract class WeaponData extends AttackData {
   declare type: "melee" | "gun" | "item";
 
-  static override defineSchema() {
-    const fields = foundry.data.fields;
-
-    return {
-      ...super.defineSchema(),
-      equipped: new fields.BooleanField(),
-    } as const;
-  }
-
   override prepareBaseData() {
     super.prepareBaseData();
     const data = this._systemData;
