@@ -139,10 +139,11 @@ const ailments = {
 } as const;
 
 // Item data
+// This is only used as a type (keyof typeof) atm
 const itemTypes = {
   // item: "SMT.itemTypes.item",
   melee: "SMT.itemTypes.weapon",
-  // gun: "SMT.itemTypes.gun",
+  gun: "SMT.itemTypes.gun",
   armor: "SMT.itemTypes.armor",
   magatama: "SMT.itemTypes.magatama",
   // demonCard: "SMT.itemTypes.card",
@@ -153,7 +154,7 @@ const equipSlots = {
   head: "SMT.equipSlots.head",
   torso: "SMT.equipSlots.torso",
   legs: "SMT.equipSlots.legs",
-  weapon: "SMT.equipSlots.weapon",
+  melee: "SMT.equipSlots.melee",
   gun: "SMT.equipSlots.gun",
   magatama: "SMT.equipSlots.magatama",
 } as const;
@@ -166,6 +167,7 @@ const skillTypes = {
   passive: "SMT.skillTypes.passive",
   talk: "SMT.skillTypes.talk",
   item: "SMT.skillTypes.item",
+  gun: "SMT.equipSlots.gun",
 } as const;
 
 const damageTypes = {

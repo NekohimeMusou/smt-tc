@@ -1,9 +1,8 @@
 import { SmtActor } from "../../../document/actor/actor.js";
-import { AilmentData } from "../../shared/ailment.js";
 import { SmtBaseItemData } from "./base.js";
 
 export abstract class AttackData extends SmtBaseItemData {
-  declare type: "skill" | "melee";
+  declare type: "skill" | "melee" | "gun";
 
   get pierce(): boolean {
     const data = this._systemData;
@@ -15,7 +14,9 @@ export abstract class AttackData extends SmtBaseItemData {
   get damageType(): DamageType {
     const data = this._systemData;
 
-    return data.skillType === "phys" ? "phys" : "mag";
+    return data.skillType === "phys" || data.skillType === "gun"
+      ? "phys"
+      : "mag";
   }
 
   get powerBoost(): boolean {
@@ -24,7 +25,7 @@ export abstract class AttackData extends SmtBaseItemData {
     // TODO: If type is "item" return "item"
 
     const boostType: PowerBoostType =
-      data.skillType === "phys" ? "phys" : "mag";
+      data.skillType === "phys" || data.skillType === "gun" ? "phys" : "mag";
 
     const actor = this.parent?.parent as SmtActor;
 
@@ -52,6 +53,9 @@ export abstract class AttackData extends SmtBaseItemData {
       case "talk":
         tn = "negotiation";
         break;
+      case "gun":
+        tn = "ag";
+        break;
       case "passive":
         return 100;
     }
@@ -65,9 +69,9 @@ export abstract class AttackData extends SmtBaseItemData {
     const actor = this.parent?.parent as SmtActor;
     const data = this._systemData;
 
-    // if (data.itemType === "gun") {
-    //   // TODO: Return gun power
-    // }
+    if (data.type === "gun") {
+      return actor.system.power.gun;
+    }
 
     const powerType = data.skillType === "phys" ? "phys" : "mag";
 
@@ -106,7 +110,10 @@ export abstract class AttackData extends SmtBaseItemData {
         choices: CONFIG.SMT.affinities,
       }),
       potency: new fields.NumberField({ integer: true, min: 0 }),
-      ailment: new fields.EmbeddedDataField(AilmentData),
+      ailment: new fields.SchemaField({
+        id: new fields.StringField({ choices: CONFIG.SMT.statusEffects }),
+        rate: new fields.NumberField({ integer: true, min: 0, max: 95 }),
+      }),
       // Status to apply automatically to target/self
       autoStatus: new fields.StringField({ choices: CONFIG.SMT.statusEffects }),
       innateCritBoost: new fields.BooleanField(),

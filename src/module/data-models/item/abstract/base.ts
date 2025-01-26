@@ -8,9 +8,6 @@ export abstract class SmtBaseItemData extends foundry.abstract.TypeDataModel {
 
     return {
       ...super.defineSchema(),
-      itemType: new fields.StringField({
-        choices: CONFIG.SMT.itemTypes,
-      }),
       notes: new fields.HTMLField(),
     } as const;
   }

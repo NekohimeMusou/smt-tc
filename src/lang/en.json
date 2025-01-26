@@ -144,7 +144,7 @@
       "head": "Head",
       "torso": "Torso",
       "legs": "Legs",
-      "weapon": "Weapon",
+      "melee": "Melee",
       "gun": "Gun",
       "magatama": "Magatama"
     },
@@ -154,7 +154,8 @@
       "spell": "Spell",
       "passive": "Passive",
       "talk": "Talk",
-      "item": "Item"
+      "item": "Item",
+      "gun": "Gun"
     },
     "damageTypes": {
       "phys": "Phys",
