@@ -21,6 +21,7 @@
     "gmroll",
     "greatsword",
     "ITEMMODELS",
+    "itempiles",
     "jirae",
     "kaja",
     "kishin",
@@ -48,6 +49,7 @@
     "unstackable",
     "wargod",
     "wingfoot",
+    "yingyang",
     "yoma"
   ],
   "[typescript]": {

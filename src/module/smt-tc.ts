@@ -1,4 +1,5 @@
 import { SMT } from "./config/config.js";
+import registerModuleAPIs from "./config/module-apis.js";
 import { configureStatusEffects } from "./config/statuses.js";
 
 declare global {
@@ -24,6 +25,7 @@ Hooks.once("init", async () => {
   registerSystemSettings();
   // registerHooks();
   configureStatusEffects();
+  registerModuleAPIs();
 
   await preloadHandlebarsTemplates();
 });

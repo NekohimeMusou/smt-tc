@@ -1,6 +1,6 @@
 import { WeaponData } from "../abstract/weapon.js";
 
-export abstract class GunData extends WeaponData {
+export class GunData extends WeaponData {
   override readonly type = "gun";
 
   readonly equipSlot = "gun";
