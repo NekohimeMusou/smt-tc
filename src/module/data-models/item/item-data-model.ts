@@ -1,11 +1,11 @@
 import { ArmorData } from "./types/armor.js";
 import { MagatamaData } from "./types/magatama.js";
 import { SkillData } from "./types/skill.js";
-import { WeaponData } from "./types/weapon.js";
+import { MeleeData } from "./types/melee.js";
 
 export const ITEMMODELS = {
   // item: ItemData,
-  weapon: WeaponData,
+  melee: MeleeData,
   // gun: GunData,
   armor: ArmorData,
   magatama: MagatamaData,

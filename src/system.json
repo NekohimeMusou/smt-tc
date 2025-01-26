@@ -34,7 +34,7 @@
     },
     "Item": {
       "item": { "htmlFields": ["effect"] },
-      "weapon": { "htmlFields": ["effect"] },
+      "melee": { "htmlFields": ["effect"] },
       "gun": { "htmlFields": ["effect"] },
       "armor": { "htmlFields": ["effect"] },
       "magatama": { "htmlFields": ["effect"] },

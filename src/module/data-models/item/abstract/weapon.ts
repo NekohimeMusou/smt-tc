@@ -1,10 +1,8 @@
-import { AttackData } from "../abstract/attack.js";
+import { AttackData } from "./attack.js";
 
 // TODO: Make a common "weapon" abstract class for melee and guns to descend from?
-export class WeaponData extends AttackData {
-  override readonly type = "weapon";
-
-  readonly equipSlot = "weapon";
+export abstract class WeaponData extends AttackData {
+  declare type: "melee";
 
   static override defineSchema() {
     const fields = foundry.data.fields;

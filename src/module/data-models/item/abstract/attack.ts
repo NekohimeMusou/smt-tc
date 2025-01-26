@@ -3,7 +3,7 @@ import { AilmentData } from "../../shared/ailment.js";
 import { SmtBaseItemData } from "./base.js";
 
 export abstract class AttackData extends SmtBaseItemData {
-  declare type: "skill" | "weapon";
+  declare type: "skill" | "melee";
 
   get pierce(): boolean {
     const data = this._systemData;

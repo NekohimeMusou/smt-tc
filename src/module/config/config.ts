@@ -141,7 +141,7 @@ const ailments = {
 // Item data
 const itemTypes = {
   // item: "SMT.itemTypes.item",
-  weapon: "SMT.itemTypes.weapon",
+  melee: "SMT.itemTypes.weapon",
   // gun: "SMT.itemTypes.gun",
   armor: "SMT.itemTypes.armor",
   magatama: "SMT.itemTypes.magatama",
