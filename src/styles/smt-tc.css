@@ -4,7 +4,8 @@
   font-family: "Roboto", sans-serif;
 }
 
-.roll-highlight:hover, .roll-highlight:focus {
+.roll-highlight:hover,
+.roll-highlight:focus {
   color: #000;
   text-shadow: 0 0 10px red;
   cursor: pointer;
@@ -230,9 +231,9 @@
 /* Styles limited to SMT RPG sheets */
 /* .smt-tc { /*
   /* ----------------------------------------- */
-  /*  Items Lists                              */
-  /* ----------------------------------------- */
-  /* Example style for Boilerplate (can be removed if not needed) */
+/*  Items Lists                              */
+/* ----------------------------------------- */
+/* Example style for Boilerplate (can be removed if not needed) */
 /*} */
 
 .smt-tc .item-form {
@@ -367,7 +368,8 @@
   display: flex;
 }
 
-.smt-tc .items-list .item-name h3, .smt-tc .items-list .item-name h4 {
+.smt-tc .items-list .item-name h3,
+.smt-tc .items-list .item-name h4 {
   margin: 0;
   white-space: nowrap;
   overflow-x: hidden;
@@ -473,7 +475,7 @@
   color: #4b4a44;
 }
 .item-controls .item-toggle.fixed {
-  color: #44191A;
+  color: #44191a;
 }
 .item-controls .item-toggle.fixed:hover {
   text-shadow: none;

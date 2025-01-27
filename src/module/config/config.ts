@@ -20,6 +20,7 @@ const templatePaths: string[] = [
   "systems/smt-tc/templates/parts/actor/header.hbs",
   "systems/smt-tc/templates/parts/actor/resources.hbs",
   "systems/smt-tc/templates/parts/actor/stats.hbs",
+  "systems/smt-tc/templates/parts/actor/affinities.hbs",
 ] as const;
 
 // Character data
@@ -121,6 +122,20 @@ const affinities = {
   none: "SMT.affinities.none",
 } as const;
 
+const defenseAffinities = {
+  phys: "SMT.affinities.phys",
+  fire: "SMT.affinities.fire",
+  cold: "SMT.affinities.cold",
+  elec: "SMT.affinities.elec",
+  force: "SMT.affinities.force",
+  light: "SMT.affinities.light",
+  dark: "SMT.affinities.dark",
+  ruin: "SMT.affinities.ruin",
+  nerve: "SMT.affinities.nerve",
+  mind: "SMT.affinities.mind",
+  ailment: "SMT.affinities.ailment",
+} as const;
+
 const affinityLevels = {
   reflect: "SMT.affinityLevels.reflect",
   drain: "SMT.affinityLevels.drain",
@@ -211,6 +226,7 @@ export const SMT = {
   clans,
   inheritTraits,
   affinities,
+  defenseAffinities,
   affinityLevels,
   ailments,
   itemTypes,
