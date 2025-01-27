@@ -1,7 +1,7 @@
 import {
   onManageActiveEffect,
   prepareActiveEffectCategories,
-} from "../../config/active-effects.js";
+} from "../active-effect/active-effect.js";
 import { SmtItem } from "./item.js";
 
 export class SmtItemSheet extends ItemSheet<SmtItem> {
@@ -29,12 +29,12 @@ export class SmtItemSheet extends ItemSheet<SmtItem> {
   override async getData() {
     const context = super.getData();
 
-    const data = this.item.system;
+    const system = this.item.system;
 
     const effects = prepareActiveEffectCategories(this.item.effects);
 
     await foundry.utils.mergeObject(context, {
-      data,
+      system,
       effects,
       SMT: CONFIG.SMT,
     });

@@ -181,7 +181,6 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
     };
 
     return {
-      ...super.defineSchema(),
       notes: new fields.HTMLField(),
       xp: new fields.NumberField({ integer: true, min: 0 }),
       macca: new fields.NumberField({ integer: true, min: 0 }),
@@ -226,6 +225,10 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
     }
 
     const lv = this.lv;
+
+    data.hp.max = (stats.vi.value + lv) * data.hpMultiplier;
+    data.mp.max = (stats.ma.value + lv) * data.mpMultiplier;
+    data.fp.max = Math.floor(stats.lu.value / 5) + 5;
 
     data.resist.phys = Math.max(
       Math.floor((stats.vi.value + lv) / 2) +

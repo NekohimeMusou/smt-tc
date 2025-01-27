@@ -14,7 +14,7 @@ export class SmtHumanData extends SmtBaseActorData {
     } as const;
   }
 
-  override prepareBaseData(): void {
+  override prepareBaseData() {
     super.prepareBaseData();
 
     const data = this._systemData;

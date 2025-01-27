@@ -13,6 +13,8 @@ declare global {
 const templatePaths: string[] = [
   "systems/smt-tc/templates/parts/actor/tabs/main.hbs",
   "systems/smt-tc/templates/parts/shared/effects.hbs",
+  "systems/smt-tc/templates/parts/actor/header.hbs",
+  "systems/smt-tc/templates/parts/actor/resources.hbs",
 ] as const;
 
 // Character data

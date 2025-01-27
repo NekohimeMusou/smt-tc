@@ -30,16 +30,18 @@
 
   "documentTypes": {
     "Actor": {
-      "character": { "htmlFields": ["notes"] }
+      "fiend": { "htmlFields": ["notes"] },
+      "demon": { "htmlFields": ["notes"] },
+      "human": { "htmlFields": ["notes"] }
     },
     "Item": {
-      "item": { "htmlFields": ["effect"] },
-      "melee": { "htmlFields": ["effect"] },
-      "gun": { "htmlFields": ["effect"] },
-      "armor": { "htmlFields": ["effect"] },
-      "magatama": { "htmlFields": ["effect"] },
-      "card": { "htmlFields": ["effect"] },
-      "skill": { "htmlFields": ["effect"] }
+      "item": { "htmlFields": ["notes"] },
+      "melee": { "htmlFields": ["notes"] },
+      "gun": { "htmlFields": ["notes"] },
+      "armor": { "htmlFields": ["notes"] },
+      "magatama": { "htmlFields": ["notes"] },
+      "card": { "htmlFields": ["notes"] },
+      "skill": { "htmlFields": ["notes"] }
     }
   },
 

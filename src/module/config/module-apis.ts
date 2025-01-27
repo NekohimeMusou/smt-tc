@@ -24,7 +24,7 @@ export default function registerModuleAPIs() {
           filters: "skill",
         },
       ],
-      UNSTACKABLE_ITEM_TYPES: ["melee", "gun", "armor"],
+      UNSTACKABLE_ITEM_TYPES: ["melee", "gun", "armor", "skill"],
       ITEM_SIMILARITIES: ["name", "type"],
       CURRENCIES: [
         {

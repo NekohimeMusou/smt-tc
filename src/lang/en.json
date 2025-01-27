@@ -28,6 +28,11 @@
       "demon": "Demon",
       "fiend": "Fiend"
     },
+    "resources": {
+      "hp": "HP",
+      "mp": "MP",
+      "fp": "FP"
+    },
     "stats": {
       "st": "Strength",
       "ma": "Magic",
@@ -35,6 +40,11 @@
       "ag": "Agility",
       "lu": "Luck",
       "auto": "Auto"
+    },
+    "character": {
+      "level": "Level",
+      "xp": "XP",
+      "macca": "Macca"
     },
     "targetNumbers": {
       "st": "Strength",
@@ -173,6 +183,9 @@
       "phys": "Phys",
       "mag": "Mag",
       "item": "Item"
+    },
+    "actorSheet": {
+      "charClassLabel": "Class: {charClass}"
     },
     "settings": {
       "invertShiftBehavior": {

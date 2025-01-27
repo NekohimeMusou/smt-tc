@@ -9,13 +9,13 @@ export class SmtFiendData extends SmtBaseActorData {
     super.prepareBaseData();
 
     const actor = this.parent as Fiend;
+    const data = this._systemData;
 
     const equippedMagatama = actor.items.find(
       (item) => item.system.type === "magatama" && item.system.equipped,
     ) as Magatama | undefined;
 
     if (equippedMagatama) {
-      const data = this._systemData;
       const magatamaStats = equippedMagatama.system.stats;
 
       Object.entries(magatamaStats).forEach(([key, value]) => {

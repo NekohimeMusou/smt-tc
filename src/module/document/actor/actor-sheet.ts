@@ -1,7 +1,7 @@
 import {
   onManageActiveEffect,
   prepareActiveEffectCategories,
-} from "../../config/active-effects.js";
+} from "../active-effect/active-effect.js";
 import { SmtActor } from "./actor.js";
 
 export default class SmtActorSheet extends ActorSheet<SmtActor> {
@@ -24,7 +24,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
   override async getData() {
     const context = super.getData();
 
-    const data = this.actor.system;
+    const system = this.actor.system;
     const rollData = this.actor.getRollData();
 
     const skills = this.actor.items.find((item) => item.type === "skill");
@@ -37,7 +37,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     const effects = prepareActiveEffectCategories(this.actor.effects);
 
     await foundry.utils.mergeObject(context, {
-      data,
+      system,
       rollData,
       skills,
       meleeWeapons,
