@@ -41,6 +41,13 @@
       "lu": "Luck",
       "auto": "Auto"
     },
+    "statAbbrev": {
+      "st": "St",
+      "ma": "Ma",
+      "vi": "Vi",
+      "ag": "Ag",
+      "lu": "Lu"
+    },
     "character": {
       "level": "Level",
       "xp": "XP",
@@ -55,6 +62,13 @@
       "save": "Save",
       "dodge": "Dodge",
       "negotiation": "Negotiation"
+    },
+    "derivedTN": {
+      "st": "Phys Atk",
+      "ma": "Spell Atk",
+      "vi": "Save",
+      "ag": "Dodge",
+      "lu": "Negotiation"
     },
     "clans": {
       "foul": "Foul",
@@ -185,7 +199,14 @@
       "item": "Item"
     },
     "actorSheet": {
-      "charClassLabel": "Class: {charClass}"
+      "charClassLabel": "Class: {charClass}",
+      "stats": "Stats",
+      "baseStat": "Base",
+      "magatamaAbbrev": "Mgt",
+      "levelAbbrev": "Lv",
+      "statTotal": "Total",
+      "tn": "TN",
+      "derivedTN": "Derived TN"
     },
     "settings": {
       "invertShiftBehavior": {

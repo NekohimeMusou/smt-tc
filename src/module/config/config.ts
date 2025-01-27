@@ -11,10 +11,15 @@ declare global {
 
 // HBS partials
 const templatePaths: string[] = [
+  // Temporary - Until I make unique sheets
+  "systems/smt-tc/templates/actor/actor-sheet.hbs",
+  "systems/smt-tc/templates/item/item-sheet.hbs",
+  // Real partials
   "systems/smt-tc/templates/parts/actor/tabs/main.hbs",
   "systems/smt-tc/templates/parts/shared/effects.hbs",
   "systems/smt-tc/templates/parts/actor/header.hbs",
   "systems/smt-tc/templates/parts/actor/resources.hbs",
+  "systems/smt-tc/templates/parts/actor/stats.hbs",
 ] as const;
 
 // Character data

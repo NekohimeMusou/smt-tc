@@ -21,6 +21,12 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     });
   }
 
+  override get template() {
+    const basePath = "systems/smt-tc/templates/actor";
+
+    return `${basePath}/actor-${this.actor.type}-sheet.hbs`;
+  }
+
   override async getData() {
     const context = super.getData();
 

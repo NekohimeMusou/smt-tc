@@ -226,10 +226,6 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
 
     const lv = this.lv;
 
-    data.hp.max = (stats.vi.value + lv) * data.hpMultiplier;
-    data.mp.max = (stats.ma.value + lv) * data.mpMultiplier;
-    data.fp.max = Math.floor(stats.lu.value / 5) + 5;
-
     data.resist.phys = Math.max(
       Math.floor((stats.vi.value + lv) / 2) +
         data.buffs.resist -
@@ -258,6 +254,30 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
       stats.ag.value + data.buffs.physPower - data.debuffs.physPower,
       0,
     );
+  }
+
+  override prepareDerivedData() {
+    const data = this._systemData;
+    const stats = data.stats;
+    const tnBoostMod = data.tnBoosts * 20;
+    const lv = data.lv;
+
+    // Set base TNs
+    Object.entries(stats).forEach(([key, stat]) => {
+      const statName = key as keyof typeof stats;
+      const tn = stat.value * 5 + lv + tnBoostMod;
+      data.tn[statName] = Math.max(Math.floor(tn / data.multi), 1);
+    });
+
+    // Set derived TNs
+    data.tn.save = data.tn.vi;
+    data.tn.dodge = stats.ag.value + data.dodgeBonus + 10;
+    data.tn.negotiation = stats.lu.value * 2 + 20;
+
+    // Calculate HP/MP/FP max
+    data.hp.max = Math.max((stats.vi.value + lv) * data.hpMultiplier, 1);
+    data.mp.max = Math.max((stats.ma.value + lv) * data.mpMultiplier, 1);
+    data.fp.max = Math.floor(stats.lu.value / 5) + 5;
   }
 
   protected get _systemData() {
