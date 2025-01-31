@@ -1,15 +1,8 @@
 <section class="affinities">
   <div class="affinity-block">
-    {{!-- <div class="affinity-item"> --}}
-    {{!-- <img src="systems/smt-tc/img/affinity/{{physAffinity}}.webp" /> --}}
-    {{!-- <select name="system.affinities.{{physAffinity}}"> --}}
-    {{!-- {{selectOptions SMT.affinityLevels localize=true selected=(lookup system.affinities physAffinity)}} --}}
-    {{!-- </select> --}}
-    {{!-- </div> --}}
-
     {{#each SMT.defenseAffinities as |loc affinity|}}
     <div class="affinity-item">
-      <img src="systems/smt-tc/img/affinity/{{affinity}}.webp" />
+      <img src="systems/smt-tc/img/affinity/{{affinity}}.png" />
       <select name="system.affinities.{{affinity}}">
         {{selectOptions ../SMT.affinityLevels localize=true selected=(lookup ../system.affinities affinity)}}
       </select>
