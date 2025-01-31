@@ -137,10 +137,10 @@ const defenseAffinities = {
 } as const;
 
 const affinityLevels = {
-  reflect: "SMT.affinityLevels.reflect",
+  repel: "SMT.affinityLevels.repel",
   drain: "SMT.affinityLevels.drain",
   null: "SMT.affinityLevels.null",
-  resist: "SMT.affinityLevels.resist",
+  strong: "SMT.affinityLevels.strong",
   weak: "SMT.affinityLevels.weak",
   none: "SMT.affinityLevels.none",
 } as const;

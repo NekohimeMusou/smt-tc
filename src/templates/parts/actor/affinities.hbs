@@ -2,7 +2,10 @@
   <div class="affinity-block">
     {{#each SMT.defenseAffinities as |loc affinity|}}
     <div class="affinity-item">
-      <img src="systems/smt-tc/img/affinity/{{affinity}}.png" />
+      <div class="tooltip">
+        <img src="systems/smt-tc/img/affinity/{{affinity}}.png" />
+        <span class="tooltip-text">{{localize loc}}</span>
+      </div>
       <select name="system.affinities.{{affinity}}">
         {{selectOptions ../SMT.affinityLevels localize=true selected=(lookup ../system.affinities affinity)}}
       </select>

@@ -134,12 +134,12 @@
       "none": "—"
     },
     "affinityLevels": {
-      "reflect": "Reflect",
+      "repel": "Repel",
       "drain": "Drain",
       "null": "Null",
-      "resist": "Resist",
+      "strong": "Strong",
       "weak": "Weak",
-      "none": "None"
+      "none": "—"
     },
     "ailments": {
       "dead": "Dead",

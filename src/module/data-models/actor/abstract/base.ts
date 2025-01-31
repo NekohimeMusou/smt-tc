@@ -14,6 +14,7 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
     );
   }
 
+  // Inclusive lower bound
   get autoFailThreshold() {
     const actor = this.parent as SmtActor;
 
@@ -145,12 +146,15 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
     const modifiers = {
       gunAttackBonus: new fields.NumberField({ integer: true }),
       dodgeBonus: new fields.NumberField({ integer: true }),
+      // Armor resist bonus
       resistBonus: new fields.SchemaField({
         phys: new fields.NumberField({ integer: true, initial: 0 }),
         mag: new fields.NumberField({ integer: true, initial: 0 }),
       }),
       might: new fields.BooleanField(),
       pierce: new fields.BooleanField(),
+      luckyFind: new fields.BooleanField(),
+      // Powerful Strikes/Spells, Item Pro
       powerBoost: new fields.SchemaField({
         phys: new fields.BooleanField(),
         mag: new fields.BooleanField(),
@@ -166,18 +170,31 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
         hp: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
         mp: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
       }),
+      // -kaja and -kunda spells
       buffs: new fields.SchemaField({
-        physPower: new fields.NumberField({ integer: true, min: 0 }),
-        magPower: new fields.NumberField({ integer: true, min: 0 }),
-        accuracy: new fields.NumberField({ integer: true, min: 0 }),
-        resist: new fields.NumberField({ integer: true, min: 0 }),
+        tarukaja: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+        makakaja: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+        rakukaja: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+        sukukaja: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+        tarunda: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+        rakunda: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+        sukunda: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
       }),
-      debuffs: new fields.SchemaField({
-        physPower: new fields.NumberField({ integer: true, min: 0 }),
-        magPower: new fields.NumberField({ integer: true, min: 0 }),
-        accuracy: new fields.NumberField({ integer: true, min: 0 }),
-        resist: new fields.NumberField({ integer: true, min: 0 }),
+    };
+
+    const bioFields = {
+      backgrounds: new fields.ArrayField(new fields.StringField()),
+      contacts: new fields.ArrayField(new fields.StringField()),
+      alignment: new fields.SchemaField({
+        law: new fields.NumberField({ integer: true, min: 0 }),
+        chaos: new fields.NumberField({ integer: true, min: 0 }),
+        dark: new fields.NumberField({ integer: true, min: 0 }),
+        light: new fields.NumberField({ integer: true, min: 0 }),
+        neutral: new fields.NumberField({ integer: true, min: 0 }),
+        heeHo: new fields.NumberField({ integer: true, min: 0 }),
       }),
+      bond: new fields.StringField(),
+      goal: new fields.StringField(),
     };
 
     return {
@@ -206,6 +223,7 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
       resist,
       ...resources,
       ...modifiers,
+      ...bioFields,
     };
   }
 
@@ -228,30 +246,30 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
 
     data.resist.phys = Math.max(
       Math.floor((stats.vi.value + lv) / 2) +
-        data.buffs.resist -
-        data.debuffs.resist +
+        data.buffs.rakukaja -
+        data.buffs.rakunda +
         data.resistBonus.phys,
       0,
     );
     data.resist.mag = Math.max(
       Math.floor((stats.ma.value + lv) / 2) +
-        data.buffs.resist -
-        data.debuffs.resist +
+        data.buffs.rakukaja -
+        data.buffs.rakunda +
         data.resistBonus.mag,
       0,
     );
 
     // Calculate power and resistance
     data.power.phys = Math.max(
-      stats.st.value + lv + data.buffs.physPower - data.debuffs.physPower,
+      stats.st.value + lv + data.buffs.tarukaja - data.buffs.tarunda,
       0,
     );
     data.power.mag = Math.max(
-      stats.ma.value + lv + data.buffs.magPower - data.debuffs.magPower,
+      stats.ma.value + lv + data.buffs.makakaja - data.buffs.tarunda,
       0,
     );
     data.power.gun = Math.max(
-      stats.ag.value + data.buffs.physPower - data.debuffs.physPower,
+      stats.ag.value + data.buffs.tarukaja - data.buffs.tarunda,
       0,
     );
   }
