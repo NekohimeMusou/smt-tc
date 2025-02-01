@@ -20,6 +20,8 @@ export class SmtFiendData extends SmtBaseActorData {
 
       Object.entries(magatamaStats).forEach(([key, value]) => {
         const stat = key as CharacterStat;
+        // Fiends always have base stats of 2 across the board
+        data.stats[stat].base = 2;
         data.stats[stat].value += value;
       });
     }

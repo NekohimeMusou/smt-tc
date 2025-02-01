@@ -10,8 +10,13 @@ export class SmtDemonData extends SmtBaseActorData {
       ...super.defineSchema(),
       species: new fields.StringField(),
       clan: new fields.StringField({ choices: CONFIG.SMT.clans }),
-      // Not gonna get fancy with this one
+      behavior: new fields.StringField(),
       evolvePath: new fields.StringField(),
+      baseLevel: new fields.NumberField({
+        integer: true,
+        positive: true,
+        initial: 1,
+      }),
       inheritTraits: new fields.SchemaField({
         mouth: new fields.BooleanField(),
         eye: new fields.BooleanField(),

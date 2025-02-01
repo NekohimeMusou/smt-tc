@@ -197,6 +197,12 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
       goal: new fields.StringField(),
     };
 
+    const enemyData = {
+      xpAward: new fields.NumberField({ integer: true, min: 0 }),
+      maccaAward: new fields.NumberField({ integer: true, min: 0 }),
+      itemDrops: new fields.StringField(),
+    };
+
     return {
       notes: new fields.HTMLField(),
       xp: new fields.NumberField({ integer: true, min: 0 }),
@@ -224,6 +230,7 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
       ...resources,
       ...modifiers,
       ...bioFields,
+      ...enemyData,
     };
   }
 
