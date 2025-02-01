@@ -89,7 +89,7 @@ export abstract class AttackData extends SmtBaseItemData {
     const data = this._systemData;
 
     return (
-      data.innateCritBoost || (data.damageType === "phys" && actor.system.might)
+      data.specialProps === "critBoost" || (data.damageType === "phys" && actor.system.might)
     );
   }
 
@@ -116,8 +116,9 @@ export abstract class AttackData extends SmtBaseItemData {
       }),
       // Status to apply automatically to target/self
       autoStatus: new fields.StringField({ choices: CONFIG.SMT.statusEffects }),
-      innateCritBoost: new fields.BooleanField(),
-      pinhole: new fields.BooleanField(),
+      specialProps: new fields.StringField({
+        choices: CONFIG.SMT.skillProperties,
+      }),
     } as const;
   }
 }

@@ -213,6 +213,13 @@ const powerBoostTypes = {
   item: "SMT.boostTypes.item",
 } as const;
 
+const skillProperties = {
+  critBoost: "SMT.skillProperties.critBoost",
+  pinhole: "SMT.skillProperties.pinhole",
+  analyze: "SMT.skillProperties.analyze",
+  goodInstincts: "SMT.skillProperties.goodInstincts",
+} as const;
+
 export const SMT = {
   templatePaths,
   charClasses,
@@ -236,4 +243,5 @@ export const SMT = {
   targets,
   powerBoostTypes,
   statusEffects,
+  skillProperties,
 } as const;

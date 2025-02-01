@@ -198,6 +198,12 @@
       "mag": "Mag",
       "item": "Item"
     },
+    "skillProperties": {
+      "critBoost": "Crit Boost",
+      "pinhole": "Pinhole",
+      "analyze": "Analyze",
+      "goodInstincts": "Good Instincts"
+    },
     "actorSheet": {
       "charClassLabel": "Class: {charClass}",
       "stats": "Stats",
