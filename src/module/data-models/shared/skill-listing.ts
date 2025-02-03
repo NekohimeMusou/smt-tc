@@ -5,6 +5,7 @@ export class SkillListing extends foundry.abstract.DataModel {
     return {
       name: new fields.StringField(),
       learnLevel: new fields.NumberField({ integer: true, positive: true }),
+      learned: new fields.BooleanField(),
     } as const;
   }
 }

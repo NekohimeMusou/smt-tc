@@ -17,6 +17,9 @@ export class MagatamaData extends EquipmentData {
         ag: new fields.NumberField({ integer: true, min: 0 }),
         lu: new fields.NumberField({ integer: true, min: 0 }),
       }),
+      skillList: new fields.ArrayField(
+        new fields.EmbeddedDataField(SkillListing),
+      ),
     } as const;
   }
 }

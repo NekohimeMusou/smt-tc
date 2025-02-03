@@ -1,0 +1,19 @@
+<section class="learn-list">
+  <div class="items-list flexcol">
+    <ol class="item-list">
+      <li class="item flexrow flex-group-center items-header">
+        <div>{{localize "SMT.itemSheet.learnLevel"}}</div>
+        <div>{{localize "SMT.itemSheet.learned"}}</div>
+        <div class="flex3">{{localize "SMT.itemSheet.skillName"}}</div>
+        <div class="item-controls">
+          <a class="item-create" title="{{localize "SMT.sheet.newItem"}}" data-item-type="skill">
+            <i class="fas fa-plus"></i> {{localize "SMT.sheet.addItem"}}</a>
+        </div>
+      </li>
+
+      {{#each system.skillList}}
+
+      {{/each}}
+    </ol>
+  </div>
+</section>

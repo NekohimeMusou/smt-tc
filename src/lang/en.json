@@ -221,7 +221,10 @@
     },
     "itemSheet": {
       "equipped": "Equipped",
-      "useAffinities": "Use Affinities"
+      "useAffinities": "Use Affinities",
+      "learnLevel": "Lv",
+      "learned": "Learned",
+      "skillName": "Skill Name"
     },
     "settings": {
       "invertShiftBehavior": {
