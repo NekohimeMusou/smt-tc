@@ -21,6 +21,7 @@
     "tabs": {
       "main": "Main",
       "notes": "Notes",
+      "description": "Description",
       "effects": "Effects"
     },
     "charClasses": {
@@ -69,6 +70,10 @@
       "vi": "Save",
       "ag": "Dodge",
       "lu": "Negotiation"
+    },
+    "resist": {
+      "phys": "Phys Resist",
+      "mag": "Mag Resist"
     },
     "clans": {
       "foul": "Foul",
@@ -213,6 +218,9 @@
       "statTotal": "Total",
       "tn": "TN",
       "derivedTN": "Derived TN"
+    },
+    "itemSheet": {
+      "equipped": "Equipped"
     },
     "settings": {
       "invertShiftBehavior": {

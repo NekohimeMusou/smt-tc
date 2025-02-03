@@ -35,13 +35,13 @@
       "human": { "htmlFields": ["notes"] }
     },
     "Item": {
-      "item": { "htmlFields": ["notes"] },
-      "melee": { "htmlFields": ["notes"] },
-      "gun": { "htmlFields": ["notes"] },
-      "armor": { "htmlFields": ["notes"] },
-      "magatama": { "htmlFields": ["notes"] },
-      "card": { "htmlFields": ["notes"] },
-      "skill": { "htmlFields": ["notes"] }
+      "item": { "htmlFields": ["description"] },
+      "melee": { "htmlFields": ["description"] },
+      "gun": { "htmlFields": ["description"] },
+      "armor": { "htmlFields": ["description"] },
+      "magatama": { "htmlFields": ["description"] },
+      "card": { "htmlFields": ["description"] },
+      "skill": { "htmlFields": ["description"] }
     }
   },
 
