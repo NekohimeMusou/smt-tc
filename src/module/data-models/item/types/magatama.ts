@@ -1,4 +1,3 @@
-import affinityFields from "../../shared/affinities.js";
 import { SkillListing } from "../../shared/skill-listing.js";
 import { EquipmentData } from "../abstract/equipment.js";
 
@@ -10,7 +9,6 @@ export class MagatamaData extends EquipmentData {
 
     return {
       ...super.defineSchema(),
-      affinities: new fields.SchemaField(affinityFields()),
       skills: new fields.ArrayField(new fields.EmbeddedDataField(SkillListing)),
       stats: new fields.SchemaField({
         st: new fields.NumberField({ integer: true, min: 0 }),

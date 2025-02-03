@@ -5,6 +5,7 @@ import { ACTORMODELS } from "./data-models/actor/actor-data-model.js";
 import { ITEMMODELS } from "./data-models/item/item-data-model.js";
 import SmtActorSheet from "./document/actor/actor-sheet.js";
 import { SmtActor } from "./document/actor/actor.js";
+import { SmtItemSheet } from "./document/item/item-sheet.js";
 import { SmtItem } from "./document/item/item.js";
 
 declare global {
@@ -55,6 +56,11 @@ function registerSheetApplications() {
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("smt-tc", SmtActorSheet, {
     types: ["human", "demon", "fiend"],
+    makeDefault: true,
+  });
+  Items.unregisterSheet("core", ItemSheet);
+  Items.registerSheet("smt-tc", SmtItemSheet, {
+    types: ["armor", "gun", "item", "magatama", "melee", "skill"],
     makeDefault: true,
   });
 }

@@ -17,10 +17,13 @@ const templatePaths: string[] = [
   // Real partials
   "systems/smt-tc/templates/parts/actor/tabs/main.hbs",
   "systems/smt-tc/templates/parts/shared/effects.hbs",
+  "systems/smt-tc/templates/parts/shared/affinities.hbs",
   "systems/smt-tc/templates/parts/actor/header.hbs",
   "systems/smt-tc/templates/parts/actor/resources.hbs",
   "systems/smt-tc/templates/parts/actor/stats.hbs",
-  "systems/smt-tc/templates/parts/actor/affinities.hbs",
+  "systems/smt-tc/templates/parts/item/tabs/main.hbs",
+  "systems/smt-tc/templates/parts/item/header.hbs",
+  "systems/smt-tc/templates/parts/item/armor.hbs",
 ] as const;
 
 // Character data
