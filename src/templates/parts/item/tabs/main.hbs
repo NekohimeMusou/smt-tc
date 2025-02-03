@@ -1,3 +1,6 @@
 {{#if (eq system.type "armor")}}
-  {{> "systems/smt-tc/templates/parts/item/armor.hbs"}}
+{{> "systems/smt-tc/templates/parts/item/armor.hbs"}}
+{{/if}}
+{{#if (eq system.type "magatama")}}
+{{> "systems/smt-tc/templates/parts/item/magatama-stats.hbs"}}
 {{/if}}

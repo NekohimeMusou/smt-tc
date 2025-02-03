@@ -1,0 +1,16 @@
+<section class="magatama-stats">
+  <div class="items-list flexcol">
+    <ol class="stat-list">
+      <li class="item item-prop flexrow">
+        {{#each system.stats as |stat key|}}
+        <label for="magatama-{{key}}-field">{{localize (concat "SMT.statAbbrev." key)}}</label>
+        <div class="item-prop">
+          <input type="number" id="magatama-{{key}}-field" name="system.stats.{{key}}" value="{{stat}}" placeholder="0"
+            data-dtype="Number" />
+        </div>
+        {{/each}}
+      </li>
+    </ol>
+  </div>
+  {{> "systems/smt-tc/templates/parts/shared/affinities.hbs"}}
+</section>
