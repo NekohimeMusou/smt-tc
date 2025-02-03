@@ -24,6 +24,14 @@ export class SmtFiendData extends SmtBaseActorData {
         data.stats[stat].base = 2;
         data.stats[stat].value += value;
       });
+
+      // Apply affinities from magatama
+      const magatamaAffinities = equippedMagatama.system.affinities;
+
+      Object.entries(magatamaAffinities).forEach(([key, affinity]) => {
+        const affinityName = key as keyof typeof data.affinities;
+        data.affinities[affinityName] = affinity;
+      });
     }
   }
 }

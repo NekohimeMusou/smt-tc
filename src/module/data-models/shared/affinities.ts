@@ -47,27 +47,27 @@ export default function affinityFields() {
       initial: "none",
     }),
     almighty: new fields.StringField({
-      choices: { none: "SMT.affinities.none" },
+      choices: CONFIG.SMT.affinityLevels,
       initial: "none",
     }),
     healing: new fields.StringField({
-      choices: { none: "SMT.affinities.none" },
+      choices: CONFIG.SMT.affinityLevels,
       initial: "none",
     }),
     support: new fields.StringField({
-      choices: { none: "SMT.affinities.none" },
+      choices: CONFIG.SMT.affinityLevels,
       initial: "none",
     }),
     unique: new fields.StringField({
-      choices: { none: "SMT.affinities.none" },
+      choices: CONFIG.SMT.affinityLevels,
       initial: "none",
     }),
     talk: new fields.StringField({
-      choices: { none: "SMT.affinities.none" },
+      choices: CONFIG.SMT.affinityLevels,
       initial: "none",
     }),
     none: new fields.StringField({
-      choices: { none: "SMT.affinities.none" },
+      choices: CONFIG.SMT.affinityLevels,
       initial: "none",
     }),
   };

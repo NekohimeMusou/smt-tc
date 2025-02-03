@@ -220,7 +220,8 @@
       "derivedTN": "Derived TN"
     },
     "itemSheet": {
-      "equipped": "Equipped"
+      "equipped": "Equipped",
+      "useAffinities": "Use Affinities"
     },
     "settings": {
       "invertShiftBehavior": {

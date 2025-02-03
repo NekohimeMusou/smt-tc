@@ -13,12 +13,24 @@
           <input type="number" id="mag-resist-field" name="system.resistBonus.mag" value="{{system.resistBonus.mag}}"
             placeholder="0" data-dtype="Number" />
         </div>
+      </li>
+      
+      <li class="item item-prop flexrow">
         {{!-- Equipped? --}}
         <label for="equipped-field">{{localize "SMT.itemSheet.equipped"}}</label>
         <div class="item-prop">
           <input type="checkbox" id="equipped-field" name="system.equipped" data-dtype="Boolean" {{checked system.equipped}} />
         </div>
+        {{!-- Use affinities? --}}
+        <label for="use-affinity-field">{{localize "SMT.itemSheet.useAffinities"}}</label>
+        <div class="item-prop">
+          <input type="checkbox" id="use-affinity-field" name="system.useAffinities" data-dtype="Boolean"
+            {{checked system.useAffinities}} />
+        </div>
       </li>
     </ol>
   </div>
+{{#if system.useAffinities}}
+{{> "systems/smt-tc/templates/parts/shared/affinities.hbs"}}
+{{/if}}
 </section>

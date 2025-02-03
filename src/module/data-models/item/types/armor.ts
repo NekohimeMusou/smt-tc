@@ -12,6 +12,7 @@ export class ArmorData extends EquipmentData {
         phys: new fields.NumberField({ integer: true, initial: 0 }),
         mag: new fields.NumberField({ integer: true, initial: 0 }),
       }),
+      useAffinities: new fields.BooleanField(),
     } as const;
   }
 }
