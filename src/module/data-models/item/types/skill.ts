@@ -10,6 +10,7 @@ export class SkillData extends AttackData {
       ...super.defineSchema(),
       expended: new fields.BooleanField(),
       inheritanceTraits: new fields.StringField(),
+      cost: new fields.NumberField({ integer: true }),
     } as const;
   }
 }

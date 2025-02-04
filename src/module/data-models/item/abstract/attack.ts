@@ -115,10 +115,22 @@ export abstract class AttackData extends SmtBaseItemData {
         rate: new fields.NumberField({ integer: true, min: 0, max: 95 }),
       }),
       // Status to apply automatically to target/self
-      autoStatus: new fields.StringField({ choices: CONFIG.SMT.statusEffects }),
       specialProps: new fields.StringField({
         choices: CONFIG.SMT.skillProperties,
       }),
+      shatterRate: new fields.NumberField({ integer: true, min: 0 }),
     } as const;
+  }
+
+  override prepareBaseData() {
+    const data = this._systemData;
+
+    if (data.affinity === "phys") {
+      //@ts-expect-error Field isn't readonly
+      data.shatterRate = 30;
+    } else if (data.affinity !== "force") {
+      //@ts-expect-error Field isn't readonly
+      data.shatterRate = 0;
+    }
   }
 }

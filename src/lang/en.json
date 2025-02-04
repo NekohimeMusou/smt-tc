@@ -207,7 +207,9 @@
       "critBoost": "Crit Boost",
       "pinhole": "Pinhole",
       "analyze": "Analyze",
-      "goodInstincts": "Good Instincts"
+      "goodInstincts": "Good Instincts",
+      "applyFocus": "Apply Focus",
+      "shatter": "Shatter"
     },
     "actorSheet": {
       "charClassLabel": "Class: {charClass}",

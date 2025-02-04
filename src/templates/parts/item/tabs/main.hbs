@@ -2,5 +2,8 @@
 {{> "systems/smt-tc/templates/parts/item/armor.hbs"}}
 {{/if}}
 {{#if (eq system.type "magatama")}}
-{{> "systems/smt-tc/templates/parts/item/magatama-stats.hbs"}}
+{{> "systems/smt-tc/templates/parts/item/magatama.hbs"}}
+{{/if}}
+{{#if (eq system.type "skill")}}
+{{> "systems/smt-tc/templates/parts/item/attack.hbs"}}
 {{/if}}

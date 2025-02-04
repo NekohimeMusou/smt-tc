@@ -24,7 +24,8 @@ const templatePaths: string[] = [
   "systems/smt-tc/templates/parts/item/tabs/main.hbs",
   "systems/smt-tc/templates/parts/item/header.hbs",
   "systems/smt-tc/templates/parts/item/armor.hbs",
-  "systems/smt-tc/templates/parts/item/magatama-stats.hbs",
+  "systems/smt-tc/templates/parts/item/magatama.hbs",
+  "systems/smt-tc/templates/parts/item/attack.hbs",
 ] as const;
 
 // Character data
@@ -222,6 +223,8 @@ const skillProperties = {
   pinhole: "SMT.skillProperties.pinhole",
   analyze: "SMT.skillProperties.analyze",
   goodInstincts: "SMT.skillProperties.goodInstincts",
+  applyFocus: "SMT.skillProperties.applyFocus",
+  shatter: "SMT.skillProperties.shatter",
 } as const;
 
 export const SMT = {
