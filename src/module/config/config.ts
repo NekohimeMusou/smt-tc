@@ -16,6 +16,7 @@ const templatePaths: string[] = [
   "systems/smt-tc/templates/item/item-sheet.hbs",
   // Real partials
   "systems/smt-tc/templates/parts/actor/tabs/main.hbs",
+  "systems/smt-tc/templates/parts/actor/tabs/bio.hbs",
   "systems/smt-tc/templates/parts/shared/effects.hbs",
   "systems/smt-tc/templates/parts/shared/affinities.hbs",
   "systems/smt-tc/templates/parts/actor/header.hbs",

@@ -6,6 +6,7 @@
   <nav class="sheet-tabs tabs" data-group="primary">
     {{!-- Default tab is defined in actor-sheet.ts --}}
     <a class="item resource-label" data-tab="main">{{localize "SMT.tabs.main"}}</a>
+    <a class="item resource-label" data-tab="bio">{{localize "SMT.tabs.bio"}}</a>
     <a class="item resource-label" data-tab="notes">{{localize "SMT.tabs.notes"}}</a>
     <a class="item resource-label" data-tab="effects">{{localize "SMT.tabs.effects"}}</a>
   </nav>
@@ -15,6 +16,11 @@
     {{!-- Main Tab --}}
     <div class="tab main" data-group="primary" data-tab="main">
       {{> "systems/smt-tc/templates/parts/actor/tabs/main.hbs"}}
+    </div>
+
+    {{!-- Bio Tab --}}
+    <div class="tab bio" data-group="primary" data-tab="bio">
+      {{> "systems/smt-tc/templates/parts/actor/tabs/bio.hbs"}}
     </div>
 
     {{!-- Notes Tab --}}
