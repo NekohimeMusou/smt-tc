@@ -75,6 +75,29 @@
       "phys": "Phys Resist",
       "mag": "Mag Resist"
     },
+    "alignment": {
+      "law": "Law",
+      "chaos": "Chaos",
+      "dark": "Dark",
+      "light": "Light",
+      "neutral": "Neutral",
+      "heeHo": "Hee-Ho"
+    },
+    "bioData": {
+      "background": "Background",
+      "bgNum": "BG {num}",
+      "contactNum": "Contact {num}",
+      "bond": "Bond",
+      "goal": "Goal",
+      "personality": "Personality",
+      "inheritType": "Inherit Type",
+      "evolvePath": "Evolve Path"
+    },
+    "enemyInfo": {
+      "xpAward": "XP Award",
+      "maccaAward": "Macca Award",
+      "itemDrops": "Item Drops"
+    },
     "clans": {
       "foul": "Foul",
       "haunt": "Haunt",
@@ -219,7 +242,9 @@
       "levelAbbrev": "Lv",
       "statTotal": "Total",
       "tn": "TN",
-      "derivedTN": "Derived TN"
+      "derivedTN": "Derived TN",
+      "alignment": "Alignment",
+      "enemyInfo": "Enemy Info"
     },
     "itemSheet": {
       "equipped": "Equipped",

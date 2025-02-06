@@ -1,3 +1,10 @@
 <section class="bio flexcol">
-  
+  {{#if isGM}}
+  {{> "systems/smt-tc/templates/parts/actor/enemy-data.hbs"}}
+  {{/if}}
+  {{> "systems/smt-tc/templates/parts/actor/background.hbs"}}
+  {{> "systems/smt-tc/templates/parts/actor/alignment.hbs"}}
+  {{#if (eq system.type "demon")}}
+  {{> "systems/smt-tc/templates/parts/actor/demon.hbs"}}
+  {{/if}}
 </section>

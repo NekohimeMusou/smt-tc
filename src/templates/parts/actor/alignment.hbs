@@ -1,0 +1,19 @@
+<section class="alignment">
+  <div class="items-list">
+    <ol class="stat-list">
+      <li class="item flexrow items-header">
+        <div>{{localize "SMT.actorSheet.alignment"}}</div>
+      </li>
+
+      <li class="item item-prop flexrow">
+        {{#each system.alignment as |value alignment|}}
+        <label for="alignment-{{alignment}}-field" class="item-prop">
+          {{localize (concat "SMT.alignment." alignment)}}
+        </label>
+        <input type="number" id="alignment-{{alignment}}-field" name="system.alignment.{{alignment}}" value="{{value}}"
+          placeholder="0" data-dtype="Number" />
+        {{/each}}
+      </li>
+    </ol>
+  </div>
+</section>
