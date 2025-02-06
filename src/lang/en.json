@@ -20,6 +20,7 @@
     },
     "tabs": {
       "main": "Main",
+      "bio": "Bio",
       "notes": "Notes",
       "description": "Description",
       "effects": "Effects"

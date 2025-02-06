@@ -1,4 +1,15 @@
 <section class="flexcol">
+  {{#if (eq system.type "demon")}}
+  <div class="items-list">
+    <ol class="stat-list">
+      <li class="item flexrow">
+        <div class="item-prop">{{localize "SMT.bioData.personality"}}</div>
+        <input class="flex3" type="text" value="{{system.personality}}" placeholder="N/A"
+          data-dtype="String" disabled />
+      </li>
+    </ol>
+  </div>
+  {{/if}}
   {{> "systems/smt-tc/templates/parts/shared/affinities.hbs"}}
   {{> "systems/smt-tc/templates/parts/actor/stats.hbs"}}
 </section>
