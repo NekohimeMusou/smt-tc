@@ -1,0 +1,39 @@
+<section class="buffs">
+  <div class="items-list flexcol">
+    <ol class="stat-list">
+      <li class="item flexrow items-header">
+        <div class="flex2">{{localize "SMT.actorSheet.buffs"}}</div>
+        <div class="fas fa-plus"></div>
+        <div class="fas fa-minus"></div>
+      </li>
+
+      {{!-- Phys Power --}}
+      <li class="item flexrow">
+        <div class="item-prop flex2">{{localize "SMT.buffs.physPower"}}</div>
+        <div class="item-prop">{{system.buffs.tarukaja}}</div>
+        <div class="item-prop">{{system.buffs.tarunda}}</div>
+      </li>
+
+      {{!-- Mag Power --}}
+      <li class="item flexrow">
+        <div class="item-prop flex2">{{localize "SMT.buffs.magPower"}}</div>
+        <div class="item-prop">{{system.buffs.makakaja}}</div>
+        <div class="item-prop">{{system.buffs.tarunda}}</div>
+      </li>
+
+      {{!-- Resists --}}
+      <li class="item flexrow">
+        <div class="item-prop flex2">{{localize "SMT.buffs.resist"}}</div>
+        <div class="item-prop">{{system.buffs.rakukaja}}</div>
+        <div class="item-prop">{{system.buffs.rakunda}}</div>
+      </li>
+
+      {{!-- Accuracy/Dodge --}}
+      <li class="item flexrow">
+        <div class="item-prop flex2">{{localize "SMT.buffs.acc"}}</div>
+        <div class="item-prop">{{system.buffs.sukukaja}}</div>
+        <div class="item-prop">{{system.buffs.sukunda}}</div>
+      </li>
+    </ol>
+  </div>
+</section>

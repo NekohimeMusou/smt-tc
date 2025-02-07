@@ -72,9 +72,19 @@
       "ag": "Dodge",
       "lu": "Negotiation"
     },
+    "power": {
+      "phys": "Phys Power",
+      "mag": "Mag Power"
+    },
     "resist": {
       "phys": "Phys Resist",
       "mag": "Mag Resist"
+    },
+    "formula": {
+      "physPower": "St + Lv",
+      "magPower": "Ma + Lv",
+      "physResist": "(Vi + Lv) / 2",
+      "magResist": "(Ma + Lv) / 2"
     },
     "alignment": {
       "law": "Law",
@@ -186,6 +196,12 @@
       "curse": "Curse",
       "instantKill": "Instant Death"
     },
+    "buffs": {
+      "physPower": "Phys Power",
+      "magPower": "Mag Power",
+      "resist": "Resist",
+      "acc": "Acc/Dodge"
+    },
     "itemTypes": {
       "skill": "Skill",
       "weapon": "Weapon",
@@ -245,7 +261,10 @@
       "tn": "TN",
       "derivedTN": "Derived TN",
       "alignment": "Alignment",
-      "enemyInfo": "Enemy Info"
+      "enemyInfo": "Enemy Info",
+      "derivedStats": "Derived Stats",
+      "buffs": "Buffs",
+      "mods": "Mods"
     },
     "itemSheet": {
       "equipped": "Equipped",
