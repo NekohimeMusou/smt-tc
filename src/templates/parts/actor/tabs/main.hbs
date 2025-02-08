@@ -10,6 +10,16 @@
     </ol>
   </div>
   {{/if}}
-  {{> "systems/smt-tc/templates/parts/shared/affinities.hbs"}}
-  {{> "systems/smt-tc/templates/parts/actor/stats.hbs"}}
+  <div class="flexrow">
+    <div class="flexcol flex3">
+      {{> "systems/smt-tc/templates/parts/shared/affinities.hbs"}}
+      {{> "systems/smt-tc/templates/parts/actor/stats.hbs"}}
+    </div>
+
+    <div class="flexcol">
+      {{> "systems/smt-tc/templates/parts/actor/buffs.hbs"}}
+      {{> "systems/smt-tc/templates/parts/actor/derived-stats.hbs"}}
+      {{> "systems/smt-tc/templates/parts/actor/mods.hbs"}}
+    </div>
+  </div>
 </section>

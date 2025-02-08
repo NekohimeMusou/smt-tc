@@ -264,7 +264,9 @@
       "enemyInfo": "Enemy Info",
       "derivedStats": "Derived Stats",
       "buffs": "Buffs",
-      "mods": "Mods"
+      "mods": "Mods",
+      "tnBoost": "TN (20%)",
+      "multi": "Multi"
     },
     "itemSheet": {
       "equipped": "Equipped",
