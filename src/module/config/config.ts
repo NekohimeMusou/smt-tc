@@ -11,12 +11,13 @@ declare global {
 
 // HBS partials
 const templatePaths: string[] = [
-  // Temporary - Until I make unique sheets
+  // Placeholders(?)
   "systems/smt-tc/templates/actor/actor-sheet.hbs",
   "systems/smt-tc/templates/item/item-sheet.hbs",
   // Real partials
   "systems/smt-tc/templates/parts/actor/tabs/main.hbs",
   "systems/smt-tc/templates/parts/actor/tabs/bio.hbs",
+  "systems/smt-tc/templates/parts/actor/tabs/inventory.hbs",
   "systems/smt-tc/templates/parts/shared/effects.hbs",
   "systems/smt-tc/templates/parts/shared/affinities.hbs",
   "systems/smt-tc/templates/parts/actor/header.hbs",
@@ -29,6 +30,10 @@ const templatePaths: string[] = [
   "systems/smt-tc/templates/parts/actor/derived-stats.hbs",
   "systems/smt-tc/templates/parts/actor/buffs.hbs",
   "systems/smt-tc/templates/parts/actor/mods.hbs",
+  "systems/smt-tc/templates/parts/actor/items.hbs",
+  "systems/smt-tc/templates/parts/actor/armor.hbs",
+  "systems/smt-tc/templates/parts/actor/weapons.hbs",
+  "systems/smt-tc/templates/parts/actor/skills.hbs",
   "systems/smt-tc/templates/parts/item/tabs/main.hbs",
   "systems/smt-tc/templates/parts/item/header.hbs",
   "systems/smt-tc/templates/parts/item/armor.hbs",

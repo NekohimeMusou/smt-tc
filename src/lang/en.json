@@ -23,7 +23,8 @@
       "bio": "Bio",
       "notes": "Notes",
       "description": "Description",
-      "effects": "Effects"
+      "effects": "Effects",
+      "inventory": "Inventory"
     },
     "charClasses": {
       "human": "Human",
