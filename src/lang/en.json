@@ -1,0 +1,65 @@
+{
+  "SMT": {
+    "effects": {
+      "newEffect": "New Effect",
+      "temporary": "Temporary Effects",
+      "passive": "Passive Effects",
+      "inactive": "Inactive Effects",
+      "create": "Create Effect",
+      "toggle": "Toggle Effect",
+      "edit": "Edit Effect",
+      "delete": "Delete Effect",
+      "add": "Add"
+    },
+    "sheet": {
+      "createItem": "Create Item",
+      "newItem": "New {name}",
+      "addItem": "Add Item",
+      "editItem": "Edit Item",
+      "deleteItem": "Delete Item"
+    },
+    "charClasses": {
+      "fiend": "Fiend",
+      "demon": "Demon",
+      "human": "Human"
+    },
+    "affinityLevels": {
+      "none": "—",
+      "weak": "Weak",
+      "strong": "Strong",
+      "null": "Null",
+      "drain": "Drain",
+      "repel": "Repel"
+    },
+    "itemTypes": {
+      "magatama": "Magatama",
+      "skill": "Skill",
+      "armor": "Armor",
+      "weapon": "Weapon",
+      "item": "Item"
+    },
+    "equipSlots": {
+      "none": "N/A",
+      "magatama": "Magatama",
+      "gun": "Gun",
+      "melee": "Melee",
+      "head": "Head",
+      "torso": "Torso",
+      "legs": "Legs"
+    },
+    "settings": {
+      "invertShiftBehavior": {
+        "name": "Invert Shift Behavior",
+        "hint": "If enabled, dice rolls will display a modifier dialog by default, and holding shift bypasses it."
+      },
+      "addLevelToGunDamage": {
+        "name": "House Rule: Add Level to Gun Damage",
+        "hint": "Add the shooter's level to gun and grenade damage, like with other attacks."
+      },
+      "enablePierce": {
+        "name": "House Rule: Enable Pierce",
+        "hint": "Enables a version of the Pierce skill extrapolated from the videogame. If this is off, the Pierce quality has no effect."
+      }
+    }
+  }
+}
