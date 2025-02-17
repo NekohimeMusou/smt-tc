@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Node 16",
+
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "Node16",
+
+    "rootDir": "src",
+    "outDir": "dist",
+
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowUmdGlobalAccess": true,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitOverride": true
+  },
+
+  "exclude": ["node_modules"],
+  "include": ["src/**/*.ts", "foundrytypes/**/*.ts"]
+}
