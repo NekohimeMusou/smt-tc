@@ -119,5 +119,7 @@ export default function baseSchemaFields() {
     xp: new fields.NumberField({ integer: true, min: 0 }),
     macca: new fields.NumberField({ integer: true, min: 0 }),
     affinities: new fields.EmbeddedDataField(DefenseAffinityData),
+    // Should this be considered an NPC for e.g. Auto Dodge
+    npc: new fields.BooleanField(),
   };
 }

@@ -1,4 +1,4 @@
-import { DefenseAffinityData } from "../../defense-affinities.js";
+import { SmtItem } from "../../../documents/item/item.js";
 
 export abstract class SmtBaseItemData extends foundry.abstract.TypeDataModel {
   abstract readonly type: ItemType;
@@ -16,7 +16,11 @@ export abstract class SmtBaseItemData extends foundry.abstract.TypeDataModel {
       price: new fields.NumberField({ integer: true, min: 0 }),
       equipped: new fields.BooleanField(),
       equipSlot: new fields.StringField({ choices: CONFIG.SMT.equipSlots }),
-      affinities: new fields.EmbeddedDataField(DefenseAffinityData),
     } as const;
+  }
+
+  // Goofy Typescript hack
+  protected get _systemData() {
+    return this as this & Subtype<SmtItem, this["type"]>["system"];
   }
 }

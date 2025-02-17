@@ -5,5 +5,13 @@ export class SmtFiendData extends SmtBaseActorData {
 
   override prepareBaseData() {
     super.prepareBaseData();
+
+    const data = this._systemData;
+    const equippedMagatama = data.equippedMagatama;
+
+    if (equippedMagatama) {
+      // @ts-expect-error This isn't readonly
+      data.affinities = equippedMagatama.system.affinities;
+    }
   }
 }

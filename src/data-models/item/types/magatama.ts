@@ -1,7 +1,7 @@
 import { SkillListing } from "../../skill-listing.js";
-import { SmtBaseItemData } from "../abstract/base.js";
+import { AffinityItemData } from "../abstract/affinity.js";
 
-export class MagatamaData extends SmtBaseItemData {
+export class MagatamaData extends AffinityItemData {
   override readonly type = "magatama";
 
   static override defineSchema() {
@@ -17,6 +17,14 @@ export class MagatamaData extends SmtBaseItemData {
         lu: new fields.NumberField({ integer: true, min: 0 }),
       }),
       skills: new fields.ArrayField(new fields.EmbeddedDataField(SkillListing)),
+      ingested: new fields.BooleanField(),
     } as const;
+  }
+
+  override prepareBaseData() {
+    const data = this._systemData;
+
+    // @ts-expect-error This isn't readonly
+    data.equipSlot = "magatama";
   }
 }

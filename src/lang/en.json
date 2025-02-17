@@ -59,6 +59,10 @@
       "enablePierce": {
         "name": "House Rule: Enable Pierce",
         "hint": "Enables a version of the Pierce skill extrapolated from the videogame. If this is off, the Pierce quality has no effect."
+      },
+      "autoDodge": {
+        "name": "Auto Dodge",
+        "hint": "Tokens targeted by an attack will automatically make a dodge roll unless they're immune. Speeds play, but you miss the chance to spend FP to boost your dodge TN."
       }
     }
   }
