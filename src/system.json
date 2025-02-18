@@ -9,7 +9,7 @@
   },
 
   "url": "https://github.com/NekohimeMusou/smt-tc",
-  "manifest": "https://github.com/NekohimeMusou/smt-tc/releases/latest/download/system.json",
+  "manifest": "https://github.com/NekohimeMusou/smt-tc/releases/download/v0.1.0/system.json",
   "download": "https://github.com/NekohimeMusou/smt-tc/releases/download/v0.1.0/smt-tc-v0.1.0.zip",
 
   "authors": [
