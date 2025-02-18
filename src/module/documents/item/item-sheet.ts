@@ -1,3 +1,7 @@
+import {
+  onManageActiveEffect,
+  prepareActiveEffectCategories,
+} from "../active-effect.js";
 import { SmtItem } from "./item.js";
 
 export default class SmtItemSheet extends ItemSheet<SmtItem> {
@@ -22,6 +26,21 @@ export default class SmtItemSheet extends ItemSheet<SmtItem> {
     return `${basePath}/item-${this.item.type}-sheet.hbs`;
   }
 
+  override async getData() {
+    const context = await super.getData();
+    const system = this.item.system;
+
+    const effects = prepareActiveEffectCategories(this.item.effects);
+
+    foundry.utils.mergeObject(context, {
+      system,
+      effects,
+      SMT: CONFIG.SMT,
+    });
+
+    return context;
+  }
+
   override activateListeners(html: JQuery<HTMLElement>) {
     super.activateListeners(html);
 
@@ -29,8 +48,8 @@ export default class SmtItemSheet extends ItemSheet<SmtItem> {
     if (!this.isEditable) return;
 
     // Active Effect management
-    // html
-    //   .find(".effect-control")
-    //   .on("click", (ev) => onManageActiveEffect(ev, this.item));
+    html
+      .find(".effect-control")
+      .on("click", (ev) => onManageActiveEffect(ev, this.item));
   }
 }

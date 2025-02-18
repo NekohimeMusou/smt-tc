@@ -25,7 +25,6 @@
     "actorSheet": {
       "alignment": "Alignment",
       "awards": "Awards",
-      "charClass": "Character Class",
       "derivedStats": "Derived Stats",
       "xp": "XP",
       "level": "Level",
@@ -36,7 +35,7 @@
       "stats": "Stats",
       "baseStat": "Base",
       "levelShort": "Lv",
-      "totalStat": "Total",
+      "statTotal": "Total",
       "tn": "TN",
       "derivedTN": "Derived TN"
     },
@@ -76,6 +75,19 @@
       "xp": "XP",
       "macca": "Macca",
       "itemDrops": "Item Drops"
+    },
+    "affinities": {
+      "phys": "Phys",
+      "fire": "Fire",
+      "cold": "Cold",
+      "elec": "Elec",
+      "force": "Force",
+      "light": "Light",
+      "dark": "Dark",
+      "ruin": "Ruin",
+      "nerve": "Nerve",
+      "mind": "Mind",
+      "ailment": "Ailment"
     },
     "affinityLevels": {
       "none": "—",

@@ -1,3 +1,7 @@
+import {
+  onManageActiveEffect,
+  prepareActiveEffectCategories,
+} from "../active-effect.js";
 import { SmtActor } from "./actor.js";
 
 export default class SmtActorSheet extends ActorSheet<SmtActor> {
@@ -23,6 +27,26 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     return `${basePath}/actor-${this.actor.type}-sheet.hbs`;
   }
 
+  override async getData() {
+    const context = super.getData();
+    const system = this.actor.system;
+    const rollData = this.actor.getRollData();
+
+    const magatama = this.actor.items.find((item) => item.type === "magatama");
+
+    const effects = prepareActiveEffectCategories(this.actor.effects);
+
+    await foundry.utils.mergeObject(context, {
+      system,
+      rollData,
+      magatama,
+      effects,
+      SMT: CONFIG.SMT,
+    });
+
+    return context;
+  }
+
   override activateListeners(html: JQuery<HTMLElement>) {
     super.activateListeners(html);
 
@@ -46,9 +70,9 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     html.find(".item-delete").on("click", this.#onItemDelete.bind(this));
 
     // Active Effect management
-    // html
-    //   .find(".effect-control")
-    //   .on("click", (ev) => onManageActiveEffect(ev, this.actor));
+    html
+      .find(".effect-control")
+      .on("click", (ev) => onManageActiveEffect(ev, this.actor));
   }
 
   /**

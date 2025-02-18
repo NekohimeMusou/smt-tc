@@ -28,6 +28,8 @@ const templatePaths: string[] = [
 
   // Inventory
   "systems/smt-tc/templates/parts/actor/magatama-list.hbs",
+
+  "systems/smt-tc/templates/parts/shared/affinities.hbs",
 ] as const;
 
 const characterClasses = {
@@ -41,6 +43,20 @@ const fiendLevelTable = Array(101)
   .map((_, index) => Math.pow(index, 3));
 const demonLevelTable = fiendLevelTable.map((xp) => Math.floor(xp * 1.3));
 const humanLevelTable = fiendLevelTable.map((xp) => Math.floor(xp * 0.8));
+
+const defenseAffinities = {
+  phys: "SMT.affinities.phys",
+  fire: "SMT.affinities.fire",
+  cold: "SMT.affinities.cold",
+  elec: "SMT.affinities.elec",
+  force: "SMT.affinities.force",
+  light: "SMT.affinities.light",
+  dark: "SMT.affinities.dark",
+  ruin: "SMT.affinities.ruin",
+  nerve: "SMT.affinities.nerve",
+  mind: "SMT.affinities.mind",
+  ailment: "SMT.affinities.ailment",
+} as const;
 
 const affinityLevels = {
   none: "SMT.affinityLevels.none",
@@ -86,6 +102,7 @@ export const SMT = {
     demon: demonLevelTable,
     human: humanLevelTable,
   },
+  defenseAffinities,
   affinityLevels,
   alignment,
   itemTypes,
