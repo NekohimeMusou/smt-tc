@@ -1,0 +1,59 @@
+<section class="stats">
+  <div class="items-list flexcol">
+    <ol class="stat-list">
+      <li class="item flexrow items-header">
+        {{!-- Stat Name --}}
+        <div>{{localize "SMT.actorSheet.stats"}}</div>
+        {{!-- Base --}}
+        <div>{{localize "SMT.actorSheet.baseStat"}}</div>
+        {{!-- Magatama Mod--}}
+        {{!-- TODO: This is an item now, fix it to work right --}}
+        {{!-- LV points --}}
+        <div>{{localize "SMT.actorSheet.levelAbbrev"}}</div>
+        {{!-- Total Stat --}}
+        <div>{{localize "SMT.actorSheet.statTotal"}}</div>
+        {{!-- Stat TN --}}
+        <div>{{localize "SMT.actorSheet.tn"}}</div>
+        {{!-- Special TN label --}}
+        <div class="flex2">{{localize "SMT.actorSheet.derivedTN"}}</div>
+        {{!-- Special TN --}}
+        <div>{{localize "SMT.actorSheet.tn"}}</div>
+      </li>
+
+      {{#each system.stats}}
+      <li class="item flexrow">
+        {{!-- Stat Name --}}
+        <div class="item-prop">{{localize (concat "SMT.statShort." @key)}}</div>
+        {{!-- Base --}}
+        {{!-- TODO: Add a button to toggle base stats being editable, or something --}}
+        <div class="item-prop"><input type="number" name="system.stats.{{@key}}.base" value="{{base}}" placeholder="0"
+            data-dtype="Number" /></div>
+        {{!-- Magatama Mod --}}
+
+        {{!-- LV points --}}
+        <div class="item-prop"><input type="number" name="system.stats.{{@key}}.lv" value="{{lv}}" placeholder="0"
+            data-dtype="Number" />
+        </div>
+        {{!-- Total Stat --}}
+        <div class="item-prop">{{value}}</div>
+        {{!-- Stat TN --}}
+        {{!-- TODO: Link to dice roller --}}
+        <div class="item-prop roll-highlight roll-stat" data-tn-name="{{@key}}">{{lookup ../system.tn @key}}%</div>
+        {{!-- Derived TN label --}}
+        <div class="item-prop item-name flex2">{{localize (concat "SMT.derivedTN." @key)}}</div>
+        {{!-- Derived TN --}}
+        <div class="item-prop roll-highlight roll-stat" {{#if (eq @key "st")}}data-tn-name="physAtk" {{/if}}
+          {{#if (eq @key "ma")}}data-tn-name="magAtk" {{/if}} {{#if (eq @key "vi")}}data-tn-name="save" {{/if}}
+          {{#if (eq @key "ag")}}data-tn-name="dodge" {{/if}} {{#if (eq @key "lu")}}data-tn-name="negotiation" {{/if}}>
+
+          {{#if (eq @key "st")}}{{../system.tn.st}}%{{/if}}
+          {{#if (eq @key "ma")}}{{../system.tn.ma}}%{{/if}}
+          {{#if (eq @key "vi")}}{{../system.tn.save}}%{{/if}}
+          {{#if (eq @key "ag")}}{{../system.tn.dodge}}%{{/if}}
+          {{#if (eq @key "lu")}}{{../system.tn.negotiation}}%{{/if}}
+        </div>
+      </li>
+      {{/each}}
+    </ol>
+  </div>
+</section>

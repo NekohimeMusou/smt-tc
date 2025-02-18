@@ -1,0 +1,28 @@
+<section class="mods items-list flexcol">
+  <ol class="stat-list">
+    <li class="item flexrow items-header">
+      <div>{{localize "SMT.actorSheet.mods"}}</div>
+    </li>
+
+    <li class="item flexrow flex-group-center">
+      <div class="item-prop flex2">{{localize "SMT.actorSheet.tnBoost"}}</div>
+      <a class="adjust-modifier roll-highlight" data-direction="-" data-field="tnBoosts">
+        <i class="fas fa-minus"></i>
+      </a>
+      <span>{{system.tnBoosts}}</span>
+      <a class="adjust-modifier roll-highlight" data-direction="+" data-field="tnBoosts">
+        <i class="fas fa-plus"></i>
+      </a>
+    </li>
+    <li class="item flexrow flex-group-center">
+      <div class="item-prop flex2">{{localize "SMT.actorSheet.multi"}}</div>
+      <a class="adjust-modifier roll-highlight" data-direction="-" data-field="multi" data-min="1" data-max="3">
+        <i class="fas fa-minus"></i>
+      </a>
+      <span>{{system.multi}}</span>
+      <a class="adjust-modifier roll-highlight" data-direction="+" data-field="multi" data-min="1" data-max="3">
+        <i class="fas fa-plus"></i>
+      </a>
+    </li>
+  </ol>
+</section>

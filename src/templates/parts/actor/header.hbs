@@ -1,0 +1,31 @@
+<header class="sheet-header">
+  <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
+  <div class="header-fields">
+    <h1 class="charname">
+      <input name="name" type="text" value="{{actor.name}}" placeholder="Name" />
+    </h1>
+
+    <div class="flexrow flex-group-center">
+      <div class="char-class-label">
+        {{localize "SMT.actorSheet.charClassLabel" charClass=(localize (concat "SMT.charClasses." actor.type))}}</div>
+
+      <div class="flexrow">
+        <label for="level" class="resource-label">{{localize "SMT.actorSheet.level"}}</label>
+        <input type="number" id="level" name="system.lv" data-dtype="Number" placeholder="0" value="{{system.lv}}" />
+      </div>
+
+      <div class="flexrow">
+        <label for="xp-field" class="resource-label">{{localize "SMT.actorSheet.xp"}}</label>
+        <input type="number" id="xp-field" name="system.xp" data-dtype="Number" placeholder="0" value="{{system.xp}}" />
+      </div>
+
+      <div class="flexrow">
+        <label for="macca-field" class="resource-label">{{localize "SMT.actorSheet.macca"}}</label>
+        <input type="number" id="macca-field" name="system.macca" data-dtype="Number" placeholder="0"
+          value="{{system.macca}}" />
+      </div>
+    </div>
+    {{!-- Resources Pane --}}
+    {{> "systems/smt-tc/templates/parts/actor/resources.hbs"}}
+  </div>
+</header>

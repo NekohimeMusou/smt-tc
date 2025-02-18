@@ -1,0 +1,22 @@
+<section class="awards">
+  <div class="items-list flexcol">
+    <ol class="stat-list">
+      <li class="item flexrow items-header">
+        <div>{{localize "SMT.actorSheet.awards"}}</div>
+      </li>
+
+      <li class="item flexrow">
+        {{!-- XP Award --}}
+        <div class="item-prop">{{localize "SMT.awards.xpAward"}}</div>
+        <input type="number" name="system.xpAward" value="{{system.xpAward}}" placeholder="0" data-dtype="Number" />
+        {{!-- Macca Award --}}
+        <div class="item-prop">{{localize "SMT.awards.maccaAward"}}</div>
+        <input type="number" name="system.maccaAward" value="{{system.maccaAward}}" placeholder="0"
+          data-dtype="Number" />
+        {{!-- Item Award --}}
+        <div class="item-prop">{{localize "SMT.awards.itemDrops"}}</div>
+        <input type="text" name="system.itemDrops" value="{{system.itemDrops}}" placeholder="N/A" data-dtype="String" />
+      </li>
+    </ol>
+  </div>
+</section>

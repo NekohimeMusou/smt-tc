@@ -18,10 +18,64 @@
       "editItem": "Edit Item",
       "deleteItem": "Delete Item"
     },
+    "tabs": {
+      "main": "Main",
+      "notes": "Notes"
+    },
+    "actorSheet": {
+      "alignment": "Alignment",
+      "awards": "Awards",
+      "charClass": "Character Class",
+      "derivedStats": "Derived Stats",
+      "xp": "XP",
+      "level": "Level",
+      "macca": "Macca",
+      "mods": "Mods",
+      "tnBoost": "TN Boosts",
+      "multi": "Multi",
+      "stats": "Stats",
+      "baseStat": "Base",
+      "levelShort": "Lv",
+      "totalStat": "Total",
+      "tn": "TN",
+      "derivedTN": "Derived TN"
+    },
     "charClasses": {
       "fiend": "Fiend",
       "demon": "Demon",
       "human": "Human"
+    },
+    "resources": {
+      "hp": "HP",
+      "mp": "MP",
+      "fp": "FP"
+    },
+    "statShort": {
+      "st": "St",
+      "ma": "Ma",
+      "vi": "Vi",
+      "ag": "Ag",
+      "lu": "Lu"
+    },
+    "derivedTN": {
+      "st": "Phys Atk",
+      "ma": "Spell Atk",
+      "vi": "Save",
+      "ag": "Dodge",
+      "lu": "Negotiation"
+    },
+    "alignment": {
+      "law": "Lawful",
+      "chaos": "Chaos",
+      "dark": "Dark",
+      "light": "Light",
+      "neutral": "Neutral",
+      "heeHo": "Hee-Ho"
+    },
+    "awards": {
+      "xp": "XP",
+      "macca": "Macca",
+      "itemDrops": "Item Drops"
     },
     "affinityLevels": {
       "none": "—",
@@ -30,6 +84,14 @@
       "null": "Null",
       "drain": "Drain",
       "repel": "Repel"
+    },
+    "resist": {
+      "phys": "Phys Resist",
+      "mag": "Mag Resist"
+    },
+    "power": {
+      "phys": "Phys Power",
+      "mag": "Mag Power"
     },
     "itemTypes": {
       "magatama": "Magatama",

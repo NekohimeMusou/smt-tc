@@ -14,6 +14,19 @@ const templatePaths: string[] = [
   "systems/smt-tc/templates/parts/actor/tabs/magatama.hbs",
 
   // Actor sheet panes
+  "systems/smt-tc/templates/parts/actor/header.hbs",
+  "systems/smt-tc/templates/parts/actor/resources.hbs",
+
+  // Main tab
+  "systems/smt-tc/templates/parts/actor/stats.hbs",
+  "systems/smt-tc/templates/parts/actor/derived-stats.hbs",
+  "systems/smt-tc/templates/parts/actor/mods.hbs",
+
+  // Bio data
+  "systems/smt-tc/templates/parts/actor/alignment.hbs",
+  "systems/smt-tc/templates/parts/actor/awards.hbs",
+
+  // Inventory
   "systems/smt-tc/templates/parts/actor/magatama-list.hbs",
 ] as const;
 
@@ -36,6 +49,15 @@ const affinityLevels = {
   null: "SMT.affinityLevels.null",
   drain: "SMT.affinityLevels.drain",
   repel: "SMT.affinityLevels.repel",
+} as const;
+
+const alignment = {
+  law: "SMT.alignment.law",
+  chaos: "SMT.alignment.chaos",
+  dark: "SMT.alignment.dark",
+  light: "SMT.alignment.light",
+  neutral: "SMT.alignment.neutral",
+  heeHo: "SMT.alignment.heeHo",
 } as const;
 
 const itemTypes = {
@@ -65,6 +87,7 @@ export const SMT = {
     human: humanLevelTable,
   },
   affinityLevels,
+  alignment,
   itemTypes,
   equipSlots,
 } as const;
