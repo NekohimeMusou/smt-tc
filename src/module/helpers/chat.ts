@@ -19,7 +19,9 @@ export async function showHitCheckCard({
   roll,
 }: HitCheckCardData = {}) {
   if (!roll) {
-    const msg = game.i18n.localize("SMT.error.missingHitCardRoll");
+    const msg = game.i18n.format("SMT.error.missingCardRoll", {
+      function: "showHitCheckCard",
+    });
     throw new TypeError(msg);
   }
 
@@ -27,9 +29,55 @@ export async function showHitCheckCard({
     checkName,
     tn,
     successLevel,
-    rollContent: await roll.render(),
+    roll: await roll.render(),
   };
   const template = "systems/smt-tc/templates/chat/hit-check-card.hbs";
+
+  const content = await renderTemplate(template, context);
+
+  const chatData = {
+    user: game.user.id,
+    content,
+    speaker: {
+      scene: game.scenes.current,
+      actor,
+      token,
+    },
+    rolls: [roll],
+  };
+
+  return await ChatMessage.create(chatData);
+}
+
+interface PowerRollCardData {
+  actor?: SmtActor;
+  token?: SmtTokenDocument;
+  power?: number;
+  powerType?: PowerType;
+  roll?: Roll;
+}
+
+export async function showPowerRollCard({
+  actor,
+  token,
+  power = 0,
+  powerType = "phys",
+  roll,
+}: PowerRollCardData = {}) {
+  if (!roll) {
+    const msg = game.i18n.format("SMT.error.missingCardRoll", {
+      function: "showPowerRollCard",
+    });
+    throw new TypeError(msg);
+  }
+
+  const context = {
+    power,
+    powerType,
+    roll: await roll.render(),
+  };
+
+  const template = "systems/smt-tc/templates/chat/power-roll-card.hbs";
 
   const content = await renderTemplate(template, context);
 

@@ -1,5 +1,5 @@
-import { showHitCheckCard } from "../../helpers/chat.js";
-import { hitCheck } from "../../helpers/dice.js";
+import { showHitCheckCard, showPowerRollCard } from "../../helpers/chat.js";
+import { hitCheck, powerRoll } from "../../helpers/dice.js";
 import {
   onManageActiveEffect,
   prepareActiveEffectCategories,
@@ -78,6 +78,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
 
     // Stat rolls
     html.find(".hit-roll").on("click", this.#onHitRoll.bind(this));
+    html.find(".power-roll").on("click", this.#onPowerRoll.bind(this));
     html
       .find(".adjust-sheet-mod")
       .on("click", this.#onSheetModChange.bind(this));
@@ -168,6 +169,35 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       checkName,
       tn,
       successLevel,
+      roll,
+    });
+  }
+
+  async #onPowerRoll(event: JQuery.ClickEvent) {
+    event.preventDefault();
+
+    const powerType = $(event.currentTarget).data("powerType") as
+      | PowerType
+      | undefined;
+
+    if (!powerType) {
+      const msg = game.i18n.localize("SMT.error.missingPowerType");
+      throw new TypeError(msg);
+    }
+
+    const actorData = this.actor.system;
+
+    const basePower = actorData.power[powerType];
+    const powerBoost = actorData.powerBoost[powerType];
+
+    const { power, roll } = await powerRoll({ basePower, powerBoost });
+
+    // Show chat card
+    await showPowerRollCard({
+      actor: this.actor,
+      token: this.actor.token,
+      power,
+      powerType,
       roll,
     });
   }

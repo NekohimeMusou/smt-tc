@@ -170,9 +170,9 @@
       }
     },
     "error": {
-      "missingStatRollActor": "Missing actor in statRoll",
-      "missingHitRollTN": "Missing TN in statRoll",
-      "missingHitCardRoll": "Missing Roll in showHitCheckCard"
+      "missingHitRollTN": "Missing TN in hitRoll",
+      "missingCardRoll": "Missing Roll for chat card in: {function}",
+      "missingPowerType": "Missing powerType in #onPowerRoll"
     }
   }
 }

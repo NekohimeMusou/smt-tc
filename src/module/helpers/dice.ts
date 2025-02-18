@@ -1,5 +1,3 @@
-import { SmtActor } from "../documents/actor/actor.js";
-
 interface HitCheckData {
   tn?: number;
   autoFailThreshold?: number;
@@ -39,31 +37,24 @@ export async function hitCheck({
   return { successLevel, roll };
 }
 
-interface StatRollData {
-  actor?: SmtActor;
-  tnType?: TargetNumber;
-  critBoost?: boolean;
+interface PowerRollData {
+  basePower?: number;
+  powerBoost?: boolean;
 }
 
-export async function statRoll({
-  actor,
-  tnType,
-  critBoost = false,
-}: StatRollData = {}) {
-  if (!actor) {
-    const msg = game.i18n.localize("SMT.error.missingStatRollActor");
-    throw new TypeError(msg);
-  }
+interface PowerRollResult {
+  power: number;
+  roll: Roll;
+}
 
-  if (!tnType) {
-    const msg = game.i18n.localize("SMT.error.missingHitRollTN");
-    throw new TypeError(msg);
-  }
+export async function powerRoll({
+  basePower = 0,
+  powerBoost = false,
+}: PowerRollData = {}): Promise<PowerRollResult> {
+  const dice = powerBoost ? 2 : 1;
+  const rollString = `${dice}d10x + ${basePower}`;
 
-  const actorData = actor.system;
+  const roll = await new Roll(rollString).roll();
 
-  const autoFailThreshold = actorData.autoFailThreshold;
-  const tn = actor.system.tn[tnType];
-
-  return await hitCheck({ tn, autoFailThreshold, critBoost });
+  return { power: roll.total, roll };
 }

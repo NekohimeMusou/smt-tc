@@ -1,6 +1,7 @@
 declare global {
   type CharacterClass = keyof typeof characterClasses;
   type ItemType = keyof typeof itemTypes;
+  type PowerType = keyof typeof powerTypes;
   type SuccessLevel = keyof typeof successLevels;
   type TargetNumber = keyof typeof tn;
 }
@@ -92,6 +93,11 @@ const alignment = {
   heeHo: "SMT.alignment.heeHo",
 } as const;
 
+const powerTypes = {
+  phys: "SMT.powerTypes.phys",
+  mag: "SMT.powerTypes.mag",
+};
+
 const itemTypes = {
   magatama: "SMT.itemTypes.magatama",
   // weapon: "SMT.itemTypes.weapon",
@@ -132,6 +138,7 @@ export const SMT = {
   affinityLevels,
   tn,
   alignment,
+  powerTypes,
   itemTypes,
   equipSlots,
   successLevels,

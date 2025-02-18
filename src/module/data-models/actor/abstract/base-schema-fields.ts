@@ -121,6 +121,12 @@ const mods = new fields.SchemaField({
   might: new fields.BooleanField(),
 });
 
+const powerBoost = new fields.SchemaField({
+  phys: new fields.BooleanField(),
+  mag: new fields.BooleanField(),
+  item: new fields.BooleanField(),
+});
+
 export default function baseSchemaFields() {
   return {
     stats,
@@ -133,6 +139,7 @@ export default function baseSchemaFields() {
     ...sheetData,
     buffs,
     mods,
+    powerBoost,
     hpMultiplier: new fields.NumberField({ integer: true, positive: true }),
     mpMultiplier: new fields.NumberField({ integer: true, positive: true }),
     xp: new fields.NumberField({ integer: true, min: 0 }),
