@@ -3,11 +3,26 @@ import { DefenseAffinityData } from "../../defense-affinities.js";
 const fields = foundry.data.fields;
 
 const stats = new fields.SchemaField({
-  st: new fields.SchemaField(generateStatSchema()),
-  ma: new fields.SchemaField(generateStatSchema()),
-  vi: new fields.SchemaField(generateStatSchema()),
-  ag: new fields.SchemaField(generateStatSchema()),
-  lu: new fields.SchemaField(generateStatSchema()),
+  st: new fields.SchemaField({
+    ...generateStatSchema(),
+    derivedTN: new fields.StringField({ initial: "physAtk" }),
+  }),
+  ma: new fields.SchemaField({
+    ...generateStatSchema(),
+    derivedTN: new fields.StringField({ initial: "magAtk" }),
+  }),
+  vi: new fields.SchemaField({
+    ...generateStatSchema(),
+    derivedTN: new fields.StringField({ initial: "save" }),
+  }),
+  ag: new fields.SchemaField({
+    ...generateStatSchema(),
+    derivedTN: new fields.StringField({ initial: "dodge" }),
+  }),
+  lu: new fields.SchemaField({
+    ...generateStatSchema(),
+    derivedTN: new fields.StringField({ initial: "negotiation" }),
+  }),
 });
 
 function generateStatSchema() {
@@ -42,6 +57,8 @@ const tn = new fields.SchemaField({
   vi: new fields.NumberField({ integer: true }),
   ag: new fields.NumberField({ integer: true }),
   lu: new fields.NumberField({ integer: true }),
+  physAtk: new fields.NumberField({ integer: true }),
+  magAtk: new fields.NumberField({ integer: true }),
   save: new fields.NumberField({ integer: true }),
   dodge: new fields.NumberField({ integer: true }),
   negotiation: new fields.NumberField({ integer: true }),
@@ -90,21 +107,19 @@ const sheetData = {
     max: 3,
   }),
 };
-
+const buffs = new fields.SchemaField({
+  tarukaja: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+  makakaja: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+  rakukaja: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+  sukukaja: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+  tarunda: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+  rakunda: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+  sukunda: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+});
 // Modifiers for AEs etc to latch onto
-const modifiers = {
-  hpMultiplier: new fields.NumberField({ integer: true, positive: true }),
-  mpMultiplier: new fields.NumberField({ integer: true, positive: true }),
-  buffs: new fields.SchemaField({
-    tarukaja: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
-    makakaja: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
-    rakukaja: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
-    sukukaja: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
-    tarunda: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
-    rakunda: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
-    sukunda: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
-  }),
-};
+const mods = new fields.SchemaField({
+  might: new fields.BooleanField(),
+});
 
 export default function baseSchemaFields() {
   return {
@@ -116,7 +131,10 @@ export default function baseSchemaFields() {
     ...bioData,
     awards,
     ...sheetData,
-    ...modifiers,
+    buffs,
+    mods,
+    hpMultiplier: new fields.NumberField({ integer: true, positive: true }),
+    mpMultiplier: new fields.NumberField({ integer: true, positive: true }),
     xp: new fields.NumberField({ integer: true, min: 0 }),
     macca: new fields.NumberField({ integer: true, min: 0 }),
     affinities: new fields.EmbeddedDataField(DefenseAffinityData),

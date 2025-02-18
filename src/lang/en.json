@@ -37,7 +37,8 @@
       "levelShort": "Lv",
       "statTotal": "Total",
       "tn": "TN",
-      "derivedTN": "Derived TN"
+      "derivedTN": "Derived TN",
+      "buffs": "Buffs"
     },
     "charClasses": {
       "fiend": "Fiend",
@@ -55,6 +56,18 @@
       "vi": "Vi",
       "ag": "Ag",
       "lu": "Lu"
+    },
+    "tn": {
+      "st": "St",
+      "ma": "Ma",
+      "vi": "Vi",
+      "ag": "Ag",
+      "lu": "Lu",
+      "physAtk": "Phys Atk",
+      "magAtk": "Mag Atk",
+      "save": "Save",
+      "dodge": "Dodge",
+      "negotiation": "Negotiation"
     },
     "derivedTN": {
       "st": "Phys Atk",
@@ -105,6 +118,12 @@
       "phys": "Phys Power",
       "mag": "Mag Power"
     },
+    "buffEffects": {
+      "tarukaja": "Phys Power",
+      "makakaja": "Mag Power",
+      "rakukaja": "Resist",
+      "sukukaja": "Acc/Dodge"
+    },
     "itemTypes": {
       "magatama": "Magatama",
       "skill": "Skill",
@@ -122,11 +141,15 @@
       "legs": "Legs"
     },
     "successLevel": {
-      "fail": "Fail",
+      "fail": "Failed",
       "success": "Success",
-      "crit": "Crit",
+      "crit": "Critical Success",
       "autofail": "Autofail",
       "fumble": "Fumble"
+    },
+    "diceOutput": {
+      "checkName": "{name} Check",
+      "tn": "TN: {tn}%"
     },
     "settings": {
       "invertShiftBehavior": {
@@ -145,6 +168,11 @@
         "name": "Auto Dodge",
         "hint": "Tokens targeted by an attack will automatically make a dodge roll unless they're immune. Speeds play, but you miss the chance to spend FP to boost your dodge TN."
       }
+    },
+    "error": {
+      "missingStatRollActor": "Missing actor in statRoll",
+      "missingHitRollTN": "Missing TN in statRoll",
+      "missingHitCardRoll": "Missing Roll in showHitCheckCard"
     }
   }
 }

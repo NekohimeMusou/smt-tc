@@ -26,32 +26,23 @@
         <div class="item-prop">{{localize (concat "SMT.statShort." @key)}}</div>
         {{!-- Base --}}
         {{!-- TODO: Add a button to toggle base stats being editable, or something --}}
-        <div class="item-prop"><input type="number" name="system.stats.{{@key}}.base" value="{{base}}" placeholder="0"
-            data-dtype="Number" /></div>
+        <div class="item-prop">
+          <input type="number" name="system.stats.{{@key}}.base" value="{{base}}" placeholder="0" data-dtype="Number" />
+        </div>
         {{!-- Magatama Mod --}}
-
-        {{!-- LV points --}}
+        {{!-- See above --}}
+        {{!-- Lv points --}}
         <div class="item-prop"><input type="number" name="system.stats.{{@key}}.lv" value="{{lv}}" placeholder="0"
             data-dtype="Number" />
         </div>
         {{!-- Total Stat --}}
         <div class="item-prop">{{value}}</div>
         {{!-- Stat TN --}}
-        {{!-- TODO: Link to dice roller --}}
-        <div class="item-prop roll-highlight roll-stat" data-tn-name="{{@key}}">{{lookup ../system.tn @key}}%</div>
+        <div class="item-prop roll-highlight hit-roll" data-tn-type="{{@key}}">{{lookup ../system.tn @key}}%</div>
         {{!-- Derived TN label --}}
         <div class="item-prop item-name flex2">{{localize (concat "SMT.derivedTN." @key)}}</div>
         {{!-- Derived TN --}}
-        <div class="item-prop roll-highlight roll-stat" {{#if (eq @key "st")}}data-tn-name="physAtk" {{/if}}
-          {{#if (eq @key "ma")}}data-tn-name="magAtk" {{/if}} {{#if (eq @key "vi")}}data-tn-name="save" {{/if}}
-          {{#if (eq @key "ag")}}data-tn-name="dodge" {{/if}} {{#if (eq @key "lu")}}data-tn-name="negotiation" {{/if}}>
-
-          {{#if (eq @key "st")}}{{../system.tn.st}}%{{/if}}
-          {{#if (eq @key "ma")}}{{../system.tn.ma}}%{{/if}}
-          {{#if (eq @key "vi")}}{{../system.tn.save}}%{{/if}}
-          {{#if (eq @key "ag")}}{{../system.tn.dodge}}%{{/if}}
-          {{#if (eq @key "lu")}}{{../system.tn.negotiation}}%{{/if}}
-        </div>
+        <div class="item-prop roll-highlight hit-roll" data-tn-type="{{derivedTN}}">{{lookup ../system.tn derivedTN}}%</div>
       </li>
       {{/each}}
     </ol>

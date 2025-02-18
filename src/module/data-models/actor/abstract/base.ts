@@ -51,8 +51,8 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
 
     const lv = data.lv;
 
-    data.resist.phys = Math.max((stats.vi.value + lv) / 2, 0);
-    data.resist.mag = Math.max((stats.ma.value + lv) / 2, 0);
+    data.resist.phys = Math.max(Math.floor((stats.vi.value + lv) / 2), 0);
+    data.resist.mag = Math.max(Math.floor((stats.ma.value + lv) / 2), 0);
 
     const addLevelToGunDamage = game.settings.get(
       "smt-tc",
@@ -81,8 +81,11 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
     });
 
     // Set derived TNs
-    data.tn.save = data.tn.vi;
-    data.tn.dodge = stats.ag.value + 10;
+    data.tn.physAtk = data.tn.st;
+    data.tn.magAtk = data.tn.ma;
+    data.tn.save = stats.vi.value * 5 + lv;
+    // This may change with automation
+    data.tn.dodge = stats.ag.value + 10 + tnBoostMod;
     data.tn.negotiation = stats.lu.value * 2 + 20;
 
     // Calculate HP/MP/FP max

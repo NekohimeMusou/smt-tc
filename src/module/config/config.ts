@@ -2,6 +2,7 @@ declare global {
   type CharacterClass = keyof typeof characterClasses;
   type ItemType = keyof typeof itemTypes;
   type SuccessLevel = keyof typeof successLevels;
+  type TargetNumber = keyof typeof tn;
 }
 
 const templatePaths: string[] = [
@@ -22,6 +23,7 @@ const templatePaths: string[] = [
   "systems/smt-tc/templates/parts/actor/stats.hbs",
   "systems/smt-tc/templates/parts/actor/derived-stats.hbs",
   "systems/smt-tc/templates/parts/actor/mods.hbs",
+  "systems/smt-tc/templates/parts/actor/buffs.hbs",
 
   // Bio data
   "systems/smt-tc/templates/parts/actor/alignment.hbs",
@@ -67,6 +69,19 @@ const affinityLevels = {
   drain: "SMT.affinityLevels.drain",
   repel: "SMT.affinityLevels.repel",
 } as const;
+
+const tn = {
+  st: "SMT.tn.st",
+  ma: "SMT.tn.ma",
+  vi: "SMT.tn.vi",
+  ag: "SMT.tn.ag",
+  lu: "SMT.tn.lu",
+  physAtk: "SMT.tn.physAtk",
+  magAtk: "SMT.tn.magAtk",
+  save: "SMT.tn.save",
+  dodge: "SMT.tn.dodge",
+  negotiation: "SMT.tn.negotiation",
+};
 
 const alignment = {
   law: "SMT.alignment.law",
@@ -115,6 +130,7 @@ export const SMT = {
   },
   defenseAffinities,
   affinityLevels,
+  tn,
   alignment,
   itemTypes,
   equipSlots,

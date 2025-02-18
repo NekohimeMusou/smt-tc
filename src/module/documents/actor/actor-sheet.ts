@@ -1,3 +1,5 @@
+import { showHitCheckCard } from "../../helpers/chat.js";
+import { hitCheck } from "../../helpers/dice.js";
 import {
   onManageActiveEffect,
   prepareActiveEffectCategories,
@@ -73,6 +75,12 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     html
       .find(".effect-control")
       .on("click", (ev) => onManageActiveEffect(ev, this.actor));
+
+    // Stat rolls
+    html.find(".hit-roll").on("click", this.#onHitRoll.bind(this));
+    html
+      .find(".adjust-sheet-mod")
+      .on("click", this.#onSheetModChange.bind(this));
   }
 
   /**
@@ -124,5 +132,76 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
 
     await item.delete();
     li.slideUp(200, () => this.render(false));
+  }
+
+  async #onHitRoll(event: JQuery.ClickEvent) {
+    event.preventDefault();
+    const target = $(event.currentTarget);
+    const actorData = this.actor.system;
+
+    const tnType = target.data("tnType") as TargetNumber | undefined;
+
+    if (!tnType) {
+      const msg = game.i18n.localize("SMT.error.missingHitRollTN");
+      throw new TypeError(msg);
+    }
+
+    const tnLabel = game.i18n.localize(`SMT.tn.${tnType}`);
+
+    const checkName = game.i18n.format("SMT.diceOutput.checkName", {
+      name: tnLabel,
+    });
+    const tn = actorData.tn[tnType];
+    const autoFailThreshold = actorData.autoFailThreshold;
+    const critBoost = tnType === "physAtk" && actorData.mods.might;
+
+    const { successLevel, roll } = await hitCheck({
+      tn,
+      autoFailThreshold,
+      critBoost,
+    });
+
+    // Show chat card
+    await showHitCheckCard({
+      actor: this.actor,
+      token: this.actor.token,
+      checkName,
+      tn,
+      successLevel,
+      roll,
+    });
+  }
+
+  async #onSheetModChange(event: JQuery.ClickEvent) {
+    event.preventDefault();
+
+    const { direction, field, min, max } = $(event.currentTarget).data() as {
+      direction: "+" | "-";
+      field: "multi" | "tnBoosts";
+      min: string | undefined;
+      max: string | undefined;
+    };
+
+    const increment = direction === "+" ? 1 : -1;
+
+    let newBonus = this.actor.system[field] + increment;
+
+    if (min != undefined) {
+      const minimum = parseInt(min) || 0;
+      if (newBonus < minimum) {
+        newBonus = minimum;
+      }
+    }
+
+    if (max != undefined) {
+      const maximum = parseInt(max) || 0;
+      if (newBonus > maximum) {
+        newBonus = maximum;
+      }
+    }
+
+    const data = Object.fromEntries([[`system.${field}`, newBonus]]);
+
+    await this.actor.update(data);
   }
 }
