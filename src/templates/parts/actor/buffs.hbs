@@ -1,0 +1,111 @@
+<section class="buffs">
+  <div class="items-list flexcol">
+    <ol class="stat-list">
+      <li class="item flexrow items-header">
+        <div class="flex2">{{localize "SMT.actorSheet.buffs"}}</div>
+        <div class="fas fa-plus"></div>
+        <div class="fas fa-minus"></div>
+      </li>
+
+      {{! Phys Power }}
+      <li class="item flexrow">
+        <div class="item-prop flex2">{{localize
+            "SMT.buffEffects.tarukaja"
+          }}</div>
+        <div class="item-prop">
+          <input
+            type="number"
+            name="system.buffs.tarukaja"
+            value="{{system.buffs.tarukaja}}"
+            placeholder="0"
+            data-dtype="Number"
+          />
+        </div>
+        <div class="item-prop">
+          <input
+            type="number"
+            name="system.buffs.tarunda"
+            value="{{system.buffs.tarunda}}"
+            placeholder="0"
+            data-dtype="Number"
+          />
+        </div>
+      </li>
+
+      {{! Mag Power }}
+      <li class="item flexrow">
+        <div class="item-prop flex2">{{localize
+            "SMT.buffEffects.makakaja"
+          }}</div>
+        <div class="item-prop">
+          <input
+            type="number"
+            name="system.buffs.makakaja"
+            value="{{system.buffs.makakaja}}"
+            placeholder="0"
+            data-dtype="Number"
+          />
+        </div>
+        <div class="item-prop">
+          <input
+            type="number"
+            value="{{system.buffs.tarunda}}"
+            placeholder="0"
+            data-dtype="Number"
+            disabled
+          />
+        </div>
+      </li>
+
+      {{! Resists }}
+      <li class="item flexrow">
+        <div class="item-prop flex2">{{localize
+            "SMT.buffEffects.rakukaja"
+          }}</div>
+        <div class="item-prop">
+          <input
+            type="number"
+            name="system.buffs.rakukaja"
+            value="{{system.buffs.rakukaja}}"
+            placeholder="0"
+            data-dtype="Number"
+          />
+        </div>
+        <div class="item-prop">
+          <input
+            type="number"
+            name="system.buffs.rakunda"
+            value="{{system.buffs.rakunda}}"
+            placeholder="0"
+            data-dtype="Number"
+          />
+        </div>
+      </li>
+
+      {{! Accuracy/Dodge }}
+      <li class="item flexrow">
+        <div class="item-prop flex2">{{localize
+            "SMT.buffEffects.sukukaja"
+          }}</div>
+        <div class="item-prop">
+          <input
+            type="number"
+            name="system.buffs.sukukaja"
+            value="{{system.buffs.sukukaja}}"
+            placeholder="0"
+            data-dtype="Number"
+          />
+        </div>
+        <div class="item-prop">
+          <input
+            type="number"
+            name="system.buffs.sukunda"
+            value="{{system.buffs.sukunda}}"
+            placeholder="0"
+            data-dtype="Number"
+          />
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>

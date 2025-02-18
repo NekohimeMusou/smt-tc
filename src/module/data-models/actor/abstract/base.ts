@@ -80,13 +80,27 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
       data.tn[statName] = Math.max(Math.floor(tn / data.multi), 1);
     });
 
+    const accuracyBuff = data.buffs.sukukaja - data.buffs.sukunda;
+
     // Set derived TNs
     data.tn.physAtk = data.tn.st;
     data.tn.magAtk = data.tn.ma;
     data.tn.save = stats.vi.value * 5 + lv;
     // This may change with automation
-    data.tn.dodge = stats.ag.value + 10 + tnBoostMod;
+    data.tn.dodge = stats.ag.value + 10 + tnBoostMod + accuracyBuff;
     data.tn.negotiation = stats.lu.value * 2 + 20;
+
+    // Apply buff modifiers
+    const physAtkBuff = data.buffs.tarukaja - data.buffs.tarunda;
+    const magAtkBuff = data.buffs.makakaja - data.buffs.tarunda;
+    const resistBuff = data.buffs.rakukaja - data.buffs.rakunda;
+
+    data.power.phys = Math.max(data.power.phys + physAtkBuff, 0);
+    data.power.gun = Math.max(data.power.gun + physAtkBuff, 0);
+    data.power.mag = Math.max(data.power.mag + magAtkBuff, 0);
+
+    data.resist.phys = Math.max(data.resist.phys + resistBuff, 0);
+    data.resist.mag = Math.max(data.resist.mag + resistBuff, 0);
 
     // Calculate HP/MP/FP max
     data.hp.max = Math.max((stats.vi.value + lv) * data.hpMultiplier, 1);
