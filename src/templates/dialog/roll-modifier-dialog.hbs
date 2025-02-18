@@ -1,0 +1,19 @@
+<form class="flexcol">
+  <div class="align-center">
+    {{name}}
+  </div>
+
+  <div>
+    <input
+      type="number"
+      name="mod"
+      data-dtype="Number"
+      placeholder="0"
+      autofocus
+    />
+  </div>
+
+  {{#if hint}}
+    <p>{{hint}}</p>
+  {{/if}}
+</form>

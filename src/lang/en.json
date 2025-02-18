@@ -151,6 +151,9 @@
       "checkName": "{name} Check",
       "tn": "TN: {tn}%"
     },
+    "dialog": {
+      "hitRollHint": "Modifiers apply to the TN, not the roll total."
+    },
     "settings": {
       "invertShiftBehavior": {
         "name": "Invert Shift Behavior",

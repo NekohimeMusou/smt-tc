@@ -1,4 +1,5 @@
 import { showHitCheckCard, showPowerRollCard } from "../../helpers/chat.js";
+import { showRollModifierDialog } from "../../helpers/dialog.js";
 import { hitCheck, powerRoll } from "../../helpers/dice.js";
 import {
   onManageActiveEffect,
@@ -152,9 +153,26 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     const checkName = game.i18n.format("SMT.diceOutput.checkName", {
       name: tnLabel,
     });
-    const tn = actorData.tn[tnType];
+    let tn = actorData.tn[tnType];
     const autoFailThreshold = actorData.autoFailThreshold;
     const critBoost = tnType === "physAtk" && actorData.mods.might;
+
+    const showDialog =
+      event.shiftKey != game.settings.get("smt-tc", "invertShiftBehavior");
+
+    if (showDialog) {
+      const hint = game.i18n.localize("SMT.dialog.hitRollHint");
+      const { mod, cancelled } = await showRollModifierDialog({
+        name: checkName,
+        hint,
+      });
+
+      if (cancelled) {
+        return;
+      }
+
+      tn += mod ?? 0;
+    }
 
     const { successLevel, roll } = await hitCheck({
       tn,
@@ -187,8 +205,23 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
 
     const actorData = this.actor.system;
 
-    const basePower = actorData.power[powerType];
+    let basePower = actorData.power[powerType];
     const powerBoost = actorData.powerBoost[powerType];
+
+    const name = game.i18n.localize(`SMT.power.${powerType}`);
+
+    const showDialog =
+      event.shiftKey != game.settings.get("smt-tc", "invertShiftBehavior");
+
+    if (showDialog) {
+      const { mod, cancelled } = await showRollModifierDialog({ name });
+
+      if (cancelled) {
+        return;
+      }
+
+      basePower += mod ?? 0;
+    }
 
     const { power, roll } = await powerRoll({ basePower, powerBoost });
 
@@ -197,7 +230,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       actor: this.actor,
       token: this.actor.token,
       power,
-      powerType,
+      name,
       roll,
     });
   }

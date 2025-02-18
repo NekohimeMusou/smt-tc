@@ -53,7 +53,7 @@ interface PowerRollCardData {
   actor?: SmtActor;
   token?: SmtTokenDocument;
   power?: number;
-  powerType?: PowerType;
+  name?: string;
   roll?: Roll;
 }
 
@@ -61,7 +61,7 @@ export async function showPowerRollCard({
   actor,
   token,
   power = 0,
-  powerType = "phys",
+  name = "Power",
   roll,
 }: PowerRollCardData = {}) {
   if (!roll) {
@@ -72,8 +72,8 @@ export async function showPowerRollCard({
   }
 
   const context = {
+    name,
     power,
-    powerType,
     roll: await roll.render(),
   };
 
