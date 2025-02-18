@@ -96,6 +96,7 @@ const alignment = {
 const powerTypes = {
   phys: "SMT.powerTypes.phys",
   mag: "SMT.powerTypes.mag",
+  gun: "SMT.powerTypes.gun",
 };
 
 const itemTypes = {

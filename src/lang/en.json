@@ -116,7 +116,8 @@
     },
     "power": {
       "phys": "Phys Power",
-      "mag": "Mag Power"
+      "mag": "Mag Power",
+      "gun": "Gun Power"
     },
     "buffEffects": {
       "tarukaja": "Phys Power",

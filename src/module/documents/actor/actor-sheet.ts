@@ -206,7 +206,8 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     const actorData = this.actor.system;
 
     let basePower = actorData.power[powerType];
-    const powerBoost = actorData.powerBoost[powerType];
+    const boostType = powerType === "gun" ? "phys" : powerType;
+    const powerBoost = actorData.powerBoost[boostType];
 
     const name = game.i18n.localize(`SMT.power.${powerType}`);
 

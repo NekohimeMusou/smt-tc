@@ -19,15 +19,15 @@ export default function registerSystemSettings() {
   //   type: Boolean,
   //   default: true,
   // // });
-  // game.settings.register("smt-tc", "addLevelToGunDamage", {
-  //   name: "SMT.settings.addLevelToGunDamage.name",
-  //   hint: "SMT.settings.addLevelToGunDamage.hint",
-  //   scope: "world",
-  //   config: true,
-  //   requiresReload: false,
-  //   type: Boolean,
-  //   default: false,
-  // });
+  game.settings.register("smt-tc", "addLevelToGunDamage", {
+    name: "SMT.settings.addLevelToGunDamage.name",
+    hint: "SMT.settings.addLevelToGunDamage.hint",
+    scope: "world",
+    config: true,
+    requiresReload: false,
+    type: Boolean,
+    default: false,
+  });
   // game.settings.register("smt-tc", "enablePierce", {
   //   name: "SMT.settings.enablePierce.name",
   //   hint: "SMT.settings.enablePierce.hint",
