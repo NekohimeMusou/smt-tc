@@ -121,6 +121,13 @@
       "torso": "Torso",
       "legs": "Legs"
     },
+    "successLevel": {
+      "fail": "Fail",
+      "success": "Success",
+      "crit": "Crit",
+      "autofail": "Autofail",
+      "fumble": "Fumble"
+    },
     "settings": {
       "invertShiftBehavior": {
         "name": "Invert Shift Behavior",

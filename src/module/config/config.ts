@@ -1,6 +1,7 @@
 declare global {
   type CharacterClass = keyof typeof characterClasses;
   type ItemType = keyof typeof itemTypes;
+  type SuccessLevel = keyof typeof successLevels;
 }
 
 const templatePaths: string[] = [
@@ -94,6 +95,16 @@ const equipSlots = {
   legs: "SMT.equipSlots.legs",
 } as const;
 
+const successLevels = {
+  fail: "SMT.successLevel.fail",
+  success: "SMT.successLevel.success",
+  crit: "SMT.successLevel.crit",
+  autofail: "SMT.successLevel.autofail",
+  fumble: "SMT.successLevel.fumble",
+};
+
+const defaultAutofailThreshold = 96;
+
 export const SMT = {
   templatePaths,
   characterClasses,
@@ -107,4 +118,6 @@ export const SMT = {
   alignment,
   itemTypes,
   equipSlots,
+  successLevels,
+  defaultAutofailThreshold,
 } as const;
