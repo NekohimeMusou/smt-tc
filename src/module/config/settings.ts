@@ -24,7 +24,7 @@ export default function registerSystemSettings() {
     hint: "SMT.settings.addLevelToGunDamage.hint",
     scope: "world",
     config: true,
-    requiresReload: false,
+    requiresReload: true,
     type: Boolean,
     default: false,
   });
