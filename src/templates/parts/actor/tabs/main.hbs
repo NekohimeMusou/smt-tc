@@ -1,5 +1,14 @@
 <section class="flexcol">
-  {{!-- Put demon personality pane here --}}
+  {{#if system.personality}}
+  <div class="items-list">
+    <ol class="stat-list">
+      <li class="item flexrow">
+        <div class="item-prop">{{localize "SMT.bio.personality"}}</div>
+        <input class="flex3" type="text" value="{{system.personality}}" placeholder="N/A" data-dtype="String" disabled />
+      </li>
+    </ol>
+  </div>
+  {{/if}}
   <div class="flexrow">
     <div class="flexcol flex3">
       {{> "systems/smt-tc/templates/parts/shared/affinities.hbs"}}
