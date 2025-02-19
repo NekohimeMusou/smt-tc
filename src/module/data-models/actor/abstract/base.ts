@@ -36,9 +36,9 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
     const data = this._systemData;
 
     // @ts-expect-error This isn't readonly
-    data.hpMultiplier = 6;
+    data.hpMultiplier = Math.max(data.hpMultiplier, 1);
     // @ts-expect-error This isn't readonly
-    data.mpMultiplier = 4;
+    data.mpMultiplier = Math.max(data.mpMultiplier, 1);
 
     // Calculate stat values
     const stats = data.stats;

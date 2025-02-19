@@ -24,6 +24,8 @@
       "notes": "Notes"
     },
     "actorSheet": {
+      "hpMult": "HP Mult",
+      "mpMult": "MP Mult",
       "alignment": "Alignment",
       "awards": "Awards",
       "derivedStats": "Derived Stats",

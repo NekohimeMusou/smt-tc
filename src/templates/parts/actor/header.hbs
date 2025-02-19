@@ -6,7 +6,19 @@
     </h1>
 
     <div class="flexrow flex-group-center">
-      <div class="resource-label">{{localize (concat "SMT.charClasses." actor.type)}}</div>
+      <div class="flexcol">
+        <div class="flexrow">
+          <label for="hpMult-field" class="resource-label">{{localize "SMT.actorSheet.hpMult"}}</label>
+          <input type="number" id="hpMult-field" name="system.hpMultiplier" placeholder="1" value="{{system.hpMultiplier}}"
+            data-dtype="Number" />
+        </div>
+      
+        <div class="flexrow">
+          <label for="mpMult-field" class="resource-label">{{localize "SMT.actorSheet.mpMult"}}</label>
+          <input type="number" id="mpMult-field" name="system.mpMultiplier" placeholder="1" value="{{system.mpMultiplier}}"
+            data-dtype="Number" />
+        </div>
+      </div>
 
       <div class="flexrow">
         <label for="level" class="resource-label">{{localize "SMT.actorSheet.level"}}</label>
