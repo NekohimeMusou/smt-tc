@@ -7,7 +7,7 @@
     {{!-- Default tab is defined in actor-sheet.ts --}}
     <a class="item resource-label" data-tab="main">{{localize "SMT.tabs.main"}}</a>
     {{!-- <a class="item resource-label" data-tab="inventory">{{localize "SMT.tabs.inventory"}}</a> --}}
-    {{!-- <a class="item resource-label" data-tab="bio">{{localize "SMT.tabs.bio"}}</a> --}}
+    <a class="item resource-label" data-tab="bio">{{localize "SMT.tabs.bio"}}</a>
     <a class="item resource-label" data-tab="notes">{{localize "SMT.tabs.notes"}}</a>
   </nav>
 
@@ -24,9 +24,9 @@
     {{!-- </div> --}}
 
     {{!-- Bio Tab --}}
-    {{!-- <div class="tab bio" data-group="primary" data-tab="bio"> --}}
-      {{!-- {{> "systems/smt-tc/templates/parts/actor/tabs/bio.hbs"}} --}}
-    {{!-- </div> --}}
+    <div class="tab bio" data-group="primary" data-tab="bio">
+      {{> "systems/smt-tc/templates/parts/actor/tabs/bio.hbs"}}
+    </div>
 
     {{!-- Notes Tab --}}
     <div class="tab notes" data-group="primary" data-tab="notes">

@@ -29,6 +29,8 @@ const templatePaths: string[] = [
   // Bio data
   "systems/smt-tc/templates/parts/actor/alignment.hbs",
   "systems/smt-tc/templates/parts/actor/awards.hbs",
+  "systems/smt-tc/templates/parts/actor/background.hbs",
+  "systems/smt-tc/templates/parts/actor/demon.hbs",
 
   // Inventory
   "systems/smt-tc/templates/parts/actor/magatama-list.hbs",

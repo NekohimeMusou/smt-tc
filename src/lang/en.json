@@ -20,6 +20,7 @@
     },
     "tabs": {
       "main": "Main",
+      "bio": "Bio",
       "notes": "Notes"
     },
     "actorSheet": {
@@ -39,6 +40,16 @@
       "tn": "TN",
       "derivedTN": "Derived TN",
       "buffs": "Buffs"
+    },
+    "bio": {
+      "background": "Background",
+      "contact": "Contact",
+      "bond": "Bond",
+      "goal": "Goal",
+      "demonInfo": "Demon Info",
+      "personality": "Personality",
+      "inheritType": "Inherit Type",
+      "evolvePath": "Evolve Path"
     },
     "charClasses": {
       "fiend": "Fiend",
