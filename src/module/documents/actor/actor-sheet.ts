@@ -158,7 +158,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     const critBoost = tnType === "physAtk" && actorData.mods.might;
 
     const showDialog =
-      event.shiftKey != game.settings.get("smt-tc", "invertShiftBehavior");
+      event.shiftKey != game.settings.get("smt-tc", "invertHitModDialog");
 
     if (showDialog) {
       const hint = game.i18n.localize("SMT.dialog.hitRollHint");
@@ -211,8 +211,9 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
 
     const name = game.i18n.localize(`SMT.power.${powerType}`);
 
-    const showDialog =
-      event.shiftKey != game.settings.get("smt-tc", "invertShiftBehavior");
+    const showDialog = !(
+      event.shiftKey != game.settings.get("smt-tc", "invertPotencyDialog")
+    );
 
     if (showDialog) {
       const { mod, cancelled } = await showRollModifierDialog({ name });

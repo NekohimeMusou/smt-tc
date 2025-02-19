@@ -1,7 +1,16 @@
 export default function registerSystemSettings() {
-  game.settings.register("smt-tc", "invertShiftBehavior", {
-    name: "SMT.settings.invertShiftBehavior.name",
-    hint: "SMT.settings.invertShiftBehavior.hint",
+  game.settings.register("smt-tc", "invertHitModDialog", {
+    name: "SMT.settings.invertHitModDialog.name",
+    hint: "SMT.settings.invertHitModDialog.hint",
+    scope: "client",
+    config: true,
+    requiresReload: false,
+    type: Boolean,
+    default: false,
+  });
+  game.settings.register("smt-tc", "invertPotencyDialog", {
+    name: "SMT.settings.invertPotencyDialog.name",
+    hint: "SMT.settings.invertPotencyDialog.hint",
     scope: "client",
     config: true,
     requiresReload: false,
