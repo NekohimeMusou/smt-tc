@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.3] - 2025-02-19
+
+### Added
+
+- Add status effects
+- Add behavior display to main actor sheet tab
+
+### Changed
+
+- Change Personality field name to Behavior
+- Make roll dialog options more granular
+
 ## [0.1.2] - 2025-02-19
 
 ### Added
@@ -25,6 +37,7 @@
 
 _Initial preview release._
 
+[0.1.3]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.1.3
 [0.1.2]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.1.2
 [0.1.1]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.1.1
 [0.1.0]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.1.0
