@@ -123,6 +123,34 @@
       "drain": "Drain",
       "repel": "Repel"
     },
+    "ailments": {
+      "dead": "Dead",
+      "stone": "Stone",
+      "flied": "Fly",
+      "stun": "Stunned",
+      "charm": "Charmed",
+      "poison": "Poisoned",
+      "mute": "Mute",
+      "restrain": "Restrained",
+      "freeze": "Frozen",
+      "sleep": "Asleep",
+      "panic": "Panicked",
+      "shock": "Shocked",
+      "curse": "Cursed"
+    },
+    "buffs": {
+      "tarukaja": "Tarukaja",
+      "makakaja": "Makakaja",
+      "rakukaja": "Rakukaja",
+      "sukukaja": "Sukukaja",
+      "tarunda": "Tarunda",
+      "rakunda": "Rakunda",
+      "sukunda": "Sukunda"
+    },
+    "statusEffects": {
+      "defending": "Defending",
+      "focused": "Focused"
+    },
     "resist": {
       "phys": "Phys Resist",
       "mag": "Mag Resist"
