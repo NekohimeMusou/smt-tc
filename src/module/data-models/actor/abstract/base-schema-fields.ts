@@ -89,7 +89,7 @@ const bioData = {
     neutral: new fields.NumberField({ integer: true, min: 0 }),
     heeHo: new fields.NumberField({ integer: true, min: 0 }),
   }),
-  personality: new fields.StringField(),
+  behavior: new fields.StringField(),
 };
 
 const awards = new fields.SchemaField({
