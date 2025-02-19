@@ -76,8 +76,8 @@
       "vi": "Vi",
       "ag": "Ag",
       "lu": "Lu",
-      "physAtk": "Phys Atk",
-      "magAtk": "Mag Atk",
+      "phys": "Phys Atk",
+      "mag": "Mag Atk",
       "save": "Save",
       "dodge": "Dodge",
       "negotiation": "Negotiation"
@@ -191,10 +191,18 @@
     },
     "diceOutput": {
       "checkName": "{name} Check",
-      "tn": "TN: {tn}%"
+      "tn": "TN: {tn}%",
+      "power": "Power: {power}"
     },
     "dialog": {
-      "hitRollHint": "Modifiers apply to the TN, not the roll total."
+      "hitRollHint": "Modifiers apply to the TN, not the roll total.",
+      "tnMod": "TN Mod",
+      "potency": "Potency"
+    },
+    "attackType": {
+      "phys": "Phys Attack",
+      "mag": "Mag Attack",
+      "gun": "Gun Attack"
     },
     "settings": {
       "invertHitModDialog": {
@@ -221,7 +229,8 @@
     "error": {
       "missingHitRollTN": "Missing TN in hitRoll",
       "missingCardRoll": "Missing Roll for chat card in: {function}",
-      "missingPowerType": "Missing powerType in #onPowerRoll"
+      "missingPowerType": "Missing powerType in #onPowerRoll",
+      "missingAttackType": "Missing attack type in #onAttackRoll"
     }
   }
 }

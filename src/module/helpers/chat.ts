@@ -94,3 +94,57 @@ export async function showPowerRollCard({
 
   return await ChatMessage.create(chatData);
 }
+
+interface AttackRollCardData {
+  actor?: SmtActor;
+  token?: SmtTokenDocument;
+  attackName?: string;
+  tn?: number;
+  successLevel?: SuccessLevel;
+  hitRoll?: Roll;
+  powerRoll?: Roll;
+  power?: number;
+}
+
+export async function showAttackRollCard({
+  actor,
+  token,
+  attackName,
+  tn,
+  successLevel,
+  hitRoll,
+  powerRoll,
+  power,
+}: AttackRollCardData = {}) {
+  if (!hitRoll) {
+    const msg = game.i18n.format("SMT.error.missingCardRoll", {
+      function: "showAttackRollCard",
+    });
+    throw new TypeError(msg);
+  }
+
+  const context = {
+    attackName,
+    tn,
+    successLevel,
+    hitRoll: await hitRoll.render(),
+    powerRoll: (await powerRoll?.render()) ?? null,
+    power,
+  };
+
+  const template = "systems/smt-tc/templates/chat/attack-roll-card.hbs";
+  const content = await renderTemplate(template, context);
+
+  const chatData = {
+    user: game.user.id,
+    content,
+    speaker: {
+      scene: game.scenes.current,
+      actor,
+      token,
+    },
+    rolls: [hitRoll, powerRoll],
+  };
+
+  return await ChatMessage.create(chatData);
+}

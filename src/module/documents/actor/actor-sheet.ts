@@ -1,11 +1,20 @@
-import { showHitCheckCard, showPowerRollCard } from "../../helpers/chat.js";
-import { showRollModifierDialog } from "../../helpers/dialog.js";
-import { hitCheck, powerRoll } from "../../helpers/dice.js";
+import {
+  showAttackRollCard,
+  showHitCheckCard,
+  showPowerRollCard,
+} from "../../helpers/chat.js";
+import {
+  showAttackModifierDialog,
+  showRollModifierDialog,
+} from "../../helpers/dialog.js";
+import { SmtDice } from "../../helpers/dice.js";
 import {
   onManageActiveEffect,
   prepareActiveEffectCategories,
 } from "../active-effect.js";
 import { SmtActor } from "./actor.js";
+
+type AttackType = "phys" | "mag" | "gun";
 
 export default class SmtActorSheet extends ActorSheet<SmtActor> {
   static override get defaultOptions() {
@@ -83,6 +92,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     html
       .find(".adjust-sheet-mod")
       .on("click", this.#onSheetModChange.bind(this));
+    html.find(".attack-roll").on("click", this.#onAttackRoll.bind(this));
   }
 
   /**
@@ -155,7 +165,6 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     });
     let tn = actorData.tn[tnType];
     const autoFailThreshold = actorData.autoFailThreshold;
-    const critBoost = tnType === "physAtk" && actorData.mods.might;
 
     const showDialog =
       event.shiftKey != game.settings.get("smt-tc", "invertHitModDialog");
@@ -174,10 +183,9 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       tn += mod ?? 0;
     }
 
-    const { successLevel, roll } = await hitCheck({
+    const { successLevel, roll } = await SmtDice.hitCheck({
       tn,
       autoFailThreshold,
-      critBoost,
     });
 
     // Show chat card
@@ -225,7 +233,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       basePower += mod ?? 0;
     }
 
-    const { power, roll } = await powerRoll({ basePower, powerBoost });
+    const { power, roll } = await SmtDice.powerRoll({ basePower, powerBoost });
 
     // Show chat card
     await showPowerRollCard({
@@ -234,6 +242,69 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       power,
       name,
       roll,
+    });
+  }
+
+  async #onAttackRoll(event: JQuery.ClickEvent) {
+    event.preventDefault();
+    const target = $(event.currentTarget);
+
+    const attackType = target.data("attackType") as AttackType | undefined;
+
+    if (!attackType) {
+      const msg = game.i18n.localize("SMT.error.missingAttackType");
+      throw new TypeError(msg);
+    }
+
+    const attackName = game.i18n.localize(`SMT.attackType.${attackType}`);
+
+    const { tnMod, potency, cancelled } =
+      await showAttackModifierDialog(attackName);
+
+    if (cancelled) {
+      return;
+    }
+
+    const actorData = this.actor.system;
+
+    const tnType = attackType === "gun" ? "ag" : attackType;
+    const tn = actorData.tn[tnType] + (tnMod ?? 0);
+    const autoFailThreshold = actorData.autoFailThreshold;
+    const critBoost = attackType !== "mag" && actorData.mods.might;
+
+    const { successLevel, roll: hitRoll } = await SmtDice.hitCheck({
+      tn,
+      autoFailThreshold,
+      critBoost,
+    });
+
+    let powerRoll: Roll | undefined;
+    let power = 0;
+
+    if (["success", "crit", "fumble"].includes(successLevel)) {
+      // Roll power on a hit, crit, or fumble
+      const basePower = actorData.power[attackType] + (potency ?? 0);
+      const boostType = attackType === "gun" ? "phys" : attackType;
+      const powerBoost = actorData.powerBoost[boostType];
+      const criticalHit = successLevel === "crit";
+
+      ({ power, roll: powerRoll } = await SmtDice.powerRoll({
+        basePower,
+        powerBoost,
+        criticalHit,
+      }));
+    }
+
+    // Show chat card
+    await showAttackRollCard({
+      actor: this.actor,
+      token: this.actor.token,
+      attackName,
+      tn,
+      successLevel,
+      hitRoll,
+      powerRoll,
+      power,
     });
   }
 

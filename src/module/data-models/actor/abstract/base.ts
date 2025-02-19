@@ -83,8 +83,8 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
     const accuracyBuff = data.buffs.sukukaja - data.buffs.sukunda;
 
     // Set derived TNs
-    data.tn.physAtk = data.tn.st;
-    data.tn.magAtk = data.tn.ma;
+    data.tn.phys = data.tn.st;
+    data.tn.mag = data.tn.ma;
     data.tn.save = stats.vi.value * 5 + lv;
     // This may change with automation
     data.tn.dodge = stats.ag.value + 10 + tnBoostMod + accuracyBuff;
