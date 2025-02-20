@@ -5,11 +5,11 @@ const fields = foundry.data.fields;
 const stats = new fields.SchemaField({
   st: new fields.SchemaField({
     ...generateStatSchema(),
-    derivedTN: new fields.StringField({ initial: "physAtk" }),
+    derivedTN: new fields.StringField({ initial: "phys" }),
   }),
   ma: new fields.SchemaField({
     ...generateStatSchema(),
-    derivedTN: new fields.StringField({ initial: "magAtk" }),
+    derivedTN: new fields.StringField({ initial: "mag" }),
   }),
   vi: new fields.SchemaField({
     ...generateStatSchema(),
@@ -57,8 +57,8 @@ const tn = new fields.SchemaField({
   vi: new fields.NumberField({ integer: true }),
   ag: new fields.NumberField({ integer: true }),
   lu: new fields.NumberField({ integer: true }),
-  physAtk: new fields.NumberField({ integer: true }),
-  magAtk: new fields.NumberField({ integer: true }),
+  phys: new fields.NumberField({ integer: true }),
+  mag: new fields.NumberField({ integer: true }),
   save: new fields.NumberField({ integer: true }),
   dodge: new fields.NumberField({ integer: true }),
   negotiation: new fields.NumberField({ integer: true }),

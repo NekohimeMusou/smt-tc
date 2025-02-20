@@ -42,7 +42,15 @@
         {{!-- Derived TN label --}}
         <div class="item-prop item-name flex2">{{localize (concat "SMT.derivedTN." @key)}}</div>
         {{!-- Derived TN --}}
+        {{#if (eq @key "st")}}
+        <div class="item-prop roll-highlight attack-roll" data-attack-type="phys">{{../system.tn.phys}}%</div>
+        {{else}}
+        {{#if (eq @key "ma")}}
+        <div class="item-prop roll-highlight attack-roll" data-attack-type="mag">{{../system.tn.mag}}%</div>
+        {{else}}
         <div class="item-prop roll-highlight hit-roll" data-tn-type="{{derivedTN}}">{{lookup ../system.tn derivedTN}}%</div>
+        {{/if}}
+        {{/if}}
       </li>
       {{/each}}
     </ol>
