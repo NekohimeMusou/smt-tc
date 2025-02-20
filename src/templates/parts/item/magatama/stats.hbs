@@ -1,0 +1,27 @@
+<section class="stats">
+  <div class="items-list">
+    <ol class="stat-list">
+      <li class="item flexrow items-header flex-group-center">
+        {{localize "SMT.actorSheet.stats"}}
+      </li>
+      <li class="item flexrow">
+        {{#each system.stats}}
+          <label for="mgt-{{@key}}-field" class="item-prop">{{localize
+              (concat "SMT.statShort." @key)
+            }}</label>
+
+          <div class="item-prop">
+            <input
+              type="number"
+              id="mgt-{{@key}}-field"
+              name="system.stats.{{@key}}"
+              value="{{this}}"
+              placeholder="0"
+              data-dtype="Number"
+            />
+          </div>
+        {{/each}}
+      </li>
+    </ol>
+  </div>
+</section>

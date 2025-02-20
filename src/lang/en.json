@@ -41,7 +41,8 @@
       "statTotal": "Total",
       "tn": "TN",
       "derivedTN": "Derived TN",
-      "buffs": "Buffs"
+      "buffs": "Buffs",
+      "affinities": "Affinities"
     },
     "bio": {
       "background": "Background",

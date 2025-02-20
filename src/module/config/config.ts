@@ -36,6 +36,14 @@ const templatePaths: string[] = [
   "systems/smt-tc/templates/parts/actor/magatama-list.hbs",
 
   "systems/smt-tc/templates/parts/shared/affinities.hbs",
+
+  // Item sheet tabs
+  "systems/smt-tc/templates/parts/item/magatama/tabs/main.hbs",
+
+  // Item sheet panes
+  "systems/smt-tc/templates/parts/item/header.hbs",
+  "systems/smt-tc/templates/parts/item/magatama/stats.hbs",
+  "systems/smt-tc/templates/parts/item/magatama/affinities.hbs",
 ] as const;
 
 const characterClasses = {
