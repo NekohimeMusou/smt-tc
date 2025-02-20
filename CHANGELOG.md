@@ -8,14 +8,16 @@ _Added separate Human and Demon actor types with some custom behavior, and added
 
 ### Added
 
-- Add magatama item type
-- Add demon and human actor types
+- Separate actor types for humans and demons
+- Display demon's favored stat on the sheet
+- Add magatama item type for Fiends
+- Show stat point difference on sheet
+- Add actor sheet field for demon base level
 
 ### Changed
 
-- Determine Fiend affinities by magatama
-- Include magatama stats in Fiend totals
-- Determine HP and MP multipliers by class
+- Only show demon-exclusive info on demon sheets
+- Fiends now inherit affinities and stat bonuses from their equipped magatama
 
 ## [0.1.4] - 2025-02-20
 

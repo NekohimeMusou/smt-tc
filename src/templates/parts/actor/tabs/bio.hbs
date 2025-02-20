@@ -1,6 +1,8 @@
 <section class="flexcol">
   {{> "systems/smt-tc/templates/parts/actor/alignment.hbs"}}
   {{> "systems/smt-tc/templates/parts/actor/background.hbs"}}
+  {{#if (eq actor.type "demon")}}
   {{> "systems/smt-tc/templates/parts/actor/demon.hbs"}}
+  {{/if}}
   {{> "systems/smt-tc/templates/parts/actor/awards.hbs"}}
 </section>

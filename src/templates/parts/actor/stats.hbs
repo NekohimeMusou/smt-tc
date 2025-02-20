@@ -25,11 +25,15 @@
       {{#each system.stats}}
       <li class="item flexrow">
         {{!-- Stat Name --}}
+        {{#if (eq @key ../system.favoredStat)}}
+        <div class="item-prop">*{{localize (concat "SMT.statShort." @key)}}*</div>
+        {{else}}
         <div class="item-prop">{{localize (concat "SMT.statShort." @key)}}</div>
+        {{/if}}
         {{!-- Base --}}
         {{!-- TODO: Add a button to toggle base stats being editable, or something --}}
         <div class="item-prop">
-          <input type="number" name="system.stats.{{@key}}.base" value="{{base}}" placeholder="0" data-dtype="Number" />
+          <input type="number" name="system.stats.{{@key}}.base" value="{{base}}" placeholder="0" data-dtype="Number" {{ifThen (eq ../actor.type "fiend") "disabled" ""}}/>
         </div>
         {{!-- Magatama Mod --}}
         {{#if (eq ../actor.type "fiend")}}

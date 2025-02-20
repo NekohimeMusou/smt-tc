@@ -66,6 +66,14 @@ const stats = {
   lu: "SMT.statShort.lu",
 } as const;
 
+const statsFull = {
+  st: "SMT.statFull.st",
+  ma: "SMT.statFull.ma",
+  vi: "SMT.statFull.vi",
+  ag: "SMT.statFull.ag",
+  lu: "SMT.statFull.lu",
+} as const;
+
 const defenseAffinities = {
   phys: "SMT.affinities.phys",
   fire: "SMT.affinities.fire",
@@ -154,6 +162,7 @@ export const SMT = {
     human: humanLevelTable,
   },
   stats,
+  statsFull,
   defenseAffinities,
   affinityLevels,
   tn,

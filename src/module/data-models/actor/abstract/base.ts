@@ -196,6 +196,10 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
     const stats = data.stats;
 
     for (const [key, stat] of Object.entries(stats)) {
+      // Fiends always have 2 for their base stats
+      if (actor.type === "fiend") {
+        stat.base = 2;
+      }
       const statName = key as keyof typeof data.stats;
       const mgt = data.equippedMagatama?.system.stats[statName] ?? 0;
       stat.value = Math.max(stat.base + stat.lv + mgt, 1);

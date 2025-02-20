@@ -60,7 +60,8 @@
       "demonInfo": "Demon Info",
       "behavior": "Behavior",
       "inheritType": "Inherit Type",
-      "evolvePath": "Evolve Path"
+      "evolvePath": "Evolve Path",
+      "favoredStat": "Favored Stat"
     },
     "charClasses": {
       "fiend": "Fiend",
@@ -78,6 +79,13 @@
       "vi": "Vi",
       "ag": "Ag",
       "lu": "Lu"
+    },
+    "statFull": {
+      "st": "Strength",
+      "ma": "Magic",
+      "vi": "Vitality",
+      "ag": "Agility",
+      "lu": "Luck"
     },
     "tn": {
       "st": "St",

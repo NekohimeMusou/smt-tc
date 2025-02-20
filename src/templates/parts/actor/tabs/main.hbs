@@ -1,10 +1,16 @@
 <section class="flexcol">
-  {{#if system.behavior}}
+  {{#if (or system.behavior equippedMagatama)}}
   <div class="items-list">
     <ol class="stat-list">
       <li class="item flexrow">
+        {{#if system.behavior}}
         <div class="item-prop">{{localize "SMT.bio.behavior"}}</div>
         <input class="flex3" type="text" value="{{system.behavior}}" placeholder="N/A" data-dtype="String" disabled />
+        {{/if}}
+        {{#if equippedMagatama}}
+        <div class="item-prop">{{localize "SMT.itemTypes.magatama"}}</div>
+        <input class="flex3" type="text" value="{{equippedMagatama.name}}" disabled />
+        {{/if}}
       </li>
     </ol>
   </div>
