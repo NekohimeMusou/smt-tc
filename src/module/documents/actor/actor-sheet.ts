@@ -44,7 +44,11 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     const system = this.actor.system;
     const rollData = this.actor.getRollData();
 
-    const magatama = this.actor.items.find((item) => item.type === "magatama");
+    const magatama = this.actor.items.filter(
+      (item) => item.type === "magatama",
+    );
+
+    const equippedMagatama = magatama.find((item) => item.system.equipped);
 
     const effects = prepareActiveEffectCategories(this.actor.effects);
 
@@ -52,6 +56,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       system,
       rollData,
       magatama,
+      equippedMagatama,
       effects,
       SMT: CONFIG.SMT,
     });
@@ -93,6 +98,9 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       .find(".adjust-sheet-mod")
       .on("click", this.#onSheetModChange.bind(this));
     html.find(".attack-roll").on("click", this.#onAttackRoll.bind(this));
+    html
+      .find(".item-field-toggle")
+      .on("change", this.#onItemFieldToggle.bind(this));
   }
 
   /**
@@ -155,6 +163,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
 
     if (!tnType) {
       const msg = game.i18n.localize("SMT.error.missingHitRollTN");
+      ui.notifications.error(msg);
       throw new TypeError(msg);
     }
 
@@ -208,6 +217,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
 
     if (!powerType) {
       const msg = game.i18n.localize("SMT.error.missingPowerType");
+      ui.notifications.error(msg);
       throw new TypeError(msg);
     }
 
@@ -253,6 +263,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
 
     if (!attackType) {
       const msg = game.i18n.localize("SMT.error.missingAttackType");
+      ui.notifications.error(msg);
       throw new TypeError(msg);
     }
 
@@ -339,5 +350,37 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     const data = Object.fromEntries([[`system.${field}`, newBonus]]);
 
     await this.actor.update(data);
+  }
+
+  async #onItemFieldToggle(event: JQuery.ChangeEvent) {
+    event.preventDefault();
+
+    const element = $(event.currentTarget);
+    const itemId = element.closest(".item").data("itemId") as string;
+    const fieldId = element.data("fieldId") as string | undefined;
+    const item = this.actor.items.get(itemId);
+
+    if (!item) {
+      const msg = game.i18n.localize("SMT.error.missingItem");
+      ui.notifications.error(msg);
+      throw new TypeError(msg);
+    }
+
+    if (!fieldId) {
+      const msg = game.i18n.localize("SMT.error.missingItem");
+      ui.notifications.error(msg);
+      throw new TypeError(msg);
+    }
+
+    const newState = element.is(":checked");
+
+    // If we're 
+    if (item.type === "magatama" && fieldId === "equipped" && newState) {
+      this.actor.items
+        .filter((item) => item.type === "magatama" && item.system.equipped)
+        .forEach(async (item) => await item.toggleField(fieldId, false));
+    }
+
+    await item.toggleField(fieldId, newState);
   }
 }

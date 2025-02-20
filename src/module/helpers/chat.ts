@@ -22,6 +22,7 @@ export async function showHitCheckCard({
     const msg = game.i18n.format("SMT.error.missingCardRoll", {
       function: "showHitCheckCard",
     });
+    ui.notifications.error(msg);
     throw new TypeError(msg);
   }
 
@@ -68,6 +69,7 @@ export async function showPowerRollCard({
     const msg = game.i18n.format("SMT.error.missingCardRoll", {
       function: "showPowerRollCard",
     });
+    ui.notifications.error(msg);
     throw new TypeError(msg);
   }
 
@@ -120,6 +122,7 @@ export async function showAttackRollCard({
     const msg = game.i18n.format("SMT.error.missingCardRoll", {
       function: "showAttackRollCard",
     });
+    ui.notifications.error(msg);
     throw new TypeError(msg);
   }
 

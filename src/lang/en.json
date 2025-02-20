@@ -21,7 +21,8 @@
     "tabs": {
       "main": "Main",
       "bio": "Bio",
-      "notes": "Notes"
+      "notes": "Notes",
+      "magatama": "Magatama"
     },
     "actorSheet": {
       "hpMult": "HP Mult",
@@ -42,7 +43,12 @@
       "tn": "TN",
       "derivedTN": "Derived TN",
       "buffs": "Buffs",
-      "affinities": "Affinities"
+      "affinities": "Affinities",
+      "mgt": "Mgt"
+    },
+    "magatama": {
+      "active": "Active",
+      "ingested": "Ingested"
     },
     "bio": {
       "background": "Background",
@@ -231,7 +237,9 @@
       "missingHitRollTN": "Missing TN in hitRoll",
       "missingCardRoll": "Missing Roll for chat card in: {function}",
       "missingPowerType": "Missing powerType in #onPowerRoll",
-      "missingAttackType": "Missing attack type in #onAttackRoll"
+      "missingAttackType": "Missing attack type in #onAttackRoll",
+      "missingItem": "Can't toggle item field: Missing item ID",
+      "missingField": "Can't toggle item field: Missing field ID"
     }
   }
 }

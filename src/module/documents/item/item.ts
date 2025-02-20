@@ -8,4 +8,17 @@ export class SmtItem extends Item<
   typeof ITEMMODELS,
   SmtActor,
   SmtActiveEffect
-> {}
+> {
+  async toggleField(
+    fieldId: string,
+    forcedState: boolean | undefined = undefined,
+  ) {
+    const newState = forcedState ?? !this.system.equipped;
+
+    const updates = Object.fromEntries([[fieldId, newState]]);
+
+    await this.update(updates);
+
+    return newState;
+  }
+}

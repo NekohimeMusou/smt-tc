@@ -7,7 +7,9 @@
         {{!-- Base --}}
         <div>{{localize "SMT.actorSheet.baseStat"}}</div>
         {{!-- Magatama Mod--}}
-        {{!-- TODO: This is an item now, fix it to work right --}}
+        {{#if (eq actor.type "fiend")}}
+        <div>{{localize "SMT.actorSheet.mgt"}}</div>
+        {{/if}}
         {{!-- LV points --}}
         <div>{{localize "SMT.actorSheet.levelShort"}}</div>
         {{!-- Total Stat --}}
@@ -30,7 +32,11 @@
           <input type="number" name="system.stats.{{@key}}.base" value="{{base}}" placeholder="0" data-dtype="Number" />
         </div>
         {{!-- Magatama Mod --}}
-        {{!-- See above --}}
+        {{#if (eq ../actor.type "fiend")}}
+        <div class="item-prop">
+          <input type="number" value="{{lookup ../equippedMagatama.system.stats @key}}" placeholder="0" disabled />
+        </div>
+        {{/if}}
         {{!-- Lv points --}}
         <div class="item-prop"><input type="number" name="system.stats.{{@key}}.lv" value="{{lv}}" placeholder="0"
             data-dtype="Number" />

@@ -6,7 +6,7 @@
         <img src="systems/smt-tc/img/affinity/{{affinity}}.png" width="92" height="32" />
         <span class="tooltip-text">{{localize loc}}</span>
       </div>
-      <select name="system.affinities.{{affinity}}">
+      <select name="system.affinities.{{affinity}}" {{ifThen (eq ../actor.type "fiend") "disabled" ""}}>
         {{selectOptions ../SMT.affinityLevels localize=true selected=(lookup ../system.affinities affinity)}}
       </select>
     </div>

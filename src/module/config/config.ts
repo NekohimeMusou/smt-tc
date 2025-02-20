@@ -58,6 +58,14 @@ const fiendLevelTable = Array(101)
 const demonLevelTable = fiendLevelTable.map((xp) => Math.floor(xp * 1.3));
 const humanLevelTable = fiendLevelTable.map((xp) => Math.floor(xp * 0.8));
 
+const stats = {
+  st: "SMT.statShort.st",
+  ma: "SMT.statShort.ma",
+  vi: "SMT.statShort.vi",
+  ag: "SMT.statShort.ag",
+  lu: "SMT.statShort.lu",
+} as const;
+
 const defenseAffinities = {
   phys: "SMT.affinities.phys",
   fire: "SMT.affinities.fire",
@@ -92,7 +100,7 @@ const tn = {
   save: "SMT.tn.save",
   dodge: "SMT.tn.dodge",
   negotiation: "SMT.tn.negotiation",
-};
+} as const;
 
 const alignment = {
   law: "SMT.alignment.law",
@@ -107,7 +115,7 @@ const powerTypes = {
   phys: "SMT.powerTypes.phys",
   mag: "SMT.powerTypes.mag",
   gun: "SMT.powerTypes.gun",
-};
+} as const;
 
 const itemTypes = {
   magatama: "SMT.itemTypes.magatama",
@@ -133,7 +141,7 @@ const successLevels = {
   crit: "SMT.successLevel.crit",
   autofail: "SMT.successLevel.autofail",
   fumble: "SMT.successLevel.fumble",
-};
+} as const;
 
 const defaultAutofailThreshold = 96;
 
@@ -145,6 +153,7 @@ export const SMT = {
     demon: demonLevelTable,
     human: humanLevelTable,
   },
+  stats,
   defenseAffinities,
   affinityLevels,
   tn,
