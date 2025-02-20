@@ -49,7 +49,7 @@ const templatePaths: string[] = [
 const characterClasses = {
   fiend: "SMT.charClasses.fiend",
   demon: "SMT.charClasses.demon",
-  // human: "SMT.charClasses.human",
+  human: "SMT.charClasses.human",
 } as const;
 
 const fiendLevelTable = Array(101)

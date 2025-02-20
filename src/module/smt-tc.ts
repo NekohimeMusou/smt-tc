@@ -52,7 +52,7 @@ function registerDocumentClasses() {
 function registerSheetApplications() {
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("smt-tc", SmtActorSheet, {
-    types: ["fiend", "demon"],
+    types: ["fiend", "demon", "human"],
     makeDefault: true,
   });
 
