@@ -2,6 +2,12 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.1.4] - 2025-02-20
+
+### Added
+
+- Semi-automate phys and mag attacks
+
 ## [0.1.3] - 2025-02-19
 
 ### Added
@@ -39,6 +45,7 @@
 
 _Initial preview release._
 
+[0.1.4]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.1.4
 [0.1.3]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.1.3
 [0.1.2]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.1.2
 [0.1.1]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.1.1
