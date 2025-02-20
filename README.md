@@ -26,6 +26,7 @@ Alternatively, you can download and extract the zip file for the latest release.
   - Multi: Divides all TNs by n, as an approximation for the multi-attack mechanic.
 - Clicking the target numbers listed under the "TN" columns will make a success roll.
   - Hold Shift to bring up a dialog that lets you input a custom TN modifier. This can be reversed in the system settings.
+  - The "Phys Atk" and "Spell Atk" TNs now make a combined attack and power roll instead of being redundant with the St and Ma TNs.
 - Clicking "Phys Power", "Mag Power", or "Gun Power" on the Derived Stats pane will make a power roll.
   - By default, this brings up a dialog where you can enter your attack's potency, and holding Shift rolls without the dialog. This can be reversed in the system settings.
 - If the Behavior field contains any text, it'll appear at the top of the Main tab for easy reference.
