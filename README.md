@@ -36,11 +36,8 @@ Alternatively, you can download and extract the zip file for the latest release.
 
 I'm not listing missing features from the old version unless they're especially notable.
 
-- Only Fiends exist as an actor type
-  - That'll change soon. For now, I tossed all the fields that came to mind onto the actor sheet so you can keep track of whatever.
-- Level is always calculated using the Fiend's XP table
-  - See above
-- Items don't exist
+- Out-of-the-box Foundry aesthetics
+- Items mostly don't exist
 
 ## Special Thanks
 
