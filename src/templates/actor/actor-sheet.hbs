@@ -27,9 +27,11 @@
     {{!-- </div> --}}
 
     {{!-- Magatama Tab --}}
+    {{#if (eq actor.type "fiend")}}
     <div class="tab magatama" data-group="primary" data-tab="magatama">
       {{> "systems/smt-tc/templates/parts/actor/tabs/magatama.hbs"}}
     </div>
+    {{/if}}
 
     {{!-- Bio Tab --}}
     <div class="tab bio" data-group="primary" data-tab="bio">

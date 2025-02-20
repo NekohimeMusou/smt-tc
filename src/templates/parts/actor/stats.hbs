@@ -11,7 +11,7 @@
         <div>{{localize "SMT.actorSheet.mgt"}}</div>
         {{/if}}
         {{!-- LV points --}}
-        <div>{{localize "SMT.actorSheet.levelShort"}}</div>
+        <div>{{localize "SMT.actorSheet.levelShort"}}{{#if (ne system.remainingStatPoints 0)}} ({{system.remainingStatPoints}}){{/if}}</div>
         {{!-- Total Stat --}}
         <div>{{localize "SMT.actorSheet.statTotal"}}</div>
         {{!-- Stat TN --}}

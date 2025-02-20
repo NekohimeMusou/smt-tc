@@ -117,11 +117,11 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     // Prepare the item object.
     const itemData = {
       name: itemName,
-      type: "unstackable",
+      type: itemType,
       system,
     };
     // Remove the type from the dataset since it's in the itemData.type prop.
-    // delete itemData.system.type;
+    delete itemData.system.itemType;
 
     // Finally, create the item!
     await this.actor.createEmbeddedDocuments("Item", [itemData]);

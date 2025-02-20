@@ -25,6 +25,19 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
     );
   }
 
+  get remainingStatPoints(): number {
+    const data = this._systemData;
+
+    const stats = data.stats;
+
+    const statPoints = Object.values(stats).reduce(
+      (prev, curr) => prev + curr.lv,
+      0,
+    );
+
+    return data.lv - data.baseLv - statPoints;
+  }
+
   static override defineSchema() {
     const fields = foundry.data.fields;
 
@@ -154,6 +167,11 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
       buffs,
       mods,
       powerBoost,
+      baseLv: new fields.NumberField({
+        integer: true,
+        positive: true,
+        initial: 1,
+      }),
       hpMultiplier: new fields.NumberField({ integer: true, positive: true }),
       mpMultiplier: new fields.NumberField({ integer: true, positive: true }),
       xp: new fields.NumberField({ integer: true, min: 0 }),
@@ -167,11 +185,12 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
   override prepareBaseData() {
     super.prepareBaseData();
     const data = this._systemData;
+    const actor = this.parent as SmtActor;
 
     // @ts-expect-error This isn't readonly
-    data.hpMultiplier = Math.max(data.hpMultiplier, 1);
+    data.hpMultiplier = actor.type === "human" ? 4 : 6;
     // @ts-expect-error This isn't readonly
-    data.mpMultiplier = Math.max(data.mpMultiplier, 1);
+    data.mpMultiplier = actor.type === "human" ? 2 : 3;
 
     // Calculate stat values
     const stats = data.stats;

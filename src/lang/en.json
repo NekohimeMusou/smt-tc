@@ -32,6 +32,7 @@
       "derivedStats": "Derived Stats",
       "xp": "XP",
       "level": "Level",
+      "baseLv": "Base Lv",
       "macca": "Macca",
       "mods": "Mods",
       "tnBoost": "TN Boosts",
@@ -44,7 +45,8 @@
       "derivedTN": "Derived TN",
       "buffs": "Buffs",
       "affinities": "Affinities",
-      "mgt": "Mgt"
+      "mgt": "Mgt",
+      "charClass": "Class: {class}"
     },
     "magatama": {
       "active": "Active",
