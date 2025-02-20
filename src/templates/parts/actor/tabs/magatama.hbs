@@ -37,7 +37,7 @@
         </div>
 
         {{#each system.stats}}
-        <div class="item-prop">{{this}}</div>
+        <div class="item-prop">{{#if this}}{{this}}{{else}}0{{/if}}</div>
         {{/each}}
         <div class="item-controls">
           <a class="item-control item-edit" title="{{localize "SMT.sheet.editItem"}}"><i class="fas fa-edit"></i></a>
