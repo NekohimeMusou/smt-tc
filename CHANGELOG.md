@@ -2,6 +2,12 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.2.1] - 2025-02-21
+
+### Fixed
+
+- Fix: Backgrounds and contacts not being saved
+
 ## [0.2.0] - 2025-02-20
 
 _Added separate Human and Demon actor types with some custom behavior, and added magatama items for Fiends to use._
