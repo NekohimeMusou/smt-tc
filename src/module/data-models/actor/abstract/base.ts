@@ -105,8 +105,11 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
 
     const bioData = {
       notes: new fields.HTMLField(),
-      backgrounds: new fields.ArrayField(new fields.StringField()),
-      contacts: new fields.ArrayField(new fields.StringField()),
+      bg1: new fields.StringField(),
+      bg2: new fields.StringField(),
+      contact1: new fields.StringField(),
+      contact2: new fields.StringField(),
+      contact3: new fields.StringField(),
       bond: new fields.StringField(),
       goal: new fields.StringField(),
       alignment: new fields.SchemaField({
