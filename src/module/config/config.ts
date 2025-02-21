@@ -1,7 +1,11 @@
+import { ailmentIds } from "./statuses.js";
+
 declare global {
   type CharacterClass = keyof typeof characterClasses;
   type ItemType = keyof typeof itemTypes;
   type PowerType = keyof typeof powerTypes;
+  type DamageType = keyof typeof damageTypes;
+  type PowerBoostType = (typeof powerBoost)[number];
   type SuccessLevel = keyof typeof successLevels;
   type TargetNumber = keyof typeof tn;
 }
@@ -74,6 +78,23 @@ const statsFull = {
   lu: "SMT.statFull.lu",
 } as const;
 
+const attackAffinities = {
+  phys: "SMT.affinities.phys",
+  fire: "SMT.affinities.fire",
+  cold: "SMT.affinities.cold",
+  elec: "SMT.affinities.elec",
+  force: "SMT.affinities.force",
+  light: "SMT.affinities.light",
+  dark: "SMT.affinities.dark",
+  ruin: "SMT.affinities.ruin",
+  nerve: "SMT.affinities.nerve",
+  mind: "SMT.affinities.mind",
+  almighty: "SMT.affinities.almighty",
+  support: "SMT.affinities.support",
+  healing: "SMT.affinities.healing",
+  unique: "SMT.affinities.unique",
+} as const;
+
 const defenseAffinities = {
   phys: "SMT.affinities.phys",
   fire: "SMT.affinities.fire",
@@ -125,12 +146,35 @@ const powerTypes = {
   gun: "SMT.powerTypes.gun",
 } as const;
 
+const damageTypes = {
+  phys: "SMT.powerTypes.phys",
+  mag: "SMT.powerTypes.mag",
+} as const;
+
+const attackTypes = {
+  phys: "SMT.attackTypes.phys",
+  mag: "SMT.attackTypes.mag",
+  spell: "SMT.attackTypes.spell",
+  passive: "SMT.attackTypes.passive",
+  talk: "SMT.attackTypes.talk",
+} as const;
+
 const itemTypes = {
   magatama: "SMT.itemTypes.magatama",
   // weapon: "SMT.itemTypes.weapon",
   // armor: "SMT.itemTypes.armor",
   // consumable: "SMT.itemTypes.consumable",
-  // skill: "SMT.itemTypes.skill",
+  skill: "SMT.itemTypes.skill",
+} as const;
+
+const powerBoost = ["phys", "mag", "item"] as const;
+
+const skillProps = {
+  critBoost: "SMT.skillProps.critBoost",
+  pinhole: "SMT.skillProps.pinhole",
+  analyze: "SMT.skillProps.analyze",
+  goodInstincts: "SMT.skillProps.goodInstincts",
+  applyFocus: "SMT.skillProps.applyFocus",
 } as const;
 
 const equipSlots = {
@@ -141,6 +185,13 @@ const equipSlots = {
   head: "SMT.equipSlots.head",
   torso: "SMT.equipSlots.torso",
   legs: "SMT.equipSlots.legs",
+} as const;
+
+const targets = {
+  one: "SMT.targets.one",
+  all: "SMT.targets.all",
+  self: "SMT.targets.self",
+  combatants: "SMT.targets.combatants",
 } as const;
 
 const successLevels = {
@@ -163,13 +214,20 @@ export const SMT = {
   },
   stats,
   statsFull,
+  attackAffinities,
   defenseAffinities,
   affinityLevels,
   tn,
   alignment,
   powerTypes,
+  damageTypes,
+  attackTypes,
   itemTypes,
+  powerBoost,
+  skillProps,
   equipSlots,
+  targets,
   successLevels,
   defaultAutofailThreshold,
+  ailmentIds,
 } as const;

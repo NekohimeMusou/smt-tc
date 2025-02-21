@@ -14,8 +14,6 @@ import {
 } from "../active-effect.js";
 import { SmtActor } from "./actor.js";
 
-type AttackType = "phys" | "mag" | "gun";
-
 export default class SmtActorSheet extends ActorSheet<SmtActor> {
   static override get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
@@ -253,15 +251,15 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     event.preventDefault();
     const target = $(event.currentTarget);
 
-    const attackType = target.data("attackType") as AttackType | undefined;
+    const powerType = target.data("powerType") as PowerType | undefined;
 
-    if (!attackType) {
-      const msg = game.i18n.localize("SMT.error.missingAttackType");
+    if (!powerType) {
+      const msg = game.i18n.localize("SMT.error.missingPowerType");
       ui.notifications.error(msg);
       throw new TypeError(msg);
     }
 
-    const attackName = game.i18n.localize(`SMT.attackType.${attackType}`);
+    const attackName = game.i18n.localize(`SMT.powerType.${powerType}`);
 
     const { tnMod, potency, cancelled } =
       await showAttackModifierDialog(attackName);
@@ -272,10 +270,10 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
 
     const actorData = this.actor.system;
 
-    const tnType = attackType === "gun" ? "ag" : attackType;
+    const tnType = powerType === "gun" ? "ag" : powerType;
     const tn = actorData.tn[tnType] + (tnMod ?? 0);
     const autoFailThreshold = actorData.autoFailThreshold;
-    const critBoost = attackType !== "mag" && actorData.mods.might;
+    const critBoost = powerType !== "mag" && actorData.mods.might;
 
     const { successLevel, roll: hitRoll } = await SmtDice.hitCheck({
       tn,
@@ -288,8 +286,8 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
 
     if (["success", "crit", "fumble"].includes(successLevel)) {
       // Roll power on a hit, crit, or fumble
-      const basePower = actorData.power[attackType] + (potency ?? 0);
-      const boostType = attackType === "gun" ? "phys" : attackType;
+      const basePower = actorData.power[powerType] + (potency ?? 0);
+      const boostType = powerType === "gun" ? "phys" : powerType;
       const powerBoost = actorData.powerBoost[boostType];
       const criticalHit = successLevel === "crit";
 
@@ -368,7 +366,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
 
     const newState = element.is(":checked");
 
-    // If we're 
+    // If we're
     if (item.type === "magatama" && fieldId === "equipped" && newState) {
       this.actor.items
         .filter((item) => item.type === "magatama" && item.system.equipped)

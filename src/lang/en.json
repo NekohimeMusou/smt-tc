@@ -130,7 +130,11 @@
       "ruin": "Ruin",
       "nerve": "Nerve",
       "mind": "Mind",
-      "ailment": "Ailment"
+      "ailment": "Ailment",
+      "almighty": "Almighty",
+      "support": "Support",
+      "healing": "Healing",
+      "unique": "Unique"
     },
     "affinityLevels": {
       "none": "—",
@@ -199,6 +203,12 @@
       "torso": "Torso",
       "legs": "Legs"
     },
+    "targets": {
+      "one": "One target",
+      "all": "All targets",
+      "self": "Self",
+      "combatants": "All combatants"
+    },
     "successLevel": {
       "fail": "Failed",
       "success": "Success",
@@ -216,10 +226,17 @@
       "tnMod": "TN Mod",
       "potency": "Potency"
     },
-    "attackType": {
+    "powerTypes": {
       "phys": "Phys Attack",
       "mag": "Mag Attack",
       "gun": "Gun Attack"
+    },
+    "attackTypes": {
+      "phys": "Phys Attack",
+      "mag": "Mag Attack",
+      "spell": "Spell Attack",
+      "passive": "Passive",
+      "talk": "Talk"
     },
     "settings": {
       "invertHitModDialog": {
@@ -246,8 +263,7 @@
     "error": {
       "missingHitRollTN": "Missing TN in hitRoll",
       "missingCardRoll": "Missing Roll for chat card in: {function}",
-      "missingPowerType": "Missing powerType in #onPowerRoll",
-      "missingAttackType": "Missing attack type in #onAttackRoll",
+      "missingPowerType": "Missing attack type in #onAttackRoll",
       "missingItem": "Can't toggle item field: Missing item ID",
       "missingField": "Can't toggle item field: Missing field ID"
     }
