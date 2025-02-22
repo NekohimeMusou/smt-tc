@@ -10,7 +10,7 @@ declare global {
   type TargetNumber = keyof typeof tn;
 }
 
-const templatePaths: string[] = [
+const templatePaths = [
   // Temporary(?) actor sheet template
   "systems/smt-tc/templates/actor/actor-sheet.hbs",
 
@@ -48,6 +48,8 @@ const templatePaths: string[] = [
   "systems/smt-tc/templates/parts/item/header.hbs",
   "systems/smt-tc/templates/parts/item/magatama/stats.hbs",
   "systems/smt-tc/templates/parts/item/magatama/affinities.hbs",
+  "systems/smt-tc/templates/parts/item/skill/tabs/description.hbs",
+  "systems/smt-tc/templates/parts/item/skill/tabs/config.hbs",
 ] as const;
 
 const characterClasses = {
@@ -154,6 +156,7 @@ const damageTypes = {
 const attackTypes = {
   phys: "SMT.attackTypes.phys",
   mag: "SMT.attackTypes.mag",
+  gun: "SMT.attackTypes.gun",
   spell: "SMT.attackTypes.spell",
   passive: "SMT.attackTypes.passive",
   talk: "SMT.attackTypes.talk",

@@ -1,0 +1,18 @@
+<form class="{{cssClass}}" autocomplete="off">
+  {{> "systems/smt-tc/templates/parts/item/header.hbs"}}
+
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item resource-label" data-tab="description">{{localize "SMT.tabs.description"}}</a>
+    <a class="item resource-label" data-tab="config">{{localize "SMT.tabs.config"}}</a>
+  </nav>
+
+  <section class="sheet-body">
+    <div class="tab description" data-group="primary" data-tab="description">
+      {{> "systems/smt-tc/templates/parts/item/skill/tabs/description.hbs"}}
+    </div>
+
+    <div class="tab config" data-group="primary" data-tab="config">
+      {{> "systems/smt-tc/templates/parts/item/skill/tabs/config.hbs"}}
+    </div>
+  </section>
+</form>

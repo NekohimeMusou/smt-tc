@@ -233,18 +233,17 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
     const stats = data.stats;
     const tnBoostMod = data.tnBoosts * 20;
     const lv = data.lv;
+    const accuracyBuff = data.buffs.sukukaja - data.buffs.sukunda;
 
     Object.entries(stats).forEach(([key, stat]) => {
       const statName = key as keyof typeof stats;
-      const tn = stat.value * 5 + lv + tnBoostMod;
+      const tn = Math.max(stat.value * 5 + lv + tnBoostMod, 1);
       data.tn[statName] = Math.max(Math.floor(tn / data.multi), 1);
     });
 
-    const accuracyBuff = data.buffs.sukukaja - data.buffs.sukunda;
-
     // Set derived TNs
-    data.tn.phys = data.tn.st;
-    data.tn.mag = data.tn.ma;
+    data.tn.phys = data.tn.st + accuracyBuff;
+    data.tn.mag = data.tn.ma + accuracyBuff;
     data.tn.save = stats.vi.value * 5 + lv;
     // This may change with automation
     data.tn.dodge = stats.ag.value + 10 + tnBoostMod + accuracyBuff;

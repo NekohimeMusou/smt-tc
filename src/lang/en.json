@@ -234,6 +234,7 @@
     "attackTypes": {
       "phys": "Phys Attack",
       "mag": "Mag Attack",
+      "gun": "Gun Attack",
       "spell": "Spell Attack",
       "passive": "Passive",
       "talk": "Talk"
