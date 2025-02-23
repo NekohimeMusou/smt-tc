@@ -1,0 +1,69 @@
+<section class="details">
+  <div class="items-list flexcol">
+    <ol class="stat-list">
+      <li class="item items-header">
+        <div>{{localize "SMT.tabs.details"}}</div>
+      </li>
+
+      {{!-- Skill details --}}
+      <li class="item flexrow items-header flex-group-center">
+        {{!-- Phys Atk / Mag Atk / etc --}}
+        <div class="item-prop">{{localize (concat "SMT.attackTypes." system.attackType)}}</div>
+        {{!-- Cost --}}
+        {{#unless (or (eq system.attackType "talk") (eq system.attackType "passive"))}}
+        <div class="item-prop">{{localize (concat "SMT.itemSheet.cost" system.cost)}}</div>
+        <div class="item-prop"><input type="number" value="{{system.cost}}" disabled /></div>
+        {{/unless}}
+        {{!-- Potency --}}
+        {{#if system.includePowerRoll}}
+        <div class="item-prop">{{localize (concat "SMT.itemSheet.potency" system.potency)}}</div>
+        <div class="item-prop"><input type="number" value="{{system.potency}}" disabled /></div>
+        {{/if}}
+        {{!-- Affinity --}}
+        <div class="item-prop">{{localize "SMT.itemSheet.affinity"}}</div>
+        <div class="item-prop">
+          {{#if (eq system.attackType "talk")}}
+          {{localize "SMT.attackTypes.talk"}}
+          {{else}}
+          {{#if (eq system.attackType "passive")}}
+          —
+          {{else}}
+          {{localize system.affinity}}
+          {{/if}}
+          {{/if}}
+        </div>
+        {{!-- Target --}}
+        {{#unless (eq system.attackType "passive")}}
+        <div class="item-prop">{{localize "SMT.itemSheet.target"}}</div>
+        <div class="item-prop">{{localize (concat "SMT.targets." system.target)}}</div>
+        {{/unless}}
+        {{!-- TN/Auto --}}
+        <div class="item-prop">{{localize "SMT.itemSheet.tn"}}</div>
+        {{#if (system.auto)}}
+        <div class="item-prop">{{localize "SMT.itemSheet.auto"}}</div>
+        {{else}}
+        <div class="item-prop">{{system.tn}}%</div>
+        {{/if}}
+        {{!-- Ailment/rate | Shatter rate --}}
+        {{#if (eq system.affinity "force")}}
+        <div class="item-prop">{{localize "SMT.itemSheet.shatterRate"}}</div>
+        <div class="item-prop">{{system.shatterRate}}%</div>
+        {{else}}
+        {{#if system.ailment.id}}
+        {{localize "SMT.itemSheet.ailmentDesc" ailment=ailment.id rate=ailment.rate}}
+        {{/if}}
+      </li>
+
+      <li class="item items-header">
+        <div>{{localize "SMT.itemSheet.effect"}}</div>
+      </li>
+
+      {{editor
+        system.description
+        target="system.description"
+        editable=editable
+        button=true
+      }}
+    </ol>
+  </div>
+</section>

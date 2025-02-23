@@ -48,7 +48,7 @@ const templatePaths = [
   "systems/smt-tc/templates/parts/item/header.hbs",
   "systems/smt-tc/templates/parts/item/magatama/stats.hbs",
   "systems/smt-tc/templates/parts/item/magatama/affinities.hbs",
-  "systems/smt-tc/templates/parts/item/skill/tabs/description.hbs",
+  "systems/smt-tc/templates/parts/item/skill/tabs/details.hbs",
   "systems/smt-tc/templates/parts/item/skill/tabs/config.hbs",
 ] as const;
 
@@ -118,6 +118,21 @@ const affinityLevels = {
   null: "SMT.affinityLevels.null",
   drain: "SMT.affinityLevels.drain",
   repel: "SMT.affinityLevels.repel",
+} as const;
+
+const ailments = {
+  shock: "SMT.ailments.shock",
+  panic: "SMT.ailments.panic",
+  sleep: "SMT.ailments.sleep",
+  freeze: "SMT.ailments.freeze",
+  restrain: "SMT.ailments.restrain",
+  mute: "SMT.ailments.mute",
+  poison: "SMT.ailments.poison",
+  charm: "SMT.ailments.charm",
+  stun: "SMT.ailments.stun",
+  flied: "SMT.ailments.flied",
+  stone: "SMT.ailments.stone",
+  instantDeath: "SMT.ailments.instantDeath",
 } as const;
 
 const tn = {
@@ -220,6 +235,7 @@ export const SMT = {
   attackAffinities,
   defenseAffinities,
   affinityLevels,
+  ailments,
   tn,
   alignment,
   powerTypes,

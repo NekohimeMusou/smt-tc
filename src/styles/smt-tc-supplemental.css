@@ -55,3 +55,7 @@
   flex-direction: column;
   justify-content: center;
 }
+
+.smt-sheet .editor .editor-content {
+  min-height: 400px;
+}

@@ -1,14 +1,14 @@
-<form class="{{cssClass}}" autocomplete="off">
+<form class="{{cssClass}} smt-sheet" autocomplete="off">
   {{> "systems/smt-tc/templates/parts/item/header.hbs"}}
 
   <nav class="sheet-tabs tabs" data-group="primary">
-    <a class="item resource-label" data-tab="description">{{localize "SMT.tabs.description"}}</a>
+    <a class="item resource-label" data-tab="details">{{localize "SMT.tabs.details"}}</a>
     <a class="item resource-label" data-tab="config">{{localize "SMT.tabs.config"}}</a>
   </nav>
 
   <section class="sheet-body">
-    <div class="tab description" data-group="primary" data-tab="description">
-      {{> "systems/smt-tc/templates/parts/item/skill/tabs/description.hbs"}}
+    <div class="tab details" data-group="primary" data-tab="details">
+      {{> "systems/smt-tc/templates/parts/item/skill/tabs/details.hbs"}}
     </div>
 
     <div class="tab config" data-group="primary" data-tab="config">

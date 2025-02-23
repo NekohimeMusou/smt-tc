@@ -22,6 +22,20 @@
           </div>
         {{/each}}
       </li>
+
+      <li class="item flexrow">
+        <label for="price" class="item-prop">{{localize "SMT.itemSheet.price"}}</label>
+        <div class="item-prop">
+          <input
+              type="number"
+              id="price"
+              name="system.price"
+              value="{{system.price}}"
+              placeholder="0"
+              data-dtype="Number"
+            />
+        </div>
+      </li>
     </ol>
   </div>
 </section>

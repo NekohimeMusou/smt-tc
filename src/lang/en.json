@@ -1,5 +1,6 @@
 {
   "SMT": {
+    "none": "None",
     "effects": {
       "newEffect": "New Effect",
       "temporary": "Temporary Effects",
@@ -22,7 +23,8 @@
       "main": "Main",
       "bio": "Bio",
       "notes": "Notes",
-      "magatama": "Magatama"
+      "magatama": "Magatama",
+      "details": "Details"
     },
     "actorSheet": {
       "hpMult": "HP Mult",
@@ -47,6 +49,25 @@
       "affinities": "Affinities",
       "mgt": "Mgt",
       "charClass": "Class: {class}"
+    },
+    "itemSheet": {
+      "attackType": "Attack Type",
+      "cost": "Cost",
+      "oneShot": "One-shot",
+      "potency": "Potency",
+      "affinity": "Affinity",
+      "target": "Target",
+      "auto": "Auto",
+      "shatterRate": "Shatter Rate",
+      "ailment": "Ailment",
+      "ailmentRate": "Ailment Rate",
+      "includePowerRoll": "Include Power roll",
+      "inheritanceTraits": "Inheritance Traits",
+      "description": "Description",
+      "effect": "Effect",
+      "price": "Price",
+      "tn": "TN",
+      "ailmentDesc": "{ailment} {rate}%"
     },
     "magatama": {
       "active": "Active",
@@ -145,19 +166,20 @@
       "repel": "Repel"
     },
     "ailments": {
-      "dead": "Dead",
+      "dead": "Death",
+      "instantDeath": "Instant Death",
       "stone": "Stone",
       "flied": "Fly",
-      "stun": "Stunned",
-      "charm": "Charmed",
-      "poison": "Poisoned",
+      "stun": "Stun",
+      "charm": "Charm",
+      "poison": "Poison",
       "mute": "Mute",
-      "restrain": "Restrained",
-      "freeze": "Frozen",
-      "sleep": "Asleep",
-      "panic": "Panicked",
-      "shock": "Shocked",
-      "curse": "Cursed"
+      "restrain": "Restrain",
+      "freeze": "Freeze",
+      "sleep": "Sleep",
+      "panic": "Panic",
+      "shock": "Shock",
+      "curse": "Curse"
     },
     "buffs": {
       "tarukaja": "Tarukaja",
