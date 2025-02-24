@@ -24,11 +24,13 @@
         {{/if}}
         {{/unless}}
         {{!-- Potency --}}
+        {{#unless (or (eq system.attackType "passive") (eq system.attackType "talk"))}}
         <label for="potency" class="item-prop">{{localize "SMT.itemSheet.potency"}}</label>
         <div class="item-prop">
           <input type="number" id="potency" name="system.potency" value="{{system.potency}}" placeholder="0"
             data-dtype="Number" />
         </div>
+        {{/unless}}
       </li>
 
       <li class="item flexrow">
@@ -79,16 +81,18 @@
         <label for="ailment-rate" class="item-prop">{{localize "SMT.itemSheet.ailmentRate"}}</label>
         <div class="item-prop">
           <input type="number" id="ailmentRate" name="system.ailmentRate" value="{{system.ailmentRate}}"
-            placeholder="50" data-dtype="Number" {{ifThen system.ailment.id "" "disabled"}} />
+            placeholder="0" data-dtype="Number" {{ifThen system.ailment.id "" "disabled"}} />
         </div>
         {{/if}}
         {{/unless}}
         {{!-- Roll power? --}}
+        {{#unless (or (eq system.attackType "talk") (eq system.attackType "passive"))}}
         <label for="includePowerRoll" class="item-prop">{{localize "SMT.itemSheet.includePowerRoll"}}</label>
         <div class="item-prop">
           <input type="checkbox" id="includePowerRoll" name="system.includePowerRoll" data-dtype="Boolean"
             {{checked system.includePowerRoll}} />
         </div>
+        {{/unless}}
       </li>
 
       <li class="item flexrow">

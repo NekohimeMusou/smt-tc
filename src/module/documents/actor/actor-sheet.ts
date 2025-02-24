@@ -253,6 +253,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     const target = $(event.currentTarget);
 
     const powerType = target.data("powerType") as PowerType | undefined;
+    const powerName = target.data("powerName") as string | undefined;
 
     if (!powerType) {
       const msg = game.i18n.localize("SMT.error.missingPowerType");
@@ -260,7 +261,8 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       throw new TypeError(msg);
     }
 
-    const attackName = game.i18n.localize(`SMT.powerTypes.${powerType}`);
+    const attackName =
+      powerName ?? game.i18n.localize(`SMT.powerTypes.${powerType}`);
 
     const { tnMod, potency, cancelled } =
       await showAttackModifierDialog(attackName);

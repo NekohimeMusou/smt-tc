@@ -1,0 +1,66 @@
+<section class="skills">
+  <div class="items-list flexcol flexlarge">
+    <ol class="item-list">
+      <li class="item flexrow items-header">
+        <div>#</div>
+        {{!-- Skill --}}
+        <div class="item-name flex2">{{localize "SMT.itemTypes.skill"}}</div>
+        {{!-- Cost or Ammo Count --}}
+        <div>{{localize "SMT.itemSheet.cost"}}</div>
+        {{!-- TN --}}
+        <div>{{localize "SMT.actorSheet.tn"}}</div>
+        {{!-- Total Power --}}
+        <div>{{localize "SMT.itemSheet.power"}}</div>
+        {{!-- Target --}}
+        <div>{{localize "SMT.itemSheet.target"}}</div>
+        {{!-- Element --}}
+        <div>{{localize "SMT.itemSheet.affinity"}}</div>
+        <div>{{localize "SMT.itemSheet.expended"}}</div>
+        {{!-- Type --}}
+        <div>{{localize "SMT.skillDetails.type"}}</div>
+        <div class="item-controls">
+          <a class="item-control item-create" title="{{localize "SMT.sheet.newItem"}}" data-item-type="skill">
+            <i class="fas fa-plus"></i> {{localize "SMT.sheet.addItem"}}</a>
+        </div>
+      </li>
+
+      <li class="item item-entry flexrow flex-group-center flex-between">
+        <div class="item-prop">—</div>
+        {{!-- Skill --}}
+        <a class="item-name flex2 roll-highlight attack-roll" data-power-type="phys" data-power-name="Basic Attack">
+          <div class="item-image">
+            <img src="icons/skills/melee/unarmed-punch-fist.webp" title="Basic Attack" width="24" height="24" />
+          </div>
+          <div class="item-name">Basic Attack</div>
+        </a>
+
+        {{!-- Cost or Ammo Count --}}
+        <div class="item-prop">—</div>
+
+        {{!-- TN --}}
+        <div class="item-prop">{{system.tn.phys}}%</div>
+
+        {{!-- Total Power --}}
+        <div class="item-prop">{{system.power.phys}}</div>
+
+        {{!-- Target --}}
+        <div class="item-prop">{{localize "SMT.targets.one"}}</div>
+
+        {{!-- Affinity --}}
+        <div class="item-prop">{{localize "SMT.affinities.phys"}}</div>
+
+        {{!-- Expended --}}
+        <div class="item-prop">—</div>
+
+        {{!-- Type --}}
+        <div class="item-prop">{{localize "SMT.attackTypesShort.phys"}}</div>
+
+        {{!-- Item Controls --}}
+        <div class="item-controls">
+          <a class="item-control" title="{{localize "SMT.sheet.editItem"}}"><i class="fas"></i></a>
+          <a class="item-control" title="{{localize "SMT.sheet.deleteItem"}}"><i class="fas"></i></a>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>

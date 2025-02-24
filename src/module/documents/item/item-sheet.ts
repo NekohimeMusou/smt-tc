@@ -9,7 +9,7 @@ export default class SmtItemSheet extends ItemSheet<SmtItem> {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["smt-tc", "sheet", "item"],
       width: 800,
-      height: 800,
+      height: 600,
       tabs: [
         {
           navSelector: ".sheet-tabs",

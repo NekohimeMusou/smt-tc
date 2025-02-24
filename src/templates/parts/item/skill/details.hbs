@@ -22,7 +22,7 @@
         {{!-- Affinity --}}
         <div class="item-prop">
           {{#if (eq system.attackType "passive")}}
-          —
+          {{localize "SMT.skillDetails.affinity" affinity="—"}}
           {{else}}
           {{localize "SMT.skillDetails.affinity"
            affinity=(localize (concat "SMT.affinities." system.affinity))}}

@@ -68,14 +68,17 @@
       "effect": "Effect",
       "price": "Price",
       "tn": "TN",
-      "ailmentDesc": "{ailment} {rate}%"
+      "ailmentDesc": "{ailment} {rate}%",
+      "power": "Power",
+      "expended": "Expended"
     },
     "skillDetails": {
       "cost": "Cost: {cost} {resource}",
       "potency": "Potency: {potency}",
       "affinity": "Affinity: {affinity}",
       "target": "Target: {target}",
-      "tn": "TN: {tn}%"
+      "tn": "TN: {tn}%",
+      "type": "Type"
     },
     "magatama": {
       "active": "Active",
@@ -267,6 +270,14 @@
       "mag": "Mag Attack",
       "gun": "Gun Attack",
       "spell": "Spell Attack",
+      "passive": "Passive",
+      "talk": "Talk"
+    },
+    "attackTypesShort": {
+      "phys": "Phys Atk",
+      "mag": "Mag Atk",
+      "gun": "Gun Atk",
+      "spell": "Spell Atk",
       "passive": "Passive",
       "talk": "Talk"
     },

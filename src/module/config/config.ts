@@ -29,6 +29,7 @@ const templatePaths = [
   "systems/smt-tc/templates/parts/actor/derived-stats.hbs",
   "systems/smt-tc/templates/parts/actor/mods.hbs",
   "systems/smt-tc/templates/parts/actor/buffs.hbs",
+  "systems/smt-tc/templates/parts/actor/skills.hbs",
 
   // Bio data
   "systems/smt-tc/templates/parts/actor/alignment.hbs",
