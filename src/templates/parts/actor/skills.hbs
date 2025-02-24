@@ -4,7 +4,7 @@
       <li class="item flexrow items-header">
         <div>#</div>
         {{!-- Skill --}}
-        <div class="item-name flex2">{{localize "SMT.itemTypes.skill"}}</div>
+        <div class="item-name flex3">{{localize "SMT.itemTypes.skill"}}</div>
         {{!-- Cost or Ammo Count --}}
         <div>{{localize "SMT.itemSheet.cost"}}</div>
         {{!-- TN --}}
@@ -29,7 +29,7 @@
       <li class="item item-entry flexrow flex-group-center flex-between">
         <div class="item-prop">—</div>
         {{!-- Skill --}}
-        <a class="item-name flex2 roll-highlight attack-roll" data-power-type="phys" data-power-name="Basic Attack">
+        <a class="item-name flex3 roll-highlight attack-roll" data-power-type="phys" data-power-name="Basic Attack">
           <div class="item-image">
             <img src="icons/skills/melee/unarmed-punch-fist.webp" title="Basic Attack" width="24" height="24" />
           </div>
@@ -70,7 +70,7 @@
 <li class="item item-entry flexrow flex-group-center flex-between" data-item-id="{{id}}">
   <div class="item-prop">{{incrementKey @key}}</div>
   {{!-- Skill --}}
-  <a class="item-name flex2 roll-highlight">
+  <a class="item-name flex3 roll-highlight">
     <div class="item-image">
       <img src="{{img}}" title="{{name}}" width="24" height="24" />
     </div>
@@ -82,7 +82,7 @@
     {{#if (or (eq system.attackType "passive") (eq system.attackType "talk"))}}
     —
     {{else}}
-    {{localize "SMT.skillDetails.costShort" cost=system.cost resource=(ifThen (eq system.attackType "phys") "HP" "MP")}}
+    {{localize "SMT.skillDetails.costShort" cost=(ifThen system.cost system.cost "0") resource=(ifThen (eq system.attackType "phys") "HP" "MP")}}
     {{/if}}
   </div>
 

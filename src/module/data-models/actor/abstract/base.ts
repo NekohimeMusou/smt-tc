@@ -91,6 +91,7 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
       save: new fields.NumberField({ integer: true }),
       dodge: new fields.NumberField({ integer: true }),
       negotiation: new fields.NumberField({ integer: true }),
+      gun: new fields.NumberField({ integer: true }),
     });
 
     const power = new fields.SchemaField({
@@ -211,6 +212,15 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
 
     const lv = data.lv;
 
+    // Set derived TNs
+    // Maybe find a better way to support AEs modifying these
+    data.tn.phys = 0;
+    data.tn.mag = 0;
+    data.tn.save = 0;
+    data.tn.dodge = 0;
+    data.tn.negotiation = 0;
+    data.tn.gun = 0;
+
     data.resist.phys = Math.max(Math.floor((stats.vi.value + lv) / 2), 0);
     data.resist.mag = Math.max(Math.floor((stats.ma.value + lv) / 2), 0);
 
@@ -233,7 +243,6 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
     const stats = data.stats;
     const tnBoostMod = data.tnBoosts * 20;
     const lv = data.lv;
-    const accuracyBuff = data.buffs.sukukaja - data.buffs.sukunda;
 
     Object.entries(stats).forEach(([key, stat]) => {
       const statName = key as keyof typeof stats;
@@ -241,13 +250,14 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
       data.tn[statName] = Math.max(Math.floor(tn / data.multi), 1);
     });
 
-    // Set derived TNs
-    data.tn.phys = data.tn.st + accuracyBuff;
-    data.tn.mag = data.tn.ma + accuracyBuff;
-    data.tn.save = stats.vi.value * 5 + lv;
-    // This may change with automation
-    data.tn.dodge = stats.ag.value + 10 + tnBoostMod + accuracyBuff;
-    data.tn.negotiation = stats.lu.value * 2 + 20;
+    const accuracyBuff = data.buffs.sukukaja - data.buffs.sukunda;
+
+    data.tn.phys += data.tn.st + accuracyBuff;
+    data.tn.mag += data.tn.ma + accuracyBuff;
+    data.tn.save += data.tn.vi;
+    data.tn.dodge += stats.ag.value + 10 + tnBoostMod + accuracyBuff;
+    data.tn.negotiation += stats.lu.value * 2 + 20;
+    data.tn.gun += data.tn.ag;
 
     // Apply buff modifiers
     const physAtkBuff = data.buffs.tarukaja - data.buffs.tarunda;

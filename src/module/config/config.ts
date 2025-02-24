@@ -145,6 +145,7 @@ const tn = {
   save: "SMT.tn.save",
   dodge: "SMT.tn.dodge",
   negotiation: "SMT.tn.negotiation",
+  gun: "SMT.tn.gun",
 } as const;
 
 const alignment = {

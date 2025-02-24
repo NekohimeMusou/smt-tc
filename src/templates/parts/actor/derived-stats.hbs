@@ -15,10 +15,12 @@
         <div class="item-prop">{{system.power.mag}}</div>
       </li>
 
+      {{#if (eq actor.type "human")}}
       <li class="item flexrow roll-highlight power-roll" data-power-type="gun">
         <div class="item-prop">{{localize "SMT.power.gun"}}</div>
         <div class="item-prop">{{system.power.gun}}</div>
       </li>
+      {{/if}}
 
       <li class="item flexrow">
         <div class="item-prop">{{localize "SMT.resist.phys"}}</div>

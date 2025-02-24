@@ -131,7 +131,8 @@
       "mag": "Mag Atk",
       "save": "Save",
       "dodge": "Dodge",
-      "negotiation": "Negotiation"
+      "negotiation": "Negotiation",
+      "gun": "Gun Atk"
     },
     "derivedTN": {
       "st": "Phys Atk",
@@ -240,7 +241,7 @@
       "legs": "Legs"
     },
     "targets": {
-      "one": "One target",
+      "one": "1 target",
       "all": "All targets",
       "self": "Self",
       "combatants": "All combatants"
@@ -260,7 +261,9 @@
     "dialog": {
       "hitRollHint": "Modifiers apply to the TN, not the roll total.",
       "tnMod": "TN Mod",
-      "potency": "Potency"
+      "potency": "Potency",
+      "confirmDeleteDialogTitle": "Delete Item",
+      "confirmDeleteDialogPrompt": "Really delete {name}?"
     },
     "powerTypes": {
       "phys": "Phys Attack",

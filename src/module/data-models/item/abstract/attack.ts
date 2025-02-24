@@ -34,7 +34,7 @@ export abstract class AttackData extends SmtBaseItemData {
         tnType = "mag";
         break;
       case "gun":
-        tnType = "ag";
+        tnType = "gun";
         break;
       case "passive":
         tnType = "lu";
