@@ -38,13 +38,14 @@
         <div class="item-prop">{{ifThen system.auto (localize "SMT.itemSheet.auto")
           (localize "SMT.skillDetails.tn" tn=system.tn)}}</div>
         {{/unless}}
+
         {{!-- Ailment/rate | Shatter rate --}}
         {{#if (eq system.affinity "force")}}
         <div class="item-prop">{{localize "SMT.itemSheet.shatterRate"}}</div>
         <div class="item-prop">{{system.shatterRate}}%</div>
         {{else}}
         {{#if system.ailment.id}}
-        {{localize "SMT.itemSheet.ailmentDesc" ailment=ailment.id rate=ailment.rate}}
+        {{localize "SMT.itemSheet.ailmentDesc" ailment=(localize (concat "SMT.ailments." system.ailment.id)) rate=(ifThen system.ailment.rate system.ailment.rate "0")}}
         {{/if}}
         {{/if}}
       </li>

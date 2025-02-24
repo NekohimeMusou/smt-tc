@@ -135,7 +135,7 @@
     },
     "derivedTN": {
       "st": "Phys Atk",
-      "ma": "Spell Atk",
+      "ma": "Mag Atk",
       "vi": "Save",
       "ag": "Dodge",
       "lu": "Negotiation"
@@ -271,7 +271,7 @@
       "phys": "Phys Attack",
       "mag": "Mag Attack",
       "gun": "Gun Attack",
-      "spell": "Spell Attack",
+      "spell": "Spell",
       "passive": "Passive",
       "talk": "Talk"
     },
@@ -279,7 +279,7 @@
       "phys": "Phys Atk",
       "mag": "Mag Atk",
       "gun": "Gun Atk",
-      "spell": "Spell Atk",
+      "spell": "Spell",
       "passive": "Passive",
       "talk": "Talk"
     },

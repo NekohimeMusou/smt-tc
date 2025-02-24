@@ -20,7 +20,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       classes: ["smt-tc", "sheet", "actor"],
       template: "systems/smt-tc/templates/actor/actor-sheet.hbs",
       width: 800,
-      height: 800,
+      height: 900,
       tabs: [
         {
           navSelector: ".sheet-tabs",

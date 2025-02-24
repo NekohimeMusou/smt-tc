@@ -87,7 +87,7 @@
   </div>
 
   {{!-- TN --}}
-  <div class="item-prop">{{#unless (or system.auto (eq system.attackType "passive"))}}{{system.tn}}%{{else}}—{{/unless}}
+  <div class="item-prop">{{#unless (or system.auto (eq system.attackType "passive"))}}{{system.tn}}%{{else}}{{ifThen auto (localize "SMT.itemSheet.auto") "—"}}{{/unless}}
   </div>
 
   {{!-- Potency --}}
