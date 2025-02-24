@@ -37,11 +37,7 @@
       "human": { "htmlFields": ["notes"] }
     },
     "Item": {
-      "item": { "htmlFields": ["description"] },
-      "weapon": { "htmlFields": ["description"] },
-      "armor": { "htmlFields": ["description"] },
       "magatama": { "htmlFields": ["description"] },
-      "card": { "htmlFields": ["description"] },
       "skill": { "htmlFields": ["description"] }
     }
   },

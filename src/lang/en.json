@@ -24,7 +24,8 @@
       "bio": "Bio",
       "notes": "Notes",
       "magatama": "Magatama",
-      "details": "Details"
+      "details": "Details",
+      "config": "Config"
     },
     "actorSheet": {
       "hpMult": "HP Mult",
@@ -68,6 +69,13 @@
       "price": "Price",
       "tn": "TN",
       "ailmentDesc": "{ailment} {rate}%"
+    },
+    "skillDetails": {
+      "cost": "Cost: {cost} {resource}",
+      "potency": "Potency: {potency}",
+      "affinity": "Affinity: {affinity}",
+      "target": "Target: {target}",
+      "tn": "TN: {tn}%"
     },
     "magatama": {
       "active": "Active",
@@ -155,7 +163,8 @@
       "almighty": "Almighty",
       "support": "Support",
       "healing": "Healing",
-      "unique": "Unique"
+      "unique": "Unique",
+      "talk": "Talk"
     },
     "affinityLevels": {
       "none": "—",

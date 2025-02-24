@@ -125,12 +125,22 @@ export abstract class AttackData extends SmtBaseItemData {
     return {
       ...super.defineSchema(),
       auto: new fields.BooleanField(),
-      attackType: new fields.StringField({ choices: CONFIG.SMT.attackTypes }),
+      attackType: new fields.StringField({
+        choices: CONFIG.SMT.attackTypes,
+        initial: "phys",
+      }),
       potency: new fields.NumberField({ integer: true, min: 0 }),
       affinity: new fields.StringField({
-        choices: CONFIG.SMT.attackAffinities,
+        choices: {
+          ...CONFIG.SMT.attackAffinities,
+          talk: "SMT.affinities.talk",
+        },
+        initial: "phys",
       }),
-      target: new fields.StringField({ choices: CONFIG.SMT.targets }),
+      target: new fields.StringField({
+        choices: CONFIG.SMT.targets,
+        initial: "one",
+      }),
       ailment: new fields.SchemaField({
         id: new fields.StringField({ choices: CONFIG.SMT.ailmentIds }),
         rate: new fields.NumberField({ integer: true, min: 0, max: 95 }),
@@ -142,6 +152,10 @@ export abstract class AttackData extends SmtBaseItemData {
 
   override prepareBaseData() {
     const data = this._systemData;
+
+    if (data.attackType === "talk") {
+      data.affinity = "talk";
+    }
 
     if (data.affinity === "phys") {
       data.shatterRate = 30;

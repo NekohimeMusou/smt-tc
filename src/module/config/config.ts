@@ -36,9 +36,6 @@ const templatePaths = [
   "systems/smt-tc/templates/parts/actor/background.hbs",
   "systems/smt-tc/templates/parts/actor/demon.hbs",
 
-  // Inventory
-  "systems/smt-tc/templates/parts/actor/magatama-list.hbs",
-
   "systems/smt-tc/templates/parts/shared/affinities.hbs",
 
   // Item sheet tabs
@@ -48,8 +45,8 @@ const templatePaths = [
   "systems/smt-tc/templates/parts/item/header.hbs",
   "systems/smt-tc/templates/parts/item/magatama/stats.hbs",
   "systems/smt-tc/templates/parts/item/magatama/affinities.hbs",
-  "systems/smt-tc/templates/parts/item/skill/tabs/details.hbs",
-  "systems/smt-tc/templates/parts/item/skill/tabs/config.hbs",
+  "systems/smt-tc/templates/parts/item/skill/details.hbs",
+  "systems/smt-tc/templates/parts/item/skill/config.hbs",
 ] as const;
 
 const characterClasses = {
@@ -178,10 +175,10 @@ const attackTypes = {
 } as const;
 
 const itemTypes = {
-  magatama: "SMT.itemTypes.magatama",
+  // item: "SMT.itemTypes.item",
   // weapon: "SMT.itemTypes.weapon",
   // armor: "SMT.itemTypes.armor",
-  // consumable: "SMT.itemTypes.consumable",
+  magatama: "SMT.itemTypes.magatama",
   skill: "SMT.itemTypes.skill",
 } as const;
 

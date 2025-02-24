@@ -11,39 +11,31 @@
         <div class="item-prop">{{localize (concat "SMT.attackTypes." system.attackType)}}</div>
         {{!-- Cost --}}
         {{#unless (or (eq system.attackType "talk") (eq system.attackType "passive"))}}
-        <div class="item-prop">{{localize (concat "SMT.itemSheet.cost" system.cost)}}</div>
-        <div class="item-prop"><input type="number" value="{{system.cost}}" disabled /></div>
+        <div class="item-prop">{{localize "SMT.skillDetails.cost" cost=(ifThen system.cost system.cost "0")
+           resource=(ifThen (eq system.attackType "phys") "HP" "MP")}}</div>
         {{/unless}}
         {{!-- Potency --}}
         {{#if system.includePowerRoll}}
-        <div class="item-prop">{{localize (concat "SMT.itemSheet.potency" system.potency)}}</div>
-        <div class="item-prop"><input type="number" value="{{system.potency}}" disabled /></div>
+        <div class="item-prop">{{localize "SMT.skillDetails.potency"
+           potency=(ifThen system.potency system.potency "0")}}</div>
         {{/if}}
         {{!-- Affinity --}}
-        <div class="item-prop">{{localize "SMT.itemSheet.affinity"}}</div>
         <div class="item-prop">
-          {{#if (eq system.attackType "talk")}}
-          {{localize "SMT.attackTypes.talk"}}
-          {{else}}
           {{#if (eq system.attackType "passive")}}
           —
           {{else}}
-          {{localize system.affinity}}
-          {{/if}}
+          {{localize "SMT.skillDetails.affinity"
+           affinity=(localize (concat "SMT.affinities." system.affinity))}}
           {{/if}}
         </div>
         {{!-- Target --}}
         {{#unless (eq system.attackType "passive")}}
-        <div class="item-prop">{{localize "SMT.itemSheet.target"}}</div>
-        <div class="item-prop">{{localize (concat "SMT.targets." system.target)}}</div>
+        <div class="item-prop">{{localize "SMT.skillDetails.target"
+           target=(localize (concat "SMT.targets." system.target))}}</div>
         {{/unless}}
         {{!-- TN/Auto --}}
-        <div class="item-prop">{{localize "SMT.itemSheet.tn"}}</div>
-        {{#if (system.auto)}}
-        <div class="item-prop">{{localize "SMT.itemSheet.auto"}}</div>
-        {{else}}
-        <div class="item-prop">{{system.tn}}%</div>
-        {{/if}}
+        <div class="item-prop">{{ifThen system.auto (localize "SMT.itemSheet.auto")
+          (localize "SMT.skillDetails.tn" tn=system.tn)}}</div>
         {{!-- Ailment/rate | Shatter rate --}}
         {{#if (eq system.affinity "force")}}
         <div class="item-prop">{{localize "SMT.itemSheet.shatterRate"}}</div>
@@ -51,6 +43,7 @@
         {{else}}
         {{#if system.ailment.id}}
         {{localize "SMT.itemSheet.ailmentDesc" ailment=ailment.id rate=ailment.rate}}
+        {{/if}}
         {{/if}}
       </li>
 

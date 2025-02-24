@@ -15,7 +15,10 @@ export abstract class SmtBaseItemData extends foundry.abstract.TypeDataModel {
       }),
       price: new fields.NumberField({ integer: true, min: 0 }),
       equipped: new fields.BooleanField(),
-      equipSlot: new fields.StringField({ choices: CONFIG.SMT.equipSlots }),
+      equipSlot: new fields.StringField({
+        choices: CONFIG.SMT.equipSlots,
+        initial: "none",
+      }),
     } as const;
   }
 
