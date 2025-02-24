@@ -215,7 +215,8 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
 
     const actorData = this.actor.system;
 
-    let basePower = actorData.power[powerType];
+    const basePower = actorData.power[powerType];
+    let potency = 0;
     const boostType = powerType === "gun" ? "phys" : powerType;
     const powerBoost = actorData.powerBoost[boostType];
 
@@ -232,10 +233,10 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
         return;
       }
 
-      basePower += mod ?? 0;
+      potency = mod ?? 0;
     }
 
-    const { power, roll } = await SmtDice.powerRoll({ basePower, powerBoost });
+    const { power, roll } = await SmtDice.powerRoll({ basePower, potency, powerBoost });
 
     // Show chat card
     await showPowerRollCard({
@@ -259,7 +260,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       throw new TypeError(msg);
     }
 
-    const attackName = game.i18n.localize(`SMT.powerType.${powerType}`);
+    const attackName = game.i18n.localize(`SMT.powerTypes.${powerType}`);
 
     const { tnMod, potency, cancelled } =
       await showAttackModifierDialog(attackName);
@@ -286,13 +287,14 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
 
     if (["success", "crit", "fumble"].includes(successLevel)) {
       // Roll power on a hit, crit, or fumble
-      const basePower = actorData.power[powerType] + (potency ?? 0);
+      const basePower = actorData.power[powerType];
       const boostType = powerType === "gun" ? "phys" : powerType;
       const powerBoost = actorData.powerBoost[boostType];
       const criticalHit = successLevel === "crit";
 
       ({ power, roll: powerRoll } = await SmtDice.powerRoll({
         basePower,
+        potency,
         powerBoost,
         criticalHit,
       }));

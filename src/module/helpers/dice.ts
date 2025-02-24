@@ -11,6 +11,7 @@ interface HitCheckResult {
 
 interface PowerRollData {
   basePower?: number;
+  potency?: number;
   powerBoost?: boolean;
   criticalHit?: boolean;
 }
@@ -51,13 +52,14 @@ export class SmtDice {
 
   static async powerRoll({
     basePower = 0,
+    potency = 0,
     powerBoost = false,
     criticalHit = false,
   }: PowerRollData = {}): Promise<PowerRollResult> {
     const dice = powerBoost ? 2 : 1;
     const rollString = criticalHit
-      ? `(${dice}d10x + ${basePower}) * 2`
-      : `${dice}d10x + ${basePower}`;
+      ? `(${dice}d10x + ${basePower} + ${potency}) * 2`
+      : `${dice}d10x + ${basePower} + ${potency}`;
 
     const roll = await new Roll(rollString).roll();
 

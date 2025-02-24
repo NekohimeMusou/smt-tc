@@ -30,7 +30,7 @@
             data-dtype="Number" />
         </div>
       </li>
-  
+
       <li class="item flexrow">
         {{!-- Affinity --}}
         {{#unless (or (eq system.attackType "talk") (eq system.attackType "passive"))}}
@@ -49,7 +49,7 @@
             {{selectOptions SMT.targets localize=true selected=system.target}}
           </select>
         </div>
-  
+
         {{!-- Auto? --}}
         <label for="auto" class="item-prop">{{localize "SMT.itemSheet.auto"}}</label>
         <div class="item-prop">
@@ -57,7 +57,7 @@
         </div>
         {{/unless}}
       </li>
-  
+
       <li class="item flexrow">
         {{#unless (or (eq system.attackType "talk") (eq system.attackType "passive"))}}
         {{#if (eq system.affinity "force")}}
@@ -79,7 +79,7 @@
         <label for="ailment-rate" class="item-prop">{{localize "SMT.itemSheet.ailmentRate"}}</label>
         <div class="item-prop">
           <input type="number" id="ailmentRate" name="system.ailmentRate" value="{{system.ailmentRate}}"
-           placeholder="50" data-dtype="Number" {{ifThen system.ailment.id "" "disabled"}}/>
+            placeholder="50" data-dtype="Number" {{ifThen system.ailment.id "" "disabled"}} />
         </div>
         {{/if}}
         {{/unless}}
@@ -90,7 +90,7 @@
             {{checked system.includePowerRoll}} />
         </div>
       </li>
-  
+
       <li class="item flexrow">
         {{!-- Inheritance Traits --}}
         <label for="inheritanceTraits" class="item-prop">{{localize "SMT.itemSheet.inheritanceTraits"}}</label>
