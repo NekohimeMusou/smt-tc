@@ -4,6 +4,8 @@ import { AffinityItemData } from "../abstract/affinity.js";
 export class MagatamaData extends AffinityItemData {
   override readonly type = "magatama";
 
+  override readonly equippable = true;
+
   static override defineSchema() {
     const fields = foundry.data.fields;
 

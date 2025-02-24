@@ -3,6 +3,8 @@ import { SmtItem } from "../../../documents/item/item.js";
 export abstract class SmtBaseItemData extends foundry.abstract.TypeDataModel {
   abstract readonly type: ItemType;
 
+  abstract readonly equippable: boolean;
+
   static override defineSchema() {
     const fields = foundry.data.fields;
 
