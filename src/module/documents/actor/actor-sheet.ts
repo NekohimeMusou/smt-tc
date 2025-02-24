@@ -40,6 +40,8 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       (item) => item.type === "magatama",
     );
 
+    const skills = this.actor.items.filter((item) => item.type === "skill");
+
     const equippedMagatama = magatama.find((item) => item.system.equipped);
 
     const effects = prepareActiveEffectCategories(this.actor.effects);
@@ -48,6 +50,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       system,
       rollData,
       magatama,
+      skills,
       equippedMagatama,
       effects,
       SMT: CONFIG.SMT,

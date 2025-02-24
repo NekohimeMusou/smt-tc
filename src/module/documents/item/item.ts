@@ -3,19 +3,22 @@ import { SmtActiveEffect } from "../active-effect.js";
 import { SmtActor } from "../actor/actor.js";
 
 export type Magatama = Subtype<SmtItem, "magatama">;
+export type Skill = Subtype<SmtItem, "skill">;
 
 export class SmtItem extends Item<
   typeof ITEMMODELS,
   SmtActor,
   SmtActiveEffect
 > {
-  async toggleField(
-    fieldId: string,
-    forcedState: boolean | undefined = undefined,
-  ) {
-    const newState = forcedState ?? !this.system.equipped;
+  async toggleField(fieldId: string, forcedState: boolean) {
+    if (!Object.hasOwn(this.system, fieldId)) {
+      return;
+    }
 
-    const updates = Object.fromEntries([[fieldId, newState]]);
+    //@ts-expect-error no-implicit-any: I'm being real lazy here
+    const newState = forcedState || !this.system?.[fieldId];
+
+    const updates = Object.fromEntries([[`system.${fieldId}`, newState]]);
 
     await this.update(updates);
 

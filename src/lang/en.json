@@ -25,7 +25,8 @@
       "notes": "Notes",
       "magatama": "Magatama",
       "details": "Details",
-      "config": "Config"
+      "config": "Config",
+      "effects": "Effects"
     },
     "actorSheet": {
       "hpMult": "HP Mult",
@@ -74,6 +75,7 @@
     },
     "skillDetails": {
       "cost": "Cost: {cost} {resource}",
+      "costShort": "{cost} {resource}",
       "potency": "Potency: {potency}",
       "affinity": "Affinity: {affinity}",
       "target": "Target: {target}",

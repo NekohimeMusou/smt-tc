@@ -38,6 +38,7 @@ const templatePaths = [
   "systems/smt-tc/templates/parts/actor/demon.hbs",
 
   "systems/smt-tc/templates/parts/shared/affinities.hbs",
+  "systems/smt-tc/templates/parts/shared/effects.hbs",
 
   // Item sheet tabs
   "systems/smt-tc/templates/parts/item/magatama/tabs/main.hbs",

@@ -34,8 +34,10 @@
            target=(localize (concat "SMT.targets." system.target))}}</div>
         {{/unless}}
         {{!-- TN/Auto --}}
+        {{#unless (eq system.attackType "passive")}}
         <div class="item-prop">{{ifThen system.auto (localize "SMT.itemSheet.auto")
           (localize "SMT.skillDetails.tn" tn=system.tn)}}</div>
+        {{/unless}}
         {{!-- Ailment/rate | Shatter rate --}}
         {{#if (eq system.affinity "force")}}
         <div class="item-prop">{{localize "SMT.itemSheet.shatterRate"}}</div>

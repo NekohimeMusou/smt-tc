@@ -33,6 +33,7 @@ Hooks.once("init", async () => {
   registerDocumentClasses();
   registerSheetApplications();
   registerSystemSettings();
+  registerHandlebarsHelpers();
 
   configureStatusEffects();
 
@@ -60,6 +61,14 @@ function registerSheetApplications() {
   Items.registerSheet("smt-tc", SmtItemSheet, {
     types: ["magatama", "skill"],
     makeDefault: true,
+  });
+}
+
+function registerHandlebarsHelpers() {
+  Handlebars.registerHelper("incrementKey", (keyIn: string) => {
+    const key = parseInt(keyIn ?? "0") || 0;
+
+    return `${key + 1}`;
   });
 }
 

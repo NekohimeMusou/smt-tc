@@ -9,9 +9,9 @@
     {{#if (eq actor.type "fiend")}}
     <a class="item resource-label" data-tab="magatama">{{localize "SMT.tabs.magatama"}}</a>
     {{/if}}
-    {{!-- <a class="item resource-label" data-tab="inventory">{{localize "SMT.tabs.inventory"}}</a> --}}
     <a class="item resource-label" data-tab="bio">{{localize "SMT.tabs.bio"}}</a>
     <a class="item resource-label" data-tab="notes">{{localize "SMT.tabs.notes"}}</a>
+    <a class="item resource-label" data-tab="effects">{{localize "SMT.tabs.effects"}}</a>
   </nav>
 
   {{!-- Sheet Body --}}
@@ -20,11 +20,6 @@
     <div class="tab main" data-group="primary" data-tab="main">
       {{> "systems/smt-tc/templates/parts/actor/tabs/main.hbs"}}
     </div>
-
-    {{!-- Inventory Tab --}}
-    {{!-- <div class="tab inventory" data-group="primary" data-tab="inventory"> --}}
-      {{!-- {{> "systems/smt-tc/templates/parts/actor/tabs/inventory.hbs"}} --}}
-    {{!-- </div> --}}
 
     {{!-- Magatama Tab --}}
     {{#if (eq actor.type "fiend")}}
@@ -41,6 +36,11 @@
     {{!-- Notes Tab --}}
     <div class="tab notes" data-group="primary" data-tab="notes">
       {{editor system.notes target="system.notes" button=true editable=editable}}
+    </div>
+
+    {{!-- Effects Tab --}}
+    <div class="tab effects" data-group="primary" data-tab="effects">
+      {{> "systems/smt-tc/templates/parts/shared/effects.hbs"}}
     </div>
   </section>
 </form>
