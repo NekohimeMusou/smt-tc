@@ -1,0 +1,11 @@
+<section class="inventory">
+  {{#if (eq actor.type "fiend")}}
+  {{> "systems/smt-tc/templates/parts/actor/magatama.hbs"}}
+  {{/if}}
+  {{#if (eq actor.type "human")}}
+  {{!-- Weapon Pane --}}
+  {{!-- Armor Pane --}}
+  {{> "systems/smt-tc/templates/parts/actor/armor.hbs"}}
+  {{!-- Item Pane --}}
+  {{/if}}
+</section>

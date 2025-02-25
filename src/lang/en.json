@@ -23,7 +23,7 @@
       "main": "Main",
       "bio": "Bio",
       "notes": "Notes",
-      "magatama": "Magatama",
+      "inventory": "Inventory",
       "details": "Details",
       "config": "Config",
       "effects": "Effects"
@@ -50,7 +50,8 @@
       "buffs": "Buffs",
       "affinities": "Affinities",
       "mgt": "Mgt",
-      "charClass": "Class: {class}"
+      "charClass": "Class: {class}",
+      "equipped": "Equipped"
     },
     "itemSheet": {
       "attackType": "Attack Type",
@@ -251,6 +252,9 @@
       "head": "Head",
       "torso": "Torso",
       "legs": "Legs"
+    },
+    "skills": {
+      "basicStrike": "Basic Strike"
     },
     "targets": {
       "one": "1 target",

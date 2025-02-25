@@ -42,6 +42,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
 
     const skills = this.actor.items.filter((item) => item.type === "skill");
     const weapons = this.actor.items.filter((item) => item.type === "weapon");
+    const armor = this.actor.items.filter((item) => item.type === "armor");
 
     const equippedMagatama = magatama.find((item) => item.system.equipped);
 
@@ -53,6 +54,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       magatama,
       skills,
       weapons,
+      armor,
       equippedMagatama,
       effects,
       SMT: CONFIG.SMT,
@@ -375,10 +377,17 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
 
     const newState = element.is(":checked");
 
-    // If we're
+    // If we're equipping a magatama, unequip other magatama
     if (item.type === "magatama" && fieldId === "equipped" && newState) {
       this.actor.items
         .filter((item) => item.type === "magatama" && item.system.equipped)
+        .forEach(async (item) => await item.toggleField(fieldId, false));
+    }
+
+    // If we're equipping armor, unequip other armor in the same slot
+    if (item.type === "armor" && fieldId === "equipped" && newState) {
+      this.actor.items
+        .filter((item) => item.type === "armor" && item.system.equipped)
         .forEach(async (item) => await item.toggleField(fieldId, false));
     }
 

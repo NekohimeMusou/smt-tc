@@ -18,7 +18,6 @@ const templatePaths = [
   "systems/smt-tc/templates/parts/actor/tabs/main.hbs",
   "systems/smt-tc/templates/parts/actor/tabs/inventory.hbs",
   "systems/smt-tc/templates/parts/actor/tabs/bio.hbs",
-  "systems/smt-tc/templates/parts/actor/tabs/magatama.hbs",
 
   // Actor sheet panes
   "systems/smt-tc/templates/parts/actor/header.hbs",
@@ -31,6 +30,10 @@ const templatePaths = [
   "systems/smt-tc/templates/parts/actor/buffs.hbs",
   "systems/smt-tc/templates/parts/actor/skills.hbs",
   "systems/smt-tc/templates/parts/actor/weapons.hbs",
+
+  // Inventory tab
+  "systems/smt-tc/templates/parts/actor/armor.hbs",
+  "systems/smt-tc/templates/parts/actor/magatama.hbs",
 
   // Bio data
   "systems/smt-tc/templates/parts/actor/alignment.hbs",
