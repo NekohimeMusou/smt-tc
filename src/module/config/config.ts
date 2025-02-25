@@ -30,6 +30,7 @@ const templatePaths = [
   "systems/smt-tc/templates/parts/actor/mods.hbs",
   "systems/smt-tc/templates/parts/actor/buffs.hbs",
   "systems/smt-tc/templates/parts/actor/skills.hbs",
+  "systems/smt-tc/templates/parts/actor/weapons.hbs",
 
   // Bio data
   "systems/smt-tc/templates/parts/actor/alignment.hbs",
@@ -179,10 +180,16 @@ const attackTypes = {
 
 const itemTypes = {
   // item: "SMT.itemTypes.item",
-  // weapon: "SMT.itemTypes.weapon",
+  weapon: "SMT.itemTypes.weapon",
   // armor: "SMT.itemTypes.armor",
   magatama: "SMT.itemTypes.magatama",
   skill: "SMT.itemTypes.skill",
+} as const;
+
+const weaponTypes = {
+  melee: "SMT.weaponTypes.melee",
+  gun: "SMT.weaponTypes.gun",
+  grenade: "SMT.weaponTypes.grenade",
 } as const;
 
 const powerBoost = ["phys", "mag", "item"] as const;
@@ -242,6 +249,7 @@ export const SMT = {
   damageTypes,
   attackTypes,
   itemTypes,
+  weaponTypes,
   powerBoost,
   skillProps,
   equipSlots,

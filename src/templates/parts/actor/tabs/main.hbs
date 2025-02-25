@@ -27,5 +27,8 @@
       {{> "systems/smt-tc/templates/parts/actor/mods.hbs"}}
     </div>
   </div>
+  {{#if (eq actor.type "human")}}
+  {{> "systems/smt-tc/templates/parts/actor/weapons.hbs"}}
+  {{/if}}
   {{> "systems/smt-tc/templates/parts/actor/skills.hbs"}}
 </section>

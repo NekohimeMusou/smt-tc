@@ -71,7 +71,9 @@
       "tn": "TN",
       "ailmentDesc": "{ailment} {rate}%",
       "power": "Power",
-      "expended": "Expended"
+      "expended": "Expended",
+      "weaponType": "Type",
+      "ammo": "Ammo"
     },
     "skillDetails": {
       "cost": "Cost: {cost} {resource}",
@@ -230,6 +232,11 @@
       "armor": "Armor",
       "weapon": "Weapon",
       "item": "Item"
+    },
+    "weaponTypes": {
+      "melee": "Melee",
+      "gun": "Gun",
+      "grenade": "Grenade"
     },
     "equipSlots": {
       "none": "N/A",
