@@ -138,7 +138,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     if (!item) return;
 
     const confirmDelete = (await Dialog.confirm({
-      title: game.i18n.localize("SMT.dialog.confirmDeleteDialogTitle"),
+      title: game.i18n.localize("SMT.dialog.confirmDeleteTitle"),
       content: `<p>${game.i18n.format("SMT.dialog.confirmDeletePrompt", { name: item.name })}</p>`,
       yes: () => true,
       no: () => false,

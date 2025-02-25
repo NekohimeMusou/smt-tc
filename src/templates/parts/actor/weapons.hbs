@@ -40,7 +40,7 @@
           —
           {{else}}
           {{#if (eq system.weaponType "gun")}}
-          {{system.ammo}}
+          {{system.ammo.value}}/{{system.ammo.max}}
           {{else}}
           {{system.qty}}
           {{/if}}
