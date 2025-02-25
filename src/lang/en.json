@@ -83,7 +83,10 @@
       "affinity": "Affinity: {affinity}",
       "target": "Target: {target}",
       "tn": "TN: {tn}%",
-      "type": "Type"
+      "type": "Type",
+      "ammoCount": "Ammo: {count}/{max}",
+      "qty": "Qty: {qty}",
+      "ammoQtyLabel": "Ammo/Qty"
     },
     "magatama": {
       "active": "Active",

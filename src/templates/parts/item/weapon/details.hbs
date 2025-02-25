@@ -1,0 +1,58 @@
+<section class="details">
+  <div class="items-list flexcol">
+    <ol class="stat-list">
+      <li class="item items-header">
+        <div>{{localize "SMT.tabs.details"}}</div>
+      </li>
+
+      {{!-- Weapon Details --}}
+      <li class="item flexrow items-header flex-group-center">
+        {{!-- Phys Atk / Mag Atk / etc --}}
+        <div class="item-prop">{{localize (concat "SMT.attackTypes." system.attackType)}}</div>
+
+        {{!-- Ammo --}}
+        {{#if (eq system.weaponType "gun")}}
+        <div class="item-prop">
+          {{localize "SMT.skillDetails.ammoCount" count=(ifThen system.ammo.value system.ammo.value "0") max=(ifThen system.ammo.max system.ammo.max "0")}}
+        </div>
+        {{else}}
+        {{#if (eq system.weaponType "grenade")}}
+        <div class="item-prop">
+          {{localize "SMT.skillDetails.qty" qty=system.qty}}
+        </div>
+        {{/if}}
+        {{/if}}
+
+        {{!-- Potency --}}
+        <div class="item-prop">{{localize "SMT.skillDetails.potency"
+          potency=(ifThen system.potency system.potency "0")}}
+        </div>
+
+        {{!-- Affinity --}}
+        <div class="item-prop">
+          {{localize "SMT.skillDetails.affinity"
+           affinity=(localize (concat "SMT.affinities." system.affinity))}}
+        </div>
+
+        {{!-- Target --}}
+        <div class="item-prop">{{localize "SMT.skillDetails.target"
+          target=(localize (concat "SMT.targets." system.target))}}
+        </div>
+
+           {{!-- TN/Auto --}}
+        <div class="item-prop">{{localize "SMT.skillDetails.tn" tn=system.tn}}</div>
+      </li>
+
+      <li class="item items-header">
+        <div>{{localize "SMT.itemSheet.effect"}}</div>
+      </li>
+
+      {{editor
+        system.description
+        target="system.description"
+        editable=editable
+        button=true
+      }}
+    </ol>
+  </div>
+</section>
