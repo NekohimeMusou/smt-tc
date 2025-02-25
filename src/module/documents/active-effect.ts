@@ -10,9 +10,13 @@ export class SmtActiveEffect extends ActiveEffect<SmtActor, SmtItem> {
     }
 
     // It's an item
-    const item = parent as SmtItem;
+    if (parent.documentName === "Item") {
+      const item = parent as SmtItem;
 
-    return item.system.equippable && !item.system.equipped;
+      return item.system.equippable && !item.system.equipped;
+    }
+
+    return false;
   }
 }
 
@@ -28,7 +32,7 @@ export async function onManageActiveEffect(
   event.preventDefault();
   const a = $(event.currentTarget);
   const li = a.closest("li");
-  // const effect = owner.effects.get(li.data("effectId") as string);
+
   const effect = li.data("effectId")
     ? owner.effects.get(li.data("effectId") as string)
     : null;
