@@ -53,13 +53,13 @@ function registerDocumentClasses() {
 function registerSheetApplications() {
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("smt-tc", SmtActorSheet, {
-    types: ["fiend", "demon", "human"],
+    types: Object.keys(CONFIG.SMT.characterClasses),
     makeDefault: true,
   });
 
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("smt-tc", SmtItemSheet, {
-    types: ["magatama", "skill", "weapon"],
+    types: Object.keys(CONFIG.SMT.itemTypes),
     makeDefault: true,
   });
 }

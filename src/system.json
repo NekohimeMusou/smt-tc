@@ -38,6 +38,7 @@
     },
     "Item": {
       "weapon": { "htmlFields": ["description"] },
+      "armor": { "htmlFields": ["description"] },
       "magatama": { "htmlFields": ["description"] },
       "skill": { "htmlFields": ["description"] }
     }

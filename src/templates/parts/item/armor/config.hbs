@@ -1,0 +1,36 @@
+<section class="item-config">
+  <div class="items-list flexcol">
+    <ol class="stat-list">
+      <li class="item flexrow">
+        {{!-- Phys Resist --}}
+        <label for="phys-resist" class="item-prop">{{localize "SMT.resist.phys"}}</label>
+        <div class="item-prop">
+          <input type="number" id="phys-resist" name="system.resist.phys"
+           value="{{system.resist.phys}}" placeholder="0" data-dtype="Number" />
+        </div>
+
+        {{!-- Mag Resist --}}
+        <label for="mag-resist" class="item-prop">{{localize "SMT.resist.mag"}}</label>
+        <div class="item-prop">
+          <input type="number" id="mag-resist" name="system.resist.mag"
+           value="{{system.resist.mag}}" placeholder="0" data-dtype="Number" />
+        </div>
+
+        {{!-- Price --}}
+        <label for="price" class="item-prop">{{localize "SMT.itemSheet.price"}}</label>
+        <div class="item-prop">
+          <input type="number" id="price" name="system.price"
+           value="{{system.price}}" placeholder="0" data-dtype="Number" />
+        </div>
+
+        {{!-- Slot --}}
+        <label for="slot" class="item-prop">{{localize "SMT.itemSheet.slot"}}</label>
+        <div class="item-prop">
+          <select id="slot" name="system.equipSlot">
+            {{selectOptions SMT.armorSlots localize=true selected=system.equipSlot}}
+          </select>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>

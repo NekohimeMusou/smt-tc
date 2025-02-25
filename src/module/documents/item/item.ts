@@ -2,9 +2,10 @@ import { ITEMMODELS } from "../../data-models/item/item-data-model.js";
 import { SmtActiveEffect } from "../active-effect.js";
 import { SmtActor } from "../actor/actor.js";
 
+export type Weapon = Subtype<SmtItem, "weapon">;
+export type Armor = Subtype<SmtItem, "armor">;
 export type Magatama = Subtype<SmtItem, "magatama">;
 export type Skill = Subtype<SmtItem, "skill">;
-export type Weapon = Subtype<SmtItem, "weapon">;
 
 export class SmtItem extends Item<
   typeof ITEMMODELS,

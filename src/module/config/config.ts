@@ -38,8 +38,8 @@ const templatePaths = [
   "systems/smt-tc/templates/parts/actor/background.hbs",
   "systems/smt-tc/templates/parts/actor/demon.hbs",
 
-  "systems/smt-tc/templates/parts/shared/affinities.hbs",
-  "systems/smt-tc/templates/parts/shared/effects.hbs",
+  "systems/smt-tc/templates/parts/affinities.hbs",
+  "systems/smt-tc/templates/parts/effects.hbs",
 
   // Item sheet tabs
   "systems/smt-tc/templates/parts/item/magatama/tabs/main.hbs",
@@ -52,6 +52,7 @@ const templatePaths = [
   "systems/smt-tc/templates/parts/item/skill/config.hbs",
   "systems/smt-tc/templates/parts/item/weapon/details.hbs",
   "systems/smt-tc/templates/parts/item/weapon/config.hbs",
+  "systems/smt-tc/templates/parts/item/armor/config.hbs",
 ] as const;
 
 const characterClasses = {
@@ -183,7 +184,7 @@ const attackTypes = {
 const itemTypes = {
   // item: "SMT.itemTypes.item",
   weapon: "SMT.itemTypes.weapon",
-  // armor: "SMT.itemTypes.armor",
+  armor: "SMT.itemTypes.armor",
   magatama: "SMT.itemTypes.magatama",
   skill: "SMT.itemTypes.skill",
 } as const;
@@ -209,6 +210,12 @@ const equipSlots = {
   magatama: "SMT.equipSlots.magatama",
   gun: "SMT.equipSlots.gun",
   melee: "SMT.equipSlots.melee",
+  head: "SMT.equipSlots.head",
+  torso: "SMT.equipSlots.torso",
+  legs: "SMT.equipSlots.legs",
+} as const;
+
+const armorSlots = {
   head: "SMT.equipSlots.head",
   torso: "SMT.equipSlots.torso",
   legs: "SMT.equipSlots.legs",
@@ -255,6 +262,7 @@ export const SMT = {
   powerBoost,
   skillProps,
   equipSlots,
+  armorSlots,
   targets,
   successLevels,
   defaultAutofailThreshold,

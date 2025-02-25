@@ -2,18 +2,14 @@
   {{> "systems/smt-tc/templates/parts/item/header.hbs"}}
 
   <nav class="sheet-tabs tabs" data-group="primary">
-    <a class="item resource-label" data-tab="main">{{localize "SMT.tabs.main"}}</a>
-    <a class="item resource-label" data-tab="notes">{{localize "SMT.tabs.notes"}}</a>
+    <a class="item resource-label" data-tab="config">{{localize "SMT.tabs.config"}}</a>
     <a class="item resource-label" data-tab="effects">{{localize "SMT.tabs.effects"}}</a>
   </nav>
 
   <section class="sheet-body">
-    <div class="tab main" data-group="primary" data-tab="main">
-      {{> "systems/smt-tc/templates/parts/item/magatama/tabs/main.hbs"}}
-    </div>
-
-    <div class="tab notes" data-group="primary" data-tab="notes">
-      {{editor system.description target="system.description" editable=editable button=true}}
+    {{!-- Config Tab --}}
+    <div class="tab config" data-group="primary" data-tab="config">
+      {{> "systems/smt-tc/templates/parts/item/armor/config.hbs"}}
     </div>
 
     {{!-- Effects Tab --}}
