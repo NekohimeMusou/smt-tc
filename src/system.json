@@ -37,6 +37,7 @@
       "human": { "htmlFields": ["notes"] }
     },
     "Item": {
+      "weapon": { "htmlFields": ["description"] },
       "magatama": { "htmlFields": ["description"] },
       "skill": { "htmlFields": ["description"] }
     }

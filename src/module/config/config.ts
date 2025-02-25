@@ -50,6 +50,8 @@ const templatePaths = [
   "systems/smt-tc/templates/parts/item/magatama/affinities.hbs",
   "systems/smt-tc/templates/parts/item/skill/details.hbs",
   "systems/smt-tc/templates/parts/item/skill/config.hbs",
+  "systems/smt-tc/templates/parts/item/weapon/details.hbs",
+  "systems/smt-tc/templates/parts/item/weapon/config.hbs",
 ] as const;
 
 const characterClasses = {

@@ -59,7 +59,7 @@ function registerSheetApplications() {
 
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("smt-tc", SmtItemSheet, {
-    types: ["magatama", "skill"],
+    types: ["magatama", "skill", "weapon"],
     makeDefault: true,
   });
 }

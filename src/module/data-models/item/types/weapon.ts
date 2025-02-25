@@ -10,7 +10,10 @@ export class WeaponData extends AttackData {
     return {
       ...super.defineSchema(),
       weaponType: new fields.StringField({ choices: CONFIG.SMT.weaponTypes }),
-      ammo: new fields.NumberField({ integer: true, min: 0 }),
+      ammo: new fields.SchemaField({
+        max: new fields.NumberField({ integer: true, positive: true }),
+        value: new fields.NumberField({ integer: true, min: 0 }),
+      }),
     };
   }
 

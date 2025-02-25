@@ -1,0 +1,44 @@
+<section class="config">
+  <div class="items-list flexcol">
+    <ol class="stat-list">
+      <li class="item flexrow">
+        <label for="weapon-type" class="item-prop">{{localize "SMT.itemSheet.weaponType"}}</label>
+        <div class="item-prop">
+          <select id="weapon-type" name="system.weaponType">
+            {{selectOptions SMT.weaponTypes localize=true selected=system.weaponType}}
+          </select>
+        </div>
+
+        {{#if (eq system.weaponType "gun")}}
+        <label for="ammo-value" class="item-prop">{{localize "SMT.itemSheet.ammo"}}</label>
+        <div class="item-prop">
+          <input type="number" id="ammo-value" name="system.ammo.value" value="{{system.ammo.value}}" placeholder="0" data-dtype="Number" />
+        </div>
+        <span> / </span>
+        <div class="item-prop">
+          <input type="number" id="ammo-max" name="system.ammo.max" value="{{system.ammo.max}}" placeholder="0" data-dtype="Number" />
+        </div>
+        {{else}}
+        {{#if (eq system.weaponType "grenade")}}
+        <label for="qty" class="item-prop">{{localize "SMT.itemSheet.qty"}}</label>
+        <div class="item-prop">
+          <input type="number" id="qty" name="system.qty" value="{{system.qty}}" placeholder="0" data-dtype="Number" />
+        </div>
+        {{/if}}
+        {{/if}}
+
+        <label for="potency" class="item-prop">{{localize "SMT.itemSheet.potency"}}</label>
+        <div class="item-prop">
+          <input type="number" id="potency" name="system.potency" value="{{system.potency}}" placeholder="0" data-dtype="Number" />
+        </div>
+
+        <label for="affinity" class="item-prop">{{localize "SMT.itemSheet.affinity"}}</label>
+        <div class="item-prop">
+          <select id="affinity" name="system.affinity">
+            {{selectOptions SMT.attackAffinities localize=true selected=system.affinity}}
+          </select>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>

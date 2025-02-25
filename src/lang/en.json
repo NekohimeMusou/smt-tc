@@ -73,7 +73,8 @@
       "power": "Power",
       "expended": "Expended",
       "weaponType": "Type",
-      "ammo": "Ammo"
+      "ammo": "Ammo",
+      "qty": "Qty"
     },
     "skillDetails": {
       "cost": "Cost: {cost} {resource}",
