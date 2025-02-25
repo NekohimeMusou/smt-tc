@@ -135,6 +135,12 @@ export async function showAttackRollCard({
     power,
   };
 
+  const rolls = [hitRoll];
+
+  if (powerRoll) {
+    rolls.push(powerRoll);
+  }
+
   const template = "systems/smt-tc/templates/chat/attack-roll-card.hbs";
   const content = await renderTemplate(template, context);
 
@@ -146,7 +152,7 @@ export async function showAttackRollCard({
       actor,
       token,
     },
-    rolls: [hitRoll, powerRoll],
+    rolls,
   };
 
   return await ChatMessage.create(chatData);
