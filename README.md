@@ -57,17 +57,22 @@ The system is designed so you can use Foundry's built-in Active Effects feature 
 
 - [**Mana's Compendium Importer**]: Export world compendiums to JSON format and import them in other worlds; lets you easily share actors, items/skills, and other things between game worlds.
 - [**Status Icon Counters**]: I use this to keep track of -kaja/-kunda stacks.
-- [**Token Health**]: Quickly assign damage or healing to multiple tokens at once
-- [**Roll of Fate**]: Randomly choose a token from the ones you have selected, at random; great for random encounters what attack randomly
+- [**Token Health**]: Quickly assign damage or healing to multiple tokens at once!
+- [**Roll of Fate**]: Randomly choose a token from the ones you have selected, at random, for random encounters what attack randomly!
 - [**Koboldworks - Data Inspector**]: Lets you inspect the data of an actor or item with one click and no digging in the console. Great for finding Active Effect paths!
 
 ## Known Issues
 
 I'm not listing missing features from the old version unless they're especially notable.
 
-- Out-of-the-box Foundry aesthetics
+- Godawful aesthetics
 - Items mostly don't exist
 - Skills don't automatically do anything yet
+- Ailment/shatter rate doesn't show in actor sheet
+  - Too crowded, not enough CSS skill to readily fix
+- It's unclear what's clickable on the sheet
+  - Answer: Anything that lights up when you mouse over it
+- It's unclear which tab is active at a given time
 
 ## Special Thanks
 
