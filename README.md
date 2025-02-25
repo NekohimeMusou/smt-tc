@@ -24,6 +24,8 @@ Alternatively, you can download and extract the zip file for the latest release.
 
 It should be fairly straightforward if you're familiar with the rules. Each class is its own actor type, and things like your HP and MP multipliers, your XP needed to level, and the fields that appear on your sheet are determined by your class. I tried to keep data entry to a minimum by calculating as much as I could and making some assumptions here and there; most stuff you'd want to change or override that isn't directly available on the sheet or isn't fully implemented, such as armor and doubling a boss's HP and MP, can be done with an Active Effect (see below). If not, let me know!
 
+Skills will make their own dice rolls when you click on them, eventually.
+
 - All the numbers *should* be calculated correctly (HP, MP, Lv, TNs, Power, Resists, etc).
 - The Mods panel has two options, both of which are reflected in the sheet calculations:
   - TN Boosts: Applies an (n \* 20) bonus to TN rolls, to make it quicker to track and apply bonuses like Aid and Concentrate.
@@ -65,6 +67,7 @@ I'm not listing missing features from the old version unless they're especially 
 
 - Out-of-the-box Foundry aesthetics
 - Items mostly don't exist
+- Skills don't automatically do anything yet
 
 ## Special Thanks
 

@@ -2,6 +2,16 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.3.0] - 2025-02-25
+
+*The big skills update!*
+
+### Added
+
+- Add Skill item type
+- Add Weapon item type
+- Support Foundry Active Effects
+
 ## [0.2.1] - 2025-02-21
 
 ### Fixed
@@ -10,7 +20,7 @@
 
 ## [0.2.0] - 2025-02-20
 
-_Added separate Human and Demon actor types with some custom behavior, and added magatama items for Fiends to use._
+_Added separate Human and Demon actor types with some custom behavior, and added magatama items for Fiends to use.*
 
 ### Added
 
@@ -66,8 +76,9 @@ _Added separate Human and Demon actor types with some custom behavior, and added
 
 ## [0.1.0] - 2025-02-18
 
-_Initial preview release._
+_Initial preview release.*
 
+[0.3.0]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.3.0
 [0.2.1]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.2.1
 [0.2.0]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.2.0
 [0.1.4]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.1.4
