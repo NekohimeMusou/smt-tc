@@ -2,6 +2,13 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.3.2] - 2025-02-25
+
+### Fixed
+
+- Fix broken actor sheet
+- Fix: Attack roller throws console errors
+
 ## [0.3.1] - 2025-02-25
 
 *I felt industrious today, so armor's here too!*
@@ -90,6 +97,7 @@ _Added separate Human and Demon actor types with some custom behavior, and added
 
 _Initial preview release.*
 
+[0.3.2]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.3.2
 [0.3.1]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.3.1
 [0.3.0]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.3.0
 [0.2.1]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.2.1
