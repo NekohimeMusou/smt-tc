@@ -1,6 +1,7 @@
 {
   "SMT": {
     "none": "None",
+    "kagutsuchi": "Kagutsuchi",
     "effects": {
       "newEffect": "New Effect",
       "temporary": "Temporary Effects",
@@ -280,7 +281,8 @@
       "tnMod": "TN Mod",
       "potency": "Potency",
       "confirmDeleteTitle": "Delete Item",
-      "confirmDeletePrompt": "Really delete {name}?"
+      "confirmDeletePrompt": "Really delete {name}?",
+      "awardDialogTitle": "Award XP and Macca"
     },
     "powerTypes": {
       "phys": "Phys Attack",
@@ -303,6 +305,17 @@
       "passive": "Passive",
       "talk": "Talk"
     },
+    "macro": {
+      "award": {
+        "conflictResolved": "Conflict Resolved",
+        "xp": "XP: {xp}",
+        "macca": "Macca: {macca}",
+        "itemDrops": "Item Drops",
+        "luckyFind": "Lucky Find",
+        "chatTitle": "Awards Received",
+        "awardReport": "Earned {xp} XP and {macca} macca."
+      }
+    },
     "settings": {
       "invertHitModDialog": {
         "name": "Invert Hit Dialog Behavior",
@@ -324,6 +337,10 @@
         "name": "Auto Dodge",
         "hint": "Tokens targeted by an attack will automatically make a dodge roll unless they're immune. Speeds play, but you miss the chance to spend FP to boost your dodge TN."
       }
+    },
+    "ui": {
+      "gmOnly": "Only the GM is allowed to do this!",
+      "noTokensSelected": "You must select at least one token."
     },
     "error": {
       "missingHitRollTN": "Missing TN in hitRoll",

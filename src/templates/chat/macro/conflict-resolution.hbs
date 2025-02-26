@@ -1,0 +1,13 @@
+{{!-- Conflict Resolved --}}
+<h2>{{localize "SMT.macro.award.conflictResolved"}}</h2>
+{{!-- XP: xx --}}
+<h3>{{localize "SMT.macro.award.xp" xp=xp}}</h3>
+{{!-- Macca: yy --}}
+<h3>{{localize "SMT.macro.award.macca" macca=macca}}</h3>
+{{!-- Item List (with #each) --}}
+{{#if itemDrops}}
+<h3>{{localize "SMT.macro.award.itemDrops"}}</h3>
+{{#each itemDrops}}
+<p>{{this}}</p>
+{{/each}}
+{{/if}}

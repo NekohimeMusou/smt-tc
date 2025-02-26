@@ -379,20 +379,24 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
 
     // If we're equipping a magatama, unequip other magatama
     if (item.type === "magatama" && fieldId === "equipped" && newState) {
-      this.actor.items
-        .filter((item) => item.type === "magatama" && item.system.equipped)
-        .forEach(async (item) => await item.toggleField(fieldId, false));
+      await Promise.all(
+        this.actor.items
+          .filter((item) => item.type === "magatama" && item.system.equipped)
+          .map(async (item) => await item.toggleField(fieldId, false)),
+      );
     }
 
     // If we're equipping armor, unequip other armor in the same slot
     if (item.type === "armor" && fieldId === "equipped" && newState) {
-      this.actor.items
-        .filter(
-          (actorItem) =>
-            actorItem.system.equipSlot === item.system.equipSlot &&
-            actorItem.system.equipped,
-        )
-        .forEach(async (item) => await item.toggleField(fieldId, false));
+      await Promise.all(
+        this.actor.items
+          .filter(
+            (actorItem) =>
+              actorItem.system.equipSlot === item.system.equipSlot &&
+              actorItem.system.equipped,
+          )
+          .map(async (item) => await item.toggleField(fieldId, false)),
+      );
     }
 
     await item.toggleField(fieldId, newState);
