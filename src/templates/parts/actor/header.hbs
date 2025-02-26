@@ -6,14 +6,21 @@
     </h1>
 
     <div class="flexrow flex-group-center">
+      {{#unless (eq actor.type "demon")}}
       <div class="resource-label">
         {{localize "SMT.actorSheet.charClass" class=(localize (concat "SMT.charClasses." actor.type))}}
       </div>
+      {{/unless}}
 
       {{#if (eq actor.type "demon")}}
       <div class="flexrow">
         <label for="baseLv" class="resource-label">{{localize "SMT.actorSheet.baseLv"}}</label>
         <input type="number" id="baseLv" name="system.baseLv" data-dtype="Number" placeholder="1" value="{{system.baseLv}}" />
+      </div>
+
+      <div class="flexrow">
+        <label for="clan" class="resource-label">{{localize "SMT.actorSheet.clan"}}</label>
+        <input type="text" id="clan" name="system.clan" data-dtype="String" placeholder="Foul" value="{{system.clan}}" />
       </div>
       {{/if}}
 

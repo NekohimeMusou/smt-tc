@@ -51,7 +51,8 @@
       "affinities": "Affinities",
       "mgt": "Mgt",
       "charClass": "Class: {class}",
-      "equipped": "Equipped"
+      "equipped": "Equipped",
+      "clan": "Clan"
     },
     "itemSheet": {
       "attackType": "Attack Type",

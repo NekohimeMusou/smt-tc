@@ -12,6 +12,7 @@ export class SmtDemonData extends SmtBaseActorData {
         choices: CONFIG.SMT.stats,
         initial: "st",
       }),
+      clan: new fields.StringField(),
     };
   }
 }
