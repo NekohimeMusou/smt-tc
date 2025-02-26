@@ -2,6 +2,22 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.3.3] - 2025-02-26
+
+### Changed
+
+- Don't show pointless details pane on passive skills
+
+### Added
+
+- Add Clan field to demon sheet
+
+### Fixed
+
+- Fix: Off-by-one error in Fiend level calculations
+- Make field placeholders more consistent
+- Fix: Can't equip armor to more than one slot
+
 ## [0.3.2] - 2025-02-25
 
 ### Fixed

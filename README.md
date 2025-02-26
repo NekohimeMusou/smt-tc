@@ -73,6 +73,7 @@ I'm not listing missing features from the old version unless they're especially 
 - It's unclear what's clickable on the sheet
   - Answer: Anything that lights up when you mouse over it
 - It's unclear which tab is active at a given time
+- Overriding an elemental affinity doesn't work correctly
 
 ## Special Thanks
 
