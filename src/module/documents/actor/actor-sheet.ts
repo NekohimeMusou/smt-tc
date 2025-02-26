@@ -387,7 +387,11 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     // If we're equipping armor, unequip other armor in the same slot
     if (item.type === "armor" && fieldId === "equipped" && newState) {
       this.actor.items
-        .filter((item) => item.type === "armor" && item.system.equipped)
+        .filter(
+          (actorItem) =>
+            actorItem.system.equipSlot === item.system.equipSlot &&
+            actorItem.system.equipped,
+        )
         .forEach(async (item) => await item.toggleField(fieldId, false));
     }
 
