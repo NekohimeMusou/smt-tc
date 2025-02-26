@@ -1,6 +1,7 @@
 <section class="details">
   <div class="items-list flexcol">
     <ol class="stat-list">
+      {{#unless (eq system.attackType "passive")}}
       <li class="item items-header">
         <div>{{localize "SMT.tabs.details"}}</div>
       </li>
@@ -49,6 +50,7 @@
         {{/if}}
         {{/if}}
       </li>
+      {{/unless}}
 
       <li class="item items-header">
         <div>{{localize "SMT.itemSheet.effect"}}</div>
