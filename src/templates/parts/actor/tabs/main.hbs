@@ -5,7 +5,7 @@
       <li class="item flexrow">
         {{#if system.behavior}}
         <div class="item-prop">{{localize "SMT.bio.behavior"}}</div>
-        <input class="flex3" type="text" value="{{system.behavior}}" placeholder="N/A" data-dtype="String" disabled />
+        <input class="flex3" type="text" value="{{system.behavior}}" placeholder="{{localize "SMT.none"}}" data-dtype="String" disabled />
         {{/if}}
         {{#if equippedMagatama}}
         <div class="item-prop">{{localize "SMT.itemTypes.magatama"}}</div>
