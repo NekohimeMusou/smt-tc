@@ -113,6 +113,7 @@ _Added separate Human and Demon actor types with some custom behavior, and added
 
 _Initial preview release.*
 
+[0.3.3]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.3.3
 [0.3.2]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.3.2
 [0.3.1]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.3.1
 [0.3.0]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.3.0
