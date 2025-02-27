@@ -1,0 +1,27 @@
+{
+  "name": "Apply Healing Fountain",
+  "type": "script",
+  "author": "kexb4335vITaDI0n",
+  "img": "icons/svg/regen.svg",
+  "scope": "global",
+  "command": "CONFIG.SMT.macro.healingFountain();",
+  "folder": "9LxZg8JN77CsrqjF",
+  "ownership": {
+    "default": 0,
+    "kexb4335vITaDI0n": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.3.3",
+    "createdTime": 1740683152963,
+    "modifiedTime": 1740683154295,
+    "lastModifiedBy": "kexb4335vITaDI0n"
+  },
+  "_id": "YoLgdU5lbSvDH6sZ",
+  "sort": 300000,
+  "_key": "!macros!YoLgdU5lbSvDH6sZ"
+}

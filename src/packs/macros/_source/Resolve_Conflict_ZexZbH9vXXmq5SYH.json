@@ -1,0 +1,27 @@
+{
+  "name": "Resolve Conflict",
+  "type": "script",
+  "author": "kexb4335vITaDI0n",
+  "img": "icons/svg/combat.svg",
+  "scope": "global",
+  "command": "CONFIG.SMT.macro.resolveConflict();",
+  "folder": "9LxZg8JN77CsrqjF",
+  "ownership": {
+    "default": 0,
+    "kexb4335vITaDI0n": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.3.3",
+    "createdTime": 1740683156651,
+    "modifiedTime": 1740683156651,
+    "lastModifiedBy": "kexb4335vITaDI0n"
+  },
+  "_id": "ZexZbH9vXXmq5SYH",
+  "sort": 0,
+  "_key": "!macros!ZexZbH9vXXmq5SYH"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "GM",
+  "sorting": "a",
+  "folder": null,
+  "type": "Macro",
+  "_id": "9LxZg8JN77CsrqjF",
+  "description": "",
+  "sort": 0,
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.3.3",
+    "createdTime": 1740683148082,
+    "modifiedTime": 1740683148082,
+    "lastModifiedBy": "kexb4335vITaDI0n"
+  },
+  "_key": "!folders!9LxZg8JN77CsrqjF"
+}
