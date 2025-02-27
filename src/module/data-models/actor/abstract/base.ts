@@ -155,6 +155,7 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
     // Modifiers for AEs etc to latch onto
     const mods = new fields.SchemaField({
       might: new fields.BooleanField(),
+      luckyFind: new fields.BooleanField(),
     });
 
     const powerBoost = new fields.SchemaField({
@@ -278,6 +279,31 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
     data.hp.max = Math.max((stats.vi.value + lv) * data.hpMultiplier, 1);
     data.mp.max = Math.max((stats.ma.value + lv) * data.mpMultiplier, 1);
     data.fp.max = Math.floor(stats.lu.value / 5) + 5;
+  }
+
+  get st(): number {
+    const data = this._systemData;
+    return data.stats.st.value;
+  }
+
+  get ma(): number {
+    const data = this._systemData;
+    return data.stats.ma.value;
+  }
+
+  get vi(): number {
+    const data = this._systemData;
+    return data.stats.vi.value;
+  }
+
+  get ag(): number {
+    const data = this._systemData;
+    return data.stats.ag.value;
+  }
+
+  get lu(): number {
+    const data = this._systemData;
+    return data.stats.lu.value;
   }
 
   // Goofy Typescript hack
