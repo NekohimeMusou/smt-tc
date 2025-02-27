@@ -2,6 +2,27 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.3.4] - 2025-02-27
+
+*Macros macros macros!*
+
+### Added
+
+- Add Apply Buffs macro
+- Add Apply Healing Fountain macro
+- Add Grant Rewards
+- Add Lucky Find macro
+- Add Resolve Conflict macro
+
+### Changed
+
+- Add stat getters to top level of actor data model (e.g. `system.ag` instead of `system.stats.ag.value`)
+- Editable actor sheet buff fields are now optional
+
+### Fixed
+
+- Fix: Actor sheet award fields don't work
+
 ## [0.3.3] - 2025-02-26
 
 ### Changed
@@ -113,6 +134,7 @@ _Added separate Human and Demon actor types with some custom behavior, and added
 
 _Initial preview release.*
 
+[0.3.4]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.3.4
 [0.3.3]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.3.3
 [0.3.2]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.3.2
 [0.3.1]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.3.1

@@ -2,7 +2,7 @@
   "id": "smt-tc",
   "title": "SMT RPG: Tokyo Conception (Unofficial)",
   "description": "Unofficial Foundry VTT system for Shin Megami Tensei: Tokyo Conception. Not affiliated with LionWing Publishing or ATLUS.",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "compatibility": {
     "minimum": 12,
     "verified": 12
@@ -10,7 +10,7 @@
 
   "url": "https://github.com/NekohimeMusou/smt-tc",
   "manifest": "https://github.com/NekohimeMusou/smt-tc/releases/latest/download/system.json",
-  "download": "https://github.com/NekohimeMusou/smt-tc/releases/download/v0.3.3/smt-tc-v0.3.3.zip",
+  "download": "https://github.com/NekohimeMusou/smt-tc/releases/download/v0.3.4/smt-tc-v0.3.4.zip",
 
   "authors": [
     {

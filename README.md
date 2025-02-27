@@ -45,13 +45,26 @@ The system is designed so you can use Foundry's built-in Active Effects feature 
 
 - Might: `system.mods.might` (Boolean)
   - This applies to Phys Attacks (including basic strikes) regardless of affinity (it's compatible with e.g. the Breath Group and Freikugel).
+- Lucky Find: `system.mods.luckyFind` (Boolean)
 - Expert Dodge: `system.tn.dodge` (Number)
 - Sure Shot: `system.tn.gun` (Number)
 - Powerful Strikes/Spells/Item Pro: `system.powerBoost.phys`, `system.powerBoost.mag`, `system.powerBoost.item` (Boolean)
-  - NOTE: The Item Pro flag exists, but non-magatama items don't yet
+  - NOTE: The Item Pro flag exists, but non-magatama items don't yet.
 - Amplify Group skills: `system.hpMultiplier` and `system.mpMultiplier`
-- Armor: `system.resist.phys` and `system.resist.mag`
-  - You can use this as a substitute until armor becomes an item type
+
+### Macros
+
+There's now a compendium pack with a few macros to make GMs' lives a little easier! The following are available:
+
+- Apply Buffs: Apply -kaja and -kunda effects; replaces the cumbersome actor sheet UX. Can also clear buffs (Dekaja), debuffs (Dekunda), or both.
+- Apply Healing Fountain: Calculate the healing cost for the selected tokens, heal them up, and deduct the macca from their total.
+  - If they can't afford the healing, the output will say so and they won't be healed or charged.
+  - Resurrection is currently not accounted for.
+- Grant Rewards: Add a specified amount of XP and macca to all selected tokens.
+  - Rewards are **not** divided between the actors; they each get the full amount.
+- Lucky Find: Roll a Lu check for each selected token that has Lucky Find; reports the total number of normal successes and the total number of crits.
+  - To make this work, add an Active Effect to your Lucky Find skill that overrides `system.mods.luckyFind` to `true`. That's how the macro knows who has it.
+- Resolve Conflict: Displays the total XP and macca rewards for the selected tokens, plus a list of their item drops.
 
 ## Recommended Mods
 
