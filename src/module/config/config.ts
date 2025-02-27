@@ -1,4 +1,5 @@
 import { grantRewards, resolveConflict } from "../helpers/macros/award.js";
+import { applyBuffs } from "../helpers/macros/buffs.js";
 import { ailmentIds } from "./statuses.js";
 
 declare global {
@@ -298,6 +299,9 @@ export const SMT = {
   successLevels,
   defaultAutofailThreshold,
   ailmentIds,
-  resolveConflict,
-  grantRewards,
+  macro: {
+    resolveConflict,
+    grantRewards,
+    applyBuffs,
+  },
 } as const;

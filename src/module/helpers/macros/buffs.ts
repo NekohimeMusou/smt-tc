@@ -32,35 +32,48 @@ export async function applyBuffs() {
 
   const buffAmt = amount ?? 0;
 
-  const updateArray: [string, number][] = [];
+  const clearBuffs = action === "clearAll" || action === "dekaja";
+  const clearDebuffs = action === "clearAll" || action === "dekunda";
+  const applyBuffs = !clearBuffs && !clearDebuffs;
 
-  // Can't push to array without this type declaration
-  // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
-  const dekajaUpdates = Object.keys(CONFIG.SMT.buffSpells).map((buff) => [
-    `system.buffs.${buff}`,
-    0,
-  ]) as [string, number][];
+  if (clearBuffs) {
+    await Promise.all(
+      tokens.map(async (token) => {
+        const updates = Object.fromEntries(
+          Object.keys(CONFIG.SMT.buffSpells).map((buff) => [
+            `system.buffs.${buff}`,
+            0,
+          ]),
+        );
+        await token.actor.update(updates);
+      }),
+    );
+  }
 
-  // Can't push to array without this type declaration
-  // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
-  const dekundaUpdates = Object.keys(CONFIG.SMT.debuffSpells).map((debuff) => [
-    `system.buffs.${debuff}`,
-    0,
-  ]) as [string, number][];
+  if (clearDebuffs) {
+    await Promise.all(
+      tokens.map(async (token) => {
+        const updates = Object.fromEntries(
+          Object.keys(CONFIG.SMT.debuffSpells).map((debuff) => [
+            `system.buffs.${debuff}`,
+            0,
+          ]),
+        );
+        await token.actor.update(updates);
+      }),
+    );
+  }
 
-  switch (action) {
-    case "clearAll":
-      updateArray.push(...dekajaUpdates);
-      updateArray.push(...dekundaUpdates);
-      break;
-    case "dekaja":
-      updateArray.push(...dekajaUpdates);
-      break;
-    case "dekunda":
-      updateArray.push(...dekundaUpdates);
-      break;
-    default:
-      updateArray.push([`system.buffs.${action}`, buffAmt]);
+  if (applyBuffs) {
+    await Promise.all(
+      tokens.map(async (token) => {
+        const originalValue = token.actor.system.buffs[action];
+        const updates = Object.fromEntries([
+          [`system.buffs.${action}`, originalValue + buffAmt],
+        ]);
+        await token.actor.update(updates);
+      }),
+    );
   }
 
   const targetNames = tokens.map((token) => token.name);
@@ -83,7 +96,7 @@ export async function applyBuffs() {
   const content = await renderTemplate(template, context);
 
   const chatData = {
-    user: game.user.id,
+    author: game.user.id,
     content,
     speaker: {
       scene: game.scenes.current,

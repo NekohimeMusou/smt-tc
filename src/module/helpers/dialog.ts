@@ -201,7 +201,7 @@ export async function renderBuffDialog(): Promise<BuffDialogResult> {
             callback: () => resolve({ action: "dekunda" }),
           },
           clearAll: {
-            label: game.i18n.localize("SMT.dialog.clearAllBuffs"),
+            label: game.i18n.localize("SMT.buffs.clearAll"),
             callback: () => resolve({ action: "clearAll" }),
           },
         },

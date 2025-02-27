@@ -53,7 +53,8 @@
       "mgt": "Mgt",
       "charClass": "Class: {class}",
       "equipped": "Equipped",
-      "clan": "Clan"
+      "clan": "Clan",
+      "buff": "Buff"
     },
     "itemSheet": {
       "attackType": "Attack Type",

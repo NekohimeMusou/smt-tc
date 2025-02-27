@@ -144,13 +144,13 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
       }),
     };
     const buffs = new fields.SchemaField({
-      tarukaja: new fields.NumberField({ integer: true, min: 0 }),
-      makakaja: new fields.NumberField({ integer: true, min: 0 }),
-      rakukaja: new fields.NumberField({ integer: true, min: 0 }),
-      sukukaja: new fields.NumberField({ integer: true, min: 0 }),
-      tarunda: new fields.NumberField({ integer: true, min: 0 }),
-      rakunda: new fields.NumberField({ integer: true, min: 0 }),
-      sukunda: new fields.NumberField({ integer: true, min: 0 }),
+      tarukaja: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+      makakaja: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+      rakukaja: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+      sukukaja: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+      tarunda: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+      rakunda: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+      sukunda: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
     });
     // Modifiers for AEs etc to latch onto
     const mods = new fields.SchemaField({

@@ -35,7 +35,7 @@ export async function resolveConflict() {
   const content = await renderTemplate(template, { xp, macca, itemDrops });
 
   const chatData = {
-    user: game.user.id,
+    author: game.user.id,
     content,
     speaker: {
       scene: game.scenes.current,
@@ -90,7 +90,7 @@ export async function grantRewards() {
   const content = await renderTemplate(template, { recipientNames, xp, macca });
 
   const chatData = {
-    user: game.user.id,
+    author: game.user.id,
     content,
     speaker: {
       scene: game.scenes.current,

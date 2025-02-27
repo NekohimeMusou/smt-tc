@@ -37,7 +37,7 @@ export async function showHitCheckCard({
   const content = await renderTemplate(template, context);
 
   const chatData = {
-    user: game.user.id,
+    author: game.user.id,
     content,
     speaker: {
       scene: game.scenes.current,
@@ -84,7 +84,7 @@ export async function showPowerRollCard({
   const content = await renderTemplate(template, context);
 
   const chatData = {
-    user: game.user.id,
+    author: game.user.id,
     content,
     speaker: {
       scene: game.scenes.current,
@@ -145,7 +145,7 @@ export async function showAttackRollCard({
   const content = await renderTemplate(template, context);
 
   const chatData = {
-    user: game.user.id,
+    author: game.user.id,
     content,
     speaker: {
       scene: game.scenes.current,
