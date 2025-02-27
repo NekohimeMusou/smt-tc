@@ -1,4 +1,8 @@
-import { grantRewards, resolveConflict } from "../helpers/macros/award.js";
+import {
+  grantRewards,
+  luckyFindCheck,
+  resolveConflict,
+} from "../helpers/macros/award.js";
 import { applyBuffs } from "../helpers/macros/buffs.js";
 import { ailmentIds } from "./statuses.js";
 
@@ -303,5 +307,6 @@ export const SMT = {
     resolveConflict,
     grantRewards,
     applyBuffs,
+    luckyFindCheck,
   },
 } as const;

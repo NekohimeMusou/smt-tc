@@ -1,0 +1,11 @@
+<h2>{{localize "SMT.macro.luckyFind.title"}}</h2>
+
+{{#each results}}
+{{name}}: {{localize (concat "SMT.successLevel." successLevel)}} (TN: {{luckTN}})
+{{{rollRender}}}
+{{/each}}
+
+<h3>{{localize "SMT.macro.luckyFind.successes" successes=successes}}</h3>
+{{#if crits}}
+<h3>{{localize "SMT.macro.luckyFind.crits" crits=crits}}</h3>
+{{/if}}

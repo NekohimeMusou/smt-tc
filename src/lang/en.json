@@ -318,7 +318,6 @@
         "xp": "XP: {xp}",
         "macca": "Macca: {macca}",
         "itemDrops": "Item Drops",
-        "luckyFind": "Lucky Find",
         "chatTitle": "Awards Received",
         "awardReport": "Earned {xp} XP and {macca} macca."
       },
@@ -326,6 +325,11 @@
         "buffCardMsg": "{stat} {direction} by {buffAmt}",
         "increased": "increased",
         "reduced": "reduced"
+      },
+      "luckyFind": {
+        "title": "Lucky Find",
+        "successes": "Successes: {successes}",
+        "crits": "Critical successes: {crits}"
       }
     },
     "settings": {
