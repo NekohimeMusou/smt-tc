@@ -13,9 +13,34 @@
             "SMT.buffEffects.tarukaja"
           }}</div>
 
-        <div class="item-prop">{{system.buffs.tarukaja}}</div>
+        <div class="item-prop">
+          {{#if enableActorSheetBuffs}}
+          <input
+            type="number"
+            name="system.buffs.tarukaja"
+            value="{{system.buffs.tarukaja}}"
+            placeholder="0"
+            data-dtype="Number"
+          />
+          {{else}}
+          {{system.buffs.tarukaja}}
+          {{/if}}
+        </div>
 
-        <div class="item-prop">{{system.buffs.tarunda}}</div>
+        {{!-- Tarunda (Editable) --}}
+        <div class="item-prop">
+          {{#if enableActorSheetBuffs}}
+          <input
+            type="number"
+            name="system.buffs.tarunda"
+            value="{{system.buffs.tarunda}}"
+            placeholder="0"
+            data-dtype="Number"
+          />
+          {{else}}
+          {{system.buffs.tarunda}}
+          {{/if}}
+        </div>
       </li>
 
       {{! Mag Power }}
@@ -23,8 +48,35 @@
         <div class="item-prop flex2">{{localize
             "SMT.buffEffects.makakaja"
           }}</div>
-        <div class="item-prop">{{system.buffs.makakaja}}</div>
-        <div class="item-prop">{{system.buffs.tarunda}}</div>
+        <div class="item-prop">
+          {{#if enableActorSheetBuffs}}
+          <input
+            type="number"
+            name="system.buffs.makakaja"
+            value="{{system.buffs.makakaja}}"
+            placeholder="0"
+            data-dtype="Number"
+          />
+          {{else}}
+          {{system.buffs.makakaja}}
+          {{/if}}
+        </div>
+
+        {{!-- Tarunda (not editable) --}}
+        <div class="item-prop">
+          {{#if enableActorSheetBuffs}}
+          <input
+            type="number"
+            name="system.buffs.tarunda"
+            value="{{system.buffs.tarunda}}"
+            placeholder="0"
+            data-dtype="Number"
+            disabled
+          />
+          {{else}}
+          {{system.buffs.tarunda}}
+          {{/if}}
+        </div>
       </li>
 
       {{! Resists }}
@@ -32,8 +84,32 @@
         <div class="item-prop flex2">{{localize
             "SMT.buffEffects.rakukaja"
           }}</div>
-        <div class="item-prop">{{system.buffs.rakukaja}}</div>
-        <div class="item-prop">{{system.buffs.rakunda}}</div>
+        <div class="item-prop">
+          {{#if enableActorSheetBuffs}}
+          <input
+            type="number"
+            name="system.buffs.rakukaja"
+            value="{{system.buffs.rakukaja}}"
+            placeholder="0"
+            data-dtype="Number"
+          />
+          {{else}}
+          {{system.buffs.rakukaja}}
+          {{/if}}
+        </div>
+        <div class="item-prop">
+          {{#if enableActorSheetBuffs}}
+          <input
+            type="number"
+            name="system.buffs.rakunda"
+            value="{{system.buffs.rakunda}}"
+            placeholder="0"
+            data-dtype="Number"
+          />
+          {{else}}
+          {{system.buffs.rakunda}}
+          {{/if}}
+        </div>
       </li>
 
       {{! Accuracy/Dodge }}
@@ -41,8 +117,32 @@
         <div class="item-prop flex2">{{localize
             "SMT.buffEffects.sukukaja"
           }}</div>
-        <div class="item-prop">{{system.buffs.sukukaja}}</div>
-        <div class="item-prop">{{system.buffs.sukunda}}</div>
+        <div class="item-prop">
+          {{#if enableActorSheetBuffs}}
+          <input
+            type="number"
+            name="system.buffs.sukukaja"
+            value="{{system.buffs.sukukaja}}"
+            placeholder="0"
+            data-dtype="Number"
+          />
+          {{else}}
+          {{system.buffs.sukukaja}}
+          {{/if}}
+        </div>
+        <div class="item-prop">
+          {{#if enableActorSheetBuffs}}
+          <input
+            type="number"
+            name="system.buffs.sukunda"
+            value="{{system.buffs.sukunda}}"
+            placeholder="0"
+            data-dtype="Number"
+          />
+          {{else}}
+          {{system.buffs.sukunda}}
+          {{/if}}
+        </div>
       </li>
     </ol>
   </div>

@@ -352,13 +352,9 @@
         "name": "House Rule: Add Level to Gun Damage",
         "hint": "Add the shooter's level to gun and grenade damage, like with other attacks."
       },
-      "enablePierce": {
-        "name": "House Rule: Enable Pierce",
-        "hint": "Enables a version of the Pierce skill extrapolated from the videogame. If this is off, the Pierce quality has no effect."
-      },
-      "autoDodge": {
-        "name": "Auto Dodge",
-        "hint": "Tokens targeted by an attack will automatically make a dodge roll unless they're immune. Speeds play, but you miss the chance to spend FP to boost your dodge TN."
+      "enableActorSheetBuffs": {
+        "name": "Enable Actor Sheet Buff Pane",
+        "hint": "Make the buffs pane on the actor sheet editable. Basically superseded by the macro."
       }
     },
     "ui": {

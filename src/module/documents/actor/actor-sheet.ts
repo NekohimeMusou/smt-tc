@@ -48,6 +48,11 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
 
     const effects = prepareActiveEffectCategories(this.actor.effects);
 
+    const enableActorSheetBuffs = game.settings.get(
+      "smt-tc",
+      "enableActorSheetBuffs",
+    );
+
     await foundry.utils.mergeObject(context, {
       system,
       rollData,
@@ -57,6 +62,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       armor,
       equippedMagatama,
       effects,
+      enableActorSheetBuffs,
       SMT: CONFIG.SMT,
     });
 
