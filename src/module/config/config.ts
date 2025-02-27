@@ -4,6 +4,7 @@ import {
   resolveConflict,
 } from "../helpers/macros/award.js";
 import { applyBuffs } from "../helpers/macros/buffs.js";
+import { healingFountain } from "../helpers/macros/healing-fountain.js";
 import { ailmentIds } from "./statuses.js";
 
 declare global {
@@ -308,5 +309,6 @@ export const SMT = {
     grantRewards,
     applyBuffs,
     luckyFindCheck,
+    healingFountain,
   },
 } as const;

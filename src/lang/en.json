@@ -1,7 +1,6 @@
 {
   "SMT": {
     "none": "None",
-    "kagutsuchi": "Kagutsuchi",
     "effects": {
       "newEffect": "New Effect",
       "temporary": "Temporary Effects",
@@ -313,6 +312,7 @@
       "talk": "Talk"
     },
     "macro": {
+      "kagutsuchi": "Kagutsuchi",
       "award": {
         "conflictResolved": "Conflict Resolved",
         "xp": "XP: {xp}",
@@ -330,6 +330,13 @@
         "title": "Lucky Find",
         "successes": "Successes: {successes}",
         "crits": "Critical successes: {crits}"
+      },
+      "fountain": {
+        "title": "Fountain of Life",
+        "insufficientMacca": "{name} is out of money! (Cost: {cost})",
+        "healed": "{name} recovered {hpHealed} HP and {mpHealed} MP (Cost: {cost})",
+        "alreadyFull": "{name} doesn't need healing!",
+        "ladyOfTheFount": "Lady of the Fount"
       }
     },
     "settings": {

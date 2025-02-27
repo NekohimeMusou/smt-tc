@@ -100,7 +100,7 @@ export async function applyBuffs() {
     content,
     speaker: {
       scene: game.scenes.current,
-      alias: game.i18n.localize("SMT.kagutsuchi"),
+      alias: game.i18n.localize("SMT.macro.kagutsuchi"),
     },
   };
 

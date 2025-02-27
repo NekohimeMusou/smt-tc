@@ -49,7 +49,7 @@ export async function resolveConflict() {
     content,
     speaker: {
       scene: game.scenes.current,
-      alias: game.i18n.localize("SMT.kagutsuchi"),
+      alias: game.i18n.localize("SMT.macro.kagutsuchi"),
     },
   };
 
@@ -104,7 +104,7 @@ export async function grantRewards() {
     content,
     speaker: {
       scene: game.scenes.current,
-      alias: game.i18n.localize("SMT.kagutsuchi"),
+      alias: game.i18n.localize("SMT.macro.kagutsuchi"),
     },
   };
 
@@ -160,7 +160,7 @@ export async function luckyFindCheck() {
     content,
     speaker: {
       scene: game.scenes.current,
-      alias: game.i18n.localize("SMT.kagutsuchi"),
+      alias: game.i18n.localize("SMT.macro.kagutsuchi"),
     },
     rolls,
   };
