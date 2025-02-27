@@ -1,0 +1,16 @@
+{{!-- Spell name (Makakaja, Dekunda, Clear All) --}}
+<h2>{{localize (concat "SMT.buffs." action)}}</h2>
+{{!-- Target list --}}
+<ul>
+  {{#each targetNames}}
+  {{this}}
+  {{/each}}
+</ul>
+{{!-- "{stat} {direction} by {buffAmt}" --}}
+{{#unless cancelBuffs}}
+<h3>{{localize "SMT.macro.buffs.buffCardMsg"
+  stat=(localize (concat "SMT.buffEffects." action))
+  direction=(localize (concat "SMT.macro.buffs." direction))
+  buffAmt=buffAmt
+  }}</h3>
+{{/unless}}

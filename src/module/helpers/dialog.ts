@@ -44,6 +44,7 @@ interface BuffHTMLElement extends HTMLElement {
 interface BuffDialogResult {
   action?: BuffAction;
   amount?: number;
+  cancelled?: boolean;
 }
 
 export async function showRollModifierDialog({
@@ -189,7 +190,7 @@ export async function renderBuffDialog(): Promise<BuffDialogResult> {
           },
           cancel: {
             label: "Cancel",
-            callback: () => resolve({}),
+            callback: () => resolve({ cancelled: true }),
           },
           dekaja: {
             label: game.i18n.localize("SMT.buffs.dekaja"),
@@ -205,7 +206,7 @@ export async function renderBuffDialog(): Promise<BuffDialogResult> {
           },
         },
         default: "ok",
-        close: () => resolve({}),
+        close: () => resolve({ cancelled: true }),
       },
       {},
     ).render(true),

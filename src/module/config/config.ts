@@ -153,6 +153,19 @@ const buffs = {
   sukunda: "SMT.buffs.sukunda",
 } as const;
 
+const buffSpells = {
+  tarukaja: "SMT.buffs.tarukaja",
+  makakaja: "SMT.buffs.makakaja",
+  rakukaja: "SMT.buffs.rakukaja",
+  sukukaja: "SMT.buffs.sukukaja",
+} as const;
+
+const debuffSpells = {
+  tarunda: "SMT.buffs.tarunda",
+  rakunda: "SMT.buffs.rakunda",
+  sukunda: "SMT.buffs.sukunda",
+} as const;
+
 const tn = {
   st: "SMT.tn.st",
   ma: "SMT.tn.ma",
@@ -268,6 +281,8 @@ export const SMT = {
   affinityLevels,
   ailments,
   buffs,
+  buffSpells,
+  debuffSpells,
   tn,
   alignment,
   powerTypes,

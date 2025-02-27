@@ -235,7 +235,10 @@
       "tarukaja": "Phys Power",
       "makakaja": "Mag Power",
       "rakukaja": "Resist",
-      "sukukaja": "Acc/Dodge"
+      "sukukaja": "Acc/Dodge",
+      "tarunda": "Phys & Mag Power",
+      "rakunda": "Resist",
+      "sukunda": "Acc/Dodge"
     },
     "itemTypes": {
       "magatama": "Magatama",
@@ -317,6 +320,11 @@
         "luckyFind": "Lucky Find",
         "chatTitle": "Awards Received",
         "awardReport": "Earned {xp} XP and {macca} macca."
+      },
+      "buffs": {
+        "buffCardMsg": "{stat} {direction} by {buffAmt}",
+        "increased": "increased",
+        "reduced": "reduced"
       }
     },
     "settings": {
