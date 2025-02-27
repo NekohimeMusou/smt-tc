@@ -1,3 +1,5 @@
+import { BuffAction } from "./macros/buffs.js";
+
 interface ModifierDialogData {
   name?: string;
   hint?: string;
@@ -21,6 +23,27 @@ interface AttackDialogResult {
 interface AttackDialogHTMLElement extends HTMLElement {
   tnMod?: { value?: string };
   potency?: { value?: string };
+}
+
+interface AwardHTMLElement extends HTMLElement {
+  xp?: { value?: string };
+  macca?: { value?: string };
+}
+
+interface AwardDialogResult {
+  xp?: number;
+  macca?: number;
+  cancelled?: boolean;
+}
+
+interface BuffHTMLElement extends HTMLElement {
+  buff?: { value?: BuffType };
+  amount?: { value?: string };
+}
+
+interface BuffDialogResult {
+  action?: BuffAction;
+  amount?: number;
 }
 
 export async function showRollModifierDialog({
@@ -99,4 +122,92 @@ function _processAttackDialogResult(html: string): AttackDialogResult {
   const potency = parseInt(element.potency?.value ?? "0") || 0;
 
   return { tnMod, potency };
+}
+
+export async function renderAwardDialog(): Promise<AwardDialogResult> {
+  const template = "systems/smt-tc/templates/dialog/award-dialog.hbs";
+  const content = await renderTemplate(template, {});
+
+  return new Promise((resolve) =>
+    new Dialog(
+      {
+        title: game.i18n.localize("SMT.dialog.awardDialogTitle"),
+        content,
+        buttons: {
+          ok: {
+            label: "OK",
+            callback: (html) =>
+              resolve({
+                xp:
+                  parseInt(
+                    ($(html)[0].querySelector("form") as AwardHTMLElement)?.xp
+                      ?.value ?? "0",
+                  ) || 0,
+                macca:
+                  parseInt(
+                    ($(html)[0].querySelector("form") as AwardHTMLElement)
+                      ?.macca?.value ?? "0",
+                  ) || 0,
+              }),
+          },
+          cancel: {
+            label: "Cancel",
+            callback: () => resolve({ cancelled: true }),
+          },
+        },
+        default: "ok",
+        close: () => resolve({ cancelled: true }),
+      },
+      {},
+    ).render(true),
+  );
+}
+
+export async function renderBuffDialog(): Promise<BuffDialogResult> {
+  const template = "systems/smt-tc/templates/dialog/buff-dialog.hbs";
+
+  const content = await renderTemplate(template, { buffs: CONFIG.SMT.buffs });
+
+  return new Promise((resolve) =>
+    new Dialog(
+      {
+        title: game.i18n.localize("SMT.actorSheet.buffs"),
+        content,
+        buttons: {
+          ok: {
+            label: "OK",
+            callback: (html) =>
+              resolve({
+                action: ($(html)[0].querySelector("form") as BuffHTMLElement)
+                  .buff?.value,
+                amount:
+                  parseInt(
+                    ($(html)[0].querySelector("form") as BuffHTMLElement)
+                      ?.amount?.value ?? "0",
+                  ) || 0,
+              }),
+          },
+          cancel: {
+            label: "Cancel",
+            callback: () => resolve({}),
+          },
+          dekaja: {
+            label: game.i18n.localize("SMT.buffs.dekaja"),
+            callback: () => resolve({ action: "dekaja" }),
+          },
+          dekunda: {
+            label: game.i18n.localize("SMT.buffs.dekunda"),
+            callback: () => resolve({ action: "dekunda" }),
+          },
+          clearAll: {
+            label: game.i18n.localize("SMT.dialog.clearAllBuffs"),
+            callback: () => resolve({ action: "clearAll" }),
+          },
+        },
+        default: "ok",
+        close: () => resolve({}),
+      },
+      {},
+    ).render(true),
+  );
 }

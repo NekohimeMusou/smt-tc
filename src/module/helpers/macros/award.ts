@@ -1,9 +1,5 @@
 import { SmtToken } from "../../documents/token.js";
-
-interface AwardHTMLElement extends HTMLElement {
-  xp?: { value?: string };
-  macca?: { value?: string };
-}
+import { renderAwardDialog } from "../dialog.js";
 
 export async function resolveConflict() {
   // GMs only!
@@ -48,51 +44,6 @@ export async function resolveConflict() {
   };
 
   return await ChatMessage.create(chatData);
-}
-
-interface AwardDialogResult {
-  xp?: number;
-  macca?: number;
-  cancelled?: boolean;
-}
-
-async function renderAwardDialog(): Promise<AwardDialogResult> {
-  const template = "systems/smt-tc/templates/dialog/award-dialog.hbs";
-  const content = await renderTemplate(template, {});
-
-  return new Promise((resolve) =>
-    new Dialog(
-      {
-        title: game.i18n.localize("SMT.dialog.awardDialogTitle"),
-        content,
-        buttons: {
-          ok: {
-            label: "OK",
-            callback: (html) =>
-              resolve({
-                xp:
-                  parseInt(
-                    ($(html)[0].querySelector("form") as AwardHTMLElement)?.xp
-                      ?.value ?? "0",
-                  ) || 0,
-                macca:
-                  parseInt(
-                    ($(html)[0].querySelector("form") as AwardHTMLElement)
-                      ?.macca?.value ?? "0",
-                  ) || 0,
-              }),
-          },
-          cancel: {
-            label: "Cancel",
-            callback: () => resolve({ cancelled: true }),
-          },
-        },
-        default: "ok",
-        close: () => resolve({ cancelled: true }),
-      },
-      {},
-    ).render(true),
-  );
 }
 
 export async function grantRewards() {

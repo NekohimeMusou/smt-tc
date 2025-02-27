@@ -1,0 +1,21 @@
+<form>
+  <div class="items-list flexcol">
+    <ol class="stat-list">
+      <li class="item flexrow items-header">
+        <div>{{localize "SMT.actorSheet.buffs"}}</div>
+      </li>
+
+      <li class="item flexrow">
+        <div class="item-prop flex3">
+          <select name="buff">
+            {{selectOptions buffs selected=buff localize=true}}
+          </select>
+        </div>
+
+        <div class="item-prop">
+          <input type="number" name="amount" placeholder="0" data-dtype="Number" />
+        </div>
+      </li>
+    </ol>
+  </div>
+</form>

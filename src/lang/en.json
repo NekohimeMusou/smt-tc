@@ -213,7 +213,10 @@
       "sukukaja": "Sukukaja",
       "tarunda": "Tarunda",
       "rakunda": "Rakunda",
-      "sukunda": "Sukunda"
+      "sukunda": "Sukunda",
+      "dekaja": "Dekaja",
+      "dekunda": "Dekunda",
+      "clearAll": "Clear All"
     },
     "statusEffects": {
       "defending": "Defending",

@@ -7,6 +7,7 @@ declare global {
   type PowerType = keyof typeof powerTypes;
   type DamageType = keyof typeof damageTypes;
   type PowerBoostType = (typeof powerBoost)[number];
+  type BuffType = keyof typeof buffs;
   type SuccessLevel = keyof typeof successLevels;
   type TargetNumber = keyof typeof tn;
 }
@@ -142,6 +143,16 @@ const ailments = {
   instantDeath: "SMT.ailments.instantDeath",
 } as const;
 
+const buffs = {
+  tarukaja: "SMT.buffs.tarukaja",
+  makakaja: "SMT.buffs.makakaja",
+  rakukaja: "SMT.buffs.rakukaja",
+  sukukaja: "SMT.buffs.sukukaja",
+  tarunda: "SMT.buffs.tarunda",
+  rakunda: "SMT.buffs.rakunda",
+  sukunda: "SMT.buffs.sukunda",
+} as const;
+
 const tn = {
   st: "SMT.tn.st",
   ma: "SMT.tn.ma",
@@ -256,6 +267,7 @@ export const SMT = {
   defenseAffinities,
   affinityLevels,
   ailments,
+  buffs,
   tn,
   alignment,
   powerTypes,
