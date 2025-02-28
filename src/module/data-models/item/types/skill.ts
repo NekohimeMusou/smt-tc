@@ -11,7 +11,7 @@ export class SkillData extends AttackData {
     return {
       ...super.defineSchema(),
       oneShot: new fields.BooleanField(),
-      expended: new fields.BooleanField(),
+      used: new fields.BooleanField(),
       inheritanceTraits: new fields.StringField(),
       cost: new fields.NumberField({ integer: true, min: 0 }),
     };

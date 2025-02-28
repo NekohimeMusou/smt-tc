@@ -46,14 +46,17 @@
       "levelShort": "Lv",
       "statTotal": "Total",
       "tn": "TN",
-      "derivedTN": "Derived TN",
+      "derivedTN": "Special",
       "buffs": "Buffs",
       "affinities": "Affinities",
       "mgt": "Mgt",
       "charClass": "Class: {class}",
       "equipped": "Equipped",
       "clan": "Clan",
-      "buff": "Buff"
+      "buff": "Buff",
+      "cost": "Cost",
+      "ailment": "Ailment",
+      "shatter": "Shatter"
     },
     "itemSheet": {
       "attackType": "Attack Type",
@@ -74,7 +77,7 @@
       "tn": "TN",
       "ailmentDesc": "{ailment} {rate}%",
       "power": "Power",
-      "expended": "Expended",
+      "used": "Used",
       "weaponType": "Type",
       "ammo": "Ammo",
       "qty": "Qty",

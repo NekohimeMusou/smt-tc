@@ -3,7 +3,7 @@
     <ol class="stat-list">
       <li class="item flexrow items-header">
         {{!-- Stat Name --}}
-        <div>{{localize "SMT.actorSheet.stats"}}</div>
+        <div class="flex2">{{localize "SMT.actorSheet.stats"}}</div>
         {{!-- Base --}}
         <div>{{localize "SMT.actorSheet.baseStat"}}</div>
         {{!-- Magatama Mod--}}
@@ -13,22 +13,22 @@
         {{!-- LV points --}}
         <div>{{localize "SMT.actorSheet.levelShort"}}{{#if (ne system.remainingStatPoints 0)}} ({{system.remainingStatPoints}}){{/if}}</div>
         {{!-- Total Stat --}}
-        <div>{{localize "SMT.actorSheet.statTotal"}}</div>
+        <div class="flex2">{{localize "SMT.actorSheet.statTotal"}}</div>
         {{!-- Stat TN --}}
-        <div>{{localize "SMT.actorSheet.tn"}}</div>
+        <div class="flex2">{{localize "SMT.actorSheet.tn"}}</div>
         {{!-- Special TN label --}}
         <div class="flex2">{{localize "SMT.actorSheet.derivedTN"}}</div>
         {{!-- Special TN --}}
-        <div>{{localize "SMT.actorSheet.tn"}}</div>
+        <div class="flex2">{{localize "SMT.actorSheet.tn"}}</div>
       </li>
 
       {{#each system.stats}}
       <li class="item flexrow">
         {{!-- Stat Name --}}
         {{#if (eq @key ../system.favoredStat)}}
-        <div class="item-prop">*{{localize (concat "SMT.statShort." @key)}}*</div>
+        <div class="item-prop flex2">*{{localize (concat "SMT.statShort." @key)}}*</div>
         {{else}}
-        <div class="item-prop">{{localize (concat "SMT.statShort." @key)}}</div>
+        <div class="item-prop flex2">{{localize (concat "SMT.statShort." @key)}}</div>
         {{/if}}
         {{!-- Base --}}
         {{!-- TODO: Add a button to toggle base stats being editable, or something --}}
@@ -42,23 +42,23 @@
         </div>
         {{/if}}
         {{!-- Lv points --}}
-        <div class="item-prop"><input type="number" name="system.stats.{{@key}}.lv" value="{{lv}}" placeholder="0"
-            data-dtype="Number" />
+        <div class="item-prop">
+          <input type="number" name="system.stats.{{@key}}.lv" value="{{lv}}" placeholder="0" data-dtype="Number" />
         </div>
         {{!-- Total Stat --}}
-        <div class="item-prop">{{value}}</div>
+        <div class="item-prop flex2">{{value}}</div>
         {{!-- Stat TN --}}
-        <div class="item-prop roll-highlight hit-roll" data-tn-type="{{@key}}">{{lookup ../system.tn @key}}%</div>
+        <div class="item-prop roll-highlight hit-roll flex2" data-tn-type="{{@key}}">{{lookup ../system.tn @key}}%</div>
         {{!-- Derived TN label --}}
-        <div class="item-prop item-name flex2">{{localize (concat "SMT.derivedTN." @key)}}</div>
+        <div class="item-prop flex2">{{localize (concat "SMT.derivedTN." @key)}}</div>
         {{!-- Derived TN --}}
         {{#if (eq @key "st")}}
-        <div class="item-prop roll-highlight attack-roll" data-power-type="phys">{{../system.tn.phys}}%</div>
+        <div class="item-prop roll-highlight attack-roll flex2" data-power-type="phys">{{../system.tn.phys}}%</div>
         {{else}}
         {{#if (eq @key "ma")}}
-        <div class="item-prop roll-highlight attack-roll" data-power-type="mag">{{../system.tn.mag}}%</div>
+        <div class="item-prop roll-highlight attack-roll flex2" data-power-type="mag">{{../system.tn.mag}}%</div>
         {{else}}
-        <div class="item-prop roll-highlight hit-roll" data-tn-type="{{derivedTN}}">{{lookup ../system.tn derivedTN}}%</div>
+        <div class="item-prop roll-highlight hit-roll flex2" data-tn-type="{{derivedTN}}">{{lookup ../system.tn derivedTN}}%</div>
         {{/if}}
         {{/if}}
       </li>
