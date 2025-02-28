@@ -10,7 +10,8 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
     const levelTable = CONFIG.SMT.levelTables[this.type];
 
     // Fiend hack
-    const xp = this.type === "fiend" ? data.xp + 1 : data.xp;
+    const xp =
+      this.type === "fiend" || this.type === "demon" ? data.xp + 1 : data.xp;
 
     return Math.max(
       levelTable.findLastIndex((tableXp) => tableXp < xp),
