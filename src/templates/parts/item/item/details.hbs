@@ -1,0 +1,35 @@
+<section class="details">
+  <div class="items-list flexcol">
+    <ol class="stat-list">
+      <li class="item items-header">
+        <div>{{localize "SMT.tabs.details"}}</div>
+      </li>
+
+      <li class="item flexrow">
+        {{!-- Qty --}}
+        <label for="qty" class="item-prop">{{localize "SMT.itemSheet.qty"}}</label>
+        <div class="item-prop">
+          <input type="number" id="qty" name="system.qty"
+           value="{{system.qty}}" placeholder="1" data-dtype="Number" />
+        </div>
+        {{!-- Price --}}
+        <label for="price" class="item-prop">{{localize "SMT.itemSheet.price"}}</label>
+        <div class="item-prop">
+          <input type="number" id="price" name="system.price"
+           value="{{system.price}}" placeholder="0" data-dtype="Number" />
+        </div>
+      </li>
+
+      <li class="item items-header">
+        <div>{{localize "SMT.itemSheet.effect"}}</div>
+      </li>
+
+      {{editor
+        system.description
+        target="system.description"
+        editable=editable
+        button=true
+      }}
+    </ol>
+  </div>
+</section>

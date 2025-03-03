@@ -22,6 +22,7 @@ export const templatePaths = [
   // Inventory tab
   "systems/smt-tc/templates/parts/actor/armor.hbs",
   "systems/smt-tc/templates/parts/actor/magatama.hbs",
+  "systems/smt-tc/templates/parts/actor/items.hbs",
 
   // Bio data
   "systems/smt-tc/templates/parts/actor/alignment.hbs",
@@ -44,4 +45,5 @@ export const templatePaths = [
   "systems/smt-tc/templates/parts/item/weapon/details.hbs",
   "systems/smt-tc/templates/parts/item/weapon/config.hbs",
   "systems/smt-tc/templates/parts/item/armor/config.hbs",
+  "systems/smt-tc/templates/parts/item/item/details.hbs",
 ] as const;

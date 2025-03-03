@@ -169,7 +169,7 @@ const attackTypes = {
 } as const;
 
 const itemTypes = {
-  // item: "SMT.itemTypes.item",
+  inventoryItem: "SMT.itemTypes.item",
   weapon: "SMT.itemTypes.weapon",
   armor: "SMT.itemTypes.armor",
   magatama: "SMT.itemTypes.magatama",

@@ -2,7 +2,7 @@ import { SmtActor } from "../../../documents/actor/actor.js";
 import { SmtBaseItemData } from "./base.js";
 
 export abstract class AttackData extends SmtBaseItemData {
-  declare type: "skill" | "weapon";
+  declare type: "skill" | "weapon" | "inventoryItem";
 
   get damageType(): DamageType {
     const data = this._systemData;

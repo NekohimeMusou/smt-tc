@@ -56,7 +56,9 @@
       "buff": "Buff",
       "cost": "Cost",
       "ailment": "Ailment",
-      "shatter": "Shatter"
+      "shatter": "Shatter",
+      "qty": "Qty",
+      "price": "Price"
     },
     "itemSheet": {
       "attackType": "Attack Type",
@@ -248,7 +250,7 @@
       "skill": "Skill",
       "armor": "Armor",
       "weapon": "Weapon",
-      "item": "Item"
+      "inventoryItem": "Item"
     },
     "weaponTypes": {
       "melee": "Melee",

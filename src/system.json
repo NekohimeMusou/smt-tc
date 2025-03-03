@@ -37,6 +37,7 @@
       "human": { "htmlFields": ["notes"] }
     },
     "Item": {
+      "inventoryItem": { "htmlFields": ["description"] },
       "weapon": { "htmlFields": ["description"] },
       "armor": { "htmlFields": ["description"] },
       "magatama": { "htmlFields": ["description"] },
