@@ -1,4 +1,4 @@
-export class SkillListing extends foundry.abstract.DataModel {
+export default class SkillListing extends foundry.abstract.DataModel {
   static override defineSchema() {
     const fields = foundry.data.fields;
 

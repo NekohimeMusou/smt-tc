@@ -7,13 +7,11 @@ import {
   showAttackModifierDialog,
   showRollModifierDialog,
 } from "../../helpers/dialog.js";
-import { SmtDice } from "../../helpers/dice.js";
-import {
-  onManageActiveEffect,
-  prepareActiveEffectCategories,
-} from "../active-effect.js";
-import { SmtActor } from "./actor.js";
-import { SmtItem } from "../item/item.js";
+import SmtDice from "../../helpers/dice.js";
+import { prepareActiveEffectCategories } from "../active-effect/helpers.js";
+import { onManageActiveEffect } from "../active-effect/helpers.js";
+import SmtActor from "./actor.js";
+import SmtItem from "../item/item.js";
 
 export default class SmtActorSheet extends ActorSheet<SmtActor> {
   static override get defaultOptions() {

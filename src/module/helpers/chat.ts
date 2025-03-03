@@ -1,4 +1,4 @@
-import { SmtActor } from "../documents/actor/actor.js";
+import SmtActor from "../documents/actor/actor.js";
 import SmtTokenDocument from "../documents/token-document.js";
 
 interface HitCheckCardData {

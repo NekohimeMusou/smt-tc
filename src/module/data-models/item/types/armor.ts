@@ -1,6 +1,6 @@
-import { SmtBaseItemData } from "../abstract/base.js";
+import SmtBaseItemData from "../abstract/base.js";
 
-export class ArmorData extends SmtBaseItemData {
+export default class ArmorData extends SmtBaseItemData {
   override readonly type = "armor";
   override readonly equippable = true;
 

@@ -1,6 +1,6 @@
-import { AttackData } from "../abstract/attack.js";
+import AttackData from "../abstract/attack.js";
 
-export class SkillData extends AttackData {
+export default class SkillData extends AttackData {
   override readonly type = "skill";
 
   override readonly equippable = false;

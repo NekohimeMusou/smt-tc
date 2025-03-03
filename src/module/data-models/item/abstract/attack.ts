@@ -1,7 +1,7 @@
-import { SmtActor } from "../../../documents/actor/actor.js";
-import { SmtBaseItemData } from "./base.js";
+import SmtActor from "../../../documents/actor/actor.js";
+import SmtBaseItemData from "./base.js";
 
-export abstract class AttackData extends SmtBaseItemData {
+export default abstract class AttackData extends SmtBaseItemData {
   declare type: "skill" | "weapon" | "inventoryItem";
 
   get damageType(): DamageType {

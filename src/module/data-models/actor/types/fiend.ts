@@ -1,6 +1,6 @@
-import { SmtBaseActorData } from "../abstract/base.js";
+import SmtBaseActorData from "../abstract/base.js";
 
-export class SmtFiendData extends SmtBaseActorData {
+export default class SmtFiendData extends SmtBaseActorData {
   override readonly type = "fiend";
 
   override prepareBaseData() {

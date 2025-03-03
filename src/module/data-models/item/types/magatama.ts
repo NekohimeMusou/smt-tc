@@ -1,7 +1,7 @@
-import { SkillListing } from "../../skill-listing.js";
-import { AffinityItemData } from "../abstract/affinity.js";
+import SkillListing from "../../skill-listing.js";
+import AffinityItemData from "../abstract/affinity.js";
 
-export class MagatamaData extends AffinityItemData {
+export default class MagatamaData extends AffinityItemData {
   override readonly type = "magatama";
 
   override readonly equippable = true;

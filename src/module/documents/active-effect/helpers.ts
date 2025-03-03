@@ -1,23 +1,17 @@
-import { SmtActor } from "./actor/actor.js";
-import { SmtItem } from "./item/item.js";
+import SmtActor from "../actor/actor.js";
+import SmtItem from "../item/item.js";
+import SmtActiveEffect from "./active-effect.js";
 
-export class SmtActiveEffect extends ActiveEffect<SmtActor, SmtItem> {
-  override isSuppressed() {
-    const parent = this.parent;
+interface AECategory {
+  type: "temporary" | "passive" | "inactive";
+  label: string;
+  effects: SmtActiveEffect[];
+}
 
-    if (parent.documentName === "Actor") {
-      return false;
-    }
-
-    // It's an item
-    if (parent.documentName === "Item") {
-      const item = parent as SmtItem;
-
-      return item.system.equippable && !item.system.equipped;
-    }
-
-    return false;
-  }
+interface AECategories {
+  temporary: AECategory;
+  passive: AECategory;
+  inactive: AECategory;
 }
 
 /**
@@ -25,6 +19,7 @@ export class SmtActiveEffect extends ActiveEffect<SmtActor, SmtItem> {
  * @param {MouseEvent} event      The left-click event on the effect control
  * @param {Actor|Item} owner      The owning document which manages this effect
  */
+
 export async function onManageActiveEffect(
   event: JQuery.ClickEvent,
   owner: SmtActor | SmtItem,
@@ -67,13 +62,12 @@ export async function onManageActiveEffect(
       if (actor) await actor.sheet.render(false);
       return;
   }
-}
-
-/**
+} /**
  * Prepare the data structure for Active Effects which are currently applied to an Actor or Item.
  * @param {ActiveEffect[]} effects    The array of Active Effect instances to prepare sheet data for
  * @return {object}                   Data for rendering
  */
+
 export function prepareActiveEffectCategories(
   effects: Collection<SmtActiveEffect>,
 ): object {
@@ -103,16 +97,4 @@ export function prepareActiveEffectCategories(
     else categories.passive.effects.push(e);
   }
   return categories;
-}
-
-interface AECategory {
-  type: "temporary" | "passive" | "inactive";
-  label: string;
-  effects: SmtActiveEffect[];
-}
-
-interface AECategories {
-  temporary: AECategory;
-  passive: AECategory;
-  inactive: AECategory;
 }

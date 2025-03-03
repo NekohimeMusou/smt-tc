@@ -1,4 +1,4 @@
-export class DefenseAffinityData extends foundry.abstract.DataModel {
+export default class DefenseAffinityData extends foundry.abstract.DataModel {
   static override defineSchema() {
     const fields = foundry.data.fields;
 

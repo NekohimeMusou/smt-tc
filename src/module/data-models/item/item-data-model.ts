@@ -1,9 +1,9 @@
-import { SmtItem } from "../../documents/item/item.js";
-import { ArmorData } from "./types/armor.js";
-import { InventoryItemData } from "./types/inventoryItem.js";
-import { MagatamaData } from "./types/magatama.js";
-import { SkillData } from "./types/skill.js";
-import { WeaponData } from "./types/weapon.js";
+import SmtItem from "../../documents/item/item.js";
+import ArmorData from "./types/armor.js";
+import InventoryItemData from "./types/inventoryItem.js";
+import MagatamaData from "./types/magatama.js";
+import SkillData from "./types/skill.js";
+import WeaponData from "./types/weapon.js";
 
 export type InventoryItem = Subtype<SmtItem, "inventoryItem">;
 export type Weapon = Subtype<SmtItem, "weapon">;

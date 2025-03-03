@@ -1,8 +1,8 @@
-import { SmtActor } from "../../../documents/actor/actor.js";
+import SmtActor from "../../../documents/actor/actor.js";
 import { Armor } from "../../../documents/item/item.js";
-import { SmtBaseActorData } from "../abstract/base.js";
+import SmtBaseActorData from "../abstract/base.js";
 
-export class SmtHumanData extends SmtBaseActorData {
+export default class SmtHumanData extends SmtBaseActorData {
   override readonly type = "human";
 
   override prepareDerivedData() {

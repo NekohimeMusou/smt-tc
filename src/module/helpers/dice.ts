@@ -21,7 +21,7 @@ interface PowerRollResult {
   roll: Roll;
 }
 
-export class SmtDice {
+export default class SmtDice {
   static async hitCheck({
     tn = 1,
     autoFailThreshold = CONFIG.SMT.defaultAutofailThreshold,
