@@ -1,4 +1,4 @@
-import { SmtToken } from "../../documents/token.js";
+import SmtToken from "../../documents/token.js";
 
 export async function healingFountain() {
   // GMs only!

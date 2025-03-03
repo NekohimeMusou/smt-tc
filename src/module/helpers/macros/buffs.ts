@@ -1,4 +1,4 @@
-import { SmtToken } from "../../documents/token.js";
+import SmtToken from "../../documents/token.js";
 import { renderBuffDialog } from "../dialog.js";
 
 export type BuffAction =

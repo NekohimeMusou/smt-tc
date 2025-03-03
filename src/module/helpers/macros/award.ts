@@ -1,4 +1,4 @@
-import { SmtToken } from "../../documents/token.js";
+import SmtToken from "../../documents/token.js";
 import { renderAwardDialog } from "../dialog.js";
 
 type LuckyFindSuccess = "success" | "fail" | "crit";
