@@ -13,6 +13,7 @@ import {
   prepareActiveEffectCategories,
 } from "../active-effect.js";
 import { SmtActor } from "./actor.js";
+import { SmtItem } from "../item/item.js";
 
 export default class SmtActorSheet extends ActorSheet<SmtActor> {
   static override get defaultOptions() {
@@ -257,7 +258,11 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       potency = mod ?? 0;
     }
 
-    const { power, roll } = await SmtDice.powerRoll({ basePower, potency, powerBoost });
+    const { power, roll } = await SmtDice.powerRoll({
+      basePower,
+      potency,
+      powerBoost,
+    });
 
     // Show chat card
     await showPowerRollCard({
@@ -414,5 +419,41 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     }
 
     await item.toggleField(fieldId, newState);
+  }
+
+  override async _onDropItem(_event: Event, itemD: unknown) {
+    // @ts-expect-error Copied from Persona system
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+    const item: SmtItem = await Item.implementation.fromDropData(itemD);
+    console.debug(`${item.type} dropped on sheet of ${this.actor.name}`);
+
+    switch (item.type) {
+      case "skill":
+        return super._onDropItem(_event, itemD);
+      case "armor":
+      case "inventoryItem":
+      case "magatama":
+      case "weapon":
+        if (!game.user.isGM) {
+          const msg = game.i18n.localize("SMT.error.useItemPiles");
+          ui.notifications.warn(msg);
+          return undefined;
+        }
+
+        const existing = this.actor.items.find(
+          (x) =>
+            x.type === item.type && "qty" in x.system && x.name == item.name,
+        );
+
+        if (existing != undefined && existing.type === "inventoryItem") {
+          console.log("Adding to existing amount");
+          await existing.addItemsToStack(1);
+          return existing;
+        }
+        return super._onDropItem(_event, itemD);
+      default:
+        item.type satisfies never;
+        throw new Error("Unknown item type");
+    }
   }
 }

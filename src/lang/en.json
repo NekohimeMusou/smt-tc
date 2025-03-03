@@ -371,7 +371,8 @@
       "missingCardRoll": "Missing Roll for chat card in: {function}",
       "missingPowerType": "Missing attack type in #onAttackRoll",
       "missingItem": "Can't toggle item field: Missing item ID",
-      "missingField": "Can't toggle item field: Missing field ID"
+      "missingField": "Can't toggle item field: Missing field ID",
+      "useItemPiles": "Use Item Piles functionality to move items."
     }
   }
 }

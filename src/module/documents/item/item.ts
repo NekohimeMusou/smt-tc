@@ -26,4 +26,25 @@ export class SmtItem extends Item<
 
     return newState;
   }
+
+  async addItemsToStack(qty: number) {
+    const data = this.system;
+
+    await this.update({ "system.qty": Math.max(data.qty + qty, 0) });
+  }
+
+  async consumeItem() {
+    const data = this.system;
+
+    // Don't do anything if there's no actor
+    if (!this.parent) {
+      return;
+    }
+
+    if (data.qty <= 1) {
+      await this.delete();
+    }
+
+    await this.update({ "system.qty": data.qty - 1 });
+  }
 }
