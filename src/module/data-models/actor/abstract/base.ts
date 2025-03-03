@@ -17,7 +17,19 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
     );
   }
 
-  readonly autoFailThreshold = 96;
+  get autoFailThreshold() {
+    const actor = this.parent as SmtActor;
+
+    if (actor.statuses.has("stun")) {
+      return 25;
+    }
+
+    if (actor.statuses.has("curse")) {
+      return 86;
+    }
+
+    return 96;
+  }
 
   get equippedMagatama() {
     // Return `undefined` if this isn't a Fiend
