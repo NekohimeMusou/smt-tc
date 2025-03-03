@@ -9,12 +9,10 @@ export abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
     const data = this._systemData;
     const levelTable = CONFIG.SMT.levelTables[this.type];
 
-    // Fiend hack
-    const xp =
-      this.type === "fiend" || this.type === "demon" ? data.xp + 1 : data.xp;
-
+    // This seems to fix the off-by-one XP bug
+    // I'm not touching it until someone files an issue
     return Math.max(
-      levelTable.findLastIndex((tableXp) => tableXp < xp),
+      levelTable.findLastIndex((tableXp) => tableXp < data.xp + 1),
       1,
     );
   }
