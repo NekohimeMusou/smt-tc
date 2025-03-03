@@ -42,6 +42,8 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
 
     const skills = this.actor.items.filter((item) => item.type === "skill");
     const weapons = this.actor.items.filter((item) => item.type === "weapon");
+    const equippedWeapons = weapons.filter((item) => item.system.equipped);
+    const showWeaponsPane = equippedWeapons.length > 0;
     const armor = this.actor.items.filter((item) => item.type === "armor");
 
     const equippedMagatama = magatama.find((item) => item.system.equipped);
@@ -59,6 +61,8 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       magatama,
       skills,
       weapons,
+      equippedWeapons,
+      showWeaponsPane,
       armor,
       equippedMagatama,
       effects,

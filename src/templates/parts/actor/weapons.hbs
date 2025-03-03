@@ -4,6 +4,10 @@
       <li class="item flexrow items-header">
         {{!-- Name --}}
         <div class="item-name flex3">{{localize "SMT.itemTypes.weapon"}}</div>
+        {{#if inventoryTab}}
+        {{!-- Equipped? --}}
+        <div>{{localize "SMT.actorSheet.equipped"}}</div>
+        {{/if}}
         {{!-- Ammo --}}
         <div>{{localize "SMT.skillDetails.ammoQtyLabel"}}</div>
         {{!-- TN --}}
@@ -18,10 +22,12 @@
         <div>{{localize "SMT.itemSheet.affinity"}}</div>
         {{!-- Type (Melee | Gun | Grenade) --}}
         <div>{{localize "SMT.itemSheet.weaponType"}}</div>
+        {{#if ../inventoryTab}}
         <div class="item-controls">
           <a class="item-control item-create" title="{{localize "SMT.sheet.newItem"}}" data-item-type="skill">
             <i class="fas fa-plus"></i> {{localize "SMT.sheet.addItem"}}</a>
         </div>
+        {{/if}}
       </li>
 
       {{#each weapons}}
@@ -33,6 +39,14 @@
           </div>
           {{name}}
         </a>
+
+        {{#if ../inventoryTab}}
+        {{!-- Equipped --}}
+        <div class="item-prop">
+          <input type="checkbox" class="item-field-toggle" data-field-id="equipped" data-dtype="Boolean"
+            {{checked system.equipped}} />
+        </div>
+        {{/if}}
 
         {{!-- Ammo --}}
         <div class="item-prop">
@@ -65,10 +79,12 @@
         {{!-- Type (Melee | Gun | Grenade) --}}
         <div class="item-prop">{{localize (concat "SMT.weaponTypes." system.weaponType)}}</div>
 
+        {{#if ../inventoryTab}}
         <div class="item-controls">
           <a class="item-control item-edit" title="{{localize "SMT.sheet.editItem"}}"><i class="fas fa-edit"></i></a>
           <a class="item-control item-delete" title="{{localize "SMT.sheet.deleteItem"}}"><i class="fas fa-trash"></i></a>
         </div>
+        {{/if}}
       </li>
       {{/each}}
     </ol>

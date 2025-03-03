@@ -4,6 +4,7 @@
   {{/if}}
   {{#if (eq actor.type "human")}}
   {{!-- Weapon Pane --}}
+  {{> "systems/smt-tc/templates/parts/actor/weapons.hbs" inventoryTab=true}}
   {{!-- Armor Pane --}}
   {{> "systems/smt-tc/templates/parts/actor/armor.hbs"}}
   {{!-- Item Pane --}}
