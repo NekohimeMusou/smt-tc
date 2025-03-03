@@ -68,11 +68,16 @@ There's now a compendium pack with a few macros to make GMs' lives a little easi
 
 ## Recommended Mods
 
-- [**Mana's Compendium Importer**]: Export world compendiums to JSON format and import them in other worlds; lets you easily share actors, items/skills, and other things between game worlds.
-- [**Status Icon Counters**]: I use this to keep track of -kaja/-kunda stacks.
-- [**Token Health**]: Quickly assign damage or healing to multiple tokens at once!
-- [**Roll of Fate**]: Randomly choose a token from the ones you have selected, at random, for random encounters what attack randomly!
-- [**Koboldworks - Data Inspector**]: Lets you inspect the data of an actor or item with one click and no digging in the console. Great for finding Active Effect paths!
+- **Mana's Compendium Importer**: Export world compendiums to JSON format and import them in other worlds; lets you easily share actors, items/skills, and other things between game worlds.
+  - <https://gitlab.com/mkahvi/fvtt-compendium-importer>
+- **Status Icon Counters**: I use this to keep track of -kaja/-kunda stacks.
+  - <https://gitlab.com/woodentavern/status-icon-counters>
+- **Token Health**: Quickly assign damage or healing to multiple tokens at once!
+  - <https://github.com/mclemente/fvtt-token-health>
+- **Roll of Fate**: Randomly choose a token from the ones you have selected, at random, for random encounters what attack randomly!
+  - <https://github.com/Handyfon/roll-of-fate/blob/master/README.md>
+- **Koboldworks - Data Inspector**: Lets you inspect the data of an actor or item with one click and no digging in the console. Great for finding Active Effect paths!
+  - <https://gitlab.com/koboldworks/agnostic/data-inspector>
 
 ## Known Issues
 
@@ -91,11 +96,4 @@ I'm not listing missing features from the old version unless they're especially 
 ## Special Thanks
 
 CSS stolen from <https://github.com/asacolips-projects/boilerplate>, without which I might never have learned how to Foundry. Kudos!
-Also a big shout out to Taragnor and his [Persona RPG] system, without whom I'd probably still be trying to figure out how to work Typescript XD
-
-[Koboldworks - Data Inspector]: https://gitlab.com/koboldworks/agnostic/data-inspector
-[Mana's Compendium Importer]: https://gitlab.com/mkahvi/fvtt-compendium-importer
-[Status Icon Counters]: https://gitlab.com/woodentavern/status-icon-counters
-[Token Health]: https://github.com/mclemente/fvtt-token-health
-[Roll of Fate]: https://github.com/Handyfon/roll-of-fate/blob/master/README.md
-[Persona RPG]: https://github.com/taragnor/persona
+Also a big shout out to Taragnor and his Persona RPG system (<https://github.com/taragnor/persona>), without whom I'd probably still be trying to figure out how to work Typescript XD
