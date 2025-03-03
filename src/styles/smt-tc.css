@@ -10,6 +10,10 @@
   cursor: pointer;
 }
 
+.roll-highlight {
+  font-weight: bold;
+}
+
 .grid,
 .grid-2col {
   display: grid;
