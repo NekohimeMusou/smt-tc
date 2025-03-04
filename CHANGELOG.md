@@ -2,6 +2,29 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.4.0] - 2025-03-03
+
+*Items items items!*
+
+### Added
+
+- Main actor tab now displays skill ailment
+- Curse and Stun ailments now modify autofail threshold
+- List weapons on inventory tab
+- Add "generic" inventory item type
+- Add "generic" item pane for Fiends and Humans
+- Add Item Piles integration
+
+### Fixed
+
+- Fix off-by-one error in level calculations
+
+### Changed
+
+- Bold rollable TNs and Power on sheet
+- Cosmetic actor sheet changes
+- Weapons only appear on main tab if equipped
+
 ## [0.3.4] - 2025-02-27
 
 *Macros macros macros!*
@@ -134,6 +157,7 @@ _Added separate Human and Demon actor types with some custom behavior, and added
 
 _Initial preview release.*
 
+[0.4.0]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.4.0
 [0.3.4]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.3.4
 [0.3.3]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.3.3
 [0.3.2]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.3.2

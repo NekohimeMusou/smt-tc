@@ -84,14 +84,9 @@ There's now a compendium pack with a few macros to make GMs' lives a little easi
 I'm not listing missing features from the old version unless they're especially notable.
 
 - Godawful aesthetics
-- Items mostly don't exist
 - Skills don't automatically do anything yet
-- Ailment/shatter rate doesn't show in actor sheet
-  - Too crowded, not enough CSS skill to readily fix
-- It's unclear what's clickable on the sheet
-  - Answer: Anything that lights up when you mouse over it
 - It's unclear which tab is active at a given time
-- Overriding an elemental affinity doesn't work correctly
+- Overriding an elemental affinity with an AE doesn't work correctly
 
 ## Special Thanks
 
