@@ -2,9 +2,25 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.4.1] - 2025-03-04
+
+### Changed
+
+- Tweak EN loc for targets
+
+### Fixed
+
+- Fix: Instant Death is now selectable as an attack ailment
+
 ## [0.4.0] - 2025-03-03
 
 *Items items items!*
+
+### Changed
+
+- Bold rollable TNs and Power on sheet
+- Cosmetic actor sheet changes
+- Weapons only appear on main tab if equipped
 
 ### Added
 
@@ -19,15 +35,14 @@
 
 - Fix off-by-one error in level calculations
 
-### Changed
-
-- Bold rollable TNs and Power on sheet
-- Cosmetic actor sheet changes
-- Weapons only appear on main tab if equipped
-
 ## [0.3.4] - 2025-02-27
 
 *Macros macros macros!*
+
+### Changed
+
+- Add stat getters to top level of actor data model (e.g. `system.ag` instead of `system.stats.ag.value`)
+- Editable actor sheet buff fields are now optional
 
 ### Added
 
@@ -36,11 +51,6 @@
 - Add Grant Rewards
 - Add Lucky Find macro
 - Add Resolve Conflict macro
-
-### Changed
-
-- Add stat getters to top level of actor data model (e.g. `system.ag` instead of `system.stats.ag.value`)
-- Editable actor sheet buff fields are now optional
 
 ### Fixed
 
@@ -73,13 +83,13 @@
 
 *I felt industrious today, so armor's here too!*
 
-### Added
-
-- Add Armor item type
-
 ### Changed
 
 - Merged Magatama tab into shared Inventory tab
+
+### Added
+
+- Add Armor item type
 
 ## [0.3.0] - 2025-02-25
 
@@ -101,6 +111,11 @@
 
 _Added separate Human and Demon actor types with some custom behavior, and added magatama items for Fiends to use.*
 
+### Changed
+
+- Only show demon-exclusive info on demon sheets
+- Fiends now inherit affinities and stat bonuses from their equipped magatama
+
 ### Added
 
 - Separate actor types for humans and demons
@@ -108,11 +123,6 @@ _Added separate Human and Demon actor types with some custom behavior, and added
 - Add magatama item type for Fiends
 - Show stat point difference on sheet
 - Add actor sheet field for demon base level
-
-### Changed
-
-- Only show demon-exclusive info on demon sheets
-- Fiends now inherit affinities and stat bonuses from their equipped magatama
 
 ## [0.1.4] - 2025-02-20
 
@@ -122,26 +132,26 @@ _Added separate Human and Demon actor types with some custom behavior, and added
 
 ## [0.1.3] - 2025-02-19
 
-### Added
-
-- Add status effects
-- Add behavior display to main actor sheet tab
-
 ### Changed
 
 - Change Personality field name to Behavior
 - Make roll dialog options more granular
 
+### Added
+
+- Add status effects
+- Add behavior display to main actor sheet tab
+
 ## [0.1.2] - 2025-02-19
+
+### Changed
+
+- Require reload for addLevelToGunDamage setting
 
 ### Added
 
 - Add HP/MP multiplier fields
 - Add sheet tab for biographical data
-
-### Changed
-
-- Require reload for addLevelToGunDamage setting
 
 ## [0.1.1] - 2025-02-18
 
@@ -157,6 +167,7 @@ _Added separate Human and Demon actor types with some custom behavior, and added
 
 _Initial preview release.*
 
+[0.4.1]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.4.1
 [0.4.0]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.4.0
 [0.3.4]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.3.4
 [0.3.3]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.3.3
