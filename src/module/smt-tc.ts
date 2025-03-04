@@ -1,4 +1,4 @@
-import registerModuleAPIs from "./config/api/api.js";
+import registerModuleAPIs from "./config/api.js";
 import { SMT } from "./config/config.js";
 import registerSystemSettings from "./config/settings.js";
 import { configureStatusEffects } from "./config/statuses.js";

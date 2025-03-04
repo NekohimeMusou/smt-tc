@@ -10,6 +10,7 @@ declare global {
 
 export default async function _onItemPilesReady() {
   await game.itempiles.API.addSystemIntegration({
+    VERSION: `${game.system.version}`,
     ACTOR_CLASS_TYPE: "human",
     ITEM_QUANTITY_ATTRIBUTE: "system.qty",
     ITEM_PRICE_ATTRIBUTE: "system.price",
