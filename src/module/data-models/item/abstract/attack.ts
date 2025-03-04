@@ -1,4 +1,5 @@
 import SmtActor from "../../../documents/actor/actor.js";
+import SmtItem from "../../../documents/item/item.js";
 import SmtBaseItemData from "./base.js";
 
 export default abstract class AttackData extends SmtBaseItemData {
@@ -84,12 +85,15 @@ export default abstract class AttackData extends SmtBaseItemData {
     return power;
   }
 
-  // TODO: Update with Item Pro once consumables are implemented
   get powerBoost(): boolean {
     const actor = this.parent?.parent as SmtActor | undefined;
 
     if (!actor) {
       return false;
+    }
+
+    if ((this.parent as SmtItem).type === "inventoryItem") {
+      return actor.system.powerBoost.item;
     }
 
     const damageType = this._systemData.damageType;

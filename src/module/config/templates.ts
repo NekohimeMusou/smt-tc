@@ -46,4 +46,5 @@ export const templatePaths = [
   "systems/smt-tc/templates/parts/item/weapon/config.hbs",
   "systems/smt-tc/templates/parts/item/armor/config.hbs",
   "systems/smt-tc/templates/parts/item/item/details.hbs",
+  "systems/smt-tc/templates/parts/item/item/config.hbs",
 ] as const;

@@ -83,7 +83,9 @@
       "weaponType": "Type",
       "ammo": "Ammo",
       "qty": "Qty",
-      "slot": "Slot"
+      "slot": "Slot",
+      "consumeOnUse": "Consume on Use",
+      "hasAttack": "Has Attack"
     },
     "skillDetails": {
       "cost": "Cost: {cost} {resource}",
