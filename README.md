@@ -68,6 +68,8 @@ There's now a compendium pack with a few macros to make GMs' lives a little easi
 
 ## Recommended Mods
 
+- **Item Piles**: Drop lootable containers into scenes, trade items between players, create shops and player storage, and **way** more. Completely indispensable for games with a lot of looting, buying, and selling!
+  - <https://github.com/fantasycalendar/FoundryVTT-ItemPiles>
 - **Mana's Compendium Importer**: Export world compendiums to JSON format and import them in other worlds; lets you easily share actors, items/skills, and other things between game worlds.
   - <https://gitlab.com/mkahvi/fvtt-compendium-importer>
 - **Status Icon Counters**: I use this to keep track of -kaja/-kunda stacks.
