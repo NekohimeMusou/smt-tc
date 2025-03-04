@@ -110,7 +110,7 @@ export default abstract class AttackData extends SmtBaseItemData {
 
     const data = this._systemData;
 
-    return data.damageType === "phys" && actor.system.mods.might;
+    return ["phys", "gun"].includes(data.attackType) && actor.system.mods.might;
   }
 
   get autoFailThreshold(): number {

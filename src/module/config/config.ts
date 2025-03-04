@@ -12,8 +12,8 @@ declare global {
   type CharacterClass = keyof typeof characterClasses;
   type ItemType = keyof typeof itemTypes;
   type PowerType = keyof typeof powerTypes;
+  type AttackType = keyof typeof attackTypes;
   type DamageType = keyof typeof damageTypes;
-  type PowerBoostType = (typeof powerBoost)[number];
   type BuffType = keyof typeof buffs;
   type SuccessLevel = keyof typeof successLevels;
   type TargetNumber = keyof typeof tn;

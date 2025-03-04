@@ -272,10 +272,10 @@
       "basicStrike": "Basic Strike"
     },
     "targets": {
-      "one": "1 target",
-      "all": "All targets",
+      "one": "One",
+      "all": "All",
       "self": "Self",
-      "combatants": "All combatants"
+      "combatants": "Combatants"
     },
     "successLevel": {
       "fail": "Failed",
@@ -372,7 +372,7 @@
       "missingHitRollTN": "Missing TN in hitRoll",
       "missingCardRoll": "Missing Roll for chat card in: {function}",
       "missingPowerType": "Missing attack type in #onAttackRoll",
-      "missingItem": "Can't toggle item field: Missing item ID",
+      "missingItem": "Missing item ID",
       "missingField": "Can't toggle item field: Missing field ID",
       "useItemPiles": "Use Item Piles functionality to move items."
     }
