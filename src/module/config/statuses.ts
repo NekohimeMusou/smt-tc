@@ -129,6 +129,7 @@ const smtStatuses = [
 
 export const ailmentIds = {
   dead: "SMT.ailments.dead",
+  instantDeath: "SMT.ailments.instantDeath",
   stone: "SMT.ailments.stone",
   flied: "SMT.ailments.flied",
   stun: "SMT.ailments.stun",
