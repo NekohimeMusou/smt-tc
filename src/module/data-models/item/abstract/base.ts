@@ -13,7 +13,7 @@ export default abstract class SmtBaseItemData extends foundry.abstract
       description: new fields.HTMLField(),
       qty: new fields.NumberField({
         integer: true,
-        positive: true,
+        min: 0,
         initial: 1,
       }),
       price: new fields.NumberField({ integer: true, min: 0 }),
