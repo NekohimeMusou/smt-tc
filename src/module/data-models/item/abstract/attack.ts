@@ -1,5 +1,5 @@
 import SmtActor from "../../../documents/actor/actor.js";
-import SmtItem from "../../../documents/item/item.js";
+import { SmtItem } from "../../../documents/item/item.js";
 import SmtBaseItemData from "./base.js";
 
 export default abstract class AttackData extends SmtBaseItemData {
@@ -27,6 +27,9 @@ export default abstract class AttackData extends SmtBaseItemData {
     let tnType: TargetNumber = "st";
 
     switch (data.attackType) {
+      case "item":
+        return 100;
+        break;
       case "phys":
         tnType = "phys";
         break;
@@ -70,6 +73,7 @@ export default abstract class AttackData extends SmtBaseItemData {
         break;
       case "mag":
       case "spell":
+      case "item":
         power += actor.system.power.mag;
         break;
       case "phys":
@@ -130,7 +134,10 @@ export default abstract class AttackData extends SmtBaseItemData {
       ...super.defineSchema(),
       auto: new fields.BooleanField(),
       attackType: new fields.StringField({
-        choices: CONFIG.SMT.attackTypes,
+        choices: {
+          ...CONFIG.SMT.attackTypes,
+          item: "SMT.attackTypes.item",
+        },
         initial: "phys",
       }),
       potency: new fields.NumberField({ integer: true, min: 0 }),

@@ -17,9 +17,10 @@ export default async function _onItemPilesReady() {
     ITEM_FILTERS: [{ path: "type", filters: "skill" }],
     UNSTACKABLE_ITEM_TYPES: ["weapon", "armor", "magatama"],
     ITEM_SIMILARITIES: ["name", "type"],
+    CURRENCY_DECIMAL_DIGITS: 1,
     CURRENCIES: [
       {
-        name: "macca",
+        name: "Macca",
         primary: true,
         type: "attribute",
         img: "icons/commodities/currency/coin-yingyang.webp",
@@ -33,7 +34,7 @@ export default async function _onItemPilesReady() {
         name: "Diamond",
         type: "item",
         img: "icons/commodities/gems/gem-faceted-radiant-teal.webp",
-        abbreviation: "{#} diamond",
+        abbreviation: "{#} Diamond",
         data: {
           item: {
             name: "Diamond",
@@ -50,7 +51,7 @@ export default async function _onItemPilesReady() {
         name: "Pearl",
         type: "item",
         img: "icons/commodities/gems/pearl-white-oval.webp",
-        abbreviation: "{#} pearl",
+        abbreviation: "{#} Pearl",
         data: {
           item: {
             name: "Pearl",
@@ -66,7 +67,7 @@ export default async function _onItemPilesReady() {
         name: "Sapphire",
         type: "item",
         img: "icons/commodities/gems/gem-faceted-radiant-blue.webp",
-        abbreviation: "{#} sapphire",
+        abbreviation: "{#} Sapphire",
         data: {
           item: {
             name: "Sapphire",
@@ -82,7 +83,7 @@ export default async function _onItemPilesReady() {
         name: "Emerald",
         type: "item",
         img: "icons/commodities/gems/gem-cut-table-green.webp",
-        abbreviation: "{#} emerald",
+        abbreviation: "{#} Emerald",
         data: {
           item: {
             name: "Emerald",
@@ -98,7 +99,7 @@ export default async function _onItemPilesReady() {
         name: "Ruby",
         type: "item",
         img: "icons/commodities/gems/gem-faceted-radiant-red.webp",
-        abbreviation: "{#} ruby",
+        abbreviation: "{#} Ruby",
         data: {
           item: {
             name: "Ruby",
@@ -114,7 +115,7 @@ export default async function _onItemPilesReady() {
         name: "Jade",
         type: "item",
         img: "icons/commodities/gems/gem-raw-rough-green-yellow.webp",
-        abbreviation: "{#} jade",
+        abbreviation: "{#} Jade",
         data: {
           item: {
             name: "Jade",
@@ -130,7 +131,7 @@ export default async function _onItemPilesReady() {
         name: "Opal",
         type: "item",
         img: "icons/commodities/gems/pearl-natural.webp",
-        abbreviation: "{#} opal",
+        abbreviation: "{#} Opal",
         data: {
           item: {
             name: "Opal",
@@ -147,7 +148,7 @@ export default async function _onItemPilesReady() {
         name: "Amethyst",
         type: "item",
         img: "icons/commodities/gems/gem-cut-faceted-square-purple.webp",
-        abbreviation: "{#} amethyst",
+        abbreviation: "{#} Amethyst",
         data: {
           item: {
             name: "Amethyst",
@@ -164,7 +165,7 @@ export default async function _onItemPilesReady() {
         name: "Agate",
         type: "item",
         img: "icons/commodities/gems/gem-faceted-octagon-yellow.webp",
-        abbreviation: "{#} agate",
+        abbreviation: "{#} Agate",
         data: {
           item: {
             name: "Agate",
@@ -180,7 +181,7 @@ export default async function _onItemPilesReady() {
         name: "Turquoise",
         type: "item",
         img: "icons/commodities/gems/pearl-turquoise.webp",
-        abbreviation: "{#} turquoise",
+        abbreviation: "{#} Turquoise",
         data: {
           item: {
             name: "Turquoise",
@@ -196,7 +197,7 @@ export default async function _onItemPilesReady() {
         name: "Garnet",
         type: "item",
         img: "icons/commodities/gems/gem-rough-navette-red.webp",
-        abbreviation: "{#} garnet",
+        abbreviation: "{#} Garnet",
         data: {
           item: {
             name: "Garnet",
@@ -213,7 +214,7 @@ export default async function _onItemPilesReady() {
         name: "Onyx",
         type: "item",
         img: "icons/commodities/gems/gem-faceted-round-black.webp",
-        abbreviation: "{#} onyx",
+        abbreviation: "{#} Onyx",
         data: {
           item: {
             name: "Onyx",
@@ -229,7 +230,7 @@ export default async function _onItemPilesReady() {
         name: "Coral",
         type: "item",
         img: "icons/commodities/gems/pearl-purple-rough.webp",
-        abbreviation: "{#} coral",
+        abbreviation: "{#} Coral",
         data: {
           item: {
             name: "Coral",
@@ -245,7 +246,7 @@ export default async function _onItemPilesReady() {
         name: "Aquamarine",
         type: "item",
         img: "icons/commodities/gems/gem-shattered-blue.webp",
-        abbreviation: "{#} aquamarine",
+        abbreviation: "{#} Aquamarine",
         data: {
           item: {
             name: "Aquamarine",

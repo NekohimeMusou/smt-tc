@@ -2,7 +2,7 @@ import {
   onManageActiveEffect,
   prepareActiveEffectCategories,
 } from "../active-effect/helpers.js";
-import SmtItem from "./item.js";
+import { SmtItem } from "./item.js";
 
 export default class SmtItemSheet extends ItemSheet<SmtItem> {
   static override get defaultOptions() {

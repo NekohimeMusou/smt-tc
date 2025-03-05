@@ -26,6 +26,5 @@ export default class WeaponData extends AttackData {
     data.attackType = weaponType === "melee" ? "phys" : "gun";
     data.target = weaponType === "grenade" ? "all" : "one";
     data.includePowerRoll = true;
-    data.equipSlot = weaponType === "melee" ? "melee" : "gun";
   }
 }

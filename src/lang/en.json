@@ -259,11 +259,7 @@
       "gun": "Gun",
       "grenade": "Grenade"
     },
-    "equipSlots": {
-      "none": "N/A",
-      "magatama": "Magatama",
-      "gun": "Gun",
-      "melee": "Melee",
+    "armorSlots": {
       "head": "Head",
       "torso": "Torso",
       "legs": "Legs"
@@ -275,7 +271,7 @@
       "one": "One",
       "all": "All",
       "self": "Self",
-      "combatants": "Combatants"
+      "allCombatants": "Combatants"
     },
     "successLevel": {
       "fail": "Failed",
@@ -375,6 +371,15 @@
       "missingItem": "Missing item ID",
       "missingField": "Can't toggle item field: Missing field ID",
       "useItemPiles": "Use Item Piles functionality to move items."
+    }
+  },
+  "TYPES": {
+    "Item": {
+      "inventoryItem": "Item",
+      "weapon": "Weapon",
+      "armor": "Armor",
+      "skill": "Skill",
+      "magatama": "Magatama"
     }
   }
 }

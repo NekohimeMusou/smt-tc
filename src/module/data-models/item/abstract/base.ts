@@ -1,4 +1,4 @@
-import SmtItem from "../../../documents/item/item.js";
+import { SmtItem } from "../../../documents/item/item.js";
 
 export default abstract class SmtBaseItemData extends foundry.abstract
   .TypeDataModel {
@@ -18,10 +18,6 @@ export default abstract class SmtBaseItemData extends foundry.abstract
       }),
       price: new fields.NumberField({ integer: true, min: 0 }),
       equipped: new fields.BooleanField(),
-      equipSlot: new fields.StringField({
-        choices: CONFIG.SMT.equipSlots,
-        initial: "none",
-      }),
     } as const;
   }
 

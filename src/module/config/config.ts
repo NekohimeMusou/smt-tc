@@ -192,27 +192,17 @@ const skillProps = {
   applyFocus: "SMT.skillProps.applyFocus",
 } as const;
 
-const equipSlots = {
-  none: "SMT.equipSlots.none",
-  magatama: "SMT.equipSlots.magatama",
-  gun: "SMT.equipSlots.gun",
-  melee: "SMT.equipSlots.melee",
-  head: "SMT.equipSlots.head",
-  torso: "SMT.equipSlots.torso",
-  legs: "SMT.equipSlots.legs",
-} as const;
-
 const armorSlots = {
-  head: "SMT.equipSlots.head",
-  torso: "SMT.equipSlots.torso",
-  legs: "SMT.equipSlots.legs",
+  head: "SMT.armorSlots.head",
+  torso: "SMT.armorSlots.torso",
+  legs: "SMT.armorSlots.legs",
 } as const;
 
 const targets = {
   one: "SMT.targets.one",
   all: "SMT.targets.all",
   self: "SMT.targets.self",
-  combatants: "SMT.targets.combatants",
+  allCombatants: "SMT.targets.allCombatants",
 } as const;
 
 const successLevels = {
@@ -251,7 +241,6 @@ export const SMT = {
   weaponTypes,
   powerBoost,
   skillProps,
-  equipSlots,
   armorSlots,
   targets,
   successLevels,

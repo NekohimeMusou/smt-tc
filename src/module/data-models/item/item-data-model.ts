@@ -1,4 +1,4 @@
-import SmtItem from "../../documents/item/item.js";
+import { SmtItem } from "../../documents/item/item.js";
 import ArmorData from "./types/armor.js";
 import InventoryItemData from "./types/inventoryItem.js";
 import MagatamaData from "./types/magatama.js";

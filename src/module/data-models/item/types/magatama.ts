@@ -22,11 +22,4 @@ export default class MagatamaData extends AffinityItemData {
       ingested: new fields.BooleanField(),
     } as const;
   }
-
-  override prepareBaseData() {
-    const data = this._systemData;
-
-    // @ts-expect-error This isn't readonly
-    data.equipSlot = "magatama";
-  }
 }
