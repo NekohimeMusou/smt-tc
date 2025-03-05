@@ -2,6 +2,12 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.4.2] - 2025-03-05
+
+### Fixed
+
+- Fix a few quirks in Item Piles support
+
 ## [0.4.1] - 2025-03-04
 
 ### Changed
@@ -167,6 +173,7 @@ _Added separate Human and Demon actor types with some custom behavior, and added
 
 _Initial preview release.*
 
+[0.4.2]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.4.2
 [0.4.1]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.4.1
 [0.4.0]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.4.0
 [0.3.4]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.3.4
