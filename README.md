@@ -80,6 +80,8 @@ There's now a compendium pack with a few macros to make GMs' lives a little easi
   - <https://github.com/Handyfon/roll-of-fate/blob/master/README.md>
 - **Koboldworks - Data Inspector**: Lets you inspect the data of an actor or item with one click and no digging in the console. Great for finding Active Effect paths!
   - <https://gitlab.com/koboldworks/agnostic/data-inspector>
+- **Drag Ruler**: I don't use the tactical rules in my campaign, but this mod might be useful if you do. Use `actor.system.ag` for the speed attribute.
+  - <https://github.com/manuelVo/foundryvtt-drag-ruler/tree/master>
 
 ## Known Issues
 
