@@ -7,7 +7,7 @@ import { ITEMMODELS } from "./data-models/item/item-data-model.js";
 import SmtActorSheet from "./documents/actor/actor-sheet.js";
 import SmtActor from "./documents/actor/actor.js";
 import SmtItemSheet from "./documents/item/item-sheet.js";
-import SmtItem from "./documents/item/item.js";
+import { SmtItem } from "./documents/item/item.js";
 
 declare global {
   interface Game {

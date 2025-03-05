@@ -11,7 +11,7 @@ import SmtDice from "../../helpers/dice.js";
 import { prepareActiveEffectCategories } from "../active-effect/helpers.js";
 import { onManageActiveEffect } from "../active-effect/helpers.js";
 import SmtActor from "./actor.js";
-import SmtItem from "../item/item.js";
+import { Armor, SmtItem } from "../item/item.js";
 
 export default class SmtActorSheet extends ActorSheet<SmtActor> {
   static override get defaultOptions() {
@@ -409,7 +409,8 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
         this.actor.items
           .filter(
             (actorItem) =>
-              actorItem.system.equipSlot === item.system.equipSlot &&
+              (actorItem as Armor | undefined)?.system.slot ===
+                (item as Armor | undefined)?.system.slot &&
               actorItem.system.equipped,
           )
           .map(async (item) => await item.toggleField(fieldId, false)),

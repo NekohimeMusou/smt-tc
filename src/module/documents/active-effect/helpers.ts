@@ -1,5 +1,5 @@
 import SmtActor from "../actor/actor.js";
-import SmtItem from "../item/item.js";
+import { SmtItem } from "../item/item.js";
 import SmtActiveEffect from "./active-effect.js";
 
 interface AECategory {

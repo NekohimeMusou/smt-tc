@@ -13,6 +13,10 @@ export default class ArmorData extends SmtBaseItemData {
         phys: new fields.NumberField({ integer: true, min: 0 }),
         mag: new fields.NumberField({ integer: true, min: 0 }),
       }),
+      slot: new fields.StringField({
+        choices: CONFIG.SMT.armorSlots,
+        initial: "torso",
+      }),
     };
   }
 }

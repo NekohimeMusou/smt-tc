@@ -1,5 +1,5 @@
 import SmtActor from "../actor/actor.js";
-import SmtItem from "../item/item.js";
+import { SmtItem } from "../item/item.js";
 
 export default class SmtActiveEffect extends ActiveEffect<SmtActor, SmtItem> {
   override isSuppressed() {
