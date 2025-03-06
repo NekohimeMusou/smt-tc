@@ -32,230 +32,128 @@ export default async function _onItemPilesReady() {
     SECONDARY_CURRENCIES: [
       {
         name: "Diamond",
-        type: "item",
-        img: "icons/commodities/gems/gem-faceted-radiant-teal.webp",
-        abbreviation: "{#} Diamond",
+        type: "attribute",
+        img: CONFIG.SMT.gemIcons.diamond,
+        abbreviation: `{#} ${game.i18n.localize("SMT.gems.diamond.name")}`,
         data: {
-          item: {
-            name: "Diamond",
-            type: "inventoryItem",
-            img: "icons/commodities/gems/gem-faceted-radiant-teal.webp",
-            system: {
-              description:
-                "<p>A beautiful gemstone, symbolizing pure love.</p>",
-            },
-          },
+          path: "system.gems.diamond",
         },
       },
       {
         name: "Pearl",
-        type: "item",
-        img: "icons/commodities/gems/pearl-white-oval.webp",
-        abbreviation: "{#} Pearl",
+        type: "attribute",
+        img: CONFIG.SMT.gemIcons.pearl,
+        abbreviation: `{#} ${game.i18n.localize("SMT.gems.pearl.name")}`,
         data: {
-          item: {
-            name: "Pearl",
-            type: "inventoryItem",
-            img: "icons/commodities/gems/pearl-white-oval.webp",
-            system: {
-              description: "<p>A beautiful gemstone, symbolizing chastity.</p>",
-            },
-          },
+          path: "system.gems.pearl",
         },
       },
       {
         name: "Sapphire",
-        type: "item",
-        img: "icons/commodities/gems/gem-faceted-radiant-blue.webp",
-        abbreviation: "{#} Sapphire",
+        type: "attribute",
+        img: CONFIG.SMT.gemIcons.sapphire,
+        abbreviation: `{#} ${game.i18n.localize("SMT.gems.sapphire.name")}`,
         data: {
-          item: {
-            name: "Sapphire",
-            type: "inventoryItem",
-            img: "icons/commodities/gems/gem-faceted-radiant-blue.webp",
-            system: {
-              description: "<p>A beautiful gemstone, symbolizing charity.</p>",
-            },
-          },
+          path: "system.gems.sapphire",
         },
       },
       {
         name: "Emerald",
-        type: "item",
-        img: "icons/commodities/gems/gem-cut-table-green.webp",
-        abbreviation: "{#} Emerald",
+        type: "attribute",
+        img: CONFIG.SMT.gemIcons.emerald,
+        abbreviation: `{#} ${game.i18n.localize("SMT.gems.emerald.name")}`,
         data: {
-          item: {
-            name: "Emerald",
-            type: "inventoryItem",
-            img: "icons/commodities/gems/gem-cut-table-green.webp",
-            system: {
-              description: "<p>A beautiful gemstone, symbolizing marriage.</p>",
-            },
-          },
+          path: "system.gems.emerald",
         },
       },
       {
         name: "Ruby",
-        type: "item",
-        img: "icons/commodities/gems/gem-faceted-radiant-red.webp",
-        abbreviation: "{#} Ruby",
+        type: "attribute",
+        img: CONFIG.SMT.gemIcons.ruby,
+        abbreviation: `{#} ${game.i18n.localize("SMT.gems.ruby.name")}`,
         data: {
-          item: {
-            name: "Ruby",
-            type: "inventoryItem",
-            img: "icons/commodities/gems/gem-faceted-radiant-red.webp",
-            system: {
-              description: "<p>A beautiful gemstone, symbolizing passion.</p>",
-            },
-          },
+          path: "system.gems.ruby",
         },
       },
       {
         name: "Jade",
-        type: "item",
-        img: "icons/commodities/gems/gem-raw-rough-green-yellow.webp",
-        abbreviation: "{#} Jade",
+        type: "attribute",
+        img: CONFIG.SMT.gemIcons.jade,
+        abbreviation: `{#} ${game.i18n.localize("SMT.gems.jade.name")}`,
         data: {
-          item: {
-            name: "Jade",
-            type: "inventoryItem",
-            img: "icons/commodities/gems/gem-raw-rough-green-yellow.webp",
-            system: {
-              description: "<p>A beautiful gemstone, symbolizing fortune.</p>",
-            },
-          },
+          path: "system.gems.jade",
         },
       },
       {
         name: "Opal",
-        type: "item",
-        img: "icons/commodities/gems/pearl-natural.webp",
-        abbreviation: "{#} Opal",
+        type: "attribute",
+        img: CONFIG.SMT.gemIcons.opal,
+        abbreviation: `{#} ${game.i18n.localize("SMT.gems.opal.name")}`,
         data: {
-          item: {
-            name: "Opal",
-            type: "inventoryItem",
-            img: "icons/commodities/gems/pearl-natural.webp",
-            system: {
-              description:
-                "<p>A beautiful gemstone, symbolizing happiness.</p>",
-            },
-          },
+          path: "system.gems.opal",
         },
       },
       {
         name: "Amethyst",
-        type: "item",
-        img: "icons/commodities/gems/gem-cut-faceted-square-purple.webp",
-        abbreviation: "{#} Amethyst",
+        type: "attribute",
+        img: CONFIG.SMT.gemIcons.amethyst,
+        abbreviation: `{#} ${game.i18n.localize("SMT.gems.amethyst.name")}`,
         data: {
-          item: {
-            name: "Amethyst",
-            type: "inventoryItem",
-            img: "icons/commodities/gems/gem-cut-faceted-square-purple.webp",
-            system: {
-              description:
-                "<p>A beautiful gemstone, symbolizing sincerity.</p>",
-            },
-          },
+          path: "system.gems.amethyst",
         },
       },
       {
         name: "Agate",
-        type: "item",
-        img: "icons/commodities/gems/gem-faceted-octagon-yellow.webp",
-        abbreviation: "{#} Agate",
+        type: "attribute",
+        img: CONFIG.SMT.gemIcons.agate,
+        abbreviation: `{#} ${game.i18n.localize("SMT.gems.agate.name")}`,
         data: {
-          item: {
-            name: "Agate",
-            type: "inventoryItem",
-            img: "icons/commodities/gems/gem-faceted-octagon-yellow.webp",
-            system: {
-              description: "<p>A beautiful gemstone, symbolizing truth.</p>",
-            },
-          },
+          path: "system.gems.agate",
         },
       },
       {
         name: "Turquoise",
-        type: "item",
-        img: "icons/commodities/gems/pearl-turquoise.webp",
-        abbreviation: "{#} Turquoise",
+        type: "attribute",
+        img: CONFIG.SMT.gemIcons.turquoise,
+        abbreviation: `{#} ${game.i18n.localize("SMT.gems.turquoise.name")}`,
         data: {
-          item: {
-            name: "Turquoise",
-            type: "inventoryItem",
-            img: "icons/commodities/gems/pearl-turquoise.webp",
-            system: {
-              description: "<p>A beautiful gemstone, symbolizing safety.</p>",
-            },
-          },
+          path: "system.gems.turquoise",
         },
       },
       {
         name: "Garnet",
-        type: "item",
-        img: "icons/commodities/gems/gem-rough-navette-red.webp",
-        abbreviation: "{#} Garnet",
+        type: "attribute",
+        img: CONFIG.SMT.gemIcons.garnet,
+        abbreviation: `{#} ${game.i18n.localize("SMT.gems.garnet.name")}`,
         data: {
-          item: {
-            name: "Garnet",
-            type: "inventoryItem",
-            img: "icons/commodities/gems/gem-rough-navette-red.webp",
-            system: {
-              description:
-                "<p>A beautiful gemstone, symbolizing friendship.</p>",
-            },
-          },
+          path: "system.gems.garnet",
         },
       },
       {
         name: "Onyx",
-        type: "item",
-        img: "icons/commodities/gems/gem-faceted-round-black.webp",
-        abbreviation: "{#} Onyx",
+        type: "attribute",
+        img: CONFIG.SMT.gemIcons.onyx,
+        abbreviation: `{#} ${game.i18n.localize("SMT.gems.onyx.name")}`,
         data: {
-          item: {
-            name: "Onyx",
-            type: "inventoryItem",
-            img: "icons/commodities/gems/gem-faceted-round-black.webp",
-            system: {
-              description: "<p>A beautiful gemstone, symbolizing trust.</p>",
-            },
-          },
+          path: "system.gems.onyx",
         },
       },
       {
         name: "Coral",
-        type: "item",
-        img: "icons/commodities/gems/pearl-purple-rough.webp",
-        abbreviation: "{#} Coral",
+        type: "attribute",
+        img: CONFIG.SMT.gemIcons.coral,
+        abbreviation: `{#} ${game.i18n.localize("SMT.gems.coral.name")}`,
         data: {
-          item: {
-            name: "Coral",
-            type: "inventoryItem",
-            img: "icons/commodities/gems/pearl-purple-rough.webp",
-            system: {
-              description: "<p>A beautiful gemstone, symbolizing wisdom.</p>",
-            },
-          },
+          path: "system.gems.coral",
         },
       },
       {
         name: "Aquamarine",
-        type: "item",
-        img: "icons/commodities/gems/gem-shattered-blue.webp",
-        abbreviation: "{#} Aquamarine",
+        type: "attribute",
+        img: CONFIG.SMT.gemIcons.aquamarine,
+        abbreviation: `{#} ${game.i18n.localize("SMT.gems.aquamarine.name")}`,
         data: {
-          item: {
-            name: "Aquamarine",
-            type: "inventoryItem",
-            img: "icons/commodities/gems/gem-shattered-blue.webp",
-            system: {
-              description: "<p>A beautiful gemstone, symbolizing grace.</p>",
-            },
-          },
+          path: "system.gems.aquamarine",
         },
       },
     ],

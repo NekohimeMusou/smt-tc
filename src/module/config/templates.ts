@@ -10,6 +10,8 @@ export const templatePaths = [
   // Actor sheet panes
   "systems/smt-tc/templates/parts/actor/header.hbs",
   "systems/smt-tc/templates/parts/actor/resources.hbs",
+  "systems/smt-tc/templates/parts/actor/notes.hbs",
+  "systems/smt-tc/templates/parts/actor/gems.hbs",
 
   // Main tab
   "systems/smt-tc/templates/parts/actor/stats.hbs",

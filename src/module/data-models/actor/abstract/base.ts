@@ -176,6 +176,23 @@ export default abstract class SmtBaseActorData extends foundry.abstract
       item: new fields.BooleanField(),
     });
 
+    const gems = new fields.SchemaField({
+      diamond: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+      pearl: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+      sapphire: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+      emerald: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+      ruby: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+      jade: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+      opal: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+      amethyst: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+      agate: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+      turquoise: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+      garnet: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+      onyx: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+      coral: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+      aquamarine: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
+    });
+
     return {
       stats,
       ...resources,
@@ -188,6 +205,7 @@ export default abstract class SmtBaseActorData extends foundry.abstract
       buffs,
       mods,
       powerBoost,
+      gems,
       baseLv: new fields.NumberField({
         integer: true,
         positive: true,

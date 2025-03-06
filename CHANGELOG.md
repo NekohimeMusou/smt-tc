@@ -2,6 +2,24 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.4.3] - 2025-03-05
+
+### Fixed
+
+- Fix misaligned weapon column headers on inventory tab
+- Migrate old items with "combatants" target instead of "allCombatants"
+
+### Changed
+
+- Move actor sheet Notes section from its own tab to Bio tab
+- Change Item Piles integration to use gem fields instead of items
+- Improved localization for gems
+
+### Added
+
+- Add gem fields to actors for Item Piles integration
+- New world setting: Can non-GMs edit gem fields?
+
 ## [0.4.2] - 2025-03-05
 
 ### Fixed
@@ -173,6 +191,7 @@ _Added separate Human and Demon actor types with some custom behavior, and added
 
 _Initial preview release.*
 
+[0.4.3]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.4.3
 [0.4.2]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.4.2
 [0.4.1]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.4.1
 [0.4.0]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.4.0

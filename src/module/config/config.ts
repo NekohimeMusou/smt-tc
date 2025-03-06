@@ -176,6 +176,40 @@ const itemTypes = {
   skill: "SMT.itemTypes.skill",
 } as const;
 
+const gems = {
+  diamond: "SMT.gems.diamond.name",
+  pearl: "SMT.gems.pearl.name",
+  sapphire: "SMT.gems.sapphire.name",
+  emerald: "SMT.gems.emerald.name",
+  ruby: "SMT.gems.ruby.name",
+  jade: "SMT.gems.jade.name",
+  opal: "SMT.gems.opal.name",
+  amethyst: "SMT.gems.amethyst.name",
+  agate: "SMT.gems.agate.name",
+  turquoise: "SMT.gems.turquoise.name",
+  garnet: "SMT.gems.garnet.name",
+  onyx: "SMT.gems.onyx.name",
+  coral: "SMT.gems.coral.name",
+  aquamarine: "SMT.gems.aquamarine.name",
+} as const;
+
+const gemIcons = {
+  diamond: "icons/commodities/gems/gem-faceted-radiant-teal.webp",
+  pearl: "icons/commodities/gems/pearl-white-oval.webp",
+  sapphire: "icons/commodities/gems/gem-faceted-radiant-blue.webp",
+  emerald: "icons/commodities/gems/gem-cut-table-green.webp",
+  ruby: "icons/commodities/gems/gem-faceted-radiant-red.webp",
+  jade: "icons/commodities/gems/gem-raw-rough-green-yellow.webp",
+  opal: "icons/commodities/gems/pearl-natural.webp",
+  amethyst: "icons/commodities/gems/gem-cut-faceted-square-purple.webp",
+  agate: "icons/commodities/gems/gem-faceted-octagon-yellow.webp",
+  turquoise: "icons/commodities/gems/pearl-turquoise.webp",
+  garnet: "icons/commodities/gems/gem-rough-navette-red.webp",
+  onyx: "icons/commodities/gems/gem-faceted-round-black.webp",
+  coral: "icons/commodities/gems/pearl-purple-rough.webp",
+  aquamarine: "icons/commodities/gems/gem-shattered-blue.webp",
+} as const;
+
 const weaponTypes = {
   melee: "SMT.weaponTypes.melee",
   gun: "SMT.weaponTypes.gun",
@@ -238,6 +272,8 @@ export const SMT = {
   damageTypes,
   attackTypes,
   itemTypes,
+  gems,
+  gemIcons,
   weaponTypes,
   powerBoost,
   skillProps,

@@ -1,4 +1,13 @@
 export default function registerSystemSettings() {
+  game.settings.register("smt-tc", "editableGems", {
+    name: "SMT.settings.editableGems.name",
+    hint: "SMT.settings.editableGems.hint",
+    scope: "world",
+    config: true,
+    requiresReload: true,
+    type: Boolean,
+    default: false,
+  });
   game.settings.register("smt-tc", "addLevelToGunDamage", {
     name: "SMT.settings.addLevelToGunDamage.name",
     hint: "SMT.settings.addLevelToGunDamage.hint",

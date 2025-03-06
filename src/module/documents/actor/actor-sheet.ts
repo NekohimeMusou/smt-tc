@@ -52,10 +52,18 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
 
     const effects = prepareActiveEffectCategories(this.actor.effects);
 
+    // FIXTHIS: Cheap hack because I'm bad at CSS, fix later
+    const gems = Object.keys(CONFIG.SMT.gems);
+    const gems1 = gems.slice(0, 7);
+    const gems2 = gems.slice(7);
+
     const enableActorSheetBuffs = game.settings.get(
       "smt-tc",
       "enableActorSheetBuffs",
     );
+
+    const editableGems =
+      game.settings.get("smt-tc", "editableGems") || game.user.isGM;
 
     await foundry.utils.mergeObject(context, {
       system,
@@ -69,7 +77,9 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       inventoryItems,
       equippedMagatama,
       effects,
+      gems: [gems1, gems2],
       enableActorSheetBuffs,
+      editableGems,
       SMT: CONFIG.SMT,
     });
 

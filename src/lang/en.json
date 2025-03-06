@@ -58,7 +58,8 @@
       "ailment": "Ailment",
       "shatter": "Shatter",
       "qty": "Qty",
-      "price": "Price"
+      "price": "Price",
+      "gems": "Gems"
     },
     "itemSheet": {
       "attackType": "Attack Type",
@@ -254,6 +255,64 @@
       "weapon": "Weapon",
       "inventoryItem": "Item"
     },
+    "gems": {
+      "diamond": {
+        "name": "Diamond",
+        "desc": "A beautiful gemstone, symbolizing pure love."
+      },
+      "pearl": {
+        "name": "Pearl",
+        "desc": "A beautiful gemstone, symbolizing chastity."
+      },
+      "sapphire": {
+        "name": "Sapphire",
+        "desc": "A beautiful gemstone, symbolizing charity."
+      },
+      "emerald": {
+        "name": "Emerald",
+        "desc": "A beautiful gemstone, symbolizing marriage."
+      },
+      "ruby": {
+        "name": "Ruby",
+        "desc": "A beautiful gemstone, symbolizing passion."
+      },
+      "jade": {
+        "name": "Jade",
+        "desc": "A beautiful gemstone, symbolizing fortune."
+      },
+      "opal": {
+        "name": "Opal",
+        "desc": "A beautiful gemstone, symbolizing happiness."
+      },
+      "amethyst": {
+        "name": "Amethyst",
+        "desc": "A beautiful gemstone, symbolizing sincerity."
+      },
+      "agate": {
+        "name": "Agate",
+        "desc": "A beautiful gemstone, symbolizing truth."
+      },
+      "turquoise": {
+        "name": "Turquoise",
+        "desc": "A beautiful gemstone, symbolizing safety."
+      },
+      "garnet": {
+        "name": "Garnet",
+        "desc": "A beautiful gemstone, symbolizing friendship."
+      },
+      "onyx": {
+        "name": "Onyx",
+        "desc": "A beautiful gemstone, symbolizing trust."
+      },
+      "coral": {
+        "name": "Coral",
+        "desc": "A beautiful gemstone, symbolizing wisdom."
+      },
+      "aquamarine": {
+        "name": "Aquamarine",
+        "desc": "A beautiful gemstone, symbolizing grace."
+      }
+    },
     "weaponTypes": {
       "melee": "Melee",
       "gun": "Gun",
@@ -358,6 +417,10 @@
       "enableActorSheetBuffs": {
         "name": "Enable Actor Sheet Buff Pane",
         "hint": "Make the buffs pane on the actor sheet editable. Basically superseded by the macro."
+      },
+      "editableGems": {
+        "name": "Editable Gem Fields",
+        "hint": "Players can edit the gem fields on their character sheets (GMs can always do this)."
       }
     },
     "ui": {

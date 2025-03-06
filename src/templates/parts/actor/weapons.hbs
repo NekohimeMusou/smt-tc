@@ -3,7 +3,7 @@
     <ol class="item-list">
       <li class="item flexrow items-header">
         {{!-- Name --}}
-        <div class="item-name flex3">{{localize "SMT.itemTypes.weapon"}}</div>
+        <div class="item-name flex2">{{localize "SMT.itemTypes.weapon"}}</div>
         {{#if inventoryTab}}
         {{!-- Equipped? --}}
         <div>{{localize "SMT.actorSheet.equipped"}}</div>
@@ -22,7 +22,7 @@
         <div>{{localize "SMT.itemSheet.affinity"}}</div>
         {{!-- Type (Melee | Gun | Grenade) --}}
         <div>{{localize "SMT.itemSheet.weaponType"}}</div>
-        {{#if ../inventoryTab}}
+        {{#if inventoryTab}}
         <div class="item-controls">
           <a class="item-control item-create" title="{{localize "SMT.sheet.newItem"}}" data-item-type="weapon">
             <i class="fas fa-plus"></i> {{localize "SMT.sheet.addItem"}}</a>
@@ -33,7 +33,7 @@
       {{#each weapons}}
       <li class="item item-entry flexrow flex-group-center flex-between" data-item-id="{{id}}">
         {{!-- Name --}}
-        <a class="item-name flex3">
+        <a class="item-name flex2">
           <div class="item-image">
             <img src="{{img}}" title="{{name}}" width="24" height="24" />
           </div>

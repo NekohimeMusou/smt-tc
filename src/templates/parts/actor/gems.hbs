@@ -1,0 +1,28 @@
+<section class="gems">
+  <div class="items-list flexcol">
+    <ol class="stat-list">
+      <li class="item flexrow items-header">
+        <div>{{localize "SMT.actorSheet.gems"}}</div>
+      </li>
+    </ol>
+
+    {{!-- This is pretty bad, fix it sometime --}}
+    {{#each gems}}
+    <li class="item flexrow">
+      {{#each this}}
+      <div class="item-prop flex2">
+        {{localize (concat "SMT.gems." this ".name")}}
+      </div>
+      <div class="item-prop">
+        {{#if ../../editableGems}}
+        <input type="number" name="system.gems.{{this}}" value="{{lookup ../../system.gems this}}" placeholder="0"
+          data-dtype="Number" />
+        {{else}}
+        {{lookup ../../system.gems this}}
+        {{/if}}
+      </div>
+      {{/each}}
+    </li>
+    {{/each}}
+  </div>
+</section>
