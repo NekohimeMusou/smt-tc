@@ -18,7 +18,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["smt-tc", "sheet", "actor"],
       template: "systems/smt-tc/templates/actor/actor-sheet.hbs",
-      width: 900,
+      width: 800,
       height: 950,
       tabs: [
         {

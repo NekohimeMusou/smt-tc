@@ -9,6 +9,7 @@ export default class InventoryItemData extends AttackData {
 
     return {
       ...super.defineSchema(),
+      // TODO: See if we can factor this out/combine it
       consumeOnUse: new fields.BooleanField(),
       hasAttack: new fields.BooleanField(),
     };

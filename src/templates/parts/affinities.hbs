@@ -3,7 +3,7 @@
     {{#each SMT.defenseAffinities as |loc affinity|}}
     <div class="affinity-item">
       <div class="tooltip">
-        <img src="systems/smt-tc/img/affinity/{{affinity}}.png" width="92" height="32" />
+        <img src="systems/smt-tc/img/affinity/{{affinity}}.png" width="82" height="28" />
         <span class="tooltip-text">{{localize loc}}</span>
       </div>
       <select name="system.affinities.{{affinity}}" {{ifThen (eq ../actor.type "fiend") "disabled" ""}}>

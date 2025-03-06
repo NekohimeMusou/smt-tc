@@ -1,6 +1,7 @@
 import { SmtItem } from "../../../documents/item/item.js";
 
-export default abstract class SmtBaseItemData extends foundry.abstract.TypeDataModel {
+export default abstract class SmtBaseItemData extends foundry.abstract
+  .TypeDataModel {
   abstract override readonly type: ItemType;
 
   abstract readonly equippable: boolean;
