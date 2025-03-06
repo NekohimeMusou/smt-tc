@@ -15,18 +15,30 @@
     </ol>
   </div>
   {{/if}}
-  <div class="flexrow">
-    <div class="flexcol flex3">
-      {{> "systems/smt-tc/templates/parts/affinities.hbs"}}
-      {{> "systems/smt-tc/templates/parts/actor/stats.hbs"}}
-    </div>
 
-    <div class="flexcol">
+  <div class="flexcol">
+    <div class="flexrow">
+      <div class="flex3">
+        {{> "systems/smt-tc/templates/parts/affinities.hbs"}}
+      </div>
+
       {{> "systems/smt-tc/templates/parts/actor/buffs.hbs"}}
-      {{> "systems/smt-tc/templates/parts/actor/derived-stats.hbs"}}
-      {{> "systems/smt-tc/templates/parts/actor/mods.hbs"}}
+    </div>
+    {{!-- Affinity Pane --}}
+    
+    <div class="flexrow">
+      <div class="flex3">
+        {{> "systems/smt-tc/templates/parts/actor/stats.hbs"}}
+      </div>
+
+      <div class="flexcol">
+        {{!-- Buffs/Derived/Mods stack --}}
+        {{> "systems/smt-tc/templates/parts/actor/derived-stats.hbs"}}
+        {{> "systems/smt-tc/templates/parts/actor/mods.hbs"}}
+      </div>
     </div>
   </div>
+
   {{#if (and (eq actor.type "human") showWeaponsPane)}}
   {{> "systems/smt-tc/templates/parts/actor/weapons.hbs" weapons=equippedWeapons}}
   {{/if}}
