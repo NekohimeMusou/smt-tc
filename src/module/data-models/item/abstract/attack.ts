@@ -1,5 +1,6 @@
 import SmtActor from "../../../documents/actor/actor.js";
 import { SmtItem } from "../../../documents/item/item.js";
+import Ailment from "../../ailment.js";
 import SmtBaseItemData from "./base.js";
 
 export default abstract class AttackData extends SmtBaseItemData {
@@ -152,10 +153,7 @@ export default abstract class AttackData extends SmtBaseItemData {
         choices: CONFIG.SMT.targets,
         initial: "one",
       }),
-      ailment: new fields.SchemaField({
-        id: new fields.StringField({ choices: CONFIG.SMT.ailmentIds }),
-        rate: new fields.NumberField({ integer: true, min: 0, max: 95 }),
-      }),
+      ailment: new fields.EmbeddedDataField(Ailment),
       shatterRate: new fields.NumberField({ integer: true, min: 0 }),
       includePowerRoll: new fields.BooleanField(),
     };
