@@ -1,3 +1,5 @@
+import Ailment from "./ailment.js";
+
 export default class AttackDataModel extends foundry.abstract.DataModel {
   static override defineSchema() {
     const fields = foundry.data.fields;
@@ -23,6 +25,9 @@ export default class AttackDataModel extends foundry.abstract.DataModel {
         choices: CONFIG.SMT.targets,
         initial: "one",
       }),
+      ailment: new fields.EmbeddedDataField(Ailment),
+      shatterRate: new fields.NumberField({ integer: true, min: 0 }),
+      includePowerRoll: new fields.BooleanField(),
     };
   }
 }
