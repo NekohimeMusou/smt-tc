@@ -43,7 +43,7 @@
       "multi": "Multi",
       "stats": "Stats",
       "baseStat": "Base",
-      "levelShort": "Lv",
+      "lv": "Lv",
       "statTotal": "Total",
       "tn": "TN",
       "derivedTN": "Special",
@@ -86,7 +86,8 @@
       "qty": "Qty",
       "slot": "Slot",
       "consumeOnUse": "Consume on Use",
-      "hasAttack": "Has Attack"
+      "hasAttack": "Has Attack",
+      "learned": "Learned"
     },
     "skillDetails": {
       "cost": "Cost: {cost} {resource}",
@@ -114,11 +115,6 @@
       "inheritType": "Inherit Type",
       "evolvePath": "Evolve Path",
       "favoredStat": "Favored Stat"
-    },
-    "charClasses": {
-      "fiend": "Fiend",
-      "demon": "Demon",
-      "human": "Human"
     },
     "resources": {
       "hp": "HP",
@@ -247,13 +243,6 @@
       "tarunda": "Phys & Mag Power",
       "rakunda": "Resist",
       "sukunda": "Acc/Dodge"
-    },
-    "itemTypes": {
-      "magatama": "Magatama",
-      "skill": "Skill",
-      "armor": "Armor",
-      "weapon": "Weapon",
-      "inventoryItem": "Item"
     },
     "gems": {
       "diamond": {
@@ -443,6 +432,11 @@
       "armor": "Armor",
       "skill": "Skill",
       "magatama": "Magatama"
+    },
+    "Actor": {
+      "fiend": "Fiend",
+      "demon": "Demon",
+      "human": "Human"
     }
   }
 }

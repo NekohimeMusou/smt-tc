@@ -20,9 +20,9 @@ declare global {
 }
 
 const characterClasses = {
-  fiend: "SMT.charClasses.fiend",
-  demon: "SMT.charClasses.demon",
-  human: "SMT.charClasses.human",
+  fiend: "TYPES.Actor.fiend",
+  demon: "TYPES.Actor.demon",
+  human: "TYPES.Actor.human",
 } as const;
 
 const fiendLevelTable = Array(101)
@@ -169,11 +169,11 @@ const attackTypes = {
 } as const;
 
 const itemTypes = {
-  inventoryItem: "SMT.itemTypes.item",
-  weapon: "SMT.itemTypes.weapon",
-  armor: "SMT.itemTypes.armor",
-  magatama: "SMT.itemTypes.magatama",
-  skill: "SMT.itemTypes.skill",
+  inventoryItem: "TYPES.Item.inventoryItem",
+  weapon: "TYPES.Item.weapon",
+  armor: "TYPES.Item.armor",
+  magatama: "TYPES.Item.magatama",
+  skill: "TYPES.Item.skill",
 } as const;
 
 const gems = {
