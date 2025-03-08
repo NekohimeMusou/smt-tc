@@ -5,8 +5,7 @@ export default abstract class SmtBaseItemData extends foundry.abstract.TypeDataM
 
   abstract readonly equippable: boolean;
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  static override migrateData(source: Record<string, any>) {
+  static override migrateData(source: Record<string, unknown>) {
     if ("target" in source && source.target === "combatants") {
       source.target = "allCombatants";
     }
