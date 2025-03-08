@@ -1,4 +1,3 @@
-import SmtActor from "../../../documents/actor/actor.js";
 import { Armor } from "../../../documents/item/item.js";
 import SmtBaseActorData from "../abstract/base.js";
 
@@ -8,7 +7,7 @@ export default class SmtHumanData extends SmtBaseActorData {
   override prepareDerivedData() {
     super.prepareDerivedData();
 
-    const actor = this.parent as SmtActor;
+    const actor = this.actor;
     const data = this._systemData;
 
     const equippedArmor = actor.items.filter(

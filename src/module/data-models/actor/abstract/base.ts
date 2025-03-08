@@ -5,6 +5,10 @@ import { Magatama } from "../../item/item-data-model.js";
 export default abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
   abstract override readonly type: CharacterClass;
 
+  get actor() {
+    return this.parent as SmtActor;
+  }
+
   get lv(): number {
     const data = this._systemData;
     const levelTable = CONFIG.SMT.levelTables[this.type];
@@ -18,7 +22,7 @@ export default abstract class SmtBaseActorData extends foundry.abstract.TypeData
   }
 
   get autoFailThreshold() {
-    const actor = this.parent as SmtActor;
+    const actor = this.actor;
 
     if (actor.statuses.has("stun")) {
       return 25;
@@ -33,7 +37,7 @@ export default abstract class SmtBaseActorData extends foundry.abstract.TypeData
 
   get equippedMagatama() {
     // Return `undefined` if this isn't a Fiend
-    const actor = this.parent as SmtActor;
+    const actor = this.actor;
 
     return actor.items.find(
       (item) => item.type === "magatama" && item.system.equipped,
@@ -223,7 +227,7 @@ export default abstract class SmtBaseActorData extends foundry.abstract.TypeData
   override prepareBaseData() {
     super.prepareBaseData();
     const data = this._systemData;
-    const actor = this.parent as SmtActor;
+    const actor = this.actor;
 
     // @ts-expect-error This isn't readonly
     data.hpMultiplier = actor.type === "human" ? 4 : 6;

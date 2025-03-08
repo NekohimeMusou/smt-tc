@@ -5,15 +5,13 @@ export default class SmtActiveEffect extends ActiveEffect<SmtActor, SmtItem> {
   override isSuppressed() {
     const parent = this.parent;
 
-    if (parent.documentName === "Actor") {
+    if (parent instanceof SmtActor) {
       return false;
     }
 
     // It's an item
-    if (parent.documentName === "Item") {
-      const item = parent as SmtItem;
-
-      return item.system.equippable && !item.system.equipped;
+    if (parent instanceof SmtItem) {
+      return parent.system.equippable && !parent.system.equipped;
     }
 
     return false;
