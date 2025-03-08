@@ -1,3 +1,4 @@
+import AttackDataModel from "../../attack.js";
 import AttackData from "../abstract/attack.js";
 
 export default class WeaponData extends AttackData {
@@ -14,6 +15,7 @@ export default class WeaponData extends AttackData {
         max: new fields.NumberField({ integer: true, positive: true }),
         value: new fields.NumberField({ integer: true, min: 0 }),
       }),
+      attackData: new fields.EmbeddedDataField(AttackDataModel),
     };
   }
 

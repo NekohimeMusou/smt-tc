@@ -1,3 +1,8 @@
+import SmtActor from "../documents/actor/actor.js";
+import { Magatama } from "./item/item-data-model.js";
+
+type DefenseAffinityDocument = Magatama | SmtActor;
+
 export default class DefenseAffinityData extends foundry.abstract.DataModel {
   static override defineSchema() {
     const fields = foundry.data.fields;
@@ -52,5 +57,9 @@ export default class DefenseAffinityData extends foundry.abstract.DataModel {
         initial: "none",
       }),
     };
+  }
+
+  protected get _systemData() {
+    return this as this & DefenseAffinityDocument["system"]["affinities"];
   }
 }

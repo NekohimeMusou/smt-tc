@@ -1,3 +1,4 @@
+import AttackDataModel from "../../attack.js";
 import AttackData from "../abstract/attack.js";
 
 export default class SkillData extends AttackData {
@@ -14,6 +15,7 @@ export default class SkillData extends AttackData {
       used: new fields.BooleanField(),
       inheritanceTraits: new fields.StringField(),
       cost: new fields.NumberField({ integer: true, min: 0 }),
+      attackData: new fields.EmbeddedDataField(AttackDataModel),
     };
   }
 }

@@ -1,3 +1,4 @@
+import AttackDataModel from "../../attack.js";
 import AttackData from "../abstract/attack.js";
 
 export default class InventoryItemData extends AttackData {
@@ -12,6 +13,7 @@ export default class InventoryItemData extends AttackData {
       // TODO: See if we can factor this out/combine it
       consumeOnUse: new fields.BooleanField(),
       hasAttack: new fields.BooleanField(),
+      attackData: new fields.EmbeddedDataField(AttackDataModel),
     };
   }
 

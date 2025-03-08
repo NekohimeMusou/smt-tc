@@ -1,3 +1,4 @@
+import DefenseAffinityData from "../../defense-affinities.js";
 import SkillListing from "../../skill-listing.js";
 import AffinityItemData from "../abstract/affinity.js";
 
@@ -20,6 +21,7 @@ export default class MagatamaData extends AffinityItemData {
       }),
       skills: new fields.ArrayField(new fields.EmbeddedDataField(SkillListing)),
       ingested: new fields.BooleanField(),
+      affinityData: new fields.EmbeddedDataField(DefenseAffinityData),
     } as const;
   }
 }
