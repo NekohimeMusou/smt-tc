@@ -1,0 +1,32 @@
+<section class="skills">
+  <div class="items-list flexcol flexlarge">
+    <ol class="item-list">
+      <li class="item flexrow items-header">
+        {{!-- Learned? --}}
+        <div>{{localize "SMT.itemSheet.learned"}}</div>
+        {{!-- Lv --}}
+        <div>{{localize "SMT.actorSheet.lv"}}</div>
+        {{!-- Skill Name --}}
+        <div class="flex3">{{localize "TYPES.Item.skill"}}</div>
+
+        <div class="item-controls">
+          <a class="item-control item-create" title="{{localize "SMT.sheet.newItem"}}" data-item-type="skill">
+            <i class="fas fa-plus"></i> {{localize "SMT.sheet.addItem"}}</a>
+        </div>
+      </li>
+
+      {{#each skills}}
+      <li class="item item-entry flexrow flex-group-center flex-between" data-item-id="{{id}}">
+        {{!-- Learned? --}}
+        {{!-- Lv --}}
+        {{!-- Skill Name --}}
+        <div class="item-controls">
+          <a class="item-control item-edit" title="{{localize "SMT.sheet.editItem"}}"><i class="fas fa-edit"></i></a>
+          <a class="item-control item-delete" title="{{localize "SMT.sheet.deleteItem"}}"><i
+              class="fas fa-trash"></i></a>
+        </div>
+      </li>
+      {{/each}}
+    </ol>
+  </div>
+</section>

@@ -1,6 +1,6 @@
 import DefenseAffinityData from "../../defense-affinities.js";
-import SkillListing from "../../skill-listing.js";
 import SmtBaseItemData from "../abstract/base.js";
+import { SmtItem } from "../../../documents/item/item.js";
 
 export default class MagatamaData extends SmtBaseItemData {
   override readonly type = "magatama";
@@ -19,7 +19,10 @@ export default class MagatamaData extends SmtBaseItemData {
         ag: new fields.NumberField({ integer: true, min: 0 }),
         lu: new fields.NumberField({ integer: true, min: 0 }),
       }),
-      skills: new fields.ArrayField(new fields.EmbeddedDataField(SkillListing)),
+      skills: new fields.EmbeddedCollectionField(SmtItem, {
+        validate: (item: SmtItem) => item.type === "skill",
+        validationError: "Magatama can only hold skills.",
+      }),
       ingested: new fields.BooleanField(),
       affinities: new fields.EmbeddedDataField(DefenseAffinityData),
     } as const;

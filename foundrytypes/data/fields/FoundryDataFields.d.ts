@@ -2,6 +2,7 @@ declare interface FoundryDataFields {
 	AlphaField: typeof AlphaFieldClass;
 	AngleField: typeof AngleFieldClass;
 	ArrayField: typeof ArrayFieldClass;
+	EmbeddedCollectionField: typeof EmbeddedCollectionFieldClass;
 	BooleanField: typeof BooleanFieldClass;
 	ColorField: typeof ColorFieldClass;
 	EmbeddedDataField: typeof EmbeddedDataField;
@@ -44,6 +45,12 @@ class AngleFieldClass extends NumberField {
 
 class ArrayFieldClass<T extends FoundryDMField> extends FoundryDMField<T[]> {
 	constructor(itemType: T, options?: DataFieldOptions);
+}
+
+class EmbeddedCollectionFieldClass<
+	T extends typeof FoundryDocument,
+> extends ArrayFieldClass {
+	constructor(element: T, options?: DataFieldOptions);
 }
 
 class BooleanFieldClass extends FoundryDMField<boolean> {
