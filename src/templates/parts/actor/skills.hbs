@@ -85,42 +85,46 @@
           <input class="item-field-toggle" type="checkbox" data-field-id="used" data-dtype="Boolean"
             {{checked system.used}} {{ifThen system.oneShot "" "disabled"}} />
           {{else}}
-          {{#if (or (eq system.attackType "passive") (eq system.attackType "talk"))}}
+          {{#if (or (eq system.attackData.attackType "passive") (eq system.attackData.attackType "talk"))}}
           —
           {{else}}
-          {{localize "SMT.skillDetails.costShort" cost=(ifThen system.cost system.cost "0") resource=(ifThen (eq system.attackType "phys") "HP" "MP")}}
+          {{localize "SMT.skillDetails.costShort" cost=(ifThen system.cost system.cost "0") resource=(ifThen (eq system.attackData.attackType "phys") "HP" "MP")}}
           {{/if}}
           {{/if}}
         </div>
 
         {{!-- TN --}}
         <div class="item-prop">
-          {{#unless (or system.auto (eq system.attackType "passive"))}}{{system.tn}}%{{else}}{{ifThen system.auto (localize "SMT.itemSheet.auto") "—"}}{{/unless}}
+          {{#unless (or system.attackData.auto (eq system.attackData.attackType "passive"))}}
+          {{system.attackData.tn}}%
+          {{else}}
+          {{ifThen system.attackData.auto (localize "SMT.itemSheet.auto") "—"}}
+          {{/unless}}
         </div>
 
         {{!-- Potency --}}
-        <div class="item-prop">{{#if system.includePowerRoll}}{{system.potency}}{{else}}—{{/if}}</div>
+        <div class="item-prop">{{#if system.attackData.includePowerRoll}}{{system.attackData.potency}}{{else}}—{{/if}}</div>
 
         {{!-- Total Power --}}
-        <div class="item-prop">{{#if system.includePowerRoll}}{{system.power}}{{else}}—{{/if}}</div>
+        <div class="item-prop">{{#if system.attackData.includePowerRoll}}{{system.attackData.power}}{{else}}—{{/if}}</div>
 
         {{!-- Target --}}
         <div class="item-prop">
-          {{#unless (eq system.attackType "passive")}}{{localize (concat "SMT.targets." system.target)}}{{else}}—{{/unless}}
+          {{#unless (eq system.attackData.attackType "passive")}}{{localize (concat "SMT.targets." system.attackData.target)}}{{else}}—{{/unless}}
         </div>
 
         {{!-- Affinity --}}
         <div class="item-prop">
-          {{#unless (eq system.attackType "passive")}}{{localize (concat "SMT.affinities." system.affinity)}}{{else}}—{{/unless}}
+          {{#unless (eq system.attackData.attackType "passive")}}{{localize (concat "SMT.affinities." system.attackData.affinity)}}{{else}}—{{/unless}}
         </div>
 
         {{!-- Ailment --}}
         <div class="item-prop">
-          {{#if (eq system.affinity "force")}}
-          {{localize "SMT.actorSheet.shatter"}} {{system.shatterRate}}%
+          {{#if (eq system.attackData.affinity "force")}}
+          {{localize "SMT.actorSheet.shatter"}} {{system.attackData.shatterRate}}%
           {{else}}
-          {{#if system.ailment.id}}
-          {{localize (concat "SMT.ailments." system.ailment.id)}} {{system.ailment.rate}}%
+          {{#if system.attackData.ailment.id}}
+          {{localize (concat "SMT.ailments." system.attackData.ailment.id)}} {{system.attackData.ailment.rate}}%
           {{else}}
           —
           {{/if}}
@@ -128,7 +132,7 @@
         </div>
 
         {{!-- Type --}}
-        <div class="item-prop">{{localize (concat "SMT.attackTypesShort." system.attackType)}}</div>
+        <div class="item-prop">{{localize (concat "SMT.attackTypesShort." system.attackData.attackType)}}</div>
 
         <div class="item-controls">
           <a class="item-control item-edit" title="{{localize "SMT.sheet.editItem"}}"><i class="fas fa-edit"></i></a>

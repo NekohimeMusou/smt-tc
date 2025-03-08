@@ -8,7 +8,7 @@
       {{!-- Weapon Details --}}
       <li class="item flexrow items-header flex-group-center">
         {{!-- Phys Atk / Mag Atk / etc --}}
-        <div class="item-prop">{{localize (concat "SMT.attackTypes." system.attackType)}}</div>
+        <div class="item-prop">{{localize (concat "SMT.attackTypes." system.attackData.attackType)}}</div>
 
         {{!-- Ammo --}}
         {{#if (eq system.weaponType "gun")}}
@@ -25,22 +25,22 @@
 
         {{!-- Potency --}}
         <div class="item-prop">{{localize "SMT.skillDetails.potency"
-          potency=(ifThen system.potency system.potency "0")}}
+          potency=(ifThen system.attackData.potency system.attackData.potency "0")}}
         </div>
 
         {{!-- Affinity --}}
         <div class="item-prop">
           {{localize "SMT.skillDetails.affinity"
-           affinity=(localize (concat "SMT.affinities." system.affinity))}}
+           affinity=(localize (concat "SMT.affinities." system.attackData.affinity))}}
         </div>
 
         {{!-- Target --}}
         <div class="item-prop">{{localize "SMT.skillDetails.target"
-          target=(localize (concat "SMT.targets." system.target))}}
+          target=(localize (concat "SMT.targets." system.attackData.target))}}
         </div>
 
            {{!-- TN/Auto --}}
-        <div class="item-prop">{{localize "SMT.skillDetails.tn" tn=system.tn}}</div>
+        <div class="item-prop">{{localize "SMT.skillDetails.tn" tn=system.attackData.tn}}</div>
       </li>
 
       <li class="item items-header">

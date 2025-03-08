@@ -7,11 +7,33 @@ export default abstract class SmtBaseItemData extends foundry.abstract
   abstract readonly equippable: boolean;
 
   static override migrateData(source: Record<string, unknown>) {
+    // Fix old "combatants" to "allCombatants"
     if ("target" in source && source.target === "combatants") {
       source.target = "allCombatants";
     }
 
-    return source;
+    if (!("attackData" in source)) {
+      source.attackData = {};
+    }
+
+    for (const field of [
+      "auto",
+      "attackType",
+      "potency",
+      "affinity",
+      "target",
+      "ailment",
+      "shatterRate",
+      "includePowerRoll",
+    ]) {
+      if (field in source) {
+        // @ts-expect-error I don't have patience for this :<
+        source.attackData[field] = source[field];
+        delete source[field];
+      }
+    }
+
+    return super.migrateData(source);
   }
 
   static override defineSchema() {

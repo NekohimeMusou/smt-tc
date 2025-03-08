@@ -1,7 +1,7 @@
 import AttackDataModel from "../../attack.js";
-import AttackData from "../abstract/attack.js";
+import SmtBaseItemData from "../abstract/base.js";
 
-export default class SkillData extends AttackData {
+export default class SkillData extends SmtBaseItemData {
   override readonly type = "skill";
 
   override readonly equippable = false;
@@ -17,5 +17,19 @@ export default class SkillData extends AttackData {
       cost: new fields.NumberField({ integer: true, min: 0 }),
       attackData: new fields.EmbeddedDataField(AttackDataModel),
     };
+  }
+
+  override prepareBaseData() {
+    const attackData = this._systemData.attackData;
+
+    if (attackData.attackType === "talk") {
+      attackData.affinity = "talk";
+    }
+
+    if (attackData.affinity === "phys") {
+      attackData.shatterRate = 30;
+    } else if (attackData.affinity !== "force") {
+      attackData.shatterRate = 0;
+    }
   }
 }

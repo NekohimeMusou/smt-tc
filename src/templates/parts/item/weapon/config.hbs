@@ -11,13 +11,13 @@
 
         <label for="potency" class="item-prop">{{localize "SMT.itemSheet.potency"}}</label>
         <div class="item-prop">
-          <input type="number" id="potency" name="system.potency" value="{{system.potency}}" placeholder="0" data-dtype="Number" />
+          <input type="number" id="potency" name="system.attackData.potency" value="{{system.attackData.potency}}" placeholder="0" data-dtype="Number" />
         </div>
 
         <label for="affinity" class="item-prop">{{localize "SMT.itemSheet.affinity"}}</label>
         <div class="item-prop">
-          <select id="affinity" name="system.affinity">
-            {{selectOptions SMT.attackAffinities localize=true selected=system.affinity}}
+          <select id="affinity" name="system.attackData.affinity">
+            {{selectOptions SMT.attackAffinities localize=true selected=system.attackData.affinity}}
           </select>
         </div>
       </li>

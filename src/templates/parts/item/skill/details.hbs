@@ -9,44 +9,45 @@
       {{!-- Skill details --}}
       <li class="item flexrow items-header flex-group-center">
         {{!-- Phys Atk / Mag Atk / etc --}}
-        <div class="item-prop">{{localize (concat "SMT.attackTypes." system.attackType)}}</div>
+        <div class="item-prop">{{localize (concat "SMT.attackTypes." system.attackData.attackType)}}</div>
         {{!-- Cost --}}
-        {{#unless (or (eq system.attackType "talk") (eq system.attackType "passive"))}}
+        {{#unless (or (eq system.attackData.attackType "talk") (eq system.attackData.attackType "passive"))}}
         <div class="item-prop">{{localize "SMT.skillDetails.cost" cost=(ifThen system.cost system.cost "0")
-           resource=(ifThen (eq system.attackType "phys") "HP" "MP")}}</div>
+           resource=(ifThen (eq system.attackData.attackType "phys") "HP" "MP")}}</div>
         {{/unless}}
         {{!-- Potency --}}
-        {{#if system.includePowerRoll}}
+        {{#if system.attackData.includePowerRoll}}
         <div class="item-prop">{{localize "SMT.skillDetails.potency"
-           potency=(ifThen system.potency system.potency "0")}}</div>
+           potency=(ifThen system.attackData.potency system.attackData.potency "0")}}</div>
         {{/if}}
         {{!-- Affinity --}}
         <div class="item-prop">
-          {{#if (eq system.attackType "passive")}}
+          {{#if (eq system.attackData.attackType "passive")}}
           {{localize "SMT.skillDetails.affinity" affinity="—"}}
           {{else}}
           {{localize "SMT.skillDetails.affinity"
-           affinity=(localize (concat "SMT.affinities." system.affinity))}}
+           affinity=(localize (concat "SMT.affinities." system.attackData.affinity))}}
           {{/if}}
         </div>
         {{!-- Target --}}
-        {{#unless (eq system.attackType "passive")}}
+        {{#unless (eq system.attackData.attackType "passive")}}
         <div class="item-prop">{{localize "SMT.skillDetails.target"
-           target=(localize (concat "SMT.targets." system.target))}}</div>
+           target=(localize (concat "SMT.targets." system.attackData.target))}}</div>
         {{/unless}}
         {{!-- TN/Auto --}}
-        {{#unless (eq system.attackType "passive")}}
-        <div class="item-prop">{{ifThen system.auto (localize "SMT.itemSheet.auto")
-          (localize "SMT.skillDetails.tn" tn=system.tn)}}</div>
+        {{#unless (eq system.attackData.attackType "passive")}}
+        <div class="item-prop">{{ifThen system.attackData.auto (localize "SMT.itemSheet.auto")
+          (localize "SMT.skillDetails.tn" tn=system.attackData.tn)}}</div>
         {{/unless}}
 
         {{!-- Ailment/rate | Shatter rate --}}
-        {{#if (eq system.affinity "force")}}
+        {{#if (eq system.attackData.affinity "force")}}
         <div class="item-prop">{{localize "SMT.itemSheet.shatterRate"}}</div>
-        <div class="item-prop">{{system.shatterRate}}%</div>
+        <div class="item-prop">{{system.attackData.shatterRate}}%</div>
         {{else}}
-        {{#if system.ailment.id}}
-        {{localize "SMT.itemSheet.ailmentDesc" ailment=(localize (concat "SMT.ailments." system.ailment.id)) rate=(ifThen system.ailment.rate system.ailment.rate "0")}}
+        {{#if system.attackData.ailment.id}}
+        {{localize "SMT.itemSheet.ailmentDesc" ailment=(localize (concat "SMT.ailments." system.attackData.ailment.id))
+          rate=(ifThen system.attackData.ailment.rate system.attackData.ailment.rate "0")}}
         {{/if}}
         {{/if}}
       </li>

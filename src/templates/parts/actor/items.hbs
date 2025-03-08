@@ -39,7 +39,7 @@
         {{!-- Potency --}}
         <div class="item-prop">
           {{#if (and system.hasAttack system.includePowerRoll)}}
-          {{system.potency}}
+          {{system.attackData.potency}}
           {{else}}
           —
           {{/if}}
@@ -47,7 +47,7 @@
         {{!-- Total Power --}}
         <div class="item-prop">
           {{#if (and system.hasAttack system.includePowerRoll)}}
-          {{system.power}}
+          {{system.attackData.power}}
           {{else}}
           —
           {{/if}}
@@ -56,7 +56,7 @@
         {{!-- Target --}}
         <div class="item-prop">
           {{#if system.hasAttack}}
-          {{localize (concat "SMT.targets." system.target)}}
+          {{localize (concat "SMT.targets." system.attackData.target)}}
           {{else}}
           —
           {{/if}}
@@ -65,7 +65,7 @@
         {{!-- Element --}}
         <div class="item-prop">
           {{#if system.hasAttack}}
-          {{localize (concat "SMT.affinities." system.affinity)}}
+          {{localize (concat "SMT.affinities." system.attackData.affinity)}}
           {{else}}
           —
           {{/if}}
@@ -74,11 +74,11 @@
         {{!-- Ailment --}}
         <div class="item-prop">
         {{#if system.hasAttack}}
-          {{#if (eq system.affinity "force")}}
-          {{localize "SMT.actorSheet.shatter"}} {{system.shatterRate}}%
+          {{#if (eq system.attackData.affinity "force")}}
+          {{localize "SMT.actorSheet.shatter"}} {{system.attackData.shatterRate}}%
           {{else}}
-            {{#if system.ailment.id}}
-            {{localize (concat "SMT.ailments." system.ailment.id)}} {{system.ailment.rate}}%
+            {{#if system.attackData.ailment.id}}
+            {{localize (concat "SMT.ailments." system.attackData.ailment.id)}} {{system.attackData.ailment.rate}}%
             {{else}}
             —
             {{/if}}

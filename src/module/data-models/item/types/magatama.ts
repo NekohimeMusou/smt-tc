@@ -1,8 +1,8 @@
 import DefenseAffinityData from "../../defense-affinities.js";
 import SkillListing from "../../skill-listing.js";
-import AffinityItemData from "../abstract/affinity.js";
+import SmtBaseItemData from "../abstract/base.js";
 
-export default class MagatamaData extends AffinityItemData {
+export default class MagatamaData extends SmtBaseItemData {
   override readonly type = "magatama";
 
   override readonly equippable = true;
@@ -21,7 +21,7 @@ export default class MagatamaData extends AffinityItemData {
       }),
       skills: new fields.ArrayField(new fields.EmbeddedDataField(SkillListing)),
       ingested: new fields.BooleanField(),
-      affinityData: new fields.EmbeddedDataField(DefenseAffinityData),
+      affinities: new fields.EmbeddedDataField(DefenseAffinityData),
     } as const;
   }
 }

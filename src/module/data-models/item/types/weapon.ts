@@ -1,7 +1,7 @@
 import AttackDataModel from "../../attack.js";
-import AttackData from "../abstract/attack.js";
+import SmtBaseItemData from "../abstract/base.js";
 
-export default class WeaponData extends AttackData {
+export default class WeaponData extends SmtBaseItemData {
   override readonly type = "weapon";
   override readonly equippable = true;
 
@@ -21,12 +21,13 @@ export default class WeaponData extends AttackData {
 
   override prepareBaseData() {
     super.prepareBaseData();
-
     const data = this._systemData;
+
+    const attackData = data.attackData;
     const weaponType = data.weaponType;
 
-    data.attackType = weaponType === "melee" ? "phys" : "gun";
-    data.target = weaponType === "grenade" ? "all" : "one";
-    data.includePowerRoll = true;
+    attackData.attackType = weaponType === "melee" ? "phys" : "gun";
+    attackData.target = weaponType === "grenade" ? "all" : "one";
+    attackData.includePowerRoll = true;
   }
 }

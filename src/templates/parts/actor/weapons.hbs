@@ -62,19 +62,19 @@
         </div>
 
         {{!-- TN --}}
-        <div class="item-prop">{{system.tn}}%</div>
+        <div class="item-prop">{{system.attackData.tn}}%</div>
 
         {{!-- Potency --}}
-        <div class="item-prop">{{ifThen system.potency system.potency "0"}}</div>
+        <div class="item-prop">{{ifThen system.attackData.potency system.attackData.potency "0"}}</div>
 
         {{!-- Total Power --}}
-        <div class="item-prop">{{ifThen system.power system.power "0"}}</div>
+        <div class="item-prop">{{ifThen system.attackData.power system.attackData.power "0"}}</div>
 
         {{!-- Target --}}
-        <div class="item-prop">{{localize (concat "SMT.targets." system.target)}}</div>
+        <div class="item-prop">{{localize (concat "SMT.targets." system.attackData.target)}}</div>
 
         {{!-- Affinity --}}
-        <div class="item-prop">{{localize (concat "SMT.affinities." system.affinity)}}</div>
+        <div class="item-prop">{{localize (concat "SMT.affinities." system.attackData.affinity)}}</div>
 
         {{!-- Type (Melee | Gun | Grenade) --}}
         <div class="item-prop">{{localize (concat "SMT.weaponTypes." system.weaponType)}}</div>

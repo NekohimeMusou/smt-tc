@@ -5,18 +5,18 @@
         {{!-- Attack type "phys" | "mag" | "gun" | "spell" | "passive" | "talk" --}}
         <label for="attack-type" class="item-prop">{{localize "SMT.itemSheet.attackType"}}</label>
         <div class="item-prop">
-          <select id="attack-type" name="system.attackType">
-            {{selectOptions SMT.attackTypes localize=true selected=system.attackType}}
+          <select id="attack-type" name="system.attackData.attackType">
+            {{selectOptions SMT.attackTypes localize=true selected=system.attackData.attackType}}
           </select>
         </div>
         {{!-- HP/MP Cost | Consumable (e.g. Luck Smiles, "should consumables be used up") --}}
-        {{#unless (or (eq system.attackType "talk") (eq system.attackType "passive"))}}
+        {{#unless (or (eq system.attackData.attackType "talk") (eq system.attackData.attackType "passive"))}}
         <label for="cost" class="item-prop">{{localize "SMT.itemSheet.cost"}}</label>
         <div class="item-prop">
           <input type="number" id="cost" name="system.cost" value="{{system.cost}}" placeholder="0" data-dtype="Number" />
         </div>
         {{else}}
-        {{#if (eq system.attackType "passive")}}
+        {{#if (eq system.attackData.attackType "passive")}}
         <label for="oneShot" class="item-prop">{{localize "SMT.itemSheet.oneShot"}}</label>
         <div class="item-prop">
           <input type="checkbox" id="oneShot" name="system.oneShot" data-dtype="Boolean" {{checked system.oneShot}} />
@@ -24,10 +24,10 @@
         {{/if}}
         {{/unless}}
         {{!-- Potency --}}
-        {{#unless (or (eq system.attackType "passive") (eq system.attackType "talk"))}}
+        {{#unless (or (eq system.attackData.attackType "passive") (eq system.attackData.attackType "talk"))}}
         <label for="potency" class="item-prop">{{localize "SMT.itemSheet.potency"}}</label>
         <div class="item-prop">
-          <input type="number" id="potency" name="system.potency" value="{{system.potency}}" placeholder="0"
+          <input type="number" id="potency" name="system.attackData.potency" value="{{system.attackData.potency}}" placeholder="0"
             data-dtype="Number" />
         </div>
         {{/unless}}
@@ -35,62 +35,62 @@
 
       <li class="item flexrow">
         {{!-- Affinity --}}
-        {{#unless (or (eq system.attackType "talk") (eq system.attackType "passive"))}}
+        {{#unless (or (eq system.attackData.attackType "talk") (eq system.attackData.attackType "passive"))}}
         <label for="affinity" class="item-prop">{{localize "SMT.itemSheet.affinity"}}</label>
         <div class="item-prop">
-          <select id="affinity" name="system.affinity">
-            {{selectOptions SMT.attackAffinities localize=true selected=system.affinity}}
+          <select id="affinity" name="system.attackData.affinity">
+            {{selectOptions SMT.attackAffinities localize=true selected=system.attackData.affinity}}
           </select>
         </div>
         {{/unless}}
         {{!-- Target --}}
-        {{#unless (eq system.attackType "passive")}}
+        {{#unless (eq system.attackData.attackType "passive")}}
         <label for="target" class="item-prop">{{localize "SMT.itemSheet.target"}}</label>
         <div class="item-prop">
-          <select id="target" name="system.target">
-            {{selectOptions SMT.targets localize=true selected=system.target}}
+          <select id="target" name="system.attackData.target">
+            {{selectOptions SMT.targets localize=true selected=system.attackData.target}}
           </select>
         </div>
 
         {{!-- Auto? --}}
         <label for="auto" class="item-prop">{{localize "SMT.itemSheet.auto"}}</label>
         <div class="item-prop">
-          <input type="checkbox" id="auto" name="system.auto" data-dtype="Boolean" {{checked system.auto}} />
+          <input type="checkbox" id="auto" name="system.attackData.auto" data-dtype="Boolean" {{checked system.attackData.auto}} />
         </div>
         {{/unless}}
       </li>
 
       <li class="item flexrow">
-        {{#unless (or (eq system.attackType "talk") (eq system.attackType "passive"))}}
-        {{#if (eq system.affinity "force")}}
+        {{#unless (or (eq system.attackData.attackType "talk") (eq system.attackData.attackType "passive"))}}
+        {{#if (eq system.attackData.affinity "force")}}
         {{!-- Shatter Rate --}}
         <label for="shatterRate" class="item-prop">{{localize "SMT.itemSheet.shatterRate"}}</label>
         <div class="item-prop">
-          <input type="number" id="shatterRate" name="system.shatterRate" value="{{system.shatterRate}}" placeholder="50"
+          <input type="number" id="shatterRate" name="system.attackData.shatterRate" value="{{system.attackData.shatterRate}}" placeholder="50"
             data-dtype="Number" />
         </div>
         {{else}}
         {{!-- Ailment --}}
         <label for="ailment-id" class="item-prop">{{localize "SMT.itemSheet.ailment"}}</label>
         <div class="item-prop">
-          <select id="ailment-id" name="system.ailment.id">
-            {{selectOptions SMT.ailments localize=true selected=system.ailment.id blank=(localize "SMT.none")}}
+          <select id="ailment-id" name="system.attackData.ailment.id">
+            {{selectOptions SMT.ailments localize=true selected=system.attackData.ailment.id blank=(localize "SMT.none")}}
           </select>
         </div>
         {{!-- Ailment Rate --}}
         <label for="ailment-rate" class="item-prop">{{localize "SMT.itemSheet.ailmentRate"}}</label>
         <div class="item-prop">
-          <input type="number" id="ailmentRate" name="system.ailment.rate" value="{{system.ailment.rate}}"
-            placeholder="0" data-dtype="Number" {{ifThen system.ailment.id "" "disabled"}} />
+          <input type="number" id="ailmentRate" name="system.attackData.ailment.rate" value="{{system.attackData.ailment.rate}}"
+            placeholder="0" data-dtype="Number" {{ifThen system.attackData.ailment.id "" "disabled"}} />
         </div>
         {{/if}}
         {{/unless}}
         {{!-- Roll power? --}}
-        {{#unless (or (eq system.attackType "talk") (eq system.attackType "passive"))}}
+        {{#unless (or (eq system.attackData.attackType "talk") (eq system.attackData.attackType "passive"))}}
         <label for="includePowerRoll" class="item-prop">{{localize "SMT.itemSheet.includePowerRoll"}}</label>
         <div class="item-prop">
-          <input type="checkbox" id="includePowerRoll" name="system.includePowerRoll" data-dtype="Boolean"
-            {{checked system.includePowerRoll}} />
+          <input type="checkbox" id="includePowerRoll" name="system.attackData.includePowerRoll" data-dtype="Boolean"
+            {{checked system.attackData.includePowerRoll}} />
         </div>
         {{/unless}}
       </li>

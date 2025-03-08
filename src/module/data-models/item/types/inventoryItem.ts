@@ -1,7 +1,7 @@
 import AttackDataModel from "../../attack.js";
-import AttackData from "../abstract/attack.js";
+import SmtBaseItemData from "../abstract/base.js";
 
-export default class InventoryItemData extends AttackData {
+export default class InventoryItemData extends SmtBaseItemData {
   override readonly type = "inventoryItem";
   override readonly equippable = false;
 
@@ -18,9 +18,9 @@ export default class InventoryItemData extends AttackData {
   }
 
   override prepareBaseData() {
-    const data = this._systemData;
+    const attackData = this._systemData.attackData;
 
-    data.attackType = "mag";
-    data.auto = true;
+    attackData.attackType = "mag";
+    attackData.auto = true;
   }
 }
