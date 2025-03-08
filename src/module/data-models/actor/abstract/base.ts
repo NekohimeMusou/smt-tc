@@ -2,9 +2,8 @@ import SmtActor from "../../../documents/actor/actor.js";
 import DefenseAffinityData from "../../defense-affinities.js";
 import { Magatama } from "../../item/item-data-model.js";
 
-export default abstract class SmtBaseActorData extends foundry.abstract
-  .TypeDataModel {
-  abstract readonly type: CharacterClass;
+export default abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
+  abstract override readonly type: CharacterClass;
 
   get lv(): number {
     const data = this._systemData;
