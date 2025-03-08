@@ -2,6 +2,20 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.4.4] - 2025-03-08
+
+*Lots of refactoring, but enough small fixes and tweaks piled up that it feels worth releasing.*
+
+### Fixed
+
+- Migrate old "combatants" target to "allCombatants"
+
+### Changed
+
+- Slim down affinity icons and actor sheet a tiny bit
+- Miscellaneous cosmetic adjustments
+- Cleaned up localization a bit
+
 ## [0.4.3] - 2025-03-05
 
 ### Fixed
