@@ -29,6 +29,8 @@
       "effects": "Effects"
     },
     "actorSheet": {
+      "notEnoughStats": "You have undistributed stat points!",
+      "tooManyStats": "You have too many stat points!",
       "hpMult": "HP Mult",
       "mpMult": "MP Mult",
       "alignment": "Alignment",

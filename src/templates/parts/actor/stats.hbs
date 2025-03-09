@@ -22,6 +22,12 @@
         <div class="flex2">{{localize "SMT.actorSheet.tn"}}</div>
       </li>
 
+      {{#if (ne system.remainingStatPoints 0)}}
+      <li class="item flexrow items-header flex-group-center">
+        {{localize (concat "SMT.actorSheet." (ifThen (gt system.remainingStatPoints 0) "notEnoughStats" "tooManyStats"))}}
+      </li>
+      {{/if}}
+
       {{#each system.stats}}
       <li class="item flexrow">
         {{!-- Stat Name --}}
