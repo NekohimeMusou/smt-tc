@@ -16,7 +16,7 @@ interface ModifierDialogHTMLElement extends HTMLElement {
 
 interface AttackDialogResult {
   tnMod?: number;
-  potency?: number;
+  potencyMod?: number;
   cancelled?: boolean;
 }
 
@@ -120,9 +120,9 @@ function _processAttackDialogResult(html: string): AttackDialogResult {
   const element = $(html)[0].querySelector("form") as AttackDialogHTMLElement;
 
   const tnMod = parseInt(element.tnMod?.value ?? "0") || 0;
-  const potency = parseInt(element.potency?.value ?? "0") || 0;
+  const potencyMod = parseInt(element.potency?.value ?? "0") || 0;
 
-  return { tnMod, potency };
+  return { tnMod, potencyMod };
 }
 
 export async function renderAwardDialog(): Promise<AwardDialogResult> {

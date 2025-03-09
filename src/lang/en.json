@@ -338,7 +338,7 @@
     "dialog": {
       "hitRollHint": "Modifiers apply to the TN, not the roll total.",
       "tnMod": "TN Mod",
-      "potency": "Potency",
+      "potency": "Potency Mod",
       "confirmDeleteTitle": "Delete Item",
       "confirmDeletePrompt": "Really delete {name}?",
       "awardDialogTitle": "Award XP and Macca"
@@ -422,7 +422,7 @@
       "missingHitRollTN": "Missing TN in hitRoll",
       "missingCardRoll": "Missing Roll for chat card in: {function}",
       "missingPowerType": "Missing attack type in #onAttackRoll",
-      "missingItem": "Missing item ID",
+      "missingItem": "Missing item in actor sheet roll",
       "missingField": "Can't toggle item field: Missing field ID",
       "useItemPiles": "Use Item Piles functionality to move items."
     }

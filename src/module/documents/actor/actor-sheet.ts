@@ -86,6 +86,42 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     return context;
   }
 
+  override async _onDropItem(_event: Event, itemD: unknown) {
+    // @ts-expect-error Copied from Persona system
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+    const item: SmtItem = await Item.implementation.fromDropData(itemD);
+    console.debug(`${item.type} dropped on sheet of ${this.actor.name}`);
+
+    switch (item.type) {
+      case "skill":
+        return super._onDropItem(_event, itemD);
+      case "armor":
+      case "inventoryItem":
+      case "magatama":
+      case "weapon":
+        if (!game.user.isGM) {
+          const msg = game.i18n.localize("SMT.error.useItemPiles");
+          ui.notifications.warn(msg);
+          return undefined;
+        }
+
+        const existing = this.actor.items.find(
+          (x) =>
+            x.type === item.type && "qty" in x.system && x.name == item.name,
+        );
+
+        if (existing != undefined && existing.type === "inventoryItem") {
+          console.log("Adding to existing amount");
+          await existing.addItemsToStack(1);
+          return existing;
+        }
+        return super._onDropItem(_event, itemD);
+      default:
+        item.type satisfies never;
+        throw new Error("Unknown item type");
+    }
+  }
+
   override activateListeners(html: JQuery<HTMLElement>) {
     super.activateListeners(html);
 
@@ -113,16 +149,22 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       .find(".effect-control")
       .on("click", (ev) => onManageActiveEffect(ev, this.actor));
 
-    // Stat rolls
+    // TN rolls from the stat pane
     html.find(".hit-roll").on("click", this.#onHitRoll.bind(this));
+    // Power rolls from the derived pane
     html.find(".power-roll").on("click", this.#onPowerRoll.bind(this));
+    // Adjust the TN Boost or Multi fields
     html
       .find(".adjust-sheet-mod")
       .on("click", this.#onSheetModChange.bind(this));
+    // Attack roll from the stats pane (Phys Atk and Mag Atk TNs)
     html.find(".attack-roll").on("click", this.#onAttackRoll.bind(this));
+    // Toggle an item field from an actor sheet, e.g. equipping an item
     html
       .find(".item-field-toggle")
       .on("change", this.#onItemFieldToggle.bind(this));
+    // Rolling an item (skill, weapon, etc)
+    html.find(".item-roll").on("click", this.#onItemRoll.bind(this));
   }
 
   /**
@@ -268,7 +310,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
 
     const { power, roll } = await SmtDice.powerRoll({
       basePower,
-      potency,
+      potencyMod: potency,
       powerBoost,
     });
 
@@ -282,6 +324,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     });
   }
 
+  // TODO: Refactor this to be more like the item one
   async #onAttackRoll(event: JQuery.ClickEvent) {
     event.preventDefault();
     const target = $(event.currentTarget);
@@ -298,7 +341,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     const attackName =
       powerName ?? game.i18n.localize(`SMT.powerTypes.${powerType}`);
 
-    const { tnMod, potency, cancelled } =
+    const { tnMod, potencyMod, cancelled } =
       await showAttackModifierDialog(attackName);
 
     if (cancelled) {
@@ -330,7 +373,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
 
       ({ power, roll: powerRoll } = await SmtDice.powerRoll({
         basePower,
-        potency,
+        potencyMod: potencyMod,
         powerBoost,
         criticalHit,
       }));
@@ -347,6 +390,30 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       powerRoll,
       power,
     });
+  }
+
+  async #onItemRoll(event: JQuery.ClickEvent) {
+    event.preventDefault();
+
+    const element = $(event.currentTarget);
+    const itemId = element.closest(".item").data("itemId") as
+      | string
+      | undefined;
+    const item = this.actor.items.get(itemId ?? "");
+
+    if (!item) {
+      const msg = game.i18n.localize("SMT.error.missingItem");
+      ui.notifications.error(msg);
+      throw new Error(msg);
+    }
+
+    const { cancelled } = await showAttackModifierDialog(item.name);
+
+    if (cancelled) {
+      return;
+    }
+
+    await SmtDice.itemRoll({ item });
   }
 
   async #onSheetModChange(event: JQuery.ClickEvent) {
@@ -428,41 +495,5 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     }
 
     await item.toggleField(fieldId, newState);
-  }
-
-  override async _onDropItem(_event: Event, itemD: unknown) {
-    // @ts-expect-error Copied from Persona system
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-    const item: SmtItem = await Item.implementation.fromDropData(itemD);
-    console.debug(`${item.type} dropped on sheet of ${this.actor.name}`);
-
-    switch (item.type) {
-      case "skill":
-        return super._onDropItem(_event, itemD);
-      case "armor":
-      case "inventoryItem":
-      case "magatama":
-      case "weapon":
-        if (!game.user.isGM) {
-          const msg = game.i18n.localize("SMT.error.useItemPiles");
-          ui.notifications.warn(msg);
-          return undefined;
-        }
-
-        const existing = this.actor.items.find(
-          (x) =>
-            x.type === item.type && "qty" in x.system && x.name == item.name,
-        );
-
-        if (existing != undefined && existing.type === "inventoryItem") {
-          console.log("Adding to existing amount");
-          await existing.addItemsToStack(1);
-          return existing;
-        }
-        return super._onDropItem(_event, itemD);
-      default:
-        item.type satisfies never;
-        throw new Error("Unknown item type");
-    }
   }
 }
