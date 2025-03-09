@@ -310,7 +310,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
 
     const { power, roll } = await SmtDice.powerRoll({
       basePower,
-      potencyMod: potency,
+      potency,
       powerBoost,
     });
 
@@ -373,7 +373,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
 
       ({ power, roll: powerRoll } = await SmtDice.powerRoll({
         basePower,
-        potencyMod: potencyMod,
+        potency: potencyMod,
         powerBoost,
         criticalHit,
       }));

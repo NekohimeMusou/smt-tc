@@ -59,7 +59,7 @@ export default class DefenseAffinityData extends foundry.abstract.DataModel {
     };
   }
 
-  protected get _systemData() {
+  get _systemData() {
     return this as this & DefenseAffinityDocument["system"]["affinities"];
   }
 }

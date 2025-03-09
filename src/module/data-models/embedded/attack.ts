@@ -53,7 +53,7 @@ export default class AttackDataModel extends BaseEmbeddedDataModel {
     return data.attackType === "talk" ? tn + 20 : tn;
   }
 
-  get power() {
+  get totalPower() {
     const actor = this.actor;
     const data = this._systemData;
     const potency = data.potency;
@@ -62,29 +62,38 @@ export default class AttackDataModel extends BaseEmbeddedDataModel {
       return potency;
     }
 
+    const basePower = data.basePower;
+
+    return Math.max(potency + basePower, 0);
+  }
+
+  get basePower() {
+    const actor = this.actor;
+    const data = this._systemData;
     const attackType = data.attackType;
-    let power = potency;
+
+    let powerType: PowerType = "phys";
 
     switch (attackType) {
       case "passive":
       case "talk":
-        break;
-      case "mag":
-      case "spell":
-      case "item":
-        power += actor.system.power.mag;
-        break;
+        return 0;
       case "phys":
-        power += actor.system.power.phys;
+        powerType = "phys";
         break;
       case "gun":
-        power += actor.system.power.gun;
+        powerType = "gun";
+        break;
+      case "item":
+      case "mag":
+      case "spell":
+        powerType = "mag";
         break;
       default:
         attackType satisfies never;
     }
 
-    return Math.max(power, 0);
+    return actor ? actor.system.power[powerType] : 0;
   }
 
   get powerBoost() {
@@ -165,7 +174,7 @@ export default class AttackDataModel extends BaseEmbeddedDataModel {
     };
   }
 
-  protected get _systemData() {
+  get _systemData() {
     return this as this & AttackItem["system"]["attackData"];
   }
 }

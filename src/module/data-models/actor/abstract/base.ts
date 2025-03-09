@@ -340,7 +340,7 @@ export default abstract class SmtBaseActorData extends foundry.abstract.TypeData
   }
 
   // Goofy Typescript hack
-  protected get _systemData() {
+  get _systemData() {
     return this as this & Subtype<SmtActor, this["type"]>["system"];
   }
 }

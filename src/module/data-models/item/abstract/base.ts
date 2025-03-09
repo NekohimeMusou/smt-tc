@@ -1,7 +1,6 @@
 import { SmtItem } from "../../../documents/item/item.js";
 
-export default abstract class SmtBaseItemData extends foundry.abstract
-  .TypeDataModel {
+export default abstract class SmtBaseItemData extends foundry.abstract.TypeDataModel {
   abstract override readonly type: ItemType;
 
   abstract readonly equippable: boolean;
@@ -55,7 +54,7 @@ export default abstract class SmtBaseItemData extends foundry.abstract
   }
 
   // Goofy Typescript hack
-  protected get _systemData() {
+  get _systemData() {
     return this as this & Subtype<SmtItem, this["type"]>["system"];
   }
 }

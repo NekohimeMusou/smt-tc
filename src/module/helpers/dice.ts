@@ -1,3 +1,4 @@
+import AttackDataModel from "../data-models/embedded/attack.js";
 import { SmtItem } from "../documents/item/item.js";
 
 interface HitCheckData {
@@ -13,6 +14,7 @@ interface HitCheckResult {
 
 interface PowerRollData {
   basePower?: number;
+  potency?: number;
   potencyMod?: number;
   powerBoost?: boolean;
   criticalHit?: boolean;
@@ -60,14 +62,17 @@ export default class SmtDice {
 
   static async powerRoll({
     basePower = 0,
+    potency = 0,
     potencyMod = 0,
     powerBoost = false,
     criticalHit = false,
   }: PowerRollData = {}): Promise<PowerRollResult> {
     const dice = powerBoost ? 2 : 1;
+    const potencyModString = potencyMod ? ` + ${potencyMod}` : "";
+    const baseRollString = `${dice}d10x + ${basePower} + ${potency}${potencyModString}`;
     const rollString = criticalHit
-      ? `(${dice}d10x + ${basePower} + ${potencyMod}) * 2`
-      : `${dice}d10x + ${basePower} + ${potencyMod}`;
+      ? `(${baseRollString}) * 2`
+      : `${baseRollString}`;
 
     const roll = await new Roll(rollString).roll();
 
@@ -76,8 +81,8 @@ export default class SmtDice {
 
   static async itemRoll({
     item,
-    // tnMod = 0,
-    // potencyMod = 0,
+    tnMod = 0,
+    potencyMod = 0,
   }: ItemRollData = {}) {
     const actor = item?.parent;
 
@@ -91,6 +96,83 @@ export default class SmtDice {
     const description = item.system.description;
 
     const context = { attackName, description };
+
+    if (["inventoryItem", "weapon", "skill"].includes(item.type)) {
+      // It's an attack
+      //@ts-expect-error This should work, there's a bug in the Typescript typedefs
+      const attackData = (item.system.attackData as AttackDataModel)
+        ._systemData;
+
+      const rolls: Roll[] = [];
+      let criticalHit = false;
+      let successLevel = "success";
+
+      // Make a hit check, if applicable
+      if (!attackData.auto) {
+        const tn = Math.max(attackData.tn + tnMod, 1);
+        const critBoost = attackData.critBoost;
+        const autoFailThreshold = attackData.autoFailThreshold;
+
+        const { successLevel: success, roll } = await this.hitCheck({
+          tn,
+          critBoost,
+          autoFailThreshold,
+        });
+
+        successLevel = success;
+
+        criticalHit = successLevel === "crit";
+
+        rolls.push(roll);
+
+        foundry.utils.mergeObject(context, {
+          displayHitCheck: true,
+          tn,
+          criticalHit,
+          autoFailThreshold,
+        });
+      }
+
+      // Make a power roll, if applicable
+      if (attackData.includePowerRoll) {
+        const basePower = attackData.basePower;
+        const potency = attackData.potency;
+        const powerBoost = attackData.powerBoost;
+
+        const { power, roll } = await this.powerRoll({
+          basePower,
+          potency,
+          potencyMod,
+          powerBoost,
+          criticalHit,
+        });
+
+        rolls.push(roll);
+
+        foundry.utils.mergeObject(context, {
+          displayPowerRoll: true,
+          potency: potency + potencyMod,
+          power,
+          critPower: criticalHit ? power * 2 : power,
+        });
+      }
+
+      // Display ailment info, if applicable
+      if (attackData.ailment.id) {
+        const critMultiplier = criticalHit ? 2 : 1;
+        const ailmentId = attackData.ailment.id;
+        const ailmentRate = Math.clamp(
+          attackData.ailment.rate * critMultiplier,
+          5,
+          95,
+        );
+
+        foundry.utils.mergeObject(context, {
+          ailmentId,
+          ailmentRate,
+        });
+      }
+    }
 
     const template = "systems/smt-tc/templates/chat/item-roll-card.hbs";
     const content = await renderTemplate(template, context);
