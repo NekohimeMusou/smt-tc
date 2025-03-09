@@ -1,6 +1,6 @@
 import SmtActor from "../../../documents/actor/actor.js";
+import { Magatama } from "../../../documents/item/item.js";
 import DefenseAffinityData from "../../embedded/defense-affinities.js";
-import { Magatama } from "../../item/item-data-model.js";
 
 export default abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
   abstract override readonly type: CharacterClass;

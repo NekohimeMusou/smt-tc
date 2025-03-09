@@ -8,6 +8,8 @@ export type Armor = Subtype<SmtItem, "armor">;
 export type Magatama = Subtype<SmtItem, "magatama">;
 export type Skill = Subtype<SmtItem, "skill">;
 
+export type AttackItem = InventoryItem | Weapon | Skill;
+
 export class SmtItem extends Item<
   typeof ITEMMODELS,
   SmtActor,

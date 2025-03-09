@@ -1,5 +1,5 @@
 import SmtActor from "../../documents/actor/actor.js";
-import { Magatama } from "../item/item-data-model.js";
+import { Magatama } from "../../documents/item/item.js";
 
 type DefenseAffinityDocument = Magatama | SmtActor;
 
