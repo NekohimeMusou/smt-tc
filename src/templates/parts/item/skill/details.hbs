@@ -16,7 +16,7 @@
            resource=(ifThen (eq system.attackData.attackType "phys") "HP" "MP")}}</div>
         {{/unless}}
         {{!-- Potency --}}
-        {{#if system.attackData.includePowerRoll}}
+        {{#if system.attackData.hasPowerRoll}}
         <div class="item-prop">{{localize "SMT.skillDetails.potency"
            potency=(ifThen system.attackData.potency system.attackData.potency "0")}}</div>
         {{/if}}

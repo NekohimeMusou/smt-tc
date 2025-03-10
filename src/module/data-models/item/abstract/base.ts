@@ -1,6 +1,7 @@
 import { SmtItem } from "../../../documents/item/item.js";
 
-export default abstract class SmtBaseItemData extends foundry.abstract.TypeDataModel {
+export default abstract class SmtBaseItemData extends foundry.abstract
+  .TypeDataModel {
   abstract override readonly type: ItemType;
 
   abstract readonly equippable: boolean;
@@ -26,7 +27,7 @@ export default abstract class SmtBaseItemData extends foundry.abstract.TypeDataM
       "target",
       "ailment",
       "shatterRate",
-      "includePowerRoll",
+      "hasPowerRoll",
     ]) {
       if (field in source && "attackData" in source) {
         // @ts-expect-error I don't have patience for this :<
@@ -50,6 +51,11 @@ export default abstract class SmtBaseItemData extends foundry.abstract.TypeDataM
       }),
       price: new fields.NumberField({ integer: true, min: 0 }),
       equipped: new fields.BooleanField(),
+      cost: new fields.NumberField({ integer: true, min: 0 }),
+      costType: new fields.StringField({
+        choices: CONFIG.SMT.costTypes,
+        initial: "none",
+      }),
     } as const;
   }
 

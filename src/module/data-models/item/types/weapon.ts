@@ -28,6 +28,23 @@ export default class WeaponData extends SmtBaseItemData {
 
     attackData.attackType = weaponType === "melee" ? "phys" : "gun";
     attackData.target = weaponType === "grenade" ? "all" : "one";
-    attackData.includePowerRoll = true;
+    attackData.hasPowerRoll = true;
+
+    switch (data.weaponType) {
+      case "gun":
+        data.costType = "consumeAmmo";
+        data.cost = 1;
+        break;
+      case "grenade":
+        data.costType = "consumeItem";
+        data.cost = 1;
+        break;
+      case "melee":
+        data.costType = "none";
+        data.cost = 0;
+        break;
+      default:
+        data.weaponType satisfies never;
+    }
   }
 }

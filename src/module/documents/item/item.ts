@@ -46,8 +46,45 @@ export class SmtItem extends Item<
 
     if (data.qty <= 1) {
       await this.delete();
+    } else {
+      await this.update({ "system.qty": data.qty - 1 });
+    }
+  }
+
+  // Return value: Was the cost paid?
+  // Always returns true unless there's a cost to be paid
+  async payCost() {
+    const actor = this.parent;
+    const costType = this.system.costType;
+    if (!actor || costType === "none" || costType === "consumeAmmo") {
+      return true;
     }
 
-    await this.update({ "system.qty": data.qty - 1 });
+    if (costType === "consumeItem") {
+      await this.consumeItem();
+      return true;
+    }
+
+    const data = (this as Skill).system;
+    const cost = data.cost;
+    const resourceType = data.resourceType;
+    const currentValue = actor.system[resourceType].value;
+
+    // Don't let them kill themselves with HP costs...(?)
+    if (
+      currentValue < cost ||
+      (resourceType === "hp" && currentValue === cost)
+    ) {
+      return false;
+    }
+
+    const newValue = currentValue - cost;
+    const updates = Object.fromEntries([
+      [`system.${resourceType}.value`, newValue],
+    ]);
+
+    await this.update(updates);
+
+    return true;
   }
 }

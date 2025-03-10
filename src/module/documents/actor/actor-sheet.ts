@@ -57,9 +57,9 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     const gems1 = gems.slice(0, 7);
     const gems2 = gems.slice(7);
 
-    const enableActorSheetBuffs = game.settings.get(
+    const editableActorSheetBuffs = game.settings.get(
       "smt-tc",
-      "enableActorSheetBuffs",
+      "editableActorSheetBuffs",
     );
 
     const editableGems =
@@ -78,7 +78,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       equippedMagatama,
       effects,
       gems: [gems1, gems2],
-      enableActorSheetBuffs,
+      editableActorSheetBuffs,
       editableGems,
       SMT: CONFIG.SMT,
     });
@@ -369,13 +369,11 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       const basePower = actorData.power[powerType];
       const boostType = powerType === "gun" ? "phys" : powerType;
       const powerBoost = actorData.powerBoost[boostType];
-      const criticalHit = successLevel === "crit";
 
       ({ power, roll: powerRoll } = await SmtDice.powerRoll({
         basePower,
         potency: potencyMod,
         powerBoost,
-        criticalHit,
       }));
     }
 
@@ -407,13 +405,13 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       throw new Error(msg);
     }
 
-    const { cancelled } = await showAttackModifierDialog(item.name);
+    const { tnMod, potencyMod, cancelled } = await showAttackModifierDialog(item.name);
 
     if (cancelled) {
       return;
     }
 
-    await SmtDice.itemRoll({ item });
+    await SmtDice.itemRoll({ item, tnMod, potencyMod });
   }
 
   async #onSheetModChange(event: JQuery.ClickEvent) {

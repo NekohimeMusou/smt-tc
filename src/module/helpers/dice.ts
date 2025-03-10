@@ -1,5 +1,5 @@
 import AttackDataModel from "../data-models/embedded/attack.js";
-import { SmtItem } from "../documents/item/item.js";
+import { AttackItem, SmtItem } from "../documents/item/item.js";
 
 interface HitCheckData {
   tn?: number;
@@ -9,6 +9,7 @@ interface HitCheckData {
 
 interface HitCheckResult {
   successLevel: SuccessLevel;
+  criticalHit: boolean;
   roll: Roll;
 }
 
@@ -17,11 +18,11 @@ interface PowerRollData {
   potency?: number;
   potencyMod?: number;
   powerBoost?: boolean;
-  criticalHit?: boolean;
 }
 
 interface PowerRollResult {
   power: number;
+  critPower: number;
   roll: Roll;
 }
 
@@ -57,7 +58,7 @@ export default class SmtDice {
       successLevel = "fail";
     }
 
-    return { successLevel, roll };
+    return { successLevel, criticalHit: successLevel === "crit", roll };
   }
 
   static async powerRoll({
@@ -65,18 +66,15 @@ export default class SmtDice {
     potency = 0,
     potencyMod = 0,
     powerBoost = false,
-    criticalHit = false,
   }: PowerRollData = {}): Promise<PowerRollResult> {
     const dice = powerBoost ? 2 : 1;
     const potencyModString = potencyMod ? ` + ${potencyMod}` : "";
-    const baseRollString = `${dice}d10x + ${basePower} + ${potency}${potencyModString}`;
-    const rollString = criticalHit
-      ? `(${baseRollString}) * 2`
-      : `${baseRollString}`;
+    const rollString = `${dice}d10x + ${basePower} + ${potency}${potencyModString}`;
 
     const roll = await new Roll(rollString).roll();
+    const power = Math.max(roll.total, 0);
 
-    return { power: roll.total, roll };
+    return { power, critPower: power * 2, roll };
   }
 
   static async itemRoll({
@@ -92,86 +90,104 @@ export default class SmtDice {
       throw new TypeError(msg);
     }
 
-    const attackName = item.name;
-    const description = item.system.description;
+    const itemData = item.system;
 
-    const context = { attackName, description };
+    // General stuff
+    const itemName = item.name;
+    const description = itemData.description;
 
-    if (["inventoryItem", "weapon", "skill"].includes(item.type)) {
-      // It's an attack
-      //@ts-expect-error This should work, there's a bug in the Typescript typedefs
-      const attackData = (item.system.attackData as AttackDataModel)
-        ._systemData;
+    // Can we pay the item's cost?
+    const costType = itemData.costType;
+    const costPaid = await item.payCost();
 
-      const rolls: Roll[] = [];
-      let criticalHit = false;
-      let successLevel = "success";
+    const rolls: Roll[] = [];
 
-      // Make a hit check, if applicable
-      if (!attackData.auto) {
-        const tn = Math.max(attackData.tn + tnMod, 1);
-        const critBoost = attackData.critBoost;
-        const autoFailThreshold = attackData.autoFailThreshold;
+    // @ts-expect-error This should work, there's a bug in the Typescript typedefs
+    const attackItem = (item as AttackItem).system?.attackData as
+      | AttackDataModel
+      | undefined;
 
-        const { successLevel: success, roll } = await this.hitCheck({
-          tn,
-          critBoost,
-          autoFailThreshold,
-        });
+    const attackData = attackItem?._systemData;
 
-        successLevel = success;
+    const auto = attackData?.auto ?? true;
+    const hasPowerRoll = attackData?.hasPowerRoll;
 
-        criticalHit = successLevel === "crit";
+    // TODO: Find a less slapdash way to handle this
+    const pinhole = attackData?.mods.pinhole;
+    const pierce = attackData?.pierce;
 
-        rolls.push(roll);
+    const context = {
+      itemName,
+      description,
+      costType,
+      cost: item.system.cost,
+      costPaid,
+      auto,
+      successLevel: costPaid ? "auto" : "fail",
+      success: costPaid,
+      criticalHit: false,
+      hasPowerRoll,
+      canDodge: attackData?.canDodge ?? false,
+      pinhole,
+      pierce,
+    };
 
-        foundry.utils.mergeObject(context, {
-          displayHitCheck: true,
-          tn,
-          criticalHit,
-          autoFailThreshold,
-        });
-      }
+    if (!auto && attackData && costPaid) {
+      const tn = Math.max(attackData.tn + tnMod, 1);
+      const critBoost = attackData.critBoost;
+      const autoFailThreshold = attackData.autoFailThreshold;
 
-      // Make a power roll, if applicable
-      if (attackData.includePowerRoll) {
-        const basePower = attackData.basePower;
-        const potency = attackData.potency;
-        const powerBoost = attackData.powerBoost;
+      const { successLevel, criticalHit, roll } = await this.hitCheck({
+        tn,
+        critBoost,
+        autoFailThreshold,
+      });
 
-        const { power, roll } = await this.powerRoll({
-          basePower,
-          potency,
-          potencyMod,
-          powerBoost,
-          criticalHit,
-        });
+      rolls.push(roll);
 
-        rolls.push(roll);
+      foundry.utils.mergeObject(context, {
+        successLevel,
+        success: ["success", "crit", "auto"].includes(successLevel),
+        criticalHit,
+        successRoll: roll,
+      });
+    }
 
-        foundry.utils.mergeObject(context, {
-          displayPowerRoll: true,
-          potency: potency + potencyMod,
-          power,
-          critPower: criticalHit ? power * 2 : power,
-        });
-      }
+    const success = context.success;
 
-      // Display ailment info, if applicable
-      if (attackData.ailment.id) {
-        const critMultiplier = criticalHit ? 2 : 1;
-        const ailmentId = attackData.ailment.id;
-        const ailmentRate = Math.clamp(
-          attackData.ailment.rate * critMultiplier,
-          5,
-          95,
-        );
+    // Success assumes the cost was paid
+    if (success && hasPowerRoll) {
+      const basePower = attackData.basePower;
+      const potency = attackData.potency;
+      const powerBoost = attackData.powerBoost;
 
-        foundry.utils.mergeObject(context, {
-          ailmentId,
-          ailmentRate,
-        });
-      }
+      const { power, critPower, roll } = await this.powerRoll({
+        basePower,
+        potency,
+        potencyMod,
+        powerBoost,
+      });
+
+      rolls.push(roll);
+
+      foundry.utils.mergeObject(context, {
+        potency: potency + potencyMod,
+        power,
+        critPower,
+        powerRoll: roll,
+      });
+    }
+
+    // Add ailment info, if applicable
+    if (success && attackData?.ailment.id) {
+      const ailment = attackData.ailment;
+
+      const ailmentCritRate = Math.clamp(ailment.rate, 5, 95);
+
+      foundry.utils.mergeObject(context, {
+        ailment,
+        ailmentCritRate,
+      });
     }
 
     const template = "systems/smt-tc/templates/chat/item-roll-card.hbs";
@@ -182,9 +198,10 @@ export default class SmtDice {
       content,
       speaker: {
         scene: game.scenes.current,
-        actor,
+        actor: actor,
         token: actor.token,
       },
+      rolls,
     };
 
     return await ChatMessage.create(chatData);

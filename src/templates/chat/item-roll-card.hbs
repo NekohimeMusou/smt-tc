@@ -1,4 +1,57 @@
 {{!-- Name of the skill/item/weapon --}}
-<h1>{{attackName}}</h1>
+<h1>{{itemName}}</h1>
 {{!-- Item Description --}}
 {{{description}}}
+
+{{!-- Cost --}}
+{{#if (ne costType "none")}}
+  {{!-- Show the cost, e.g. "Cost: XX HP" or "Item Consumed" or "Ammo Consumed" --}}
+  {{localize (concat "SMT.costTypes." costType cost=cost)}}
+{{/if}}
+
+{{#unless costPaid}}
+  <h2>{{localize "SMT.itemRoll.costNotPaid"}}</h2>
+{{else}}
+  {{!-- Accuracy Roll --}}
+  {{#unless auto}}
+    {{!-- Dice result, e.g. "Success! Critical success! Autofail!" --}}
+    <h2>{{localize (concat "SMT.successLevel." successLevel)}}!</h2>
+    {{!-- Render roll --}}
+    {{{successRoll}}}
+    {{else}}
+    <h2>{{localize "SMT.successLevel.auto"}}</h2>
+  {{/unless}}
+
+  {{!-- Power Roll --}}
+  {{#if (and success hasPowerRoll)}}
+    {{!-- Total Power (still display normal power if a critical hit, in case it's downgraded --}}
+    {{#if criticalHit}}
+      <h3>{{localize "SMT.itemRoll.critPower" critPower=critPower power=power}}</h3>
+      {{else}}
+      <h3>{{localize "SMT.itemRoll.totalPower" power=power}}</h3>
+    {{/if}}
+    {{#if pinhole}}
+      {{localize "SMT.itemRoll.pinhole"}}
+    {{/if}}
+    {{#if pierce}}
+    {{localize "SMT.itemRoll.pierce"}}
+    {{/if}}
+    {{!-- Render roll --}}
+    {{{powerRoll}}}
+  {{/if}}
+
+  {{!-- Ailment --}}
+  {{#if ailment}}
+    {{!-- ailmentName: Rate --}}
+    {{!-- Also show normal rate if it's a crit, like for power --}}
+    {{#if criticalHit}}
+      <h3>{{localize "SMT.itemRoll.critAilment"
+        ailment=(localize "SMT.ailments." ailment.id) rate=ailment.rate ailmentCritRate=ailmentCritRate}}</h3>
+      {{else}}
+      <h3>{{localize "SMT.itemRoll.ailment" ailment=(localize "SMT.ailments." ailment.id) rate=ailment.rate}}</h3>
+    {{/if}}
+  {{/if}}
+  {{#if (and success canDodge)}}
+    {{!-- If this can be dodged, show a dodge button --}}
+  {{/if}}
+{{/unless}}

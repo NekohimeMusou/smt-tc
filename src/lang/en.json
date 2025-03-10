@@ -74,7 +74,7 @@
       "shatterRate": "Shatter Rate",
       "ailment": "Ailment",
       "ailmentRate": "Ailment Rate",
-      "includePowerRoll": "Include Power roll",
+      "hasPowerRoll": "Has Power roll",
       "inheritanceTraits": "Inheritance Traits",
       "description": "Description",
       "effect": "Effect",
@@ -122,6 +122,13 @@
       "hp": "HP",
       "mp": "MP",
       "fp": "FP"
+    },
+    "costTypes": {
+      "hp": "{cost} HP",
+      "mp": "{cost} MP",
+      "consumeItem": "Item Consumed",
+      "consumeAmmo": "Ammo Consumed",
+      "none": "None"
     },
     "statShort": {
       "st": "St",
@@ -327,8 +334,9 @@
       "fail": "Failed",
       "success": "Success",
       "crit": "Critical Success",
-      "autofail": "Autofail",
-      "fumble": "Fumble"
+      "autofail": "Autofail ({autofail}%)",
+      "fumble": "Fumble",
+      "auto": "Auto"
     },
     "diceOutput": {
       "checkName": "{name} Check",
@@ -392,7 +400,33 @@
         "ladyOfTheFount": "Lady of the Fount"
       }
     },
+    "itemRoll": {
+      "cost": "Cost: {cost} {resource}",
+      "costNotPaid": "Unable to pay cost!",
+      "totalPower": "Total Power: {power}",
+      "critPower": "Total Power: {critPower} ({power})",
+      "ailment": "{ailment}: {rate}%",
+      "critAilment": "{ailment}: {ailmentCritRate}% ({rate}%)",
+      "pinhole": "Pinhole: Halve dodge and resist",
+      "pierce": "Pierce elemental resists except Repel"
+    },
     "settings": {
+      "editableActorSheetBuffs": {
+        "name": "Enable Actor Sheet Buff Pane",
+        "hint": "Make the buffs pane on the actor sheet editable. Basically superseded by the macro."
+      },
+      "editableGems": {
+        "name": "Editable Gem Fields",
+        "hint": "Players can edit the gem fields on their character sheets (GMs can always do this)."
+      },
+      "addLevelToGunDamage": {
+        "name": "VARIANT RULE: Add Level to Gun Damage",
+        "hint": "Add the shooter's level to gun and grenade damage, like with other attacks."
+      },
+      "enablePierce": {
+        "name": "VARIANT RULE: Enable Pierce",
+        "hint": "Enable a version of the Pierce skill (override system.mods.pierce with an AE)."
+      },
       "invertHitModDialog": {
         "name": "Invert Hit Dialog Behavior",
         "hint": "Invert the normal behavior of hit rolls so that the modifier dialog appears by default and holding Shift disables it."
@@ -400,18 +434,6 @@
       "invertPotencyDialog": {
         "name": "Invert Potency Dialog Behavior",
         "hint": "Invert the normal behavior of power rolls so that the potency dialog does not appear by default and holding Shift enables it."
-      },
-      "addLevelToGunDamage": {
-        "name": "House Rule: Add Level to Gun Damage",
-        "hint": "Add the shooter's level to gun and grenade damage, like with other attacks."
-      },
-      "enableActorSheetBuffs": {
-        "name": "Enable Actor Sheet Buff Pane",
-        "hint": "Make the buffs pane on the actor sheet editable. Basically superseded by the macro."
-      },
-      "editableGems": {
-        "name": "Editable Gem Fields",
-        "hint": "Players can edit the gem fields on their character sheets (GMs can always do this)."
       }
     },
     "ui": {

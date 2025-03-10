@@ -38,7 +38,7 @@
 
         {{!-- Potency --}}
         <div class="item-prop">
-          {{#if (and system.hasAttack system.includePowerRoll)}}
+          {{#if (and system.hasAttack system.hasPowerRoll)}}
           {{system.attackData.potency}}
           {{else}}
           —
@@ -46,7 +46,7 @@
         </div>
         {{!-- Total Power --}}
         <div class="item-prop">
-          {{#if (and system.hasAttack system.includePowerRoll)}}
+          {{#if (and system.hasAttack system.hasPowerRoll)}}
           {{system.attackData.power}}
           {{else}}
           —

@@ -103,10 +103,10 @@
         </div>
 
         {{!-- Potency --}}
-        <div class="item-prop">{{#if system.attackData.includePowerRoll}}{{system.attackData.potency}}{{else}}—{{/if}}</div>
+        <div class="item-prop">{{#if system.attackData.hasPowerRoll}}{{system.attackData.potency}}{{else}}—{{/if}}</div>
 
         {{!-- Total Power --}}
-        <div class="item-prop">{{#if system.attackData.includePowerRoll}}{{system.attackData.power}}{{else}}—{{/if}}</div>
+        <div class="item-prop">{{#if system.attackData.hasPowerRoll}}{{system.attackData.power}}{{else}}—{{/if}}</div>
 
         {{!-- Target --}}
         <div class="item-prop">

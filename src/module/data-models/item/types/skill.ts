@@ -6,6 +6,17 @@ export default class SkillData extends SmtBaseItemData {
 
   override readonly equippable = false;
 
+  get resourceType(): ResourceType {
+    const data = this._systemData;
+    const attackType = data.attackData.attackType;
+
+    if (attackType === "phys") {
+      return "hp";
+    }
+
+    return "mp";
+  }
+
   static override defineSchema() {
     const fields = foundry.data.fields;
 
@@ -14,13 +25,13 @@ export default class SkillData extends SmtBaseItemData {
       oneShot: new fields.BooleanField(),
       used: new fields.BooleanField(),
       inheritanceTraits: new fields.StringField(),
-      cost: new fields.NumberField({ integer: true, min: 0 }),
       attackData: new fields.EmbeddedDataField(AttackDataModel),
     };
   }
 
   override prepareBaseData() {
-    const attackData = this._systemData.attackData;
+    const data = this._systemData;
+    const attackData = data.attackData;
 
     if (attackData.attackType === "talk") {
       attackData.affinity = "talk";
@@ -31,5 +42,7 @@ export default class SkillData extends SmtBaseItemData {
     } else if (attackData.affinity !== "force") {
       attackData.shatterRate = 0;
     }
+
+    data.costType = attackData.attackType === "phys" ? "hp" : "mp";
   }
 }

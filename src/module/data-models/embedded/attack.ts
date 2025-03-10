@@ -49,7 +49,7 @@ export default class AttackDataModel extends BaseEmbeddedDataModel {
 
     const tn = actor.system.tn[tnType];
 
-    return data.attackType === "talk" ? tn + 20 : tn;
+    return Math.max(data.attackType === "talk" ? tn + 20 : tn, 1);
   }
 
   get totalPower() {
@@ -121,7 +121,23 @@ export default class AttackDataModel extends BaseEmbeddedDataModel {
 
     const data = this._systemData;
 
-    return ["phys", "gun"].includes(data.attackType) && actor.system.mods.might;
+    return (
+      (["phys", "gun"].includes(data.attackType) && actor.system.mods.might) ||
+      data.mods.highCrit
+    );
+  }
+
+  get pierce() {
+    const actor = this.actor;
+    const data = this._systemData;
+    const pierceEnabled = game.settings.get("smt-tc", "enablePierce");
+    const autoPierce = data.mods.autoPierce;
+
+    if (!actor) {
+      return pierceEnabled && autoPierce;
+    }
+
+    return pierceEnabled && (actor.system.mods.pierce || autoPierce);
   }
 
   get autoFailThreshold() {
@@ -182,6 +198,11 @@ export default class AttackDataModel extends BaseEmbeddedDataModel {
       shatterRate: new fields.NumberField({ integer: true, min: 0 }),
       hasPowerRoll: new fields.BooleanField(),
       canDodge: new fields.BooleanField(),
+      mods: new fields.SchemaField({
+        highCrit: new fields.BooleanField(),
+        pinhole: new fields.BooleanField(),
+        autoPierce: new fields.BooleanField(),
+      }),
     };
   }
 
