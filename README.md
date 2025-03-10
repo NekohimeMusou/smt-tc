@@ -40,23 +40,6 @@ Skills will make their own dice rolls when you click on them, eventually.
 - Game status effects (ailments, -kaja/-kundas, Focus, Defending) are present, but not fully implemented.
   - Ping me or raise an issue if I'm missing any!
 
-## Recommended Mods
-
-- **Item Piles**: Drop lootable containers into scenes, trade items between players, create shops and player storage, and **way** more. Completely indispensable for games with a lot of looting, buying, and selling!
-  - <https://github.com/fantasycalendar/FoundryVTT-ItemPiles>
-- **Mana's Compendium Importer**: Export world compendiums to JSON format and import them in other worlds; lets you easily share actors, items/skills, and other things between game worlds.
-  - <https://gitlab.com/mkahvi/fvtt-compendium-importer>
-- **Status Icon Counters**: I use this to keep track of -kaja/-kunda stacks.
-  - <https://gitlab.com/woodentavern/status-icon-counters>
-- **Token Health**: Quickly assign damage or healing to multiple tokens at once!
-  - <https://github.com/mclemente/fvtt-token-health>
-- **Roll of Fate**: Randomly choose a token from the ones you have selected, at random, for random encounters what attack randomly!
-  - <https://github.com/Handyfon/roll-of-fate/blob/master/README.md>
-- **Koboldworks - Data Inspector**: Lets you inspect the data of an actor or item with one click and no digging in the console. Great for finding Active Effect paths!
-  - <https://gitlab.com/koboldworks/agnostic/data-inspector>
-- **Drag Ruler**: I don't use the tactical rules in my campaign, but this mod might be useful if you do. Use `actor.system.ag` for the speed attribute.
-  - <https://github.com/manuelVo/foundryvtt-drag-ruler/tree/master>
-
 ## Known Issues
 
 I'm not listing missing features from the old version unless they're especially notable.
