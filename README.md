@@ -4,15 +4,13 @@ Unofficial Foundry VTT system for Shin Megami Tensei: Tokyo Conception. **This i
 
 **This system does not include a rules compendium. A copy of the rulebook is required to play.** You can get it here: <https://lionwingpublishing.com/collections/shin-megami-tensei-iii-nocturne-the-roleplaying-game-tokyo-conception-core-rulebook>
 
-This system is designed specifically for Tokyo Conception; any compatibility with other flavors of the SMT RPG is coincidental. If you're looking to play a different version of the game, or you just want more flexibility and fewer assumptions than this system provides, check out Alondaar's more broadly-compatible SMT X system: <https://github.com/Alondaar/smt-200x>
+This system is designed specifically for Tokyo Conception; any compatibility with other flavors of the SMT RPG is coincidental. If you're looking to play a different version of the game, or you just want more flexibility and fewer assumptions than this system provides, check out Alondaar's more broadly-compatible SMT 200X system: <https://github.com/Alondaar/smt-200x>
 
 ## Prerelease Disclaimer
 
 This is extremely a work in progress, and a lot of features are not complete yet and it doesn't look too great and there's probably a lot of bugs. If you find some, feel free to raise an issue on Github!
 
-This is based on my original, janky SMT: TC system, located here: <https://github.com/NekohimeMusou/smt-tc-v1>. I moved fast and broke things when I wrote it—developing in tandem with a demo you're running will do that—and now I'm looking to make it more maintainable, more customizable, and less opinionated. It'll also make it easier for me to fix the *numerous* bugs in the original.
-
-I plan to reimplement all the features of the original, hopefully with fewer bugs and more customizability! Expect frequent updates!
+This is a complete rewrite of my original, janky system here: <https://github.com/NekohimeMusou/smt-tc-v1>. This one has more and better features now, except for the skill automation which is still a bit jank in itself.
 
 ## Installation
 
@@ -22,7 +20,7 @@ Alternatively, you can download and extract the zip file for the latest release.
 
 ## Usage Notes
 
-It should be fairly straightforward if you're familiar with the rules. Each class is its own actor type, and things like your HP and MP multipliers, your XP needed to level, and the fields that appear on your sheet are determined by your class. I tried to keep data entry to a minimum by calculating as much as I could and making some assumptions here and there; most stuff you'd want to change or override that isn't directly available on the sheet or isn't fully implemented, such as armor and doubling a boss's HP and MP, can be done with an Active Effect (see below). If not, let me know!
+It should be fairly straightforward if you're familiar with the rules. Each class is its own actor type, and things like your HP and MP multipliers, your XP needed to level, and the fields that appear on your sheet are determined by your class. I tried to keep data entry to a minimum by calculating as much as I could and making some assumptions here and there; most stuff you'd want to change or override that isn't directly available on the sheet or isn't fully implemented, such as modifying a boss's HP and MP, can be done with an Active Effect (see the wiki). If not, let me know!
 
 Skills will make their own dice rolls when you click on them, eventually.
 
