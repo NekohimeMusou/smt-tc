@@ -1,5 +1,4 @@
 import { AttackItem } from "../../documents/item/item.js";
-import Ailment from "./ailment.js";
 import BaseEmbeddedDataModel from "./base-embedded-data.js";
 
 export default class AttackDataModel extends BaseEmbeddedDataModel {
@@ -168,9 +167,21 @@ export default class AttackDataModel extends BaseEmbeddedDataModel {
         choices: CONFIG.SMT.targets,
         initial: "one",
       }),
-      ailment: new fields.EmbeddedDataField(Ailment),
+      ailment: new fields.SchemaField({
+        id: new fields.StringField({
+          choices: CONFIG.SMT.ailments,
+          blank: true,
+        }),
+        rate: new fields.NumberField({
+          integer: true,
+          min: 5,
+          max: 95,
+          initial: 5,
+        }),
+      }),
       shatterRate: new fields.NumberField({ integer: true, min: 0 }),
-      includePowerRoll: new fields.BooleanField(),
+      hasPowerRoll: new fields.BooleanField(),
+      canDodge: new fields.BooleanField(),
     };
   }
 
