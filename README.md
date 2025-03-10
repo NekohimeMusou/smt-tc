@@ -40,19 +40,6 @@ Skills will make their own dice rolls when you click on them, eventually.
 - Game status effects (ailments, -kaja/-kundas, Focus, Defending) are present, but not fully implemented.
   - Ping me or raise an issue if I'm missing any!
 
-### Active Effects and Data Paths
-
-The system is designed so you can use Foundry's built-in Active Effects feature (the Effects tab on actor and item sheets) to do fun things, such as HP and MP modifiers for bosses and especially passive skills: if you create an Active Effect on a skill, by default it'll automatically apply itself to any actor that "owns" the skill. I recommend using the [Koboldworks - Data Inspector] mod or the console to uncover the data paths you need to use, since this system is under heavy development and some of them are subject to change. For convenience's sake, here's a few that are related to specific skills in the book, have their functionality implemented, and are unlikely to change:
-
-- Might: `system.mods.might` (Boolean)
-  - This applies to Phys Attacks (including basic strikes) regardless of affinity (it's compatible with e.g. the Breath Group and Freikugel).
-- Lucky Find: `system.mods.luckyFind` (Boolean)
-- Expert Dodge: `system.tn.dodge` (Number)
-- Sure Shot: `system.tn.gun` (Number)
-- Powerful Strikes/Spells/Item Pro: `system.powerBoost.phys`, `system.powerBoost.mag`, `system.powerBoost.item` (Boolean)
-  - NOTE: The Item Pro flag exists, but non-magatama items don't yet.
-- Amplify Group skills: `system.hpMultiplier` and `system.mpMultiplier`
-
 ## Recommended Mods
 
 - **Item Piles**: Drop lootable containers into scenes, trade items between players, create shops and player storage, and **way** more. Completely indispensable for games with a lot of looting, buying, and selling!
