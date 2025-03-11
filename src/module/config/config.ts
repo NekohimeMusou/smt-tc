@@ -5,7 +5,6 @@ import {
 } from "../helpers/macros/award.js";
 import { applyBuffs } from "../helpers/macros/buffs.js";
 import { healingFountain } from "../helpers/macros/healing-fountain.js";
-import { ailmentIds } from "./statuses.js";
 import { templatePaths } from "./templates.js";
 
 declare global {
@@ -121,6 +120,7 @@ const ailments = {
   flied: "SMT.ailments.flied",
   stone: "SMT.ailments.stone",
   instantDeath: "SMT.ailments.instantDeath",
+  shatter: "SMT.ailments.shatter",
 } as const;
 
 const buffs = {
@@ -305,7 +305,6 @@ export const SMT = {
   targets,
   successLevels,
   defaultAutofailThreshold,
-  ailmentIds,
   macro: {
     resolveConflict,
     grantRewards,
