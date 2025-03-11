@@ -30,10 +30,13 @@ export default class SmtItemSheet extends ItemSheet<SmtItem> {
     const context = await super.getData();
     const system = this.item.system;
 
+    const enablePierce = game.settings.get("smt-tc", "enablePierce");
+
     const effects = prepareActiveEffectCategories(this.item.effects);
 
     foundry.utils.mergeObject(context, {
       system,
+      enablePierce,
       effects,
       SMT: CONFIG.SMT,
     });

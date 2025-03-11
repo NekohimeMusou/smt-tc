@@ -87,7 +87,10 @@
       "slot": "Slot",
       "consumeOnUse": "Consume on Use",
       "hasAttack": "Has Attack",
-      "learned": "Learned"
+      "learned": "Learned",
+      "highCrit": "High Crit",
+      "pinhole": "Pinhole",
+      "autoPierce": "Auto Pierce"
     },
     "skillDetails": {
       "cost": "Cost: {cost} {resource}",

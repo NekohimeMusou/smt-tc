@@ -86,6 +86,31 @@
         {{/unless}}
       </li>
 
+      {{!-- Attack Mods --}}
+      {{#unless (or (eq system.attackData.attackType "talk") (eq system.attackData.attackType "passive"))}}
+      <li class="item flexrow">
+        <label for="highCrit" class="item-prop">{{localize "SMT.itemSheet.highCrit"}}</label>
+        <div class="item-prop">
+          <input type="checkbox" id="highCrit" name="system.attackData.mods.highCrit" data-dtype="Boolean"
+            {{checked system.attackData.mods.highCrit}} />
+        </div>
+
+        <label for="pinhole" class="item-prop">{{localize "SMT.itemSheet.pinhole"}}</label>
+        <div class="item-prop">
+          <input type="checkbox" id="pinhole" name="system.attackData.mods.pinhole" data-dtype="Boolean"
+            {{checked system.attackData.mods.pinhole}} />
+        </div>
+
+        {{#if enablePierce}}
+          <label for="autoPierce" class="item-prop">{{localize "SMT.itemSheet.autoPierce"}}</label>
+          <div class="item-prop">
+            <input type="checkbox" id="autoPierce" name="system.attackData.mods.autoPierce" data-dtype="Boolean"
+              {{checked system.attackData.mods.autoPierce}} />
+          </div>
+        {{/if}}
+      </li>
+      {{/unless}}
+
       <li class="item flexrow">
         {{!-- Inheritance Traits --}}
         <label for="inheritanceTraits" class="item-prop">{{localize "SMT.itemSheet.inheritanceTraits"}}</label>
