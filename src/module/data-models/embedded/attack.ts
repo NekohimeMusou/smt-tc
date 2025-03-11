@@ -1,5 +1,5 @@
 import { AttackItem } from "../../documents/item/item.js";
-import BaseEmbeddedDataModel from "./base-embedded-data.js";
+import BaseEmbeddedDataModel from "./abstract/base-embedded-data.js";
 
 export default class AttackDataModel extends BaseEmbeddedDataModel {
   get damageType(): DamageType {
