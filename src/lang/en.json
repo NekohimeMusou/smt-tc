@@ -58,7 +58,6 @@
       "buff": "Buff",
       "cost": "Cost",
       "ailment": "Ailment",
-      "shatter": "Shatter",
       "qty": "Qty",
       "price": "Price",
       "gems": "Gems"
@@ -71,7 +70,6 @@
       "affinity": "Affinity",
       "target": "Target",
       "auto": "Auto",
-      "shatterRate": "Shatter Rate",
       "ailment": "Ailment",
       "ailmentRate": "Ailment Rate",
       "hasPowerRoll": "Has Power roll",
@@ -217,7 +215,8 @@
       "sleep": "Sleep",
       "panic": "Panic",
       "shock": "Shock",
-      "curse": "Curse"
+      "curse": "Curse",
+      "shatter": "Shatter"
     },
     "buffs": {
       "tarukaja": "Tarukaja",

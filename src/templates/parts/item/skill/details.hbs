@@ -40,15 +40,10 @@
           (localize "SMT.skillDetails.tn" tn=system.attackData.tn)}}</div>
         {{/unless}}
 
-        {{!-- Ailment/rate | Shatter rate --}}
-        {{#if (eq system.attackData.affinity "force")}}
-        <div class="item-prop">{{localize "SMT.itemSheet.shatterRate"}}</div>
-        <div class="item-prop">{{system.attackData.shatterRate}}%</div>
-        {{else}}
+        {{!-- Ailment/rate  --}}
         {{#if system.attackData.ailment.id}}
         {{localize "SMT.itemSheet.ailmentDesc" ailment=(localize (concat "SMT.ailments." system.attackData.ailment.id))
           rate=(ifThen system.attackData.ailment.rate system.attackData.ailment.rate "0")}}
-        {{/if}}
         {{/if}}
       </li>
       {{/unless}}

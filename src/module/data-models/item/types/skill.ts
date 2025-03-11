@@ -37,12 +37,6 @@ export default class SkillData extends SmtBaseItemData {
       attackData.affinity = "talk";
     }
 
-    if (attackData.affinity === "phys") {
-      attackData.shatterRate = 30;
-    } else if (attackData.affinity !== "force") {
-      attackData.shatterRate = 0;
-    }
-
     data.costType = attackData.attackType === "phys" ? "hp" : "mp";
   }
 }

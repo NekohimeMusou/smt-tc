@@ -33,14 +33,6 @@
       </li>
 
       <li class="item flexrow">
-        {{#if (eq system.attackData.affinity "force")}}
-        {{!-- Shatter Rate --}}
-        <label for="shatterRate" class="item-prop">{{localize "SMT.itemSheet.shatterRate"}}</label>
-        <div class="item-prop">
-          <input type="number" id="shatterRate" name="system.attackData.shatterRate" value="{{system.attackData.shatterRate}}" placeholder="50"
-            data-dtype="Number" />
-        </div>
-        {{else}}
         {{!-- Ailment --}}
         <label for="ailment-id" class="item-prop">{{localize "SMT.itemSheet.ailment"}}</label>
         <div class="item-prop">
@@ -55,7 +47,6 @@
           <input type="number" id="ailmentRate" name="system.attackData.ailment.rate" value="{{system.attackData.ailment.rate}}"
             placeholder="0" data-dtype="Number" {{ifThen system.attackData.ailment.id "" "disabled"}} />
         </div>
-        {{/if}}
 
         {{!-- Roll power? --}}
         <label for="hasPowerRoll" class="item-prop">{{localize "SMT.itemSheet.hasPowerRoll"}}</label>

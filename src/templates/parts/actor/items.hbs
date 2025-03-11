@@ -74,15 +74,11 @@
         {{!-- Ailment --}}
         <div class="item-prop">
         {{#if system.hasAttack}}
-          {{#if (eq system.attackData.affinity "force")}}
-          {{localize "SMT.actorSheet.shatter"}} {{system.attackData.shatterRate}}%
-          {{else}}
-            {{#if system.attackData.ailment.id}}
+          {{#if system.attackData.ailment.id}}
             {{localize (concat "SMT.ailments." system.attackData.ailment.id)}} {{system.attackData.ailment.rate}}%
             {{else}}
             —
             {{/if}}
-          {{/if}}
         {{else}}
         —
         {{/if}}

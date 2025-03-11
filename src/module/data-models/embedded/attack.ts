@@ -156,6 +156,15 @@ export default class AttackDataModel extends BaseEmbeddedDataModel {
       delete source.includePowerRoll;
     }
 
+    if ("shatterRate" in source && source.affinity === "force") {
+      source.ailment = {
+        id: "shatter",
+        rate: source.shatterRate,
+      };
+    }
+
+    delete source.shatterRate;
+
     return super.migrateData(source);
   }
 
@@ -195,7 +204,6 @@ export default class AttackDataModel extends BaseEmbeddedDataModel {
           initial: 5,
         }),
       }),
-      shatterRate: new fields.NumberField({ integer: true, min: 0 }),
       hasPowerRoll: new fields.BooleanField(),
       canDodge: new fields.BooleanField(),
       mods: new fields.SchemaField({

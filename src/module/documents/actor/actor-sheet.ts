@@ -18,7 +18,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["smt-tc", "sheet", "actor"],
       template: "systems/smt-tc/templates/actor/actor-sheet.hbs",
-      width: 800,
+      width: 850,
       height: 950,
       tabs: [
         {
@@ -63,7 +63,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     );
 
     const editableGems =
-      game.settings.get("smt-tc", "editableGems") || game.user.isGM;
+      (game.settings.get("smt-tc", "editableGems") ?? false) || game.user.isGM;
 
     await foundry.utils.mergeObject(context, {
       system,
