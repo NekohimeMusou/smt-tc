@@ -4,12 +4,13 @@
 
 ## [0.5.0] - 2025-03-11
 
-*Finally, rollable skills!*
+*The big one: rollable skills!*
 
 ### Changed
 
 - Organize embedded data models into their own folder
 - Make Force attacks' "shatter" effect work like a normal ailment
+- New affinity icons courtesy of the generous [Cannon White]!
 
 ### Added
 
@@ -233,6 +234,8 @@ _Added separate Human and Demon actor types with some custom behavior, and added
 
 _Initial preview release.*
 
+[0.5.0]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.5.0
+[0.4.4]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.4.4
 [0.4.3]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.4.3
 [0.4.2]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.4.2
 [0.4.1]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.4.1
@@ -249,3 +252,5 @@ _Initial preview release.*
 [0.1.2]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.1.2
 [0.1.1]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.1.1
 [0.1.0]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.1.0
+
+[Cannon White]: https://bsky.app/profile/hencanpro.bsky.social

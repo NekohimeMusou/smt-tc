@@ -18,9 +18,9 @@ Alternatively, you can download and extract the zip file for the latest release.
 
 ## Usage Notes
 
-It should be fairly straightforward if you're familiar with the rules. Each class is its own actor type, and things like your HP and MP multipliers, your XP needed to level, and the fields that appear on your sheet are determined by your class. I tried to keep data entry to a minimum by calculating as much as I could and making some assumptions here and there; most stuff you'd want to change or override that isn't directly available on the sheet or isn't fully implemented, such as modifying a boss's HP and MP, can be done with an Active Effect (see the wiki). If not, let me know!
+Hopefully, it's fairly straightforward if you're familiar with the rules. Each class is its own actor type, and things like your HP and MP multipliers, your XP needed to level, and the fields that appear on your sheet are determined by your class. I tried to keep data entry to a minimum by calculating as much as I could and making some assumptions here and there; most stuff you'd want to change or override that isn't directly available on the sheet or isn't fully implemented, such as modifying a boss's HP and MP, can be done with an Active Effect (see the wiki). If not, let me know!
 
-Skills will make their own dice rolls when you click on them, eventually.
+Skills will make their own dice rolls when you click on them, and they should be nice and automatic and smooth.
 
 - All the numbers *should* be calculated correctly (HP, MP, Lv, TNs, Power, Resists, etc).
 - The Mods panel has two options, both of which are reflected in the sheet calculations:
@@ -33,17 +33,20 @@ Skills will make their own dice rolls when you click on them, eventually.
 - Clicking the "Phys Atk" or "Mag Atk" derived TNs will roll a combined accuracy and power check.
   - The dialog opens with the Power modifier box focused, so you can click the "button", type your attack's Potency, and hit enter for a pretty quick attack.
 - If a demon's Behavior field contains any text, it'll appear at the top of the Main tab for easy reference.
-- Game status effects (ailments, -kaja/-kundas, Focus, Defending) are present, but not fully implemented.
+- Game status effects (ailments, -kaja/-kunda spells, Focus, Defending) are present, but not fully implemented.
   - Ping me or raise an issue if I'm missing any!
 
 ## Known Issues
 
 I'm not listing missing features from the old version unless they're especially notable.
 
-- Godawful aesthetics
-- Skills don't automatically do anything yet
+- Generic, non-SMT-ish aesthetics
 - It's unclear which tab is active at a given time
 - Overriding an elemental affinity with an AE doesn't work correctly
+
+## Contributors ✨
+
+Thank you, Cannon White, for the new, non-intellectual-property-burdened affinity icons! Check him out on Bluesky: <https://bsky.app/profile/hencanpro.bsky.social>
 
 ## Special Thanks
 
