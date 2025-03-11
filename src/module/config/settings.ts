@@ -40,18 +40,9 @@ export default function registerSystemSettings() {
   });
 
   // Client settings
-  game.settings.register("smt-tc", "invertHitModDialog", {
-    name: "SMT.settings.invertHitModDialog.name",
-    hint: "SMT.settings.invertHitModDialog.hint",
-    scope: "client",
-    config: true,
-    requiresReload: false,
-    type: Boolean,
-    default: false,
-  });
-  game.settings.register("smt-tc", "invertPotencyDialog", {
-    name: "SMT.settings.invertPotencyDialog.name",
-    hint: "SMT.settings.invertPotencyDialog.hint",
+  game.settings.register("smt-tc", "showRollDialogByDefault", {
+    name: "SMT.settings.showRollDialogByDefault.name",
+    hint: "SMT.settings.showRollDialogByDefault.hint",
     scope: "client",
     config: true,
     requiresReload: false,

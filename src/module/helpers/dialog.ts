@@ -89,9 +89,19 @@ export async function showRollModifierDialog({
 
 export async function showAttackModifierDialog(
   attackName: string,
+  description = "",
+  auto = false,
+  consumeOnUse = false,
+  powerRoll = true,
 ): Promise<AttackDialogResult> {
   const template = "systems/smt-tc/templates/dialog/attack-modifier-dialog.hbs";
-  const content = await renderTemplate(template, { attackName });
+  const content = await renderTemplate(template, {
+    attackName,
+    description,
+    auto,
+    consumeOnUse,
+    powerRoll,
+  });
 
   return new Promise((resolve) =>
     new Dialog(

@@ -125,7 +125,7 @@
       "hp": "{cost} HP",
       "mp": "{cost} MP",
       "consumeItem": "Item Consumed",
-      "consumeAmmo": "Ammo Consumed",
+      "consumeAmmo": "{cost} Ammo Consumed",
       "none": "None"
     },
     "statShort": {
@@ -330,11 +330,11 @@
       "allCombatants": "All Comb."
     },
     "successLevel": {
-      "fail": "Failed",
-      "success": "Success",
-      "crit": "Critical Success",
-      "autofail": "Autofail ({autofail}%)",
-      "fumble": "Fumble",
+      "fail": "Failed!",
+      "success": "Success!",
+      "crit": "Critical Success!",
+      "autofail": "Autofail! ({autofail}%)",
+      "fumble": "Fumble!",
       "auto": "Auto"
     },
     "diceOutput": {
@@ -400,7 +400,8 @@
       }
     },
     "itemRoll": {
-      "cost": "Cost: {cost} {resource}",
+      "cost": "Cost: {costLabel}",
+      "consumeItem": "Item will be consumed",
       "costNotPaid": "Unable to pay cost!",
       "totalPower": "Total Power: {power}",
       "critPower": "Total Power: {critPower} ({power})",
@@ -426,13 +427,9 @@
         "name": "VARIANT RULE: Enable Pierce",
         "hint": "Enable a version of the Pierce skill (override system.mods.pierce with an AE)."
       },
-      "invertHitModDialog": {
-        "name": "Invert Hit Dialog Behavior",
-        "hint": "Invert the normal behavior of hit rolls so that the modifier dialog appears by default and holding Shift disables it."
-      },
-      "invertPotencyDialog": {
-        "name": "Invert Potency Dialog Behavior",
-        "hint": "Invert the normal behavior of power rolls so that the potency dialog does not appear by default and holding Shift enables it."
+      "showRollDialogByDefault": {
+        "name": "Show roll dialog by default",
+        "hint": "Normally, you need to hold the Shift key to bring up the roll modifier dialog box. This inverts the behavior, so clicking normally will show the dialog and shift-clicking won't."
       }
     },
     "ui": {

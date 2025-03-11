@@ -83,7 +83,7 @@ export class SmtItem extends Item<
       [`system.${resourceType}.value`, newValue],
     ]);
 
-    await this.update(updates);
+    await actor.update(updates);
 
     return true;
   }

@@ -1,8 +1,13 @@
 <form class="flexcol">
-  <div class="resource-label align-center">
-    {{attackName}}
-  </div>
+  <h2>{{attackName}}</h2>
 
+  {{{description}}}
+
+  {{#if consumeOnUse}}
+  <h3>{{localize "SMT.itemRoll.consumeItem"}}</h3>
+  {{/if}}
+
+  {{#if powerRoll}}
   <div class="flexrow">
     <div class="resource-label">{{localize "SMT.dialog.potency"}}</div>
     <input
@@ -11,10 +16,12 @@
       name="potency"
       data-dtype="Number"
       placeholder="0"
-      autofocus
+      {{ifThen powerRoll "autofocus" ""}}
     />
   </div>
+  {{/if}}
 
+  {{#unless auto}}
   <div class="flexrow">
     <div class="resource-label">{{localize "SMT.dialog.tnMod"}}</div>
     <input
@@ -23,6 +30,8 @@
       name="tnMod"
       data-dtype="Number"
       placeholder="0"
+      {{ifThen (and auto (not powerRoll)) "autofocus" ""}}
     />
   </div>
+  {{/unless}}
 </form>

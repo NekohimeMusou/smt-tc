@@ -11,7 +11,7 @@ import SmtDice from "../../helpers/dice.js";
 import { prepareActiveEffectCategories } from "../active-effect/helpers.js";
 import { onManageActiveEffect } from "../active-effect/helpers.js";
 import SmtActor from "./actor.js";
-import { Armor, SmtItem } from "../item/item.js";
+import { Armor, AttackItem, InventoryItem, SmtItem } from "../item/item.js";
 
 export default class SmtActorSheet extends ActorSheet<SmtActor> {
   static override get defaultOptions() {
@@ -240,7 +240,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     const autoFailThreshold = actorData.autoFailThreshold;
 
     const showDialog =
-      event.shiftKey != game.settings.get("smt-tc", "invertHitModDialog");
+      event.shiftKey != game.settings.get("smt-tc", "showRollDialogByDefault");
 
     if (showDialog) {
       const hint = game.i18n.localize("SMT.dialog.hitRollHint");
@@ -295,7 +295,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     const name = game.i18n.localize(`SMT.power.${powerType}`);
 
     const showDialog = !(
-      event.shiftKey != game.settings.get("smt-tc", "invertPotencyDialog")
+      event.shiftKey != game.settings.get("smt-tc", "showRollDialogByDefault")
     );
 
     if (showDialog) {
@@ -338,11 +338,15 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       throw new TypeError(msg);
     }
 
+    const showDialog =
+      event.shiftKey != game.settings.get("smt-tc", "showRollDialogByDefault");
+
     const attackName =
       powerName ?? game.i18n.localize(`SMT.powerTypes.${powerType}`);
 
-    const { tnMod, potencyMod, cancelled } =
-      await showAttackModifierDialog(attackName);
+    const { tnMod, potencyMod, cancelled } = showDialog
+      ? await showAttackModifierDialog(attackName)
+      : { tnMod: 0, potencyMod: 0, cancelled: false };
 
     if (cancelled) {
       return;
@@ -405,7 +409,32 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       throw new Error(msg);
     }
 
-    const { tnMod, potencyMod, cancelled } = await showAttackModifierDialog(item.name);
+    const isAttackItem = ["inventoryItem", "weapon", "skill"].includes(
+      item.type,
+    );
+
+    const auto = !isAttackItem || (item as AttackItem).system?.attackData?.auto;
+
+    const consumeOnUse = (item as InventoryItem).system?.consumeOnUse;
+
+    const powerRoll = (item as AttackItem).system?.attackData?.hasPowerRoll;
+
+    // Is the user signaling to show the dialog?
+    const dialogKey =
+      event.shiftKey != game.settings.get("smt-tc", "showRollDialogByDefault");
+
+    // Show the dialog anyway if it's a consumable item
+    const showDialog = consumeOnUse || dialogKey;
+
+    const { tnMod, potencyMod, cancelled } = showDialog
+      ? await showAttackModifierDialog(
+          item.name,
+          item.system.description,
+          auto,
+          consumeOnUse,
+          powerRoll,
+        )
+      : { tnMod: 0, potencyMod: 0, cancelled: false };
 
     if (cancelled) {
       return;

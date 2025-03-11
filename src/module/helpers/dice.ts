@@ -10,6 +10,7 @@ interface HitCheckData {
 interface HitCheckResult {
   successLevel: SuccessLevel;
   criticalHit: boolean;
+  fumble: boolean;
   roll: Roll;
 }
 
@@ -58,7 +59,12 @@ export default class SmtDice {
       successLevel = "fail";
     }
 
-    return { successLevel, criticalHit: successLevel === "crit", roll };
+    return {
+      successLevel,
+      criticalHit: successLevel === "crit",
+      fumble: successLevel === "fumble",
+      roll,
+    };
   }
 
   static async powerRoll({
@@ -125,6 +131,7 @@ export default class SmtDice {
       auto,
       successLevel: costPaid ? "auto" : "fail",
       success: costPaid,
+      fumble: false,
       criticalHit: false,
       hasPowerRoll,
       canDodge: attackData?.canDodge ?? false,
@@ -137,7 +144,7 @@ export default class SmtDice {
       const critBoost = attackData.critBoost;
       const autoFailThreshold = attackData.autoFailThreshold;
 
-      const { successLevel, criticalHit, roll } = await this.hitCheck({
+      const { successLevel, criticalHit, fumble, roll } = await this.hitCheck({
         tn,
         critBoost,
         autoFailThreshold,
@@ -147,16 +154,19 @@ export default class SmtDice {
 
       foundry.utils.mergeObject(context, {
         successLevel,
+        autoFailThreshold,
         success: ["success", "crit", "auto"].includes(successLevel),
+        fumble,
         criticalHit,
-        successRoll: roll,
+        successRoll: await roll.render(),
       });
     }
 
     const success = context.success;
+    const fumble = context.fumble;
 
     // Success assumes the cost was paid
-    if (success && hasPowerRoll) {
+    if ((success || fumble) && hasPowerRoll) {
       const basePower = attackData.basePower;
       const potency = attackData.potency;
       const powerBoost = attackData.powerBoost;
@@ -174,7 +184,7 @@ export default class SmtDice {
         potency: potency + potencyMod,
         power,
         critPower,
-        powerRoll: roll,
+        powerRoll: await roll.render(),
       });
     }
 
@@ -182,7 +192,7 @@ export default class SmtDice {
     if (success && attackData?.ailment.id) {
       const ailment = attackData.ailment;
 
-      const ailmentCritRate = Math.clamp(ailment.rate, 5, 95);
+      const ailmentCritRate = Math.clamp(ailment.rate * 2, 5, 95);
 
       foundry.utils.mergeObject(context, {
         ailment,
