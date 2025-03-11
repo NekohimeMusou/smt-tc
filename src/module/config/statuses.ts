@@ -126,19 +126,3 @@ const smtStatuses = [
     icon: "icons/svg/aura.svg",
   },
 ] as const;
-
-export const ailmentIds = {
-  dead: "SMT.ailments.dead",
-  instantDeath: "SMT.ailments.instantDeath",
-  stone: "SMT.ailments.stone",
-  flied: "SMT.ailments.flied",
-  stun: "SMT.ailments.stun",
-  charm: "SMT.ailments.charm",
-  poison: "SMT.ailments.poison",
-  mute: "SMT.ailments.mute",
-  restrain: "SMT.ailments.restrain",
-  freeze: "SMT.ailments.freeze",
-  sleep: "SMT.ailments.sleep",
-  panic: "SMT.ailments.panic",
-  shock: "SMT.ailments.shock",
-} as const;

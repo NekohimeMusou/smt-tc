@@ -1,6 +1,6 @@
 import SmtActor from "../../../documents/actor/actor.js";
-import DefenseAffinityData from "../../defense-affinities.js";
-import { Magatama } from "../../item/item-data-model.js";
+import { Magatama } from "../../../documents/item/item.js";
+import DefenseAffinityData from "../../embedded/defense-affinities.js";
 
 export default abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
   abstract override readonly type: CharacterClass;
@@ -171,6 +171,7 @@ export default abstract class SmtBaseActorData extends foundry.abstract.TypeData
     const mods = new fields.SchemaField({
       might: new fields.BooleanField(),
       luckyFind: new fields.BooleanField(),
+      pierce: new fields.BooleanField(),
     });
 
     const powerBoost = new fields.SchemaField({
@@ -340,7 +341,7 @@ export default abstract class SmtBaseActorData extends foundry.abstract.TypeData
   }
 
   // Goofy Typescript hack
-  protected get _systemData() {
+  get _systemData() {
     return this as this & Subtype<SmtActor, this["type"]>["system"];
   }
 }

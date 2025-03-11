@@ -1,5 +1,5 @@
-import SmtActor from "../documents/actor/actor.js";
-import { SmtItem } from "../documents/item/item.js";
+import SmtActor from "../../../documents/actor/actor.js";
+import { SmtItem } from "../../../documents/item/item.js";
 
 export default abstract class BaseEmbeddedDataModel extends foundry.abstract
   .DataModel {

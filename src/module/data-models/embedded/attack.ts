@@ -1,6 +1,5 @@
-import Ailment from "./ailment.js";
-import BaseEmbeddedDataModel from "./base-embedded-data.js";
-import { AttackItem } from "./item/item-data-model.js";
+import { AttackItem } from "../../documents/item/item.js";
+import BaseEmbeddedDataModel from "./abstract/base-embedded-data.js";
 
 export default class AttackDataModel extends BaseEmbeddedDataModel {
   get damageType(): DamageType {
@@ -50,10 +49,10 @@ export default class AttackDataModel extends BaseEmbeddedDataModel {
 
     const tn = actor.system.tn[tnType];
 
-    return data.attackType === "talk" ? tn + 20 : tn;
+    return Math.max(data.attackType === "talk" ? tn + 20 : tn, 1);
   }
 
-  get power() {
+  get totalPower() {
     const actor = this.actor;
     const data = this._systemData;
     const potency = data.potency;
@@ -62,29 +61,38 @@ export default class AttackDataModel extends BaseEmbeddedDataModel {
       return potency;
     }
 
+    const basePower = data.basePower;
+
+    return Math.max(potency + basePower, 0);
+  }
+
+  get basePower() {
+    const actor = this.actor;
+    const data = this._systemData;
     const attackType = data.attackType;
-    let power = potency;
+
+    let powerType: PowerType = "phys";
 
     switch (attackType) {
       case "passive":
       case "talk":
-        break;
-      case "mag":
-      case "spell":
-      case "item":
-        power += actor.system.power.mag;
-        break;
+        return 0;
       case "phys":
-        power += actor.system.power.phys;
+        powerType = "phys";
         break;
       case "gun":
-        power += actor.system.power.gun;
+        powerType = "gun";
+        break;
+      case "item":
+      case "mag":
+      case "spell":
+        powerType = "mag";
         break;
       default:
         attackType satisfies never;
     }
 
-    return Math.max(power, 0);
+    return actor ? actor.system.power[powerType] : 0;
   }
 
   get powerBoost() {
@@ -113,7 +121,23 @@ export default class AttackDataModel extends BaseEmbeddedDataModel {
 
     const data = this._systemData;
 
-    return ["phys", "gun"].includes(data.attackType) && actor.system.mods.might;
+    return (
+      (["phys", "gun"].includes(data.attackType) && actor.system.mods.might) ||
+      data.mods.highCrit
+    );
+  }
+
+  get pierce() {
+    const actor = this.actor;
+    const data = this._systemData;
+    const pierceEnabled = game.settings.get("smt-tc", "enablePierce");
+    const autoPierce = data.mods.autoPierce;
+
+    if (!actor) {
+      return pierceEnabled && autoPierce;
+    }
+
+    return pierceEnabled && (actor.system.mods.pierce || autoPierce);
   }
 
   get autoFailThreshold() {
@@ -124,6 +148,24 @@ export default class AttackDataModel extends BaseEmbeddedDataModel {
     }
 
     return actor.system.autoFailThreshold;
+  }
+
+  static override migrateData(source: Record<string, unknown>) {
+    if ("includePowerRoll" in source) {
+      source.hasPowerRoll = source.includePowerRoll;
+      delete source.includePowerRoll;
+    }
+
+    if ("shatterRate" in source && source.affinity === "force") {
+      source.ailment = {
+        id: "shatter",
+        rate: source.shatterRate,
+      };
+    }
+
+    delete source.shatterRate;
+
+    return super.migrateData(source);
   }
 
   static override defineSchema() {
@@ -150,13 +192,29 @@ export default class AttackDataModel extends BaseEmbeddedDataModel {
         choices: CONFIG.SMT.targets,
         initial: "one",
       }),
-      ailment: new fields.EmbeddedDataField(Ailment),
-      shatterRate: new fields.NumberField({ integer: true, min: 0 }),
-      includePowerRoll: new fields.BooleanField(),
+      ailment: new fields.SchemaField({
+        id: new fields.StringField({
+          choices: CONFIG.SMT.ailments,
+          blank: true,
+        }),
+        rate: new fields.NumberField({
+          integer: true,
+          min: 5,
+          max: 95,
+          initial: 5,
+        }),
+      }),
+      hasPowerRoll: new fields.BooleanField(),
+      canDodge: new fields.BooleanField(),
+      mods: new fields.SchemaField({
+        highCrit: new fields.BooleanField(),
+        pinhole: new fields.BooleanField(),
+        autoPierce: new fields.BooleanField(),
+      }),
     };
   }
 
-  protected get _systemData() {
+  get _systemData() {
     return this as this & AttackItem["system"]["attackData"];
   }
 }

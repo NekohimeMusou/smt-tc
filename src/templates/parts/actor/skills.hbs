@@ -72,7 +72,7 @@
       <li class="item item-entry flexrow flex-group-center flex-between" data-item-id="{{id}}">
         <div class="item-prop">{{incrementKey @key}}</div>
         {{!-- Skill --}}
-        <a class="item-name flex3">
+        <a class="item-name flex3 item-roll">
           <div class="item-image">
             <img src="{{img}}" title="{{name}}" width="24" height="24" />
           </div>
@@ -103,10 +103,10 @@
         </div>
 
         {{!-- Potency --}}
-        <div class="item-prop">{{#if system.attackData.includePowerRoll}}{{system.attackData.potency}}{{else}}—{{/if}}</div>
+        <div class="item-prop">{{#if system.attackData.hasPowerRoll}}{{system.attackData.potency}}{{else}}—{{/if}}</div>
 
         {{!-- Total Power --}}
-        <div class="item-prop">{{#if system.attackData.includePowerRoll}}{{system.attackData.power}}{{else}}—{{/if}}</div>
+        <div class="item-prop">{{#if system.attackData.hasPowerRoll}}{{system.attackData.power}}{{else}}—{{/if}}</div>
 
         {{!-- Target --}}
         <div class="item-prop">
@@ -120,14 +120,10 @@
 
         {{!-- Ailment --}}
         <div class="item-prop">
-          {{#if (eq system.attackData.affinity "force")}}
-          {{localize "SMT.actorSheet.shatter"}} {{system.attackData.shatterRate}}%
-          {{else}}
           {{#if system.attackData.ailment.id}}
           {{localize (concat "SMT.ailments." system.attackData.ailment.id)}} {{system.attackData.ailment.rate}}%
           {{else}}
           —
-          {{/if}}
           {{/if}}
         </div>
 

@@ -5,11 +5,11 @@ import {
 } from "../helpers/macros/award.js";
 import { applyBuffs } from "../helpers/macros/buffs.js";
 import { healingFountain } from "../helpers/macros/healing-fountain.js";
-import { ailmentIds } from "./statuses.js";
 import { templatePaths } from "./templates.js";
 
 declare global {
   type CharacterClass = keyof typeof characterClasses;
+  type ResourceType = keyof typeof resourceTypes;
   type ItemType = keyof typeof itemTypes;
   type PowerType = keyof typeof powerTypes;
   type AttackType = keyof typeof attackTypes;
@@ -17,6 +17,12 @@ declare global {
   type BuffType = keyof typeof buffs;
   type SuccessLevel = keyof typeof successLevels;
   type TargetNumber = keyof typeof tn;
+
+  // Substitute for the problematic DataModel
+  interface Ailment {
+    id: keyof typeof ailments;
+    rate: number;
+  }
 }
 
 const characterClasses = {
@@ -45,6 +51,20 @@ const statsFull = {
   vi: "SMT.statFull.vi",
   ag: "SMT.statFull.ag",
   lu: "SMT.statFull.lu",
+} as const;
+
+const resourceTypes = {
+  hp: "SMT.resources.hp",
+  mp: "SMT.resources.mp",
+  fp: "SMT.resources.fp",
+} as const;
+
+const costTypes = {
+  hp: "SMT.costTypes.hp",
+  mp: "SMT.costTypes.mp",
+  consumeItem: "SMT.costTypes.consumeItem",
+  consumeAmmo: "SMT.costTypes.consumeAmmo",
+  none: "SMT.costTypes.none",
 } as const;
 
 const attackAffinities = {
@@ -100,6 +120,7 @@ const ailments = {
   flied: "SMT.ailments.flied",
   stone: "SMT.ailments.stone",
   instantDeath: "SMT.ailments.instantDeath",
+  shatter: "SMT.ailments.shatter",
 } as const;
 
 const buffs = {
@@ -245,6 +266,7 @@ const successLevels = {
   crit: "SMT.successLevel.crit",
   autofail: "SMT.successLevel.autofail",
   fumble: "SMT.successLevel.fumble",
+  auto: "SMT.successLevel.auto",
 } as const;
 
 const defaultAutofailThreshold = 96;
@@ -259,6 +281,8 @@ export const SMT = {
   },
   stats,
   statsFull,
+  resourceTypes,
+  costTypes,
   attackAffinities,
   defenseAffinities,
   affinityLevels,
@@ -281,7 +305,6 @@ export const SMT = {
   targets,
   successLevels,
   defaultAutofailThreshold,
-  ailmentIds,
   macro: {
     resolveConflict,
     grantRewards,

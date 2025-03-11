@@ -1,4 +1,4 @@
-import AttackDataModel from "../../attack.js";
+import AttackDataModel from "../../embedded/attack.js";
 import SmtBaseItemData from "../abstract/base.js";
 
 export default class InventoryItemData extends SmtBaseItemData {
@@ -18,9 +18,13 @@ export default class InventoryItemData extends SmtBaseItemData {
   }
 
   override prepareBaseData() {
-    const attackData = this._systemData.attackData;
+    const data = this._systemData;
+    const attackData = data.attackData;
+    const consumeOnUse = data.consumeOnUse;
 
     attackData.attackType = "mag";
     attackData.auto = true;
+    data.cost = consumeOnUse ? 1 : 0;
+    data.costType = consumeOnUse ? "consumeItem" : "none";
   }
 }

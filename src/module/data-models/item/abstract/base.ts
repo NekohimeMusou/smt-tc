@@ -12,7 +12,10 @@ export default abstract class SmtBaseItemData extends foundry.abstract
       source.target = "allCombatants";
     }
 
-    if (!("attackData" in source)) {
+    if (
+      !("attackData" in source) &&
+      ["inventoryItem", "weapon", "skill"].includes(source?.type as string)
+    ) {
       source.attackData = {};
     }
 
@@ -24,9 +27,9 @@ export default abstract class SmtBaseItemData extends foundry.abstract
       "target",
       "ailment",
       "shatterRate",
-      "includePowerRoll",
+      "hasPowerRoll",
     ]) {
-      if (field in source) {
+      if (field in source && "attackData" in source) {
         // @ts-expect-error I don't have patience for this :<
         source.attackData[field] = source[field];
         delete source[field];
@@ -48,11 +51,16 @@ export default abstract class SmtBaseItemData extends foundry.abstract
       }),
       price: new fields.NumberField({ integer: true, min: 0 }),
       equipped: new fields.BooleanField(),
+      cost: new fields.NumberField({ integer: true, min: 0 }),
+      costType: new fields.StringField({
+        choices: CONFIG.SMT.costTypes,
+        initial: "none",
+      }),
     } as const;
   }
 
   // Goofy Typescript hack
-  protected get _systemData() {
+  get _systemData() {
     return this as this & Subtype<SmtItem, this["type"]>["system"];
   }
 }

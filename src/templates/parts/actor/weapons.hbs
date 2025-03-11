@@ -33,7 +33,7 @@
       {{#each weapons}}
       <li class="item item-entry flexrow flex-group-center flex-between" data-item-id="{{id}}">
         {{!-- Name --}}
-        <a class="item-name flex2">
+        <a class="item-name flex2{{ifThen ../inventoryTab "" " item-roll"}}">
           <div class="item-image">
             <img src="{{img}}" title="{{name}}" width="24" height="24" />
           </div>
