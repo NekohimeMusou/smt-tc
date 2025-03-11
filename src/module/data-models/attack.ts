@@ -126,6 +126,15 @@ export default class AttackDataModel extends BaseEmbeddedDataModel {
     return actor.system.autoFailThreshold;
   }
 
+  static override migrateData(source: Record<string, unknown>) {
+    if ("includePowerRoll" in source) {
+      source.hasPowerRoll = source.includePowerRoll;
+      delete source.includePowerRoll;
+    }
+
+    return super.migrateData(source);
+  }
+
   static override defineSchema() {
     const fields = foundry.data.fields;
 
