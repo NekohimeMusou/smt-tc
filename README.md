@@ -10,8 +10,6 @@ This system is designed specifically for Tokyo Conception; any compatibility wit
 
 This is extremely a work in progress, and a lot of features are not complete yet and it doesn't look too great and there's probably a lot of bugs. If you find some, feel free to raise an issue on Github!
 
-This is a complete rewrite of my original, janky system here: <https://github.com/NekohimeMusou/smt-tc-v1>. This one has more and better features now, except for the skill automation which is still a bit jank in itself.
-
 ## Installation
 
 Paste this URL into Foundry's **Install System** dialog and go hog: <https://github.com/NekohimeMusou/smt-tc/releases/latest/download/system.json>
