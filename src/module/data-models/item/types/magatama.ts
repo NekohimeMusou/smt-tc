@@ -1,5 +1,4 @@
 import DefenseAffinityData from "../../defense-affinities.js";
-import SkillListing from "../../skill-listing.js";
 import SmtBaseItemData from "../abstract/base.js";
 
 export default class MagatamaData extends SmtBaseItemData {
@@ -19,7 +18,6 @@ export default class MagatamaData extends SmtBaseItemData {
         ag: new fields.NumberField({ integer: true, min: 0 }),
         lu: new fields.NumberField({ integer: true, min: 0 }),
       }),
-      skills: new fields.ArrayField(new fields.EmbeddedDataField(SkillListing)),
       ingested: new fields.BooleanField(),
       affinities: new fields.EmbeddedDataField(DefenseAffinityData),
     } as const;
