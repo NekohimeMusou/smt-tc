@@ -52,6 +52,13 @@
       <h3>{{localize "SMT.itemRoll.ailment" ailment=(localize (concat "SMT.ailments." ailment.id)) rate=ailment.rate}}</h3>
     {{/if}}
   {{/if}}
+
+  {{#if ( and success targets)}}
+    <h3>{{localize "SMT.itemRoll.targets"}}</h3>
+    {{#each targets}}
+    <p>{{this}}</p>
+    {{/each}}
+  {{/if}}
   {{!-- {{#if (and success canDodge)}} --}}
     {{!-- If this can be dodged, show a dodge button --}}
   {{!-- {{/if}} --}}

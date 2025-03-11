@@ -409,6 +409,8 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       throw new Error(msg);
     }
 
+    const targets = [...game.user.targets.values()].map((token) => token.name);
+
     const isAttackItem = ["inventoryItem", "weapon", "skill"].includes(
       item.type,
     );
@@ -440,7 +442,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       return;
     }
 
-    await SmtDice.itemRoll({ item, tnMod, potencyMod });
+    await SmtDice.itemRoll({ item, targets, tnMod, potencyMod });
   }
 
   async #onSheetModChange(event: JQuery.ClickEvent) {

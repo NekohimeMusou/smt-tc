@@ -407,6 +407,7 @@
       "critPower": "Total Power: {critPower} ({power})",
       "ailment": "{ailment}: {rate}%",
       "critAilment": "{ailment}: {ailmentCritRate}% ({rate}%)",
+      "targets": "Targets:",
       "pinhole": "Pinhole: Halve dodge and resist",
       "pierce": "Pierce elemental resists except Repel"
     },

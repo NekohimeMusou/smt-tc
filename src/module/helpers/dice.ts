@@ -29,6 +29,7 @@ interface PowerRollResult {
 
 interface ItemRollData {
   item?: SmtItem;
+  targets?: string[];
   tnMod?: number;
   potencyMod?: number;
 }
@@ -85,6 +86,7 @@ export default class SmtDice {
 
   static async itemRoll({
     item,
+    targets,
     tnMod = 0,
     potencyMod = 0,
   }: ItemRollData = {}) {
@@ -124,6 +126,7 @@ export default class SmtDice {
 
     const context = {
       itemName,
+      targets,
       description,
       costType,
       cost: item.system.cost,
