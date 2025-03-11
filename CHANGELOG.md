@@ -19,6 +19,7 @@
 - Show a message in chat if an attack's cost can't be paid
 - Display a list of targets at the bottom of the output
 - More visible warning if you have undistributed/too many stat points
+- Element boost skills (should) work
 
 ### Removed
 

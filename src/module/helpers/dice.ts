@@ -170,7 +170,13 @@ export default class SmtDice {
 
     // Success assumes the cost was paid
     if ((success || fumble) && hasPowerRoll) {
-      const basePower = attackData.basePower;
+      // Lazy typescript hack
+      const affinity =
+        attackData.affinity as keyof typeof actor.system.elementBoost;
+      const elementBoost = actor.system.elementBoost?.[affinity];
+      const basePower = elementBoost
+        ? Math.floor(attackData.basePower * 1.5)
+        : attackData.basePower;
       const potency = attackData.potency;
       const powerBoost = attackData.powerBoost;
 

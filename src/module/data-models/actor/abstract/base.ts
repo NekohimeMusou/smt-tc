@@ -180,6 +180,13 @@ export default abstract class SmtBaseActorData extends foundry.abstract.TypeData
       item: new fields.BooleanField(),
     });
 
+    const elementBoost = new fields.SchemaField({
+      fire: new fields.BooleanField(),
+      cold: new fields.BooleanField(),
+      elec: new fields.BooleanField(),
+      force: new fields.BooleanField(),
+    });
+
     const gems = new fields.SchemaField({
       diamond: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
       pearl: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
@@ -209,6 +216,7 @@ export default abstract class SmtBaseActorData extends foundry.abstract.TypeData
       buffs,
       mods,
       powerBoost,
+      elementBoost,
       gems,
       baseLv: new fields.NumberField({
         integer: true,
