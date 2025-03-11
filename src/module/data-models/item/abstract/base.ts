@@ -12,7 +12,10 @@ export default abstract class SmtBaseItemData extends foundry.abstract
       source.target = "allCombatants";
     }
 
-    if (!("attackData" in source)) {
+    if (
+      !("attackData" in source) &&
+      ["inventoryItem", "weapon", "skill"].includes(source?.type as string)
+    ) {
       source.attackData = {};
     }
 
@@ -26,7 +29,7 @@ export default abstract class SmtBaseItemData extends foundry.abstract
       "shatterRate",
       "includePowerRoll",
     ]) {
-      if (field in source) {
+      if (field in source && "attackData" in source) {
         // @ts-expect-error I don't have patience for this :<
         source.attackData[field] = source[field];
         delete source[field];
