@@ -2,6 +2,34 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.5.0] - 2025-03-11
+
+*Finally, rollable skills!*
+
+### Changed
+
+- Organize embedded data models into their own folder
+- Make Force attacks' "shatter" effect work like a normal ailment
+
+### Added
+
+- Skills, weapons, and usable inventory items now make rolls and display output when clicked on the actor sheet
+- Attacks consume HP/MP/items, except bullets
+- Show a message in chat if an attack's cost can't be paid
+- Display a list of targets at the bottom of the output
+- More visible warning if you have undistributed/too many stat points
+
+### Removed
+
+- Remove unused Magatama skills field (for now)
+
+### Fixed
+
+- Fix: dice rolls displaying fail instead of autofail result
+- Fix: old item migration
+- Fix: assorted small output bugs
+- Fix: Inventory items not displaying power
+
 ## [0.4.4] - 2025-03-08
 
 *Lots of refactoring, but enough small fixes and tweaks piled up that it feels worth releasing.*
