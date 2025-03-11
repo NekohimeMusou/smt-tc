@@ -1,4 +1,4 @@
-import AttackDataModel from "../../attack.js";
+import AttackDataModel from "../../embedded/attack.js";
 import SmtBaseItemData from "../abstract/base.js";
 
 export default class SkillData extends SmtBaseItemData {

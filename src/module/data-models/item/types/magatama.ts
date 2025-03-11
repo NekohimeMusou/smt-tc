@@ -1,4 +1,4 @@
-import DefenseAffinityData from "../../defense-affinities.js";
+import DefenseAffinityData from "../../embedded/defense-affinities.js";
 import SmtBaseItemData from "../abstract/base.js";
 
 export default class MagatamaData extends SmtBaseItemData {
