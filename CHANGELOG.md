@@ -2,6 +2,16 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.5.1] - 2025-03-12
+
+### Added
+
+- Add description field to armor sheet
+
+### Fixed
+
+- Fix: Demons not remembering evolve path or inherit traits
+
 ## [0.5.0] - 2025-03-11
 
 *The big one: rollable skills!*
@@ -235,6 +245,7 @@ _Added separate Human and Demon actor types with some custom behavior, and added
 
 _Initial preview release.*
 
+[0.5.1]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.5.1
 [0.5.0]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.5.0
 [0.4.4]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.4.4
 [0.4.3]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.4.3
