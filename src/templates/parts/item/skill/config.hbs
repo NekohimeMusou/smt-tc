@@ -70,7 +70,7 @@
           </select>
         </div>
         {{!-- Ailment Rate --}}
-        <label for="ailment-rate" class="item-prop">{{localize "SMT.itemSheet.ailmentRate"}}</label>
+        <label for="ailmentRate" class="item-prop">{{localize "SMT.itemSheet.ailmentRate"}}</label>
         <div class="item-prop">
           <input type="number" id="ailmentRate" name="system.attackData.ailment.rate" value="{{system.attackData.ailment.rate}}"
             placeholder="0" data-dtype="Number" {{ifThen system.attackData.ailment.id "" "disabled"}} />
@@ -113,9 +113,9 @@
 
       <li class="item flexrow">
         {{!-- Inheritance Traits --}}
-        <label for="inheritanceTraits" class="item-prop">{{localize "SMT.itemSheet.inheritanceTraits"}}</label>
+        <label for="inheritType" class="item-prop">{{localize "SMT.itemSheet.inheritType"}}</label>
         <div class="item-prop flex3">
-          <input type="text" id="inheritanceTraits" name="system.inheritanceTraits" value="{{system.inheritanceTraits}}"
+          <input type="text" id="inheritType" name="system.inheritType" value="{{system.inheritType}}"
             placeholder="{{localize "SMT.none"}}" data-dtype="String" />
         </div>
       </li>

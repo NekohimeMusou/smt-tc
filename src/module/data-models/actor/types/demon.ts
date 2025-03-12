@@ -13,6 +13,8 @@ export default class SmtDemonData extends SmtBaseActorData {
         initial: "st",
       }),
       clan: new fields.StringField(),
+      inheritTraits: new fields.StringField(),
+      evolvePath: new fields.StringField(),
     };
   }
 }

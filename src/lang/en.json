@@ -73,7 +73,7 @@
       "ailment": "Ailment",
       "ailmentRate": "Ailment Rate",
       "hasPowerRoll": "Has Power roll",
-      "inheritanceTraits": "Inheritance Traits",
+      "inheritType": "Inherit Type",
       "description": "Description",
       "effect": "Effect",
       "price": "Price",
@@ -115,7 +115,7 @@
       "goal": "Goal",
       "demonInfo": "Demon Info",
       "behavior": "Behavior",
-      "inheritType": "Inherit Type",
+      "inheritTraits": "Inherit Traits",
       "evolvePath": "Evolve Path",
       "favoredStat": "Favored Stat"
     },

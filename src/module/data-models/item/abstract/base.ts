@@ -36,6 +36,11 @@ export default abstract class SmtBaseItemData extends foundry.abstract
       }
     }
 
+    if ("inheritanceTraits" in source) {
+      source.inheritType = source.inheritanceTraits;
+      delete source.inheritanceTraits;
+    }
+
     return super.migrateData(source);
   }
 

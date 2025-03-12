@@ -24,7 +24,7 @@ export default class SkillData extends SmtBaseItemData {
       ...super.defineSchema(),
       oneShot: new fields.BooleanField(),
       used: new fields.BooleanField(),
-      inheritanceTraits: new fields.StringField(),
+      inheritType: new fields.StringField(),
       attackData: new fields.EmbeddedDataField(AttackDataModel),
     };
   }
