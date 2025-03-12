@@ -29,9 +29,17 @@ interface PowerRollResult {
 
 interface ItemRollData {
   item?: SmtItem;
-  targets?: string[];
+  targets?: TargetInfo[];
   tnMod?: number;
   potencyMod?: number;
+}
+
+interface TargetInfo {
+  name: string;
+  resist: {
+    phys: number;
+    mag: number;
+  };
 }
 
 export default class SmtDice {
@@ -176,6 +184,8 @@ export default class SmtDice {
       // Lazy typescript hack
       const boostAffinity = affinity as keyof typeof actor.system.elementBoost;
       const elementBoost = actor.system.elementBoost?.[boostAffinity];
+
+      const damageType = attackData.damageType;
       const basePower = elementBoost
         ? Math.floor(attackData.basePower * 1.5)
         : attackData.basePower;
@@ -192,6 +202,7 @@ export default class SmtDice {
       rolls.push(roll);
 
       foundry.utils.mergeObject(context, {
+        damageType,
         potency: potency + potencyMod,
         power,
         critPower,

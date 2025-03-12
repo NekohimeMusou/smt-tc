@@ -12,6 +12,7 @@ import { prepareActiveEffectCategories } from "../active-effect/helpers.js";
 import { onManageActiveEffect } from "../active-effect/helpers.js";
 import SmtActor from "./actor.js";
 import { Armor, AttackItem, InventoryItem, SmtItem } from "../item/item.js";
+import SmtToken from "../token.js";
 
 export default class SmtActorSheet extends ActorSheet<SmtActor> {
   static override get defaultOptions() {
@@ -411,7 +412,10 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
 
     const targets =
       game.user.targets.size > 0
-        ? [...game.user.targets.values()].map((token) => token.name)
+        ? ([...game.user.targets.values()] as SmtToken[]).map((token) => ({
+            name: token.name,
+            resist: token.actor.system.resist,
+          }))
         : undefined;
 
     const isAttackItem = ["inventoryItem", "weapon", "skill"].includes(
