@@ -31,6 +31,17 @@
           </select>
         </div>
       </li>
+
+      <li class="item items-header">
+        <div>{{localize "SMT.itemSheet.effect"}}</div>
+      </li>
+
+      {{editor
+        system.description
+        target="system.description"
+        editable=editable
+        button=true
+      }}
     </ol>
   </div>
 </section>
