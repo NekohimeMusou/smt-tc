@@ -1,6 +1,11 @@
 {{!-- Name of the skill/item/weapon --}}
 <h1>{{itemName}}</h1>
 
+{{!-- Affinity (take another look at this) --}}
+{{#if affinity}}
+<h3>{{localize "SMT.itemRoll.affinity" affinity=(localize (concat "SMT.affinities." affinity))}}</h3>
+{{/if}}
+
 {{!-- Cost --}}
 {{#if (ne costType "none")}}
   {{!-- Show the cost, e.g. "Cost: XX HP" or "Item Consumed" or "Ammo Consumed" --}}
@@ -16,7 +21,7 @@
   {{!-- Accuracy Roll --}}
   {{#unless auto}}
     {{!-- Dice result, e.g. "Success! Critical success! Autofail!" --}}
-    <h2>{{localize (concat "SMT.successLevel." successLevel) autofail=autoFailThreshold}}</h2>
+    <h2>{{localize "SMT.itemRoll.tn" tn=tn result=(localize (concat "SMT.successLevel." successLevel) autofail=autoFailThreshold)}}</h2>
     {{!-- Render roll --}}
     {{{successRoll}}}
     {{else}}
@@ -53,7 +58,7 @@
     {{/if}}
   {{/if}}
 
-  {{#if ( and success targets)}}
+  {{#if ( and (or success fumble) targets)}}
     <h3>{{localize "SMT.itemRoll.targets"}}</h3>
     {{#each targets}}
     <p>{{this}}</p>

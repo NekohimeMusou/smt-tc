@@ -119,6 +119,7 @@ export default class SmtDice {
 
     const auto = attackData?.auto ?? true;
     const hasPowerRoll = attackData?.hasPowerRoll;
+    const affinity = attackData?.affinity;
 
     // TODO: Find a less slapdash way to handle this
     const pinhole = attackData?.mods.pinhole;
@@ -126,6 +127,7 @@ export default class SmtDice {
 
     const context = {
       itemName,
+      affinity,
       targets,
       description,
       costType,
@@ -156,6 +158,7 @@ export default class SmtDice {
       rolls.push(roll);
 
       foundry.utils.mergeObject(context, {
+        tn,
         successLevel,
         autoFailThreshold,
         success: ["success", "crit", "auto"].includes(successLevel),
@@ -171,9 +174,8 @@ export default class SmtDice {
     // Success assumes the cost was paid
     if ((success || fumble) && hasPowerRoll) {
       // Lazy typescript hack
-      const affinity =
-        attackData.affinity as keyof typeof actor.system.elementBoost;
-      const elementBoost = actor.system.elementBoost?.[affinity];
+      const boostAffinity = affinity as keyof typeof actor.system.elementBoost;
+      const elementBoost = actor.system.elementBoost?.[boostAffinity];
       const basePower = elementBoost
         ? Math.floor(attackData.basePower * 1.5)
         : attackData.basePower;
@@ -198,7 +200,7 @@ export default class SmtDice {
     }
 
     // Add ailment info, if applicable
-    if (success && attackData?.ailment.id) {
+    if ((success || fumble) && attackData?.ailment.id) {
       const ailment = attackData.ailment;
 
       const ailmentCritRate = Math.clamp(ailment.rate * 2, 5, 95);

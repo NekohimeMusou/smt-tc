@@ -409,7 +409,10 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       throw new Error(msg);
     }
 
-    const targets = [...game.user.targets.values()].map((token) => token.name);
+    const targets =
+      game.user.targets.size > 0
+        ? [...game.user.targets.values()].map((token) => token.name)
+        : undefined;
 
     const isAttackItem = ["inventoryItem", "weapon", "skill"].includes(
       item.type,
