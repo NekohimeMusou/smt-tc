@@ -1,14 +1,10 @@
 # Shin Megami Tensei: Tokyo Conception (Unofficial)
 
-Unofficial Foundry VTT system for Shin Megami Tensei: Tokyo Conception. **This is a fan project not affiliated with LionWing Publishing or ATLUS. Please do not contact them for support.**
+Unofficial Foundry VTT system for Shin Megami Tensei: Tokyo Conception. **This is a fan project not affiliated with or endorsed by LionWing Publishing or ATLUS. Please do not contact them for support.**
 
 **This system does not include a rules compendium. A copy of the rulebook is required to play.** You can get it here: <https://lionwingpublishing.com/collections/shin-megami-tensei-iii-nocturne-the-roleplaying-game-tokyo-conception-core-rulebook>
 
-This system is designed specifically for Tokyo Conception; any compatibility with other flavors of the SMT RPG is coincidental. If you're looking to play a different version of the game, or you just want more flexibility and fewer assumptions than this system provides, check out Alondaar's more broadly-compatible SMT 200X system: <https://github.com/Alondaar/smt-200x>
-
-## Prerelease Disclaimer
-
-This is extremely a work in progress, and a lot of features are not complete yet and it doesn't look too great and there's probably a lot of bugs. If you find some, feel free to raise an issue on Github!
+This system is designed for Tokyo Conception; any compatibility with other flavors of the SMT RPG is coincidental. If you're looking to play a different version of the game, or you just want more flexibility and fewer assumptions than this system provides, check out Alondaar's more broadly-compatible [SMT 200X](https://github.com/Alondaar/smt-200x) system!
 
 ## Installation
 
@@ -38,17 +34,20 @@ Skills will make their own dice rolls when you click on them, and they should be
 
 ## Known Issues
 
-I'm not listing missing features from the old version unless they're especially notable.
-
 - Generic, non-SMT-ish aesthetics
 - It's unclear which tab is active at a given time
 - Overriding an elemental affinity with an AE doesn't work correctly
+- Character level can't be set directly, only by granting XP
+
+## Contributions
+
+If you're interested in filing a bug report, suggesting a new feature, or contributing code or assets, take a look at [CONTRIBUTING.md](https://github.com/NekohimeMusou/smt-tc/blob/main/CONTRIBUTING.md)!
 
 ## Contributors ✨
 
-Thank you, Cannon White, for the new, non-intellectual-property-burdened affinity icons! Check him out on Bluesky: <https://bsky.app/profile/hencanpro.bsky.social>
+Thank you, **Cannon White,** for the new, non-intellectual-property-burdened affinity icons! Check him out on Bluesky: <https://bsky.app/profile/hencanpro.bsky.social>
 
 ## Special Thanks
 
-CSS stolen from <https://github.com/asacolips-projects/boilerplate>, without which I might never have learned how to Foundry. Kudos!
-Also a big shout out to Taragnor and his Persona RPG system (<https://github.com/taragnor/persona>), without whom I'd probably still be trying to figure out how to work Typescript XD
+CSS stolen from [Asacolips' Boilerplate System](https://github.com/asacolips-projects/boilerplate), without which I might never have learned how to Foundry. Kudos!
+Also a big shout out to Taragnor and his [Persona RPG system](https://github.com/taragnor/persona), without whom I'd probably still be trying to figure out how to work Typescript XD
