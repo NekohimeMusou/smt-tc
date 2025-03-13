@@ -265,9 +265,12 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       tn += mod ?? 0;
     }
 
+    const cursed = this.actor.statuses.has("curse");
+
     const { successLevel, roll } = await SmtDice.hitCheck({
       tn,
       autoFailThreshold,
+      cursed,
     });
 
     // Show chat card
@@ -367,11 +370,13 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     const tn = actorData.tn[tnType] + (tnMod ?? 0);
     const autoFailThreshold = actorData.autoFailThreshold;
     const critBoost = powerType !== "mag" && actorData.mods.might;
+    const cursed = this.actor.statuses.has("curse");
 
     const { successLevel, roll: hitRoll } = await SmtDice.hitCheck({
       tn,
       autoFailThreshold,
       critBoost,
+      cursed,
     });
 
     const fumble = successLevel === "fumble";
@@ -407,6 +412,33 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       power,
     });
   }
+
+  // async #onNewAttackRoll(event: JQuery.ClickEvent) {
+  //   event.preventDefault();
+
+  //   const target = $(event.currentTarget);
+
+  //   const powerType = target.data("powerType") as PowerType | undefined;
+
+  //   if (!powerType) {
+  //     const msg = game.i18n.localize("SMT.error.missingPowerType");
+  //     ui.notifications.error(msg);
+  //     throw new TypeError(msg);
+  //   }
+
+  //   const showDialog =
+  //     event.shiftKey != game.settings.get("smt-tc", "showRollDialogByDefault");
+
+  //   const rollName = game.i18n.localize(`SMT.attackTypes.${powerType}`);
+
+  //   const { tnMod, potencyMod, cancelled } = showDialog
+  //     ? await showAttackModifierDialog(rollName)
+  //     : { tnMod: 0, potencyMod: 0, cancelled: false };
+
+  //   if (cancelled) {
+  //     return;
+  //   }
+  // }
 
   async #onItemRoll(event: JQuery.ClickEvent) {
     event.preventDefault();

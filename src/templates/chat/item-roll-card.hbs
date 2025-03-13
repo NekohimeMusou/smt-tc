@@ -1,5 +1,5 @@
 {{!-- Name of the skill/item/weapon --}}
-<h1>{{itemName}}</h1>
+<h1>{{checkName}}</h1>
 
 {{!-- Affinity (take another look at this) --}}
 {{#if affinity}}
@@ -30,20 +30,7 @@
 
   {{!-- Power Roll --}}
   {{#if (and (or fumble success) hasPowerRoll)}}
-    {{!-- Total Power (still display normal power if a critical hit, in case it's downgraded --}}
-    {{#if criticalHit}}
-      <h3>{{localize "SMT.itemRoll.critPower" critPower=critPower power=power}}</h3>
-      {{else}}
-      <h3>{{localize "SMT.itemRoll.totalPower" power=power}}</h3>
-    {{/if}}
-    {{#if pinhole}}
-      {{localize "SMT.itemRoll.pinhole"}}
-    {{/if}}
-    {{#if pierce}}
-    {{localize "SMT.itemRoll.pierce"}}
-    {{/if}}
-    {{!-- Render roll --}}
-    {{{powerRoll}}}
+    {{> "systems/smt-tc/templates/parts/chat/power-card-segment.hbs"}}
   {{/if}}
 
   {{!-- Ailment --}}
@@ -58,33 +45,9 @@
     {{/if}}
   {{/if}}
 
+  {{!-- Target Data --}}
   {{#if (and success targets)}}
-    <h3>{{localize "SMT.itemRoll.targets"}}</h3>
-    {{#each targets}}
-      {{#if ../hasPowerRoll}}
-        {{#if ../criticalHit}}
-        <p>{{localize "SMT.itemRoll.critTarget"
-          name=this.name
-          resist=(lookup this.resist ../damageType)
-          type=(localize (concat "SMT.resist." ../damageType))
-          damage=damage
-          critDamage=critDamage
-          }}</p>
-        {{else}}
-        <p>{{localize "SMT.itemRoll.target"
-          name=this.name
-          resist=(lookup this.resist ../damageType)
-          type=(localize (concat "SMT.resist." ../damageType))
-          damage=damage
-          }}</p>
-        {{/if}}
-        {{#if flied}}
-        <p>{{localize "SMT.itemRoll.targetFlied" name=name}}</p>
-        {{/if}}
-      {{else}}
-        <p>{{this.name}}</p>
-      {{/if}}
-    {{/each}}
+    {{> "systems/smt-tc/templates/parts/chat/target-card-segment.hbs"}}
   {{/if}}
   {{!-- {{#if (and success canDodge)}} --}}
     {{!-- If this can be dodged, show a dodge button --}}

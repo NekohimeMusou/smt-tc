@@ -32,7 +32,7 @@ export async function showHitCheckCard({
     successLevel,
     roll: await roll.render(),
   };
-  const template = "systems/smt-tc/templates/chat/hit-check-card.hbs";
+  const template = "systems/smt-tc/templates/parts/chat/hit-check-card.hbs";
 
   const content = await renderTemplate(template, context);
 
@@ -142,6 +142,36 @@ export async function showAttackRollCard({
   }
 
   const template = "systems/smt-tc/templates/chat/attack-roll-card.hbs";
+  const content = await renderTemplate(template, context);
+
+  const chatData = {
+    author: game.user.id,
+    content,
+    speaker: {
+      scene: game.scenes.current,
+      actor,
+      token,
+    },
+    rolls,
+  };
+
+  return await ChatMessage.create(chatData);
+}
+
+interface AttackCardData {
+  context: object;
+  rolls: Roll[];
+  actor?: SmtActor;
+  token?: SmtTokenDocument;
+}
+
+export async function renderAttackCard(
+  { context, rolls, actor, token }: AttackCardData = {
+    context: {},
+    rolls: [],
+  },
+) {
+  const template = "systems/smt-tc/templates/chat/item-roll-card.hbs";
   const content = await renderTemplate(template, context);
 
   const chatData = {

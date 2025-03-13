@@ -1,0 +1,17 @@
+{{!-- Total Power (still display normal power if a critical hit, in case it's downgraded --}}
+{{#if criticalHit}}
+  <h3>{{localize "SMT.itemRoll.critPower" critPower=critPower power=power}}</h3>
+  {{else}}
+  <h3>{{localize "SMT.itemRoll.totalPower" power=power}}</h3>
+{{/if}}
+
+{{#if pinhole}}
+  {{localize "SMT.itemRoll.pinhole"}}
+{{/if}}
+
+{{#if pierce}}
+  {{localize "SMT.itemRoll.pierce"}}
+{{/if}}
+
+{{!-- Render roll --}}
+{{{powerRoll}}}

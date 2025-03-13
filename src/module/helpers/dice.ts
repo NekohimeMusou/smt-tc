@@ -1,10 +1,13 @@
 import AttackDataModel from "../data-models/embedded/attack.js";
+import SmtActor from "../documents/actor/actor.js";
 import { AttackItem, SmtItem } from "../documents/item/item.js";
+import { renderAttackCard } from "./chat.js";
 
 interface HitCheckData {
   tn?: number;
   autoFailThreshold?: number;
   critBoost?: boolean;
+  cursed?: boolean;
 }
 
 interface HitCheckResult {
@@ -12,6 +15,8 @@ interface HitCheckResult {
   criticalHit: boolean;
   fumble: boolean;
   roll: Roll;
+  curseRoll?: Roll;
+  curseResult?: boolean;
 }
 
 interface PowerRollData {
@@ -28,7 +33,11 @@ interface PowerRollResult {
 }
 
 interface ItemRollData {
+  rollName?: string;
   item?: SmtItem;
+  sheetActor?: SmtActor;
+  powerType?: PowerType;
+  sheetPowerRoll?: boolean;
   targets?: TargetInfo[];
   tnMod?: number;
   potencyMod?: number;
@@ -48,6 +57,7 @@ export default class SmtDice {
     tn = 1,
     autoFailThreshold = CONFIG.SMT.defaultAutofailThreshold,
     critBoost = false,
+    cursed = false,
   }: HitCheckData = {}): Promise<HitCheckResult> {
     const critDivisor = critBoost ? 5 : 10;
 
@@ -69,12 +79,23 @@ export default class SmtDice {
       successLevel = "fail";
     }
 
-    return {
+    const data = {
       successLevel,
       criticalHit: successLevel === "crit",
       fumble: successLevel === "fumble",
       roll,
     };
+
+    if (cursed) {
+      const curseRoll = await new Roll("1d100").roll();
+      const cursed = curseRoll.total <= 30;
+      foundry.utils.mergeObject(data, {
+        curseRoll,
+        cursed,
+      });
+    }
+
+    return data;
   }
 
   static async powerRoll({
@@ -94,30 +115,33 @@ export default class SmtDice {
   }
 
   static async itemRoll({
+    rollName = "Unknown",
     item,
+    sheetActor,
+    powerType,
+    sheetPowerRoll,
     targets,
     tnMod = 0,
     potencyMod = 0,
   }: ItemRollData = {}) {
-    const actor = item?.parent;
+    const actor = item?.parent ?? sheetActor;
 
-    if (!item || !actor) {
+    if (!actor) {
       const msg = game.i18n.localize("SMT.error.MissingItem");
       ui.notifications.error(msg);
       throw new TypeError(msg);
     }
 
-    const itemData = item.system;
+    const itemData = item?.system;
 
     // General stuff
-    const itemName = item.name;
-    const description = itemData.description;
+    const checkName = item?.name ?? rollName;
+    const description = itemData?.description ?? "";
+    const rolls: Roll[] = [];
 
     // Can we pay the item's cost?
-    const costType = itemData.costType;
-    const costPaid = await item.payCost();
-
-    const rolls: Roll[] = [];
+    const costType = itemData?.costType ?? "none";
+    const costPaid = (await item?.payCost?.()) ?? true;
 
     // @ts-expect-error This should work, there's a bug in the Typescript typedefs
     const attackItem = (item as AttackItem).system?.attackData as
@@ -126,8 +150,8 @@ export default class SmtDice {
 
     const attackData = attackItem?._systemData;
 
-    const auto = attackData?.auto ?? true;
-    const hasPowerRoll = attackData?.hasPowerRoll;
+    const auto = (attackData?.auto ?? true) && !powerType;
+    const hasPowerRoll = attackData?.hasPowerRoll ?? sheetPowerRoll;
     const affinity = attackData?.affinity;
 
     // TODO: Find a less slapdash way to handle this
@@ -135,12 +159,12 @@ export default class SmtDice {
     const pierce = attackData?.pierce;
 
     const context = {
-      itemName,
+      checkName,
       affinity,
       targets,
       description,
       costType,
-      cost: item.system.cost,
+      cost: itemData?.cost ?? 0,
       costPaid,
       auto,
       successLevel: costPaid ? "auto" : "fail",
@@ -153,18 +177,38 @@ export default class SmtDice {
       pierce,
     };
 
-    if (!auto && attackData && costPaid) {
-      const tn = Math.max(attackData.tn + tnMod, 1);
-      const critBoost = attackData.critBoost;
-      const autoFailThreshold = attackData.autoFailThreshold;
+    if ((!auto && costPaid) || powerType) {
+      const baseTn = powerType
+        ? actor.system.tn[powerType]
+        : (attackData?.tn ?? 1);
+      const tn = Math.max(baseTn + tnMod, 1);
+      const critBoost =
+        attackData?.critBoost ??
+        (powerType !== "mag" && actor.system.mods.might);
+      const autoFailThreshold =
+        attackData?.autoFailThreshold ?? CONFIG.SMT.defaultAutofailThreshold;
+      const cursed = actor?.statuses.has("curse");
 
-      const { successLevel, criticalHit, fumble, roll } = await this.hitCheck({
+      const {
+        successLevel,
+        criticalHit,
+        fumble,
+        roll,
+        curseRoll,
+        curseResult,
+      } = await this.hitCheck({
         tn,
         critBoost,
         autoFailThreshold,
+        cursed,
       });
 
       rolls.push(roll);
+
+      if (curseRoll) {
+        rolls.push(curseRoll);
+        foundry.utils.mergeObject(context, { curseRoll, curseResult });
+      }
 
       foundry.utils.mergeObject(context, {
         tn,
@@ -186,12 +230,18 @@ export default class SmtDice {
       const boostAffinity = affinity as keyof typeof actor.system.elementBoost;
       const elementBoost = actor.system.elementBoost?.[boostAffinity];
 
-      const damageType = attackData.damageType;
-      const basePower = elementBoost
-        ? Math.floor(attackData.basePower * 1.5)
-        : attackData.basePower;
-      const potency = attackData.potency;
-      const powerBoost = attackData.powerBoost;
+      const damageType =
+        attackData?.damageType ?? (powerType !== "mag" ? "phys" : "mag");
+      const boostMultiplier = elementBoost ? 2 : 1;
+      const basePower =
+        (attackData?.basePower ??
+          (powerType ? actor.system.power[powerType] : 0)) * boostMultiplier;
+      const potency = attackData?.potency ?? 0;
+      const powerBoost =
+        attackData?.powerBoost ??
+        (powerType
+          ? actor.system.powerBoost[powerType === "gun" ? "phys" : "mag"]
+          : false);
 
       const { power, critPower, roll } = await this.powerRoll({
         basePower,
@@ -203,13 +253,13 @@ export default class SmtDice {
       const damageTargets =
         targets && targets.length > 0
           ? targets.map((target) => {
-            const resist = target.resist[damageType];
-            const flied = target.flied;
-            const flyMultiplier = flied ? 2 : 1;
-            const critDamage = critPower * flyMultiplier;
-            const damage = Math.max(power - resist, 0) * flyMultiplier;
+              const resist = target.resist[damageType];
+              const flied = target.flied;
+              const flyMultiplier = flied ? 2 : 1;
+              const critDamage = critPower * flyMultiplier;
+              const damage = Math.max(power - resist, 0) * flyMultiplier;
 
-            return { ...target, critDamage, damage, flied };
+              return { ...target, critDamage, damage, flied };
             })
           : targets;
 
@@ -237,20 +287,11 @@ export default class SmtDice {
       });
     }
 
-    const template = "systems/smt-tc/templates/chat/item-roll-card.hbs";
-    const content = await renderTemplate(template, context);
-
-    const chatData = {
-      author: game.user.id,
-      content,
-      speaker: {
-        scene: game.scenes.current,
-        actor: actor,
-        token: actor.token,
-      },
+    return await renderAttackCard({
+      context,
       rolls,
-    };
-
-    return await ChatMessage.create(chatData);
+      actor,
+      token: actor.token,
+    });
   }
 }
