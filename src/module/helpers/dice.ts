@@ -199,10 +199,22 @@ export default class SmtDice {
         powerBoost,
       });
 
+      const damageTargets =
+        targets && targets.length > 0
+          ? targets.map((target) => {
+              const resist = target.resist[damageType];
+              const critDamage = critPower;
+              const damage = Math.max(power - resist, 0);
+
+              return { ...target, critDamage, damage };
+            })
+          : targets;
+
       rolls.push(roll);
 
       foundry.utils.mergeObject(context, {
         damageType,
+        targets: damageTargets,
         potency: potency + potencyMod,
         power,
         critPower,

@@ -5,7 +5,9 @@ export default class AttackDataModel extends BaseEmbeddedDataModel {
   get damageType(): DamageType {
     const data = this._systemData;
 
-    return data.attackType === "phys" ? "phys" : "mag";
+    return data.attackType === "phys" || data.attackType === "gun"
+      ? "phys"
+      : "mag";
   }
 
   get tn() {

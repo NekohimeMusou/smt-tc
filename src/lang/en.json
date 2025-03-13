@@ -413,7 +413,8 @@
       "ailment": "{ailment}: {rate}%",
       "critAilment": "{ailment}: {ailmentCritRate}% ({rate}%)",
       "targets": "Targets:",
-      "target": "{name}: {resist} {type}",
+      "target": "{name}: {damage} damage ({resist} {type})",
+      "critTarget": "{name}: {critDamage} ({damage}) damage ({resist} {type})",
       "pinhole": "Pinhole: Halve dodge and resist",
       "pierce": "Pierce elemental resists except Repel"
     },
