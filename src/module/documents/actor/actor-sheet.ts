@@ -374,10 +374,11 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       critBoost,
     });
 
+    const fumble = successLevel === "fumble";
     let powerRoll: Roll | undefined;
     let power = 0;
 
-    if (["success", "crit", "fumble"].includes(successLevel)) {
+    if (["success", "crit"].includes(successLevel) || fumble) {
       // Roll power on a hit, crit, or fumble
       const basePower = actorData.power[powerType];
       const boostType = powerType === "gun" ? "phys" : powerType;
@@ -388,6 +389,10 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
         potency: potencyMod,
         powerBoost,
       }));
+    }
+
+    if (fumble && !this.actor.statuses.has("curse")) {
+      this.actor.statuses.add("curse");
     }
 
     // Show chat card
