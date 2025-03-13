@@ -12,7 +12,7 @@ All types of contributions are encouraged and valued. See the [Table of Contents
 > - Refer this project in your project's readme
 > - Mention the project at local meetups and tell your friends/colleagues
 
-As always, **this project is not affiliated with, or endorsed by, LionWing Publishing or ATLUS. Please don't contact their representatives for support. Please don't report bugs on their Discord server.** Opening an [Issue](https://github.com/NekohimeMusou/smt-tc/issues/new) on GitHub isn't just polite, it ensures the relevant information is in one place where ~~I won't forget it exists~~ and all contributors can see it.
+As always, **this project is not affiliated with, or endorsed by, LionWing Publishing or ATLUS. Please don't contact their representatives for support. Please don't report bugs on their Discord server; open an [Issue](https://github.com/NekohimeMusou/smt-tc/issues/new) on GitHub.** It ensures the relevant information is in one place where ~~I won't forget it exists~~ and all contributors can see it.
 
 <!-- omit in toc -->
 ## Table of Contents
