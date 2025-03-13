@@ -1,7 +1,7 @@
 <!-- omit in toc -->
 # Contributing to SMT: Tokyo Conception for FVTT (Unofficial)
 
-First off, thanks for taking the time to contribute! 💖 This is a construction zone; more detailed guidelines are forthcoming.
+First off, thanks for taking the time to contribute! 💖
 
 All types of contributions are encouraged and valued. See the [Table of Contents](#table-of-contents) for different ways to help and details about how this project handles them. Please make sure to read the relevant section before making your contribution. It will make it a lot easier for us maintainers and smooth out the experience for all involved. The community looks forward to your contributions. ✨
 
@@ -12,7 +12,7 @@ All types of contributions are encouraged and valued. See the [Table of Contents
 > - Refer this project in your project's readme
 > - Mention the project at local meetups and tell your friends/colleagues
 
-As always, **this project is not affiliated with, or endorsed by, LionWing Publishing or ATLUS. Please don't contact their representatives for support. Please don't report bugs on their Discord server; open an [Issue](https://github.com/NekohimeMusou/smt-tc/issues/new) on GitHub.** It ensures the relevant information is in one place where ~~I won't forget it exists~~ and all contributors can see it.
+As always, **this project is not affiliated with, or endorsed by, LionWing Publishing or ATLUS. Please don't contact their representatives for support. Please don't report bugs on their Discord server or whatever; open an [Issue](https://github.com/NekohimeMusou/smt-tc/issues/new) on GitHub.** It ensures the relevant information is in one place where ~~I won't forget it exists and~~ all contributors can see it.
 
 <!-- omit in toc -->
 ## Table of Contents
@@ -45,15 +45,16 @@ A good bug report shouldn't leave others needing to chase you up for more inform
 
 - Make sure that you are using the latest version.
 - Read the [system documentation](https://github.com/NekohimeMusou/smt-tc/wiki).
-- Use the [Find the Culprit](https://foundryvtt.com/packages/find-the-culprit) module to narrow down the problem. [Koboldworks - Data Inspector](https://foundryvtt.com/packages/data-inspector) might also help you.
-  - If
+- Try to reproduce the problem in a fresh world with no modules enabled. If you can't, try using [Find the Culprit](https://foundryvtt.com/packages/find-the-culprit) to narrow down the module(s) involved. [Koboldworks - Data Inspector](https://foundryvtt.com/packages/data-inspector) might help you.
+  - If a module is involved, check its issue tracker and see if it's a known problem with the module.
 - To see if other users have experienced (and potentially already solved) the same issue you are having, check if there is not already a bug report existing for your bug or error in the [bug tracker](https://github.com/NekohimeMusou/smt-tc/issues?q=label%3Abug).
-  - You can also hop onto the [LionWing Publishing Discord server](https://discord.gg/nYV38qukAE) and check the dedicated thread in the **#smt-trpg-homebrew** channel.
+  - You can also hop onto the [LionWing Publishing Discord server](https://discord.gg/nYV38qukAE) and look in the dedicated thread in the **#smt-trpg-homebrew** channel.
   - **The Discord thread is a community space, not an official support channel. It is not the place to file bug reports. This project is not affiliated with LionWing. Please do not ask their representatives for support.**
 - Collect information about the bug:
   - Associated Javascript console errors (press F12 in your browser to see the console)
   - OS, Platform and Version (Windows, Linux, macOS, x86, ARM)
-  - Your Foundry server version *and build.* Please don't just say "version 12", say "version 12, build 331".
+  - Your Foundry server version *and build.* Please don't just say "version 12", say "version 12, build 331"
+  - Any Foundry modules involved and their versions
   - Can you reliably reproduce the issue?
 
 <!-- omit in toc -->
@@ -68,7 +69,7 @@ We use GitHub issues to track bugs and errors. If you run into an issue with the
 - Explain the behavior you would expect and the actual behavior.
 - Please provide as much context as possible and describe the *reproduction steps* that someone else can follow to recreate the issue on their own.
   - Ideally, use a fresh world with no modules enabled.
-  - If the issue involves a module, but you think the problem is with the system (i.e. it exposes an underlying bug, or is caused by our side of a system-provided API integration like Item Piles), use only the module(s) necessary to reproduce it.
+  - If the issue involves a module, use only the module(s) necessary to reproduce it.
 - Provide the information you collected in the previous section.
 
 Once it's filed:
@@ -122,7 +123,7 @@ Change to the project root and install the development dependencies:
 
     > npm i
 
-My build script is suboptimal at the moment, so unless you *need* the macro compendium, I suggest deleting the "packs" key from system.json before doing this. That way, you can rebuild the system while it's running in Foundry and F5 it to see the changes.
+The build script is suboptimal at the moment, so unless you *need* the macro compendium, I suggest deleting the "packs" object from system.json before doing this. That way, you can rebuild the system while it's running in Foundry and F5 it to see the changes.
 
 Run the build script. If it's your first time compiling the system on your machine; if you're building the system compendium; or if you've made any other changes to system.json, **shut down your Foundry server before doing this.**
 
