@@ -27,50 +27,9 @@
         </div>
       </li>
 
-      <li class="item item-entry flexrow flex-group-center flex-between">
-        <div class="item-prop">—</div>
-        {{!-- Skill --}}
-        <a class="item-name flex3 attack-roll" data-power-type="phys" data-power-name="Basic Attack">
-          <div class="item-image">
-            <img src="icons/skills/melee/unarmed-punch-fist.webp" title="Basic Attack" width="24" height="24" />
-          </div>
-          {{localize "SMT.skills.basicStrike"}}
-        </a>
-
-        {{!-- Cost or Ammo Count --}}
-        <div class="item-prop">—</div>
-
-        {{!-- TN --}}
-        <div class="item-prop">{{system.tn.phys}}%</div>
-
-        {{!-- Potency --}}
-        <div class="item-prop">0</div>
-
-        {{!-- Total Power --}}
-        <div class="item-prop">{{system.power.phys}}</div>
-
-        {{!-- Target --}}
-        <div class="item-prop">{{localize "SMT.targets.one"}}</div>
-
-        {{!-- Affinity --}}
-        <div class="item-prop">{{localize "SMT.affinities.phys"}}</div>
-
-        {{!-- Ailment --}}
-        <div class="item-prop">—</div>
-
-
-        {{!-- Type --}}
-        <div class="item-prop">{{localize "SMT.attackTypesShort.phys"}}</div>
-
-        {{!-- Item Controls --}}
-        <div class="item-controls">
-          <a class="item-control" title="{{localize "SMT.sheet.editItem"}}"><i class="fas"></i></a>
-          <a class="item-control" title="{{localize "SMT.sheet.deleteItem"}}"><i class="fas"></i></a>
-        </div>
-      </li>
       {{#each skills}}
       <li class="item item-entry flexrow flex-group-center flex-between" data-item-id="{{id}}">
-        <div class="item-prop">{{incrementKey @key}}</div>
+        <div class="item-prop">{{ifThen (eq @key 0) "—" @key}}</div>
         {{!-- Skill --}}
         <a class="item-name flex3 item-roll">
           <div class="item-image">
@@ -85,7 +44,7 @@
           <input class="item-field-toggle" type="checkbox" data-field-id="used" data-dtype="Boolean"
             {{checked system.used}} {{ifThen system.oneShot "" "disabled"}} />
           {{else}}
-          {{#if (or (eq system.attackData.attackType "passive") (eq system.attackData.attackType "talk"))}}
+          {{#if (or (eq system.attackData.attackType "passive") (eq system.attackData.attackType "talk") (eq @key 0))}}
           —
           {{else}}
           {{localize "SMT.skillDetails.costShort" cost=(ifThen system.cost system.cost "0") resource=(ifThen (eq system.attackData.attackType "phys") "HP" "MP")}}

@@ -40,7 +40,15 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       (item) => item.type === "magatama",
     );
 
-    const skills = this.actor.items.filter((item) => item.type === "skill");
+    const skills = this.actor.items.filter(
+      (item) => item.type === "skill" && item.name === "Basic Strike",
+    );
+
+    skills.push(
+      ...this.actor.items.filter(
+        (item) => item.type === "skill" && item.name !== "Basic Strike",
+      ),
+    );
     const weapons = this.actor.items.filter((item) => item.type === "weapon");
     const equippedWeapons = weapons.filter((item) => item.system.equipped);
     const showWeaponsPane = equippedWeapons.length > 0;

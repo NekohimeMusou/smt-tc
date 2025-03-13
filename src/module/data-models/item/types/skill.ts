@@ -1,3 +1,4 @@
+import { Skill } from "../../../documents/item/item.js";
 import AttackDataModel from "../../embedded/attack.js";
 import SmtBaseItemData from "../abstract/base.js";
 
@@ -37,6 +38,12 @@ export default class SkillData extends SmtBaseItemData {
       attackData.affinity = "talk";
     }
 
-    data.costType = attackData.attackType === "phys" ? "hp" : "mp";
+    // Grievous basic strike hack
+    const skill = this.parent as Skill;
+    if (skill.name === "Basic Strike") {
+      data.costType = "none";
+    } else {
+      data.costType = attackData.attackType === "phys" ? "hp" : "mp";
+    }
   }
 }
