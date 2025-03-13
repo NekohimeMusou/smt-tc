@@ -6,7 +6,7 @@ export type AilmentStatusId = (typeof ailments)[number]["id"];
 export type MiscStatusId = (typeof miscStatuses)[number]["id"];
 export type StatusId = AilmentStatusId | MiscStatusId;
 
-const { OVERRIDE } = CONST.ACTIVE_EFFECT_MODES;
+const { ADD, OVERRIDE } = CONST.ACTIVE_EFFECT_MODES;
 
 export const ailments = [
   {
@@ -150,6 +150,13 @@ const miscStatuses = [
     id: "defending",
     name: "SMT.statusEffects.defending",
     icon: "icons/svg/combat.svg",
+    changes: [
+      {
+        key: "system.tn.dodge",
+        value: "20",
+        mode: ADD,
+      },
+    ],
   },
   {
     id: "focused",
