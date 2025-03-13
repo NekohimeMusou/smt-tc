@@ -78,6 +78,9 @@
           damage=damage
           }}</p>
         {{/if}}
+        {{#if flied}}
+        <p>{{localize "SMT.itemRoll.targetFlied" name=name}}</p>
+        {{/if}}
       {{else}}
         <p>{{this.name}}</p>
       {{/if}}

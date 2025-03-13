@@ -40,6 +40,7 @@ interface TargetInfo {
     phys: number;
     mag: number;
   };
+  flied: boolean;
 }
 
 export default class SmtDice {
@@ -202,11 +203,13 @@ export default class SmtDice {
       const damageTargets =
         targets && targets.length > 0
           ? targets.map((target) => {
-              const resist = target.resist[damageType];
-              const critDamage = critPower;
-              const damage = Math.max(power - resist, 0);
+            const resist = target.resist[damageType];
+            const flied = target.flied;
+            const flyMultiplier = flied ? 2 : 1;
+            const critDamage = critPower * flyMultiplier;
+            const damage = Math.max(power - resist, 0) * flyMultiplier;
 
-              return { ...target, critDamage, damage };
+            return { ...target, critDamage, damage, flied };
             })
           : targets;
 

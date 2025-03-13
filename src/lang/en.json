@@ -235,7 +235,8 @@
     },
     "statusEffects": {
       "defending": "Defending",
-      "focused": "Focused"
+      "focused": "Focused",
+      "fly": "Float"
     },
     "resist": {
       "phys": "Phys Resist",
@@ -414,6 +415,7 @@
       "critAilment": "{ailment}: {ailmentCritRate}% ({rate}%)",
       "targets": "Targets:",
       "target": "{name}: {damage} damage ({resist} {type})",
+      "targetFlied": "Double damage! {name} is a fly!",
       "critTarget": "{name}: {critDamage} ({damage}) damage ({resist} {type})",
       "pinhole": "Pinhole: Halve dodge and resist",
       "pierce": "Pierce elemental resists except Repel"
