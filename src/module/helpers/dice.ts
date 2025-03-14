@@ -115,10 +115,9 @@ export default class SmtDice {
 
     if (cursed) {
       const curseRoll = await new Roll("1d100").roll();
-      const cursed = curseRoll.total <= 30;
       foundry.utils.mergeObject(data, {
         curseRoll,
-        cursed,
+        curseResult: curseRoll.total <= 30,
       });
     }
 
