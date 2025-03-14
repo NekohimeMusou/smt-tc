@@ -126,6 +126,7 @@ const ailments = {
   stone: "SMT.ailments.stone",
   instantDeath: "SMT.ailments.instantDeath",
   shatter: "SMT.ailments.shatter",
+  curse: "SMT.ailments.curse",
 } as const;
 
 const buffs = {

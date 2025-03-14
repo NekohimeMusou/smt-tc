@@ -6,6 +6,8 @@ export type Fiend = Subtype<SmtActor, "fiend">;
 export type Demon = Subtype<SmtActor, "demon">;
 export type Human = Subtype<SmtActor, "human">;
 
+type StatusData = StatusEffectObject & { statuses?: Set<string> };
+type StatusChangeMode = "on" | "off" | "toggle";
 type HealResult = "insufficientMacca" | "healed" | "alreadyFull";
 
 interface HealingFountainResult {
@@ -54,5 +56,26 @@ export default class SmtActor extends Actor<
       cost,
       name: this.token?.name ?? this.name,
     };
+  }
+
+  async toggleStatus(id: StatusId, mode: StatusChangeMode) {
+    const originalEffect = this.effects.find((e) => e.statuses.has(id));
+
+    if (originalEffect && mode !== "on") {
+      // If it's "off" or "toggle" and the effect is on, switch it off
+      await this.deleteEmbeddedDocuments("ActiveEffect", [originalEffect.id]);
+    } else if (!originalEffect && mode !== "off") {
+      // If it's "on" or "toggle" and the effect is off, switch it on
+      const effectData = CONFIG.statusEffects.find((e) => e.id === id);
+      if (!effectData)
+        return ui.notifications.error(`Status ID not found: ${id}`);
+      const newEffect = foundry.utils.deepClone(effectData) as StatusData;
+
+      newEffect.statuses = new Set<StatusId>([id]);
+
+      newEffect.name = game.i18n.localize(newEffect.name);
+
+      await this.createEmbeddedDocuments("ActiveEffect", [newEffect]);
+    }
   }
 }

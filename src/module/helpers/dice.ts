@@ -211,6 +211,7 @@ export default class SmtDice {
         roll: successRoll,
         curseRoll,
         curseResult,
+        fumble,
       } = await this.hitCheck({
         tn,
         critBoost,
@@ -240,6 +241,11 @@ export default class SmtDice {
             curseResult,
           },
         });
+      }
+
+      // Wait to do this until the end so we don't make a curse roll at the same time as we get cursed
+      if (fumble) {
+        await actor.toggleStatus("curse", "on");
       }
     }
 
@@ -400,6 +406,10 @@ export default class SmtDice {
         criticalHit,
         successRoll: await roll.render(),
       });
+
+      if (fumble) {
+        await actor.toggleStatus("curse", "on");
+      }
     }
 
     const success = context.success;

@@ -3,9 +3,11 @@ export function configureStatusEffects() {
   CONFIG.specialStatusEffects.FLY = "liftoma";
 }
 
-export type AilmentStatusId = (typeof ailments)[number]["id"];
-export type MiscStatusId = (typeof miscStatuses)[number]["id"];
-export type StatusId = AilmentStatusId | MiscStatusId;
+declare global {
+  export type AilmentStatusId = (typeof ailments)[number]["id"];
+  export type MiscStatusId = (typeof miscStatuses)[number]["id"];
+  export type StatusId = AilmentStatusId | MiscStatusId;
+}
 
 const { ADD, OVERRIDE } = CONST.ACTIVE_EFFECT_MODES;
 
@@ -104,14 +106,14 @@ export const ailments = [
     icon: "icons/svg/lightning.svg",
     priority: 11,
   },
-] as const;
-
-const miscStatuses = [
   {
     id: "curse",
     name: "SMT.ailments.curse",
     icon: "icons/svg/eye.svg",
   },
+] as const;
+
+const miscStatuses = [
   {
     id: "tarukaja",
     name: "SMT.buffs.tarukaja",
