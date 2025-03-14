@@ -208,7 +208,7 @@
       "dead": "Death",
       "instantDeath": "Instant Death",
       "stone": "Stone",
-      "flied": "Fly",
+      "fly": "Fly",
       "stun": "Stun",
       "charm": "Charm",
       "poison": "Poison",
@@ -236,7 +236,7 @@
     "statusEffects": {
       "defending": "Defending",
       "focused": "Focused",
-      "fly": "Liftoma"
+      "liftoma": "Liftoma"
     },
     "resist": {
       "phys": "Phys Resist",

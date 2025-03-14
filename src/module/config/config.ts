@@ -122,7 +122,7 @@ const ailments = {
   poison: "SMT.ailments.poison",
   charm: "SMT.ailments.charm",
   stun: "SMT.ailments.stun",
-  flied: "SMT.ailments.flied",
+  fly: "SMT.ailments.fly",
   stone: "SMT.ailments.stone",
   instantDeath: "SMT.ailments.instantDeath",
   shatter: "SMT.ailments.shatter",

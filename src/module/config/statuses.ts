@@ -1,5 +1,6 @@
 export function configureStatusEffects() {
   CONFIG.statusEffects = [...ailments, ...miscStatuses];
+  CONFIG.specialStatusEffects.FLY = "liftoma";
 }
 
 export type AilmentStatusId = (typeof ailments)[number]["id"];
@@ -22,8 +23,8 @@ export const ailments = [
     priority: 1,
   },
   {
-    id: "flied",
-    name: "SMT.ailments.flied",
+    id: "fly",
+    name: "SMT.ailments.fly",
     icon: "icons/svg/card-joker.svg",
     priority: 2,
     changes: [
@@ -164,8 +165,8 @@ const miscStatuses = [
     icon: "icons/svg/aura.svg",
   },
   {
-    id: "fly",
-    name: "SMT.statusEffects.fly",
+    id: "liftoma",
+    name: "SMT.statusEffects.liftoma",
     icon: "icons/svg/wing.svg",
   },
 ] as const;

@@ -276,7 +276,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
         ? ([...game.user.targets.values()] as SmtToken[]).map((token) => ({
             name: token.name,
             resist: token.actor?.system?.resist ?? 0,
-            flied: token.actor?.statuses.has("flied"),
+            fly: token.actor?.statuses.has("fly"),
           }))
         : undefined;
 
