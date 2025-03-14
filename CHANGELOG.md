@@ -2,6 +2,22 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.5.2] - 2025-03-14
+
+### Changed
+
+- Make Basic Strike an item (automatically created with actor)
+- Fly status now implemented (reduces stats and doubles damage taken)
+- Defending status now implemented (increases Dodge TN by 20%)
+- Rework dice rolls to all use the same template for consistency
+
+### Added
+
+- Attacks with skills now show the damage dealt to each target, accounting for resists (not affinities)
+- Fumbling a roll now gives you the Curse status
+- Automatically roll for bad Curse effects (can be toggled in settings)
+- Add Liftoma status and have Foundry treat it as "flying"
+
 ## [0.5.1] - 2025-03-12
 
 ### Added
@@ -245,6 +261,7 @@ _Added separate Human and Demon actor types with some custom behavior, and added
 
 _Initial preview release.*
 
+[0.5.2]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.5.2
 [0.5.1]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.5.1
 [0.5.0]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.5.0
 [0.4.4]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.4.4
