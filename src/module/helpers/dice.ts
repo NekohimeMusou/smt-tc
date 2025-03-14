@@ -124,6 +124,8 @@ export default class SmtDice {
     tnMod = 0,
     potencyMod = 0,
   }: ItemRollData = {}) {
+    // If there's an item, get its actor; if there's no item, look for an actor
+    // passed in from the sheet
     const actor = item?.parent ?? sheetActor;
 
     if (!actor) {
@@ -135,26 +137,31 @@ export default class SmtDice {
     const itemData = item?.system;
 
     // General stuff
+    // If there's an item, use its name and description
+    // If it's a sheet roll, use the name
     const checkName = item?.name ?? rollName;
     const description = itemData?.description ?? "";
     const rolls: Roll[] = [];
 
     // Can we pay the item's cost?
+    // If there's no item it's a sheet roll, which are free, so consider the cost paid
     const costType = itemData?.costType ?? "none";
     const costPaid = (await item?.payCost?.()) ?? true;
 
-    // @ts-expect-error This should work, there's a bug in the Typescript typedefs
+    // @ts-expect-error Awkward little typescript hack
     const attackItem = (item as AttackItem).system?.attackData as
       | AttackDataModel
       | undefined;
 
     const attackData = attackItem?._systemData;
 
-    const auto = (attackData?.auto ?? true) && !powerType;
+    // If there's no attack data it's a sheet roll and not automatic
+    const auto = attackData ? attackData.auto : false;
     const hasPowerRoll = attackData?.hasPowerRoll ?? sheetPowerRoll;
+    // Leave affinity off if it's a sheet roll
     const affinity = attackData?.affinity;
 
-    // TODO: Find a less slapdash way to handle this
+    // TODO: Find a better way to handle this, like destructuring a single object
     const pinhole = attackData?.mods.pinhole;
     const pierce = attackData?.pierce;
 
@@ -167,17 +174,21 @@ export default class SmtDice {
       cost: itemData?.cost ?? 0,
       costPaid,
       auto,
+      hasPowerRoll,
+      // These get updated later if there's a success roll
       successLevel: costPaid ? "auto" : "fail",
       success: costPaid,
       fumble: false,
       criticalHit: false,
-      hasPowerRoll,
-      canDodge: attackData?.canDodge ?? false,
-      pinhole,
-      pierce,
+      canDodge: (attackData?.canDodge ?? false) || powerType,
+      mods: {
+        pinhole,
+        pierce,
+      },
     };
 
     if ((!auto && costPaid) || powerType) {
+      // If it's a sheet roll, use the actor's base TN
       const baseTn = powerType
         ? actor.system.tn[powerType]
         : (attackData?.tn ?? 1);
