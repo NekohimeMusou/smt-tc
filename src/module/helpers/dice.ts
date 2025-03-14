@@ -1,10 +1,13 @@
 import AttackDataModel from "../data-models/embedded/attack.js";
+import SmtActor from "../documents/actor/actor.js";
 import { AttackItem, SmtItem } from "../documents/item/item.js";
+import { renderItemAttackCard, renderAttackCard } from "./chat.js";
 
 interface HitCheckData {
   tn?: number;
   autoFailThreshold?: number;
   critBoost?: boolean;
+  cursed?: boolean;
 }
 
 interface HitCheckResult {
@@ -12,6 +15,8 @@ interface HitCheckResult {
   criticalHit: boolean;
   fumble: boolean;
   roll: Roll;
+  curseRoll?: Roll;
+  curseResult?: boolean;
 }
 
 interface PowerRollData {
@@ -28,18 +33,50 @@ interface PowerRollResult {
 }
 
 interface ItemRollData {
+  rollName?: string;
   item?: SmtItem;
-  targets?: TargetInfo[];
+  sheetActor?: SmtActor;
+  attackType?: AttackType;
+  sheetPowerRoll?: boolean;
+  targets?: TargetData[];
   tnMod?: number;
   potencyMod?: number;
 }
 
-interface TargetInfo {
-  name: string;
-  resist: {
-    phys: number;
-    mag: number;
-  };
+// Quick fix
+declare global {
+  interface TargetData {
+    name: string;
+    resist: {
+      phys: number;
+      mag: number;
+    };
+    fly: boolean;
+  }
+}
+
+interface StatRollData {
+  actor?: SmtActor;
+  checkName?: string;
+  tnType?: TargetNumber;
+  attackType?: AttackType;
+  tnMod?: number;
+  potencyMod?: number;
+}
+
+interface SheetRollData {
+  actor?: SmtActor;
+  tnType?: TargetNumber;
+  attackType?: AttackType;
+  checkName?: string;
+  item?: SmtItem;
+  tnMod?: number;
+  potencyMod?: number;
+  targets?: TargetData;
+}
+
+interface ItemRollData {
+  item?: SmtItem;
 }
 
 export default class SmtDice {
@@ -47,6 +84,7 @@ export default class SmtDice {
     tn = 1,
     autoFailThreshold = CONFIG.SMT.defaultAutofailThreshold,
     critBoost = false,
+    cursed = false,
   }: HitCheckData = {}): Promise<HitCheckResult> {
     const critDivisor = critBoost ? 5 : 10;
 
@@ -68,12 +106,23 @@ export default class SmtDice {
       successLevel = "fail";
     }
 
-    return {
+    const data = {
       successLevel,
       criticalHit: successLevel === "crit",
       fumble: successLevel === "fumble",
       roll,
     };
+
+    if (cursed) {
+      const curseRoll = await new Roll("1d100").roll();
+      const cursed = curseRoll.total <= 30;
+      foundry.utils.mergeObject(data, {
+        curseRoll,
+        cursed,
+      });
+    }
+
+    return data;
   }
 
   static async powerRoll({
@@ -92,78 +141,255 @@ export default class SmtDice {
     return { power, critPower: power * 2, roll };
   }
 
-  static async itemRoll({
+  // Main roll
+  static async sheetRoll({
+    actor,
+    tnType,
+    attackType,
+    // Dialog has been shown at this point
+    checkName = "Unknown",
+    tnMod = 0,
+    potencyMod = 0,
     item,
+  }: SheetRollData = {}) {
+    if (item) {
+      // Call the item roll function
+      return;
+    } else if (actor && (tnType || attackType)) {
+      // Call the stat roll function
+      return await this.statRoll({
+        actor,
+        checkName,
+        tnType,
+        attackType,
+        tnMod,
+        potencyMod,
+      });
+    }
+
+    const msg = game.i18n.localize("SMT.error.missingActor");
+    ui.notifications.error(msg);
+    throw new TypeError(msg);
+  }
+
+  // Sheet roll
+  static async statRoll({
+    actor,
+    checkName,
+    tnType,
+    attackType,
+    tnMod,
+    potencyMod,
+  }: StatRollData = {}) {
+    if (!actor || (!tnType && !attackType) || !checkName) {
+      const msg = game.i18n.localize("SMT.error.missingActor");
+      ui.notifications.error(msg);
+      throw new TypeError(msg);
+    }
+
+    const rolls: Roll[] = [];
+
+    const cardData = {
+      actor,
+      checkName,
+      rolls,
+    };
+    // Make a success roll
+    const charData = actor.system;
+
+    let success = true;
+
+    if (tnType) {
+      const tn = Math.max(charData.tn[tnType] + (tnMod ?? 0), 1);
+      const autoFailThreshold = charData.autoFailThreshold;
+      const critBoost =
+        (tnType === "gun" || tnType === "phys") && charData.mods.might;
+      const cursed = actor.statuses.has("curse");
+
+      const {
+        successLevel,
+        roll: successRoll,
+        curseRoll,
+        curseResult,
+      } = await this.hitCheck({
+        tn,
+        critBoost,
+        autoFailThreshold,
+        cursed,
+      });
+
+      rolls.push(successRoll);
+
+      success = successLevel === "success" || successLevel === "crit";
+
+      const successData = {
+        successLevel,
+        success,
+        tn,
+        autoFailThreshold,
+        successRoll: await successRoll.render(),
+      };
+
+      foundry.utils.mergeObject(cardData, { successData });
+
+      if (curseRoll) {
+        rolls.push(curseRoll);
+        foundry.utils.mergeObject(cardData, {
+          successData: {
+            curseRoll: await curseRoll.render(),
+            curseResult,
+          },
+        });
+      }
+    }
+
+    const powerType = attackType ?? tnType ?? "phys";
+
+    const rollPower =
+      powerType === "phys" || powerType === "mag" || powerType === "gun";
+
+    if (rollPower && success) {
+      const basePower = actor.system.power[powerType];
+      const powerBoostType = tnType === "mag" ? "mag" : "phys";
+      const powerBoost = actor.system.powerBoost[powerBoostType];
+
+      const {
+        power,
+        critPower,
+        roll: powerDiceRoll,
+      } = await this.powerRoll({
+        basePower,
+        potencyMod,
+        powerBoost,
+      });
+
+      rolls.push(powerDiceRoll);
+
+      foundry.utils.mergeObject(cardData, {
+        powerData: {
+          power,
+          critPower,
+          powerRoll: await powerDiceRoll.render(),
+        },
+        successData: {
+          success,
+        },
+      });
+    }
+
+    await renderAttackCard(cardData);
+  }
+
+  // Item roll
+  static async itemRoll({
+    rollName = "Unknown",
+    item,
+    sheetActor,
+    attackType,
+    sheetPowerRoll,
     targets,
     tnMod = 0,
     potencyMod = 0,
   }: ItemRollData = {}) {
-    const actor = item?.parent;
+    // If there's an item, get its actor; if there's no item, look for an actor
+    // passed in from the sheet
+    const actor = item?.parent ?? sheetActor;
 
-    if (!item || !actor) {
+    if (!actor) {
       const msg = game.i18n.localize("SMT.error.MissingItem");
       ui.notifications.error(msg);
       throw new TypeError(msg);
     }
 
-    const itemData = item.system;
+    const itemData = item?.system;
 
     // General stuff
-    const itemName = item.name;
-    const description = itemData.description;
-
-    // Can we pay the item's cost?
-    const costType = itemData.costType;
-    const costPaid = await item.payCost();
-
+    // If there's an item, use its name and description
+    // If it's a sheet roll, use the name
+    const checkName = item?.name ?? rollName;
+    const description = itemData?.description ?? "";
     const rolls: Roll[] = [];
 
-    // @ts-expect-error This should work, there's a bug in the Typescript typedefs
+    // Can we pay the item's cost?
+    // If there's no item it's a sheet roll, which are free, so consider the cost paid
+    const costType = itemData?.costType ?? "none";
+    const costPaid = (await item?.payCost?.()) ?? true;
+
+    // @ts-expect-error Awkward little typescript hack
     const attackItem = (item as AttackItem).system?.attackData as
       | AttackDataModel
       | undefined;
 
     const attackData = attackItem?._systemData;
 
-    const auto = attackData?.auto ?? true;
-    const hasPowerRoll = attackData?.hasPowerRoll;
+    // If there's no attack data it's a sheet roll and not automatic
+    const auto = attackData ? attackData.auto : false;
+    const hasPowerRoll = attackData?.hasPowerRoll ?? sheetPowerRoll;
+    // Leave affinity off if it's a sheet roll
     const affinity = attackData?.affinity;
 
-    // TODO: Find a less slapdash way to handle this
+    // TODO: Find a better way to handle this, like destructuring a single object
     const pinhole = attackData?.mods.pinhole;
     const pierce = attackData?.pierce;
 
     const context = {
-      itemName,
+      checkName,
       affinity,
       targets,
       description,
       costType,
-      cost: item.system.cost,
+      cost: itemData?.cost ?? 0,
       costPaid,
       auto,
+      hasPowerRoll,
+      // These get updated later if there's a success roll
       successLevel: costPaid ? "auto" : "fail",
       success: costPaid,
       fumble: false,
       criticalHit: false,
-      hasPowerRoll,
-      canDodge: attackData?.canDodge ?? false,
-      pinhole,
-      pierce,
+      canDodge: (attackData?.canDodge ?? false) || attackType,
+      mods: {
+        pinhole,
+        pierce,
+      },
     };
 
-    if (!auto && attackData && costPaid) {
-      const tn = Math.max(attackData.tn + tnMod, 1);
-      const critBoost = attackData.critBoost;
-      const autoFailThreshold = attackData.autoFailThreshold;
+    if ((!auto && costPaid) || attackType) {
+      // If it's a sheet roll, use the actor's base TN
+      const baseTn = attackType
+        ? actor.system.tn[attackType]
+        : (attackData?.tn ?? 1);
+      const tn = Math.max(baseTn + tnMod, 1);
+      const critBoost =
+        attackData?.critBoost ??
+        (attackType !== "mag" && actor.system.mods.might);
+      const autoFailThreshold =
+        attackData?.autoFailThreshold ?? CONFIG.SMT.defaultAutofailThreshold;
+      const cursed = actor?.statuses.has("curse");
 
-      const { successLevel, criticalHit, fumble, roll } = await this.hitCheck({
+      const {
+        successLevel,
+        criticalHit,
+        fumble,
+        roll,
+        curseRoll,
+        curseResult,
+      } = await this.hitCheck({
         tn,
         critBoost,
         autoFailThreshold,
+        cursed,
       });
 
       rolls.push(roll);
+
+      if (curseRoll) {
+        rolls.push(curseRoll);
+        foundry.utils.mergeObject(context, {
+          curseRoll: await curseRoll.render(),
+          curseResult,
+        });
+      }
 
       foundry.utils.mergeObject(context, {
         tn,
@@ -185,12 +411,18 @@ export default class SmtDice {
       const boostAffinity = affinity as keyof typeof actor.system.elementBoost;
       const elementBoost = actor.system.elementBoost?.[boostAffinity];
 
-      const damageType = attackData.damageType;
-      const basePower = elementBoost
-        ? Math.floor(attackData.basePower * 1.5)
-        : attackData.basePower;
-      const potency = attackData.potency;
-      const powerBoost = attackData.powerBoost;
+      const damageType =
+        attackData?.damageType ?? (attackType !== "mag" ? "phys" : "mag");
+      const boostMultiplier = elementBoost ? 2 : 1;
+      const basePower =
+        (attackData?.basePower ??
+          (attackType ? actor.system.power[attackType] : 0)) * boostMultiplier;
+      const potency = attackData?.potency ?? 0;
+      const powerBoost =
+        attackData?.powerBoost ??
+        (attackType
+          ? actor.system.powerBoost[attackType === "gun" ? "phys" : "mag"]
+          : false);
 
       const { power, critPower, roll } = await this.powerRoll({
         basePower,
@@ -199,10 +431,24 @@ export default class SmtDice {
         powerBoost,
       });
 
+      const damageTargets =
+        targets && targets.length > 0
+          ? targets.map((target) => {
+              const resist = target.resist[damageType];
+              const fly = target.fly;
+              const flyMultiplier = fly ? 2 : 1;
+              const critDamage = critPower * flyMultiplier;
+              const damage = Math.max(power - resist, 0) * flyMultiplier;
+
+              return { ...target, critDamage, damage, fly };
+            })
+          : targets;
+
       rolls.push(roll);
 
       foundry.utils.mergeObject(context, {
         damageType,
+        targets: damageTargets,
         potency: potency + potencyMod,
         power,
         critPower,
@@ -222,20 +468,11 @@ export default class SmtDice {
       });
     }
 
-    const template = "systems/smt-tc/templates/chat/item-roll-card.hbs";
-    const content = await renderTemplate(template, context);
-
-    const chatData = {
-      author: game.user.id,
-      content,
-      speaker: {
-        scene: game.scenes.current,
-        actor: actor,
-        token: actor.token,
-      },
+    return await renderItemAttackCard({
+      context,
       rolls,
-    };
-
-    return await ChatMessage.create(chatData);
+      actor,
+      token: actor.token,
+    });
   }
 }

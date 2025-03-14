@@ -49,4 +49,8 @@ export const templatePaths = [
   "systems/smt-tc/templates/parts/item/armor/config.hbs",
   "systems/smt-tc/templates/parts/item/item/details.hbs",
   "systems/smt-tc/templates/parts/item/item/config.hbs",
+
+  // Chat output segments
+  "systems/smt-tc/templates/parts/chat/power-card-segment.hbs",
+  "systems/smt-tc/templates/parts/chat/target-card-segment.hbs",
 ] as const;

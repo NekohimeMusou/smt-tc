@@ -6,7 +6,7 @@
         <label for="attack-type" class="item-prop">{{localize "SMT.itemSheet.attackType"}}</label>
         <div class="item-prop">
           <select id="attack-type" name="system.attackData.attackType">
-            {{selectOptions SMT.attackTypes localize=true selected=system.attackData.attackType}}
+            {{selectOptions SMT.skillTypes localize=true selected=system.attackData.attackType}}
           </select>
         </div>
         {{!-- HP/MP Cost | Consumable (e.g. Luck Smiles, "should consumables be used up") --}}

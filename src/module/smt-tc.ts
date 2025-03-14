@@ -1,5 +1,6 @@
 import registerModuleAPIs from "./config/api.js";
 import { SMT } from "./config/config.js";
+import { createBasicStrike } from "./config/hooks.js";
 import registerSystemSettings from "./config/settings.js";
 import { configureStatusEffects } from "./config/statuses.js";
 import { ACTORMODELS } from "./data-models/actor/actor-data-model.js";
@@ -34,6 +35,7 @@ Hooks.once("init", async () => {
   registerDocumentClasses();
   registerSheetApplications();
   registerSystemSettings();
+  registerHooks();
   registerModuleAPIs();
   registerHandlebarsHelpers();
 
@@ -64,6 +66,10 @@ function registerSheetApplications() {
     types: Object.keys(CONFIG.SMT.itemTypes),
     makeDefault: true,
   });
+}
+
+function registerHooks() {
+  Hooks.on("createActor", createBasicStrike);
 }
 
 function registerHandlebarsHelpers() {

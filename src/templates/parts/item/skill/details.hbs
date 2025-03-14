@@ -5,7 +5,7 @@
       {{!-- Skill details --}}
       <li class="item flexrow items-header flex-group-center">
         {{!-- Phys Atk / Mag Atk / etc --}}
-        <div class="item-prop">{{localize (concat "SMT.attackTypes." system.attackData.attackType)}}</div>
+        <div class="item-prop">{{localize (concat "SMT.skillTypes." system.attackData.attackType)}}</div>
         {{!-- Cost --}}
         {{#unless (or (eq system.attackData.attackType "talk") (eq system.attackData.attackType "passive"))}}
         <div class="item-prop">{{localize "SMT.skillDetails.cost" cost=(ifThen system.cost system.cost "0")

@@ -1,0 +1,26 @@
+<h3>{{localize "SMT.itemRoll.targets"}}</h3>
+{{#each targets}}
+  {{#if ../powerRoll}}
+    {{#if ../criticalHit}}
+    <p>{{localize "SMT.itemRoll.critTarget"
+      name=this.name
+      resist=(lookup this.resist ../damageType)
+      type=(localize (concat "SMT.resist." ../damageType))
+      damage=damage
+      critDamage=critDamage
+      }}</p>
+    {{else}}
+    <p>{{localize "SMT.itemRoll.target"
+      name=this.name
+      resist=(lookup this.resist ../damageType)
+      type=(localize (concat "SMT.resist." ../damageType))
+      damage=damage
+      }}</p>
+    {{/if}}
+    {{#if fly}}
+    <p>{{localize "SMT.itemRoll.targetFlied" name=name}}</p>
+    {{/if}}
+  {{else}}
+    <p>{{this.name}}</p>
+  {{/if}}
+{{/each}}

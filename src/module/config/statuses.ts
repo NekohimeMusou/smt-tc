@@ -1,8 +1,15 @@
 export function configureStatusEffects() {
-  CONFIG.statusEffects = smtStatuses;
+  CONFIG.statusEffects = [...ailments, ...miscStatuses];
+  CONFIG.specialStatusEffects.FLY = "liftoma";
 }
 
-const smtStatuses = [
+export type AilmentStatusId = (typeof ailments)[number]["id"];
+export type MiscStatusId = (typeof miscStatuses)[number]["id"];
+export type StatusId = AilmentStatusId | MiscStatusId;
+
+const { ADD, OVERRIDE } = CONST.ACTIVE_EFFECT_MODES;
+
+export const ailments = [
   {
     id: "dead",
     name: "SMT.ailments.dead",
@@ -16,10 +23,32 @@ const smtStatuses = [
     priority: 1,
   },
   {
-    id: "flied",
-    name: "SMT.ailments.flied",
+    id: "fly",
+    name: "SMT.ailments.fly",
     icon: "icons/svg/card-joker.svg",
     priority: 2,
+    changes: [
+      {
+        key: "system.stats.st.value",
+        value: "1",
+        mode: OVERRIDE,
+      },
+      {
+        key: "system.stats.ma.value",
+        value: "1",
+        mode: OVERRIDE,
+      },
+      {
+        key: "system.stats.vi.value",
+        value: "1",
+        mode: OVERRIDE,
+      },
+      {
+        key: "system.stats.lu.value",
+        value: "1",
+        mode: OVERRIDE,
+      },
+    ],
   },
   {
     id: "stun",
@@ -75,6 +104,9 @@ const smtStatuses = [
     icon: "icons/svg/lightning.svg",
     priority: 11,
   },
+] as const;
+
+const miscStatuses = [
   {
     id: "curse",
     name: "SMT.ailments.curse",
@@ -119,10 +151,22 @@ const smtStatuses = [
     id: "defending",
     name: "SMT.statusEffects.defending",
     icon: "icons/svg/combat.svg",
+    changes: [
+      {
+        key: "system.tn.dodge",
+        value: "20",
+        mode: ADD,
+      },
+    ],
   },
   {
     id: "focused",
     name: "SMT.statusEffects.focused",
     icon: "icons/svg/aura.svg",
+  },
+  {
+    id: "liftoma",
+    name: "SMT.statusEffects.liftoma",
+    icon: "icons/svg/wing.svg",
   },
 ] as const;

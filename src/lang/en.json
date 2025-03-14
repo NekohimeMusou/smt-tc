@@ -208,7 +208,7 @@
       "dead": "Death",
       "instantDeath": "Instant Death",
       "stone": "Stone",
-      "flied": "Fly",
+      "fly": "Fly",
       "stun": "Stun",
       "charm": "Charm",
       "poison": "Poison",
@@ -235,7 +235,8 @@
     },
     "statusEffects": {
       "defending": "Defending",
-      "focused": "Focused"
+      "focused": "Focused",
+      "liftoma": "Liftoma"
     },
     "resist": {
       "phys": "Phys Resist",
@@ -336,7 +337,7 @@
       "fail": "Failed!",
       "success": "Success!",
       "crit": "Critical Success!",
-      "autofail": "Autofail! ({autofail}%)",
+      "autofail": "Autofail! ({autoFailThreshold}%)",
       "fumble": "Fumble!",
       "auto": "Auto"
     },
@@ -353,12 +354,12 @@
       "confirmDeletePrompt": "Really delete {name}?",
       "awardDialogTitle": "Award XP and Macca"
     },
-    "powerTypes": {
+    "attackTypes": {
       "phys": "Phys Attack",
       "mag": "Mag Attack",
       "gun": "Gun Attack"
     },
-    "attackTypes": {
+    "skillTypes": {
       "phys": "Phys Attack",
       "mag": "Mag Attack",
       "gun": "Gun Attack",
@@ -366,7 +367,7 @@
       "passive": "Passive",
       "talk": "Talk"
     },
-    "attackTypesShort": {
+    "skillTypesShort": {
       "phys": "Phys Atk",
       "mag": "Mag Atk",
       "gun": "Gun Atk",
@@ -413,9 +414,15 @@
       "ailment": "{ailment}: {rate}%",
       "critAilment": "{ailment}: {ailmentCritRate}% ({rate}%)",
       "targets": "Targets:",
-      "target": "{name}: {resist} {type}",
+      "target": "{name}: {damage} damage ({resist} {type})",
+      "targetFlied": "Double damage! {name} is a fly!",
+      "critTarget": "{name}: {critDamage} ({damage}) damage ({resist} {type})",
       "pinhole": "Pinhole: Halve dodge and resist",
-      "pierce": "Pierce elemental resists except Repel"
+      "pierce": "Pierce elemental resists except Repel",
+      "curse": {
+        "hit": "CURSED! Something bad happens!",
+        "miss": "The curse leaves you be for now."
+      }
     },
     "settings": {
       "editableActorSheetBuffs": {
@@ -437,6 +444,10 @@
       "showRollDialogByDefault": {
         "name": "Show roll dialog by default",
         "hint": "Normally, you need to hold the Shift key to bring up the roll modifier dialog box. This inverts the behavior, so clicking normally will show the dialog and shift-clicking won't."
+      },
+      "autoCurseRolls": {
+        "name": "Automate Curse Rolls",
+        "hint": "While cursed, each success check you make automatically rolls to see if something bad happens (see p. 67 in the rulebook)."
       }
     },
     "ui": {
@@ -449,7 +460,9 @@
       "missingPowerType": "Missing attack type in #onAttackRoll",
       "missingItem": "Missing item in actor sheet roll",
       "missingField": "Can't toggle item field: Missing field ID",
-      "useItemPiles": "Use Item Piles functionality to move items."
+      "useItemPiles": "Use Item Piles functionality to move items.",
+      "missingActor": "Missing actor in sheet roll.",
+      "sheetRollError": "Missing item and power type in sheet roll."
     }
   },
   "TYPES": {

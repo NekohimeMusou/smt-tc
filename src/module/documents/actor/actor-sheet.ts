@@ -1,12 +1,4 @@
-import {
-  showAttackRollCard,
-  showHitCheckCard,
-  showPowerRollCard,
-} from "../../helpers/chat.js";
-import {
-  showAttackModifierDialog,
-  showRollModifierDialog,
-} from "../../helpers/dialog.js";
+import { showAttackModifierDialog } from "../../helpers/dialog.js";
 import SmtDice from "../../helpers/dice.js";
 import { prepareActiveEffectCategories } from "../active-effect/helpers.js";
 import { onManageActiveEffect } from "../active-effect/helpers.js";
@@ -40,7 +32,15 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       (item) => item.type === "magatama",
     );
 
-    const skills = this.actor.items.filter((item) => item.type === "skill");
+    const skills = this.actor.items.filter(
+      (item) => item.type === "skill" && item.name === "Basic Strike",
+    );
+
+    skills.push(
+      ...this.actor.items.filter(
+        (item) => item.type === "skill" && item.name !== "Basic Strike",
+      ),
+    );
     const weapons = this.actor.items.filter((item) => item.type === "weapon");
     const equippedWeapons = weapons.filter((item) => item.system.equipped);
     const showWeaponsPane = equippedWeapons.length > 0;
@@ -150,22 +150,21 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       .find(".effect-control")
       .on("click", (ev) => onManageActiveEffect(ev, this.actor));
 
-    // TN rolls from the stat pane
-    html.find(".hit-roll").on("click", this.#onHitRoll.bind(this));
-    // Power rolls from the derived pane
-    html.find(".power-roll").on("click", this.#onPowerRoll.bind(this));
     // Adjust the TN Boost or Multi fields
     html
       .find(".adjust-sheet-mod")
       .on("click", this.#onSheetModChange.bind(this));
-    // Attack roll from the stats pane (Phys Atk and Mag Atk TNs)
-    html.find(".attack-roll").on("click", this.#onAttackRoll.bind(this));
+
     // Toggle an item field from an actor sheet, e.g. equipping an item
     html
       .find(".item-field-toggle")
       .on("change", this.#onItemFieldToggle.bind(this));
+
     // Rolling an item (skill, weapon, etc)
     html.find(".item-roll").on("click", this.#onItemRoll.bind(this));
+
+    // Test new sheet rolls
+    html.find(".sheet-roll").on("click", this.#onSheetRoll.bind(this));
   }
 
   /**
@@ -219,179 +218,41 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     li.slideUp(200, () => this.render(false));
   }
 
-  async #onHitRoll(event: JQuery.ClickEvent) {
+  async #onSheetRoll(event: JQuery.ClickEvent) {
     event.preventDefault();
     const target = $(event.currentTarget);
-    const actorData = this.actor.system;
 
     const tnType = target.data("tnType") as TargetNumber | undefined;
+    const attackType = target.data("attackType") as AttackType | undefined;
 
-    if (!tnType) {
-      const msg = game.i18n.localize("SMT.error.missingHitRollTN");
-      ui.notifications.error(msg);
-      throw new TypeError(msg);
-    }
-
-    const tnLabel = game.i18n.localize(`SMT.tn.${tnType}`);
-
-    const checkName = game.i18n.format("SMT.diceOutput.checkName", {
-      name: tnLabel,
-    });
-    let tn = actorData.tn[tnType];
-    const autoFailThreshold = actorData.autoFailThreshold;
-
-    const showDialog =
-      event.shiftKey != game.settings.get("smt-tc", "showRollDialogByDefault");
-
-    if (showDialog) {
-      const hint = game.i18n.localize("SMT.dialog.hitRollHint");
-      const { mod, cancelled } = await showRollModifierDialog({
-        name: checkName,
-        hint,
-      });
-
-      if (cancelled) {
-        return;
-      }
-
-      tn += mod ?? 0;
-    }
-
-    const { successLevel, roll } = await SmtDice.hitCheck({
-      tn,
-      autoFailThreshold,
-    });
-
-    // Show chat card
-    await showHitCheckCard({
-      actor: this.actor,
-      token: this.actor.token,
-      checkName,
-      tn,
-      successLevel,
-      roll,
-    });
-  }
-
-  async #onPowerRoll(event: JQuery.ClickEvent) {
-    event.preventDefault();
-
-    const powerType = $(event.currentTarget).data("powerType") as
-      | PowerType
-      | undefined;
-
-    if (!powerType) {
+    if (!tnType && !attackType) {
       const msg = game.i18n.localize("SMT.error.missingPowerType");
       ui.notifications.error(msg);
       throw new TypeError(msg);
     }
 
-    const actorData = this.actor.system;
+    const showDialog =
+      event.shiftKey != game.settings.get("smt-tc", "showRollDialogByDefault");
 
-    const basePower = actorData.power[powerType];
-    let potency = 0;
-    const boostType = powerType === "gun" ? "phys" : powerType;
-    const powerBoost = actorData.powerBoost[boostType];
-
-    const name = game.i18n.localize(`SMT.power.${powerType}`);
-
-    const showDialog = !(
-      event.shiftKey != game.settings.get("smt-tc", "showRollDialogByDefault")
+    const checkName = game.i18n.localize(
+      tnType ? `SMT.tn.${tnType}` : `SMT.power.${attackType}`,
     );
 
-    if (showDialog) {
-      const { mod, cancelled } = await showRollModifierDialog({ name });
-
-      if (cancelled) {
-        return;
-      }
-
-      potency = mod ?? 0;
-    }
-
-    const { power, roll } = await SmtDice.powerRoll({
-      basePower,
-      potency,
-      powerBoost,
-    });
-
-    // Show chat card
-    await showPowerRollCard({
-      actor: this.actor,
-      token: this.actor.token,
-      power,
-      name,
-      roll,
-    });
-  }
-
-  // TODO: Refactor this to be more like the item one
-  async #onAttackRoll(event: JQuery.ClickEvent) {
-    event.preventDefault();
-    const target = $(event.currentTarget);
-
-    const powerType = target.data("powerType") as PowerType | undefined;
-    const powerName = target.data("powerName") as string | undefined;
-
-    if (!powerType) {
-      const msg = game.i18n.localize("SMT.error.missingPowerType");
-      ui.notifications.error(msg);
-      throw new TypeError(msg);
-    }
-
-    const showDialog =
-      event.shiftKey != game.settings.get("smt-tc", "showRollDialogByDefault");
-
-    const attackName =
-      powerName ?? game.i18n.localize(`SMT.powerTypes.${powerType}`);
-
     const { tnMod, potencyMod, cancelled } = showDialog
-      ? await showAttackModifierDialog(attackName)
+      ? await showAttackModifierDialog(checkName)
       : { tnMod: 0, potencyMod: 0, cancelled: false };
 
     if (cancelled) {
       return;
     }
 
-    const actorData = this.actor.system;
-
-    const tnType = powerType === "gun" ? "ag" : powerType;
-    const tn = actorData.tn[tnType] + (tnMod ?? 0);
-    const autoFailThreshold = actorData.autoFailThreshold;
-    const critBoost = powerType !== "mag" && actorData.mods.might;
-
-    const { successLevel, roll: hitRoll } = await SmtDice.hitCheck({
-      tn,
-      autoFailThreshold,
-      critBoost,
-    });
-
-    let powerRoll: Roll | undefined;
-    let power = 0;
-
-    if (["success", "crit", "fumble"].includes(successLevel)) {
-      // Roll power on a hit, crit, or fumble
-      const basePower = actorData.power[powerType];
-      const boostType = powerType === "gun" ? "phys" : powerType;
-      const powerBoost = actorData.powerBoost[boostType];
-
-      ({ power, roll: powerRoll } = await SmtDice.powerRoll({
-        basePower,
-        potency: potencyMod,
-        powerBoost,
-      }));
-    }
-
-    // Show chat card
-    await showAttackRollCard({
+    return await SmtDice.sheetRoll({
       actor: this.actor,
-      token: this.actor.token,
-      attackName,
-      tn,
-      successLevel,
-      hitRoll,
-      powerRoll,
-      power,
+      tnType,
+      attackType,
+      checkName,
+      tnMod,
+      potencyMod,
     });
   }
 
@@ -414,7 +275,8 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       game.user.targets.size > 0
         ? ([...game.user.targets.values()] as SmtToken[]).map((token) => ({
             name: token.name,
-            resist: token.actor.system.resist,
+            resist: token.actor?.system?.resist ?? 0,
+            fly: token.actor?.statuses.has("fly"),
           }))
         : undefined;
 
