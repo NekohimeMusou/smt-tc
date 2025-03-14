@@ -18,6 +18,15 @@ export default function registerSystemSettings() {
     type: Boolean,
     default: false,
   });
+  game.settings.register("smt-tc", "autoCurseRolls", {
+    name: "SMT.settings.autoCurseRolls.name",
+    hint: "SMT.settings.autoCurseRolls.hint",
+    scope: "client",
+    config: true,
+    requiresReload: true,
+    type: Boolean,
+    default: true,
+  });
 
   // House/variant rules
   game.settings.register("smt-tc", "addLevelToGunDamage", {

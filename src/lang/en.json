@@ -236,7 +236,7 @@
     "statusEffects": {
       "defending": "Defending",
       "focused": "Focused",
-      "fly": "Float"
+      "fly": "Liftoma"
     },
     "resist": {
       "phys": "Phys Resist",
@@ -444,6 +444,10 @@
       "showRollDialogByDefault": {
         "name": "Show roll dialog by default",
         "hint": "Normally, you need to hold the Shift key to bring up the roll modifier dialog box. This inverts the behavior, so clicking normally will show the dialog and shift-clicking won't."
+      },
+      "autoCurseRolls": {
+        "name": "Automate Curse Rolls",
+        "hint": "While cursed, each success check you make automatically rolls to see if something bad happens (see p. 67 in the rulebook)."
       }
     },
     "ui": {
