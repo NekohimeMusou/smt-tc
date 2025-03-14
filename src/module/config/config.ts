@@ -10,13 +10,18 @@ import { templatePaths } from "./templates.js";
 declare global {
   type CharacterClass = keyof typeof characterClasses;
   type ResourceType = keyof typeof resourceTypes;
+  type CostType = keyof typeof costTypes;
   type ItemType = keyof typeof itemTypes;
-  type PowerType = keyof typeof powerTypes;
   type AttackType = keyof typeof attackTypes;
+  type SkillType = keyof typeof skillTypes;
   type DamageType = keyof typeof damageTypes;
   type BuffType = keyof typeof buffs;
   type SuccessLevel = keyof typeof successLevels;
   type TargetNumber = keyof typeof tn;
+  type DefenseAffinity = keyof typeof defenseAffinities;
+  type AttackAffinity = keyof typeof attackAffinities;
+  type Affinity = AttackAffinity | DefenseAffinity;
+  type AilmentId = keyof typeof ailments;
 
   // Substitute for the problematic DataModel
   interface Ailment {
@@ -169,24 +174,24 @@ const alignment = {
   heeHo: "SMT.alignment.heeHo",
 } as const;
 
-const powerTypes = {
-  phys: "SMT.powerTypes.phys",
-  mag: "SMT.powerTypes.mag",
-  gun: "SMT.powerTypes.gun",
-} as const;
-
-const damageTypes = {
-  phys: "SMT.powerTypes.phys",
-  mag: "SMT.powerTypes.mag",
-} as const;
-
 const attackTypes = {
   phys: "SMT.attackTypes.phys",
   mag: "SMT.attackTypes.mag",
   gun: "SMT.attackTypes.gun",
-  spell: "SMT.attackTypes.spell",
-  passive: "SMT.attackTypes.passive",
-  talk: "SMT.attackTypes.talk",
+} as const;
+
+const damageTypes = {
+  phys: "SMT.attackTypes.phys",
+  mag: "SMT.attackTypes.mag",
+} as const;
+
+const skillTypes = {
+  phys: "SMT.skillTypes.phys",
+  mag: "SMT.skillTypes.mag",
+  gun: "SMT.skillTypes.gun",
+  spell: "SMT.skillTypes.spell",
+  passive: "SMT.skillTypes.passive",
+  talk: "SMT.skillTypes.talk",
 } as const;
 
 const itemTypes = {
@@ -292,9 +297,9 @@ export const SMT = {
   debuffSpells,
   tn,
   alignment,
-  powerTypes,
-  damageTypes,
   attackTypes,
+  damageTypes,
+  skillTypes,
   itemTypes,
   gems,
   gemIcons,

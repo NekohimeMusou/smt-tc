@@ -73,7 +73,7 @@ export default class AttackDataModel extends BaseEmbeddedDataModel {
     const data = this._systemData;
     const attackType = data.attackType;
 
-    let powerType: PowerType = "phys";
+    let powerType: AttackType = "phys";
 
     switch (attackType) {
       case "passive":
@@ -177,8 +177,8 @@ export default class AttackDataModel extends BaseEmbeddedDataModel {
       auto: new fields.BooleanField(),
       attackType: new fields.StringField({
         choices: {
-          ...CONFIG.SMT.attackTypes,
-          item: "SMT.attackTypes.item",
+          ...CONFIG.SMT.skillTypes,
+          item: "SMT.skillTypes.item",
         },
         initial: "phys",
       }),

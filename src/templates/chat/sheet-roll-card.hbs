@@ -1,7 +1,7 @@
 {{!-- Name of the skill/item/weapon --}}
 <h1>{{checkName}}</h1>
 
-{{!-- Affinity (take another look at this) --}}
+{{!-- Affinity --}}
 {{#if affinity}}
 <h3>{{localize "SMT.itemRoll.affinity" affinity=(localize (concat "SMT.affinities." affinity))}}</h3>
 {{/if}}
@@ -19,27 +19,31 @@
   <h2>{{localize "SMT.itemRoll.costNotPaid"}}</h2>
 {{else}}
   {{!-- Accuracy Roll --}}
-  {{#unless auto}}
+  {{#if successRoll}}
     {{!-- Dice result, e.g. "Success! Critical success! Autofail!" --}}
-    <h2>{{localize "SMT.itemRoll.tn" tn=tn result=(localize (concat "SMT.successLevel." successLevel) autofail=autoFailThreshold)}}</h2>
+    <h2>{{localize "SMT.itemRoll.tn"
+      tn=tn
+      result=(localize (concat "SMT.successLevel." successLevel) autoFailThreshold=autoFailThreshold)
+    }}</h2>
     {{!-- Render roll --}}
     {{{successRoll}}}
-    {{else}}
+  {{else}}
+    {{#if auto}}
     <h2>{{localize "SMT.successLevel.auto"}}</h2>
-  {{/unless}}
+    {{/if}}
+  {{/if}}
 
   {{!-- Power Roll --}}
-  {{#if (and (or fumble success) hasPowerRoll)}}
+  {{#if (and (or fumble success) powerRoll)}}
     {{> "systems/smt-tc/templates/parts/chat/power-card-segment.hbs"}}
   {{/if}}
 
   {{!-- Ailment --}}
   {{#if (and (or fumble success) ailment)}}
-    {{!-- ailmentName: Rate --}}
     {{!-- Also show normal rate if it's a crit, like for power --}}
     {{#if criticalHit}}
       <h3>{{localize "SMT.itemRoll.critAilment"
-        ailment=(localize (concat "SMT.ailments." ailment.id)) rate=ailment.rate ailmentCritRate=ailmentCritRate}}</h3>
+        ailment=(localize (concat "SMT.ailments." ailment.id)) rate=ailment.rate ailmentCritRate=ailment.critRate}}</h3>
       {{else}}
       <h3>{{localize "SMT.itemRoll.ailment" ailment=(localize (concat "SMT.ailments." ailment.id)) rate=ailment.rate}}</h3>
     {{/if}}
@@ -49,7 +53,4 @@
   {{#if (and success targets)}}
     {{> "systems/smt-tc/templates/parts/chat/target-card-segment.hbs"}}
   {{/if}}
-  {{!-- {{#if (and success canDodge)}} --}}
-    {{!-- If this can be dodged, show a dodge button --}}
-  {{!-- {{/if}} --}}
 {{/unless}}

@@ -5,18 +5,18 @@
         <div>{{localize "SMT.actorSheet.derivedStats"}}</div>
       </li>
 
-      <li class="item flexrow roll-highlight power-roll" data-power-type="phys">
+      <li class="item flexrow roll-highlight sheet-roll" data-attack-type="phys">
         <div class="item-prop">{{localize "SMT.power.phys"}}</div>
         <div class="item-prop">{{system.power.phys}}</div>
       </li>
 
-      <li class="item flexrow roll-highlight power-roll" data-power-type="mag">
+      <li class="item flexrow roll-highlight sheet-roll" data-attack-type="mag">
         <div class="item-prop">{{localize "SMT.power.mag"}}</div>
         <div class="item-prop">{{system.power.mag}}</div>
       </li>
 
       {{#if (eq actor.type "human")}}
-      <li class="item flexrow roll-highlight power-roll" data-power-type="gun">
+      <li class="item flexrow roll-highlight sheet-roll" data-attack-type="gun">
         <div class="item-prop">{{localize "SMT.power.gun"}}</div>
         <div class="item-prop">{{system.power.gun}}</div>
       </li>

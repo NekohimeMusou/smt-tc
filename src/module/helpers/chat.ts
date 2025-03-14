@@ -1,147 +1,59 @@
 import SmtActor from "../documents/actor/actor.js";
 import SmtTokenDocument from "../documents/token-document.js";
 
-interface HitCheckCardData {
+interface AttackCardData {
+  context: object;
+  rolls: Roll[];
   actor?: SmtActor;
   token?: SmtTokenDocument;
+}
+
+interface AilmentCardData {
+  id: AilmentId;
+  rate: number;
+  critRate?: number;
+}
+
+interface SuccessCardData {
+  successLevel?: SuccessLevel;
+  success?: boolean;
+  auto?: boolean;
+  tn?: number;
+  autoFailThreshold?: number;
+  successRoll?: string;
+  curseRoll?: Roll;
+  curseResult?: boolean;
+}
+
+interface PowerCardData {
+  power?: number;
+  critPower?: number;
+  powerRoll?: string;
+}
+
+interface RollCardData {
+  actor?: SmtActor;
   checkName?: string;
-  tn?: number;
-  successLevel?: SuccessLevel;
-  roll?: Roll;
+  affinity?: Affinity;
+  costType?: CostType;
+  cost?: number;
+  description?: string;
+  costPaid?: boolean;
+  successData?: SuccessCardData;
+  powerData?: PowerCardData;
+  ailment?: AilmentCardData;
+  mods?: object;
+  rolls?: Roll[];
+  targets?: TargetData[];
 }
 
-export async function showHitCheckCard({
-  actor,
-  token,
-  checkName = "Mystery Check",
-  tn = 1,
-  successLevel = "autofail",
-  roll,
-}: HitCheckCardData = {}) {
-  if (!roll) {
-    const msg = game.i18n.format("SMT.error.missingCardRoll", {
-      function: "showHitCheckCard",
-    });
-    ui.notifications.error(msg);
-    throw new TypeError(msg);
-  }
-
-  const context = {
-    checkName,
-    tn,
-    successLevel,
-    roll: await roll.render(),
-  };
-  const template = "systems/smt-tc/templates/parts/chat/hit-check-card.hbs";
-
-  const content = await renderTemplate(template, context);
-
-  const chatData = {
-    author: game.user.id,
-    content,
-    speaker: {
-      scene: game.scenes.current,
-      actor,
-      token,
-    },
-    rolls: [roll],
-  };
-
-  return await ChatMessage.create(chatData);
-}
-
-interface PowerRollCardData {
-  actor?: SmtActor;
-  token?: SmtTokenDocument;
-  power?: number;
-  name?: string;
-  roll?: Roll;
-}
-
-export async function showPowerRollCard({
-  actor,
-  token,
-  power = 0,
-  name = "Power",
-  roll,
-}: PowerRollCardData = {}) {
-  if (!roll) {
-    const msg = game.i18n.format("SMT.error.missingCardRoll", {
-      function: "showPowerRollCard",
-    });
-    ui.notifications.error(msg);
-    throw new TypeError(msg);
-  }
-
-  const context = {
-    name,
-    power,
-    roll: await roll.render(),
-  };
-
-  const template = "systems/smt-tc/templates/chat/power-roll-card.hbs";
-
-  const content = await renderTemplate(template, context);
-
-  const chatData = {
-    author: game.user.id,
-    content,
-    speaker: {
-      scene: game.scenes.current,
-      actor,
-      token,
-    },
-    rolls: [roll],
-  };
-
-  return await ChatMessage.create(chatData);
-}
-
-interface AttackRollCardData {
-  actor?: SmtActor;
-  token?: SmtTokenDocument;
-  attackName?: string;
-  tn?: number;
-  successLevel?: SuccessLevel;
-  hitRoll?: Roll;
-  powerRoll?: Roll;
-  power?: number;
-}
-
-export async function showAttackRollCard({
-  actor,
-  token,
-  attackName,
-  tn,
-  successLevel,
-  hitRoll,
-  powerRoll,
-  power,
-}: AttackRollCardData = {}) {
-  if (!hitRoll) {
-    const msg = game.i18n.format("SMT.error.missingCardRoll", {
-      function: "showAttackRollCard",
-    });
-    ui.notifications.error(msg);
-    throw new TypeError(msg);
-  }
-
-  const context = {
-    attackName,
-    tn,
-    successLevel,
-    hitRoll: await hitRoll.render(),
-    powerRoll: (await powerRoll?.render()) ?? null,
-    power,
-  };
-
-  const rolls = [hitRoll];
-
-  if (powerRoll) {
-    rolls.push(powerRoll);
-  }
-
-  const template = "systems/smt-tc/templates/chat/attack-roll-card.hbs";
+export async function renderItemAttackCard(
+  { context, rolls, actor, token }: AttackCardData = {
+    context: {},
+    rolls: [],
+  },
+) {
+  const template = "systems/smt-tc/templates/chat/sheet-roll-card.hbs";
   const content = await renderTemplate(template, context);
 
   const chatData = {
@@ -158,20 +70,37 @@ export async function showAttackRollCard({
   return await ChatMessage.create(chatData);
 }
 
-interface AttackCardData {
-  context: object;
-  rolls: Roll[];
-  actor?: SmtActor;
-  token?: SmtTokenDocument;
-}
+export async function renderAttackCard({
+  actor,
+  checkName = "Unknown",
+  affinity,
+  costType = "none",
+  cost,
+  description = "",
+  costPaid = true,
+  successData = {},
+  powerData = {},
+  ailment,
+  rolls,
+  targets,
+}: RollCardData = {}) {
+  const context = {
+    checkName,
+    affinity,
+    costType,
+    cost,
+    description,
+    costPaid,
+    ...successData,
+    ...powerData,
+    ailment,
+    rolls,
+    targets,
+    criticalHit: successData?.successLevel === "crit",
+    fumble: successData?.successLevel === "fumble",
+  };
 
-export async function renderAttackCard(
-  { context, rolls, actor, token }: AttackCardData = {
-    context: {},
-    rolls: [],
-  },
-) {
-  const template = "systems/smt-tc/templates/chat/item-roll-card.hbs";
+  const template = "systems/smt-tc/templates/chat/sheet-roll-card.hbs";
   const content = await renderTemplate(template, context);
 
   const chatData = {
@@ -180,7 +109,7 @@ export async function renderAttackCard(
     speaker: {
       scene: game.scenes.current,
       actor,
-      token,
+      token: actor?.token,
     },
     rolls,
   };

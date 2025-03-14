@@ -337,7 +337,7 @@
       "fail": "Failed!",
       "success": "Success!",
       "crit": "Critical Success!",
-      "autofail": "Autofail! ({autofail}%)",
+      "autofail": "Autofail! ({autoFailThreshold}%)",
       "fumble": "Fumble!",
       "auto": "Auto"
     },
@@ -354,12 +354,12 @@
       "confirmDeletePrompt": "Really delete {name}?",
       "awardDialogTitle": "Award XP and Macca"
     },
-    "powerTypes": {
+    "attackTypes": {
       "phys": "Phys Attack",
       "mag": "Mag Attack",
       "gun": "Gun Attack"
     },
-    "attackTypes": {
+    "skillTypes": {
       "phys": "Phys Attack",
       "mag": "Mag Attack",
       "gun": "Gun Attack",
@@ -367,7 +367,7 @@
       "passive": "Passive",
       "talk": "Talk"
     },
-    "attackTypesShort": {
+    "skillTypesShort": {
       "phys": "Phys Atk",
       "mag": "Mag Atk",
       "gun": "Gun Atk",
@@ -453,7 +453,8 @@
       "missingItem": "Missing item in actor sheet roll",
       "missingField": "Can't toggle item field: Missing field ID",
       "useItemPiles": "Use Item Piles functionality to move items.",
-      "missingActor": "Missing actor in roll output."
+      "missingActor": "Missing actor in sheet roll.",
+      "sheetRollError": "Missing item and power type in sheet roll."
     }
   },
   "TYPES": {

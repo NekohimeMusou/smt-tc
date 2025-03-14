@@ -1,7 +1,7 @@
 import AttackDataModel from "../data-models/embedded/attack.js";
 import SmtActor from "../documents/actor/actor.js";
 import { AttackItem, SmtItem } from "../documents/item/item.js";
-import { renderAttackCard } from "./chat.js";
+import { renderItemAttackCard, renderAttackCard } from "./chat.js";
 
 interface HitCheckData {
   tn?: number;
@@ -36,20 +36,47 @@ interface ItemRollData {
   rollName?: string;
   item?: SmtItem;
   sheetActor?: SmtActor;
-  powerType?: PowerType;
+  attackType?: AttackType;
   sheetPowerRoll?: boolean;
-  targets?: TargetInfo[];
+  targets?: TargetData[];
   tnMod?: number;
   potencyMod?: number;
 }
 
-interface TargetInfo {
-  name: string;
-  resist: {
-    phys: number;
-    mag: number;
-  };
-  flied: boolean;
+// Quick fix
+declare global {
+  interface TargetData {
+    name: string;
+    resist: {
+      phys: number;
+      mag: number;
+    };
+    flied: boolean;
+  }
+}
+
+interface StatRollData {
+  actor?: SmtActor;
+  checkName?: string;
+  tnType?: TargetNumber;
+  attackType?: AttackType;
+  tnMod?: number;
+  potencyMod?: number;
+}
+
+interface SheetRollData {
+  actor?: SmtActor;
+  tnType?: TargetNumber;
+  attackType?: AttackType;
+  checkName?: string;
+  item?: SmtItem;
+  tnMod?: number;
+  potencyMod?: number;
+  targets?: TargetData;
+}
+
+interface ItemRollData {
+  item?: SmtItem;
 }
 
 export default class SmtDice {
@@ -114,11 +141,148 @@ export default class SmtDice {
     return { power, critPower: power * 2, roll };
   }
 
+  // Main roll
+  static async sheetRoll({
+    actor,
+    tnType,
+    attackType,
+    // Dialog has been shown at this point
+    checkName = "Unknown",
+    tnMod = 0,
+    potencyMod = 0,
+    item,
+  }: SheetRollData = {}) {
+    if (item) {
+      // Call the item roll function
+      return;
+    } else if (actor && (tnType || attackType)) {
+      // Call the stat roll function
+      return await this.statRoll({
+        actor,
+        checkName,
+        tnType,
+        attackType,
+        tnMod,
+        potencyMod,
+      });
+    }
+
+    const msg = game.i18n.localize("SMT.error.missingActor");
+    ui.notifications.error(msg);
+    throw new TypeError(msg);
+  }
+
+  // Sheet roll
+  static async statRoll({
+    actor,
+    checkName,
+    tnType,
+    attackType,
+    tnMod,
+    potencyMod,
+  }: StatRollData = {}) {
+    if (!actor || (!tnType && !attackType) || !checkName) {
+      const msg = game.i18n.localize("SMT.error.missingActor");
+      ui.notifications.error(msg);
+      throw new TypeError(msg);
+    }
+
+    const rolls: Roll[] = [];
+
+    const cardData = {
+      actor,
+      checkName,
+      rolls,
+    };
+    // Make a success roll
+    const charData = actor.system;
+
+    let success = true;
+
+    if (tnType) {
+      const tn = Math.max(charData.tn[tnType] + (tnMod ?? 0), 1);
+      const autoFailThreshold = charData.autoFailThreshold;
+      const critBoost =
+        (tnType === "gun" || tnType === "phys") && charData.mods.might;
+      const cursed = actor.statuses.has("curse");
+
+      const {
+        successLevel,
+        roll: successRoll,
+        curseRoll,
+        curseResult,
+      } = await this.hitCheck({
+        tn,
+        critBoost,
+        autoFailThreshold,
+        cursed,
+      });
+
+      rolls.push(successRoll);
+
+      success = successLevel === "success" || successLevel === "crit";
+
+      const successData = {
+        successLevel,
+        success,
+        tn,
+        autoFailThreshold,
+        successRoll: await successRoll.render(),
+        curseResult,
+      };
+
+      foundry.utils.mergeObject(cardData, { successData });
+
+      if (curseRoll) {
+        foundry.utils.mergeObject(cardData, {
+          curseRoll: await curseRoll.render(),
+        });
+      }
+    }
+
+    const powerType = attackType ?? tnType ?? "phys";
+
+    const rollPower =
+      powerType === "phys" || powerType === "mag" || powerType === "gun";
+
+    if (rollPower && success) {
+      const basePower = actor.system.power[powerType];
+      const powerBoostType = tnType === "mag" ? "mag" : "phys";
+      const powerBoost = actor.system.powerBoost[powerBoostType];
+
+      const {
+        power,
+        critPower,
+        roll: powerDiceRoll,
+      } = await this.powerRoll({
+        basePower,
+        potencyMod,
+        powerBoost,
+      });
+
+      rolls.push(powerDiceRoll);
+
+      foundry.utils.mergeObject(cardData, {
+        powerData: {
+          power,
+          critPower,
+          powerRoll: await powerDiceRoll.render(),
+        },
+        successData: {
+          success,
+        },
+      });
+    }
+
+    await renderAttackCard(cardData);
+  }
+
+  // Item roll
   static async itemRoll({
     rollName = "Unknown",
     item,
     sheetActor,
-    powerType,
+    attackType,
     sheetPowerRoll,
     targets,
     tnMod = 0,
@@ -180,22 +344,22 @@ export default class SmtDice {
       success: costPaid,
       fumble: false,
       criticalHit: false,
-      canDodge: (attackData?.canDodge ?? false) || powerType,
+      canDodge: (attackData?.canDodge ?? false) || attackType,
       mods: {
         pinhole,
         pierce,
       },
     };
 
-    if ((!auto && costPaid) || powerType) {
+    if ((!auto && costPaid) || attackType) {
       // If it's a sheet roll, use the actor's base TN
-      const baseTn = powerType
-        ? actor.system.tn[powerType]
+      const baseTn = attackType
+        ? actor.system.tn[attackType]
         : (attackData?.tn ?? 1);
       const tn = Math.max(baseTn + tnMod, 1);
       const critBoost =
         attackData?.critBoost ??
-        (powerType !== "mag" && actor.system.mods.might);
+        (attackType !== "mag" && actor.system.mods.might);
       const autoFailThreshold =
         attackData?.autoFailThreshold ?? CONFIG.SMT.defaultAutofailThreshold;
       const cursed = actor?.statuses.has("curse");
@@ -242,16 +406,16 @@ export default class SmtDice {
       const elementBoost = actor.system.elementBoost?.[boostAffinity];
 
       const damageType =
-        attackData?.damageType ?? (powerType !== "mag" ? "phys" : "mag");
+        attackData?.damageType ?? (attackType !== "mag" ? "phys" : "mag");
       const boostMultiplier = elementBoost ? 2 : 1;
       const basePower =
         (attackData?.basePower ??
-          (powerType ? actor.system.power[powerType] : 0)) * boostMultiplier;
+          (attackType ? actor.system.power[attackType] : 0)) * boostMultiplier;
       const potency = attackData?.potency ?? 0;
       const powerBoost =
         attackData?.powerBoost ??
-        (powerType
-          ? actor.system.powerBoost[powerType === "gun" ? "phys" : "mag"]
+        (attackType
+          ? actor.system.powerBoost[attackType === "gun" ? "phys" : "mag"]
           : false);
 
       const { power, critPower, roll } = await this.powerRoll({
@@ -298,7 +462,7 @@ export default class SmtDice {
       });
     }
 
-    return await renderAttackCard({
+    return await renderItemAttackCard({
       context,
       rolls,
       actor,
