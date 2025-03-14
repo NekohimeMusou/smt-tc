@@ -228,14 +228,17 @@ export default class SmtDice {
         tn,
         autoFailThreshold,
         successRoll: await successRoll.render(),
-        curseResult,
       };
 
       foundry.utils.mergeObject(cardData, { successData });
 
       if (curseRoll) {
+        rolls.push(curseRoll);
         foundry.utils.mergeObject(cardData, {
-          curseRoll: await curseRoll.render(),
+          successData: {
+            curseRoll: await curseRoll.render(),
+            curseResult,
+          },
         });
       }
     }
@@ -382,7 +385,7 @@ export default class SmtDice {
 
       if (curseRoll) {
         rolls.push(curseRoll);
-        foundry.utils.mergeObject(context, { curseRoll, curseResult });
+        foundry.utils.mergeObject(context, { curseRoll: await curseRoll.render(), curseResult });
       }
 
       foundry.utils.mergeObject(context, {

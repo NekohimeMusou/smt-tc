@@ -49,6 +49,12 @@
     {{/if}}
   {{/if}}
 
+  {{!-- Curse --}}
+  {{#if curseRoll}}
+    <h3>{{localize (concat "SMT.itemRoll.curse." (ifThen curseResult "hit" "miss"))}}</h3>
+    {{{curseRoll}}}
+  {{/if}}
+
   {{!-- Target Data --}}
   {{#if (and success targets)}}
     {{> "systems/smt-tc/templates/parts/chat/target-card-segment.hbs"}}
