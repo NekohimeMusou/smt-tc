@@ -161,7 +161,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       .on("change", this.#onItemFieldToggle.bind(this));
 
     // Rolling an item (skill, weapon, etc)
-    html.find(".item-roll").on("click", this.#onNewItemRoll.bind(this));
+    html.find(".item-roll").on("click", this.#onItemRoll.bind(this));
 
     // Test new sheet rolls
     html.find(".sheet-roll").on("click", this.#onSheetRoll.bind(this));
@@ -337,7 +337,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     await item.toggleField(fieldId, newState);
   }
 
-  async #onNewItemRoll(event: JQuery.ClickEvent) {
+  async #onItemRoll(event: JQuery.ClickEvent) {
     event.preventDefault();
 
     const element = $(event.currentTarget);
@@ -358,6 +358,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
             name: token.name,
             resist: token.actor.system.resist,
             fly: token.actor.statuses.has("fly"),
+            affinities: token.actor.system.affinities,
           }))
         : undefined;
 
@@ -390,7 +391,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       return;
     }
 
-    return await SmtDice.newItemRoll({
+    return await SmtDice.itemRoll({
       item,
       targets,
       tnMod,

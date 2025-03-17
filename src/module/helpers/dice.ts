@@ -1,4 +1,5 @@
 import AttackDataModel from "../data-models/embedded/attack.js";
+import { CharacterAffinities } from "../data-models/embedded/defense-affinities.js";
 import SmtActor from "../documents/actor/actor.js";
 import { SmtItem } from "../documents/item/item.js";
 import { renderItemAttackCard, renderAttackCard } from "./chat.js";
@@ -40,6 +41,15 @@ interface NewItemRollData {
   potencyMod?: number;
 }
 
+interface TargetProcessData {
+  target?: TargetData;
+  damageType?: DamageType;
+  attackAffinity?: Affinity;
+  halfResist?: boolean;
+  power?: number;
+  critPower?: number;
+}
+
 // Quick fix
 declare global {
   interface TargetData {
@@ -49,6 +59,9 @@ declare global {
       mag: number;
     };
     fly: boolean;
+    affinities: CharacterAffinities;
+    damage?: number;
+    critDamage?: number;
   }
 }
 
@@ -270,7 +283,7 @@ export default class SmtDice {
     await renderAttackCard(cardData);
   }
 
-  static async newItemRoll({
+  static async itemRoll({
     item,
     targets,
     tnMod = 0,
@@ -386,9 +399,22 @@ export default class SmtDice {
 
       rolls.push(powerRoll);
 
+      const attackTargets = targets
+        ? targets?.map((target) =>
+            this.#processTarget({
+              target,
+              damageType: attackData.damageType,
+              attackAffinity: attackData.affinity ?? "unique",
+              halfResist: cardData.mods.pinhole,
+              power,
+              critPower,
+            }),
+          )
+        : targets;
+
       foundry.utils.mergeObject(cardData, {
         damageType: attackData.damageType,
-        targets,
+        targets: attackTargets,
         potency: attackData.potency + potencyMod,
         power,
         critPower,
@@ -412,5 +438,59 @@ export default class SmtDice {
       actor,
       token: actor.token,
     });
+  }
+
+  static #processTarget({
+    target,
+    damageType = "phys",
+    attackAffinity = "unique",
+    halfResist = false,
+    power = 0,
+    critPower = 0,
+  }: TargetProcessData = {}) {
+    if (!target) {
+      const msg = game.i18n.localize("SMT.error.missingTarget");
+      ui.notifications.error(msg);
+      throw new TypeError(msg);
+    }
+
+    const affinityLevel = target.affinities[attackAffinity];
+    const isHealing = affinityLevel === "drain";
+    const resist =
+      attackAffinity === "healing"
+        ? 0
+        : Math.floor(target.resist[damageType] / (halfResist ? 2 : 1));
+    let affinityMultiplier = 1;
+
+    switch (affinityLevel) {
+      case "strong":
+        affinityMultiplier = 0.5;
+        break;
+      case "weak":
+        affinityMultiplier = 2;
+        break;
+      case "null":
+        affinityMultiplier = 0;
+        break;
+    }
+
+    const fly = target.fly;
+    const flyMultiplier = fly ? 2 : 1;
+
+    const critDamage = Math.max(
+      critPower * flyMultiplier * affinityMultiplier,
+      0,
+    );
+    const damage = Math.floor(
+      Math.max(affinityMultiplier * power - resist, 0) * flyMultiplier,
+    );
+
+    return {
+      ...target,
+      damage,
+      isHealing,
+      critDamage,
+      affinityLevel,
+    };
   }
 }

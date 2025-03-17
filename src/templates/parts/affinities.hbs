@@ -1,6 +1,7 @@
 <section class="affinities">
   <div class="affinity-block">
     {{#each SMT.defenseAffinities as |loc affinity|}}
+    {{#unless (eq affinity "almighty")}}
     <div class="affinity-item">
       <div class="tooltip">
         <img src="systems/smt-tc/img/affinity/{{affinity}}.jpg" width="82" height="28" />
@@ -10,6 +11,7 @@
         {{selectOptions ../SMT.affinityLevels localize=true selected=(lookup ../system.affinities affinity)}}
       </select>
     </div>
+    {{/unless}}
     {{/each}}
   </div>
 </section>

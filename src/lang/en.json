@@ -414,9 +414,23 @@
       "ailment": "{ailment}: {rate}%",
       "critAilment": "{ailment}: {ailmentCritRate}% ({rate}%)",
       "targets": "Targets:",
-      "target": "{name}: {damage} damage ({resist} {type})",
+      "target": {
+        "damage": "{damage} damage ({resist} {type})",
+        "healing": "{damage} healing"
+      },
+      "critTarget": {
+        "damage": "{critDamage} ({damage}) damage ({resist} {type})",
+        "healing": "{critDamage} ({damage}) healing"
+      },
+      "affinityLabel": {
+        "none": "{name}:",
+        "weak": "{name}: Weak!",
+        "strong": "{name}: Strong!",
+        "null": "{name}: Null!",
+        "drain": "{name}: Drain!",
+        "repel": "{name}: Repel!"
+      },
       "targetFlied": "Double damage! {name} is a fly!",
-      "critTarget": "{name}: {critDamage} ({damage}) damage ({resist} {type})",
       "pinhole": "Pinhole: Halve dodge and resist",
       "pierce": "Pierce elemental resists except Repel",
       "curse": {
@@ -462,7 +476,8 @@
       "missingField": "Can't toggle item field: Missing field ID",
       "useItemPiles": "Use Item Piles functionality to move items.",
       "missingActor": "Missing actor in sheet roll.",
-      "sheetRollError": "Missing item and power type in sheet roll."
+      "sheetRollError": "Missing item and power type in sheet roll.",
+      "missingTarget": "Missing target in target processing"
     }
   },
   "TYPES": {

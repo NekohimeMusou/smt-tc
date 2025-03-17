@@ -20,7 +20,8 @@ declare global {
   type TargetNumber = keyof typeof tn;
   type DefenseAffinity = keyof typeof defenseAffinities;
   type AttackAffinity = keyof typeof attackAffinities;
-  type Affinity = AttackAffinity | DefenseAffinity;
+  type Affinity = keyof typeof affinities;
+  type AffinityLevel = keyof typeof affinityLevels;
   type AilmentId = keyof typeof ailments;
 
   // Substitute for the problematic DataModel
@@ -72,6 +73,25 @@ const costTypes = {
   none: "SMT.costTypes.none",
 } as const;
 
+const affinities = {
+  phys: "SMT.affinities.phys",
+  fire: "SMT.affinities.fire",
+  cold: "SMT.affinities.cold",
+  elec: "SMT.affinities.elec",
+  force: "SMT.affinities.force",
+  light: "SMT.affinities.light",
+  dark: "SMT.affinities.dark",
+  ruin: "SMT.affinities.ruin",
+  nerve: "SMT.affinities.nerve",
+  mind: "SMT.affinities.mind",
+  ailment: "SMT.affinities.ailment",
+  almighty: "SMT.affinities.almighty",
+  support: "SMT.affinities.support",
+  healing: "SMT.affinities.healing",
+  unique: "SMT.affinities.unique",
+  talk: "SMT.affinities.talk",
+} as const;
+
 const attackAffinities = {
   phys: "SMT.affinities.phys",
   fire: "SMT.affinities.fire",
@@ -101,6 +121,7 @@ const defenseAffinities = {
   nerve: "SMT.affinities.nerve",
   mind: "SMT.affinities.mind",
   ailment: "SMT.affinities.ailment",
+  almighty: "SMT.affinities.almighty",
 } as const;
 
 const affinityLevels = {
@@ -289,6 +310,7 @@ export const SMT = {
   statsFull,
   resourceTypes,
   costTypes,
+  affinities,
   attackAffinities,
   defenseAffinities,
   affinityLevels,

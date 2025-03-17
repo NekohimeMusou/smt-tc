@@ -1,20 +1,19 @@
-<h3>{{localize "SMT.itemRoll.targets"}}</h3>
+<h2>{{localize "SMT.itemRoll.targets"}}</h2>
 {{#each targets}}
   {{#if ../powerRollRender}}
+  <h3>{{localize (concat "SMT.itemRoll.affinityLabel." affinityLevel) name=name}}</h3>
     {{#if ../criticalHit}}
-    <p>{{localize "SMT.itemRoll.critTarget"
-      name=this.name
+    <p>{{localize (concat "SMT.itemRoll.critTarget." (ifThen isHealing "healing" "damage"))
       resist=(lookup this.resist ../damageType)
       type=(localize (concat "SMT.resist." ../damageType))
       damage=damage
       critDamage=critDamage
       }}</p>
     {{else}}
-    <p>{{localize "SMT.itemRoll.target"
-      name=this.name
-      resist=(lookup this.resist ../damageType)
-      type=(localize (concat "SMT.resist." ../damageType))
-      damage=damage
+      <p>{{localize (concat "SMT.itemRoll.target." (ifThen isHealing "healing" "damage"))
+        resist=(lookup this.resist ../damageType)
+        type=(localize (concat "SMT.resist." ../damageType))
+        damage=damage
       }}</p>
     {{/if}}
     {{#if fly}}
@@ -23,4 +22,5 @@
   {{else}}
     <p>{{this.name}}</p>
   {{/if}}
+  {{#unless @last}}<hr />{{/unless}}
 {{/each}}
