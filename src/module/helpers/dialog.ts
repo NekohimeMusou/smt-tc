@@ -168,3 +168,54 @@ export async function renderBuffDialog(): Promise<BuffDialogResult> {
     ).render(true),
   );
 }
+
+interface FountainDialogData {
+  hp?: number;
+  mp?: number;
+  macca?: number;
+}
+
+interface FountainDialogResult {
+  healed?: boolean;
+  insufficientMacca?: boolean;
+  cost?: number;
+}
+
+export async function renderFountainDialog({
+  hp = 0,
+  mp = 0,
+  macca = 0,
+}: FountainDialogData = {}): Promise<FountainDialogResult> {
+  const cost = hp + mp * 2;
+  const insufficientMacca = macca < cost;
+  const template = "systems/smt-tc/templates/dialog/fountain-of-life.hbs";
+
+  const content = await renderTemplate(template, {
+    hp,
+    mp,
+    cost,
+    insufficientMacca,
+  });
+
+  return new Promise((resolve) =>
+    new Dialog(
+      {
+        title: game.i18n.localize("SMT.dialog.awardDialogTitle"),
+        content,
+        buttons: {
+          yes: {
+            label: "Yes",
+            callback: () =>
+              resolve({ insufficientMacca, healed: !insufficientMacca, cost }),
+          },
+          no: {
+            label: "No",
+            callback: () => resolve({ insufficientMacca, healed: false, cost }),
+          },
+        },
+        close: () => resolve({ insufficientMacca, healed: false, cost }),
+      },
+      {},
+    ).render(true),
+  );
+}

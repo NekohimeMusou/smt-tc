@@ -28,7 +28,7 @@ export async function healingFountain() {
     content,
     speaker: {
       scene: game.scenes.current,
-      alias: game.i18n.localize("SMT.macro.fountain.ladyOfTheFount"),
+      alias: game.i18n.localize("SMT.macro.fountain.lady"),
     },
   };
 

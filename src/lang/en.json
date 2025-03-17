@@ -397,10 +397,16 @@
       },
       "fountain": {
         "title": "Fountain of Life",
-        "insufficientMacca": "{name} is out of money! (Cost: {cost})",
+        "notEnoughMacca": "{name} is out of money! (Cost: {cost})",
         "healed": "{name} recovered {hpHealed} HP and {mpHealed} MP (Cost: {cost})",
         "alreadyFull": "{name} doesn't need healing!",
-        "ladyOfTheFount": "Lady of the Fount"
+        "lady": "Lady of the Fount",
+
+        "recoveryAmount": "Recover {hp} HP and {mp} MP.",
+        "cost": "Cost: {cost}",
+        "insufficientMacca": "You don't have enough macca!",
+        "chatMessage": "{name} paid {cost} macca and recovered {hp} HP and {mp} MP.",
+        "noHealingNeeded": "You don't need any healing right now!"
       }
     },
     "itemRoll": {
