@@ -2,6 +2,13 @@ import { AttackItem } from "../../documents/item/item.js";
 import BaseEmbeddedDataModel from "./abstract/base-embedded-data.js";
 
 export default class AttackDataModel extends BaseEmbeddedDataModel {
+  // Cheesy hack until I get a more robust status system working
+  get autoFocus() {
+    const item = this.item;
+
+    return !item || item.name === "Focus";
+  }
+
   get damageType(): DamageType {
     const data = this._systemData;
 

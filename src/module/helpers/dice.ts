@@ -377,7 +377,7 @@ export default class SmtDice {
       if (fumble) {
         await actor.toggleStatusEffect("curse", {
           active: true,
-          overlay: true,
+          overlay: false,
         });
       }
     }
@@ -435,7 +435,11 @@ export default class SmtDice {
       });
     }
 
-    await actor.toggleStatusEffect("focus", { overlay: true, active: false });
+    await actor.toggleStatusEffect("focus", { overlay: false, active: false });
+
+    if (attackData?.autoFocus) {
+      await actor.toggleStatusEffect("focus", { overlay: false, active: true });
+    }
 
     return await renderItemAttackCard({
       context: cardData,
