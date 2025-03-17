@@ -2,7 +2,8 @@ import SmtActor from "../../../documents/actor/actor.js";
 import { Magatama } from "../../../documents/item/item.js";
 import DefenseAffinityData from "../../embedded/defense-affinities.js";
 
-export default abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
+export default abstract class SmtBaseActorData extends foundry.abstract
+  .TypeDataModel {
   abstract override readonly type: CharacterClass;
 
   get actor() {
@@ -301,7 +302,9 @@ export default abstract class SmtBaseActorData extends foundry.abstract.TypeData
     data.tn.phys += data.tn.st + accuracyBuff;
     data.tn.mag += data.tn.ma + accuracyBuff;
     data.tn.save += data.tn.vi;
-    data.tn.dodge += stats.ag.value + 10 + tnBoostMod + accuracyBuff;
+    data.tn.dodge += Math.floor(
+      (stats.ag.value + 10 + tnBoostMod + accuracyBuff) / data.multi,
+    );
     data.tn.negotiation += stats.lu.value * 2 + 20;
     data.tn.gun += data.tn.ag;
 
