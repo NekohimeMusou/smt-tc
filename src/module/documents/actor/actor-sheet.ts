@@ -161,7 +161,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       .on("change", this.#onItemFieldToggle.bind(this));
 
     // Rolling an item (skill, weapon, etc)
-    html.find(".item-roll").on("click", this.#onItemRoll.bind(this));
+    html.find(".item-roll").on("click", this.#onNewItemRoll.bind(this));
 
     // Test new sheet rolls
     html.find(".sheet-roll").on("click", this.#onSheetRoll.bind(this));
@@ -256,64 +256,6 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     });
   }
 
-  async #onItemRoll(event: JQuery.ClickEvent) {
-    event.preventDefault();
-
-    const element = $(event.currentTarget);
-    const itemId = element.closest(".item").data("itemId") as
-      | string
-      | undefined;
-    const item = this.actor.items.get(itemId ?? "");
-
-    if (!item) {
-      const msg = game.i18n.localize("SMT.error.missingItem");
-      ui.notifications.error(msg);
-      throw new Error(msg);
-    }
-
-    const targets =
-      game.user.targets.size > 0
-        ? ([...game.user.targets.values()] as SmtToken[]).map((token) => ({
-            name: token.name,
-            resist: token.actor?.system?.resist ?? 0,
-            fly: token.actor?.statuses.has("fly"),
-          }))
-        : undefined;
-
-    const isAttackItem = ["inventoryItem", "weapon", "skill"].includes(
-      item.type,
-    );
-
-    const auto = !isAttackItem || (item as AttackItem).system?.attackData?.auto;
-
-    const consumeOnUse = (item as InventoryItem).system?.consumeOnUse;
-
-    const powerRoll = (item as AttackItem).system?.attackData?.hasPowerRoll;
-
-    // Is the user signaling to show the dialog?
-    const dialogKey =
-      event.shiftKey != game.settings.get("smt-tc", "showRollDialogByDefault");
-
-    // Show the dialog anyway if it's a consumable item
-    const showDialog = consumeOnUse || dialogKey;
-
-    const { tnMod, potencyMod, cancelled } = showDialog
-      ? await showAttackModifierDialog(
-          item.name,
-          item.system.description,
-          auto,
-          consumeOnUse,
-          powerRoll,
-        )
-      : { tnMod: 0, potencyMod: 0, cancelled: false };
-
-    if (cancelled) {
-      return;
-    }
-
-    await SmtDice.itemRoll({ item, targets, tnMod, potencyMod });
-  }
-
   async #onSheetModChange(event: JQuery.ClickEvent) {
     event.preventDefault();
 
@@ -393,5 +335,66 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     }
 
     await item.toggleField(fieldId, newState);
+  }
+
+  async #onNewItemRoll(event: JQuery.ClickEvent) {
+    event.preventDefault();
+
+    const element = $(event.currentTarget);
+    const itemId = element.closest(".item").data("itemId") as
+      | string
+      | undefined;
+    const item = this.actor.items.get(itemId ?? "");
+
+    if (!item) {
+      const msg = game.i18n.localize("SMT.error.missingItem");
+      ui.notifications.error(msg);
+      throw new Error(msg);
+    }
+
+    const targets =
+      game.user.targets.size > 0
+        ? ([...game.user.targets.values()] as SmtToken[]).map((token) => ({
+            name: token.name,
+            resist: token.actor.system.resist,
+            fly: token.actor.statuses.has("fly"),
+          }))
+        : undefined;
+
+    const isAttackItem = item.isAttackItem();
+
+    const auto = !isAttackItem || item.system.attackData.auto;
+
+    const consumeOnUse = (item as InventoryItem).system?.consumeOnUse;
+
+    const hasPowerRoll = (item as AttackItem).system?.attackData.hasPowerRoll;
+
+    // Is the user signaling to show the dialog?
+    const dialogKey =
+      event.shiftKey != game.settings.get("smt-tc", "showRollDialogByDefault");
+
+    // Show the dialog anyway if it's a consumable item
+    const showDialog = consumeOnUse || dialogKey;
+
+    const { tnMod, potencyMod, cancelled } = showDialog
+      ? await showAttackModifierDialog(
+          item.name,
+          item.system.description,
+          auto,
+          consumeOnUse,
+          hasPowerRoll,
+        )
+      : { tnMod: 0, potencyMod: 0, cancelled: false };
+
+    if (cancelled) {
+      return;
+    }
+
+    return await SmtDice.newItemRoll({
+      item,
+      targets,
+      tnMod,
+      potencyMod,
+    });
   }
 }

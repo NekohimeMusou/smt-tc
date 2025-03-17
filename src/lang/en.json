@@ -128,7 +128,7 @@
       "hp": "{cost} HP",
       "mp": "{cost} MP",
       "consumeItem": "Item Consumed",
-      "consumeAmmo": "{cost} Ammo Consumed",
+      "consumeAmmo": "{cost} Ammo",
       "none": "None"
     },
     "statShort": {

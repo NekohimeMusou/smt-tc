@@ -1,7 +1,7 @@
 import SmtActor from "../documents/actor/actor.js";
 import SmtTokenDocument from "../documents/token-document.js";
 
-interface AttackCardData {
+interface ItemAttackCardData {
   context: object;
   rolls: Roll[];
   actor?: SmtActor;
@@ -21,7 +21,7 @@ interface SuccessCardData {
   tn?: number;
   autoFailThreshold?: number;
   successRollRender?: string;
-  curseRollRender?: Roll;
+  curseRollRender?: string;
   curseResult?: boolean;
 }
 
@@ -48,7 +48,7 @@ interface RollCardData {
 }
 
 export async function renderItemAttackCard(
-  { context, rolls, actor, token }: AttackCardData = {
+  { context, rolls, actor, token }: ItemAttackCardData = {
     context: {},
     rolls: [],
   },
