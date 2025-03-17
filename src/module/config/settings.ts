@@ -12,7 +12,7 @@ export default function registerSystemSettings() {
   game.settings.register("smt-tc", "editableActorSheetBuffs", {
     name: "SMT.settings.editableActorSheetBuffs.name",
     hint: "SMT.settings.editableActorSheetBuffs.hint",
-    scope: "client",
+    scope: "world",
     config: true,
     requiresReload: true,
     type: Boolean,
@@ -21,7 +21,7 @@ export default function registerSystemSettings() {
   game.settings.register("smt-tc", "autoCurseRolls", {
     name: "SMT.settings.autoCurseRolls.name",
     hint: "SMT.settings.autoCurseRolls.hint",
-    scope: "client",
+    scope: "world",
     config: true,
     requiresReload: true,
     type: Boolean,
