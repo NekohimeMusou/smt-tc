@@ -2,6 +2,18 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.5.4] - 2025-03-17
+
+*Just remembered I wanted to try adding a healing fountain macro that works with Item Piles, so I did!*
+
+### Added
+
+- Add new, Item Piles vendor-compatible Fountain of Life macro
+
+### Removed
+
+- Remove old, janky, GM-only Fountain of Life macro
+
 ## [0.5.3] - 2025-03-17
 
 ### Changed
