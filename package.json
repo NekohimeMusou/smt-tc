@@ -10,7 +10,7 @@
     "url": "git+https://github.com/NekohimeMusou/smt-tc"
   },
   "scripts": {
-    "build": "trash dist/**/* && tsc && copyfiles -u 1 src/**/*.css src/**/*.json src/**/*.hbs src/**/*.jpg dist/ && copyfiles LICENSE.md README.md CHANGELOG.md dist/"
+    "build": "trash dist/**/* && tsc && copyfiles -u 1 src/**/*.css src/**/*.json src/**/*.hbs src/**/*.jpg dist/ && copyfiles *.md dist/"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",
