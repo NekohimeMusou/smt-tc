@@ -162,8 +162,8 @@ const miscStatuses = [
     ],
   },
   {
-    id: "focused",
-    name: "SMT.statusEffects.focused",
+    id: "focus",
+    name: "SMT.statusEffects.focus",
     icon: "icons/svg/aura.svg",
   },
   {

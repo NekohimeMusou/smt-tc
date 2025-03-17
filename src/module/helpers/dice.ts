@@ -397,6 +397,9 @@ export default class SmtDice {
         powerBoost: attackData.powerBoost,
       });
 
+      const focusMultiplier =
+        actor.statuses.has("focus") && attackData.damageType === "phys" ? 2 : 1;
+
       rolls.push(powerRoll);
 
       const attackTargets = targets
@@ -406,8 +409,8 @@ export default class SmtDice {
               damageType: attackData.damageType,
               attackAffinity: attackData.affinity ?? "unique",
               halfResist: cardData.mods.pinhole,
-              power,
-              critPower,
+              power: power * focusMultiplier,
+              critPower: critPower * focusMultiplier,
             }),
           )
         : targets;
@@ -416,8 +419,8 @@ export default class SmtDice {
         damageType: attackData.damageType,
         targets: attackTargets,
         potency: attackData.potency + potencyMod,
-        power,
-        critPower,
+        power: power * focusMultiplier,
+        critPower: critPower * focusMultiplier,
         powerRollRender: await powerRoll.render(),
       });
     }
@@ -431,6 +434,8 @@ export default class SmtDice {
         ailmentCritRate,
       });
     }
+
+    await actor.toggleStatusEffect("focus", { overlay: true, active: false });
 
     return await renderItemAttackCard({
       context: cardData,
