@@ -4,14 +4,14 @@
   <h3>{{localize (concat "SMT.itemRoll.affinityLabel." affinityLevel) name=name}}</h3>
     {{#if ../criticalHit}}
     <p>{{localize (concat "SMT.itemRoll.critTarget." (ifThen isHealing "healing" "damage"))
-      resist=(lookup this.resist ../damageType)
+      resist=finalResist
       type=(localize (concat "SMT.resist." ../damageType))
       damage=damage
       critDamage=critDamage
       }}</p>
     {{else}}
       <p>{{localize (concat "SMT.itemRoll.target." (ifThen isHealing "healing" "damage"))
-        resist=(lookup this.resist ../damageType)
+        resist=finalResist
         type=(localize (concat "SMT.resist." ../damageType))
         damage=damage
       }}</p>

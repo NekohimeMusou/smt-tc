@@ -456,7 +456,7 @@ export default class SmtDice {
 
     const affinityLevel = target.affinities[attackAffinity];
     const isHealing = affinityLevel === "drain";
-    const resist =
+    const finalResist =
       attackAffinity === "healing"
         ? 0
         : Math.floor(target.resist[damageType] / (halfResist ? 2 : 1));
@@ -482,7 +482,7 @@ export default class SmtDice {
       0,
     );
     const damage = Math.floor(
-      Math.max(affinityMultiplier * power - resist, 0) * flyMultiplier,
+      Math.max(affinityMultiplier * power - finalResist, 0) * flyMultiplier,
     );
 
     return {
@@ -491,6 +491,7 @@ export default class SmtDice {
       isHealing,
       critDamage,
       affinityLevel,
+      finalResist,
     };
   }
 }
