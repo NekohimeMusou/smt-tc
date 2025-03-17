@@ -89,7 +89,7 @@
       "hasAttack": "Has Attack",
       "learned": "Learned",
       "highCrit": "High Crit",
-      "pinhole": "Pinhole",
+      "halfResist": "Half Resist/Dodge",
       "autoPierce": "Auto Pierce"
     },
     "skillDetails": {
