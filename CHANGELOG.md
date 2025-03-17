@@ -19,6 +19,10 @@
 - Pinhole mod correctly applies to target resists
 - Add isAttackItem helper to SmtItem
 
+### Removed
+
+- Get rid of Pierce world setting until it's actually implemented
+
 ### Fixed
 
 - Make editableActorSheetBuffs and autoCurseRolls world settings
