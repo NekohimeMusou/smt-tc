@@ -1,3 +1,4 @@
+import { ailmentData } from "../../config/statuses.js";
 import { ACTORMODELS } from "../../data-models/actor/actor-data-model.js";
 import SmtActiveEffect from "../active-effect/active-effect.js";
 import { SmtItem } from "../item/item.js";
@@ -6,8 +7,6 @@ export type Fiend = Subtype<SmtActor, "fiend">;
 export type Demon = Subtype<SmtActor, "demon">;
 export type Human = Subtype<SmtActor, "human">;
 
-type StatusData = StatusEffectObject & { statuses?: Set<string> };
-type StatusChangeMode = "on" | "off" | "toggle";
 type HealResult = "insufficientMacca" | "healed" | "alreadyFull";
 
 interface HealingFountainResult {
@@ -23,6 +22,42 @@ export default class SmtActor extends Actor<
   SmtItem,
   SmtActiveEffect
 > {
+  async inflictAilment(id: AilmentId): Promise<boolean> {
+    const newAilment = ailmentData.find((ailment) => ailment.id === id);
+    if (!newAilment) {
+      return false;
+    }
+
+    const currentAilment = ailmentData.find((ailment) =>
+      this.statuses.has(ailment.id),
+    );
+
+    if (!currentAilment) {
+      await this.toggleStatusEffect(id, { overlay: false, active: true });
+      return true;
+    }
+    const currentAilmentPriority = currentAilment.priority;
+
+    const newAilmentPriority = newAilment.priority;
+
+    const replaceAilment = newAilmentPriority < currentAilmentPriority;
+
+    if (replaceAilment) {
+      await this.toggleStatusEffect(currentAilment?.id ?? "", {
+        overlay: false,
+        active: false,
+      });
+      await this.toggleStatusEffect(newAilment?.id ?? "", {
+        overlay: false,
+        active: true,
+      });
+
+      return true;
+    }
+
+    return false;
+  }
+
   async applyHealingFountain(): Promise<HealingFountainResult> {
     const data = this.system;
 
@@ -56,26 +91,5 @@ export default class SmtActor extends Actor<
       cost,
       name: this.token?.name ?? this.name,
     };
-  }
-
-  async toggleStatus(id: StatusId, mode: StatusChangeMode) {
-    const originalEffect = this.effects.find((e) => e.statuses.has(id));
-
-    if (originalEffect && mode !== "on") {
-      // If it's "off" or "toggle" and the effect is on, switch it off
-      await this.deleteEmbeddedDocuments("ActiveEffect", [originalEffect.id]);
-    } else if (!originalEffect && mode !== "off") {
-      // If it's "on" or "toggle" and the effect is off, switch it on
-      const effectData = CONFIG.statusEffects.find((e) => e.id === id);
-      if (!effectData)
-        return ui.notifications.error(`Status ID not found: ${id}`);
-      const newEffect = foundry.utils.deepClone(effectData) as StatusData;
-
-      newEffect.statuses = new Set<StatusId>([id]);
-
-      newEffect.name = game.i18n.localize(newEffect.name);
-
-      await this.createEmbeddedDocuments("ActiveEffect", [newEffect]);
-    }
   }
 }

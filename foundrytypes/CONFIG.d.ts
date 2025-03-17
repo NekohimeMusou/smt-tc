@@ -58,7 +58,8 @@ declare interface CONFIG {
 type StatusEffectObject = {
 	id: string,
 	name: string,
-	icon: string,
+	icon?: string,
+	img: string,
 	changes ?: readonly AEChange[],
 }
 

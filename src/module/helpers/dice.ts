@@ -246,7 +246,10 @@ export default class SmtDice {
 
       // Wait to do this until the end so we don't make a curse roll at the same time as we get cursed
       if (fumble) {
-        await actor.toggleStatus("curse", "on");
+        await actor.toggleStatusEffect("curse", {
+          active: true,
+          overlay: false,
+        });
       }
     }
 

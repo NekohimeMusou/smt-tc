@@ -5,6 +5,7 @@ import {
 } from "../helpers/macros/award.js";
 import { applyBuffs } from "../helpers/macros/buffs.js";
 import { healingFountain } from "../helpers/macros/healing-fountain.js";
+import { ailmentData } from "./statuses.js";
 import { templatePaths } from "./templates.js";
 
 declare global {
@@ -315,6 +316,7 @@ export const SMT = {
   defenseAffinities,
   affinityLevels,
   ailments,
+  ailmentData,
   buffs,
   buffSpells,
   debuffSpells,
