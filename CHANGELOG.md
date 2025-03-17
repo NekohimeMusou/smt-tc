@@ -2,6 +2,27 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.5.3] - 2025-03-17
+
+### Changed
+
+- Change clan actor sheet field placeholder to "Clan"
+- Refactor the hell out of item rolls
+- Multi-attack sheet mod now applies to Dodge TN (workaround for Pinhole)
+- The Focus skill now applies the Focus status
+- The Focus status now doubles the power of your next Phys Attack
+- The Focus status now fades after using any skill
+
+### Added
+
+- Skill damage accounts for affinities
+- Pinhole mod correctly applies to target resists
+- Add isAttackItem helper to SmtItem
+
+### Fixed
+
+- Make editableActorSheetBuffs and autoCurseRolls world settings
+
 ## [0.5.2] - 2025-03-14
 
 ### Changed
