@@ -10,11 +10,11 @@ export type Skill = Subtype<SmtItem, "skill">;
 
 export type AttackItem = InventoryItem | Weapon | Skill;
 
-export class SmtItem extends Item<
-  typeof ITEMMODELS,
-  SmtActor,
-  SmtActiveEffect
-> {
+export class SmtItem extends Item<typeof ITEMMODELS, SmtActor, SmtActiveEffect> {
+  isAttackItem(): this is AttackItem {
+    return (this as AttackItem).system.attackData !== undefined;
+  }
+
   async toggleField(fieldId: string, forcedState: boolean) {
     if (!Object.hasOwn(this.system, fieldId)) {
       return;
