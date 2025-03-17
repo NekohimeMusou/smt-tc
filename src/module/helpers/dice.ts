@@ -227,7 +227,7 @@ export default class SmtDice {
         success,
         tn,
         autoFailThreshold,
-        successRoll: await successRoll.render(),
+        successRollRender: await successRoll.render(),
       };
 
       foundry.utils.mergeObject(cardData, { successData });
@@ -236,7 +236,7 @@ export default class SmtDice {
         rolls.push(curseRoll);
         foundry.utils.mergeObject(cardData, {
           successData: {
-            curseRoll: await curseRoll.render(),
+            curseRollRender: await curseRoll.render(),
             curseResult,
           },
         });
@@ -274,7 +274,7 @@ export default class SmtDice {
         powerData: {
           power,
           critPower,
-          powerRoll: await powerDiceRoll.render(),
+          powerRollRender: await powerDiceRoll.render(),
         },
         successData: {
           success,
@@ -391,7 +391,7 @@ export default class SmtDice {
       if (curseRoll) {
         rolls.push(curseRoll);
         foundry.utils.mergeObject(context, {
-          curseRoll: await curseRoll.render(),
+          curseRollRender: await curseRoll.render(),
           curseResult,
         });
       }
@@ -403,7 +403,7 @@ export default class SmtDice {
         success: ["success", "crit", "auto"].includes(successLevel),
         fumble,
         criticalHit,
-        successRoll: await roll.render(),
+        successRollRender: await roll.render(),
       });
 
       if (fumble) {
@@ -461,7 +461,7 @@ export default class SmtDice {
         potency: potency + potencyMod,
         power,
         critPower,
-        powerRoll: await roll.render(),
+        powerRollRender: await roll.render(),
       });
     }
 

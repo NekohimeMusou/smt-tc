@@ -7,7 +7,7 @@
   <h3>{{localize "SMT.itemRoll.consumeItem"}}</h3>
   {{/if}}
 
-  {{#if powerRoll}}
+  {{#if powerRollRender}}
   <div class="flexrow">
     <div class="resource-label">{{localize "SMT.dialog.potency"}}</div>
     <input
@@ -16,7 +16,7 @@
       name="potency"
       data-dtype="Number"
       placeholder="0"
-      {{ifThen powerRoll "autofocus" ""}}
+      {{ifThen powerRollRender "autofocus" ""}}
     />
   </div>
   {{/if}}
@@ -30,7 +30,7 @@
       name="tnMod"
       data-dtype="Number"
       placeholder="0"
-      {{ifThen (and auto (not powerRoll)) "autofocus" ""}}
+      {{ifThen (and auto (not powerRollRender)) "autofocus" ""}}
     />
   </div>
   {{/unless}}

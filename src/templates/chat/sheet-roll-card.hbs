@@ -19,14 +19,14 @@
   <h2>{{localize "SMT.itemRoll.costNotPaid"}}</h2>
 {{else}}
   {{!-- Accuracy Roll --}}
-  {{#if successRoll}}
+  {{#if successRollRender}}
     {{!-- Dice result, e.g. "Success! Critical success! Autofail!" --}}
     <h2>{{localize "SMT.itemRoll.tn"
       tn=tn
       result=(localize (concat "SMT.successLevel." successLevel) autoFailThreshold=autoFailThreshold)
     }}</h2>
     {{!-- Render roll --}}
-    {{{successRoll}}}
+    {{{successRollRender}}}
   {{else}}
     {{#if auto}}
     <h2>{{localize "SMT.successLevel.auto"}}</h2>
@@ -34,7 +34,7 @@
   {{/if}}
 
   {{!-- Power Roll --}}
-  {{#if (and (or fumble success) powerRoll)}}
+  {{#if (and (or fumble success) powerRollRender)}}
     {{> "systems/smt-tc/templates/parts/chat/power-card-segment.hbs"}}
   {{/if}}
 
@@ -50,9 +50,9 @@
   {{/if}}
 
   {{!-- Curse --}}
-  {{#if curseRoll}}
+  {{#if curseRollRender}}
     <h3>{{localize (concat "SMT.itemRoll.curse." (ifThen curseResult "hit" "miss"))}}</h3>
-    {{{curseRoll}}}
+    {{{curseRollRender}}}
   {{/if}}
 
   {{!-- Target Data --}}

@@ -20,15 +20,15 @@ interface SuccessCardData {
   auto?: boolean;
   tn?: number;
   autoFailThreshold?: number;
-  successRoll?: string;
-  curseRoll?: Roll;
+  successRollRender?: string;
+  curseRollRender?: Roll;
   curseResult?: boolean;
 }
 
 interface PowerCardData {
   power?: number;
   critPower?: number;
-  powerRoll?: string;
+  powerRollRender?: string;
 }
 
 interface RollCardData {
