@@ -4,7 +4,6 @@ import {
   resolveConflict,
 } from "../helpers/macros/award.js";
 import { applyBuffs } from "../helpers/macros/buffs.js";
-import { healingFountain } from "../helpers/macros/healing-fountain.js";
 import { ailmentData } from "./statuses.js";
 import { templatePaths } from "./templates.js";
 
@@ -340,6 +339,5 @@ export const SMT = {
     grantRewards,
     applyBuffs,
     luckyFindCheck,
-    healingFountain,
   },
 } as const;
