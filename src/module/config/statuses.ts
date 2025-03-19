@@ -62,7 +62,7 @@ export const ailmentData = [
   {
     id: "stun",
     name: "SMT.ailments.stun",
-    img: "icons/svg/daze.svg",
+    img: "icons/svg/paralysis.svg",
     priority: 3,
   },
   {
@@ -104,7 +104,7 @@ export const ailmentData = [
   {
     id: "panic",
     name: "SMT.ailments.panic",
-    img: "icons/svg/terror.svg",
+    img: "icons/svg/daze.svg",
     priority: 10,
   },
   {
@@ -154,7 +154,7 @@ const miscStatuses = [
   {
     id: "defending",
     name: "SMT.statusEffects.defending",
-    img: "icons/svg/combat.svg",
+    img: "icons/svg/tower.svg",
     changes: [
       {
         key: "system.tn.dodge",
@@ -171,7 +171,37 @@ const miscStatuses = [
   {
     id: "liftoma",
     name: "SMT.statusEffects.liftoma",
-    img: "icons/svg/wing.svg",
+    img: "icons/svg/angel.svg",
+  },
+  {
+    id: "lightoma",
+    name: "SMT.statusEffects.lightoma",
+    img: "icons/svg/light.svg",
+  },
+  {
+    id: "tetraja",
+    name: "SMT.statusEffects.tetraja",
+    img: "icons/svg/holy-shield.svg",
+  },
+  {
+    id: "makarakarn",
+    name: "SMT.statusEffects.makarakarn",
+    img: "icons/svg/mage-shield.svg",
+  },
+  {
+    id: "tetrakarn",
+    name: "SMT.statusEffects.tetrakarn",
+    img: "icons/svg/combat.svg",
+  },
+  {
+    id: "estoma",
+    name: "SMT.statusEffects.estoma",
+    img: "icons/svg/invisible.svg",
+  },
+  {
+    id: "riberama",
+    name: "SMT.statusEffects.riberama",
+    img: "icons/svg/target.svg",
   },
   {
     id: "curse",

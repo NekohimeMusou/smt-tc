@@ -236,7 +236,13 @@
     "statusEffects": {
       "defending": "Defending",
       "focus": "Focus",
-      "liftoma": "Liftoma"
+      "liftoma": "Liftoma",
+      "lightoma": "Lightoma",
+      "tetraja": "Tetraja",
+      "makarakarn": "Makarakarn",
+      "tetrakarn": "Tetrakarn",
+      "estoma": "Estoma",
+      "riberama": "Riberama"
     },
     "resist": {
       "phys": "Phys Resist",
