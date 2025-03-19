@@ -23,6 +23,7 @@ declare global {
   type Affinity = keyof typeof affinities;
   type AffinityLevel = keyof typeof affinityLevels;
   type AilmentId = keyof typeof ailments;
+  type StatusEffect = keyof typeof statuses;
 
   // Substitute for the problematic DataModel
   interface Ailment {
@@ -148,6 +149,25 @@ const ailments = {
   instantDeath: "SMT.ailments.instantDeath",
   shatter: "SMT.ailments.shatter",
   curse: "SMT.ailments.curse",
+} as const;
+
+const statuses = {
+  tarukaja: "SMT.buffs.tarukaja",
+  rakukaja: "SMT.buffs.rakukaja",
+  sukukaja: "SMT.buffs.sukukaja",
+  makakaja: "SMT.buffs.makakaja",
+  tarunda: "SMT.buffs.tarunda",
+  rakunda: "SMT.buffs.rakunda",
+  sukunda: "SMT.buffs.sukunda",
+  defending: "SMT.statusEffects.defending",
+  focus: "SMT.statusEffects.focus",
+  liftoma: "SMT.statusEffects.liftoma",
+  lightoma: "SMT.statusEffects.lightoma",
+  tetraja: "SMT.statusEffects.tetraja",
+  makarakarn: "SMT.statusEffects.makarakarn",
+  tetrakarn: "SMT.statusEffects.tetrakarn",
+  estoma: "SMT.statusEffects.estoma",
+  riberama: "SMT.statusEffects.riberama",
 } as const;
 
 const buffs = {
@@ -316,6 +336,7 @@ export const SMT = {
   affinityLevels,
   ailments,
   ailmentData,
+  statuses,
   buffs,
   buffSpells,
   debuffSpells,

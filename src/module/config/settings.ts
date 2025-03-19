@@ -38,15 +38,6 @@ export default function registerSystemSettings() {
     type: Boolean,
     default: false,
   });
-  game.settings.register("smt-tc", "enablePierce", {
-    name: "SMT.settings.enablePierce.name",
-    hint: "SMT.settings.enablePierce.hint",
-    scope: "world",
-    config: false,
-    requiresReload: true,
-    type: Boolean,
-    default: false,
-  });
 
   // Client settings
   game.settings.register("smt-tc", "showRollDialogByDefault", {

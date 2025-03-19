@@ -94,7 +94,9 @@
       "learned": "Learned",
       "highCrit": "High Crit",
       "halfResist": "Half Resist/Dodge",
-      "autoPierce": "Auto Pierce"
+      "config": {
+        "applyStatus": "Apply Status"
+      }
     },
     "skillDetails": {
       "cost": "Cost: {cost} {resource}",
@@ -246,7 +248,15 @@
       "makarakarn": "Makarakarn",
       "tetrakarn": "Tetrakarn",
       "estoma": "Estoma",
-      "riberama": "Riberama"
+      "riberama": "Riberama",
+      "curse": "Curse",
+      "tarukaja": "Tarukaja",
+      "makakaja": "Makakaja",
+      "rakukaja": "Rakukaja",
+      "sukukaja": "Sukukaja",
+      "tarunda": "Tarunda",
+      "rakunda": "Rakunda",
+      "sukunda": "Sukunda"
     },
     "resist": {
       "phys": "Phys Resist",
@@ -430,7 +440,8 @@
       "ailment": "{ailment}: {rate}%",
       "critAilment": "{ailment}: {ailmentCritRate}% ({rate}%)",
       "targets": "Targets:",
-      "target": {
+      "targetType": "Target: {targetType}",
+      "targetDamage": {
         "damage": "{damage} damage ({resist} {type})",
         "healing": "{damage} healing"
       },
@@ -448,11 +459,11 @@
       },
       "targetFlied": "Double damage! {name} is a fly!",
       "pinhole": "Pinhole: Halve dodge and resist",
-      "pierce": "Pierce elemental resists except Repel",
       "curse": {
         "hit": "CURSED! Something bad happens!",
         "miss": "The curse leaves you be for now."
-      }
+      },
+      "applyStatus": "Status applied: {status}"
     },
     "settings": {
       "editableActorSheetBuffs": {
@@ -466,10 +477,6 @@
       "addLevelToGunDamage": {
         "name": "VARIANT RULE: Add Level to Gun Damage",
         "hint": "Add the shooter's level to gun and grenade damage, like with other attacks."
-      },
-      "enablePierce": {
-        "name": "VARIANT RULE: Enable Pierce",
-        "hint": "Enable a version of the Pierce skill (override system.mods.pierce with an AE)."
       },
       "showRollDialogByDefault": {
         "name": "Show roll dialog by default",

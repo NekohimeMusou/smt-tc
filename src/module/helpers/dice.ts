@@ -2,6 +2,7 @@ import AttackDataModel from "../data-models/embedded/attack.js";
 import { CharacterAffinities } from "../data-models/embedded/defense-affinities.js";
 import SmtActor from "../documents/actor/actor.js";
 import { SmtItem } from "../documents/item/item.js";
+import SmtToken from "../documents/token.js";
 import { renderItemAttackCard, renderAttackCard } from "./chat.js";
 
 interface HitCheckData {
@@ -34,7 +35,7 @@ interface PowerRollResult {
   powerRoll: Roll;
 }
 
-interface NewItemRollData {
+interface ItemRollData {
   item?: SmtItem;
   targets?: TargetData[];
   tnMod?: number;
@@ -48,6 +49,7 @@ interface TargetProcessData {
   halfResist?: boolean;
   power?: number;
   critPower?: number;
+  status?: StatusEffect;
 }
 
 // Quick fix
@@ -62,6 +64,8 @@ declare global {
     affinities: CharacterAffinities;
     damage?: number;
     critDamage?: number;
+    // Patch until I can maybe refactor this, since I need to pass the token anyway
+    token?: SmtToken;
   }
 }
 
@@ -82,7 +86,6 @@ interface SheetRollData {
   item?: SmtItem;
   tnMod?: number;
   potencyMod?: number;
-  targets?: TargetData;
 }
 
 export default class SmtDice {
@@ -291,7 +294,7 @@ export default class SmtDice {
     targets,
     tnMod = 0,
     potencyMod = 0,
-  }: NewItemRollData = {}) {
+  }: ItemRollData = {}) {
     const actor = item?.parent;
 
     if (!item || !actor) {
@@ -313,6 +316,7 @@ export default class SmtDice {
     // If it's not an attack item, we don't roll an attack
     const auto = attackData?.auto ?? true;
     const hasPowerRoll = attackData?.hasPowerRoll;
+    const targetType = attackData?.target;
 
     let success = auto;
     let criticalHit = false;
@@ -323,13 +327,14 @@ export default class SmtDice {
       checkName: item.name,
       description: item.system.description,
       costType: itemData.costType,
-      cost: itemData.cost,
+      cost: itemData.cost ?? 0,
       costPaid,
       auto,
+      status: attackData?.status,
+      targetType,
       hasPowerRoll,
       mods: {
         pinhole: attackData?.mods.pinhole,
-        pierce: attackData?.pierce,
       },
       rolls,
       targets,
@@ -385,7 +390,7 @@ export default class SmtDice {
       }
     }
 
-    if ((success || fumble) && attackData?.hasPowerRoll) {
+    if ((success || fumble) && attackData) {
       const affinity = attackData.affinity;
       const elementBoost =
         actor.system.elementBoost?.[
@@ -393,30 +398,44 @@ export default class SmtDice {
         ];
       const boostMultiplier = elementBoost ? 2 : 1;
 
-      const { power, critPower, powerRoll } = await this.powerRoll({
-        basePower: attackData.basePower * boostMultiplier,
-        potency: attackData.potency,
-        potencyMod,
-        powerBoost: attackData.powerBoost,
-      });
+      const { power, critPower, powerRoll } = attackData.hasPowerRoll
+        ? await this.powerRoll({
+            basePower: attackData.basePower * boostMultiplier,
+            potency: attackData.potency,
+            potencyMod,
+            powerBoost: attackData.powerBoost,
+          })
+        : { power: 0, critPower: 0, powerRoll: undefined };
 
       const focusMultiplier =
         actor.statuses.has("focus") && attackData.damageType === "phys" ? 2 : 1;
 
-      rolls.push(powerRoll);
+      if (powerRoll) {
+        rolls.push(powerRoll);
+      }
 
-      const attackTargets = targets
-        ? targets?.map((target) =>
-            this.#processTarget({
-              target,
-              damageType: attackData.damageType,
-              attackAffinity: attackData.affinity ?? "unique",
-              halfResist: cardData.mods.pinhole,
-              power: power * focusMultiplier,
-              critPower: critPower * focusMultiplier,
-            }),
-          )
-        : targets;
+      const attackTargets =
+        targets && !(targetType === "self")
+          ? await Promise.all(
+              targets?.map((target) =>
+                this.#processTarget({
+                  target,
+                  damageType: attackData.damageType,
+                  attackAffinity: attackData.affinity ?? "unique",
+                  halfResist: cardData.mods.pinhole,
+                  power: power * focusMultiplier,
+                  critPower: critPower * focusMultiplier,
+                  status: attackData.status,
+                }),
+              ),
+            )
+          : undefined;
+
+      if (powerRoll) {
+        foundry.utils.mergeObject(cardData, {
+          powerRollRender: await powerRoll.render(),
+        });
+      }
 
       foundry.utils.mergeObject(cardData, {
         damageType: attackData.damageType,
@@ -424,7 +443,6 @@ export default class SmtDice {
         potency: attackData.potency + potencyMod,
         power: power * focusMultiplier,
         critPower: critPower * focusMultiplier,
-        powerRollRender: await powerRoll.render(),
       });
     }
 
@@ -440,8 +458,11 @@ export default class SmtDice {
 
     await actor.toggleStatusEffect("focus", { overlay: false, active: false });
 
-    if (attackData?.autoFocus) {
-      await actor.toggleStatusEffect("focus", { overlay: false, active: true });
+    if (attackData?.status && attackData.target === "self") {
+      await actor.toggleStatusEffect(attackData.status, {
+        overlay: false,
+        active: true,
+      });
     }
 
     return await renderItemAttackCard({
@@ -452,13 +473,14 @@ export default class SmtDice {
     });
   }
 
-  static #processTarget({
+  static async #processTarget({
     target,
     damageType = "phys",
     attackAffinity = "unique",
     halfResist = false,
     power = 0,
     critPower = 0,
+    status,
   }: TargetProcessData = {}) {
     if (!target) {
       const msg = game.i18n.localize("SMT.error.missingTarget");
@@ -496,6 +518,13 @@ export default class SmtDice {
     const damage = Math.floor(
       Math.max(affinityMultiplier * power - finalResist, 0) * flyMultiplier,
     );
+
+    if (status && target.token) {
+      await target.token.actor.toggleStatusEffect(status, {
+        overlay: false,
+        active: true,
+      });
+    }
 
     return {
       ...target,

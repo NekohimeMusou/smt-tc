@@ -10,7 +10,7 @@
       critDamage=critDamage
       }}</p>
     {{else}}
-      <p>{{localize (concat "SMT.itemRoll.target." (ifThen isHealing "healing" "damage"))
+      <p>{{localize (concat "SMT.itemRoll.targetDamage." (ifThen isHealing "healing" "damage"))
         resist=finalResist
         type=(localize (concat "SMT.resist." ../damageType))
         damage=damage
@@ -20,7 +20,7 @@
     <p>{{localize "SMT.itemRoll.targetFlied" name=name}}</p>
     {{/if}}
   {{else}}
-    <p>{{this.name}}</p>
+    <p>{{name}}</p>
   {{/if}}
   {{#unless @last}}<hr />{{/unless}}
 {{/each}}

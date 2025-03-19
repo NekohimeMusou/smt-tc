@@ -1,11 +1,11 @@
 export function configureStatusEffects() {
-  CONFIG.statusEffects = [...ailmentData, ...miscStatuses];
+  CONFIG.statusEffects = [...ailmentData, ...statuses];
   CONFIG.specialStatusEffects.FLY = "liftoma";
 }
 
 declare global {
   type AilmentStatusId = (typeof ailmentData)[number]["id"];
-  type MiscStatusId = (typeof miscStatuses)[number]["id"];
+  type MiscStatusId = (typeof statuses)[number]["id"];
   type StatusId = AilmentStatusId | MiscStatusId;
 
   interface PriorityAilment {
@@ -115,7 +115,7 @@ export const ailmentData = [
   },
 ] as const;
 
-const miscStatuses = [
+export const statuses = [
   {
     id: "tarukaja",
     name: "SMT.buffs.tarukaja",

@@ -355,6 +355,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     const targets =
       game.user.targets.size > 0
         ? ([...game.user.targets.values()] as SmtToken[]).map((token) => ({
+            token,
             name: token.name,
             resist: token.actor.system.resist,
             fly: token.actor.statuses.has("fly"),

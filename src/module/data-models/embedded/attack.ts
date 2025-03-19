@@ -2,13 +2,6 @@ import { AttackItem } from "../../documents/item/item.js";
 import BaseEmbeddedDataModel from "./abstract/base-embedded-data.js";
 
 export default class AttackDataModel extends BaseEmbeddedDataModel {
-  // Cheesy hack until I get a more robust status system working
-  get autoFocus() {
-    const item = this.item;
-
-    return !item || item.name === "Focus";
-  }
-
   get damageType(): DamageType {
     const data = this._systemData;
 
@@ -136,19 +129,6 @@ export default class AttackDataModel extends BaseEmbeddedDataModel {
     );
   }
 
-  get pierce() {
-    const actor = this.actor;
-    const data = this._systemData;
-    const pierceEnabled = game.settings.get("smt-tc", "enablePierce");
-    const autoPierce = data.mods.autoPierce;
-
-    if (!actor) {
-      return pierceEnabled && autoPierce;
-    }
-
-    return pierceEnabled && (actor.system.mods.pierce || autoPierce);
-  }
-
   get autoFailThreshold() {
     const actor = this.actor;
 
@@ -213,12 +193,15 @@ export default class AttackDataModel extends BaseEmbeddedDataModel {
           initial: 5,
         }),
       }),
+      status: new fields.StringField({
+        blank: true,
+        choices: CONFIG.SMT.statuses,
+      }),
       hasPowerRoll: new fields.BooleanField(),
       canDodge: new fields.BooleanField(),
       mods: new fields.SchemaField({
         highCrit: new fields.BooleanField(),
         pinhole: new fields.BooleanField(),
-        autoPierce: new fields.BooleanField(),
       }),
     };
   }

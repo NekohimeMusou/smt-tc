@@ -6,11 +6,12 @@
 <h3>{{localize "SMT.itemRoll.affinity" affinity=(localize (concat "SMT.affinities." affinity))}}</h3>
 {{/if}}
 
-{{!-- Cost --}}
-{{#if (ne costType "none")}}
-  {{!-- Show the cost, e.g. "Cost: XX HP" or "Item Consumed" or "Ammo Consumed" --}}
-  <h3>{{localize "SMT.itemRoll.cost" costLabel=(localize (concat "SMT.costTypes." costType) cost=cost)}}</h3>
-{{/if}}
+<h3>
+  {{#if (ne costType "none")}}
+  {{localize "SMT.itemRoll.cost" costLabel=(localize (concat "SMT.costTypes." costType) cost=cost)}}; 
+  {{/if}}
+  {{localize "SMT.itemRoll.targetType" targetType=(localize (concat "SMT.targets." targetType))}}
+</h3>
 
 {{!-- Item Description --}}
 {{{description}}}
@@ -31,6 +32,11 @@
     {{#if auto}}
     <h2>{{localize "SMT.successLevel.auto"}}</h2>
     {{/if}}
+  {{/if}}
+
+  {{!-- Non-Ailment Status --}}
+  {{#if status}}
+  <h3>{{localize "SMT.itemRoll.applyStatus" status=(localize (concat "SMT.statusEffects." status))}}</h3>
   {{/if}}
 
   {{!-- Power Roll --}}
