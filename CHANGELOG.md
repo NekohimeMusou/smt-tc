@@ -2,6 +2,13 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.5.5] - 2025-03-18
+
+### Added
+
+- Add some missing status effects
+- Add rollable table compendium
+
 ## [0.5.4] - 2025-03-17
 
 *Just remembered I wanted to try adding a healing fountain macro that works with Item Piles, so I did!*
@@ -298,6 +305,9 @@ _Added separate Human and Demon actor types with some custom behavior, and added
 
 _Initial preview release.*
 
+[0.5.5]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.5.5
+[0.5.4]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.5.4
+[0.5.3]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.5.3
 [0.5.2]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.5.2
 [0.5.1]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.5.1
 [0.5.0]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.5.0
