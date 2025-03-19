@@ -254,7 +254,7 @@ export default abstract class SmtBaseActorData extends foundry.abstract
       }
       const statName = key as keyof typeof data.stats;
       const mgt = data.equippedMagatama?.system.stats[statName] ?? 0;
-      stat.value = Math.max(stat.base + stat.lv + mgt, 1);
+      stat.value = Math.clamp(stat.base + stat.lv + mgt, 1, 40);
     }
 
     const lv = data.lv;
