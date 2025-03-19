@@ -12,6 +12,11 @@
         </label>
         <input type="number" id="alignment-{{alignment}}-field" name="system.alignment.{{alignment}}" value="{{value}}"
           placeholder="0" data-dtype="Number" />
+
+          {{#if (eq @index 2)}}
+      </li>
+      <li class="item item-prop flexrow">
+          {{/if}}
         {{/each}}
       </li>
     </ol>

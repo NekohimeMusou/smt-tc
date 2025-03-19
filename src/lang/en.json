@@ -60,7 +60,11 @@
       "ailment": "Ailment",
       "qty": "Qty",
       "price": "Price",
-      "gems": "Gems"
+      "gems": "Gems",
+      "settings": "Settings"
+    },
+    "actorSettings": {
+      "incenseUsed": "Incense Used"
     },
     "itemSheet": {
       "attackType": "Attack Type",

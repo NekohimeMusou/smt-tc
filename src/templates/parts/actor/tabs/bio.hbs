@@ -1,5 +1,8 @@
 <section class="flexcol">
-  {{> "systems/smt-tc/templates/parts/actor/alignment.hbs"}}
+  <div class="flexrow">
+    {{> "systems/smt-tc/templates/parts/actor/alignment.hbs"}}
+    {{> "systems/smt-tc/templates/parts/actor/settings.hbs"}}
+  </div>
   {{> "systems/smt-tc/templates/parts/actor/background.hbs"}}
   {{#if (eq actor.type "demon")}}
   {{> "systems/smt-tc/templates/parts/actor/demon.hbs"}}

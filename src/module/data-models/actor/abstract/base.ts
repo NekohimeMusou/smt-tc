@@ -55,7 +55,7 @@ export default abstract class SmtBaseActorData extends foundry.abstract
       0,
     );
 
-    return data.lv - data.baseLv - statPoints;
+    return data.lv - data.baseLv - statPoints + data.incenseUsed;
   }
 
   static override defineSchema() {
@@ -223,6 +223,10 @@ export default abstract class SmtBaseActorData extends foundry.abstract
         integer: true,
         positive: true,
         initial: 1,
+      }),
+      incenseUsed: new fields.NumberField({
+        integer: true,
+        min: 0,
       }),
       hpMultiplier: new fields.NumberField({ integer: true, positive: true }),
       mpMultiplier: new fields.NumberField({ integer: true, positive: true }),
