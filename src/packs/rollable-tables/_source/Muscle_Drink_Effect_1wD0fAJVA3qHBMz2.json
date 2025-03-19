@@ -1,0 +1,179 @@
+{
+  "folder": "yNfd5HMOlo4SyxOd",
+  "name": "Muscle Drink Effect",
+  "_id": "1wD0fAJVA3qHBMz2",
+  "img": "icons/consumables/potions/potion-bottle-labeled-medicine-capped-red-black.webp",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "_id": "r6EaEsiykdDKTdlq",
+      "text": "Recover 50 HP",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!1wD0fAJVA3qHBMz2.r6EaEsiykdDKTdlq"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "_id": "dLawIrr8MZWUq8eD",
+      "text": "Recover all HP",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!1wD0fAJVA3qHBMz2.dLawIrr8MZWUq8eD"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "_id": "pEAbla3YUrhnkPa5",
+      "text": "Recover 50 MP",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!1wD0fAJVA3qHBMz2.pEAbla3YUrhnkPa5"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "_id": "rcOsafEQkdGGQvwe",
+      "text": "Recover all MP",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!1wD0fAJVA3qHBMz2.rcOsafEQkdGGQvwe"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "_id": "hGxwAxaAK2LARj4S",
+      "text": "Recover 25 HP and 25 MP",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!1wD0fAJVA3qHBMz2.hGxwAxaAK2LARj4S"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "_id": "YQK9rGDT7Mf9NosH",
+      "text": "Recover all HP and MP",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!1wD0fAJVA3qHBMz2.YQK9rGDT7Mf9NosH"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "drawn": false,
+      "_id": "Iv2SKTXWlHLh0OK8",
+      "text": "Sleep",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!1wD0fAJVA3qHBMz2.Iv2SKTXWlHLh0OK8"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "drawn": false,
+      "_id": "6LgfVjvCZfGOTvsX",
+      "text": "Stun",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!1wD0fAJVA3qHBMz2.6LgfVjvCZfGOTvsX"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        9,
+        9
+      ],
+      "drawn": false,
+      "_id": "zFdr8l6byNA2yNXi",
+      "text": "Curse",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!1wD0fAJVA3qHBMz2.zFdr8l6byNA2yNXi"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        10,
+        10
+      ],
+      "drawn": false,
+      "_id": "s0or2n6qsHDxY0bB",
+      "text": "(No effect)",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!1wD0fAJVA3qHBMz2.s0or2n6qsHDxY0bB"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "sort": 200000,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.4",
+    "createdTime": 1742352519031,
+    "modifiedTime": 1742352519031,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "formula": "1d10",
+  "_key": "!tables!1wD0fAJVA3qHBMz2"
+}

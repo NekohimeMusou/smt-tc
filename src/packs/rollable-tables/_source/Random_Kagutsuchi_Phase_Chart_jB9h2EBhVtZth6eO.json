@@ -1,0 +1,179 @@
+{
+  "folder": "Z3v0t2WpgPjadZmE",
+  "name": "Random Kagutsuchi Phase Chart",
+  "_id": "jB9h2EBhVtZth6eO",
+  "img": "icons/magic/light/explosion-star-blue-large.webp",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "_id": "rnwmGVfgVoFWBMHY",
+      "text": "New (Phase 0)",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!jB9h2EBhVtZth6eO.rnwmGVfgVoFWBMHY"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "_id": "bZYUFQutBHLseELV",
+      "text": "Phase 1",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!jB9h2EBhVtZth6eO.bZYUFQutBHLseELV"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "_id": "iEXwI4mHw8Ah526K",
+      "text": "Phase 3",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!jB9h2EBhVtZth6eO.iEXwI4mHw8Ah526K"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "_id": "U7tO8tv8kKmNDlf2",
+      "text": "Phase 5",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!jB9h2EBhVtZth6eO.U7tO8tv8kKmNDlf2"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "_id": "TAfboe61OOBvEI7W",
+      "text": "Phase 7",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!jB9h2EBhVtZth6eO.TAfboe61OOBvEI7W"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "_id": "bJpIKurdrnXN88fI",
+      "text": "Full (Phase 8)",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!jB9h2EBhVtZth6eO.bJpIKurdrnXN88fI"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "drawn": false,
+      "_id": "sDwlUXBCVLH3iC06",
+      "text": "Phase 9",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!jB9h2EBhVtZth6eO.sDwlUXBCVLH3iC06"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "drawn": false,
+      "_id": "j2fqROuIfUCI8n4L",
+      "text": "Phase 11",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!jB9h2EBhVtZth6eO.j2fqROuIfUCI8n4L"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        9,
+        9
+      ],
+      "drawn": false,
+      "_id": "aYLpxHU9oRIg7B40",
+      "text": "Phase 13",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!jB9h2EBhVtZth6eO.aYLpxHU9oRIg7B40"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        10,
+        10
+      ],
+      "drawn": false,
+      "_id": "V8inSKzA5opRaVhH",
+      "text": "Phase 15",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!jB9h2EBhVtZth6eO.V8inSKzA5opRaVhH"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.4",
+    "createdTime": 1742352519031,
+    "modifiedTime": 1742352519031,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "formula": "1d10",
+  "_key": "!tables!jB9h2EBhVtZth6eO"
+}

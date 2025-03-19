@@ -1,0 +1,329 @@
+{
+  "folder": "yNfd5HMOlo4SyxOd",
+  "name": "Gift Table A (Human)",
+  "_id": "NUwBSDE4mVRSIskc",
+  "img": "icons/magic/control/buff-luck-fortune-clover-green.webp",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        5
+      ],
+      "drawn": false,
+      "_id": "Op2nKTSwISleb6xN",
+      "text": "Dis-Poison",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!NUwBSDE4mVRSIskc.Op2nKTSwISleb6xN"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        10
+      ],
+      "drawn": false,
+      "_id": "eBtSdqB9XC3hF74L",
+      "text": "Dis-Para",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!NUwBSDE4mVRSIskc.eBtSdqB9XC3hF74L"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        11,
+        15
+      ],
+      "drawn": false,
+      "_id": "JW9ssoDZGq68tuK1",
+      "text": "Dis-Charm",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!NUwBSDE4mVRSIskc.JW9ssoDZGq68tuK1"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        16,
+        20
+      ],
+      "drawn": false,
+      "_id": "fJQRX6HBtaG6uEbl",
+      "text": "Dis-Mute",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!NUwBSDE4mVRSIskc.fJQRX6HBtaG6uEbl"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        21,
+        25
+      ],
+      "drawn": false,
+      "_id": "0MHbZUWCJvvUStAr",
+      "text": "Wagtail Plume",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!NUwBSDE4mVRSIskc.0MHbZUWCJvvUStAr"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        26,
+        30
+      ],
+      "drawn": false,
+      "_id": "xEGKjgug80RYvVfY",
+      "text": "Float Ball",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!NUwBSDE4mVRSIskc.xEGKjgug80RYvVfY"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        31,
+        35
+      ],
+      "drawn": false,
+      "_id": "SSTEHV5qpH9nMYEo",
+      "text": "Light Ball",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!NUwBSDE4mVRSIskc.SSTEHV5qpH9nMYEo"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        36,
+        40
+      ],
+      "drawn": false,
+      "_id": "dS66qVDilGNjtsWy",
+      "text": "Repulse Bell",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!NUwBSDE4mVRSIskc.dS66qVDilGNjtsWy"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        41,
+        45
+      ],
+      "drawn": false,
+      "_id": "7J6nIalonBkod84d",
+      "text": "Attract Pipe",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!NUwBSDE4mVRSIskc.7J6nIalonBkod84d"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        46,
+        50
+      ],
+      "drawn": false,
+      "_id": "yuZaTlF6nDjwA3RH",
+      "text": "Smoke Ball",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!NUwBSDE4mVRSIskc.yuZaTlF6nDjwA3RH"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        51,
+        55
+      ],
+      "drawn": false,
+      "_id": "TDgq02dbQmp2Jg5q",
+      "text": "Tetraja Rock",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!NUwBSDE4mVRSIskc.TDgq02dbQmp2Jg5q"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        56,
+        60
+      ],
+      "drawn": false,
+      "_id": "nsBt1NPYvIE7ONF2",
+      "text": "Dekaja Rock",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!NUwBSDE4mVRSIskc.nsBt1NPYvIE7ONF2"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        61,
+        65
+      ],
+      "drawn": false,
+      "_id": "Byv660U4VZpMQgLb",
+      "text": "Chakra Drop",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!NUwBSDE4mVRSIskc.Byv660U4VZpMQgLb"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        66,
+        70
+      ],
+      "drawn": false,
+      "_id": "waXOuwa4gOxjxBmS",
+      "text": "Bead",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!NUwBSDE4mVRSIskc.waXOuwa4gOxjxBmS"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        71,
+        75
+      ],
+      "drawn": false,
+      "_id": "Yojhq7uLBUHUDyaW",
+      "text": "Mahama Rock",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!NUwBSDE4mVRSIskc.Yojhq7uLBUHUDyaW"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        76,
+        80
+      ],
+      "drawn": false,
+      "_id": "IU5UTvobk1YG160b",
+      "text": "Mamudo Rock",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!NUwBSDE4mVRSIskc.IU5UTvobk1YG160b"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        81,
+        85
+      ],
+      "drawn": false,
+      "_id": "OOLvs27a5b8P7hYs",
+      "text": "Soma Droplet",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!NUwBSDE4mVRSIskc.OOLvs27a5b8P7hYs"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        86,
+        90
+      ],
+      "drawn": false,
+      "_id": "S9nqctuCPWi4nvqK",
+      "text": "Magic Mirror",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!NUwBSDE4mVRSIskc.S9nqctuCPWi4nvqK"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        91,
+        95
+      ],
+      "drawn": false,
+      "_id": "lkiTn244eebtlZD5",
+      "text": "Attack Mirror",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!NUwBSDE4mVRSIskc.lkiTn244eebtlZD5"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        96,
+        100
+      ],
+      "drawn": false,
+      "_id": "v5BMnK5qg8lwgwHk",
+      "text": "Roll once on Gift B table",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!NUwBSDE4mVRSIskc.v5BMnK5qg8lwgwHk"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "sort": 100000,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.4",
+    "createdTime": 1742352519031,
+    "modifiedTime": 1742352519031,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "formula": "1d100",
+  "_key": "!tables!NUwBSDE4mVRSIskc"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Items",
+  "sorting": "a",
+  "folder": "Z3v0t2WpgPjadZmE",
+  "type": "RollTable",
+  "_id": "yNfd5HMOlo4SyxOd",
+  "description": "",
+  "sort": 0,
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.4",
+    "createdTime": 1742352519002,
+    "modifiedTime": 1742352519002,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_key": "!folders!yNfd5HMOlo4SyxOd"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Rollable Tables",
+  "sorting": "a",
+  "folder": null,
+  "type": "RollTable",
+  "_id": "Z3v0t2WpgPjadZmE",
+  "description": "",
+  "sort": 100000,
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.4",
+    "createdTime": 1742352519002,
+    "modifiedTime": 1742352519131,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_key": "!folders!Z3v0t2WpgPjadZmE"
+}

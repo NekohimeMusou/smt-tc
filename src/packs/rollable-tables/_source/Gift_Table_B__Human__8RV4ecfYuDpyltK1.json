@@ -1,0 +1,329 @@
+{
+  "folder": "yNfd5HMOlo4SyxOd",
+  "name": "Gift Table B (Human)",
+  "img": "icons/magic/control/buff-luck-fortune-clover-green.webp",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        5
+      ],
+      "drawn": false,
+      "_id": "Op2nKTSwISleb6xN",
+      "text": "Bead Chain",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!8RV4ecfYuDpyltK1.Op2nKTSwISleb6xN"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        10
+      ],
+      "drawn": false,
+      "_id": "eBtSdqB9XC3hF74L",
+      "text": "Chakra Pot",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!8RV4ecfYuDpyltK1.eBtSdqB9XC3hF74L"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        11,
+        15
+      ],
+      "drawn": false,
+      "_id": "JW9ssoDZGq68tuK1",
+      "text": "Soma",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!8RV4ecfYuDpyltK1.JW9ssoDZGq68tuK1"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        16,
+        20
+      ],
+      "drawn": false,
+      "_id": "fJQRX6HBtaG6uEbl",
+      "text": "Megido Rock",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!8RV4ecfYuDpyltK1.fJQRX6HBtaG6uEbl"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        21,
+        25
+      ],
+      "drawn": false,
+      "_id": "0MHbZUWCJvvUStAr",
+      "text": "Sapphire",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!8RV4ecfYuDpyltK1.0MHbZUWCJvvUStAr"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        26,
+        30
+      ],
+      "drawn": false,
+      "_id": "xEGKjgug80RYvVfY",
+      "text": "Jade",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!8RV4ecfYuDpyltK1.xEGKjgug80RYvVfY"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        31,
+        35
+      ],
+      "drawn": false,
+      "_id": "SSTEHV5qpH9nMYEo",
+      "text": "Opal",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!8RV4ecfYuDpyltK1.SSTEHV5qpH9nMYEo"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        36,
+        40
+      ],
+      "drawn": false,
+      "_id": "dS66qVDilGNjtsWy",
+      "text": "Amethyst",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!8RV4ecfYuDpyltK1.dS66qVDilGNjtsWy"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        41,
+        45
+      ],
+      "drawn": false,
+      "_id": "7J6nIalonBkod84d",
+      "text": "Ruby",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!8RV4ecfYuDpyltK1.7J6nIalonBkod84d"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        46,
+        50
+      ],
+      "drawn": false,
+      "_id": "yuZaTlF6nDjwA3RH",
+      "text": "ST Incense",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!8RV4ecfYuDpyltK1.yuZaTlF6nDjwA3RH"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        51,
+        55
+      ],
+      "drawn": false,
+      "_id": "TDgq02dbQmp2Jg5q",
+      "text": "MA Incense",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!8RV4ecfYuDpyltK1.TDgq02dbQmp2Jg5q"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        56,
+        60
+      ],
+      "drawn": false,
+      "_id": "nsBt1NPYvIE7ONF2",
+      "text": "VI Incense",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!8RV4ecfYuDpyltK1.nsBt1NPYvIE7ONF2"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        61,
+        65
+      ],
+      "drawn": false,
+      "_id": "Byv660U4VZpMQgLb",
+      "text": "AG Incense",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!8RV4ecfYuDpyltK1.Byv660U4VZpMQgLb"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        66,
+        70
+      ],
+      "drawn": false,
+      "_id": "waXOuwa4gOxjxBmS",
+      "text": "LU Incense",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!8RV4ecfYuDpyltK1.waXOuwa4gOxjxBmS"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        71,
+        75
+      ],
+      "drawn": false,
+      "_id": "Yojhq7uLBUHUDyaW",
+      "text": "Great Chakra",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!8RV4ecfYuDpyltK1.Yojhq7uLBUHUDyaW"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        76,
+        80
+      ],
+      "drawn": false,
+      "_id": "IU5UTvobk1YG160b",
+      "text": "Megidola Rock",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!8RV4ecfYuDpyltK1.IU5UTvobk1YG160b"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        81,
+        85
+      ],
+      "drawn": false,
+      "_id": "OOLvs27a5b8P7hYs",
+      "text": "Pearl",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!8RV4ecfYuDpyltK1.OOLvs27a5b8P7hYs"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        86,
+        90
+      ],
+      "drawn": false,
+      "_id": "S9nqctuCPWi4nvqK",
+      "text": "Emerald",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!8RV4ecfYuDpyltK1.S9nqctuCPWi4nvqK"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        91,
+        95
+      ],
+      "drawn": false,
+      "_id": "lkiTn244eebtlZD5",
+      "text": "Diamond",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!8RV4ecfYuDpyltK1.lkiTn244eebtlZD5"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        96,
+        100
+      ],
+      "drawn": false,
+      "_id": "v5BMnK5qg8lwgwHk",
+      "text": "Agate",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!8RV4ecfYuDpyltK1.v5BMnK5qg8lwgwHk"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "sort": 300000,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": "RollTable.NUwBSDE4mVRSIskc",
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.4",
+    "createdTime": 1742352519031,
+    "modifiedTime": 1742352519031,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "formula": "1d100",
+  "_id": "8RV4ecfYuDpyltK1",
+  "_key": "!tables!8RV4ecfYuDpyltK1"
+}

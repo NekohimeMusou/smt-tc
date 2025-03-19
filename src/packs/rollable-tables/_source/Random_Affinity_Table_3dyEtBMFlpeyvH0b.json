@@ -1,0 +1,179 @@
+{
+  "folder": "Z3v0t2WpgPjadZmE",
+  "name": "Random Affinity Table",
+  "_id": "3dyEtBMFlpeyvH0b",
+  "img": "icons/magic/symbols/star-yellow.webp",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "_id": "MyEBF1SCLIcrYmB7",
+      "text": "Phys",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!3dyEtBMFlpeyvH0b.MyEBF1SCLIcrYmB7"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "_id": "g4JAFYaLRwzZU4n5",
+      "text": "Fire",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!3dyEtBMFlpeyvH0b.g4JAFYaLRwzZU4n5"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "_id": "O8tutC7qDGYNkDqa",
+      "text": "Ice",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!3dyEtBMFlpeyvH0b.O8tutC7qDGYNkDqa"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "_id": "DnADNAbCn7owbluc",
+      "text": "Elec",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!3dyEtBMFlpeyvH0b.DnADNAbCn7owbluc"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "_id": "TDtdWzSUCaB0uI0h",
+      "text": "Force",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!3dyEtBMFlpeyvH0b.TDtdWzSUCaB0uI0h"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "_id": "u5vf9CUJzc3Ng8LF",
+      "text": "Light",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!3dyEtBMFlpeyvH0b.u5vf9CUJzc3Ng8LF"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "drawn": false,
+      "_id": "fWFfYz5GdXUy66aq",
+      "text": "Dark",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!3dyEtBMFlpeyvH0b.fWFfYz5GdXUy66aq"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "drawn": false,
+      "_id": "DgrvVxuH08OwV1oD",
+      "text": "Ruin",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!3dyEtBMFlpeyvH0b.DgrvVxuH08OwV1oD"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        9,
+        9
+      ],
+      "drawn": false,
+      "_id": "LGdSnY1rlAp2yJh3",
+      "text": "Nerve",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!3dyEtBMFlpeyvH0b.LGdSnY1rlAp2yJh3"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        10,
+        10
+      ],
+      "drawn": false,
+      "_id": "zXfWVrsMTK5bfxp5",
+      "text": "Mind",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!3dyEtBMFlpeyvH0b.zXfWVrsMTK5bfxp5"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.4",
+    "createdTime": 1742352519031,
+    "modifiedTime": 1742352519031,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "formula": "1d10",
+  "_key": "!tables!3dyEtBMFlpeyvH0b"
+}

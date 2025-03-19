@@ -1,0 +1,134 @@
+{
+  "name": "Demon Stat Growth",
+  "img": "icons/creatures/magical/spirit-undead-winged-ghost.webp",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "_id": "7jrLUz6ZFjkaO2eS",
+      "text": "Strength",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!ldyZ8MhwrOCBBBFU.7jrLUz6ZFjkaO2eS"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "_id": "gvVTwFLhocI5U1zK",
+      "text": "Magic",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!ldyZ8MhwrOCBBBFU.gvVTwFLhocI5U1zK"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "_id": "gimwnoJA1BpsdsKc",
+      "text": "Vitality",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!ldyZ8MhwrOCBBBFU.gimwnoJA1BpsdsKc"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "_id": "V7PcVcn4gBCwjUDK",
+      "text": "Agility",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!ldyZ8MhwrOCBBBFU.V7PcVcn4gBCwjUDK"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "_id": "IO5JhPwzqjLYRCJR",
+      "text": "Luck",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!ldyZ8MhwrOCBBBFU.IO5JhPwzqjLYRCJR"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        8
+      ],
+      "drawn": false,
+      "_id": "jHfQkhwVBdXM3YKl",
+      "text": "Favored stat, as determined by demon embodied",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!ldyZ8MhwrOCBBBFU.jHfQkhwVBdXM3YKl"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        9,
+        10
+      ],
+      "drawn": false,
+      "_id": "VYGWszh0K58bQZZ8",
+      "text": "Increase whichever stat is preferred",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!ldyZ8MhwrOCBBBFU.VYGWszh0K58bQZZ8"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": "Compendium.world.smt-tc-tables.RollTable.jRc2Fd7aQ3qQl0N0",
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.4",
+    "createdTime": 1742352519031,
+    "modifiedTime": 1742352519031,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "formula": "1d10",
+  "_id": "ldyZ8MhwrOCBBBFU",
+  "sort": 100000,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "folder": "Z3v0t2WpgPjadZmE",
+  "_key": "!tables!ldyZ8MhwrOCBBBFU"
+}

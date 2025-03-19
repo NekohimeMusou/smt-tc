@@ -1,0 +1,179 @@
+{
+  "folder": "yNfd5HMOlo4SyxOd",
+  "name": "Random Rock Table",
+  "_id": "QlrkG4HAL5pK6YfT",
+  "img": "icons/commodities/gems/powder-raw-white.webp",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "_id": "md61KrxvcfTAw5f5",
+      "text": "Maragi Rock",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!QlrkG4HAL5pK6YfT.md61KrxvcfTAw5f5"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "_id": "2ZQdBD0JeRmOt76Z",
+      "text": "Mabufu Rock",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!QlrkG4HAL5pK6YfT.2ZQdBD0JeRmOt76Z"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "_id": "hFP8Kbki9lWE1j4s",
+      "text": "Mazio Rock",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!QlrkG4HAL5pK6YfT.hFP8Kbki9lWE1j4s"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "_id": "JumJLjIkzhej5Grf",
+      "text": "Mazan Rock",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!QlrkG4HAL5pK6YfT.JumJLjIkzhej5Grf"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "_id": "nlnPOOlX0sMDqAUU",
+      "text": "Mahama Rock",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!QlrkG4HAL5pK6YfT.nlnPOOlX0sMDqAUU"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "_id": "HNhPqRBUjOtcsQix",
+      "text": "Mamudo Rock",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!QlrkG4HAL5pK6YfT.HNhPqRBUjOtcsQix"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "drawn": false,
+      "_id": "afPDy5AKV3pVSpXd",
+      "text": "Megido Rock",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!QlrkG4HAL5pK6YfT.afPDy5AKV3pVSpXd"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "drawn": false,
+      "_id": "sIA0iP0WYkPJZuvc",
+      "text": "Dekaja Rock",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!QlrkG4HAL5pK6YfT.sIA0iP0WYkPJZuvc"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        9,
+        9
+      ],
+      "drawn": false,
+      "_id": "jq97jrFhjL1Urdrm",
+      "text": "Makajam Rock",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!QlrkG4HAL5pK6YfT.jq97jrFhjL1Urdrm"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        10,
+        10
+      ],
+      "drawn": false,
+      "_id": "444n2FymdUUzAa4a",
+      "text": "Tetraja Rock",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!QlrkG4HAL5pK6YfT.444n2FymdUUzAa4a"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "sort": 500000,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.4",
+    "createdTime": 1742352519031,
+    "modifiedTime": 1742352519031,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "formula": "1d10",
+  "_key": "!tables!QlrkG4HAL5pK6YfT"
+}

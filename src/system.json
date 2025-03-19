@@ -51,6 +51,12 @@
       "label": "SMT-TC Macros",
       "system": "smt-tc",
       "type": "Macro"
+    },
+    {
+      "name": "rollable-tables",
+      "label": "SMT: TC Rollable Tables",
+      "system": "smt-tc",
+      "type": "RollTable"
     }
   ],
 

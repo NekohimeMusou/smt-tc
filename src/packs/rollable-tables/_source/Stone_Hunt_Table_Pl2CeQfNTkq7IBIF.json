@@ -1,0 +1,89 @@
+{
+  "folder": "oye9DuIKUowzuz4H",
+  "name": "Stone Hunt Table",
+  "_id": "Pl2CeQfNTkq7IBIF",
+  "img": "icons/commodities/gems/pearl-rough-white.webp",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "_id": "xtajXXKKw5lPIBCO",
+      "text": "Bead",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!Pl2CeQfNTkq7IBIF.xtajXXKKw5lPIBCO"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        4
+      ],
+      "drawn": false,
+      "_id": "30baSqynAWGSw377",
+      "text": "Roll 1d10 on Random Rock Table",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!Pl2CeQfNTkq7IBIF.30baSqynAWGSw377"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        8,
+        10
+      ],
+      "drawn": false,
+      "_id": "snoEbT9gOKtQzXXC",
+      "text": "Roll 1d10; 1-3: Emerald, 4-6: Jade, 7-9: Pearl, 10: Diamond.",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!Pl2CeQfNTkq7IBIF.snoEbT9gOKtQzXXC"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        7
+      ],
+      "drawn": false,
+      "_id": "30p4SIq2qct1WOXQ",
+      "text": "Roll 1d10 on Random Gem Table",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!Pl2CeQfNTkq7IBIF.30p4SIq2qct1WOXQ"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.4",
+    "createdTime": 1742352519031,
+    "modifiedTime": 1742352519031,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "formula": "1d10",
+  "_key": "!tables!Pl2CeQfNTkq7IBIF"
+}

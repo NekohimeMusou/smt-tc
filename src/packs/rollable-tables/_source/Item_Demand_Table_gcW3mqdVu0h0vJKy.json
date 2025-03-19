@@ -1,0 +1,104 @@
+{
+  "folder": "oye9DuIKUowzuz4H",
+  "name": "Item Demand Table",
+  "_id": "gcW3mqdVu0h0vJKy",
+  "img": "icons/skills/social/diplomacy-offering-ritual.webp",
+  "description": "",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        4
+      ],
+      "drawn": false,
+      "_id": "e8htRePA06GcDuKq",
+      "text": "Life Stone",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!gcW3mqdVu0h0vJKy.e8htRePA06GcDuKq"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        7
+      ],
+      "drawn": false,
+      "_id": "d6Ggnfu6SWBmpFfO",
+      "text": "Chakra Drop",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!gcW3mqdVu0h0vJKy.d6Ggnfu6SWBmpFfO"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "drawn": false,
+      "_id": "Wrb1gsUY2hk5Uw2L",
+      "text": "Revival Bead",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!gcW3mqdVu0h0vJKy.Wrb1gsUY2hk5Uw2L"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        9,
+        9
+      ],
+      "drawn": false,
+      "_id": "2C6PC0iGBX2s1dI4",
+      "text": "Bead",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!gcW3mqdVu0h0vJKy.2C6PC0iGBX2s1dI4"
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        10,
+        10
+      ],
+      "drawn": false,
+      "_id": "BlTduQOxOItHAZQw",
+      "text": "Gem, or any item the GM decides",
+      "img": "icons/svg/d20-black.svg",
+      "documentId": null,
+      "flags": {},
+      "_key": "!tables.results!gcW3mqdVu0h0vJKy.BlTduQOxOItHAZQw"
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.4",
+    "createdTime": 1742352519031,
+    "modifiedTime": 1742352519031,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "formula": "",
+  "_key": "!tables!gcW3mqdVu0h0vJKy"
+}
