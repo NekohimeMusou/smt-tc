@@ -2,6 +2,23 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.5.6] - 2025-03-19
+
+*Thanks for pointing out the stat cap, chamomileTeacup ⚙!*
+
+### Changed
+
+- Item roll output now displays target ("One", "All", "Self")
+
+### Added
+
+- Let skills and items apply status effects like Focus and Tetraja
+- Add "Incense Used" field to actor sheet
+
+### Fixed
+
+- Cap stats at 40
+
 ## [0.5.5] - 2025-03-18
 
 ### Added
@@ -305,6 +322,7 @@ _Added separate Human and Demon actor types with some custom behavior, and added
 
 _Initial preview release.*
 
+[0.5.6]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.5.6
 [0.5.5]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.5.5
 [0.5.4]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.5.4
 [0.5.3]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.5.3
