@@ -123,7 +123,7 @@ Change to the project root and install the development dependencies:
 
     > npm i
 
-The build script is suboptimal at the moment, so unless you *need* the macro compendium, I suggest deleting the "packs" object from system.json before doing this. That way, you can rebuild the system while it's running in Foundry and F5 it to see the changes.
+The build script is suboptimal at the moment, so I suggest duplicating the system packs and then deleting the "packs" object from system.json before doing this; just don't commit the change. That way, you can rebuild the system while it's running in Foundry and F5 it to see the changes.
 
 Run the build script. If it's your first time compiling the system on your machine; if you're building the system compendium; or if you've made any other changes to system.json, **shut down your Foundry server before doing this.**
 
@@ -138,12 +138,13 @@ The *first* time you do this, you'll need to configure fvtt-cli first:
 
     > npx fvtt configure
 
-As of now, the build script copies the source json for the compendium into the `dist` folder, so all you should have to do is ensure that fvtt-cli is looking in the right place, then compile the database.
+There's now a script for building the compendium packs! My advice about leaving them out while developing remains, but it's much easier to build them now. This only works if `dist` is symlinked to your Foundry systems folder and fvtt-cli is configured.
 
-    > npx fvtt package workon smt-tc
-    > npx fvtt package pack macros
+*After* you build the project, run the build-packs script:
 
-As of writing there's only one compendium pack with five or so macros in it, and it's unlikely to change much, so until the build script improves I recommend building it with the compendium once, copying the macros into your world, and then shutting down your server and rebuilding it without the compendium. You can put them in a world compendium and use [Mana's Compendium Importer](https://foundryvtt.com/packages/mkah-compendium-importer) to move them between worlds without having to do this again.
+    > npm run build-packs
+
+This packs the system compendia and deletes the source files from the `dist` folder (*not* `src`) to save space.
 
 <!-- ### Improving The Documentation -->
 <!-- TODO
