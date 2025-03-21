@@ -20,6 +20,16 @@
     }
   ],
 
+  "relationships": {
+    "recommends": [
+      {
+        "id": "item-piles",
+        "type": "module",
+        "reason": "Makes shopping and inventory management vastly more manageable. SMT: Tokyo Conception comes with built-in support."
+      }
+    ]
+  },
+
   "esmodules": ["module/smt-tc.js"],
   "styles": ["styles/smt-tc.css", "styles/smt-tc-supplemental.css"],
   "languages": [
