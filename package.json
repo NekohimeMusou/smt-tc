@@ -10,7 +10,8 @@
     "url": "git+https://github.com/NekohimeMusou/smt-tc"
   },
   "scripts": {
-    "build": "trash dist/**/* && tsc && copyfiles -u 1 src/**/*.css src/**/*.json src/**/*.hbs src/**/*.jpg dist/ && copyfiles *.md dist/"
+    "build": "trash dist/**/* && tsc && copyfiles -u 1 src/**/*.css src/**/*.json src/**/*.hbs src/**/*.jpg dist/ && copyfiles *.md dist/",
+    "build-packs": "npx fvtt package workon smt-tc && npx fvtt package pack macros && npx fvtt package pack rollable-tables && fvtt package pack sample-items && fvtt package pack sample-actors && trash dist/packs/**/_source"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",

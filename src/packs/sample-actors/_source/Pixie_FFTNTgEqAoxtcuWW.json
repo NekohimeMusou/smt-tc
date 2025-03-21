@@ -1,0 +1,709 @@
+{
+  "folder": "yd42G6XDQ05dClN5",
+  "name": "Pixie",
+  "type": "demon",
+  "_id": "FFTNTgEqAoxtcuWW",
+  "img": "tokenizer/npc-images/pixie_demo_.Avatar.webp",
+  "system": {
+    "stats": {
+      "st": {
+        "base": 3,
+        "lv": 1,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "phys"
+      },
+      "ma": {
+        "base": 6,
+        "lv": 2,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "mag"
+      },
+      "vi": {
+        "base": 4,
+        "lv": 1,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "save"
+      },
+      "ag": {
+        "base": 2,
+        "lv": 1,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "dodge"
+      },
+      "lu": {
+        "base": 7,
+        "lv": 2,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "negotiation"
+      }
+    },
+    "hp": {
+      "max": null,
+      "value": 84
+    },
+    "mp": {
+      "max": null,
+      "value": 51
+    },
+    "fp": {
+      "max": null,
+      "value": 6
+    },
+    "tn": {
+      "st": null,
+      "ma": null,
+      "vi": null,
+      "ag": null,
+      "lu": null,
+      "phys": null,
+      "mag": null,
+      "save": null,
+      "dodge": null,
+      "negotiation": null,
+      "gun": null
+    },
+    "power": {
+      "phys": null,
+      "mag": null,
+      "gun": null
+    },
+    "resist": {
+      "phys": null,
+      "mag": null
+    },
+    "notes": "<p>You are a Fairy clan demon who, for reasons unknown, are missing parts of your memories. All you can do is cling to the feeling that there's someone you're meant to protect.</p>",
+    "alignment": {
+      "law": null,
+      "chaos": null,
+      "dark": null,
+      "light": null,
+      "neutral": null,
+      "heeHo": null
+    },
+    "awards": {
+      "xp": null,
+      "macca": null,
+      "itemDrops": ""
+    },
+    "tnBoosts": 0,
+    "multi": 1,
+    "buffs": {
+      "tarukaja": 0,
+      "makakaja": 0,
+      "rakukaja": 0,
+      "sukukaja": 0,
+      "tarunda": 0,
+      "rakunda": 0,
+      "sukunda": 0
+    },
+    "mods": {
+      "might": false,
+      "luckyFind": false,
+      "pierce": false
+    },
+    "powerBoost": {
+      "phys": false,
+      "mag": false,
+      "item": false
+    },
+    "elementBoost": {
+      "fire": false,
+      "cold": false,
+      "elec": false,
+      "force": false
+    },
+    "gems": {
+      "diamond": 0,
+      "pearl": 0,
+      "sapphire": 0,
+      "emerald": 0,
+      "ruby": 0,
+      "jade": 0,
+      "opal": 0,
+      "amethyst": 0,
+      "agate": 0,
+      "turquoise": 0,
+      "garnet": 0,
+      "onyx": 0,
+      "coral": 0,
+      "aquamarine": 0
+    },
+    "baseLv": 2,
+    "incenseUsed": null,
+    "hpMultiplier": null,
+    "mpMultiplier": null,
+    "xp": 1100,
+    "macca": 450,
+    "affinities": {
+      "phys": "none",
+      "fire": "none",
+      "cold": "none",
+      "elec": "strong",
+      "force": "none",
+      "light": "none",
+      "dark": "none",
+      "ruin": "none",
+      "nerve": "none",
+      "mind": "none",
+      "ailment": "none",
+      "almighty": "none",
+      "support": "none",
+      "healing": "drain",
+      "unique": "none",
+      "talk": "none"
+    },
+    "npc": false,
+    "favoredStat": "lu",
+    "clan": "Fairy",
+    "bg1": "Disorder (Memory Loss)",
+    "bg2": "Absence (Looking for a place to belong)",
+    "contact1": "King of the Fairies",
+    "contact2": "Elite Pixie",
+    "contact3": "",
+    "bond": "",
+    "goal": "Protect $PC_NAME, return home",
+    "behavior": "Girl/Woman/Child",
+    "inheritTraits": "Eye Wing",
+    "evolvePath": "Pixie (6) > High Pixie (16) > Queen Mab"
+  },
+  "prototypeToken": {
+    "name": "Pixie",
+    "displayName": 50,
+    "actorLink": true,
+    "appendNumber": true,
+    "prependAdjective": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "tokenizer/npc-images/pixie_demo_.Token.webp",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "hexagonalShape": 0,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": 1,
+    "displayBars": 50,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": "mp"
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 0,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "flags": {
+      "token-z": {
+        "zIndex": 0
+      },
+      "image-hover": {
+        "hideArt": false,
+        "specificArt": "path/image.png"
+      }
+    },
+    "randomImg": false
+  },
+  "items": [
+    {
+      "name": "Basic Strike",
+      "type": "skill",
+      "img": "icons/skills/melee/unarmed-punch-fist.webp",
+      "system": {
+        "attackData": {
+          "canDodge": true,
+          "hasPowerRoll": true,
+          "potency": 0,
+          "auto": false,
+          "attackType": "phys",
+          "affinity": "phys",
+          "target": "one",
+          "ailment": {
+            "rate": 5
+          },
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "description": "",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "cost": null,
+        "costType": "none",
+        "oneShot": false,
+        "used": false
+      },
+      "_id": "PTNbbbt99aCyMo61",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742582123058,
+        "modifiedTime": 1742582123058,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_key": "!actors.items!FFTNTgEqAoxtcuWW.PTNbbbt99aCyMo61"
+    },
+    {
+      "folder": "aeRYfBeZbVqBoaat",
+      "name": "Dia",
+      "type": "skill",
+      "img": "icons/magic/life/cross-embers-glow-yellow-purple.webp",
+      "system": {
+        "description": "<p>1 target recovers HP equal to total Power.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": false,
+        "cost": 3,
+        "used": false,
+        "attackData": {
+          "attackType": "spell",
+          "ailment": {
+            "rate": null
+          },
+          "potency": 10,
+          "affinity": "healing",
+          "auto": true,
+          "hasPowerRoll": true,
+          "target": "one",
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "",
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.uu1PPHOa8RSrBihr",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742584463402,
+        "modifiedTime": 1742584463402,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_id": "ZhSOXk8Ccp43Bp9z",
+      "sort": 0,
+      "_key": "!actors.items!FFTNTgEqAoxtcuWW.ZhSOXk8Ccp43Bp9z"
+    },
+    {
+      "folder": "WBeBHJPwuSKoOLZt",
+      "name": "Zio",
+      "type": "skill",
+      "img": "icons/magic/lightning/bolt-forked-green.webp",
+      "system": {
+        "description": "<p>Deal Elec damage to 1 enemy. 20% chance to inflict Shock.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": false,
+        "cost": 3,
+        "used": false,
+        "attackData": {
+          "ailment": {
+            "rate": 20,
+            "id": "shock"
+          },
+          "hasPowerRoll": true,
+          "auto": false,
+          "attackType": "spell",
+          "potency": 10,
+          "affinity": "elec",
+          "target": "one",
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "",
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.5saCsLWgYiHfTzXI",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742584470403,
+        "modifiedTime": 1742584470403,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_id": "9rO666nnleVEGZBH",
+      "sort": 0,
+      "_key": "!actors.items!FFTNTgEqAoxtcuWW.9rO666nnleVEGZBH"
+    },
+    {
+      "folder": "SufW427qSnsyXyMc",
+      "name": "Seduce",
+      "type": "skill",
+      "img": "icons/magic/control/debuff-energy-hold-blue-yellow.webp",
+      "system": {
+        "description": "<p><strong>Approach Skill</strong></p>\n<p><strong>Impress Type:</strong> Female+Youth -&gt; Male</p>\n<p><strong>Offend Type:</strong> Male -&gt; Male</p>\n<p>Begin negotiation with 1 enemy demon. When used to gather info, gains 1 demon's info.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": false,
+        "cost": null,
+        "used": false,
+        "attackData": {
+          "attackType": "talk",
+          "ailment": {
+            "rate": null
+          },
+          "auto": false,
+          "potency": null,
+          "affinity": "phys",
+          "target": "one",
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "Speech",
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.nD7bCy5xPwbiTfvB",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742584479874,
+        "modifiedTime": 1742584479874,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_id": "IPBfoPjVDgKrmJhk",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_key": "!actors.items!FFTNTgEqAoxtcuWW.IPBfoPjVDgKrmJhk"
+    },
+    {
+      "folder": "kuZtDYrYqwhbVvYG",
+      "name": "Rakunda",
+      "type": "skill",
+      "img": "icons/skills/melee/shield-damaged-broken-blue.webp",
+      "system": {
+        "description": "<p>Lower targets' Phys and Mag resist by [[/roll 1d10]]. Stacks up to 4 times.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": false,
+        "cost": 12,
+        "used": false,
+        "attackData": {
+          "ailment": {
+            "rate": null,
+            "id": ""
+          },
+          "auto": true,
+          "attackType": "spell",
+          "potency": null,
+          "affinity": "support",
+          "target": "all",
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          },
+          "status": "rakunda"
+        },
+        "inheritType": "",
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.JCOnoNpGqojMGP6l",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742584485677,
+        "modifiedTime": 1742584485677,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_id": "b2brtQ2NxgfP7JTA",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_key": "!actors.items!FFTNTgEqAoxtcuWW.b2brtQ2NxgfP7JTA"
+    },
+    {
+      "folder": "9oP2Vu2VUsUrpKY4",
+      "name": "Posumudi",
+      "type": "skill",
+      "img": "icons/magic/life/crosses-trio-red.webp",
+      "system": {
+        "description": "<p>Remove Poison from 1 target.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": false,
+        "cost": 5,
+        "used": false,
+        "attackData": {
+          "attackType": "spell",
+          "ailment": {
+            "rate": null
+          },
+          "affinity": "healing",
+          "auto": true,
+          "potency": null,
+          "target": "one",
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "",
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.Q6EvOeOE5K8H95rE",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742584492104,
+        "modifiedTime": 1742584492104,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_id": "RiaCjZQIuJFwM3fk",
+      "sort": 300000,
+      "_key": "!actors.items!FFTNTgEqAoxtcuWW.RiaCjZQIuJFwM3fk"
+    },
+    {
+      "folder": "Z8qsdBig54dWVU5H",
+      "name": "Wing Buffet",
+      "type": "skill",
+      "img": "icons/creatures/birds/corvid-flying-wings-purple.webp",
+      "system": {
+        "description": "<p>Deal Force damage to all enemies. 30% chance to instantly kill targets afflicted with Stone.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": false,
+        "cost": 9,
+        "used": false,
+        "attackData": {
+          "ailment": {
+            "id": "shatter",
+            "rate": 30
+          },
+          "potency": 5,
+          "affinity": "force",
+          "target": "all",
+          "hasPowerRoll": true,
+          "auto": false,
+          "attackType": "phys",
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "Wing",
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.WXWAjs8qdp540U6D",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742584496854,
+        "modifiedTime": 1742584496854,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_id": "EH4xQPK8VopdAeh8",
+      "sort": 0,
+      "_key": "!actors.items!FFTNTgEqAoxtcuWW.EH4xQPK8VopdAeh8"
+    },
+    {
+      "folder": "9oP2Vu2VUsUrpKY4",
+      "name": "Patra",
+      "type": "skill",
+      "img": "icons/magic/life/heart-glowing-red.webp",
+      "system": {
+        "description": "<p>Remove Restrain, Sleep, and Panic from 1 target.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": false,
+        "cost": 5,
+        "used": false,
+        "attackData": {
+          "attackType": "spell",
+          "ailment": {
+            "rate": null
+          },
+          "affinity": "healing",
+          "auto": true,
+          "potency": null,
+          "target": "one",
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "",
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.TkVNDpzGlgUtZg38",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742584503223,
+        "modifiedTime": 1742584503223,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_id": "UnZ9smh84Wf0VNwt",
+      "sort": 100000,
+      "_key": "!actors.items!FFTNTgEqAoxtcuWW.UnZ9smh84Wf0VNwt"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582123034,
+    "modifiedTime": 1742584448714,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_key": "!actors!FFTNTgEqAoxtcuWW"
+}

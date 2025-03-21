@@ -1,0 +1,104 @@
+{
+  "folder": "viPkLfqsSMfUxqPS",
+  "name": "Life Bonus",
+  "type": "skill",
+  "img": "icons/magic/life/heart-cross-purple-orange.webp",
+  "system": {
+    "description": "<p>Add 1 to your HP multiplier.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "cost": null,
+    "used": false,
+    "attackData": {
+      "attackType": "passive",
+      "ailment": {
+        "rate": null
+      },
+      "auto": false,
+      "potency": null,
+      "affinity": "phys",
+      "target": "one",
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": "",
+    "costType": "none"
+  },
+  "effects": [
+    {
+      "name": "Life Bonus",
+      "origin": "Item.zao8U4XYp2AtzZSU",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "img": "icons/magic/life/heart-cross-purple-orange.webp",
+      "_id": "0PQPWyX7f01a0FQo",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.hpMultiplier",
+          "mode": 2,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "description": "",
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "statuscounter": {
+          "value": 1,
+          "config": {
+            "type": "default"
+          },
+          "visible": false
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!zao8U4XYp2AtzZSU.0PQPWyX7f01a0FQo"
+    }
+  ],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582346625,
+    "modifiedTime": 1742582346625,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "zao8U4XYp2AtzZSU",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_key": "!items!zao8U4XYp2AtzZSU"
+}

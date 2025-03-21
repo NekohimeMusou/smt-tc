@@ -1,0 +1,52 @@
+{
+  "folder": "9oP2Vu2VUsUrpKY4",
+  "name": "Me Patra",
+  "type": "skill",
+  "img": "icons/magic/life/heart-area-circle-red-green.webp",
+  "system": {
+    "description": "<p>Remove Restrain, Sleep, and Panic from all targets.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "cost": 12,
+    "used": false,
+    "attackData": {
+      "ailment": {
+        "rate": null
+      },
+      "auto": true,
+      "attackType": "spell",
+      "potency": null,
+      "affinity": "healing",
+      "target": "all",
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": "",
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582621477,
+    "modifiedTime": 1742582621477,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_id": "wjevGcaM78DjUBaq",
+  "sort": 0,
+  "_key": "!items!wjevGcaM78DjUBaq"
+}

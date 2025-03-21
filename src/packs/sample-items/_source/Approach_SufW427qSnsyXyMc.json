@@ -1,0 +1,22 @@
+{
+  "name": "Approach",
+  "sorting": "a",
+  "folder": "1rRsx76qKyCHROhe",
+  "type": "Item",
+  "description": "",
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": null,
+    "modifiedTime": 1742582504954,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "SufW427qSnsyXyMc",
+  "sort": 100000,
+  "_key": "!folders!SufW427qSnsyXyMc"
+}

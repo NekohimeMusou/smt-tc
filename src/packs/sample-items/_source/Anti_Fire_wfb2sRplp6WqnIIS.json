@@ -1,0 +1,54 @@
+{
+  "folder": "DKJLoKdvHRmOAgsA",
+  "name": "Anti-Fire",
+  "type": "skill",
+  "img": "icons/magic/defensive/shield-barrier-glowing-triangle-red.webp",
+  "system": {
+    "description": "<p>Gain Strong against Elec attacks.</p>\n<p><strong>NOTE:</strong> Not implemented yet; you'll have to take care of that manually for now.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "cost": null,
+    "costType": "none",
+    "oneShot": false,
+    "used": false,
+    "attackData": {
+      "auto": false,
+      "attackType": "phys",
+      "potency": null,
+      "affinity": "phys",
+      "target": "one",
+      "ailment": {
+        "rate": 5,
+        "id": ""
+      },
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      },
+      "status": ""
+    },
+    "inheritType": ""
+  },
+  "effects": [],
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582436605,
+    "modifiedTime": 1742582437432,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "wfb2sRplp6WqnIIS",
+  "sort": 300000,
+  "_key": "!items!wfb2sRplp6WqnIIS"
+}

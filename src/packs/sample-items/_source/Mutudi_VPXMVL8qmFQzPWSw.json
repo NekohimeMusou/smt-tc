@@ -1,0 +1,53 @@
+{
+  "folder": "9oP2Vu2VUsUrpKY4",
+  "name": "Mutudi",
+  "type": "skill",
+  "img": "icons/magic/sonic/scream-wail-shout-teal.webp",
+  "system": {
+    "description": "<p>Remove the Mute ailment from one target.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "cost": 5,
+    "costType": "none",
+    "oneShot": false,
+    "used": false,
+    "attackData": {
+      "auto": true,
+      "attackType": "spell",
+      "potency": null,
+      "affinity": "healing",
+      "target": "one",
+      "ailment": {
+        "rate": 5,
+        "id": ""
+      },
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": ""
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582620314,
+    "modifiedTime": 1742582620314,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_id": "VPXMVL8qmFQzPWSw",
+  "sort": 0,
+  "_key": "!items!VPXMVL8qmFQzPWSw"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Sample PCs",
+  "sorting": "a",
+  "folder": null,
+  "type": "Actor",
+  "_id": "kzpDOdVYHjnVHQCL",
+  "description": "",
+  "sort": 0,
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742581954729,
+    "modifiedTime": 1742581954729,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_key": "!folders!kzpDOdVYHjnVHQCL"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Affinity Changers",
+  "sorting": "a",
+  "folder": "asfVjXMNdjy8mWHx",
+  "type": "Item",
+  "_id": "DKJLoKdvHRmOAgsA",
+  "description": "",
+  "sort": 0,
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_key": "!folders!DKJLoKdvHRmOAgsA"
+}

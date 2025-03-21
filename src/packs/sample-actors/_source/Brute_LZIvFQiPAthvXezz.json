@@ -1,0 +1,22 @@
+{
+  "name": "Brute",
+  "sorting": "a",
+  "folder": "3kKQV5aOdI1DSp9v",
+  "type": "Actor",
+  "description": "",
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": null,
+    "modifiedTime": 1742582021827,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "LZIvFQiPAthvXezz",
+  "sort": 100000,
+  "_key": "!folders!LZIvFQiPAthvXezz"
+}

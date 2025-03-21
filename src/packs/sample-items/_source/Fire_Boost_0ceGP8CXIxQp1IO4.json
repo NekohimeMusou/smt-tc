@@ -1,0 +1,106 @@
+{
+  "folder": "MB5FkxYKS2SgZMWx",
+  "name": "Fire Boost",
+  "type": "skill",
+  "_id": "0ceGP8CXIxQp1IO4",
+  "img": "icons/magic/fire/elemental-fire-humanoid.webp",
+  "system": {
+    "description": "<p>Multiply the power of Elec attacks by 1.5x (before power roll).</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "cost": null,
+    "costType": "none",
+    "oneShot": false,
+    "used": false,
+    "attackData": {
+      "auto": false,
+      "attackType": "passive",
+      "potency": null,
+      "affinity": "phys",
+      "target": "one",
+      "ailment": {
+        "rate": 5,
+        "id": ""
+      },
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      },
+      "status": ""
+    },
+    "inheritType": ""
+  },
+  "effects": [
+    {
+      "name": "Fire Boost",
+      "origin": "Compendium.world.smt-tc-sample-items.Item.0ceGP8CXIxQp1IO4",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "img": "icons/magic/fire/elemental-fire-humanoid.webp",
+      "_id": "GYGflHxvLA2KcZEq",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.elementBoost.fire",
+          "mode": 5,
+          "value": "true",
+          "priority": null
+        }
+      ],
+      "description": "",
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "statuscounter": {
+          "value": 1,
+          "config": {
+            "type": "default"
+          },
+          "visible": false
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!0ceGP8CXIxQp1IO4.GYGflHxvLA2KcZEq"
+    }
+  ],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582351370,
+    "modifiedTime": 1742582351370,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_key": "!items!0ceGP8CXIxQp1IO4"
+}

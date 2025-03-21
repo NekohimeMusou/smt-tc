@@ -1,0 +1,104 @@
+{
+  "folder": "yYyspZmJsGG1W5ic",
+  "name": "Expert Dodge",
+  "type": "skill",
+  "img": "icons/skills/movement/feet-winged-boots-glowing-yellow.webp",
+  "system": {
+    "description": "",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "cost": null,
+    "used": false,
+    "attackData": {
+      "attackType": "passive",
+      "ailment": {
+        "rate": null
+      },
+      "auto": false,
+      "potency": null,
+      "affinity": "phys",
+      "target": "one",
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": "",
+    "costType": "none"
+  },
+  "effects": [
+    {
+      "name": "Expert Dodge",
+      "origin": "Item.PClmJB1j5tzHqQAN",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "img": "icons/skills/movement/feet-winged-boots-glowing-yellow.webp",
+      "_id": "CPndX5XCzHB9VMzc",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.tn.dodge",
+          "mode": 2,
+          "value": "5",
+          "priority": null
+        }
+      ],
+      "description": "",
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "statuscounter": {
+          "value": 1,
+          "config": {
+            "type": "default"
+          },
+          "visible": false
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!PClmJB1j5tzHqQAN.CPndX5XCzHB9VMzc"
+    }
+  ],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582394687,
+    "modifiedTime": 1742582394687,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "PClmJB1j5tzHqQAN",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_key": "!items!PClmJB1j5tzHqQAN"
+}

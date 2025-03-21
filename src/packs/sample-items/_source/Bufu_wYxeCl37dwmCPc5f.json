@@ -1,0 +1,53 @@
+{
+  "folder": "4T9WLxcra6nCeL7U",
+  "name": "Bufu",
+  "type": "skill",
+  "img": "icons/magic/water/projectile-ice-faceted-blue.webp",
+  "system": {
+    "description": "<p>Deal Cold damage to 1 target; 20% chance to inflict Freeze.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "cost": 3,
+    "used": false,
+    "attackData": {
+      "attackType": "spell",
+      "ailment": {
+        "rate": 20,
+        "id": "freeze"
+      },
+      "potency": 10,
+      "affinity": "cold",
+      "hasPowerRoll": true,
+      "auto": false,
+      "target": "one",
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": "",
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582716605,
+    "modifiedTime": 1742582716605,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_id": "wYxeCl37dwmCPc5f",
+  "sort": 0,
+  "_key": "!items!wYxeCl37dwmCPc5f"
+}

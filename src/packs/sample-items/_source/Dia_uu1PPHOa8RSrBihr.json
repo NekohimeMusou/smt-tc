@@ -1,0 +1,52 @@
+{
+  "folder": "aeRYfBeZbVqBoaat",
+  "name": "Dia",
+  "type": "skill",
+  "img": "icons/magic/life/cross-embers-glow-yellow-purple.webp",
+  "system": {
+    "description": "<p>1 target recovers HP equal to total Power.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "cost": 3,
+    "used": false,
+    "attackData": {
+      "attackType": "spell",
+      "ailment": {
+        "rate": null
+      },
+      "potency": 10,
+      "affinity": "healing",
+      "auto": true,
+      "hasPowerRoll": true,
+      "target": "one",
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": "",
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582598503,
+    "modifiedTime": 1742582598503,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_id": "uu1PPHOa8RSrBihr",
+  "sort": 0,
+  "_key": "!items!uu1PPHOa8RSrBihr"
+}

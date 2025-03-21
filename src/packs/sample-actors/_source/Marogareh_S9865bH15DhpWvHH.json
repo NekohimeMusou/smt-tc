@@ -1,0 +1,865 @@
+{
+  "folder": "oNT2cNhM5aJmwi0u",
+  "name": "Marogareh",
+  "type": "fiend",
+  "_id": "S9865bH15DhpWvHH",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "stats": {
+      "st": {
+        "base": 1,
+        "lv": 9,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "phys"
+      },
+      "ma": {
+        "base": 1,
+        "lv": null,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "mag"
+      },
+      "vi": {
+        "base": 1,
+        "lv": null,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "save"
+      },
+      "ag": {
+        "base": 1,
+        "lv": null,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "dodge"
+      },
+      "lu": {
+        "base": 1,
+        "lv": null,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "negotiation"
+      }
+    },
+    "hp": {
+      "max": null,
+      "value": 98
+    },
+    "mp": {
+      "max": null,
+      "value": 39
+    },
+    "fp": {
+      "max": null,
+      "value": 5
+    },
+    "tn": {
+      "st": null,
+      "ma": null,
+      "vi": null,
+      "ag": null,
+      "lu": null,
+      "phys": null,
+      "mag": null,
+      "save": null,
+      "dodge": null,
+      "negotiation": null,
+      "gun": null
+    },
+    "power": {
+      "phys": null,
+      "mag": null,
+      "gun": null
+    },
+    "resist": {
+      "phys": null,
+      "mag": null
+    },
+    "notes": "<p>Once, you were a normal high school student. But then one day, while you were visiting the Shinjuku Medical Center to check on your homeroom teacher, something happened. It was then that a strange blonde-haired boy granted you your Magatama, and you became a fiend. You now believe that nothing is as important as finding Takao Yuko, your teacher.</p>",
+    "alignment": {
+      "law": null,
+      "chaos": null,
+      "dark": null,
+      "light": null,
+      "neutral": null,
+      "heeHo": null
+    },
+    "awards": {
+      "xp": null,
+      "macca": null,
+      "itemDrops": ""
+    },
+    "tnBoosts": 0,
+    "multi": 1,
+    "buffs": {
+      "tarukaja": 0,
+      "makakaja": 0,
+      "rakukaja": 0,
+      "sukukaja": 0,
+      "tarunda": 0,
+      "rakunda": 0,
+      "sukunda": 0
+    },
+    "mods": {
+      "might": false,
+      "luckyFind": false,
+      "pierce": false
+    },
+    "powerBoost": {
+      "phys": false,
+      "mag": false,
+      "item": false
+    },
+    "elementBoost": {
+      "fire": false,
+      "cold": false,
+      "elec": false,
+      "force": false
+    },
+    "gems": {
+      "diamond": 0,
+      "pearl": 0,
+      "sapphire": 0,
+      "emerald": 0,
+      "ruby": 0,
+      "jade": 0,
+      "opal": 0,
+      "amethyst": 0,
+      "agate": 0,
+      "turquoise": 0,
+      "garnet": 0,
+      "onyx": 0,
+      "coral": 0,
+      "aquamarine": 0
+    },
+    "baseLv": 1,
+    "incenseUsed": null,
+    "hpMultiplier": null,
+    "mpMultiplier": null,
+    "xp": 1100,
+    "macca": 500,
+    "affinities": {
+      "phys": "none",
+      "fire": "none",
+      "cold": "none",
+      "elec": "none",
+      "force": "none",
+      "light": "none",
+      "dark": "none",
+      "ruin": "none",
+      "nerve": "none",
+      "mind": "none",
+      "ailment": "none",
+      "almighty": "none",
+      "support": "none",
+      "healing": "drain",
+      "unique": "none",
+      "talk": "none"
+    },
+    "npc": false,
+    "bg1": "Fiend: Blonde-haired Boy",
+    "bg2": "Student of the Maiden, Takao Yuko",
+    "contact1": "Takao Yuko",
+    "contact2": "Blonde-Haired Boy",
+    "contact3": "",
+    "bond": "",
+    "goal": "Find Takao Yuko"
+  },
+  "prototypeToken": {
+    "name": "Marogareh",
+    "displayName": 50,
+    "actorLink": true,
+    "appendNumber": true,
+    "prependAdjective": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "icons/svg/mystery-man.svg",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "hexagonalShape": 0,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": 1,
+    "displayBars": 50,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": "mp"
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 0,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "flags": {
+      "token-z": {
+        "zIndex": 0
+      },
+      "image-hover": {
+        "hideArt": false,
+        "specificArt": "path/image.png"
+      }
+    },
+    "randomImg": false
+  },
+  "items": [
+    {
+      "name": "Basic Strike",
+      "type": "skill",
+      "img": "icons/skills/melee/unarmed-punch-fist.webp",
+      "system": {
+        "attackData": {
+          "canDodge": true,
+          "hasPowerRoll": true,
+          "potency": 0,
+          "auto": false,
+          "attackType": "phys",
+          "affinity": "phys",
+          "target": "one",
+          "ailment": {
+            "rate": 5
+          },
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "description": "",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "cost": null,
+        "costType": "none",
+        "oneShot": false,
+        "used": false
+      },
+      "_id": "6RJ2H4LJpnJxY7nG",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742582172048,
+        "modifiedTime": 1742582172048,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_key": "!actors.items!S9865bH15DhpWvHH.6RJ2H4LJpnJxY7nG"
+    },
+    {
+      "name": "Marogareh",
+      "type": "magatama",
+      "img": "icons/skills/melee/unarmed-punch-fist-blue.webp",
+      "system": {
+        "description": "<h1>Skills</h1>\n<p> </p>\n<p>Lv 1: Lunge</p>\n<p>Lv 4: Hell Thrust</p>\n<p>Lv 6: Life Bonus</p>\n<p>Lv 10: Berserk</p>\n<p>Lv 15: Counter</p>\n<p>Lv 20: Last Resort</p>",
+        "qty": 1,
+        "price": 2000,
+        "equipped": true,
+        "affinities": {
+          "phys": "none",
+          "fire": "none",
+          "cold": "none",
+          "elec": "none",
+          "force": "none",
+          "light": "none",
+          "dark": "none",
+          "mind": "none",
+          "nerve": "none",
+          "ruin": "none",
+          "ailment": "none",
+          "almighty": "none",
+          "support": "none",
+          "healing": "drain",
+          "unique": "none",
+          "talk": "none"
+        },
+        "stats": {
+          "st": 4,
+          "ma": 1,
+          "vi": 2,
+          "ag": 2,
+          "lu": 1
+        },
+        "ingested": true,
+        "cost": null,
+        "costType": "none"
+      },
+      "effects": [],
+      "folder": "3nhVmw01nubTUR4c",
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.R7Zug31y6IgPfHTA",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742584732997,
+        "modifiedTime": 1742584735061,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_id": "rsGiFxsduVKIgIQR",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_key": "!actors.items!S9865bH15DhpWvHH.rsGiFxsduVKIgIQR"
+    },
+    {
+      "folder": "ZfZCNPF0QMIJ6DvE",
+      "name": "Lunge",
+      "type": "skill",
+      "img": "icons/skills/melee/unarmed-punch-fist-white.webp",
+      "system": {
+        "description": "<p>Deal Phys damage to 1 target.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": false,
+        "used": false,
+        "cost": 10,
+        "attackData": {
+          "auto": false,
+          "attackType": "phys",
+          "potency": 10,
+          "affinity": "phys",
+          "target": "one",
+          "ailment": {
+            "rate": 5,
+            "id": ""
+          },
+          "hasPowerRoll": true,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "Lunge",
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.JEYAkaYwKjGu0orf",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742584768629,
+        "modifiedTime": 1742584768629,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_id": "VbdokHhHVeiKSHLF",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_key": "!actors.items!S9865bH15DhpWvHH.VbdokHhHVeiKSHLF"
+    },
+    {
+      "folder": "ZfZCNPF0QMIJ6DvE",
+      "name": "Hell Thrust",
+      "type": "skill",
+      "img": "icons/skills/melee/unarmed-punch-fist-blue.webp",
+      "system": {
+        "description": "<p>Deal Phys damage to 1 enemy.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": false,
+        "used": false,
+        "cost": 20,
+        "attackData": {
+          "auto": false,
+          "attackType": "phys",
+          "potency": 25,
+          "affinity": "phys",
+          "target": "one",
+          "ailment": {
+            "rate": 5,
+            "id": ""
+          },
+          "hasPowerRoll": true,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "Lunge",
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.Fcp95EwM0abCerfF",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742584771754,
+        "modifiedTime": 1742584771754,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_id": "fD0un6C77toa9utp",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_key": "!actors.items!S9865bH15DhpWvHH.fD0un6C77toa9utp"
+    },
+    {
+      "folder": "viPkLfqsSMfUxqPS",
+      "name": "Life Bonus",
+      "type": "skill",
+      "img": "icons/magic/life/heart-cross-purple-orange.webp",
+      "system": {
+        "description": "<p>Add 1 to your HP multiplier.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": false,
+        "cost": null,
+        "used": false,
+        "attackData": {
+          "attackType": "passive",
+          "ailment": {
+            "rate": null
+          },
+          "auto": false,
+          "potency": null,
+          "affinity": "phys",
+          "target": "one",
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "",
+        "costType": "none"
+      },
+      "effects": [
+        {
+          "name": "Life Bonus",
+          "origin": "Item.zao8U4XYp2AtzZSU",
+          "duration": {
+            "rounds": null,
+            "startTime": 0,
+            "seconds": null,
+            "combat": null,
+            "turns": null,
+            "startRound": null,
+            "startTurn": null
+          },
+          "disabled": false,
+          "img": "icons/magic/life/heart-cross-purple-orange.webp",
+          "_id": "0PQPWyX7f01a0FQo",
+          "type": "base",
+          "system": {},
+          "changes": [
+            {
+              "key": "system.hpMultiplier",
+              "mode": 2,
+              "value": "1",
+              "priority": null
+            }
+          ],
+          "description": "",
+          "tint": "#ffffff",
+          "transfer": true,
+          "statuses": [],
+          "sort": 0,
+          "flags": {
+            "statuscounter": {
+              "value": 1,
+              "config": {
+                "type": "default"
+              },
+              "visible": false
+            }
+          },
+          "_stats": {
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "coreVersion": "12.331",
+            "systemId": "smt-tc",
+            "systemVersion": "0.5.8",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null
+          },
+          "_key": "!actors.items.effects!S9865bH15DhpWvHH.GckKLlXXNlFee5IV.0PQPWyX7f01a0FQo"
+        }
+      ],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.zao8U4XYp2AtzZSU",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742584775269,
+        "modifiedTime": 1742584775269,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_id": "GckKLlXXNlFee5IV",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_key": "!actors.items!S9865bH15DhpWvHH.GckKLlXXNlFee5IV"
+    },
+    {
+      "folder": "ZfZCNPF0QMIJ6DvE",
+      "name": "Berserk",
+      "type": "skill",
+      "img": "icons/skills/melee/maneuver-greatsword-yellow.webp",
+      "system": {
+        "description": "<p>Deal Phys damage to all targets.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": false,
+        "used": false,
+        "cost": 15,
+        "attackData": {
+          "potency": 10,
+          "ailment": {
+            "rate": null
+          },
+          "hasPowerRoll": true,
+          "target": "all",
+          "auto": false,
+          "attackType": "phys",
+          "affinity": "phys",
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "Lunge",
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.UMylSXW7Ah9Q3U8F",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742584777735,
+        "modifiedTime": 1742584777735,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_id": "y401vGn4JJoQSOGb",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_key": "!actors.items!S9865bH15DhpWvHH.y401vGn4JJoQSOGb"
+    },
+    {
+      "folder": "SufW427qSnsyXyMc",
+      "name": "Scout",
+      "type": "skill",
+      "img": "icons/skills/social/wave-halt-stop.webp",
+      "system": {
+        "description": "<p><strong>Approach Skill</strong></p>\n<p><strong>Impress Type:</strong> Adult -&gt; Woman</p>\n<p><strong>Offend Type:</strong> Child -&gt; Woman</p>\n<p>Begin negotiation with 1 enemy demon. When used to gather info, gains 1 demon's info.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": false,
+        "cost": null,
+        "used": false,
+        "attackData": {
+          "attackType": "talk",
+          "ailment": {
+            "rate": null
+          },
+          "auto": false,
+          "potency": null,
+          "affinity": "phys",
+          "target": "one",
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "",
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.JTyoqZCyDvEVEakP",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742584782269,
+        "modifiedTime": 1742584782269,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_id": "I0maJCkFEdwmahuV",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_key": "!actors.items!S9865bH15DhpWvHH.I0maJCkFEdwmahuV"
+    },
+    {
+      "folder": "MB5FkxYKS2SgZMWx",
+      "name": "Powerful Strikes",
+      "type": "skill",
+      "img": "icons/skills/melee/hand-grip-staff-teal.webp",
+      "system": {
+        "description": "<p>Roll an extra d10 on power rolls for Physical Attacks and Basic Strikes.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": false,
+        "cost": null,
+        "used": false,
+        "attackData": {
+          "attackType": "passive",
+          "ailment": {
+            "rate": null
+          },
+          "auto": false,
+          "potency": null,
+          "affinity": "phys",
+          "target": "one",
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "",
+        "costType": "none"
+      },
+      "effects": [
+        {
+          "name": "Powerful Strikes",
+          "origin": "Item.8z9jkG34dg6Zcisq",
+          "duration": {
+            "rounds": null,
+            "startTime": 0,
+            "seconds": null,
+            "combat": null,
+            "turns": null,
+            "startRound": null,
+            "startTurn": null
+          },
+          "disabled": false,
+          "img": "icons/skills/melee/hand-grip-staff-teal.webp",
+          "_id": "yiBRV8HZUYjWu2ny",
+          "type": "base",
+          "system": {},
+          "changes": [
+            {
+              "key": "system.powerBoost.phys",
+              "mode": 5,
+              "value": "true",
+              "priority": null
+            }
+          ],
+          "description": "",
+          "tint": "#ffffff",
+          "transfer": true,
+          "statuses": [],
+          "sort": 0,
+          "flags": {
+            "statuscounter": {
+              "value": 1,
+              "config": {
+                "type": "default"
+              },
+              "visible": false
+            }
+          },
+          "_stats": {
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "coreVersion": "12.331",
+            "systemId": "smt-tc",
+            "systemVersion": "0.5.8",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null
+          },
+          "_key": "!actors.items.effects!S9865bH15DhpWvHH.HISH4Y34tCjfZa99.yiBRV8HZUYjWu2ny"
+        }
+      ],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.8z9jkG34dg6Zcisq",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742584787111,
+        "modifiedTime": 1742584787111,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_id": "HISH4Y34tCjfZa99",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_key": "!actors.items!S9865bH15DhpWvHH.HISH4Y34tCjfZa99"
+    },
+    {
+      "folder": "yYyspZmJsGG1W5ic",
+      "name": "Luck Smiles",
+      "type": "skill",
+      "img": "icons/magic/control/buff-luck-fortune-green.webp",
+      "system": {
+        "description": "<p>1/scenario, completely nullify the effects of one attack on you. May be learned multiple times.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": true,
+        "cost": null,
+        "used": false,
+        "attackData": {
+          "attackType": "passive",
+          "ailment": {
+            "rate": null
+          },
+          "auto": false,
+          "potency": null,
+          "affinity": "phys",
+          "target": "one",
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "",
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.Vz7j8gG3pC63hTdf",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742584791890,
+        "modifiedTime": 1742584791890,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_id": "EU9vWT9SJp0HYfDl",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_key": "!actors.items!S9865bH15DhpWvHH.EU9vWT9SJp0HYfDl"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582172016,
+    "modifiedTime": 1742584799024,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_key": "!actors!S9865bH15DhpWvHH"
+}

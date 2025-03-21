@@ -1,0 +1,52 @@
+{
+  "folder": "ZfZCNPF0QMIJ6DvE",
+  "name": "Berserk",
+  "type": "skill",
+  "img": "icons/skills/melee/maneuver-greatsword-yellow.webp",
+  "system": {
+    "description": "<p>Deal Phys damage to all targets.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "used": false,
+    "cost": 15,
+    "attackData": {
+      "potency": 10,
+      "ailment": {
+        "rate": null
+      },
+      "hasPowerRoll": true,
+      "target": "all",
+      "auto": false,
+      "attackType": "phys",
+      "affinity": "phys",
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": "Lunge",
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582472886,
+    "modifiedTime": 1742582472886,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "UMylSXW7Ah9Q3U8F",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_key": "!items!UMylSXW7Ah9Q3U8F"
+}

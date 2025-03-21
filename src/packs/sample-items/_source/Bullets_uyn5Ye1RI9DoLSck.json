@@ -1,0 +1,51 @@
+{
+  "folder": "Jj7PQvYTKdL4dr8F",
+  "name": "Bullets",
+  "type": "inventoryItem",
+  "img": "icons/weapons/ammunition/bullets-cartridge-shell-gray.webp",
+  "system": {
+    "description": "<p>Bullets for a gun. One size fits all.</p>",
+    "qty": 1,
+    "price": 10,
+    "equipped": false,
+    "consumeOnUse": false,
+    "hasAttack": false,
+    "attackData": {
+      "auto": false,
+      "attackType": "phys",
+      "potency": null,
+      "affinity": "phys",
+      "target": "one",
+      "ailment": {
+        "rate": 5
+      },
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "cost": null,
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582293589,
+    "modifiedTime": 1742582293589,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_id": "uyn5Ye1RI9DoLSck",
+  "sort": 0,
+  "_key": "!items!uyn5Ye1RI9DoLSck"
+}

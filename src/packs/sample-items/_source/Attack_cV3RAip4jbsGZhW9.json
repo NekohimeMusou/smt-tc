@@ -1,0 +1,22 @@
+{
+  "name": "Attack",
+  "sorting": "a",
+  "folder": "Jj7PQvYTKdL4dr8F",
+  "type": "Item",
+  "description": "",
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": null,
+    "modifiedTime": 1742582290607,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "cV3RAip4jbsGZhW9",
+  "sort": 100000,
+  "_key": "!folders!cV3RAip4jbsGZhW9"
+}

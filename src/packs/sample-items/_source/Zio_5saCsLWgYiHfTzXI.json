@@ -1,0 +1,53 @@
+{
+  "folder": "WBeBHJPwuSKoOLZt",
+  "name": "Zio",
+  "type": "skill",
+  "img": "icons/magic/lightning/bolt-forked-green.webp",
+  "system": {
+    "description": "<p>Deal Elec damage to 1 enemy. 20% chance to inflict Shock.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "cost": 3,
+    "used": false,
+    "attackData": {
+      "ailment": {
+        "rate": 20,
+        "id": "shock"
+      },
+      "hasPowerRoll": true,
+      "auto": false,
+      "attackType": "spell",
+      "potency": 10,
+      "affinity": "elec",
+      "target": "one",
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": "",
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582580943,
+    "modifiedTime": 1742582580943,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_id": "5saCsLWgYiHfTzXI",
+  "sort": 0,
+  "_key": "!items!5saCsLWgYiHfTzXI"
+}

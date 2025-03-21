@@ -1,0 +1,53 @@
+{
+  "folder": "zgsyK9ltrm1d2R9F",
+  "name": "Pulinpa",
+  "type": "skill",
+  "_id": "LbWu7uiJp6f5q0af",
+  "img": "icons/magic/control/fear-fright-mask-yellow.webp",
+  "system": {
+    "description": "<p>Attack the target with Mind; 60% chance to inflict Panic.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "cost": 5,
+    "costType": "none",
+    "oneShot": false,
+    "used": false,
+    "attackData": {
+      "auto": false,
+      "attackType": "spell",
+      "potency": null,
+      "affinity": "mind",
+      "target": "one",
+      "ailment": {
+        "rate": 60,
+        "id": "panic"
+      },
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": ""
+  },
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742583006365,
+    "modifiedTime": 1742583006365,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_key": "!items!LbWu7uiJp6f5q0af"
+}

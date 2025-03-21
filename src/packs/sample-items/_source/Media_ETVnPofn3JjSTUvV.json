@@ -1,0 +1,52 @@
+{
+  "folder": "aeRYfBeZbVqBoaat",
+  "name": "Media",
+  "type": "skill",
+  "img": "icons/magic/life/cross-area-circle-green-white.webp",
+  "system": {
+    "description": "<p>All targets recover HP equal to total Power.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "cost": 12,
+    "used": false,
+    "attackData": {
+      "attackType": "spell",
+      "ailment": {
+        "rate": null
+      },
+      "potency": 5,
+      "auto": true,
+      "affinity": "healing",
+      "target": "all",
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": "",
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582966310,
+    "modifiedTime": 1742582966310,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_id": "ETVnPofn3JjSTUvV",
+  "sort": 0,
+  "_key": "!items!ETVnPofn3JjSTUvV"
+}

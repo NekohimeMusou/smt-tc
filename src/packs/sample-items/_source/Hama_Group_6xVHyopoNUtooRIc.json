@@ -1,0 +1,22 @@
+{
+  "name": "Hama Group",
+  "sorting": "a",
+  "folder": "cDSO9ZDbL3OnnUqG",
+  "type": "Item",
+  "description": "",
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": null,
+    "modifiedTime": 1742583013948,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "6xVHyopoNUtooRIc",
+  "sort": 500000,
+  "_key": "!folders!6xVHyopoNUtooRIc"
+}

@@ -1,0 +1,54 @@
+{
+  "folder": "hvMjPXplgX2foVYF",
+  "name": "Hand Grenade",
+  "type": "weapon",
+  "img": "icons/weapons/thrown/bomb-fuse-black-grey.webp",
+  "system": {
+    "description": "<p>Deal Phys damage to all enemies.</p>",
+    "qty": 1,
+    "price": 50,
+    "equipped": false,
+    "ammo": {
+      "max": null,
+      "value": null
+    },
+    "weaponType": "grenade",
+    "attackData": {
+      "potency": 10,
+      "auto": false,
+      "attackType": "phys",
+      "affinity": "phys",
+      "target": "one",
+      "ailment": {
+        "rate": null
+      },
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "cost": null,
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582268691,
+    "modifiedTime": 1742582268691,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "uYyU7kVaAklHWixZ",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_key": "!items!uYyU7kVaAklHWixZ"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Breath Group",
+  "sorting": "a",
+  "folder": "Yvd8yawBJ1Wf51Hh",
+  "type": "Item",
+  "_id": "Z8qsdBig54dWVU5H",
+  "description": "",
+  "sort": 200000,
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": null,
+    "modifiedTime": 1742582544499,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_key": "!folders!Z8qsdBig54dWVU5H"
+}

@@ -1,0 +1,54 @@
+{
+  "folder": "zgsyK9ltrm1d2R9F",
+  "name": "Tentarafoo",
+  "type": "skill",
+  "img": "icons/magic/control/fear-fright-white.webp",
+  "system": {
+    "description": "<p>Attack all enemies with Mind. Potency 50; 20% chance to inflict Panic.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "used": false,
+    "cost": 15,
+    "attackData": {
+      "attackType": "spell",
+      "ailment": {
+        "rate": 20,
+        "id": "panic"
+      },
+      "potency": 50,
+      "hasPowerRoll": true,
+      "target": "all",
+      "affinity": "mind",
+      "auto": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      },
+      "status": ""
+    },
+    "inheritType": "",
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742583006365,
+    "modifiedTime": 1742583006365,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "aT8RugOp588vtHBk",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_key": "!items!aT8RugOp588vtHBk"
+}

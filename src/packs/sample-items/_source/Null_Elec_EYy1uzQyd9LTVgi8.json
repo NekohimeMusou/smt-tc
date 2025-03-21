@@ -1,0 +1,52 @@
+{
+  "folder": "DKJLoKdvHRmOAgsA",
+  "name": "Null Elec",
+  "type": "skill",
+  "img": "icons/magic/defensive/shield-barrier-flaming-diamond-acid.webp",
+  "system": {
+    "description": "<p>Gain Null against Elec attacks.</p>\n<p><strong>NOTE:</strong> Not implemented yet; you'll have to take care of that manually for now.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "cost": null,
+    "used": false,
+    "attackData": {
+      "ailment": {
+        "rate": null
+      },
+      "auto": false,
+      "attackType": "passive",
+      "potency": null,
+      "affinity": "phys",
+      "target": "one",
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": "",
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582437413,
+    "modifiedTime": 1742582437432,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_id": "EYy1uzQyd9LTVgi8",
+  "sort": 200000,
+  "_key": "!items!EYy1uzQyd9LTVgi8"
+}

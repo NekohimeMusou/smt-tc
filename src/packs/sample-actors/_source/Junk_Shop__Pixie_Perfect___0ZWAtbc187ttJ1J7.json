@@ -1,0 +1,1196 @@
+{
+  "name": "Junk Shop \"Pixie Perfect!\"",
+  "type": "human",
+  "img": "tokenizer/npc-images/pixie_demo_.Avatar.webp",
+  "system": {
+    "stats": {
+      "st": {
+        "base": 1,
+        "lv": null,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "phys"
+      },
+      "ma": {
+        "base": 1,
+        "lv": null,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "mag"
+      },
+      "vi": {
+        "base": 1,
+        "lv": null,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "save"
+      },
+      "ag": {
+        "base": 1,
+        "lv": null,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "dodge"
+      },
+      "lu": {
+        "base": 1,
+        "lv": null,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "negotiation"
+      }
+    },
+    "hp": {
+      "max": null,
+      "value": 8
+    },
+    "mp": {
+      "max": null,
+      "value": 4
+    },
+    "fp": {
+      "max": null,
+      "value": 5
+    },
+    "tn": {
+      "st": null,
+      "ma": null,
+      "vi": null,
+      "ag": null,
+      "lu": null,
+      "phys": null,
+      "mag": null,
+      "save": null,
+      "dodge": null,
+      "negotiation": null,
+      "gun": null
+    },
+    "power": {
+      "phys": null,
+      "mag": null,
+      "gun": null
+    },
+    "resist": {
+      "phys": null,
+      "mag": null
+    },
+    "notes": "",
+    "alignment": {
+      "law": null,
+      "chaos": null,
+      "dark": null,
+      "light": null,
+      "neutral": null,
+      "heeHo": null
+    },
+    "awards": {
+      "xp": null,
+      "macca": null,
+      "itemDrops": ""
+    },
+    "tnBoosts": 0,
+    "multi": 1,
+    "buffs": {
+      "tarukaja": 0,
+      "makakaja": 0,
+      "rakukaja": 0,
+      "sukukaja": 0,
+      "tarunda": 0,
+      "rakunda": 0,
+      "sukunda": 0
+    },
+    "mods": {
+      "might": false,
+      "luckyFind": false,
+      "pierce": false
+    },
+    "powerBoost": {
+      "phys": false,
+      "mag": false,
+      "item": false
+    },
+    "elementBoost": {
+      "fire": false,
+      "cold": false,
+      "elec": false,
+      "force": false
+    },
+    "gems": {
+      "diamond": 0,
+      "pearl": 0,
+      "sapphire": 0,
+      "emerald": 0,
+      "ruby": 0,
+      "jade": 0,
+      "opal": 0,
+      "amethyst": 0,
+      "agate": 0,
+      "turquoise": 0,
+      "garnet": 0,
+      "onyx": 0,
+      "coral": 0,
+      "aquamarine": 0
+    },
+    "baseLv": 1,
+    "hpMultiplier": null,
+    "mpMultiplier": null,
+    "xp": null,
+    "macca": null,
+    "affinities": {
+      "phys": "none",
+      "fire": "none",
+      "cold": "none",
+      "elec": "none",
+      "force": "none",
+      "light": "none",
+      "dark": "none",
+      "mind": "none",
+      "nerve": "none",
+      "ruin": "none",
+      "ailment": "none",
+      "almighty": "none",
+      "support": "none",
+      "healing": "drain",
+      "unique": "none",
+      "talk": "none"
+    },
+    "npc": false,
+    "bg1": "",
+    "bg2": "",
+    "contact1": "",
+    "contact2": "",
+    "contact3": "",
+    "bond": "",
+    "goal": "",
+    "incenseUsed": null
+  },
+  "prototypeToken": {
+    "name": "Junk Shop \"Pixie Perfect!\"",
+    "displayName": 50,
+    "actorLink": true,
+    "appendNumber": true,
+    "prependAdjective": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "tokenizer/npc-images/pixie_demo_.Token.webp",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "hexagonalShape": 0,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": 1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": "mp"
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 0,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "flags": {
+      "token-z": {
+        "zIndex": 0
+      },
+      "image-hover": {
+        "hideArt": false,
+        "specificArt": "path/image.png"
+      },
+      "healthEstimate": {
+        "dontMarkDead": false,
+        "hideHealthEstimate": true,
+        "hideName": false
+      },
+      "item-piles": {
+        "data": {
+          "enabled": true,
+          "type": "merchant",
+          "distance": 3,
+          "description": "<p>An enterprising Pixie with a taste for macca who's gathered quite a few knick-knacks for sale, including some human artifacts.</p>",
+          "infiniteQuantity": true,
+          "hideNewItems": true,
+          "hideItemsWithZeroCost": true,
+          "logMerchantActivity": true
+        },
+        "version": "3.1.6"
+      }
+    },
+    "randomImg": false
+  },
+  "items": [
+    {
+      "name": "Basic Strike",
+      "type": "skill",
+      "img": "icons/skills/melee/unarmed-punch-fist.webp",
+      "system": {
+        "attackData": {
+          "canDodge": true,
+          "hasPowerRoll": true,
+          "potency": 0,
+          "auto": false,
+          "attackType": "phys",
+          "affinity": "phys",
+          "target": "one",
+          "ailment": {
+            "rate": 5
+          },
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "description": "",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "cost": null,
+        "costType": "none",
+        "oneShot": false,
+        "used": false
+      },
+      "_id": "1Mo3mKmGexocvYT5",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "kY8u5kP6jkBUHCAg": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!actors.items!0ZWAtbc187ttJ1J7.1Mo3mKmGexocvYT5"
+    },
+    {
+      "folder": "hyfpxlg7g7HrfcNZ",
+      "name": "Medicine",
+      "type": "inventoryItem",
+      "img": "icons/magic/life/heart-glowing-red.webp",
+      "system": {
+        "description": "<p>One ally recovers 50 HP.</p>",
+        "qty": 1,
+        "price": 100,
+        "equipped": false,
+        "consumeOnUse": true,
+        "hasAttack": true,
+        "attackData": {
+          "auto": false,
+          "attackType": "phys",
+          "potency": 50,
+          "affinity": "healing",
+          "target": "one",
+          "ailment": {
+            "rate": 5,
+            "id": ""
+          },
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "cost": null,
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {
+        "item-piles": {
+          "item": {}
+        }
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.world.smt-tc-demo-items.Item.yrnFe9nduTXA4qpg",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "PIRZ7DZKXjeGF7a0",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "kY8u5kP6jkBUHCAg": 3
+      },
+      "_key": "!actors.items!0ZWAtbc187ttJ1J7.PIRZ7DZKXjeGF7a0"
+    },
+    {
+      "folder": "hyfpxlg7g7HrfcNZ",
+      "name": "Revival Bead",
+      "type": "inventoryItem",
+      "img": "icons/commodities/gems/pearl-water.webp",
+      "system": {
+        "description": "<p>One dead ally is returned to life at 1 HP.</p>",
+        "qty": 1,
+        "price": 600,
+        "equipped": false,
+        "consumeOnUse": true,
+        "hasAttack": true,
+        "attackData": {
+          "auto": false,
+          "attackType": "phys",
+          "potency": null,
+          "affinity": "healing",
+          "target": "one",
+          "ailment": {
+            "rate": 5,
+            "id": ""
+          },
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "cost": null,
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {
+        "item-piles": {
+          "item": {}
+        }
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.world.smt-tc-demo-items.Item.tkeSM7HwDA9qoHl4",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "tXQxTneVLi8s5nra",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "kY8u5kP6jkBUHCAg": 3
+      },
+      "_key": "!actors.items!0ZWAtbc187ttJ1J7.tXQxTneVLi8s5nra"
+    },
+    {
+      "folder": "hyfpxlg7g7HrfcNZ",
+      "name": "Dis-Poison",
+      "type": "inventoryItem",
+      "img": "icons/consumables/potions/bottle-conical-fumes-green.webp",
+      "system": {
+        "description": "<p>One ally recovers from Poison.</p>",
+        "qty": 1,
+        "price": 150,
+        "equipped": false,
+        "consumeOnUse": true,
+        "hasAttack": true,
+        "attackData": {
+          "auto": false,
+          "attackType": "phys",
+          "potency": null,
+          "affinity": "healing",
+          "target": "one",
+          "ailment": {
+            "rate": 5,
+            "id": ""
+          },
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "cost": null,
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {
+        "item-piles": {
+          "item": {}
+        }
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.world.smt-tc-demo-items.Item.7YR8G2Bd8BsvniAD",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "VTLFo4gNrOj1LSVc",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "kY8u5kP6jkBUHCAg": 3
+      },
+      "_key": "!actors.items!0ZWAtbc187ttJ1J7.VTLFo4gNrOj1LSVc"
+    },
+    {
+      "folder": "hyfpxlg7g7HrfcNZ",
+      "name": "Dis-Stun",
+      "type": "inventoryItem",
+      "_id": "Cy8aNViDQRNoAkL8",
+      "img": "icons/consumables/potions/vial-cork-green.webp",
+      "system": {
+        "description": "<p>One ally recovers from Stun.</p>",
+        "qty": 1,
+        "price": 150,
+        "equipped": false,
+        "cost": null,
+        "costType": "none",
+        "consumeOnUse": true,
+        "hasAttack": true,
+        "attackData": {
+          "auto": false,
+          "attackType": "phys",
+          "potency": null,
+          "affinity": "healing",
+          "target": "one",
+          "ailment": {
+            "rate": 5,
+            "id": ""
+          },
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        }
+      },
+      "effects": [],
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "kY8u5kP6jkBUHCAg": 3
+      },
+      "flags": {
+        "item-piles": {
+          "item": {}
+        }
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.world.smt-tc-demo-items.Item.YNeiJaePg98awA3K",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!actors.items!0ZWAtbc187ttJ1J7.Cy8aNViDQRNoAkL8"
+    },
+    {
+      "folder": "hyfpxlg7g7HrfcNZ",
+      "name": "Dis-Mute",
+      "type": "inventoryItem",
+      "_id": "bv6uk3UFG0Ctg26Q",
+      "img": "icons/consumables/potions/potion-round-stopped-yellow-green.webp",
+      "system": {
+        "description": "<p>One ally recovers from Mute.</p>",
+        "qty": 1,
+        "price": 150,
+        "equipped": false,
+        "cost": null,
+        "costType": "none",
+        "consumeOnUse": true,
+        "hasAttack": true,
+        "attackData": {
+          "auto": false,
+          "attackType": "phys",
+          "potency": null,
+          "affinity": "healing",
+          "target": "one",
+          "ailment": {
+            "rate": 5,
+            "id": ""
+          },
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        }
+      },
+      "effects": [],
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "kY8u5kP6jkBUHCAg": 3
+      },
+      "flags": {
+        "item-piles": {
+          "item": {}
+        }
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.world.smt-tc-demo-items.Item.6KWED5tpcbAczzNO",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!actors.items!0ZWAtbc187ttJ1J7.bv6uk3UFG0Ctg26Q"
+    },
+    {
+      "name": "Marogareh",
+      "type": "magatama",
+      "img": "icons/skills/melee/unarmed-punch-fist-blue.webp",
+      "system": {
+        "description": "<h1>Skills</h1>\n<p> </p>\n<p>Lv 1: Lunge</p>\n<p>Lv 4: Hell Thrust</p>\n<p>Lv 6: Life Bonus</p>\n<p>Lv 10: Berserk</p>\n<p>Lv 15: Counter</p>\n<p>Lv 20: Last Resort</p>",
+        "qty": 1,
+        "price": 2000,
+        "equipped": false,
+        "affinities": {
+          "phys": "none",
+          "fire": "none",
+          "cold": "none",
+          "elec": "none",
+          "force": "none",
+          "light": "none",
+          "dark": "none",
+          "mind": "none",
+          "nerve": "none",
+          "ruin": "none",
+          "ailment": "none",
+          "almighty": "none",
+          "support": "none",
+          "healing": "drain",
+          "unique": "none",
+          "talk": "none"
+        },
+        "stats": {
+          "st": 4,
+          "ma": 1,
+          "vi": 2,
+          "ag": 2,
+          "lu": 1
+        },
+        "ingested": false,
+        "cost": null,
+        "costType": "none"
+      },
+      "effects": [],
+      "folder": "3nhVmw01nubTUR4c",
+      "flags": {
+        "item-piles": {
+          "item": {}
+        }
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.world.smt-tc-demo-items.Item.R7Zug31y6IgPfHTA",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "BD29JLZVx2oiTJ4A",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "kY8u5kP6jkBUHCAg": 3
+      },
+      "_key": "!actors.items!0ZWAtbc187ttJ1J7.BD29JLZVx2oiTJ4A"
+    },
+    {
+      "folder": "ZJ4gFXzIjPzLcafp",
+      "name": "SIG Sauer",
+      "type": "weapon",
+      "img": "icons/weapons/guns/gun-pistol-flintlock-metal.webp",
+      "system": {
+        "description": "<p>Your average high-caliber automatic. Requires ammunition. Only usable by humans.</p>",
+        "qty": 1,
+        "price": 300,
+        "equipped": false,
+        "ammo": {
+          "max": 9,
+          "value": 9
+        },
+        "weaponType": "gun",
+        "attackData": {
+          "potency": 16,
+          "auto": false,
+          "attackType": "phys",
+          "affinity": "phys",
+          "target": "one",
+          "ailment": {
+            "rate": null
+          },
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "cost": null,
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {
+        "item-piles": {
+          "item": {}
+        }
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.world.smt-tc-demo-items.Item.bMBb3qscvKM7HnlD",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "VktTQtGtiRDYfj4k",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "kY8u5kP6jkBUHCAg": 3
+      },
+      "_key": "!actors.items!0ZWAtbc187ttJ1J7.VktTQtGtiRDYfj4k"
+    },
+    {
+      "folder": "h42Y4ALkqlS128XH",
+      "name": "Bulletproof Vest",
+      "type": "armor",
+      "img": "icons/equipment/chest/breastplate-collared-leather-brown.webp",
+      "system": {
+        "description": "<p>A bulletproof vest. Only usable by humans. Provides 2 Phys Resist.</p>",
+        "qty": 1,
+        "price": 100,
+        "equipped": false,
+        "resist": {
+          "phys": 2,
+          "mag": null
+        },
+        "cost": null,
+        "costType": "none",
+        "slot": "torso"
+      },
+      "effects": [],
+      "flags": {
+        "item-piles": {
+          "item": {}
+        }
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.world.smt-tc-demo-items.Item.LIqIJl4C1FkPGYKE",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "3ebzqTFDogge48jn",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "kY8u5kP6jkBUHCAg": 3
+      },
+      "_key": "!actors.items!0ZWAtbc187ttJ1J7.3ebzqTFDogge48jn"
+    },
+    {
+      "folder": "h42Y4ALkqlS128XH",
+      "name": "Combat Boots",
+      "type": "armor",
+      "img": "icons/equipment/feet/boots-leather-black.webp",
+      "system": {
+        "description": "<p>Sturdy combat boots. Provides 2 Phys Resist. Only usable by humans.</p>",
+        "qty": 1,
+        "price": 75,
+        "equipped": false,
+        "resist": {
+          "phys": 2,
+          "mag": null
+        },
+        "slot": "legs",
+        "cost": null,
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {
+        "item-piles": {
+          "item": {}
+        }
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.world.smt-tc-demo-items.Item.bGDu0W3YdYXFB54G",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "MXBqtnZdDODUrmAL",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "kY8u5kP6jkBUHCAg": 3
+      },
+      "_key": "!actors.items!0ZWAtbc187ttJ1J7.MXBqtnZdDODUrmAL"
+    },
+    {
+      "folder": "h42Y4ALkqlS128XH",
+      "name": "Helmet",
+      "type": "armor",
+      "img": "icons/equipment/head/helm-goggles-leather.webp",
+      "system": {
+        "description": "<p>A sturdy helmet. Only usable by humans. Provides 2 Phys Resist.</p>",
+        "qty": 1,
+        "price": 50,
+        "equipped": false,
+        "resist": {
+          "phys": 2,
+          "mag": null
+        },
+        "slot": "head",
+        "cost": null,
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {
+        "item-piles": {
+          "item": {}
+        }
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.world.smt-tc-demo-items.Item.MTp2yHm8QSum06zy",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "5ONkWJZcqacW2r9Q",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "kY8u5kP6jkBUHCAg": 3
+      },
+      "_key": "!actors.items!0ZWAtbc187ttJ1J7.5ONkWJZcqacW2r9Q"
+    },
+    {
+      "folder": "EYXeBO8Vy2JSkTG8",
+      "name": "Knife",
+      "type": "weapon",
+      "img": "icons/weapons/daggers/knife-green.webp",
+      "system": {
+        "description": "<p>A combat knife or a large pocket knife. More effective than your bare hands.</p>",
+        "qty": 1,
+        "price": 20,
+        "equipped": false,
+        "ammo": {
+          "max": null,
+          "value": null
+        },
+        "attackData": {
+          "auto": false,
+          "attackType": "phys",
+          "potency": 5,
+          "affinity": "phys",
+          "target": "one",
+          "ailment": {
+            "rate": 5
+          },
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "weaponType": "melee",
+        "cost": null,
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {
+        "item-piles": {
+          "item": {}
+        }
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.world.smt-tc-demo-items.Item.gtvY60yoHDbwbnpS",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "XXmWu9aEUz1oAt2b",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "kY8u5kP6jkBUHCAg": 3
+      },
+      "_key": "!actors.items!0ZWAtbc187ttJ1J7.XXmWu9aEUz1oAt2b"
+    },
+    {
+      "folder": "EYXeBO8Vy2JSkTG8",
+      "name": "Katana",
+      "type": "weapon",
+      "img": "icons/weapons/swords/greatsword-crossguard-curved.webp",
+      "system": {
+        "description": "",
+        "qty": 1,
+        "price": 200,
+        "equipped": false,
+        "ammo": {
+          "max": null,
+          "value": null
+        },
+        "weaponType": "melee",
+        "attackData": {
+          "potency": 10,
+          "auto": false,
+          "attackType": "phys",
+          "affinity": "phys",
+          "target": "one",
+          "ailment": {
+            "rate": null
+          },
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "cost": null,
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {
+        "item-piles": {
+          "item": {}
+        }
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.world.smt-tc-demo-items.Item.Isfx9tZ0S2DxeQRG",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "71SmAHXByYZRHkDl",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "kY8u5kP6jkBUHCAg": 3
+      },
+      "_key": "!actors.items!0ZWAtbc187ttJ1J7.71SmAHXByYZRHkDl"
+    },
+    {
+      "folder": "btaDm45GFppjqdQv",
+      "name": "Bullets",
+      "type": "inventoryItem",
+      "img": "icons/weapons/ammunition/bullets-cartridge-shell-gray.webp",
+      "system": {
+        "description": "<p>Bullets for a gun. One size fits all.</p>",
+        "qty": 1,
+        "price": 100,
+        "equipped": false,
+        "consumeOnUse": false,
+        "hasAttack": false,
+        "attackData": {
+          "auto": false,
+          "attackType": "phys",
+          "potency": null,
+          "affinity": "phys",
+          "target": "one",
+          "ailment": {
+            "rate": 5
+          },
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "cost": null,
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {
+        "item-piles": {
+          "item": {},
+          "system": {
+            "quantityForPrice": 10
+          },
+          "version": "3.1.6"
+        }
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.world.smt-tc-demo-items.Item.KnX40x4EiAv6lsGR",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "W23slA2Q37Jv91Pn",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "kY8u5kP6jkBUHCAg": 3
+      },
+      "_key": "!actors.items!0ZWAtbc187ttJ1J7.W23slA2Q37Jv91Pn"
+    },
+    {
+      "folder": "3nhVmw01nubTUR4c",
+      "name": "Shiranui",
+      "type": "magatama",
+      "_id": "qWuON7CtZSw4NQGV",
+      "img": "icons/magic/fire/flame-burning-earth-yellow.webp",
+      "system": {
+        "description": "<p>Lv 1: Agi</p>\n<p>Lv 6: Fire Breath</p>\n<p>Lv 8: Fire Boost</p>\n<p>Lv 10: Provoke</p>\n<p>Lv. 15: Agilao</p>\n<p>Lv. 20: Anti-Fire</p>",
+        "qty": 1,
+        "price": 3000,
+        "equipped": false,
+        "cost": null,
+        "costType": "none",
+        "stats": {
+          "st": 1,
+          "ma": 5,
+          "vi": 0,
+          "ag": 4,
+          "lu": 0
+        },
+        "ingested": false,
+        "affinities": {
+          "phys": "none",
+          "fire": "null",
+          "cold": "none",
+          "elec": "none",
+          "force": "weak",
+          "light": "none",
+          "dark": "none",
+          "mind": "none",
+          "nerve": "none",
+          "ruin": "none",
+          "ailment": "none",
+          "almighty": "none",
+          "support": "none",
+          "healing": "drain",
+          "unique": "none",
+          "talk": "none"
+        }
+      },
+      "effects": [],
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "kY8u5kP6jkBUHCAg": 3
+      },
+      "flags": {
+        "item-piles": {
+          "item": {}
+        }
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.world.smt-tc-demo-items.Item.NSNXHKj9eCltkRQs",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!actors.items!0ZWAtbc187ttJ1J7.qWuON7CtZSw4NQGV"
+    },
+    {
+      "folder": "3nhVmw01nubTUR4c",
+      "name": "Iyomante",
+      "type": "magatama",
+      "_id": "UDQJKAW40brIPvLv",
+      "img": "icons/magic/symbols/star-yellow.webp",
+      "system": {
+        "description": "<p>Lv 1: Pulinpa</p>\n<p>Lv 5: Tarunda</p>\n<p>Lv 8: Sukunda</p>\n<p>Lv 12: Rakunda</p>\n<p>Lv 16: Life Aid</p>\n<p>Lv 25: Dekunda</p>",
+        "qty": 1,
+        "price": 2000,
+        "equipped": false,
+        "cost": null,
+        "costType": "none",
+        "stats": {
+          "st": 2,
+          "ma": 0,
+          "vi": 2,
+          "ag": 2,
+          "lu": 4
+        },
+        "ingested": false,
+        "affinities": {
+          "phys": "none",
+          "fire": "none",
+          "cold": "none",
+          "elec": "none",
+          "force": "none",
+          "light": "none",
+          "dark": "none",
+          "mind": "null",
+          "nerve": "none",
+          "ruin": "none",
+          "ailment": "none",
+          "almighty": "none",
+          "support": "none",
+          "healing": "drain",
+          "unique": "none",
+          "talk": "none"
+        }
+      },
+      "effects": [],
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "kY8u5kP6jkBUHCAg": 3
+      },
+      "flags": {
+        "item-piles": {
+          "item": {}
+        }
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.world.smt-tc-demo-items.Item.xCtzukhL4bnAw8Cw",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!actors.items!0ZWAtbc187ttJ1J7.UDQJKAW40brIPvLv"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "item-piles": {
+      "data": {
+        "enabled": true,
+        "type": "merchant",
+        "distance": 3,
+        "description": "<p>An enterprising Pixie with a taste for macca who's gathered quite a few knick-knacks for sale, including some human artifacts.</p>",
+        "infiniteQuantity": true,
+        "hideNewItems": true,
+        "hideItemsWithZeroCost": true,
+        "logMerchantActivity": true
+      },
+      "version": "3.1.6"
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742581984925,
+    "modifiedTime": 1742581984925,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "folder": "LhmFDVEiMFxdONIM",
+  "_id": "0ZWAtbc187ttJ1J7",
+  "sort": 0,
+  "_key": "!actors!0ZWAtbc187ttJ1J7"
+}

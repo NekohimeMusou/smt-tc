@@ -1,0 +1,54 @@
+{
+  "folder": "E8o5tcX8mJQOzOhr",
+  "name": "Liftoma",
+  "type": "skill",
+  "img": "icons/skills/movement/arrows-up-trio-red.webp",
+  "system": {
+    "description": "<p>Float above damaging terrain until New Kagutsuchi.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "used": false,
+    "cost": 12,
+    "attackData": {
+      "attackType": "spell",
+      "ailment": {
+        "rate": null,
+        "id": ""
+      },
+      "affinity": "unique",
+      "target": "all",
+      "auto": true,
+      "potency": null,
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      },
+      "status": "liftoma"
+    },
+    "inheritType": "",
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582993044,
+    "modifiedTime": 1742582993044,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "GnUvleMt7AVzAJ2q",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_key": "!items!GnUvleMt7AVzAJ2q"
+}

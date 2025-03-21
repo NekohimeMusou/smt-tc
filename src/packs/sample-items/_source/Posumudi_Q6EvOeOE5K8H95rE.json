@@ -1,0 +1,52 @@
+{
+  "folder": "9oP2Vu2VUsUrpKY4",
+  "name": "Posumudi",
+  "type": "skill",
+  "img": "icons/magic/life/crosses-trio-red.webp",
+  "system": {
+    "description": "<p>Remove Poison from 1 target.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "cost": 5,
+    "used": false,
+    "attackData": {
+      "attackType": "spell",
+      "ailment": {
+        "rate": null
+      },
+      "affinity": "healing",
+      "auto": true,
+      "potency": null,
+      "target": "one",
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": "",
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582618041,
+    "modifiedTime": 1742582619295,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_id": "Q6EvOeOE5K8H95rE",
+  "sort": 300000,
+  "_key": "!items!Q6EvOeOE5K8H95rE"
+}

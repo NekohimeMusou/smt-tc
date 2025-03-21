@@ -1,0 +1,52 @@
+{
+  "folder": "cV3RAip4jbsGZhW9",
+  "name": "Mazan Rock",
+  "type": "inventoryItem",
+  "img": "icons/commodities/gems/gem-rough-oval-green.webp",
+  "system": {
+    "description": "<p>Deal Force damage to all enemies; 30% chance to instantly kill targets afflicted with Stone. Same effect as Mazan.</p>",
+    "qty": 1,
+    "price": 250,
+    "equipped": false,
+    "consumeOnUse": true,
+    "hasAttack": true,
+    "attackData": {
+      "auto": false,
+      "attackType": "phys",
+      "potency": 5,
+      "affinity": "force",
+      "target": "all",
+      "ailment": {
+        "id": "shatter",
+        "rate": 30
+      },
+      "hasPowerRoll": true,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "cost": null,
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582290590,
+    "modifiedTime": 1742582290590,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "8oim8Q1ubhcfm9Ha",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_key": "!items!8oim8Q1ubhcfm9Ha"
+}

@@ -1,0 +1,54 @@
+{
+  "folder": "yEpgrsOaqR3ZXCVL",
+  "name": "Focus",
+  "type": "skill",
+  "img": "icons/magic/control/buff-strength-muscle-damage-red.webp",
+  "system": {
+    "description": "<p>Doubles the total power of the next Physical Attack or Basic Strike.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "cost": 5,
+    "used": false,
+    "attackData": {
+      "attackType": "mag",
+      "ailment": {
+        "rate": null,
+        "id": ""
+      },
+      "affinity": "unique",
+      "target": "self",
+      "auto": true,
+      "potency": null,
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      },
+      "status": "focus"
+    },
+    "inheritType": "",
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582661906,
+    "modifiedTime": 1742582661906,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_id": "E2f0CyK8u6UucxOD",
+  "sort": 0,
+  "_key": "!items!E2f0CyK8u6UucxOD"
+}

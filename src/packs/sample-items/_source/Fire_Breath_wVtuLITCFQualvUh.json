@@ -1,0 +1,52 @@
+{
+  "folder": "Z8qsdBig54dWVU5H",
+  "name": "Fire Breath",
+  "type": "skill",
+  "img": "icons/magic/fire/projectile-wave-arrow.webp",
+  "system": {
+    "description": "<p>Deal Fire damage to all targets.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "used": false,
+    "cost": 9,
+    "attackData": {
+      "potency": 10,
+      "ailment": {
+        "rate": null
+      },
+      "affinity": "fire",
+      "target": "all",
+      "hasPowerRoll": true,
+      "auto": false,
+      "attackType": "phys",
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": "",
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582546885,
+    "modifiedTime": 1742582546885,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_id": "wVtuLITCFQualvUh",
+  "sort": 0,
+  "_key": "!items!wVtuLITCFQualvUh"
+}

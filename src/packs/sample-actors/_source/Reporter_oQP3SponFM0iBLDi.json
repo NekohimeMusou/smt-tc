@@ -1,0 +1,858 @@
+{
+  "folder": "erj311B5IVAZUwim",
+  "name": "Reporter",
+  "type": "human",
+  "_id": "oQP3SponFM0iBLDi",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "stats": {
+      "st": {
+        "base": 1,
+        "lv": null,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "phys"
+      },
+      "ma": {
+        "base": 1,
+        "lv": null,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "mag"
+      },
+      "vi": {
+        "base": 1,
+        "lv": null,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "save"
+      },
+      "ag": {
+        "base": 3,
+        "lv": null,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "dodge"
+      },
+      "lu": {
+        "base": 4,
+        "lv": 10,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "negotiation"
+      }
+    },
+    "hp": {
+      "max": null,
+      "value": 48
+    },
+    "mp": {
+      "max": null,
+      "value": 24
+    },
+    "fp": {
+      "max": null,
+      "value": 7
+    },
+    "tn": {
+      "st": null,
+      "ma": null,
+      "vi": null,
+      "ag": null,
+      "lu": null,
+      "phys": null,
+      "mag": null,
+      "save": null,
+      "dodge": null,
+      "negotiation": null,
+      "gun": null
+    },
+    "power": {
+      "phys": null,
+      "mag": null,
+      "gun": null
+    },
+    "resist": {
+      "phys": null,
+      "mag": null
+    },
+    "notes": "<p>You are a reporter, and while working for a now-defunct occult magazine, you wrote about the Ring of Gaea. After the Conception, you endured in this vastly changed world to uncover its secrets. Through this, you've formed a connection with Decarabia, the boss of Shibuya, and keep tabs on the movements of the Mantra Army and Hikawa. While not strong in a fight, you can support the team with accurate advice (Aid) and item use.</p>",
+    "alignment": {
+      "law": null,
+      "chaos": null,
+      "dark": null,
+      "light": null,
+      "neutral": null,
+      "heeHo": null
+    },
+    "awards": {
+      "xp": null,
+      "macca": null,
+      "itemDrops": ""
+    },
+    "tnBoosts": 0,
+    "multi": 1,
+    "buffs": {
+      "tarukaja": 0,
+      "makakaja": 0,
+      "rakukaja": 0,
+      "sukukaja": 0,
+      "tarunda": 0,
+      "rakunda": 0,
+      "sukunda": 0
+    },
+    "mods": {
+      "might": false,
+      "luckyFind": false,
+      "pierce": false
+    },
+    "powerBoost": {
+      "phys": false,
+      "mag": false,
+      "item": false
+    },
+    "elementBoost": {
+      "fire": false,
+      "cold": false,
+      "elec": false,
+      "force": false
+    },
+    "gems": {
+      "diamond": 0,
+      "pearl": 0,
+      "sapphire": 0,
+      "emerald": 0,
+      "ruby": 0,
+      "jade": 0,
+      "opal": 0,
+      "amethyst": 0,
+      "agate": 0,
+      "turquoise": 0,
+      "garnet": 0,
+      "onyx": 0,
+      "coral": 0,
+      "aquamarine": 0
+    },
+    "baseLv": 1,
+    "incenseUsed": null,
+    "hpMultiplier": null,
+    "mpMultiplier": null,
+    "xp": 1100,
+    "macca": 550,
+    "affinities": {
+      "phys": "none",
+      "fire": "none",
+      "cold": "none",
+      "elec": "none",
+      "force": "none",
+      "light": "null",
+      "dark": "none",
+      "ruin": "none",
+      "nerve": "none",
+      "mind": "none",
+      "ailment": "none",
+      "almighty": "none",
+      "support": "none",
+      "healing": "drain",
+      "unique": "none",
+      "talk": "none"
+    },
+    "npc": false,
+    "bg1": "Curiosity (Uncovering the secrets of the Ring of Gaea)",
+    "bg2": "Absence (Your home died in the old world)",
+    "contact1": "Hijiri",
+    "contact2": "Junk Shop Manikin",
+    "contact3": "Fallen Decarabia",
+    "bond": "",
+    "goal": "Live, and lay bare the mysteries of this world"
+  },
+  "prototypeToken": {
+    "name": "Reporter",
+    "displayName": 50,
+    "actorLink": true,
+    "appendNumber": true,
+    "prependAdjective": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "icons/svg/mystery-man.svg",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "hexagonalShape": 0,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": 1,
+    "displayBars": 50,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": "mp"
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 0,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "flags": {
+      "token-z": {
+        "zIndex": 0
+      },
+      "image-hover": {
+        "hideArt": false,
+        "specificArt": "path/image.png"
+      }
+    },
+    "randomImg": false
+  },
+  "items": [
+    {
+      "name": "Basic Strike",
+      "type": "skill",
+      "img": "icons/skills/melee/unarmed-punch-fist.webp",
+      "system": {
+        "attackData": {
+          "canDodge": true,
+          "hasPowerRoll": true,
+          "potency": 0,
+          "auto": false,
+          "attackType": "phys",
+          "affinity": "phys",
+          "target": "one",
+          "ailment": {
+            "rate": 5
+          },
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "description": "",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "cost": null,
+        "costType": "none",
+        "oneShot": false,
+        "used": false
+      },
+      "_id": "7jpssgkGG61U1Kxi",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742582212512,
+        "modifiedTime": 1742582212512,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_key": "!actors.items!oQP3SponFM0iBLDi.7jpssgkGG61U1Kxi"
+    },
+    {
+      "folder": "FtXIpIaG0tsMGvqA",
+      "name": "Medicine",
+      "type": "inventoryItem",
+      "img": "icons/magic/life/heart-glowing-red.webp",
+      "system": {
+        "description": "<p>One ally recovers 50 HP.</p>",
+        "qty": 1,
+        "price": 100,
+        "equipped": false,
+        "consumeOnUse": true,
+        "hasAttack": true,
+        "attackData": {
+          "auto": false,
+          "attackType": "phys",
+          "potency": 50,
+          "affinity": "healing",
+          "target": "one",
+          "ailment": {
+            "rate": 5,
+            "id": ""
+          },
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "cost": null,
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.My3y59a0iGVjw03e",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742586125346,
+        "modifiedTime": 1742586125346,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_id": "6VvIR42GecQgolHm",
+      "sort": 500000,
+      "_key": "!actors.items!oQP3SponFM0iBLDi.6VvIR42GecQgolHm"
+    },
+    {
+      "folder": "IuBXlZbutoaRMCQ1",
+      "name": "Lucky Find",
+      "type": "skill",
+      "img": "icons/magic/control/buff-luck-fortune-gold.webp",
+      "system": {
+        "description": "<p>After combat, make a bonus item drop check using your Luck TN (instead of the GM).</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": false,
+        "cost": null,
+        "used": false,
+        "attackData": {
+          "attackType": "passive",
+          "ailment": {
+            "rate": null
+          },
+          "auto": false,
+          "potency": null,
+          "affinity": "phys",
+          "target": "one",
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "",
+        "costType": "none"
+      },
+      "effects": [
+        {
+          "name": "Lucky Find",
+          "origin": "Compendium.world.smt-tc-sample-items.Item.nfIwRw54ysdnukIW",
+          "duration": {
+            "rounds": null,
+            "startTime": 0,
+            "seconds": null,
+            "combat": null,
+            "turns": null,
+            "startRound": null,
+            "startTurn": null
+          },
+          "disabled": false,
+          "img": "icons/magic/control/buff-luck-fortune-gold.webp",
+          "_id": "HdDalduOIK192Y2N",
+          "type": "base",
+          "system": {},
+          "changes": [
+            {
+              "key": "system.mods.luckyFind",
+              "mode": 5,
+              "value": "true",
+              "priority": null
+            }
+          ],
+          "description": "",
+          "tint": "#ffffff",
+          "transfer": true,
+          "statuses": [],
+          "sort": 0,
+          "flags": {
+            "statuscounter": {
+              "value": 1,
+              "config": {
+                "type": "default"
+              },
+              "visible": false
+            }
+          },
+          "_stats": {
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "coreVersion": "12.331",
+            "systemId": "smt-tc",
+            "systemVersion": "0.5.8",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null
+          },
+          "_key": "!actors.items.effects!oQP3SponFM0iBLDi.BOvAQVK4ShC53IZX.HdDalduOIK192Y2N"
+        }
+      ],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.nfIwRw54ysdnukIW",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742586689445,
+        "modifiedTime": 1742586689445,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_id": "BOvAQVK4ShC53IZX",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_key": "!actors.items!oQP3SponFM0iBLDi.BOvAQVK4ShC53IZX"
+    },
+    {
+      "folder": "yYyspZmJsGG1W5ic",
+      "name": "Luck Smiles",
+      "type": "skill",
+      "img": "icons/magic/control/buff-luck-fortune-green.webp",
+      "system": {
+        "description": "<p>1/scenario, completely nullify the effects of one attack on you. May be learned multiple times.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": true,
+        "cost": null,
+        "used": false,
+        "attackData": {
+          "attackType": "passive",
+          "ailment": {
+            "rate": null
+          },
+          "auto": false,
+          "potency": null,
+          "affinity": "phys",
+          "target": "one",
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "",
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.Vz7j8gG3pC63hTdf",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742586690477,
+        "modifiedTime": 1742586690477,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_id": "XELqu3Iycp4gxaJb",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_key": "!actors.items!oQP3SponFM0iBLDi.XELqu3Iycp4gxaJb"
+    },
+    {
+      "folder": "SufW427qSnsyXyMc",
+      "name": "Scout",
+      "type": "skill",
+      "img": "icons/skills/social/wave-halt-stop.webp",
+      "system": {
+        "description": "<p><strong>Approach Skill</strong></p>\n<p><strong>Impress Type:</strong> Adult -&gt; Woman</p>\n<p><strong>Offend Type:</strong> Child -&gt; Woman</p>\n<p>Begin negotiation with 1 enemy demon. When used to gather info, gains 1 demon's info.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": false,
+        "cost": null,
+        "used": false,
+        "attackData": {
+          "attackType": "talk",
+          "ailment": {
+            "rate": null
+          },
+          "auto": false,
+          "potency": null,
+          "affinity": "phys",
+          "target": "one",
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "",
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.JTyoqZCyDvEVEakP",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742586694178,
+        "modifiedTime": 1742586694178,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_id": "h1WCQdd1QJ7RszKH",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_key": "!actors.items!oQP3SponFM0iBLDi.h1WCQdd1QJ7RszKH"
+    },
+    {
+      "folder": "yYyspZmJsGG1W5ic",
+      "name": "Once a Snake",
+      "type": "skill",
+      "img": "icons/skills/trades/academics-investigation-study-blue.webp",
+      "system": {
+        "description": "<p>1/scenario, learn something useful. May be learned multiple times.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": true,
+        "used": false,
+        "cost": null,
+        "attackData": {
+          "auto": false,
+          "attackType": "passive",
+          "potency": null,
+          "affinity": "phys",
+          "target": "one",
+          "ailment": {
+            "rate": 5,
+            "id": ""
+          },
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "",
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.7kv9XpfVC2UboRDo",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742586700160,
+        "modifiedTime": 1742586700160,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_id": "rhS4sNnBwUvpGXHc",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_key": "!actors.items!oQP3SponFM0iBLDi.rhS4sNnBwUvpGXHc"
+    },
+    {
+      "folder": "RtCJgs6WEegxSPe3",
+      "name": "Analyze",
+      "type": "skill",
+      "img": "icons/magic/perception/orb-crystal-ball-scrying-blue.webp",
+      "system": {
+        "description": "<p>Make a power roll ([[/roll 1d10x]]) and add your level. If the result is equal to or greater than the target's level, learn all information in its stat block. No hit check is required when used in combat; otherwise make a Ma check.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": false,
+        "cost": null,
+        "used": false,
+        "attackData": {
+          "attackType": "mag",
+          "ailment": {
+            "rate": null
+          },
+          "affinity": "support",
+          "auto": true,
+          "potency": null,
+          "target": "one",
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "",
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.Abo9wnqxAzeClbyN",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742586704539,
+        "modifiedTime": 1742586704539,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_id": "3xZLOpgcVBN3eMll",
+      "sort": 0,
+      "_key": "!actors.items!oQP3SponFM0iBLDi.3xZLOpgcVBN3eMll"
+    },
+    {
+      "folder": "yYyspZmJsGG1W5ic",
+      "name": "Item Pro",
+      "type": "skill",
+      "img": "icons/skills/trades/academics-investigation-puzzles.webp",
+      "system": {
+        "description": "<p>Roll an additional d10 on Power rolls for items. May have less obvious uses...</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": false,
+        "used": false,
+        "cost": null,
+        "attackData": {
+          "attackType": "passive",
+          "ailment": {
+            "rate": null
+          },
+          "auto": false,
+          "potency": null,
+          "affinity": "phys",
+          "target": "one",
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "",
+        "costType": "none"
+      },
+      "effects": [
+        {
+          "name": "Item Pro",
+          "origin": "Compendium.world.smt-tc-sample-items.Item.p7W6lUzpznqPrZQ9",
+          "duration": {
+            "rounds": null,
+            "startTime": 0,
+            "seconds": null,
+            "combat": null,
+            "turns": null,
+            "startRound": null,
+            "startTurn": null
+          },
+          "disabled": false,
+          "img": "icons/skills/trades/academics-investigation-study-blue.webp",
+          "_id": "OMvgeVTa6YBkOd9B",
+          "type": "base",
+          "system": {},
+          "changes": [
+            {
+              "key": "system.powerBoost.item",
+              "mode": 5,
+              "value": "true",
+              "priority": null
+            }
+          ],
+          "description": "",
+          "tint": "#ffffff",
+          "transfer": true,
+          "statuses": [],
+          "sort": 0,
+          "flags": {
+            "statuscounter": {
+              "value": 1,
+              "config": {
+                "type": "default"
+              },
+              "visible": false
+            }
+          },
+          "_stats": {
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "coreVersion": "12.331",
+            "systemId": "smt-tc",
+            "systemVersion": "0.5.8",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null
+          },
+          "_key": "!actors.items.effects!oQP3SponFM0iBLDi.ufi7RZvIoGmwY6Sf.OMvgeVTa6YBkOd9B"
+        }
+      ],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.p7W6lUzpznqPrZQ9",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742586708954,
+        "modifiedTime": 1742586708954,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_id": "ufi7RZvIoGmwY6Sf",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_key": "!actors.items!oQP3SponFM0iBLDi.ufi7RZvIoGmwY6Sf"
+    },
+    {
+      "folder": "yYyspZmJsGG1W5ic",
+      "name": "Good Instincts",
+      "type": "skill",
+      "img": "icons/magic/perception/eye-ringed-green.webp",
+      "system": {
+        "description": "<p>When making a check (usually Luck) to notice things, gain +10% to the TN.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": false,
+        "used": false,
+        "cost": null,
+        "attackData": {
+          "auto": false,
+          "attackType": "passive",
+          "potency": null,
+          "affinity": "phys",
+          "target": "one",
+          "ailment": {
+            "rate": 5,
+            "id": ""
+          },
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "",
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.T8vL6KA70ouZVBOp",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742586713536,
+        "modifiedTime": 1742586713536,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_id": "aIlKK5jWSlfx0JvE",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_key": "!actors.items!oQP3SponFM0iBLDi.aIlKK5jWSlfx0JvE"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582212479,
+    "modifiedTime": 1742586686456,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_key": "!actors!oQP3SponFM0iBLDi"
+}

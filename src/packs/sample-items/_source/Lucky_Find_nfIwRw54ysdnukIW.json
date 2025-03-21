@@ -1,0 +1,104 @@
+{
+  "folder": "IuBXlZbutoaRMCQ1",
+  "name": "Lucky Find",
+  "type": "skill",
+  "img": "icons/magic/control/buff-luck-fortune-gold.webp",
+  "system": {
+    "description": "<p>After combat, make a bonus item drop check using your Luck TN (instead of the GM).</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "cost": null,
+    "used": false,
+    "attackData": {
+      "attackType": "passive",
+      "ailment": {
+        "rate": null
+      },
+      "auto": false,
+      "potency": null,
+      "affinity": "phys",
+      "target": "one",
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": "",
+    "costType": "none"
+  },
+  "effects": [
+    {
+      "name": "Lucky Find",
+      "origin": "Compendium.world.smt-tc-sample-items.Item.nfIwRw54ysdnukIW",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "img": "icons/magic/control/buff-luck-fortune-gold.webp",
+      "_id": "HdDalduOIK192Y2N",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.mods.luckyFind",
+          "mode": 5,
+          "value": "true",
+          "priority": null
+        }
+      ],
+      "description": "",
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "statuscounter": {
+          "value": 1,
+          "config": {
+            "type": "default"
+          },
+          "visible": false
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!nfIwRw54ysdnukIW.HdDalduOIK192Y2N"
+    }
+  ],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582397195,
+    "modifiedTime": 1742582397195,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "nfIwRw54ysdnukIW",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_key": "!items!nfIwRw54ysdnukIW"
+}

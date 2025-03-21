@@ -1,0 +1,51 @@
+{
+  "folder": "FtXIpIaG0tsMGvqA",
+  "name": "Bead Chain",
+  "type": "inventoryItem",
+  "img": "icons/equipment/neck/collar-rounded-red.webp",
+  "system": {
+    "description": "<p>Heal all HP for all allies.</p>",
+    "qty": 1,
+    "price": 10000,
+    "equipped": false,
+    "consumeOnUse": true,
+    "hasAttack": true,
+    "attackData": {
+      "ailment": {
+        "rate": null
+      },
+      "auto": false,
+      "attackType": "phys",
+      "potency": null,
+      "affinity": "healing",
+      "target": "all",
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "cost": null,
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582310935,
+    "modifiedTime": 1742582310935,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_id": "2n9bvuDItl9VLcXx",
+  "sort": 0,
+  "_key": "!items!2n9bvuDItl9VLcXx"
+}

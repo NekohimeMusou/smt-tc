@@ -1,0 +1,54 @@
+{
+  "folder": "kuZtDYrYqwhbVvYG",
+  "name": "Dekunda",
+  "type": "skill",
+  "img": "icons/skills/movement/arrow-upward-blue.webp",
+  "system": {
+    "description": "<p>Remove all -kunda debuffs from all allies.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "used": false,
+    "cost": 10,
+    "attackData": {
+      "ailment": {
+        "rate": null,
+        "id": ""
+      },
+      "auto": true,
+      "attackType": "spell",
+      "potency": null,
+      "affinity": "support",
+      "target": "all",
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      },
+      "status": ""
+    },
+    "inheritType": "",
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582682555,
+    "modifiedTime": 1742582682555,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "VC2bSJXU5hHYzBxW",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_key": "!items!VC2bSJXU5hHYzBxW"
+}

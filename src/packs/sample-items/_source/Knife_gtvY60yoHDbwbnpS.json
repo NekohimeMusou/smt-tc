@@ -1,0 +1,54 @@
+{
+  "folder": "EYXeBO8Vy2JSkTG8",
+  "name": "Knife",
+  "type": "weapon",
+  "img": "icons/weapons/daggers/knife-green.webp",
+  "system": {
+    "description": "<p>A combat knife or a large pocket knife. More effective than your bare hands.</p>",
+    "qty": 1,
+    "price": 20,
+    "equipped": false,
+    "ammo": {
+      "max": null,
+      "value": null
+    },
+    "attackData": {
+      "auto": false,
+      "attackType": "phys",
+      "potency": 5,
+      "affinity": "phys",
+      "target": "one",
+      "ailment": {
+        "rate": 5
+      },
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "weaponType": "melee",
+    "cost": null,
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582268691,
+    "modifiedTime": 1742582268691,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "gtvY60yoHDbwbnpS",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_key": "!items!gtvY60yoHDbwbnpS"
+}

@@ -1,0 +1,52 @@
+{
+  "folder": "SufW427qSnsyXyMc",
+  "name": "Seduce",
+  "type": "skill",
+  "img": "icons/magic/control/debuff-energy-hold-blue-yellow.webp",
+  "system": {
+    "description": "<p><strong>Approach Skill</strong></p>\n<p><strong>Impress Type:</strong> Female+Youth -&gt; Male</p>\n<p><strong>Offend Type:</strong> Male -&gt; Male</p>\n<p>Begin negotiation with 1 enemy demon. When used to gather info, gains 1 demon's info.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "cost": null,
+    "used": false,
+    "attackData": {
+      "attackType": "talk",
+      "ailment": {
+        "rate": null
+      },
+      "auto": false,
+      "potency": null,
+      "affinity": "phys",
+      "target": "one",
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": "Speech",
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582504929,
+    "modifiedTime": 1742582504929,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "nD7bCy5xPwbiTfvB",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_key": "!items!nD7bCy5xPwbiTfvB"
+}

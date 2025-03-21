@@ -1,0 +1,22 @@
+{
+  "name": "Foul",
+  "sorting": "a",
+  "folder": "3kKQV5aOdI1DSp9v",
+  "type": "Actor",
+  "description": "",
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": null,
+    "modifiedTime": 1742582030209,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "8a60QBCbeWtxgCVS",
+  "sort": 400000,
+  "_key": "!folders!8a60QBCbeWtxgCVS"
+}

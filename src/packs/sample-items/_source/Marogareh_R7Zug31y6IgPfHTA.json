@@ -1,0 +1,59 @@
+{
+  "name": "Marogareh",
+  "type": "magatama",
+  "img": "icons/skills/melee/unarmed-punch-fist-blue.webp",
+  "system": {
+    "description": "<h1>Skills</h1>\n<p> </p>\n<p>Lv 1: Lunge</p>\n<p>Lv 4: Hell Thrust</p>\n<p>Lv 6: Life Bonus</p>\n<p>Lv 10: Berserk</p>\n<p>Lv 15: Counter</p>\n<p>Lv 20: Last Resort</p>",
+    "qty": 1,
+    "price": 2000,
+    "equipped": false,
+    "affinities": {
+      "phys": "none",
+      "fire": "none",
+      "cold": "none",
+      "elec": "none",
+      "force": "none",
+      "light": "none",
+      "dark": "none",
+      "mind": "none",
+      "nerve": "none",
+      "ruin": "none",
+      "ailment": "none",
+      "almighty": "none",
+      "support": "none",
+      "healing": "drain",
+      "unique": "none",
+      "talk": "none"
+    },
+    "stats": {
+      "st": 4,
+      "ma": 1,
+      "vi": 2,
+      "ag": 2,
+      "lu": 1
+    },
+    "ingested": false,
+    "cost": null,
+    "costType": "none"
+  },
+  "effects": [],
+  "folder": "3nhVmw01nubTUR4c",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582255837,
+    "modifiedTime": 1742582255837,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "R7Zug31y6IgPfHTA",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_key": "!items!R7Zug31y6IgPfHTA"
+}

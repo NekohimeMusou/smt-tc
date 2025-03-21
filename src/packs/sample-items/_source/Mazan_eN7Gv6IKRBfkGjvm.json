@@ -1,0 +1,54 @@
+{
+  "folder": "EDbVLujHpZneuB6d",
+  "name": "Mazan",
+  "type": "skill",
+  "img": "icons/magic/air/fog-gas-smoke-green.webp",
+  "system": {
+    "description": "<p>Deal Force damage to all targets; 30% chance to Instant Kill a Stoned target.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "cost": 8,
+    "used": false,
+    "attackData": {
+      "attackType": "spell",
+      "ailment": {
+        "id": "shatter",
+        "rate": 30
+      },
+      "affinity": "force",
+      "potency": 5,
+      "hasPowerRoll": true,
+      "auto": false,
+      "target": "all",
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      },
+      "status": ""
+    },
+    "inheritType": "",
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582986545,
+    "modifiedTime": 1742582986545,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_id": "eN7Gv6IKRBfkGjvm",
+  "sort": 0,
+  "_key": "!items!eN7Gv6IKRBfkGjvm"
+}

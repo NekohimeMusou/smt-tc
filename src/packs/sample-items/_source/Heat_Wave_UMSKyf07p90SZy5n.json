@@ -1,0 +1,52 @@
+{
+  "folder": "7xWps8jd5KUCInjm",
+  "name": "Heat Wave",
+  "type": "skill",
+  "img": "icons/skills/melee/strike-axe-red.webp",
+  "system": {
+    "description": "<p>Deal Phys damage to all enemies.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "cost": 13,
+    "used": false,
+    "attackData": {
+      "potency": 22,
+      "ailment": {
+        "rate": null
+      },
+      "target": "all",
+      "hasPowerRoll": true,
+      "auto": false,
+      "attackType": "phys",
+      "affinity": "phys",
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": "Weapon",
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582651153,
+    "modifiedTime": 1742582651153,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_id": "UMSKyf07p90SZy5n",
+  "sort": 0,
+  "_key": "!items!UMSKyf07p90SZy5n"
+}

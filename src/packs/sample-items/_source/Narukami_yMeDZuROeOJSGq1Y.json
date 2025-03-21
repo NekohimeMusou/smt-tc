@@ -1,0 +1,59 @@
+{
+  "name": "Narukami",
+  "type": "magatama",
+  "img": "icons/magic/lightning/bolts-forked-large-green.webp",
+  "system": {
+    "description": "<h1>Skills</h1>\n<p>1: Zio</p>\n<p>5: Mazio</p>\n<p>10: Elec Boost</p>\n<p>15: Zionga</p>\n<p>20: Anti-Elec</p>\n<p>25: Null Elec</p>",
+    "qty": 1,
+    "price": 4000,
+    "equipped": false,
+    "affinities": {
+      "phys": "none",
+      "fire": "none",
+      "cold": "weak",
+      "elec": "null",
+      "force": "none",
+      "light": "none",
+      "dark": "none",
+      "mind": "none",
+      "nerve": "none",
+      "ruin": "none",
+      "ailment": "none",
+      "almighty": "none",
+      "support": "none",
+      "healing": "drain",
+      "unique": "none",
+      "talk": "none"
+    },
+    "stats": {
+      "st": 3,
+      "ma": 5,
+      "vi": 1,
+      "ag": 1,
+      "lu": 0
+    },
+    "ingested": false,
+    "cost": null,
+    "costType": "none"
+  },
+  "effects": [],
+  "folder": "3nhVmw01nubTUR4c",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582255837,
+    "modifiedTime": 1742582255837,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "yMeDZuROeOJSGq1Y",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_key": "!items!yMeDZuROeOJSGq1Y"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Armor",
+  "sorting": "a",
+  "folder": null,
+  "type": "Item",
+  "description": "",
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582249182,
+    "modifiedTime": 1742582249211,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "h42Y4ALkqlS128XH",
+  "sort": 100000,
+  "_key": "!folders!h42Y4ALkqlS128XH"
+}
