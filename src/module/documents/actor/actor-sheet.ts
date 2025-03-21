@@ -311,8 +311,13 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
 
     const newState = element.is(":checked");
 
+    const equippingMagatama =
+      item.type === "magatama" && fieldId === "equipped";
+    const originalMaxHp = this.actor.system.hp.max;
+    const originalMaxMp = this.actor.system.mp.max;
+
     // If we're equipping a magatama, unequip other magatama
-    if (item.type === "magatama" && fieldId === "equipped" && newState) {
+    if (equippingMagatama && newState) {
       await Promise.all(
         this.actor.items
           .filter((item) => item.type === "magatama" && item.system.equipped)
@@ -335,6 +340,25 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     }
 
     await item.toggleField(fieldId, newState);
+
+    if (equippingMagatama) {
+      const newMaxHp = this.actor.system.hp.max;
+      const newMaxMp = this.actor.system.mp.max;
+
+      if (newMaxHp !== originalMaxHp) {
+        const newHpValue = newMaxHp - originalMaxHp;
+        await this.actor.update({
+          "system.hp.value": this.actor.system.hp.value + newHpValue,
+        });
+      }
+
+      if (newMaxMp !== originalMaxMp) {
+        const newMpValue = newMaxMp - originalMaxMp;
+        await this.actor.update({
+          "system.mp.value": this.actor.system.mp.value + newMpValue,
+        });
+      }
+    }
   }
 
   async #onItemRoll(event: JQuery.ClickEvent) {
