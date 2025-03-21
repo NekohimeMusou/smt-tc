@@ -10,6 +10,7 @@
     "equipped": false,
     "cost": null,
     "costType": "none",
+    "costsAll": true,
     "oneShot": false,
     "used": false,
     "attackData": {

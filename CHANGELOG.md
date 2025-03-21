@@ -2,6 +2,16 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.6.0] - 2025-03-21
+
+*The new compendium seems like a good excuse for a minor version bump.*
+
+### Added
+
+- Skills can now cost all HP (resolves [#1](https://github.com/NekohimeMusou/smt-tc/issues/1))
+- Support some homebrew resist calculations suggested by Jeff and Nikki
+- Add compendium packs with example PCs and items
+
 ## [0.5.8] - 2025-03-20
 
 ### Changed
@@ -338,6 +348,7 @@ _Added separate Human and Demon actor types with some custom behavior, and added
 
 _Initial preview release.*
 
+[0.6.0]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.0
 [0.5.8]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.5.8
 [0.5.7]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.5.7
 [0.5.6]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.5.6
