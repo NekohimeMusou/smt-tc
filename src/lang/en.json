@@ -135,7 +135,8 @@
       "mp": "{cost} MP",
       "consumeItem": "Item Consumed",
       "consumeAmmo": "{cost} Ammo",
-      "none": "None"
+      "none": "None",
+      "all": "All"
     },
     "statShort": {
       "st": "St",
@@ -432,6 +433,7 @@
     "itemRoll": {
       "affinity": "Affinity: {affinity}",
       "cost": "Cost: {costLabel}",
+      "costAll": "Cost: All {costLabel}",
       "consumeItem": "Item will be consumed",
       "costNotPaid": "Unable to pay cost!",
       "tn": "TN {tn}%: {result}",

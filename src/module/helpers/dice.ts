@@ -329,6 +329,7 @@ export default class SmtDice {
       costType: itemData.costType,
       cost: itemData.cost ?? 0,
       costPaid,
+      costsAll: itemData.costsAll,
       auto,
       status: attackData?.status,
       targetType,
