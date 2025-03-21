@@ -396,11 +396,11 @@ export default class SmtDice {
         actor.system.elementBoost?.[
           affinity as keyof typeof actor.system.elementBoost
         ];
-      const boostMultiplier = elementBoost ? 2 : 1;
+      const boostMultiplier = elementBoost ? 1.5 : 1;
 
       const { power, critPower, powerRoll } = attackData.hasPowerRoll
         ? await this.powerRoll({
-            basePower: attackData.basePower * boostMultiplier,
+            basePower: Math.floor(attackData.basePower * boostMultiplier),
             potency: attackData.potency,
             potencyMod,
             powerBoost: attackData.powerBoost,
