@@ -2,6 +2,22 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.5.8] - 2025-03-20
+
+### Changed
+
+- Update current HP when switching magatama
+
+### Fixed
+
+- Fix overpowered element boost skills
+
+## [0.5.7] - 2025-03-19
+
+### Fixed
+
+- Fix non-updating JSON manifest
+
 ## [0.5.6] - 2025-03-19
 
 *Thanks for pointing out the stat cap, chamomileTeacup ⚙!*
@@ -322,6 +338,8 @@ _Added separate Human and Demon actor types with some custom behavior, and added
 
 _Initial preview release.*
 
+[0.5.8]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.5.8
+[0.5.7]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.5.7
 [0.5.6]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.5.6
 [0.5.5]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.5.5
 [0.5.4]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.5.4
