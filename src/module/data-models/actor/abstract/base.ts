@@ -272,8 +272,58 @@ export default abstract class SmtBaseActorData extends foundry.abstract
     data.tn.negotiation = 0;
     data.tn.gun = 0;
 
-    data.resist.phys = Math.max(Math.floor((stats.vi.value + lv) / 2), 0);
-    data.resist.mag = Math.max(Math.floor((stats.ma.value + lv) / 2), 0);
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
+    const physResistFormulaChoice = game.settings.get(
+      "smt-tc",
+      "alternatePhysResistCalc",
+    ) as ResistCalcOption;
+
+    let basePhysResist = 0;
+
+    switch (physResistFormulaChoice) {
+      case "raw":
+        basePhysResist = Math.floor((stats.vi.value + lv) / 2);
+        break;
+      case "opt1":
+        basePhysResist = Math.floor((stats.st.value + lv) / 2);
+        break;
+      case "opt2":
+        basePhysResist = Math.floor((stats.st.value + stats.vi.value + lv) / 2);
+        break;
+      case "opt3":
+        basePhysResist = Math.floor(stats.st.value + stats.vi.value + lv);
+        break;
+      default:
+        physResistFormulaChoice satisfies never;
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
+    const magResistFormulaChoice = game.settings.get(
+      "smt-tc",
+      "alternateMagResistCalc",
+    ) as ResistCalcOption;
+
+    let baseMagResist = 0;
+
+    switch (magResistFormulaChoice) {
+      case "raw":
+        baseMagResist = Math.floor((stats.ma.value + lv) / 2);
+        break;
+      case "opt1":
+        baseMagResist = Math.floor((stats.vi.value + lv) / 2);
+        break;
+      case "opt2":
+        baseMagResist = Math.floor((stats.ma.value + stats.vi.value + lv) / 2);
+        break;
+      case "opt3":
+        baseMagResist = Math.floor(stats.ma.value + stats.vi.value + lv);
+        break;
+      default:
+        magResistFormulaChoice satisfies never;
+    }
+
+    data.resist.phys = Math.max(basePhysResist, 0);
+    data.resist.mag = Math.max(baseMagResist, 0);
 
     const addLevelToGunDamage = game.settings.get(
       "smt-tc",

@@ -24,6 +24,7 @@ declare global {
   type AffinityLevel = keyof typeof affinityLevels;
   type AilmentId = keyof typeof ailments;
   type StatusEffect = keyof typeof statuses;
+  type ResistCalcOption = keyof typeof alternateResistLevels.phys;
 
   // Substitute for the problematic DataModel
   interface Ailment {
@@ -318,6 +319,21 @@ const successLevels = {
 
 const defaultAutofailThreshold = 96;
 
+const alternateResistLevels = {
+  phys: {
+    raw: "SMT.settings.alternatePhysResistCalc.options.raw",
+    opt1: "SMT.settings.alternatePhysResistCalc.options.opt1",
+    opt2: "SMT.settings.alternatePhysResistCalc.options.opt2",
+    opt3: "SMT.settings.alternatePhysResistCalc.options.opt3",
+  },
+  mag: {
+    raw: "SMT.settings.alternateMagResistCalc.options.raw",
+    opt1: "SMT.settings.alternateMagResistCalc.options.opt1",
+    opt2: "SMT.settings.alternateMagResistCalc.options.opt2",
+    opt3: "SMT.settings.alternateMagResistCalc.options.opt3",
+  },
+} as const;
+
 export const SMT = {
   templatePaths,
   characterClasses,
@@ -355,6 +371,7 @@ export const SMT = {
   targets,
   successLevels,
   defaultAutofailThreshold,
+  alternateResistLevels,
   macro: {
     resolveConflict,
     grantRewards,
