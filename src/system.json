@@ -57,8 +57,20 @@
 
   "packs": [
     {
+      "name": "sample-actors",
+      "label": "SMT: TC Sample Actors",
+      "system": "smt-tc",
+      "type": "Actor"
+    },
+    {
+      "name": "sample-items",
+      "label": "SMT: TC Sample Items",
+      "system": "smt-tc",
+      "type": "Item"
+    },
+    {
       "name": "macros",
-      "label": "SMT-TC Macros",
+      "label": "SMT: TC Macros",
       "system": "smt-tc",
       "type": "Macro"
     },
