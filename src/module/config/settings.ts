@@ -1,3 +1,5 @@
+import { SMT } from "./config.js";
+
 export default function registerSystemSettings() {
   // World settings
   game.settings.register("smt-tc", "editableGems", {
@@ -37,6 +39,32 @@ export default function registerSystemSettings() {
     requiresReload: true,
     type: Boolean,
     default: false,
+  });
+
+  game.settings.register("smt-tc", "alternatePhysResistCalc", {
+    name: "SMT.settings.alternatePhysResistCalc.name",
+    hint: "SMT.settings.alternatePhysResistCalc.hint",
+    scope: "world",
+    config: true,
+    requiresReload: true,
+    type: String,
+    choices: {
+      ...SMT.alternateResistLevels.phys,
+    },
+    default: "raw",
+  });
+
+  game.settings.register("smt-tc", "alternateMagResistCalc", {
+    name: "SMT.settings.alternateMagResistCalc.name",
+    hint: "SMT.settings.alternateMagResistCalc.hint",
+    scope: "world",
+    config: true,
+    requiresReload: true,
+    type: String,
+    choices: {
+      ...SMT.alternateResistLevels.mag,
+    },
+    default: "raw",
   });
 
   // Client settings

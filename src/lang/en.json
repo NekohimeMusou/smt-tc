@@ -485,6 +485,26 @@
       "autoCurseRolls": {
         "name": "Automate Curse Rolls",
         "hint": "While cursed, each success check you make automatically rolls to see if something bad happens (see p. 67 in the rulebook)."
+      },
+      "alternatePhysResistCalc": {
+        "name": "VARIANT RULE: Alternate Phys Resist Calculation",
+        "hint": "Use a different formula to calculate Phys Resist",
+        "options": {
+          "raw": "RAW: (Vi + Lv) / 2",
+          "opt1": "(St + Lv) / 2",
+          "opt2": "(St + Vi + Lv) / 2",
+          "opt3": "St + Vi + Lv"
+        }
+      },
+      "alternateMagResistCalc": {
+        "name": "VARIANT RULE: Alternate Mag Resist Calculation",
+        "hint": "Use a different formula to calculate Mag Resist",
+        "options": {
+          "raw": "RAW: (Ma + Lv) / 2",
+          "opt1": "(Vi + Lv) / 2",
+          "opt2": "(Ma + Vi + Lv) / 2",
+          "opt3": "Ma + Vi + Lv"
+        }
       }
     },
     "ui": {
