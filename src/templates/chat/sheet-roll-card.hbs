@@ -8,8 +8,9 @@
 
 <h3>
   {{#if (ne costType "none")}}
-  {{localize "SMT.itemRoll.cost" costLabel=(localize (concat "SMT.costTypes." costType) cost=cost)}}; 
+    {{localize "SMT.itemRoll.cost" costLabel=(localize (concat "SMT.costTypes." costType) cost=(ifThen costsAll (localize "SMT.costTypes.all") cost))}}; 
   {{/if}}
+
   {{localize "SMT.itemRoll.targetType" targetType=(localize (concat "SMT.targets." targetType))}}
 </h3>
 

@@ -66,15 +66,11 @@ export class SmtItem extends Item<typeof ITEMMODELS, SmtActor, SmtActiveEffect> 
     }
 
     const data = (this as Skill).system;
-    const cost = data.cost;
     const resourceType = data.resourceType;
+    const cost = data.costsAll ? actor.system[resourceType].value : data.cost;
     const currentValue = actor.system[resourceType].value;
 
-    // Don't let them kill themselves with HP costs...(?)
-    if (
-      currentValue < cost ||
-      (resourceType === "hp" && currentValue === cost)
-    ) {
+    if (currentValue < cost) {
       return false;
     }
 
