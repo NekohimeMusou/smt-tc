@@ -13,7 +13,12 @@
         {{#unless (or (eq system.attackData.attackType "talk") (eq system.attackData.attackType "passive"))}}
         <label for="cost" class="item-prop">{{localize "SMT.itemSheet.cost"}}</label>
         <div class="item-prop">
-          <input type="number" id="cost" name="system.cost" value="{{system.cost}}" placeholder="0" data-dtype="Number" />
+          <input type="text" id="cost" name="system.cost" value="{{ifThen system.costsAll (localize "SMT.costTypes.all") system.cost}}" placeholder="0" data-dtype="Number" {{ifThen system.costsAll "disabled" ""}}/>
+        </div>
+
+        <label for="costs-all" class="item-prop">{{localize "SMT.costTypes.all"}}</label>
+        <div class="item-prop">
+          <input type="checkbox" id="costs-all" name="system.costsAll" data-dtype="Boolean" {{checked system.costsAll}} />
         </div>
         {{else}}
         {{#if (eq system.attackData.attackType "passive")}}

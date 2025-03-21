@@ -61,6 +61,7 @@ export default abstract class SmtBaseItemData extends foundry.abstract
         choices: CONFIG.SMT.costTypes,
         initial: "none",
       }),
+      costsAll: new fields.BooleanField(),
     } as const;
   }
 

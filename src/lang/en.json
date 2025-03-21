@@ -135,7 +135,8 @@
       "mp": "{cost} MP",
       "consumeItem": "Item Consumed",
       "consumeAmmo": "{cost} Ammo",
-      "none": "None"
+      "none": "None",
+      "all": "All"
     },
     "statShort": {
       "st": "St",
