@@ -1,0 +1,22 @@
+{
+  "name": "Healing",
+  "sorting": "a",
+  "folder": "Jj7PQvYTKdL4dr8F",
+  "type": "Item",
+  "_id": "FtXIpIaG0tsMGvqA",
+  "description": "",
+  "sort": 0,
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_key": "!folders!FtXIpIaG0tsMGvqA"
+}

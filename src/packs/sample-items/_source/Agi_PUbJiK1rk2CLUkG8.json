@@ -1,0 +1,52 @@
+{
+  "folder": "d4tFNQ52EPCfvME3",
+  "name": "Agi",
+  "type": "skill",
+  "img": "icons/magic/fire/explosion-fireball-small-red.webp",
+  "system": {
+    "description": "<p>Deal Fire damage to 1 target.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "cost": 3,
+    "used": false,
+    "attackData": {
+      "attackType": "spell",
+      "ailment": {
+        "rate": null
+      },
+      "potency": 15,
+      "affinity": "fire",
+      "hasPowerRoll": true,
+      "auto": false,
+      "target": "one",
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": "",
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582530764,
+    "modifiedTime": 1742582530764,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_id": "PUbJiK1rk2CLUkG8",
+  "sort": 0,
+  "_key": "!items!PUbJiK1rk2CLUkG8"
+}

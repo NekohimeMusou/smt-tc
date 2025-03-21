@@ -1,0 +1,59 @@
+{
+  "folder": "3nhVmw01nubTUR4c",
+  "name": "Shiranui",
+  "type": "magatama",
+  "_id": "EAbXoJWg7uwHULRh",
+  "img": "icons/magic/fire/projectile-embers-orange.webp",
+  "system": {
+    "description": "<p>Lv 1: Agi</p>\n<p>Lv 6: Fire Breath</p>\n<p>Lv 8: Fire Boost</p>\n<p>Lv 10: Provoke</p>\n<p>Lv 15: Agilao</p>\n<p>Lv 20: Anti-Fire</p>",
+    "qty": 1,
+    "price": 3000,
+    "equipped": false,
+    "cost": null,
+    "costType": "none",
+    "stats": {
+      "st": 1,
+      "ma": 5,
+      "vi": 0,
+      "ag": 4,
+      "lu": 0
+    },
+    "ingested": false,
+    "affinities": {
+      "phys": "none",
+      "fire": "null",
+      "cold": "none",
+      "elec": "none",
+      "force": "weak",
+      "light": "none",
+      "dark": "none",
+      "ruin": "none",
+      "nerve": "none",
+      "mind": "none",
+      "ailment": "none",
+      "almighty": "none",
+      "support": "none",
+      "healing": "drain",
+      "unique": "none",
+      "talk": "none"
+    }
+  },
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582255837,
+    "modifiedTime": 1742582255837,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_key": "!items!EAbXoJWg7uwHULRh"
+}

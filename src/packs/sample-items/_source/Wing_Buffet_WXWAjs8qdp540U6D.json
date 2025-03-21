@@ -1,0 +1,53 @@
+{
+  "folder": "Z8qsdBig54dWVU5H",
+  "name": "Wing Buffet",
+  "type": "skill",
+  "img": "icons/creatures/birds/corvid-flying-wings-purple.webp",
+  "system": {
+    "description": "<p>Deal Force damage to all enemies. 30% chance to instantly kill targets afflicted with Stone.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "cost": 9,
+    "used": false,
+    "attackData": {
+      "ailment": {
+        "id": "shatter",
+        "rate": 30
+      },
+      "potency": 5,
+      "affinity": "force",
+      "target": "all",
+      "hasPowerRoll": true,
+      "auto": false,
+      "attackType": "phys",
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": "Wing",
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582692718,
+    "modifiedTime": 1742582692718,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_id": "WXWAjs8qdp540U6D",
+  "sort": 0,
+  "_key": "!items!WXWAjs8qdp540U6D"
+}

@@ -1,0 +1,53 @@
+{
+  "folder": "ZfZCNPF0QMIJ6DvE",
+  "name": "Lunge",
+  "type": "skill",
+  "img": "icons/skills/melee/unarmed-punch-fist-white.webp",
+  "system": {
+    "description": "<p>Deal Phys damage to 1 target.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "used": false,
+    "cost": 10,
+    "attackData": {
+      "auto": false,
+      "attackType": "phys",
+      "potency": 10,
+      "affinity": "phys",
+      "target": "one",
+      "ailment": {
+        "rate": 5,
+        "id": ""
+      },
+      "hasPowerRoll": true,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": "Lunge",
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582472886,
+    "modifiedTime": 1742582472886,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "JEYAkaYwKjGu0orf",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_key": "!items!JEYAkaYwKjGu0orf"
+}

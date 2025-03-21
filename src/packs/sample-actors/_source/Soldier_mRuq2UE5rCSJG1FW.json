@@ -1,0 +1,1182 @@
+{
+  "folder": "erj311B5IVAZUwim",
+  "name": "Soldier",
+  "type": "human",
+  "_id": "mRuq2UE5rCSJG1FW",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "stats": {
+      "st": {
+        "base": 3,
+        "lv": 3,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "phys"
+      },
+      "ma": {
+        "base": 1,
+        "lv": null,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "mag"
+      },
+      "vi": {
+        "base": 2,
+        "lv": null,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "save"
+      },
+      "ag": {
+        "base": 3,
+        "lv": 7,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "dodge"
+      },
+      "lu": {
+        "base": 1,
+        "lv": null,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "negotiation"
+      }
+    },
+    "hp": {
+      "max": null,
+      "value": 52
+    },
+    "mp": {
+      "max": null,
+      "value": 24
+    },
+    "fp": {
+      "max": null,
+      "value": 5
+    },
+    "tn": {
+      "st": null,
+      "ma": null,
+      "vi": null,
+      "ag": null,
+      "lu": null,
+      "phys": null,
+      "mag": null,
+      "save": null,
+      "dodge": null,
+      "negotiation": null,
+      "gun": null
+    },
+    "power": {
+      "phys": null,
+      "mag": null,
+      "gun": null
+    },
+    "resist": {
+      "phys": null,
+      "mag": null
+    },
+    "notes": "<p>You are a surviving member of the JSDF ground forces, who previously had infiltrated the Shinjuku Medical Center, hunting the Ring of Gaea. While your team engaged a demon, the Conception happened, and you alone survived it. Even in this world gone crazy, you believe it is your duty to gather intel and report to the base in Ichigaya.</p>",
+    "alignment": {
+      "law": null,
+      "chaos": null,
+      "dark": null,
+      "light": null,
+      "neutral": null,
+      "heeHo": null
+    },
+    "awards": {
+      "xp": null,
+      "macca": null,
+      "itemDrops": ""
+    },
+    "tnBoosts": 0,
+    "multi": 1,
+    "buffs": {
+      "tarukaja": 0,
+      "makakaja": 0,
+      "rakukaja": 0,
+      "sukukaja": 0,
+      "tarunda": 0,
+      "rakunda": 0,
+      "sukunda": 0
+    },
+    "mods": {
+      "might": false,
+      "luckyFind": false,
+      "pierce": false
+    },
+    "powerBoost": {
+      "phys": false,
+      "mag": false,
+      "item": false
+    },
+    "elementBoost": {
+      "fire": false,
+      "cold": false,
+      "elec": false,
+      "force": false
+    },
+    "gems": {
+      "diamond": 0,
+      "pearl": 0,
+      "sapphire": 0,
+      "emerald": 0,
+      "ruby": 0,
+      "jade": 0,
+      "opal": 0,
+      "amethyst": 0,
+      "agate": 0,
+      "turquoise": 0,
+      "garnet": 0,
+      "onyx": 0,
+      "coral": 0,
+      "aquamarine": 0
+    },
+    "baseLv": 1,
+    "incenseUsed": null,
+    "hpMultiplier": null,
+    "mpMultiplier": null,
+    "xp": 1100,
+    "macca": 550,
+    "affinities": {
+      "phys": "none",
+      "fire": "none",
+      "cold": "none",
+      "elec": "none",
+      "force": "none",
+      "light": "null",
+      "dark": "none",
+      "ruin": "none",
+      "nerve": "none",
+      "mind": "none",
+      "ailment": "none",
+      "almighty": "none",
+      "support": "none",
+      "healing": "drain",
+      "unique": "none",
+      "talk": "none"
+    },
+    "npc": false,
+    "bg1": "Mission (Hunt for the secrets of the Ring of Gaea)",
+    "bg2": "Revenge (Your team was killed by a demon & the Ring of Gaea)",
+    "contact1": "JSDF Superiors",
+    "contact2": "Hikawa",
+    "contact3": "",
+    "bond": "",
+    "goal": "Live, and lay bare the mysteries of this world"
+  },
+  "prototypeToken": {
+    "name": "Soldier",
+    "displayName": 50,
+    "actorLink": true,
+    "appendNumber": true,
+    "prependAdjective": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "icons/svg/mystery-man.svg",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "hexagonalShape": 0,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": 1,
+    "displayBars": 50,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": "mp"
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 0,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "flags": {
+      "token-z": {
+        "zIndex": 0
+      },
+      "image-hover": {
+        "hideArt": false,
+        "specificArt": "path/image.png"
+      }
+    },
+    "randomImg": false
+  },
+  "items": [
+    {
+      "name": "Basic Strike",
+      "type": "skill",
+      "img": "icons/skills/melee/unarmed-punch-fist.webp",
+      "system": {
+        "attackData": {
+          "canDodge": true,
+          "hasPowerRoll": true,
+          "potency": 0,
+          "auto": false,
+          "attackType": "phys",
+          "affinity": "phys",
+          "target": "one",
+          "ailment": {
+            "rate": 5
+          },
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "description": "",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "cost": null,
+        "costType": "none",
+        "oneShot": false,
+        "used": false
+      },
+      "_id": "esmTg10PftYOHnPp",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742582225900,
+        "modifiedTime": 1742582225900,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_key": "!actors.items!mRuq2UE5rCSJG1FW.esmTg10PftYOHnPp"
+    },
+    {
+      "folder": "Jj7PQvYTKdL4dr8F",
+      "name": "Bullets",
+      "type": "inventoryItem",
+      "img": "icons/weapons/ammunition/bullets-cartridge-shell-gray.webp",
+      "system": {
+        "description": "<p>Bullets for a gun. One size fits all.</p>",
+        "qty": 11,
+        "price": 10,
+        "equipped": false,
+        "consumeOnUse": false,
+        "hasAttack": false,
+        "attackData": {
+          "auto": false,
+          "attackType": "phys",
+          "potency": null,
+          "affinity": "phys",
+          "target": "one",
+          "ailment": {
+            "rate": 5
+          },
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "cost": null,
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.uyn5Ye1RI9DoLSck",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742586823891,
+        "modifiedTime": 1742586826580,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_id": "y7Dy6zPMLEcyG228",
+      "sort": 0,
+      "_key": "!actors.items!mRuq2UE5rCSJG1FW.y7Dy6zPMLEcyG228"
+    },
+    {
+      "folder": "h42Y4ALkqlS128XH",
+      "name": "Bulletproof Vest",
+      "type": "armor",
+      "img": "icons/equipment/chest/breastplate-collared-leather-brown.webp",
+      "system": {
+        "description": "<p>A bulletproof vest. Only usable by humans. Provides 2 Phys Resist.</p>",
+        "qty": 1,
+        "price": 100,
+        "equipped": true,
+        "resist": {
+          "phys": 2,
+          "mag": null
+        },
+        "cost": null,
+        "costType": "none",
+        "slot": "torso"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.LIqIJl4C1FkPGYKE",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742586832672,
+        "modifiedTime": 1742586838045,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_id": "bCJsOwyH9unnfgcQ",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_key": "!actors.items!mRuq2UE5rCSJG1FW.bCJsOwyH9unnfgcQ"
+    },
+    {
+      "folder": "h42Y4ALkqlS128XH",
+      "name": "Combat Boots",
+      "type": "armor",
+      "img": "icons/equipment/feet/boots-leather-black.webp",
+      "system": {
+        "description": "<p>Sturdy combat boots. Provides 2 Phys Resist. Only usable by humans.</p>",
+        "qty": 1,
+        "price": 75,
+        "equipped": true,
+        "resist": {
+          "phys": 2,
+          "mag": null
+        },
+        "slot": "legs",
+        "cost": null,
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.bGDu0W3YdYXFB54G",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742586834774,
+        "modifiedTime": 1742586837006,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_id": "tMM0W43XpS3LgzM9",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_key": "!actors.items!mRuq2UE5rCSJG1FW.tMM0W43XpS3LgzM9"
+    },
+    {
+      "folder": "h42Y4ALkqlS128XH",
+      "name": "Helmet",
+      "type": "armor",
+      "img": "icons/equipment/head/helm-goggles-leather.webp",
+      "system": {
+        "description": "<p>A sturdy helmet. Only usable by humans. Provides 2 Phys Resist.</p>",
+        "qty": 1,
+        "price": 50,
+        "equipped": true,
+        "resist": {
+          "phys": 2,
+          "mag": null
+        },
+        "slot": "head",
+        "cost": null,
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.MTp2yHm8QSum06zy",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742586835473,
+        "modifiedTime": 1742586838605,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_id": "WTwTlKWgcLxp6bRd",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_key": "!actors.items!mRuq2UE5rCSJG1FW.WTwTlKWgcLxp6bRd"
+    },
+    {
+      "folder": "EYXeBO8Vy2JSkTG8",
+      "name": "Knife",
+      "type": "weapon",
+      "img": "icons/weapons/daggers/knife-green.webp",
+      "system": {
+        "description": "<p>A combat knife or a large pocket knife. More effective than your bare hands.</p>",
+        "qty": 1,
+        "price": 20,
+        "equipped": true,
+        "ammo": {
+          "max": null,
+          "value": null
+        },
+        "attackData": {
+          "auto": false,
+          "attackType": "phys",
+          "potency": 5,
+          "affinity": "phys",
+          "target": "one",
+          "ailment": {
+            "rate": 5
+          },
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "weaponType": "melee",
+        "cost": null,
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.gtvY60yoHDbwbnpS",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742586844954,
+        "modifiedTime": 1742586849034,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_id": "g0wGzcL14XRf0ELL",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_key": "!actors.items!mRuq2UE5rCSJG1FW.g0wGzcL14XRf0ELL"
+    },
+    {
+      "folder": "ZJ4gFXzIjPzLcafp",
+      "name": "SIG Sauer",
+      "type": "weapon",
+      "img": "icons/weapons/guns/gun-pistol-flintlock-metal.webp",
+      "system": {
+        "description": "<p>Your average high-caliber automatic. Requires ammunition. Only usable by humans.</p>",
+        "qty": 1,
+        "price": 300,
+        "equipped": true,
+        "ammo": {
+          "max": 9,
+          "value": 9
+        },
+        "weaponType": "gun",
+        "attackData": {
+          "potency": 16,
+          "auto": false,
+          "attackType": "phys",
+          "affinity": "phys",
+          "target": "one",
+          "ailment": {
+            "rate": null
+          },
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "cost": null,
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.bMBb3qscvKM7HnlD",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742586847467,
+        "modifiedTime": 1742586849335,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_id": "riMwYEl9RgTFyVgZ",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_key": "!actors.items!mRuq2UE5rCSJG1FW.riMwYEl9RgTFyVgZ"
+    },
+    {
+      "folder": "yYyspZmJsGG1W5ic",
+      "name": "Sure Shot",
+      "type": "skill",
+      "img": "icons/skills/targeting/crosshair-pointed-orange.webp",
+      "system": {
+        "description": "<p>Add 10% to the TN of your gun attacks (before multi-attack).</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": false,
+        "cost": null,
+        "used": false,
+        "attackData": {
+          "attackType": "passive",
+          "ailment": {
+            "rate": null
+          },
+          "auto": false,
+          "potency": null,
+          "affinity": "phys",
+          "target": "one",
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "",
+        "costType": "none"
+      },
+      "effects": [
+        {
+          "name": "Sure Shot",
+          "origin": "Item.AuhpaGKGj0PMgRMT",
+          "duration": {
+            "rounds": null,
+            "startTime": 0,
+            "seconds": null,
+            "combat": null,
+            "turns": null,
+            "startRound": null,
+            "startTurn": null
+          },
+          "disabled": false,
+          "img": "icons/skills/targeting/crosshair-pointed-orange.webp",
+          "_id": "Tp96voXL5Uzcn0cK",
+          "type": "base",
+          "system": {},
+          "changes": [
+            {
+              "key": "system.tn.gun",
+              "mode": 2,
+              "value": "10",
+              "priority": null
+            }
+          ],
+          "description": "",
+          "tint": "#ffffff",
+          "transfer": true,
+          "statuses": [],
+          "sort": 0,
+          "flags": {
+            "statuscounter": {
+              "value": 1,
+              "config": {
+                "type": "default"
+              },
+              "visible": false
+            }
+          },
+          "_stats": {
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "coreVersion": "12.331",
+            "systemId": "smt-tc",
+            "systemVersion": "0.5.8",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null
+          },
+          "_key": "!actors.items.effects!mRuq2UE5rCSJG1FW.bF3e7tsXdxLKSFBU.Tp96voXL5Uzcn0cK"
+        }
+      ],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.AuhpaGKGj0PMgRMT",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742586901268,
+        "modifiedTime": 1742586901268,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_id": "bF3e7tsXdxLKSFBU",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_key": "!actors.items!mRuq2UE5rCSJG1FW.bF3e7tsXdxLKSFBU"
+    },
+    {
+      "folder": "RtCJgs6WEegxSPe3",
+      "name": "Analyze",
+      "type": "skill",
+      "img": "icons/magic/perception/orb-crystal-ball-scrying-blue.webp",
+      "system": {
+        "description": "<p>Make a power roll ([[/roll 1d10x]]) and add your level. If the result is equal to or greater than the target's level, learn all information in its stat block. No hit check is required when used in combat; otherwise make a Ma check.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": false,
+        "cost": null,
+        "used": false,
+        "attackData": {
+          "attackType": "mag",
+          "ailment": {
+            "rate": null
+          },
+          "affinity": "support",
+          "auto": true,
+          "potency": null,
+          "target": "one",
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "",
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.Abo9wnqxAzeClbyN",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742586905977,
+        "modifiedTime": 1742586905977,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_id": "wGvpBFkplCsPrrFZ",
+      "sort": 0,
+      "_key": "!actors.items!mRuq2UE5rCSJG1FW.wGvpBFkplCsPrrFZ"
+    },
+    {
+      "folder": "j1h2CMbvWPcHfh2W",
+      "name": "Double Tap",
+      "type": "skill",
+      "img": "icons/weapons/guns/rifle-brown.webp",
+      "system": {
+        "description": "<p>Make two gun attacks in place of your normal action.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "cost": 8,
+        "costType": "none",
+        "oneShot": false,
+        "used": false,
+        "attackData": {
+          "auto": true,
+          "attackType": "mag",
+          "potency": null,
+          "affinity": "phys",
+          "target": "self",
+          "ailment": {
+            "rate": 5,
+            "id": ""
+          },
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": ""
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.E13zyPiaflso8ess",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742586911441,
+        "modifiedTime": 1742586911441,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_id": "9Z9ApUbbPhT94y1E",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_key": "!actors.items!mRuq2UE5rCSJG1FW.9Z9ApUbbPhT94y1E"
+    },
+    {
+      "folder": "7xWps8jd5KUCInjm",
+      "name": "Mighty Gust",
+      "type": "skill",
+      "img": "icons/skills/melee/strike-polearm-light-orange.webp",
+      "system": {
+        "description": "<p>Deal Phys damage to 1 target.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": false,
+        "cost": 13,
+        "used": false,
+        "attackData": {
+          "potency": 33,
+          "ailment": {
+            "rate": null
+          },
+          "hasPowerRoll": true,
+          "auto": false,
+          "attackType": "phys",
+          "affinity": "phys",
+          "target": "one",
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "Weapon",
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.V0bFpoprk20UXtEQ",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742586920568,
+        "modifiedTime": 1742586920568,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_id": "v3qfms1rI8y5QKvV",
+      "sort": 0,
+      "_key": "!actors.items!mRuq2UE5rCSJG1FW.v3qfms1rI8y5QKvV"
+    },
+    {
+      "folder": "IuBXlZbutoaRMCQ1",
+      "name": "Lucky Find",
+      "type": "skill",
+      "img": "icons/magic/control/buff-luck-fortune-gold.webp",
+      "system": {
+        "description": "<p>After combat, make a bonus item drop check using your Luck TN (instead of the GM).</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": false,
+        "cost": null,
+        "used": false,
+        "attackData": {
+          "attackType": "passive",
+          "ailment": {
+            "rate": null
+          },
+          "auto": false,
+          "potency": null,
+          "affinity": "phys",
+          "target": "one",
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "",
+        "costType": "none"
+      },
+      "effects": [
+        {
+          "name": "Lucky Find",
+          "origin": "Compendium.world.smt-tc-sample-items.Item.nfIwRw54ysdnukIW",
+          "duration": {
+            "rounds": null,
+            "startTime": 0,
+            "seconds": null,
+            "combat": null,
+            "turns": null,
+            "startRound": null,
+            "startTurn": null
+          },
+          "disabled": false,
+          "img": "icons/magic/control/buff-luck-fortune-gold.webp",
+          "_id": "HdDalduOIK192Y2N",
+          "type": "base",
+          "system": {},
+          "changes": [
+            {
+              "key": "system.mods.luckyFind",
+              "mode": 5,
+              "value": "true",
+              "priority": null
+            }
+          ],
+          "description": "",
+          "tint": "#ffffff",
+          "transfer": true,
+          "statuses": [],
+          "sort": 0,
+          "flags": {
+            "statuscounter": {
+              "value": 1,
+              "config": {
+                "type": "default"
+              },
+              "visible": false
+            }
+          },
+          "_stats": {
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "coreVersion": "12.331",
+            "systemId": "smt-tc",
+            "systemVersion": "0.5.8",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null
+          },
+          "_key": "!actors.items.effects!mRuq2UE5rCSJG1FW.GrUmOFpvhQwQfF0E.HdDalduOIK192Y2N"
+        }
+      ],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.nfIwRw54ysdnukIW",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742586925253,
+        "modifiedTime": 1742586925253,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_id": "GrUmOFpvhQwQfF0E",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_key": "!actors.items!mRuq2UE5rCSJG1FW.GrUmOFpvhQwQfF0E"
+    },
+    {
+      "folder": "yYyspZmJsGG1W5ic",
+      "name": "Luck Smiles",
+      "type": "skill",
+      "img": "icons/magic/control/buff-luck-fortune-green.webp",
+      "system": {
+        "description": "<p>1/scenario, completely nullify the effects of one attack on you. May be learned multiple times.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": true,
+        "cost": null,
+        "used": false,
+        "attackData": {
+          "attackType": "passive",
+          "ailment": {
+            "rate": null
+          },
+          "auto": false,
+          "potency": null,
+          "affinity": "phys",
+          "target": "one",
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "",
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.Vz7j8gG3pC63hTdf",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742586930470,
+        "modifiedTime": 1742586930470,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_id": "HsTcLHdc31mEz7ub",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_key": "!actors.items!mRuq2UE5rCSJG1FW.HsTcLHdc31mEz7ub"
+    },
+    {
+      "folder": "7xWps8jd5KUCInjm",
+      "name": "Heat Wave",
+      "type": "skill",
+      "img": "icons/skills/melee/strike-axe-red.webp",
+      "system": {
+        "description": "<p>Deal Phys damage to all enemies.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": false,
+        "cost": 13,
+        "used": false,
+        "attackData": {
+          "potency": 22,
+          "ailment": {
+            "rate": null
+          },
+          "target": "all",
+          "hasPowerRoll": true,
+          "auto": false,
+          "attackType": "phys",
+          "affinity": "phys",
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "Weapon",
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.UMSKyf07p90SZy5n",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742586935626,
+        "modifiedTime": 1742586935626,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_id": "FhuMfDTPgY6IKj0I",
+      "sort": 0,
+      "_key": "!actors.items!mRuq2UE5rCSJG1FW.FhuMfDTPgY6IKj0I"
+    },
+    {
+      "folder": "MB5FkxYKS2SgZMWx",
+      "name": "Powerful Strikes",
+      "type": "skill",
+      "img": "icons/skills/melee/hand-grip-staff-teal.webp",
+      "system": {
+        "description": "<p>Roll an extra d10 on power rolls for Physical Attacks and Basic Strikes.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": false,
+        "cost": null,
+        "used": false,
+        "attackData": {
+          "attackType": "passive",
+          "ailment": {
+            "rate": null
+          },
+          "auto": false,
+          "potency": null,
+          "affinity": "phys",
+          "target": "one",
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "",
+        "costType": "none"
+      },
+      "effects": [
+        {
+          "name": "Powerful Strikes",
+          "origin": "Item.8z9jkG34dg6Zcisq",
+          "duration": {
+            "rounds": null,
+            "startTime": 0,
+            "seconds": null,
+            "combat": null,
+            "turns": null,
+            "startRound": null,
+            "startTurn": null
+          },
+          "disabled": false,
+          "img": "icons/skills/melee/hand-grip-staff-teal.webp",
+          "_id": "yiBRV8HZUYjWu2ny",
+          "type": "base",
+          "system": {},
+          "changes": [
+            {
+              "key": "system.powerBoost.phys",
+              "mode": 5,
+              "value": "true",
+              "priority": null
+            }
+          ],
+          "description": "",
+          "tint": "#ffffff",
+          "transfer": true,
+          "statuses": [],
+          "sort": 0,
+          "flags": {
+            "statuscounter": {
+              "value": 1,
+              "config": {
+                "type": "default"
+              },
+              "visible": false
+            }
+          },
+          "_stats": {
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "coreVersion": "12.331",
+            "systemId": "smt-tc",
+            "systemVersion": "0.5.8",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null
+          },
+          "_key": "!actors.items.effects!mRuq2UE5rCSJG1FW.A1MizVEHjhFgkTjv.yiBRV8HZUYjWu2ny"
+        }
+      ],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.8z9jkG34dg6Zcisq",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742586940694,
+        "modifiedTime": 1742586940694,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_id": "A1MizVEHjhFgkTjv",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_key": "!actors.items!mRuq2UE5rCSJG1FW.A1MizVEHjhFgkTjv"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582225881,
+    "modifiedTime": 1742586888081,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_key": "!actors!mRuq2UE5rCSJG1FW"
+}

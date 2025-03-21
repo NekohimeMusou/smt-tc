@@ -1,0 +1,22 @@
+{
+  "name": "Jirae",
+  "sorting": "a",
+  "folder": "3kKQV5aOdI1DSp9v",
+  "type": "Actor",
+  "description": "",
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": null,
+    "modifiedTime": 1742582048102,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "sXAfhozzM2J2Q9FE",
+  "sort": 500000,
+  "_key": "!folders!sXAfhozzM2J2Q9FE"
+}

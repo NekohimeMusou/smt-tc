@@ -1,0 +1,456 @@
+{
+  "folder": "Ufm4yGeR5bdqUqLu",
+  "name": "Preta",
+  "type": "demon",
+  "img": "tokenizer/pc-images/preta.Avatar.webp",
+  "system": {
+    "stats": {
+      "st": {
+        "base": 5,
+        "lv": null,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "phys"
+      },
+      "ma": {
+        "base": 4,
+        "lv": null,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "mag"
+      },
+      "vi": {
+        "base": 5,
+        "lv": null,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "save"
+      },
+      "ag": {
+        "base": 6,
+        "lv": null,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "dodge"
+      },
+      "lu": {
+        "base": 4,
+        "lv": null,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "negotiation"
+      }
+    },
+    "hp": {
+      "max": null,
+      "value": 54
+    },
+    "mp": {
+      "max": null,
+      "value": 24
+    },
+    "fp": {
+      "max": null,
+      "value": 5
+    },
+    "tn": {
+      "st": null,
+      "ma": null,
+      "vi": null,
+      "ag": null,
+      "lu": null,
+      "phys": null,
+      "mag": null,
+      "save": null,
+      "dodge": null,
+      "negotiation": null,
+      "gun": null
+    },
+    "power": {
+      "phys": null,
+      "mag": null,
+      "gun": null
+    },
+    "resist": {
+      "phys": null,
+      "mag": null
+    },
+    "notes": "",
+    "alignment": {
+      "law": null,
+      "chaos": null,
+      "dark": null,
+      "light": null,
+      "neutral": null,
+      "heeHo": null
+    },
+    "awards": {
+      "xp": 9,
+      "macca": 27,
+      "itemDrops": "Medicine"
+    },
+    "tnBoosts": 0,
+    "multi": 1,
+    "buffs": {
+      "tarukaja": 0,
+      "makakaja": 0,
+      "rakukaja": 0,
+      "sukukaja": 0,
+      "tarunda": 0,
+      "rakunda": 0,
+      "sukunda": 0
+    },
+    "mods": {
+      "might": false,
+      "luckyFind": false,
+      "pierce": false
+    },
+    "powerBoost": {
+      "phys": false,
+      "mag": false,
+      "item": false
+    },
+    "gems": {
+      "diamond": 0,
+      "pearl": 0,
+      "sapphire": 0,
+      "emerald": 0,
+      "ruby": 0,
+      "jade": 0,
+      "opal": 0,
+      "amethyst": 0,
+      "agate": 0,
+      "turquoise": 0,
+      "garnet": 0,
+      "onyx": 0,
+      "coral": 0,
+      "aquamarine": 0
+    },
+    "baseLv": 4,
+    "hpMultiplier": null,
+    "mpMultiplier": null,
+    "xp": 83,
+    "macca": null,
+    "affinities": {
+      "phys": "none",
+      "fire": "weak",
+      "cold": "weak",
+      "elec": "weak",
+      "force": "weak",
+      "light": "none",
+      "dark": "null",
+      "mind": "none",
+      "nerve": "none",
+      "ruin": "none",
+      "ailment": "none",
+      "almighty": "none",
+      "support": "none",
+      "healing": "drain",
+      "unique": "none",
+      "talk": "none"
+    },
+    "npc": false,
+    "favoredStat": "ma",
+    "clan": "Haunt",
+    "bg1": "",
+    "bg2": "",
+    "contact1": "",
+    "contact2": "",
+    "contact3": "",
+    "bond": "",
+    "goal": "",
+    "behavior": "Blob/—/—",
+    "elementBoost": {
+      "fire": false,
+      "cold": false,
+      "elec": false,
+      "force": false
+    },
+    "inheritTraits": "Mouth Eye Lunge Teeth Claw",
+    "evolvePath": "",
+    "incenseUsed": null
+  },
+  "prototypeToken": {
+    "name": "Preta",
+    "displayName": 50,
+    "actorLink": false,
+    "appendNumber": true,
+    "prependAdjective": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "tokenizer/pc-images/preta.Token.webp",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "hexagonalShape": 0,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": -1,
+    "displayBars": 40,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": "mp"
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 0,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "flags": {
+      "token-z": {
+        "zIndex": 0
+      },
+      "monks-combat-marker": {
+        "token-highlight-scale": 1.5,
+        "token-combat-animation": "",
+        "token-highlight": ""
+      },
+      "monks-bloodsplats": {
+        "bloodsplat-type": "",
+        "bloodsplat-colour": ""
+      },
+      "image-hover": {
+        "hideArt": false,
+        "specificArt": "path/image.png"
+      }
+    },
+    "randomImg": false
+  },
+  "items": [
+    {
+      "name": "Basic Strike",
+      "type": "skill",
+      "img": "icons/skills/melee/unarmed-punch-fist.webp",
+      "system": {
+        "attackData": {
+          "canDodge": true,
+          "hasPowerRoll": true,
+          "potency": 0,
+          "auto": false,
+          "attackType": "phys",
+          "affinity": "phys",
+          "target": "one",
+          "ailment": {
+            "rate": 5
+          },
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "description": "",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "cost": null,
+        "costType": "none",
+        "oneShot": false,
+        "used": false
+      },
+      "_id": "fFO0NwkpW02dT4ne",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!actors.items!fVKp4zSPfKhD7zJU.fFO0NwkpW02dT4ne"
+    },
+    {
+      "folder": "e9e0jGBXmDet9mJm",
+      "name": "Feral Claw",
+      "type": "skill",
+      "_id": "9FzvsIRWBOnwZoYO",
+      "img": "icons/creatures/claws/claw-bear-paw-swipe-red.webp",
+      "system": {
+        "description": "<p>Deal Phys damage to 1 enemy.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "cost": 6,
+        "costType": "none",
+        "oneShot": false,
+        "used": false,
+        "attackData": {
+          "auto": false,
+          "attackType": "phys",
+          "potency": 10,
+          "affinity": "phys",
+          "target": "one",
+          "ailment": {
+            "rate": 5,
+            "id": ""
+          },
+          "hasPowerRoll": true,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "Claw"
+      },
+      "effects": [],
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.world.smt-tc-sample-items.Item.xVWTOrh9AcUVyFN6",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!actors.items!fVKp4zSPfKhD7zJU.9FzvsIRWBOnwZoYO"
+    },
+    {
+      "folder": "s2dYy7xOO235l1eu",
+      "name": "Sukukaja",
+      "type": "skill",
+      "_id": "K9I18i5fn4vXaQBj",
+      "img": "icons/skills/movement/feet-winged-boots-brown.webp",
+      "system": {
+        "description": "<p>Increase allies' Phys and Mag Resist by [[/roll 1d10]]. Stacks up to 4 times.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "cost": 12,
+        "costType": "none",
+        "oneShot": false,
+        "used": false,
+        "attackData": {
+          "auto": true,
+          "attackType": "spell",
+          "potency": null,
+          "affinity": "support",
+          "target": "all",
+          "ailment": {
+            "rate": 5,
+            "id": ""
+          },
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": ""
+      },
+      "effects": [],
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.world.smt-tc-sample-items.Item.chvzj44zoDPj0TZY",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!actors.items!fVKp4zSPfKhD7zJU.K9I18i5fn4vXaQBj"
+    }
+  ],
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582043750,
+    "modifiedTime": 1742582043750,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_id": "fVKp4zSPfKhD7zJU",
+  "sort": 0,
+  "_key": "!actors!fVKp4zSPfKhD7zJU"
+}

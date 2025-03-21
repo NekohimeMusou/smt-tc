@@ -1,0 +1,104 @@
+{
+  "folder": "MB5FkxYKS2SgZMWx",
+  "name": "Powerful Strikes",
+  "type": "skill",
+  "img": "icons/skills/melee/hand-grip-staff-teal.webp",
+  "system": {
+    "description": "<p>Roll an extra d10 on power rolls for Physical Attacks and Basic Strikes.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "cost": null,
+    "used": false,
+    "attackData": {
+      "attackType": "passive",
+      "ailment": {
+        "rate": null
+      },
+      "auto": false,
+      "potency": null,
+      "affinity": "phys",
+      "target": "one",
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": "",
+    "costType": "none"
+  },
+  "effects": [
+    {
+      "name": "Powerful Strikes",
+      "origin": "Item.8z9jkG34dg6Zcisq",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "img": "icons/skills/melee/hand-grip-staff-teal.webp",
+      "_id": "yiBRV8HZUYjWu2ny",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.powerBoost.phys",
+          "mode": 5,
+          "value": "true",
+          "priority": null
+        }
+      ],
+      "description": "",
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "statuscounter": {
+          "value": 1,
+          "config": {
+            "type": "default"
+          },
+          "visible": false
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!8z9jkG34dg6Zcisq.yiBRV8HZUYjWu2ny"
+    }
+  ],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582351370,
+    "modifiedTime": 1742582351370,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "8z9jkG34dg6Zcisq",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_key": "!items!8z9jkG34dg6Zcisq"
+}

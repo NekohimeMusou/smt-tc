@@ -1,0 +1,22 @@
+{
+  "name": "Gun Group",
+  "sorting": "a",
+  "folder": "HN9g4oqtBlurLBRW",
+  "type": "Item",
+  "description": "",
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": null,
+    "modifiedTime": 1742582767324,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "j1h2CMbvWPcHfh2W",
+  "sort": 100000,
+  "_key": "!folders!j1h2CMbvWPcHfh2W"
+}

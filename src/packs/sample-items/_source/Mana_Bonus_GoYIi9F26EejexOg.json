@@ -1,0 +1,104 @@
+{
+  "folder": "viPkLfqsSMfUxqPS",
+  "name": "Mana Bonus",
+  "type": "skill",
+  "img": "icons/magic/life/heart-cross-blue.webp",
+  "system": {
+    "description": "<p>Add 1 to your MP multiplier.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "cost": null,
+    "used": false,
+    "attackData": {
+      "attackType": "passive",
+      "ailment": {
+        "rate": null
+      },
+      "auto": false,
+      "potency": null,
+      "affinity": "phys",
+      "target": "one",
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": "",
+    "costType": "none"
+  },
+  "effects": [
+    {
+      "name": "Mana Bonus",
+      "origin": "Item.GoYIi9F26EejexOg",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "img": "icons/magic/life/heart-cross-blue.webp",
+      "_id": "nku20Hqeb8QJr70O",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.mpMultiplier",
+          "mode": 2,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "description": "",
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "statuscounter": {
+          "value": 1,
+          "config": {
+            "type": "default"
+          },
+          "visible": false
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!GoYIi9F26EejexOg.nku20Hqeb8QJr70O"
+    }
+  ],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582346625,
+    "modifiedTime": 1742582346625,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "GoYIi9F26EejexOg",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_key": "!items!GoYIi9F26EejexOg"
+}

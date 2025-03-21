@@ -1,0 +1,38 @@
+{
+  "folder": "h42Y4ALkqlS128XH",
+  "name": "Bulletproof Vest",
+  "type": "armor",
+  "img": "icons/equipment/chest/breastplate-collared-leather-brown.webp",
+  "system": {
+    "description": "<p>A bulletproof vest. Only usable by humans. Provides 2 Phys Resist.</p>",
+    "qty": 1,
+    "price": 100,
+    "equipped": false,
+    "resist": {
+      "phys": 2,
+      "mag": null
+    },
+    "cost": null,
+    "costType": "none",
+    "slot": "torso"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582249197,
+    "modifiedTime": 1742582249197,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "LIqIJl4C1FkPGYKE",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_key": "!items!LIqIJl4C1FkPGYKE"
+}

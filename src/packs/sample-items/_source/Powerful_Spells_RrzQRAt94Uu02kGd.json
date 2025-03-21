@@ -1,0 +1,104 @@
+{
+  "folder": "MB5FkxYKS2SgZMWx",
+  "name": "Powerful Spells",
+  "type": "skill",
+  "img": "icons/magic/symbols/runes-star-blue.webp",
+  "system": {
+    "description": "<p>Roll an extra d10 on power rolls for Magic Attacks and Spells.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "cost": null,
+    "used": false,
+    "attackData": {
+      "ailment": {
+        "rate": null
+      },
+      "auto": false,
+      "attackType": "passive",
+      "potency": null,
+      "affinity": "phys",
+      "target": "one",
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": "",
+    "costType": "none"
+  },
+  "effects": [
+    {
+      "name": "Powerful Spells",
+      "origin": "Compendium.world.smt-tc-sample-items.Item.RrzQRAt94Uu02kGd",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "img": "icons/magic/symbols/runes-star-blue.webp",
+      "_id": "30nNRkmrGwoqS0iG",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.powerBoost.mag",
+          "mode": 5,
+          "value": "true",
+          "priority": null
+        }
+      ],
+      "description": "",
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "statuscounter": {
+          "value": 1,
+          "config": {
+            "type": "default"
+          },
+          "visible": false
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!RrzQRAt94Uu02kGd.30nNRkmrGwoqS0iG"
+    }
+  ],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582351370,
+    "modifiedTime": 1742582351370,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "RrzQRAt94Uu02kGd",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_key": "!items!RrzQRAt94Uu02kGd"
+}

@@ -1,0 +1,52 @@
+{
+  "folder": "yYyspZmJsGG1W5ic",
+  "name": "Luck Smiles",
+  "type": "skill",
+  "img": "icons/magic/control/buff-luck-fortune-green.webp",
+  "system": {
+    "description": "<p>1/scenario, completely nullify the effects of one attack on you. May be learned multiple times.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": true,
+    "cost": null,
+    "used": false,
+    "attackData": {
+      "attackType": "passive",
+      "ailment": {
+        "rate": null
+      },
+      "auto": false,
+      "potency": null,
+      "affinity": "phys",
+      "target": "one",
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": "",
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582394687,
+    "modifiedTime": 1742582394687,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "Vz7j8gG3pC63hTdf",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_key": "!items!Vz7j8gG3pC63hTdf"
+}

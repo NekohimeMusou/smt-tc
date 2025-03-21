@@ -1,0 +1,53 @@
+{
+  "folder": "WBeBHJPwuSKoOLZt",
+  "name": "Mazio",
+  "type": "skill",
+  "img": "icons/magic/lightning/bolts-forked-large-blue-yellow.webp",
+  "system": {
+    "description": "<p>Deal Elec damage to all targets; 10% chance to inflict Shock.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "cost": 8,
+    "used": false,
+    "attackData": {
+      "ailment": {
+        "rate": 10,
+        "id": "shock"
+      },
+      "auto": false,
+      "attackType": "spell",
+      "potency": 5,
+      "affinity": "elec",
+      "target": "all",
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": "",
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582864653,
+    "modifiedTime": 1742582864653,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_id": "4rk3tAZ6Z60cFC1r",
+  "sort": 0,
+  "_key": "!items!4rk3tAZ6Z60cFC1r"
+}

@@ -1,0 +1,38 @@
+{
+  "folder": "h42Y4ALkqlS128XH",
+  "name": "Helmet",
+  "type": "armor",
+  "img": "icons/equipment/head/helm-goggles-leather.webp",
+  "system": {
+    "description": "<p>A sturdy helmet. Only usable by humans. Provides 2 Phys Resist.</p>",
+    "qty": 1,
+    "price": 50,
+    "equipped": false,
+    "resist": {
+      "phys": 2,
+      "mag": null
+    },
+    "slot": "head",
+    "cost": null,
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582249197,
+    "modifiedTime": 1742582249197,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "MTp2yHm8QSum06zy",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_key": "!items!MTp2yHm8QSum06zy"
+}

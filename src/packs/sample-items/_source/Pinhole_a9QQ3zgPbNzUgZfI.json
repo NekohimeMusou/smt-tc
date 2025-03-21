@@ -1,0 +1,54 @@
+{
+  "folder": "j1h2CMbvWPcHfh2W",
+  "name": "Pinhole",
+  "type": "skill",
+  "img": "icons/skills/ranged/rifle-scoped-gray-green.webp",
+  "system": {
+    "description": "<p>Make an attack with a firearm using Agility. Your target treats their resistance and dodge as being halved for this attack.</p>\n<p><strong>NOTE:</strong> For now, you'll have to enter your gun's power in the Potency field.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "cost": 10,
+    "costType": "none",
+    "oneShot": false,
+    "used": false,
+    "attackData": {
+      "auto": false,
+      "attackType": "gun",
+      "potency": null,
+      "affinity": "phys",
+      "target": "one",
+      "ailment": {
+        "rate": 5,
+        "id": ""
+      },
+      "hasPowerRoll": true,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": true
+      },
+      "status": ""
+    },
+    "inheritType": ""
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582767305,
+    "modifiedTime": 1742582767305,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "a9QQ3zgPbNzUgZfI",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_key": "!items!a9QQ3zgPbNzUgZfI"
+}

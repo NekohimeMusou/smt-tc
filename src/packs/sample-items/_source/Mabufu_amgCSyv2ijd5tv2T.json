@@ -1,0 +1,53 @@
+{
+  "folder": "4T9WLxcra6nCeL7U",
+  "name": "Mabufu",
+  "type": "skill",
+  "img": "icons/magic/water/projectile-needles-salvo-blue.webp",
+  "system": {
+    "description": "<p>Deal Cold damage to all targets; 10% chance to inflict Freeze.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "cost": 8,
+    "costType": "none",
+    "oneShot": false,
+    "used": false,
+    "attackData": {
+      "auto": false,
+      "attackType": "spell",
+      "potency": 5,
+      "affinity": "cold",
+      "target": "all",
+      "ailment": {
+        "rate": 10,
+        "id": "freeze"
+      },
+      "hasPowerRoll": true,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": ""
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582717839,
+    "modifiedTime": 1742582717839,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_id": "amgCSyv2ijd5tv2T",
+  "sort": 0,
+  "_key": "!items!amgCSyv2ijd5tv2T"
+}

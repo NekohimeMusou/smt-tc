@@ -1,0 +1,52 @@
+{
+  "folder": "FtXIpIaG0tsMGvqA",
+  "name": "Revival Bead",
+  "type": "inventoryItem",
+  "img": "icons/commodities/gems/pearl-water.webp",
+  "system": {
+    "description": "<p>One dead ally is returned to life at 1 HP.</p>",
+    "qty": 1,
+    "price": 600,
+    "equipped": false,
+    "consumeOnUse": true,
+    "hasAttack": true,
+    "attackData": {
+      "auto": false,
+      "attackType": "phys",
+      "potency": null,
+      "affinity": "healing",
+      "target": "one",
+      "ailment": {
+        "rate": 5,
+        "id": ""
+      },
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "cost": null,
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582308721,
+    "modifiedTime": 1742582308721,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_id": "GHeFYYtYaR6btSKy",
+  "sort": 0,
+  "_key": "!items!GHeFYYtYaR6btSKy"
+}

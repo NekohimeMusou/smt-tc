@@ -1,0 +1,54 @@
+{
+  "folder": "E8o5tcX8mJQOzOhr",
+  "name": "Tetraja",
+  "type": "skill",
+  "img": "icons/magic/defensive/shield-barrier-deflect-gold.webp",
+  "system": {
+    "description": "<p>All allies gain Null Light/Dark; this goes away at the end of the scene or when it absorbs one attack</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "used": false,
+    "cost": 15,
+    "attackData": {
+      "ailment": {
+        "rate": null,
+        "id": ""
+      },
+      "auto": true,
+      "attackType": "spell",
+      "potency": null,
+      "affinity": "support",
+      "target": "all",
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      },
+      "status": "tetraja"
+    },
+    "inheritType": "",
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582993044,
+    "modifiedTime": 1742582993044,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "CYLcrqVt0QGW6LZv",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_key": "!items!CYLcrqVt0QGW6LZv"
+}

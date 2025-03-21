@@ -1,0 +1,22 @@
+{
+  "name": "Sample Demons",
+  "sorting": "a",
+  "folder": null,
+  "type": "Actor",
+  "_id": "3kKQV5aOdI1DSp9v",
+  "description": "",
+  "sort": 0,
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582014693,
+    "modifiedTime": 1742582014693,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_key": "!folders!3kKQV5aOdI1DSp9v"
+}

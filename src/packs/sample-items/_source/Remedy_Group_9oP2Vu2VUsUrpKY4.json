@@ -1,0 +1,22 @@
+{
+  "name": "Remedy Group",
+  "sorting": "a",
+  "folder": "cDSO9ZDbL3OnnUqG",
+  "type": "Item",
+  "_id": "9oP2Vu2VUsUrpKY4",
+  "description": "",
+  "sort": 0,
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_key": "!folders!9oP2Vu2VUsUrpKY4"
+}

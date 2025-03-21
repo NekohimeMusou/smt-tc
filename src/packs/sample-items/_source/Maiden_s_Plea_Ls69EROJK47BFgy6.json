@@ -1,0 +1,52 @@
+{
+  "folder": "XfmJ2nHqA5cmWdYR",
+  "name": "Maiden's Plea",
+  "type": "skill",
+  "img": "icons/magic/holy/prayer-hands-glowing-yellow.webp",
+  "system": {
+    "description": "<p><strong>Support Skill</strong></p>\n<p>When a subject would become angry during a talk attempt, smooth the subject's rage over and continue the conversation. May only be used once per talk attempt. May only be learned by Kikuri-Hime. Negotiation checks made after this skill gain +20% TN.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "cost": null,
+    "used": false,
+    "attackData": {
+      "attackType": "talk",
+      "ailment": {
+        "rate": null
+      },
+      "auto": false,
+      "potency": null,
+      "affinity": "phys",
+      "target": "one",
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": "",
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582506830,
+    "modifiedTime": 1742582506830,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "Ls69EROJK47BFgy6",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_key": "!items!Ls69EROJK47BFgy6"
+}

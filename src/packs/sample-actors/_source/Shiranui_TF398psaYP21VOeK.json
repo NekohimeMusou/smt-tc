@@ -1,0 +1,816 @@
+{
+  "folder": "oNT2cNhM5aJmwi0u",
+  "name": "Shiranui",
+  "type": "fiend",
+  "_id": "TF398psaYP21VOeK",
+  "img": "icons/svg/mystery-man.svg",
+  "system": {
+    "stats": {
+      "st": {
+        "base": 1,
+        "lv": null,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "phys"
+      },
+      "ma": {
+        "base": 1,
+        "lv": 9,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "mag"
+      },
+      "vi": {
+        "base": 1,
+        "lv": null,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "save"
+      },
+      "ag": {
+        "base": 1,
+        "lv": null,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "dodge"
+      },
+      "lu": {
+        "base": 1,
+        "lv": null,
+        "mgt": null,
+        "value": null,
+        "derivedTN": "negotiation"
+      }
+    },
+    "hp": {
+      "max": null,
+      "value": 72
+    },
+    "mp": {
+      "max": null,
+      "value": 78
+    },
+    "fp": {
+      "max": null,
+      "value": 5
+    },
+    "tn": {
+      "st": null,
+      "ma": null,
+      "vi": null,
+      "ag": null,
+      "lu": null,
+      "phys": null,
+      "mag": null,
+      "save": null,
+      "dodge": null,
+      "negotiation": null,
+      "gun": null
+    },
+    "power": {
+      "phys": null,
+      "mag": null,
+      "gun": null
+    },
+    "resist": {
+      "phys": null,
+      "mag": null
+    },
+    "notes": "<p>Not too long ago, you were a normal high school student, studying for your exams with your girlfriend. Then something happened. While your girlfriend also survived the event, she went missing in the aftermath. You, meanwhile, were granted a Magatama by an angel and then fell in with the Manikins. You now wander the Vortex World in search of your girlfriend, whose parting words to you were that she wanted to change the world.</p>",
+    "alignment": {
+      "law": null,
+      "chaos": null,
+      "dark": null,
+      "light": null,
+      "neutral": null,
+      "heeHo": null
+    },
+    "awards": {
+      "xp": null,
+      "macca": null,
+      "itemDrops": ""
+    },
+    "tnBoosts": 0,
+    "multi": 1,
+    "buffs": {
+      "tarukaja": 0,
+      "makakaja": 0,
+      "rakukaja": 0,
+      "sukukaja": 0,
+      "tarunda": 0,
+      "rakunda": 0,
+      "sukunda": 0
+    },
+    "mods": {
+      "might": false,
+      "luckyFind": false,
+      "pierce": false
+    },
+    "powerBoost": {
+      "phys": false,
+      "mag": false,
+      "item": false
+    },
+    "elementBoost": {
+      "fire": false,
+      "cold": false,
+      "elec": false,
+      "force": false
+    },
+    "gems": {
+      "diamond": 0,
+      "pearl": 0,
+      "sapphire": 0,
+      "emerald": 0,
+      "ruby": 0,
+      "jade": 0,
+      "opal": 0,
+      "amethyst": 0,
+      "agate": 0,
+      "turquoise": 0,
+      "garnet": 0,
+      "onyx": 0,
+      "coral": 0,
+      "aquamarine": 0
+    },
+    "baseLv": 1,
+    "incenseUsed": null,
+    "hpMultiplier": null,
+    "mpMultiplier": null,
+    "xp": 1100,
+    "macca": 500,
+    "affinities": {
+      "phys": "none",
+      "fire": "none",
+      "cold": "none",
+      "elec": "none",
+      "force": "none",
+      "light": "none",
+      "dark": "none",
+      "ruin": "none",
+      "nerve": "none",
+      "mind": "none",
+      "ailment": "none",
+      "almighty": "none",
+      "support": "none",
+      "healing": "drain",
+      "unique": "none",
+      "talk": "none"
+    },
+    "npc": false,
+    "bg1": "Fiend: Revelation (Divine Angel)",
+    "bg2": "Searching for your girlfriend",
+    "contact1": "Manikin",
+    "contact2": "Divine Angel",
+    "contact3": "",
+    "bond": "",
+    "goal": "Find Girlfriend"
+  },
+  "prototypeToken": {
+    "name": "Shiranui",
+    "displayName": 50,
+    "actorLink": true,
+    "appendNumber": true,
+    "prependAdjective": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "icons/svg/mystery-man.svg",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "hexagonalShape": 0,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": 1,
+    "displayBars": 50,
+    "bar1": {
+      "attribute": "hp"
+    },
+    "bar2": {
+      "attribute": "mp"
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": [],
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 0,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "flags": {
+      "token-z": {
+        "zIndex": 0
+      },
+      "image-hover": {
+        "hideArt": false,
+        "specificArt": "path/image.png"
+      }
+    },
+    "randomImg": false
+  },
+  "items": [
+    {
+      "name": "Basic Strike",
+      "type": "skill",
+      "img": "icons/skills/melee/unarmed-punch-fist.webp",
+      "system": {
+        "attackData": {
+          "canDodge": true,
+          "hasPowerRoll": true,
+          "potency": 0,
+          "auto": false,
+          "attackType": "phys",
+          "affinity": "phys",
+          "target": "one",
+          "ailment": {
+            "rate": 5
+          },
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "description": "",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "cost": null,
+        "costType": "none",
+        "oneShot": false,
+        "used": false
+      },
+      "_id": "9eah5meT8oValSmZ",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742582196916,
+        "modifiedTime": 1742582196916,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_key": "!actors.items!TF398psaYP21VOeK.9eah5meT8oValSmZ"
+    },
+    {
+      "folder": "3nhVmw01nubTUR4c",
+      "name": "Shiranui",
+      "type": "magatama",
+      "_id": "q02lJMuSCanDXmgg",
+      "img": "icons/magic/fire/projectile-embers-orange.webp",
+      "system": {
+        "description": "<p>Lv 1: Agi</p>\n<p>Lv 6: Fire Breath</p>\n<p>Lv 8: Fire Boost</p>\n<p>Lv 10: Provoke</p>\n<p>Lv 15: Agilao</p>\n<p>Lv 20: Anti-Fire</p>",
+        "qty": 1,
+        "price": 3000,
+        "equipped": true,
+        "cost": null,
+        "costType": "none",
+        "stats": {
+          "st": 1,
+          "ma": 5,
+          "vi": 0,
+          "ag": 4,
+          "lu": 0
+        },
+        "ingested": true,
+        "affinities": {
+          "phys": "none",
+          "fire": "null",
+          "cold": "none",
+          "elec": "none",
+          "force": "weak",
+          "light": "none",
+          "dark": "none",
+          "ruin": "none",
+          "nerve": "none",
+          "mind": "none",
+          "ailment": "none",
+          "almighty": "none",
+          "support": "none",
+          "healing": "drain",
+          "unique": "none",
+          "talk": "none"
+        }
+      },
+      "effects": [],
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.EAbXoJWg7uwHULRh",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742585474934,
+        "modifiedTime": 1742585476748,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_key": "!actors.items!TF398psaYP21VOeK.q02lJMuSCanDXmgg"
+    },
+    {
+      "folder": "d4tFNQ52EPCfvME3",
+      "name": "Agi",
+      "type": "skill",
+      "img": "icons/magic/fire/explosion-fireball-small-red.webp",
+      "system": {
+        "description": "<p>Deal Fire damage to 1 target.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": false,
+        "cost": 3,
+        "used": false,
+        "attackData": {
+          "attackType": "spell",
+          "ailment": {
+            "rate": null
+          },
+          "potency": 15,
+          "affinity": "fire",
+          "hasPowerRoll": true,
+          "auto": false,
+          "target": "one",
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "",
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.PUbJiK1rk2CLUkG8",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742585593401,
+        "modifiedTime": 1742585593401,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_id": "9HFlJK0yrMkZGosS",
+      "sort": 0,
+      "_key": "!actors.items!TF398psaYP21VOeK.9HFlJK0yrMkZGosS"
+    },
+    {
+      "folder": "Z8qsdBig54dWVU5H",
+      "name": "Fire Breath",
+      "type": "skill",
+      "img": "icons/magic/fire/projectile-wave-arrow.webp",
+      "system": {
+        "description": "<p>Deal Fire damage to all targets.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": false,
+        "used": false,
+        "cost": 9,
+        "attackData": {
+          "potency": 10,
+          "ailment": {
+            "rate": null
+          },
+          "affinity": "fire",
+          "target": "all",
+          "hasPowerRoll": true,
+          "auto": false,
+          "attackType": "phys",
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "",
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.wVtuLITCFQualvUh",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742585596935,
+        "modifiedTime": 1742585596935,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_id": "6yyJ7DE9WHZ2KuR7",
+      "sort": 0,
+      "_key": "!actors.items!TF398psaYP21VOeK.6yyJ7DE9WHZ2KuR7"
+    },
+    {
+      "folder": "MB5FkxYKS2SgZMWx",
+      "name": "Fire Boost",
+      "type": "skill",
+      "_id": "VJ1AJYo9PGKrW6KP",
+      "img": "icons/magic/fire/elemental-fire-humanoid.webp",
+      "system": {
+        "description": "<p>Multiply the power of Elec attacks by 1.5x (before power roll).</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "cost": null,
+        "costType": "none",
+        "oneShot": false,
+        "used": false,
+        "attackData": {
+          "auto": false,
+          "attackType": "passive",
+          "potency": null,
+          "affinity": "phys",
+          "target": "one",
+          "ailment": {
+            "rate": 5,
+            "id": ""
+          },
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          },
+          "status": ""
+        },
+        "inheritType": ""
+      },
+      "effects": [
+        {
+          "name": "Fire Boost",
+          "origin": "Compendium.world.smt-tc-sample-items.Item.0ceGP8CXIxQp1IO4",
+          "duration": {
+            "rounds": null,
+            "startTime": 0,
+            "seconds": null,
+            "combat": null,
+            "turns": null,
+            "startRound": null,
+            "startTurn": null
+          },
+          "disabled": false,
+          "img": "icons/magic/fire/elemental-fire-humanoid.webp",
+          "_id": "GYGflHxvLA2KcZEq",
+          "type": "base",
+          "system": {},
+          "changes": [
+            {
+              "key": "system.elementBoost.fire",
+              "mode": 5,
+              "value": "true",
+              "priority": null
+            }
+          ],
+          "description": "",
+          "tint": "#ffffff",
+          "transfer": true,
+          "statuses": [],
+          "sort": 0,
+          "flags": {
+            "statuscounter": {
+              "value": 1,
+              "config": {
+                "type": "default"
+              },
+              "visible": false
+            }
+          },
+          "_stats": {
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "coreVersion": "12.331",
+            "systemId": "smt-tc",
+            "systemVersion": "0.5.8",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null
+          },
+          "_key": "!actors.items.effects!TF398psaYP21VOeK.VJ1AJYo9PGKrW6KP.GYGflHxvLA2KcZEq"
+        }
+      ],
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.0ceGP8CXIxQp1IO4",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742585598930,
+        "modifiedTime": 1742585598930,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_key": "!actors.items!TF398psaYP21VOeK.VJ1AJYo9PGKrW6KP"
+    },
+    {
+      "folder": "HoZkiPn5ugjJobiw",
+      "name": "Provoke",
+      "type": "skill",
+      "img": "icons/skills/social/intimidation-impressing.webp",
+      "system": {
+        "description": "<p>Reduce all enemies' resistances by [[/roll 2d10]], and increase their Phys and Mag Attack by the same amount. Counts as 2 stacks each of Rakunda, Tarukaja, and Makakaja.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": false,
+        "used": false,
+        "cost": 20,
+        "attackData": {
+          "auto": true,
+          "attackType": "mag",
+          "potency": null,
+          "affinity": "support",
+          "target": "all",
+          "ailment": {
+            "rate": 5,
+            "id": ""
+          },
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          },
+          "status": ""
+        },
+        "inheritType": "",
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.OaHgQsY1w3E5QOmt",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742585603685,
+        "modifiedTime": 1742585603685,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_id": "eke0HwPTLbNsQEQ4",
+      "sort": 0,
+      "_key": "!actors.items!TF398psaYP21VOeK.eke0HwPTLbNsQEQ4"
+    },
+    {
+      "folder": "SufW427qSnsyXyMc",
+      "name": "Scout",
+      "type": "skill",
+      "img": "icons/skills/social/wave-halt-stop.webp",
+      "system": {
+        "description": "<p><strong>Approach Skill</strong></p>\n<p><strong>Impress Type:</strong> Adult -&gt; Woman</p>\n<p><strong>Offend Type:</strong> Child -&gt; Woman</p>\n<p>Begin negotiation with 1 enemy demon. When used to gather info, gains 1 demon's info.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": false,
+        "cost": null,
+        "used": false,
+        "attackData": {
+          "attackType": "talk",
+          "ailment": {
+            "rate": null
+          },
+          "auto": false,
+          "potency": null,
+          "affinity": "phys",
+          "target": "one",
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "",
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.JTyoqZCyDvEVEakP",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742585606399,
+        "modifiedTime": 1742585606399,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_id": "ddLkNjxEp5TSeoOt",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_key": "!actors.items!TF398psaYP21VOeK.ddLkNjxEp5TSeoOt"
+    },
+    {
+      "folder": "WBeBHJPwuSKoOLZt",
+      "name": "Zio",
+      "type": "skill",
+      "img": "icons/magic/lightning/bolt-forked-green.webp",
+      "system": {
+        "description": "<p>Deal Elec damage to 1 enemy. 20% chance to inflict Shock.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": false,
+        "cost": 3,
+        "used": false,
+        "attackData": {
+          "ailment": {
+            "rate": 20,
+            "id": "shock"
+          },
+          "hasPowerRoll": true,
+          "auto": false,
+          "attackType": "spell",
+          "potency": 10,
+          "affinity": "elec",
+          "target": "one",
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "",
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.5saCsLWgYiHfTzXI",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742585610894,
+        "modifiedTime": 1742585610894,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_id": "IuYJbZ5wLYOht5Ic",
+      "sort": 0,
+      "_key": "!actors.items!TF398psaYP21VOeK.IuYJbZ5wLYOht5Ic"
+    },
+    {
+      "folder": "yYyspZmJsGG1W5ic",
+      "name": "Luck Smiles",
+      "type": "skill",
+      "img": "icons/magic/control/buff-luck-fortune-green.webp",
+      "system": {
+        "description": "<p>1/scenario, completely nullify the effects of one attack on you. May be learned multiple times.</p>",
+        "qty": 1,
+        "price": null,
+        "equipped": false,
+        "oneShot": true,
+        "cost": null,
+        "used": false,
+        "attackData": {
+          "attackType": "passive",
+          "ailment": {
+            "rate": null
+          },
+          "auto": false,
+          "potency": null,
+          "affinity": "phys",
+          "target": "one",
+          "hasPowerRoll": false,
+          "canDodge": false,
+          "mods": {
+            "highCrit": false,
+            "pinhole": false
+          }
+        },
+        "inheritType": "",
+        "costType": "none"
+      },
+      "effects": [],
+      "flags": {},
+      "_stats": {
+        "compendiumSource": "Compendium.smt-tc.sample-items.Item.Vz7j8gG3pC63hTdf",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": 1742585614857,
+        "modifiedTime": 1742585614857,
+        "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+      },
+      "_id": "e5PGjPXcGiVff23W",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "D8v4rmnQdKr3E1iD": 3
+      },
+      "_key": "!actors.items!TF398psaYP21VOeK.e5PGjPXcGiVff23W"
+    }
+  ],
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582196893,
+    "modifiedTime": 1742585497405,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_key": "!actors!TF398psaYP21VOeK"
+}

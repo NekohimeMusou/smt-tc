@@ -1,0 +1,22 @@
+{
+  "name": "Items",
+  "sorting": "a",
+  "folder": null,
+  "type": "Item",
+  "_id": "Jj7PQvYTKdL4dr8F",
+  "description": "",
+  "sort": 0,
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582287125,
+    "modifiedTime": 1742582287125,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_key": "!folders!Jj7PQvYTKdL4dr8F"
+}

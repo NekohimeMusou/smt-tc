@@ -1,0 +1,53 @@
+{
+  "folder": "EDbVLujHpZneuB6d",
+  "name": "Zan",
+  "type": "skill",
+  "img": "icons/magic/air/wind-tornado-spiral-teal-green.webp",
+  "system": {
+    "description": "<p>Deal Force damage to 1 target; 50% chance to Instant Kill a Stoned target.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "cost": 3,
+    "used": false,
+    "attackData": {
+      "attackType": "spell",
+      "ailment": {
+        "id": "shatter",
+        "rate": 50
+      },
+      "potency": 10,
+      "hasPowerRoll": true,
+      "auto": false,
+      "affinity": "force",
+      "target": "one",
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": "",
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582983171,
+    "modifiedTime": 1742582983171,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_id": "TGabUAHbj0qkMplr",
+  "sort": 0,
+  "_key": "!items!TGabUAHbj0qkMplr"
+}

@@ -1,0 +1,54 @@
+{
+  "folder": "kuZtDYrYqwhbVvYG",
+  "name": "Sukunda",
+  "type": "skill",
+  "_id": "lrOZKqD5UylsD8q2",
+  "img": "icons/magic/control/debuff-energy-snare-green.webp",
+  "system": {
+    "description": "<p>Lower targets' Accuracy and Dodge TN by [[/roll 1d10]]. Stacks up to 4 times.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "cost": 12,
+    "costType": "none",
+    "oneShot": false,
+    "used": false,
+    "attackData": {
+      "auto": true,
+      "attackType": "spell",
+      "potency": null,
+      "affinity": "support",
+      "target": "all",
+      "ailment": {
+        "rate": 5,
+        "id": ""
+      },
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      },
+      "status": "sukunda"
+    },
+    "inheritType": ""
+  },
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582682555,
+    "modifiedTime": 1742582682555,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_key": "!items!lrOZKqD5UylsD8q2"
+}

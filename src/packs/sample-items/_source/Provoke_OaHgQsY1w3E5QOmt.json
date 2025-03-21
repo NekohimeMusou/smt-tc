@@ -1,0 +1,54 @@
+{
+  "folder": "HoZkiPn5ugjJobiw",
+  "name": "Provoke",
+  "type": "skill",
+  "img": "icons/skills/social/intimidation-impressing.webp",
+  "system": {
+    "description": "<p>Reduce all enemies' resistances by [[/roll 2d10]], and increase their Phys and Mag Attack by the same amount. Counts as 2 stacks each of Rakunda, Tarukaja, and Makakaja.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "used": false,
+    "cost": 20,
+    "attackData": {
+      "auto": true,
+      "attackType": "mag",
+      "potency": null,
+      "affinity": "support",
+      "target": "all",
+      "ailment": {
+        "rate": 5,
+        "id": ""
+      },
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      },
+      "status": ""
+    },
+    "inheritType": "",
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582567201,
+    "modifiedTime": 1742582567201,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_id": "OaHgQsY1w3E5QOmt",
+  "sort": 0,
+  "_key": "!items!OaHgQsY1w3E5QOmt"
+}

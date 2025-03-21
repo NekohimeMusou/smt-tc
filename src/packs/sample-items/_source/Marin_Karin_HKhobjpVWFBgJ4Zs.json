@@ -1,0 +1,54 @@
+{
+  "folder": "zgsyK9ltrm1d2R9F",
+  "name": "Marin Karin",
+  "type": "skill",
+  "img": "icons/magic/control/hypnosis-mesmerism-swirl.webp",
+  "system": {
+    "description": "<p>Attack the target with Mind. 40% chance to inflict Charm.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "used": false,
+    "cost": 8,
+    "attackData": {
+      "attackType": "spell",
+      "ailment": {
+        "rate": 40,
+        "id": "charm"
+      },
+      "affinity": "mind",
+      "auto": false,
+      "potency": null,
+      "target": "one",
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      },
+      "status": ""
+    },
+    "inheritType": "",
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742583006365,
+    "modifiedTime": 1742583006365,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "HKhobjpVWFBgJ4Zs",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_key": "!items!HKhobjpVWFBgJ4Zs"
+}

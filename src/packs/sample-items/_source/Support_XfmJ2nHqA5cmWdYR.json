@@ -1,0 +1,22 @@
+{
+  "name": "Support",
+  "sorting": "a",
+  "folder": "1rRsx76qKyCHROhe",
+  "type": "Item",
+  "description": "",
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": null,
+    "modifiedTime": 1742582506850,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "XfmJ2nHqA5cmWdYR",
+  "sort": 200000,
+  "_key": "!folders!XfmJ2nHqA5cmWdYR"
+}

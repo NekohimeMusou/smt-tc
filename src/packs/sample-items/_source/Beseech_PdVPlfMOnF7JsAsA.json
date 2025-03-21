@@ -1,0 +1,53 @@
+{
+  "folder": "SufW427qSnsyXyMc",
+  "name": "Beseech",
+  "type": "skill",
+  "img": "icons/skills/social/diplomacy-offering-ritual.webp",
+  "system": {
+    "description": "<p><strong>Approach Skill</strong></p>\n<p>Begin negotiation with 1 enemy demon. If a demon using this skill is lower level than their subject, there's a 65% chance to be treated as an Impress type and a 25% chance to be treated as an Offend type.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "cost": null,
+    "costType": "none",
+    "oneShot": false,
+    "used": false,
+    "attackData": {
+      "auto": false,
+      "attackType": "talk",
+      "potency": null,
+      "affinity": "phys",
+      "target": "one",
+      "ailment": {
+        "rate": 5,
+        "id": ""
+      },
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": ""
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582504929,
+    "modifiedTime": 1742582504929,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "PdVPlfMOnF7JsAsA",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_key": "!items!PdVPlfMOnF7JsAsA"
+}

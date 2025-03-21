@@ -1,0 +1,53 @@
+{
+  "folder": "ZfZCNPF0QMIJ6DvE",
+  "name": "Hell Thrust",
+  "type": "skill",
+  "img": "icons/skills/melee/unarmed-punch-fist-blue.webp",
+  "system": {
+    "description": "<p>Deal Phys damage to 1 enemy.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "used": false,
+    "cost": 20,
+    "attackData": {
+      "auto": false,
+      "attackType": "phys",
+      "potency": 25,
+      "affinity": "phys",
+      "target": "one",
+      "ailment": {
+        "rate": 5,
+        "id": ""
+      },
+      "hasPowerRoll": true,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": "Lunge",
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582472886,
+    "modifiedTime": 1742582472886,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "Fcp95EwM0abCerfF",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_key": "!items!Fcp95EwM0abCerfF"
+}

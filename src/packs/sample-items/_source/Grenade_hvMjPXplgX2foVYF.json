@@ -1,0 +1,22 @@
+{
+  "name": "Grenade",
+  "sorting": "a",
+  "folder": "HMfD3qaa7NesDiSV",
+  "type": "Item",
+  "description": "",
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "hvMjPXplgX2foVYF",
+  "sort": 0,
+  "_key": "!folders!hvMjPXplgX2foVYF"
+}

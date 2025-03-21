@@ -1,0 +1,52 @@
+{
+  "folder": "9oP2Vu2VUsUrpKY4",
+  "name": "Paraladi",
+  "type": "skill",
+  "img": "icons/skills/movement/figure-running-gray.webp",
+  "system": {
+    "description": "<p>Remove the Stun ailment from one target.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "used": false,
+    "cost": 5,
+    "attackData": {
+      "ailment": {
+        "rate": null
+      },
+      "auto": true,
+      "attackType": "spell",
+      "potency": null,
+      "affinity": "healing",
+      "target": "one",
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": "",
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582619271,
+    "modifiedTime": 1742582619295,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_id": "5Azgwlr9dZtTE74B",
+  "sort": 200000,
+  "_key": "!items!5Azgwlr9dZtTE74B"
+}

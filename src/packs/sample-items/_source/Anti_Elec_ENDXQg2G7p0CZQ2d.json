@@ -1,0 +1,104 @@
+{
+  "folder": "DKJLoKdvHRmOAgsA",
+  "name": "Anti-Elec",
+  "type": "skill",
+  "img": "icons/magic/defensive/shield-barrier-glowing-triangle-green.webp",
+  "system": {
+    "description": "<p>Gain Strong against Elec attacks.</p>\n<p><strong>NOTE:</strong> Not implemented yet; you'll have to take care of that manually for now.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "cost": null,
+    "used": false,
+    "attackData": {
+      "ailment": {
+        "rate": null
+      },
+      "auto": false,
+      "attackType": "passive",
+      "potency": null,
+      "affinity": "phys",
+      "target": "one",
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": "",
+    "costType": "none"
+  },
+  "effects": [
+    {
+      "name": "Anti-Elec",
+      "origin": "Compendium.world.smt-tc-sample-items.Item.pp6nKJqN6n2kXWn9",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "img": "icons/magic/defensive/shield-barrier-glowing-triangle-green.webp",
+      "_id": "jD6WKdu6gWFq9rAY",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.affinities.elec",
+          "mode": 5,
+          "value": "\"strong\"",
+          "priority": null
+        }
+      ],
+      "description": "",
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "statuscounter": {
+          "value": 1,
+          "config": {
+            "type": "default"
+          },
+          "visible": false
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "smt-tc",
+        "systemVersion": "0.5.8",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!ENDXQg2G7p0CZQ2d.jD6WKdu6gWFq9rAY"
+    }
+  ],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582435565,
+    "modifiedTime": 1742582437432,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_id": "ENDXQg2G7p0CZQ2d",
+  "sort": 100000,
+  "_key": "!items!ENDXQg2G7p0CZQ2d"
+}

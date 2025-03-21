@@ -1,0 +1,53 @@
+{
+  "folder": "WBeBHJPwuSKoOLZt",
+  "name": "Zionga",
+  "type": "skill",
+  "img": "icons/magic/lightning/bolt-forked-large-green.webp",
+  "system": {
+    "description": "<p>Deal Elec damage to 1 target; 20% chance to inflict Shock.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "oneShot": false,
+    "cost": 6,
+    "used": false,
+    "attackData": {
+      "attackType": "spell",
+      "ailment": {
+        "rate": 20,
+        "id": "shock"
+      },
+      "affinity": "elec",
+      "hasPowerRoll": true,
+      "potency": 30,
+      "auto": false,
+      "target": "one",
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": "",
+    "costType": "none"
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582891439,
+    "modifiedTime": 1742582891439,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_id": "zKkKVNeWjuCXPHXQ",
+  "sort": 0,
+  "_key": "!items!zKkKVNeWjuCXPHXQ"
+}

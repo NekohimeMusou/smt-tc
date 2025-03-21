@@ -1,0 +1,22 @@
+{
+  "name": "Mind Group",
+  "sorting": "a",
+  "folder": "cDSO9ZDbL3OnnUqG",
+  "type": "Item",
+  "description": "",
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": null,
+    "modifiedTime": 1742583006387,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "zgsyK9ltrm1d2R9F",
+  "sort": 400000,
+  "_key": "!folders!zgsyK9ltrm1d2R9F"
+}

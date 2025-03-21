@@ -1,0 +1,22 @@
+{
+  "name": "Attack Enhancers",
+  "sorting": "a",
+  "folder": "asfVjXMNdjy8mWHx",
+  "type": "Item",
+  "description": "",
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": null,
+    "modifiedTime": 1742582351397,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "MB5FkxYKS2SgZMWx",
+  "sort": 200000,
+  "_key": "!folders!MB5FkxYKS2SgZMWx"
+}

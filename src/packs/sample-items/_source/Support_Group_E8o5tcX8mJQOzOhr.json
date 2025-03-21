@@ -1,0 +1,22 @@
+{
+  "name": "Support Group",
+  "sorting": "a",
+  "folder": "cDSO9ZDbL3OnnUqG",
+  "type": "Item",
+  "description": "",
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": null,
+    "modifiedTime": 1742582993066,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "E8o5tcX8mJQOzOhr",
+  "sort": 300000,
+  "_key": "!folders!E8o5tcX8mJQOzOhr"
+}

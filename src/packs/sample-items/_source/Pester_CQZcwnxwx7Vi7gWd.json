@@ -1,0 +1,53 @@
+{
+  "folder": "SufW427qSnsyXyMc",
+  "name": "Pester",
+  "type": "skill",
+  "img": "icons/skills/social/diplomacy-unity-alliance.webp",
+  "system": {
+    "description": "<p><strong>Approach Skill</strong></p>\n<p><strong>Impress Type:</strong> Female+Youth -&gt; Male; Child -&gt; Adult/Youth</p>\n<p><strong>Offend Type:</strong> Any -&gt; Child</p>\n<p>Demand macca or items from 1 enemy demon.</p>",
+    "qty": 1,
+    "price": null,
+    "equipped": false,
+    "cost": null,
+    "costType": "none",
+    "oneShot": false,
+    "used": false,
+    "attackData": {
+      "auto": false,
+      "attackType": "talk",
+      "potency": null,
+      "affinity": "phys",
+      "target": "one",
+      "ailment": {
+        "rate": 5,
+        "id": ""
+      },
+      "hasPowerRoll": false,
+      "canDodge": false,
+      "mods": {
+        "highCrit": false,
+        "pinhole": false
+      }
+    },
+    "inheritType": ""
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "smt-tc",
+    "systemVersion": "0.5.8",
+    "createdTime": 1742582504929,
+    "modifiedTime": 1742582504929,
+    "lastModifiedBy": "D8v4rmnQdKr3E1iD"
+  },
+  "_id": "CQZcwnxwx7Vi7gWd",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D8v4rmnQdKr3E1iD": 3
+  },
+  "_key": "!items!CQZcwnxwx7Vi7gWd"
+}
