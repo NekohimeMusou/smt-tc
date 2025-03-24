@@ -61,7 +61,8 @@
       "qty": "Qty",
       "price": "Price",
       "gems": "Gems",
-      "settings": "Settings"
+      "settings": "Settings",
+      "isNPC": "NPC?"
     },
     "actorSettings": {
       "incenseUsed": "Incense Used"

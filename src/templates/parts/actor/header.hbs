@@ -24,15 +24,24 @@
       </div>
       {{/if}}
 
+      {{#unless system.isNPC}}
       <div class="flexrow">
         <label for="level" class="resource-label">{{localize "SMT.actorSheet.level"}}</label>
         <input type="number" id="level" data-dtype="Number" placeholder="0" value="{{system.lv}}" disabled />
       </div>
+      {{else}}
+      <div class="flexrow">
+        <label for="levelOverride" class="resource-label">{{localize "SMT.actorSheet.level"}}</label>
+        <input type="number" id="levelOverride" name="system.levelOverride" data-dtype="Number" placeholder="0" value="{{system.levelOverride}}" />
+      </div>
+      {{/unless}}
 
+      {{#unless system.isNPC}}
       <div class="flexrow">
         <label for="xp-field" class="resource-label">{{localize "SMT.actorSheet.xp"}}</label>
         <input type="number" id="xp-field" name="system.xp" data-dtype="Number" placeholder="0" value="{{system.xp}}" />
       </div>
+      {{/unless}}
 
       <div class="flexrow">
         <label for="macca-field" class="resource-label">{{localize "SMT.actorSheet.macca"}}</label>

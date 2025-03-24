@@ -12,10 +12,18 @@ export default abstract class SmtBaseActorData extends foundry.abstract
 
   get lv(): number {
     const data = this._systemData;
+    
+    if (data.isNPC) {
+      return data.levelOverride;
+    }
+
+    return this.#pcLevel;
+  }
+
+  get #pcLevel(): number {
+    const data = this._systemData;
     const levelTable = CONFIG.SMT.levelTables[this.type];
 
-    // This seems to fix the off-by-one XP bug
-    // I'm not touching it until someone files an issue
     return Math.max(
       levelTable.findLastIndex((tableXp) => tableXp < data.xp + 1),
       1,
@@ -233,8 +241,9 @@ export default abstract class SmtBaseActorData extends foundry.abstract
       xp: new fields.NumberField({ integer: true, min: 0 }),
       macca: new fields.NumberField({ integer: true, min: 0 }),
       affinities: new fields.EmbeddedDataField(DefenseAffinityData),
-      // Should this be considered an NPC for e.g. Auto Dodge
-      npc: new fields.BooleanField(),
+      // Should this be considered an NPC (e.g. level override)
+      isNPC: new fields.BooleanField(),
+      levelOverride: new fields.NumberField({ integer: true, min: 1 }),
     } as const;
   }
 
