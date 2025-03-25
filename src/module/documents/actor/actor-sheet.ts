@@ -3,7 +3,7 @@ import SmtDice from "../../helpers/dice.js";
 import { prepareActiveEffectCategories } from "../active-effect/helpers.js";
 import { onManageActiveEffect } from "../active-effect/helpers.js";
 import SmtActor from "./actor.js";
-import { Armor, AttackItem, InventoryItem, SmtItem } from "../item/item.js";
+import { Armor, AttackItem, InventoryItem } from "../item/item.js";
 import SmtToken from "../token.js";
 
 export default class SmtActorSheet extends ActorSheet<SmtActor> {
@@ -87,41 +87,41 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     return context;
   }
 
-  override async _onDropItem(_event: Event, itemD: unknown) {
-    // @ts-expect-error Copied from Persona system
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-    const item: SmtItem = await Item.implementation.fromDropData(itemD);
-    console.debug(`${item.type} dropped on sheet of ${this.actor.name}`);
+  // override async _onDropItem(_event: Event, itemD: unknown) {
+  //   // @ts-expect-error Copied from Persona system
+  //   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+  //   const item: SmtItem = await Item.implementation.fromDropData(itemD);
+  //   console.debug(`${item.type} dropped on sheet of ${this.actor.name}`);
 
-    switch (item.type) {
-      case "skill":
-        return super._onDropItem(_event, itemD);
-      case "armor":
-      case "inventoryItem":
-      case "magatama":
-      case "weapon":
-        if (!game.user.isGM) {
-          const msg = game.i18n.localize("SMT.error.useItemPiles");
-          ui.notifications.warn(msg);
-          return undefined;
-        }
+  //   switch (item.type) {
+  //     case "skill":
+  //       return super._onDropItem(_event, itemD);
+  //     case "armor":
+  //     case "inventoryItem":
+  //     case "magatama":
+  //     case "weapon":
+  //       if (!game.user.isGM) {
+  //         const msg = game.i18n.localize("SMT.error.useItemPiles");
+  //         ui.notifications.warn(msg);
+  //         return undefined;
+  //       }
 
-        const existing = this.actor.items.find(
-          (x) =>
-            x.type === item.type && "qty" in x.system && x.name == item.name,
-        );
+  //       const existing = this.actor.items.find(
+  //         (x) =>
+  //           x.type === item.type && "qty" in x.system && x.name == item.name,
+  //       );
 
-        if (existing != undefined && existing.type === "inventoryItem") {
-          console.log("Adding to existing amount");
-          await existing.addItemsToStack(1);
-          return existing;
-        }
-        return super._onDropItem(_event, itemD);
-      default:
-        item.type satisfies never;
-        throw new Error("Unknown item type");
-    }
-  }
+  //       if (existing != undefined && existing.type === "inventoryItem") {
+  //         console.log("Adding to existing amount");
+  //         await existing.addItemsToStack(1);
+  //         return existing;
+  //       }
+  //       return super._onDropItem(_event, itemD);
+  //     default:
+  //       item.type satisfies never;
+  //       throw new Error("Unknown item type");
+  //   }
+  // }
 
   override activateListeners(html: JQuery<HTMLElement>) {
     super.activateListeners(html);
