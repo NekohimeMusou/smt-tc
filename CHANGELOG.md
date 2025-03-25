@@ -2,6 +2,16 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.6.1] - 2025-03-24
+
+### Changed
+
+- NPCs can have their level set directly
+
+### Added
+
+- Add NPC checkbox to bio tab
+
 ## [0.6.0] - 2025-03-21
 
 *The new compendium seems like a good excuse for a minor version bump.*

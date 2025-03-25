@@ -4,7 +4,7 @@ Unofficial Foundry VTT system for Shin Megami Tensei: Tokyo Conception. **This i
 
 **This system does not include a rules compendium. A copy of the rulebook is required to play.** You can get it here: <https://lionwingpublishing.com/collections/shin-megami-tensei-iii-nocturne-the-roleplaying-game-tokyo-conception-core-rulebook>
 
-This system is designed for Tokyo Conception; any compatibility with other flavors of the SMT RPG is coincidental. If you're looking to play a different version of the game, or you just want more flexibility and fewer assumptions than this system provides, check out Alondaar's more broadly-compatible [SMT 200X](https://github.com/Alondaar/smt-200x) system!
+This system is designed for Tokyo Conception; any compatibility with other flavors of the SMT RPG is coincidental. If you're looking to play a different version of the game, or you just want more flexibility and fewer assumptions than this system provides, check out Alondaar's [SMT 200X](https://github.com/Alondaar/smt-200x) system!
 
 ## Installation
 
@@ -37,7 +37,6 @@ Skills will make their own dice rolls when you click on them, and they should be
 - Generic, non-SMT-ish aesthetics
 - It's unclear which tab is active at a given time
 - Overriding an elemental affinity with an AE doesn't work correctly
-- Character level can't be set directly, only by granting XP
 
 ## Contributions
 
