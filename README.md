@@ -38,6 +38,13 @@ Skills will make their own dice rolls when you click on them, and they should be
 - It's unclear which tab is active at a given time
 - Overriding an elemental affinity with an AE doesn't work correctly
 
+## Roadmap/Wishlist
+
+- Handle multi-slot armor pieces
+- Rework Active Effects
+- Kagutsuchi phase tracker app
+- Attach multiple ailments to skills
+
 ## Contributions
 
 If you're interested in filing a bug report, suggesting a new feature, or contributing code or assets, take a look at [CONTRIBUTING.md](https://github.com/NekohimeMusou/smt-tc/blob/main/CONTRIBUTING.md)!
