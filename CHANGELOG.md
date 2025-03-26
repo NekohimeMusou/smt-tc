@@ -2,6 +2,19 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.6.3] - 2025-03-26
+
+### Fixed
+
+- Fix: Creating a new inventory item creates a skill instead
+- Fix: "Target" header appears in dice roll output when it shouldn't
+
+## [0.6.2] - 2025-03-25
+
+### Fixed
+
+- Allow non-GM players to drop items on the actor sheet
+
 ## [0.6.1] - 2025-03-24
 
 ### Changed
@@ -358,6 +371,9 @@ _Added separate Human and Demon actor types with some custom behavior, and added
 
 _Initial preview release.*
 
+[0.6.3]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.3
+[0.6.2]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.2
+[0.6.1]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.1
 [0.6.0]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.0
 [0.5.8]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.5.8
 [0.5.7]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.5.7

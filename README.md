@@ -2,9 +2,9 @@
 
 Unofficial Foundry VTT system for Shin Megami Tensei: Tokyo Conception. **This is a fan project not affiliated with or endorsed by LionWing Publishing or ATLUS. Please do not contact them for support.**
 
-**This system does not include a rules compendium. A copy of the rulebook is required to play.** You can get it here: <https://lionwingpublishing.com/collections/shin-megami-tensei-iii-nocturne-the-roleplaying-game-tokyo-conception-core-rulebook>
+**This system does not include a rules compendium. A copy of the rulebook is required to play.** You can get it here: <https://lionwingpublishing.com/collections/shin-megami-tensei-iii-nocturne-the-roleplaying-game-tokyo-conception-core-rulebook>. You'll have to create characters and items yourself; there's a sample compendium with plenty of examples.
 
-This system is designed for Tokyo Conception; any compatibility with other flavors of the SMT RPG is coincidental. If you're looking to play a different version of the game, or you just want more flexibility and fewer assumptions than this system provides, check out Alondaar's [SMT 200X](https://github.com/Alondaar/smt-200x) system!
+This system is designed for Tokyo Conception; any compatibility with other flavors of the SMT RPG is coincidental. If you're looking to play a different version of the game, or you want more rules flexibility, check out Alondaar's [SMT 200X](https://github.com/Alondaar/smt-200x) system!
 
 ## Installation
 
