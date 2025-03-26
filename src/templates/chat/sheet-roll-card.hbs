@@ -6,13 +6,17 @@
 <h3>{{localize "SMT.itemRoll.affinity" affinity=(localize (concat "SMT.affinities." affinity))}}</h3>
 {{/if}}
 
+{{#if (or (ne costType "none") targetType)}}
 <h3>
   {{#if (ne costType "none")}}
     {{localize "SMT.itemRoll.cost" costLabel=(localize (concat "SMT.costTypes." costType) cost=(ifThen costsAll (localize "SMT.costTypes.all") cost))}}; 
   {{/if}}
 
-  {{localize "SMT.itemRoll.targetType" targetType=(localize (concat "SMT.targets." targetType))}}
+  {{#if targetType}}
+    {{localize "SMT.itemRoll.targetType" targetType=(localize (concat "SMT.targets." targetType))}}
+  {{/if}}
 </h3>
+{{/if}}
 
 {{!-- Item Description --}}
 {{{description}}}
