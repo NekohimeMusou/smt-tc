@@ -1,7 +1,3 @@
-import {
-  onManageActiveEffect,
-  prepareActiveEffectCategories,
-} from "../active-effect/helpers.js";
 import { SmtItem } from "./item.js";
 
 export default class SmtItemSheet extends ItemSheet<SmtItem> {
@@ -30,11 +26,8 @@ export default class SmtItemSheet extends ItemSheet<SmtItem> {
     const context = await super.getData();
     const system = this.item.system;
 
-    const effects = prepareActiveEffectCategories(this.item.effects);
-
     foundry.utils.mergeObject(context, {
       system,
-      effects,
       SMT: CONFIG.SMT,
     });
 
@@ -46,10 +39,5 @@ export default class SmtItemSheet extends ItemSheet<SmtItem> {
 
     // Everything below here is only needed if the sheet is editable
     if (!this.isEditable) return;
-
-    // Active Effect management
-    html
-      .find(".effect-control")
-      .on("click", (ev) => onManageActiveEffect(ev, this.item));
   }
 }

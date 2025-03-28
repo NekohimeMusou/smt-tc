@@ -4,7 +4,6 @@
   <nav class="sheet-tabs tabs" data-group="primary">
     <a class="item resource-label" data-tab="details">{{localize "SMT.tabs.details"}}</a>
     <a class="item resource-label" data-tab="config">{{localize "SMT.tabs.config"}}</a>
-    <a class="item resource-label" data-tab="effects">{{localize "SMT.tabs.effects"}}</a>
   </nav>
 
   <section class="sheet-body">
@@ -14,11 +13,6 @@
 
     <div class="tab config" data-group="primary" data-tab="config">
       {{> "systems/smt-tc/templates/parts/item/weapon/config.hbs"}}
-    </div>
-
-    {{!-- Effects Tab --}}
-    <div class="tab effects" data-group="primary" data-tab="effects">
-      {{> "systems/smt-tc/templates/parts/effects.hbs"}}
     </div>
   </section>
 </form>
