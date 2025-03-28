@@ -101,8 +101,7 @@
     },
     "mods": {
       "might": false,
-      "luckyFind": false,
-      "pierce": false
+      "luckyFind": false
     },
     "powerBoost": {
       "phys": false,

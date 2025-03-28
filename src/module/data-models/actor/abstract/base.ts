@@ -183,7 +183,6 @@ export default abstract class SmtBaseActorData extends foundry.abstract
     const mods = new fields.SchemaField({
       might: new fields.BooleanField(),
       luckyFind: new fields.BooleanField(),
-      pierce: new fields.BooleanField(),
     });
 
     const powerBoost = new fields.SchemaField({
