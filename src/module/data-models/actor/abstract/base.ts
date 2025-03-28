@@ -96,14 +96,17 @@ export default abstract class SmtBaseActorData extends foundry.abstract
       hp: new fields.SchemaField({
         max: new fields.NumberField({ integer: true }),
         value: new fields.NumberField({ integer: true }),
+        override: new fields.NumberField({ integer: true }),
       }),
       mp: new fields.SchemaField({
         max: new fields.NumberField({ integer: true }),
         value: new fields.NumberField({ integer: true }),
+        override: new fields.NumberField({ integer: true }),
       }),
       fp: new fields.SchemaField({
         max: new fields.NumberField({ integer: true }),
         value: new fields.NumberField({ integer: true }),
+        override: new fields.NumberField({ integer: true }),
       }),
     };
 
@@ -344,6 +347,11 @@ export default abstract class SmtBaseActorData extends foundry.abstract
     data.power.phys = Math.max(stats.st.value + lv, 0);
     data.power.mag = Math.max(stats.ma.value + lv, 0);
     data.power.gun = Math.max(stats.ag.value + gunLvMod, 0);
+
+    // Calculate HP/MP/FP max
+    data.hp.max = data.isNPC ? data.hp.override : this.calculateMax("hp");
+    data.mp.max = data.isNPC ? data.mp.override : this.calculateMax("mp");
+    data.fp.max = data.isNPC ? data.fp.override : this.calculateMax("fp");
   }
 
   override prepareDerivedData() {
@@ -382,11 +390,23 @@ export default abstract class SmtBaseActorData extends foundry.abstract
 
     data.resist.phys = Math.max(data.resist.phys + resistBuff, 0);
     data.resist.mag = Math.max(data.resist.mag + resistBuff, 0);
+  }
 
-    // Calculate HP/MP/FP max
-    data.hp.max = Math.max((stats.vi.value + lv) * data.hpMultiplier, 1);
-    data.mp.max = Math.max((stats.ma.value + lv) * data.mpMultiplier, 1);
-    data.fp.max = Math.floor(stats.lu.value / 5) + 5;
+  calculateMax(resourceType: ResourceType) {
+    const data = this._systemData;
+    const stats = data.stats;
+    switch (resourceType) {
+      case "hp":
+        return Math.max((stats.vi.value + this.lv) * data.hpMultiplier, 1);
+      case "mp":
+        return Math.max((stats.ma.value + this.lv) * data.mpMultiplier, 1);
+      case "fp":
+        return Math.floor(stats.lu.value / 5) + 5;
+      default:
+        resourceType satisfies never;
+    }
+
+    throw new Error("Invalid resource type");
   }
 
   get st(): number {

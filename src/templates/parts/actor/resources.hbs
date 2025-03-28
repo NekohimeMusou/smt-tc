@@ -3,20 +3,32 @@
     <div class="resource-label">{{localize "SMT.resources.hp"}}</div>
     <input type="text" name="system.hp.value" value="{{system.hp.value}}" placeholder="0" data-dtype="Number" />
     <span>/</span>
+    {{#unless system.isNPC}}
     <input type="text" name="system.hp.max" value="{{system.hp.max}}" data-dtype="Number" disabled />
+    {{else}}
+    <input type="text" name="system.hp.override" value="{{system.hp.override}}" placeholder="{{maxResources.hp}}" data-dtype="Number" />
+    {{/unless}}
   </div>
 
   <div class="resource flexrow flex-group-center">
     <div class="resource-label">{{localize "SMT.resources.mp"}}</div>
     <input type="text" name="system.mp.value" value="{{system.mp.value}}" placeholder="0" data-dtype="Number" />
     <span>/</span>
+    {{#unless system.isNPC}}
     <input type="text" name="system.mp.max" value="{{system.mp.max}}" data-dtype="Number" disabled />
+    {{else}}
+    <input type="text" name="system.mp.override" value="{{system.mp.override}}" placeholder="{{maxResources.mp}}" data-dtype="Number" />
+    {{/unless}}
   </div>
 
   <div class="resource flexrow flex-group-center">
     <div class="resource-label">{{localize "SMT.resources.fp"}}</div>
     <input type="text" name="system.fp.value" value="{{system.fp.value}}" placeholder="0" data-dtype="Number" />
     <span>/</span>
+    {{#unless system.isNPC}}
     <input type="text" name="system.fp.max" value="{{system.fp.max}}" data-dtype="Number" disabled />
+    {{else}}
+    <input type="text" name="system.fp.override" value="{{system.fp.override}}"  placeholder="{{maxResources.fp}}" data-dtype="Number" />
+    {{/unless}}
   </div>
 </section>
