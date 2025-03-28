@@ -62,6 +62,30 @@ export default abstract class SmtBaseItemData extends foundry.abstract
         initial: "none",
       }),
       costsAll: new fields.BooleanField(),
+      // Temporary(?) patch for formerly active effect-based stuff until I get them to work
+      passiveMods: new fields.SchemaField({
+        hpMultiplier: new fields.NumberField({ integer: true, initial: 0 }),
+        mpMultiplier: new fields.NumberField({ integer: true, initial: 0 }),
+        mods: new fields.SchemaField({
+          might: new fields.BooleanField(),
+          luckyFind: new fields.BooleanField(),
+        }),
+        powerBoost: new fields.SchemaField({
+          phys: new fields.BooleanField(),
+          mag: new fields.BooleanField(),
+          item: new fields.BooleanField(),
+        }),
+        elementBoost: new fields.SchemaField({
+          fire: new fields.BooleanField(),
+          cold: new fields.BooleanField(),
+          elec: new fields.BooleanField(),
+          force: new fields.BooleanField(),
+        }),
+        tn: new fields.SchemaField({
+          dodge: new fields.NumberField({ integer: true, initial: 0 }),
+          gun: new fields.NumberField({ integer: true, initial: 0 }),
+        }),
+      }),
     } as const;
   }
 

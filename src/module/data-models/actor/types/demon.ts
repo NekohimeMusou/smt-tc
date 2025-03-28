@@ -3,6 +3,15 @@ import SmtBaseActorData from "../abstract/base.js";
 export default class SmtDemonData extends SmtBaseActorData {
   override readonly type = "demon";
 
+  override prepareBaseData() {
+    super.prepareBaseData();
+
+    const data = this._systemData;
+
+    data.hpMultiplier = 6;
+    data.mpMultiplier = 3;
+  }
+
   static override defineSchema() {
     const fields = foundry.data.fields;
 

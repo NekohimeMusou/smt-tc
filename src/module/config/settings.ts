@@ -31,9 +31,9 @@ export default function registerSystemSettings() {
   });
 
   // House/variant rules
-  game.settings.register("smt-tc", "addLevelToGunDamage", {
-    name: "SMT.settings.addLevelToGunDamage.name",
-    hint: "SMT.settings.addLevelToGunDamage.hint",
+  game.settings.register("smt-tc", "addLevelToGunPower", {
+    name: "SMT.settings.addLevelToGunPower.name",
+    hint: "SMT.settings.addLevelToGunPower.hint",
     scope: "world",
     config: true,
     requiresReload: true,

@@ -12,7 +12,7 @@ export default abstract class SmtBaseActorData extends foundry.abstract
 
   get lv(): number {
     const data = this._systemData;
-    
+
     if (data.isNPC) {
       return data.levelOverride;
     }
@@ -254,13 +254,10 @@ export default abstract class SmtBaseActorData extends foundry.abstract
     const data = this._systemData;
     const actor = this.actor;
 
-    // @ts-expect-error This isn't readonly
-    data.hpMultiplier = actor.type === "human" ? 4 : 6;
-    // @ts-expect-error This isn't readonly
-    data.mpMultiplier = actor.type === "human" ? 2 : 3;
-
     // Calculate stat values
     const stats = data.stats;
+    const tn = data.tn;
+    const lv = data.lv;
 
     for (const [key, stat] of Object.entries(stats)) {
       // Fiends always have 2 for their base stats
@@ -270,18 +267,18 @@ export default abstract class SmtBaseActorData extends foundry.abstract
       const statName = key as keyof typeof data.stats;
       const mgt = data.equippedMagatama?.system.stats[statName] ?? 0;
       stat.value = Math.clamp(stat.base + stat.lv + mgt, 1, 40);
+
+      const statTN = Math.max(stat.value * 5 + lv, 1);
+      data.tn[statName] = Math.max(statTN, 1);
     }
 
-    const lv = data.lv;
-
     // Set derived TNs
-    // Maybe find a better way to support AEs modifying these
-    data.tn.phys = 0;
-    data.tn.mag = 0;
-    data.tn.save = 0;
-    data.tn.dodge = 0;
-    data.tn.negotiation = 0;
-    data.tn.gun = 0;
+    tn.phys = tn.st;
+    tn.mag = tn.ma;
+    tn.save = tn.vi;
+    tn.dodge = stats.ag.value + 10;
+    tn.negotiation = stats.lu.value * 2 + 20;
+    tn.gun = 0;
 
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
     const physResistFormulaChoice = game.settings.get(
@@ -289,63 +286,26 @@ export default abstract class SmtBaseActorData extends foundry.abstract
       "alternatePhysResistCalc",
     ) as ResistCalcOption;
 
-    let basePhysResist = 0;
-
-    switch (physResistFormulaChoice) {
-      case "raw":
-        basePhysResist = Math.floor((stats.vi.value + lv) / 2);
-        break;
-      case "opt1":
-        basePhysResist = Math.floor((stats.st.value + lv) / 2);
-        break;
-      case "opt2":
-        basePhysResist = Math.floor((stats.st.value + stats.vi.value + lv) / 2);
-        break;
-      case "opt3":
-        basePhysResist = Math.floor(stats.st.value + stats.vi.value + lv);
-        break;
-      default:
-        physResistFormulaChoice satisfies never;
-    }
-
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
     const magResistFormulaChoice = game.settings.get(
       "smt-tc",
       "alternateMagResistCalc",
     ) as ResistCalcOption;
 
-    let baseMagResist = 0;
+    data.resist.phys = this.#getBaseResist("phys", physResistFormulaChoice);
+    data.resist.mag = this.#getBaseResist("mag", magResistFormulaChoice);
 
-    switch (magResistFormulaChoice) {
-      case "raw":
-        baseMagResist = Math.floor((stats.ma.value + lv) / 2);
-        break;
-      case "opt1":
-        baseMagResist = Math.floor((stats.vi.value + lv) / 2);
-        break;
-      case "opt2":
-        baseMagResist = Math.floor((stats.ma.value + stats.vi.value + lv) / 2);
-        break;
-      case "opt3":
-        baseMagResist = Math.floor(stats.ma.value + stats.vi.value + lv);
-        break;
-      default:
-        magResistFormulaChoice satisfies never;
-    }
-
-    data.resist.phys = Math.max(basePhysResist, 0);
-    data.resist.mag = Math.max(baseMagResist, 0);
-
-    const addLevelToGunDamage = game.settings.get(
+    const addLevelToGunPower = game.settings.get(
       "smt-tc",
-      "addLevelToGunDamage",
+      "addLevelToGunPower",
     );
-
-    const gunLvMod = addLevelToGunDamage ? lv : 0;
 
     data.power.phys = Math.max(stats.st.value + lv, 0);
     data.power.mag = Math.max(stats.ma.value + lv, 0);
-    data.power.gun = Math.max(stats.ag.value + gunLvMod, 0);
+    data.power.gun = Math.max(
+      stats.ag.value + (addLevelToGunPower ? lv : 0),
+      0,
+    );
 
     // Calculate HP/MP/FP max
     data.hp.max = data.isNPC ? data.hp.override : this.calculateMax("hp");
@@ -354,31 +314,26 @@ export default abstract class SmtBaseActorData extends foundry.abstract
   }
 
   override prepareDerivedData() {
+    super.prepareDerivedData();
     const data = this._systemData;
 
-    // Set base TNs
-    const stats = data.stats;
-    const tnBoostMod = data.tnBoosts * 20;
-    const lv = data.lv;
+    // Do items here, before everything else
 
-    Object.entries(stats).forEach(([key, stat]) => {
-      const statName = key as keyof typeof stats;
-      const tn = Math.max(stat.value * 5 + lv + tnBoostMod, 1);
-      data.tn[statName] = Math.max(Math.floor(tn / data.multi), 1);
-    });
+    const tn = data.tn;
+    const tnBoostMod = data.tnBoosts * 20;
 
     const accuracyBuff = data.buffs.sukukaja - data.buffs.sukunda;
 
-    data.tn.phys += data.tn.st + accuracyBuff;
-    data.tn.mag += data.tn.ma + accuracyBuff;
-    data.tn.save += data.tn.vi;
-    data.tn.dodge += Math.floor(
-      (stats.ag.value + 10 + tnBoostMod + accuracyBuff) / data.multi,
-    );
-    data.tn.negotiation += stats.lu.value * 2 + 20;
-    data.tn.gun += data.tn.ag;
+    tn.st = Math.max(tn.st + accuracyBuff + tnBoostMod, 1);
+    tn.ma = Math.max(tn.ma + accuracyBuff + tnBoostMod, 1);
+    tn.ag = Math.max(tn.ag + accuracyBuff + tnBoostMod, 1);
 
-    // Apply buff modifiers
+    tn.phys = Math.max(tn.phys + accuracyBuff + tnBoostMod, 1);
+    tn.mag = Math.max(tn.mag + accuracyBuff + tnBoostMod, 1);
+    tn.dodge = Math.max(tn.dodge + accuracyBuff + tnBoostMod, 1);
+    tn.gun = Math.max(tn.gun + accuracyBuff + tnBoostMod, 1);
+
+    // Apply buff modifiers to power and resist
     const physAtkBuff = data.buffs.tarukaja - data.buffs.tarunda;
     const magAtkBuff = data.buffs.makakaja - data.buffs.tarunda;
     const resistBuff = data.buffs.rakukaja - data.buffs.rakunda;
@@ -408,6 +363,74 @@ export default abstract class SmtBaseActorData extends foundry.abstract
     throw new Error("Invalid resource type");
   }
 
+  #preparePassiveEffects() {
+    const data = this._systemData;
+    const items = this.actor.items;
+
+    const modNames = ["might", "luckyFind"] as const;
+
+    // @ts-expect-error This isn't readonly(?)
+    data.mods = Object.fromEntries(
+      modNames.map((name) => [
+        name,
+        Boolean(items.find((item) => item.system.passiveMods.mods[name])),
+      ]),
+    );
+
+    // @ts-expect-error This isn't readonly
+    data.hpMultiplier += [...items.values()].reduce(
+      (prev, curr) => prev + curr.system.passiveMods.hpMultiplier,
+      0,
+    );
+
+    // @ts-expect-error This isn't readonly
+    data.mpMultiplier = [...items.values()].reduce(
+      (prev, curr) => prev + curr.system.passiveMods.mpMultiplier,
+      0,
+    );
+
+    const elementBoostTypes = ["fire", "cold", "elec", "force"] as const;
+
+    // @ts-expect-error This isn't readonly(?)
+    data.elementBoost = Object.fromEntries(
+      elementBoostTypes.map((element) => [
+        element,
+        [...items.values()].reduce(
+          (hasBoost, item) =>
+            hasBoost || item.system.passiveMods.elementBoost[element],
+          false,
+        ),
+      ]),
+    );
+
+    const powerBoostTypes = ["phys", "mag", "item"] as const;
+
+    // @ts-expect-error This isn't readonly(?)
+    data.powerBoost = Object.fromEntries(
+      powerBoostTypes.map((boost) => [
+        boost,
+        [...items.values()].reduce(
+          (hasBoost, item) =>
+            hasBoost || item.system.passiveMods.powerBoost[boost],
+          false,
+        ),
+      ]),
+    );
+
+    const tnModTypes = ["dodge", "gun"] as const;
+
+    // @ts-expect-error This isn't readonly(?)
+    data.tn = Object.fromEntries(
+      tnModTypes.map((modType) => [
+        modType,
+        [...items.values()].reduce(
+          (mod, item) => mod + item.system.passiveMods.tn[modType],
+          0,
+        ),
+      ]),
+    );
+  }
+
   get st(): number {
     const data = this._systemData;
     return data.stats.st.value;
@@ -433,7 +456,39 @@ export default abstract class SmtBaseActorData extends foundry.abstract
     return data.stats.lu.value;
   }
 
-  // Goofy Typescript hack
+  #getBaseResist(damageType: DamageType, option: ResistCalcOption) {
+    const data = this._systemData;
+    const stats = data.stats;
+    const lv = data.lv;
+
+    switch (option) {
+      case "raw": {
+        const stat = damageType === "phys" ? "vi" : "ma";
+        return Math.max(Math.floor((stats[stat].value + lv) / 2), 0);
+      }
+      case "opt1": {
+        const stat = damageType === "phys" ? "st" : "vi";
+        return Math.max(Math.floor((stats[stat].value + lv) / 2), 0);
+      }
+      case "opt2": {
+        const stat = damageType === "phys" ? "st" : "ma";
+        return Math.max(
+          Math.floor((stats[stat].value + stats.vi.value + lv) / 2),
+          0,
+        );
+      }
+      case "opt3": {
+        const stat = damageType === "phys" ? "st" : "ma";
+        return Math.max(stats[stat].value + stats.vi.value + lv, 0);
+      }
+      default:
+        option satisfies never;
+    }
+
+    throw new Error("Invalid resist option");
+  }
+
+  // Typescript hack
   get _systemData() {
     return this as this & Subtype<SmtActor, this["type"]>["system"];
   }

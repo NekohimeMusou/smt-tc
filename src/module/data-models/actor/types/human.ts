@@ -4,6 +4,16 @@ import SmtBaseActorData from "../abstract/base.js";
 export default class SmtHumanData extends SmtBaseActorData {
   override readonly type = "human";
 
+  override prepareBaseData() {
+    super.prepareBaseData();
+    const data = this._systemData;
+
+    // @ts-expect-error This isn't readonly
+    data.hpMultiplier = 4;
+    // @ts-expect-error This isn't readonly
+    data.mpMultiplier = 2;
+  }
+
   override prepareDerivedData() {
     super.prepareDerivedData();
 

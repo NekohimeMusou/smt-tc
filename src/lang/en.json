@@ -477,9 +477,9 @@
         "name": "Editable Gem Fields",
         "hint": "Players can edit the gem fields on their character sheets (GMs can always do this)."
       },
-      "addLevelToGunDamage": {
-        "name": "VARIANT RULE: Add Level to Gun Damage",
-        "hint": "Add the shooter's level to gun and grenade damage, like with other attacks."
+      "addLevelToGunPower": {
+        "name": "VARIANT RULE: Add Level to Gun Power",
+        "hint": "Add the shooter's level to gun and grenade power, like with other attacks."
       },
       "showRollDialogByDefault": {
         "name": "Show roll dialog by default",
