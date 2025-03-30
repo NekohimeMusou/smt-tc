@@ -28,6 +28,13 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     const system = this.actor.system;
     const rollData = this.actor.getRollData();
 
+    const maxResources = Object.fromEntries(
+      (["hp", "mp", "fp"] as ResourceType[]).map((res) => [
+        res,
+        system.calculateMax(res),
+      ]),
+    );
+
     const magatama = this.actor.items.filter(
       (item) => item.type === "magatama",
     );
@@ -69,6 +76,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     await foundry.utils.mergeObject(context, {
       system,
       rollData,
+      maxResources,
       magatama,
       skills,
       weapons,
