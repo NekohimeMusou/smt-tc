@@ -180,7 +180,6 @@ export default abstract class SmtBaseActorData extends foundry.abstract
     const mods = new fields.SchemaField({
       might: new fields.BooleanField(),
       luckyFind: new fields.BooleanField(),
-      pierce: new fields.BooleanField(),
     });
 
     const powerBoost = new fields.SchemaField({
@@ -356,8 +355,7 @@ export default abstract class SmtBaseActorData extends foundry.abstract
 
     Object.entries(stats).forEach(([key, stat]) => {
       const statName = key as keyof typeof stats;
-      const tn = Math.max(stat.value * 5 + lv + tnBoostMod, 1);
-      data.tn[statName] = Math.max(Math.floor(tn / data.multi), 1);
+      data.tn[statName] = Math.max(stat.value * 5 + lv + tnBoostMod, 1);
     });
 
     const accuracyBuff = data.buffs.sukukaja - data.buffs.sukunda;
@@ -365,11 +363,15 @@ export default abstract class SmtBaseActorData extends foundry.abstract
     data.tn.phys += data.tn.st + accuracyBuff;
     data.tn.mag += data.tn.ma + accuracyBuff;
     data.tn.save += data.tn.vi;
-    data.tn.dodge += Math.floor(
-      (stats.ag.value + 10 + tnBoostMod + accuracyBuff) / data.multi,
-    );
+    data.tn.dodge += stats.ag.value + 10 + tnBoostMod + accuracyBuff;
     data.tn.negotiation += stats.lu.value * 2 + 20;
-    data.tn.gun += data.tn.ag;
+    data.tn.gun += data.tn.ag + accuracyBuff;
+
+    // NOW apply multi-attack
+    for (const tnName of Object.keys(data.tn)) {
+      const tn = tnName as keyof typeof data.tn;
+      data.tn[tn] = Math.floor(data.tn[tn] / data.multi);
+    }
 
     // Apply buff modifiers
     const physAtkBuff = data.buffs.tarukaja - data.buffs.tarunda;
