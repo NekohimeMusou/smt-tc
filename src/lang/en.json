@@ -184,7 +184,8 @@
     "awards": {
       "xp": "XP",
       "macca": "Macca",
-      "itemDrops": "Item Drops"
+      "itemDrops": "Item Drops",
+      "divideMacca": "Divide Macca"
     },
     "affinities": {
       "phys": "Phys",
