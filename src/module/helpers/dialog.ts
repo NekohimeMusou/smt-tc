@@ -19,6 +19,7 @@ interface AwardHTMLElement extends HTMLElement {
 interface AwardDialogResult {
   xp?: number;
   macca?: number;
+  divideMacca?: boolean;
   cancelled?: boolean;
 }
 
@@ -81,9 +82,11 @@ function _processAttackDialogResult(html: string): AttackDialogResult {
   return { tnMod, potencyMod };
 }
 
-export async function renderAwardDialog(): Promise<AwardDialogResult> {
+export async function renderAwardDialog(
+  divideMacca = false,
+): Promise<AwardDialogResult> {
   const template = "systems/smt-tc/templates/dialog/award-dialog.hbs";
-  const content = await renderTemplate(template, {});
+  const content = await renderTemplate(template, { divideMacca });
 
   return new Promise((resolve) =>
     new Dialog(
@@ -93,19 +96,7 @@ export async function renderAwardDialog(): Promise<AwardDialogResult> {
         buttons: {
           ok: {
             label: "OK",
-            callback: (html) =>
-              resolve({
-                xp:
-                  parseInt(
-                    ($(html)[0].querySelector("form") as AwardHTMLElement)?.xp
-                      ?.value ?? "0",
-                  ) || 0,
-                macca:
-                  parseInt(
-                    ($(html)[0].querySelector("form") as AwardHTMLElement)
-                      ?.macca?.value ?? "0",
-                  ) || 0,
-              }),
+            callback: (html) => resolve(_processAwardDialogResult(html)),
           },
           cancel: {
             label: "Cancel",
@@ -118,6 +109,17 @@ export async function renderAwardDialog(): Promise<AwardDialogResult> {
       {},
     ).render(true),
   );
+}
+
+function _processAwardDialogResult(html: string): AwardDialogResult {
+  const element = $(html)[0].querySelector("form") as AwardHTMLElement;
+
+  const xp = parseInt(element.xp?.value ?? "0") || 0;
+  const macca = parseInt(element.macca?.value ?? "0") || 0;
+  // @ts-expect-error This works I'll fix the types later
+  const divideMacca = $(element.divideMacca)?.is(":checked");
+
+  return { xp, macca, divideMacca };
 }
 
 export async function renderBuffDialog(): Promise<BuffDialogResult> {
