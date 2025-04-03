@@ -2,24 +2,6 @@ import { SMT } from "./config.js";
 
 export default function registerSystemSettings() {
   // World settings
-  game.settings.register("smt-tc", "editableGems", {
-    name: "SMT.settings.editableGems.name",
-    hint: "SMT.settings.editableGems.hint",
-    scope: "world",
-    config: true,
-    requiresReload: true,
-    type: Boolean,
-    default: false,
-  });
-  game.settings.register("smt-tc", "editableActorSheetBuffs", {
-    name: "SMT.settings.editableActorSheetBuffs.name",
-    hint: "SMT.settings.editableActorSheetBuffs.hint",
-    scope: "world",
-    config: true,
-    requiresReload: true,
-    type: Boolean,
-    default: false,
-  });
   game.settings.register("smt-tc", "autoCurseRolls", {
     name: "SMT.settings.autoCurseRolls.name",
     hint: "SMT.settings.autoCurseRolls.hint",
@@ -65,6 +47,35 @@ export default function registerSystemSettings() {
       ...SMT.alternateResistLevels.mag,
     },
     default: "raw",
+  });
+
+  game.settings.register("smt-tc", "defaultDivideMacca", {
+    name: "SMT.settings.defaultDivideMacca.name",
+    hint: "SMT.settings.defaultDivideMacca.hint",
+    scope: "world",
+    config: true,
+    requiresReload: false,
+    type: Boolean,
+    default: false,
+  });
+
+  game.settings.register("smt-tc", "editableGems", {
+    name: "SMT.settings.editableGems.name",
+    hint: "SMT.settings.editableGems.hint",
+    scope: "world",
+    config: true,
+    requiresReload: true,
+    type: Boolean,
+    default: false,
+  });
+  game.settings.register("smt-tc", "editableActorSheetBuffs", {
+    name: "SMT.settings.editableActorSheetBuffs.name",
+    hint: "SMT.settings.editableActorSheetBuffs.hint",
+    scope: "world",
+    config: true,
+    requiresReload: true,
+    type: Boolean,
+    default: false,
   });
 
   // Client settings

@@ -406,7 +406,7 @@
         "macca": "Macca: {macca}",
         "itemDrops": "Item Drops",
         "chatTitle": "Awards Received",
-        "awardReport": "Earned {xp} XP and {macca} macca."
+        "awardReport": "Earned {xp} XP and {macca} macca each."
       },
       "buffs": {
         "buffCardMsg": "{stat} {direction} by {buffAmt}",
@@ -470,6 +470,10 @@
       "applyStatus": "Status applied: {status}"
     },
     "settings": {
+      "defaultDivideMacca": {
+        "name": "Divide Macca by Default",
+        "hint": "Enable the \"Divide Macca\" checkbox in the Grant Rewards macro by default."
+      },
       "editableActorSheetBuffs": {
         "name": "Enable Actor Sheet Buff Pane",
         "hint": "Make the buffs pane on the actor sheet editable. Basically superseded by the macro."

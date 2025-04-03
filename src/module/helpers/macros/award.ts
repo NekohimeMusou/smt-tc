@@ -64,25 +64,38 @@ export async function grantRewards() {
 
   const tokens = canvas.tokens.controlled as SmtToken[];
 
+  const selectedTokens = tokens.length;
+
   // If no tokens are controlled, display a notification
-  if (tokens.length < 1) {
+  if (selectedTokens < 1) {
     return ui.notifications.notify(
       game.i18n.localize("SMT.ui.noTokensSelected"),
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
+  const defaultDivideMacca = game.settings.get(
+    "smt-tc",
+    "defaultDivideMacca",
+  ) as boolean;
+
   const {
     xp: xpEarned,
     macca: maccaEarned,
+    divideMacca,
     cancelled,
-  } = await renderAwardDialog();
+  } = await renderAwardDialog(defaultDivideMacca);
 
   if (cancelled) {
     return;
   }
 
+  const shares = divideMacca ? selectedTokens : 1;
+
   const xp = xpEarned ?? 0;
-  const macca = maccaEarned ?? 0;
+  const totalMacca = maccaEarned ?? 0;
+
+  const macca = Math.floor(totalMacca / shares);
 
   await Promise.all(
     tokens.map(

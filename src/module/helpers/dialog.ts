@@ -82,9 +82,11 @@ function _processAttackDialogResult(html: string): AttackDialogResult {
   return { tnMod, potencyMod };
 }
 
-export async function renderAwardDialog(): Promise<AwardDialogResult> {
+export async function renderAwardDialog(
+  divideMacca = false,
+): Promise<AwardDialogResult> {
   const template = "systems/smt-tc/templates/dialog/award-dialog.hbs";
-  const content = await renderTemplate(template, {});
+  const content = await renderTemplate(template, { divideMacca });
 
   return new Promise((resolve) =>
     new Dialog(
