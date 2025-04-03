@@ -2,6 +2,13 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.6.5] - 2025-04-03
+
+### Changed
+
+- Award macro can optionally divide macca
+- Separate level, HP, MP, and FP overrides
+
 ## [0.6.4] - 2025-03-26
 
 ### Fixed
@@ -381,6 +388,7 @@ _Added separate Human and Demon actor types with some custom behavior, and added
 
 _Initial preview release.*
 
+[0.6.5]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.5
 [0.6.4]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.4
 [0.6.3]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.3
 [0.6.2]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.2
