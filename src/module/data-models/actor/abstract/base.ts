@@ -12,15 +12,15 @@ export default abstract class SmtBaseActorData extends foundry.abstract
 
   get lv(): number {
     const data = this._systemData;
-    
-    if (data.isNPC) {
-      return data.levelOverride;
+
+    if (data.overrides.lv.toggle) {
+      return data.overrides.lv.value;
     }
 
-    return this.#pcLevel;
+    return this.#levelByXP;
   }
 
-  get #pcLevel(): number {
+  get #levelByXP(): number {
     const data = this._systemData;
     const levelTable = CONFIG.SMT.levelTables[this.type];
 
@@ -64,6 +64,49 @@ export default abstract class SmtBaseActorData extends foundry.abstract
     );
 
     return data.lv - data.baseLv - statPoints + data.incenseUsed;
+  }
+
+  static override migrateData(source: Record<string, unknown>) {
+    if ("isNPC" in source) {
+      foundry.utils.mergeObject(source, {
+        override: {
+          lv: {
+            toggle: source.isNPC,
+          },
+        },
+      });
+
+      delete source.isNPC;
+    }
+
+    if ("levelOverride" in source) {
+      foundry.utils.mergeObject(source, {
+        override: {
+          lv: {
+            value: source.levelOverride,
+          },
+        },
+      });
+    }
+
+    const resourceOverrides: [ResourceType, { value: unknown }][] = [];
+
+    for (const resource of Object.keys(
+      CONFIG.SMT.resourceTypes,
+    ) as ResourceType[]) {
+      if (
+        resource in source &&
+        source.resource instanceof Object &&
+        "override" in source.resource
+      ) {
+        resourceOverrides.push([resource, { value: source.resource.override }]);
+        delete source.resource.override;
+      }
+    }
+
+    foundry.utils.mergeObject(source, Object.fromEntries(resourceOverrides));
+
+    return super.migrateData(source);
   }
 
   static override defineSchema() {
@@ -215,6 +258,25 @@ export default abstract class SmtBaseActorData extends foundry.abstract
       aquamarine: new fields.NumberField({ integer: true, min: 0, initial: 0 }),
     });
 
+    const overrides = new fields.SchemaField({
+      lv: new fields.SchemaField({
+        toggle: new fields.BooleanField(),
+        value: new fields.NumberField({ integer: true, min: 0 }),
+      }),
+      hp: new fields.SchemaField({
+        toggle: new fields.BooleanField(),
+        value: new fields.NumberField({ integer: true, min: 0 }),
+      }),
+      mp: new fields.SchemaField({
+        toggle: new fields.BooleanField(),
+        value: new fields.NumberField({ integer: true, min: 0 }),
+      }),
+      fp: new fields.SchemaField({
+        toggle: new fields.BooleanField(),
+        value: new fields.NumberField({ integer: true, min: 0 }),
+      }),
+    });
+
     return {
       stats,
       ...resources,
@@ -229,6 +291,7 @@ export default abstract class SmtBaseActorData extends foundry.abstract
       powerBoost,
       elementBoost,
       gems,
+      overrides,
       baseLv: new fields.NumberField({
         integer: true,
         positive: true,
@@ -243,9 +306,6 @@ export default abstract class SmtBaseActorData extends foundry.abstract
       xp: new fields.NumberField({ integer: true, min: 0 }),
       macca: new fields.NumberField({ integer: true, min: 0 }),
       affinities: new fields.EmbeddedDataField(DefenseAffinityData),
-      // Should this be considered an NPC (e.g. level override)
-      isNPC: new fields.BooleanField(),
-      levelOverride: new fields.NumberField({ integer: true, min: 1 }),
     } as const;
   }
 
@@ -348,9 +408,15 @@ export default abstract class SmtBaseActorData extends foundry.abstract
     data.power.gun = Math.max(stats.ag.value + gunLvMod, 0);
 
     // Calculate HP/MP/FP max
-    data.hp.max = data.isNPC ? data.hp.override : this.calculateMax("hp");
-    data.mp.max = data.isNPC ? data.mp.override : this.calculateMax("mp");
-    data.fp.max = data.isNPC ? data.fp.override : this.calculateMax("fp");
+    const overrides = data.overrides;
+
+    (Object.keys(CONFIG.SMT.resourceTypes) as ResourceType[]).forEach(
+      (resource) => {
+        data[resource].max = overrides[resource].toggle
+          ? overrides[resource].value
+          : this.calculateMax(resource);
+      },
+    );
   }
 
   override prepareDerivedData() {

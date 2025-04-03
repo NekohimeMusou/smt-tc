@@ -11,18 +11,52 @@
         </div>
 
         <div class="item-prop">
-          <input type="number" name="system.incenseUsed" value="{{system.incenseUsed}}"
-            placeholder="0" data-dtype="Number" />
+          <input type="number" name="system.incenseUsed" value="{{system.incenseUsed}}" placeholder="0"
+            data-dtype="Number" />
         </div>
       </li>
 
       <li class="item item-prop flexrow">
+        {{!-- Override Lv? --}}
         <div class="item-prop">
-          {{localize "SMT.actorSheet.isNPC"}}
+          {{localize "SMT.actorSheet.overrides.lv"}}
         </div>
 
         <div class="item-prop">
-          <input type="checkbox" name="system.isNPC" data-dtype="Boolean" {{checked system.isNPC}} />
+          <input type="checkbox" name="system.overrides.lv.toggle" data-dtype="Boolean"
+            {{checked system.overrides.lv.toggle}} />
+        </div>
+
+        {{!-- Override HP? --}}
+        <div class="item-prop">
+          {{localize "SMT.actorSheet.overrides.hp"}}
+        </div>
+
+        <div class="item-prop">
+          <input type="checkbox" name="system.overrides.hp.toggle" data-dtype="Boolean"
+            {{checked system.overrides.hp.toggle}} />
+        </div>
+      </li>
+
+      <li class="item item-prop flexrow">
+        {{!-- Override MP? --}}
+        <div class="item-prop">
+          {{localize "SMT.actorSheet.overrides.mp"}}
+        </div>
+
+        <div class="item-prop">
+          <input type="checkbox" name="system.overrides.mp.toggle" data-dtype="Boolean"
+            {{checked system.overrides.mp.toggle}} />
+        </div>
+
+        {{!-- Override FP? --}}
+        <div class="item-prop">
+          {{localize "SMT.actorSheet.overrides.fp"}}
+        </div>
+
+        <div class="item-prop">
+          <input type="checkbox" name="system.overrides.fp.toggle" data-dtype="Boolean"
+            {{checked system.overrides.fp.toggle}} />
         </div>
       </li>
     </ol>

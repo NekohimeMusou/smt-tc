@@ -62,7 +62,10 @@
       "price": "Price",
       "gems": "Gems",
       "settings": "Settings",
-      "isNPC": "NPC?"
+      "overrides.lv": "Override Lv",
+      "overrides.hp": "Override HP",
+      "overrides.mp": "Override MP",
+      "overrides.fp": "Override FP"
     },
     "actorSettings": {
       "incenseUsed": "Incense Used"
