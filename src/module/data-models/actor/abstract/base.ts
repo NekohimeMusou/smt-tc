@@ -67,26 +67,21 @@ export default abstract class SmtBaseActorData extends foundry.abstract
   }
 
   static override migrateData(source: Record<string, unknown>) {
+    // TODO: Toggle on the checkboxes if isNPC was true
     if ("isNPC" in source) {
-      foundry.utils.mergeObject(source, {
-        override: {
-          lv: {
-            toggle: source.isNPC,
-          },
-        },
-      });
-
       delete source.isNPC;
     }
 
     if ("levelOverride" in source) {
       foundry.utils.mergeObject(source, {
-        override: {
+        overrides: {
           lv: {
             value: source.levelOverride,
           },
         },
       });
+
+      delete source.levelOverride;
     }
 
     const resourceOverrides: [ResourceType, { value: unknown }][] = [];
@@ -96,15 +91,20 @@ export default abstract class SmtBaseActorData extends foundry.abstract
     ) as ResourceType[]) {
       if (
         resource in source &&
-        source.resource instanceof Object &&
-        "override" in source.resource
+        source[resource] instanceof Object &&
+        "override" in source[resource]
       ) {
-        resourceOverrides.push([resource, { value: source.resource.override }]);
-        delete source.resource.override;
+        resourceOverrides.push([
+          resource,
+          { value: source[resource].override },
+        ]);
+        delete source[resource].override;
       }
     }
 
-    foundry.utils.mergeObject(source, Object.fromEntries(resourceOverrides));
+    foundry.utils.mergeObject(source, {
+      overrides: Object.fromEntries(resourceOverrides),
+    });
 
     return super.migrateData(source);
   }
@@ -139,17 +139,14 @@ export default abstract class SmtBaseActorData extends foundry.abstract
       hp: new fields.SchemaField({
         max: new fields.NumberField({ integer: true }),
         value: new fields.NumberField({ integer: true }),
-        override: new fields.NumberField({ integer: true }),
       }),
       mp: new fields.SchemaField({
         max: new fields.NumberField({ integer: true }),
         value: new fields.NumberField({ integer: true }),
-        override: new fields.NumberField({ integer: true }),
       }),
       fp: new fields.SchemaField({
         max: new fields.NumberField({ integer: true }),
         value: new fields.NumberField({ integer: true }),
-        override: new fields.NumberField({ integer: true }),
       }),
     };
 
