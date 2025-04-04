@@ -406,17 +406,6 @@ export default abstract class SmtBaseActorData extends foundry.abstract
     data.power.phys = Math.max(stats.st.value + lv, 0);
     data.power.mag = Math.max(stats.ma.value + lv, 0);
     data.power.gun = Math.max(stats.ag.value + gunLvMod, 0);
-
-    // Calculate HP/MP/FP max
-    const overrides = data.overrides;
-
-    (Object.keys(CONFIG.SMT.resourceTypes) as ResourceType[]).forEach(
-      (resource) => {
-        data[resource].max = overrides[resource].toggle
-          ? overrides[resource].value
-          : this.calculateMax(resource);
-      },
-    );
   }
 
   override prepareDerivedData() {
@@ -458,6 +447,17 @@ export default abstract class SmtBaseActorData extends foundry.abstract
 
     data.resist.phys = Math.max(data.resist.phys + resistBuff, 0);
     data.resist.mag = Math.max(data.resist.mag + resistBuff, 0);
+
+    // Calculate HP/MP/FP max
+    const overrides = data.overrides;
+
+    (Object.keys(CONFIG.SMT.resourceTypes) as ResourceType[]).forEach(
+      (resource) => {
+        data[resource].max = overrides[resource].toggle
+          ? overrides[resource].value
+          : this.calculateMax(resource);
+      },
+    );
   }
 
   calculateMax(resourceType: ResourceType) {
