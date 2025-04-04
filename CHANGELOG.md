@@ -2,6 +2,14 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.6.7] - 2025-04-04
+
+*Unfortunately, I had some trouble with the checkboxes.*
+
+### Fixed
+
+- Fix data migration for NPC Lv/HP/MP/FP
+
 ## [0.6.6] - 2025-04-03
 
 ### Fixed
@@ -394,6 +402,8 @@ _Added separate Human and Demon actor types with some custom behavior, and added
 
 _Initial preview release.*
 
+[0.6.7]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.7
+[0.6.6]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.6
 [0.6.5]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.5
 [0.6.4]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.4
 [0.6.3]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.3
