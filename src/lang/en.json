@@ -516,6 +516,10 @@
           "opt2": "(Ma + Vi + Lv) / 2",
           "opt3": "Ma + Vi + Lv"
         }
+      },
+      "individualStatOverrides": {
+        "name": "Override NPC Stats Individually",
+        "hint": "Instead of a single \"NPC\" checkbox, control whether Lv/HP/MP/FP can be overridden per stat."
       }
     },
     "ui": {

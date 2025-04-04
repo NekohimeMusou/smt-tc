@@ -70,6 +70,11 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       "editableActorSheetBuffs",
     );
 
+    const individualStatOverrides = game.settings.get(
+      "smt-tc",
+      "individualStatOverrides",
+    );
+
     const editableGems =
       (game.settings.get("smt-tc", "editableGems") ?? false) || game.user.isGM;
 
@@ -88,6 +93,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       effects,
       gems: [gems1, gems2],
       editableActorSheetBuffs,
+      individualStatOverrides,
       editableGems,
       SMT: CONFIG.SMT,
     });

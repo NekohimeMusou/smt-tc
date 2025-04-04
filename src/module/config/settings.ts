@@ -88,4 +88,14 @@ export default function registerSystemSettings() {
     type: Boolean,
     default: false,
   });
+
+  game.settings.register("smt-tc", "individualStatOverrides", {
+    name: "SMT.settings.individualStatOverrides.name",
+    hint: "SMT.settings.individualStatOverrides.hint",
+    scope: "client",
+    config: true,
+    requiresReload: true,
+    type: Boolean,
+    default: false,
+  });
 }
