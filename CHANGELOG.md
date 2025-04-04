@@ -2,6 +2,12 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.6.6] - 2025-04-03
+
+### Fixed
+
+- Fix amplify skills (Life Bonus etc) not applying
+
 ## [0.6.5] - 2025-04-03
 
 ### Changed
