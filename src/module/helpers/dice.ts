@@ -449,11 +449,14 @@ export default class SmtDice {
 
     if ((success || fumble) && attackData?.ailment.id) {
       const ailment = attackData.ailment;
-      const ailmentCritRate = Math.clamp(ailment.rate * 2, 5, 95);
+
+      const ailmentData = {
+        ...ailment,
+        critRate: Math.clamp(ailment.rate * 2, 5, 95),
+      };
 
       foundry.utils.mergeObject(cardData, {
-        ailment,
-        ailmentCritRate,
+        ailmentData,
       });
     }
 

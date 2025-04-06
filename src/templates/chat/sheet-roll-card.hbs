@@ -50,13 +50,13 @@
   {{/if}}
 
   {{!-- Ailment --}}
-  {{#if (and (or fumble success) ailment)}}
+  {{#if (and (or fumble success) ailmentData)}}
     {{!-- Also show normal rate if it's a crit, like for power --}}
     {{#if criticalHit}}
       <h3>{{localize "SMT.itemRoll.critAilment"
-        ailment=(localize (concat "SMT.ailments." ailment.id)) rate=ailment.rate ailmentCritRate=ailment.critRate}}</h3>
+        ailment=(localize (concat "SMT.ailments." ailmentData.id)) rate=ailmentData.rate ailmentCritRate=ailmentData.critRate}}</h3>
       {{else}}
-      <h3>{{localize "SMT.itemRoll.ailment" ailment=(localize (concat "SMT.ailments." ailment.id)) rate=ailment.rate}}</h3>
+      <h3>{{localize "SMT.itemRoll.ailment" ailment=(localize (concat "SMT.ailments." ailmentData.id)) rate=ailmentData.rate}}</h3>
     {{/if}}
   {{/if}}
 
