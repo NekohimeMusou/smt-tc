@@ -26,6 +26,11 @@
         "id": "item-piles",
         "type": "module",
         "reason": "Makes shopping and inventory management vastly more manageable. SMT: Tokyo Conception comes with built-in support."
+      },
+      {
+        "id": "statuscounter",
+        "type": "module",
+        "reason": "More easily track the number of buff and debuff stacks currently applied to tokens."
       }
     ]
   },
