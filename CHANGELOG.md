@@ -2,6 +2,12 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.6.8] - 2025-04-06
+
+### Fixed
+
+- Fix incorrect display for ailment rate on crits
+
 ## [0.6.7] - 2025-04-04
 
 *Unfortunately, I had some trouble with the checkboxes.*
@@ -402,6 +408,7 @@ _Added separate Human and Demon actor types with some custom behavior, and added
 
 _Initial preview release.*
 
+[0.6.8]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.8
 [0.6.7]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.7
 [0.6.6]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.6
 [0.6.5]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.5
