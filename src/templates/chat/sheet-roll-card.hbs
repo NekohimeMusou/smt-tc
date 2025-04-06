@@ -51,13 +51,21 @@
 
   {{!-- Ailment --}}
   {{#if (and (or fumble success) ailmentData)}}
-    {{!-- Also show normal rate if it's a crit, like for power --}}
-    {{#if criticalHit}}
-      <h3>{{localize "SMT.itemRoll.critAilment"
-        ailment=(localize (concat "SMT.ailments." ailmentData.id)) rate=ailmentData.rate ailmentCritRate=ailmentData.critRate}}</h3>
-      {{else}}
-      <h3>{{localize "SMT.itemRoll.ailment" ailment=(localize (concat "SMT.ailments." ailmentData.id)) rate=ailmentData.rate}}</h3>
-    {{/if}}
+    <h3>{{localize "SMT.itemRoll.ailment" ailment=(localize (concat "SMT.ailments." ailmentData.id)) rate=ailmentData.rate}}</h3>
+    {{!-- Display buttons to roll vs. ailment (normal/weak/strong) --}}
+    <div class="flexrow">
+      <button type="button" class="card-ailment-roll" data-ailment-rate="{{ailmentData.rate}}">
+        {{localize "SMT.itemRoll.ailmentButton.normal"}}
+      </button>
+
+      <button type="button" class="card-ailment-roll" data-ailment-rate="{{ailmentData.halfRate}}">
+        {{localize "SMT.itemRoll.ailmentButton.half" rate=ailmentData.halfRate}}
+      </button>
+
+      <button type="button" class="card-ailment-roll" data-ailment-rate="{{ailmentData.doubleRate}}">
+        {{localize "SMT.itemRoll.ailmentButton.double" rate=ailmentData.doubleRate}}
+      </button>
+    </div>
   {{/if}}
 
   {{!-- Curse --}}

@@ -445,7 +445,11 @@
       "totalPower": "Total Power: {power}",
       "critPower": "Total Power: {critPower} ({power})",
       "ailment": "{ailment}: {rate}%",
-      "critAilment": "{ailment}: {ailmentCritRate}% ({rate}%)",
+      "ailmentButton": {
+        "normal": "Resist",
+        "half": "Half ({rate}%)",
+        "double": "Double ({rate}%)"
+      },
       "targets": "Targets:",
       "targetType": "Target: {targetType}",
       "targetDamage": {

@@ -41,7 +41,7 @@ interface RollCardData {
   costPaid?: boolean;
   successData?: SuccessCardData;
   powerData?: PowerCardData;
-  ailment?: AilmentCardData;
+  ailmentData?: AilmentCardData;
   mods?: object;
   rolls?: Roll[];
   targets?: TargetData[];
@@ -80,7 +80,7 @@ export async function renderAttackCard({
   costPaid = true,
   successData = {},
   powerData = {},
-  ailment,
+  ailmentData,
   rolls,
   targets,
 }: RollCardData = {}) {
@@ -93,7 +93,7 @@ export async function renderAttackCard({
     costPaid,
     ...successData,
     ...powerData,
-    ailment,
+    ailmentData,
     rolls,
     targets,
     criticalHit: successData?.successLevel === "crit",
