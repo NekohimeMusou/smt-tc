@@ -103,6 +103,9 @@ export async function renderAttackCard({
   const template = "systems/smt-tc/templates/chat/sheet-roll-card.hbs";
   const content = await renderTemplate(template, context);
 
+  // Attach event handler to ".card-ailment-roll"
+  // data-ailment-rate, data-ailment-id
+
   const chatData = {
     author: game.user.id,
     content,

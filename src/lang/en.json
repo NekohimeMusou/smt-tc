@@ -448,7 +448,7 @@
       "ailmentButton": {
         "normal": "Resist",
         "half": "Half ({rate}%)",
-        "double": "Double ({rate}%)"
+        "double": "Dbl ({rate}%)"
       },
       "targets": "Targets:",
       "targetType": "Target: {targetType}",

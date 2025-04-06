@@ -51,20 +51,16 @@
 
   {{!-- Ailment --}}
   {{#if (and (or fumble success) ailmentData)}}
-    <h3>{{localize "SMT.itemRoll.ailment" ailment=(localize (concat "SMT.ailments." ailmentData.id)) rate=ailmentData.rate}}</h3>
+    <h3>{{localize "SMT.itemRoll.ailment" ailment=(localize (concat "SMT.ailments." ailmentData.id)) rate=ailmentData.rate.normal}}</h3>
     {{!-- Display buttons to roll vs. ailment (normal/weak/strong) --}}
     <div class="flexrow">
-      <button type="button" class="card-ailment-roll" data-ailment-rate="{{ailmentData.rate}}">
-        {{localize "SMT.itemRoll.ailmentButton.normal"}}
+      {{#with ailmentData}}
+      {{#each rate as |rate key|}}
+      <button type="button" class="card-ailment-roll" data-ailment-rate="{{rate}}" data-ailment-id="{{../id}}">
+        {{localize (concat "SMT.itemRoll.ailmentButton." key) rate=rate}}
       </button>
-
-      <button type="button" class="card-ailment-roll" data-ailment-rate="{{ailmentData.halfRate}}">
-        {{localize "SMT.itemRoll.ailmentButton.half" rate=ailmentData.halfRate}}
-      </button>
-
-      <button type="button" class="card-ailment-roll" data-ailment-rate="{{ailmentData.doubleRate}}">
-        {{localize "SMT.itemRoll.ailmentButton.double" rate=ailmentData.doubleRate}}
-      </button>
+      {{/each}}
+      {{/with}}
     </div>
   {{/if}}
 
