@@ -8,16 +8,6 @@ export type Fiend = Subtype<SmtActor, "fiend">;
 export type Demon = Subtype<SmtActor, "demon">;
 export type Human = Subtype<SmtActor, "human">;
 
-type HealResult = "notEnoughMacca" | "healed" | "alreadyFull";
-
-interface HealingFountainResult {
-  name: string;
-  result: HealResult;
-  hpHealed: number;
-  mpHealed: number;
-  cost: number;
-}
-
 export default class SmtActor extends Actor<
   typeof ACTORMODELS,
   SmtItem,
@@ -59,48 +49,15 @@ export default class SmtActor extends Actor<
     return false;
   }
 
-  async applyHealingFountain(): Promise<HealingFountainResult> {
-    const data = this.system;
-
-    const hpHealed = Math.max(data.hp.max - data.hp.value, 0);
-    const mpHealed = Math.max(data.mp.max - data.mp.value, 0);
-
-    const cost = hpHealed + mpHealed * 2;
-
-    let result: HealResult = "healed";
-
-    if (cost < 1) {
-      result = "alreadyFull";
-    } else if (data.macca < cost) {
-      result = "notEnoughMacca";
-    }
-
-    if (result === "healed") {
-      const updates = {
-        "system.macca": data.macca - cost,
-        "system.hp.value": data.hp.max,
-        "system.mp.value": data.mp.max,
-      };
-
-      await this.update(updates);
-    }
-
-    return {
-      result,
-      hpHealed,
-      mpHealed,
-      cost,
-      name: this.token?.name ?? this.name,
-    };
-  }
-
   async healingFountain() {
     const { value: hp, max: maxHp } = this.system.hp;
     const { value: mp, max: maxMp } = this.system.mp;
     const macca = this.system.macca;
 
     if (hp === maxHp && mp === maxMp) {
-      return ui.notifications.notify(game.i18n.localize("SMT.macro.fountain.noHealingNeeded"));
+      return ui.notifications.notify(
+        game.i18n.localize("SMT.macro.fountain.noHealingNeeded"),
+      );
     }
 
     const hpHealed = Math.max(maxHp - hp, 0);
@@ -113,12 +70,14 @@ export default class SmtActor extends Actor<
     });
 
     if (insufficientMacca) {
-      ui.notifications.notify(game.i18n.localize("SMT.macro.fountain.insufficientMacca"));
+      ui.notifications.notify(
+        game.i18n.localize("SMT.macro.fountain.insufficientMacca"),
+      );
     } else if (healed) {
       await this.update({
         "system.hp.value": maxHp,
         "system.mp.value": maxMp,
-        "system.macca": macca - (cost ?? 0)
+        "system.macca": macca - (cost ?? 0),
       });
 
       const template =
