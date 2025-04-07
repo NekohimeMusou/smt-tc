@@ -119,3 +119,23 @@ export async function renderAttackCard({
 
   return await ChatMessage.create(chatData);
 }
+
+interface ItemCardReactionData {
+  ailmentId?: AilmentId;
+  ailmentRate?: number;
+  isDodge?: boolean;
+}
+
+function _onCardRoll(event: JQuery.ClickEvent) {
+  event.preventDefault();
+
+  // @ts-expect-error isOwner exists on tokens too
+  const tokens = canvas.tokens.controlled.filter((token) => token.isOwner);
+
+  const element = $(event.currentTarget);
+  const { ailmentId, ailmentRate, isDodge }: ItemCardReactionData =
+    element.data();
+
+  // Allow a popup dialog to modify rolls
+  // Extra/house ailment mods, dodge TN mods
+}
