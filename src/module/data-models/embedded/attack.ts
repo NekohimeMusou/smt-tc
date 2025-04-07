@@ -145,14 +145,21 @@ export default class AttackDataModel extends BaseEmbeddedDataModel {
       delete source.includePowerRoll;
     }
 
-    if ("shatterRate" in source && source.affinity === "force") {
-      source.ailment = {
-        id: "shatter",
-        rate: source.shatterRate,
-      };
+    if ("shatterRate" in source) {
+      if (source.affinity === "force") {
+        source.ailment = {
+          id: "shatter",
+          rate: source.shatterRate,
+        };
+      }
+      delete source.shatterRate;
     }
 
-    delete source.shatterRate;
+    // Set this to true so the button will show up by default if you forget
+    if ("canDodge" in source) {
+      source.canBeDodged = true;
+      delete source.canDodge;
+    }
 
     return super.migrateData(source);
   }
@@ -198,7 +205,7 @@ export default class AttackDataModel extends BaseEmbeddedDataModel {
         choices: CONFIG.SMT.statuses,
       }),
       hasPowerRoll: new fields.BooleanField(),
-      canDodge: new fields.BooleanField(),
+      canBeDodged: new fields.BooleanField(),
       mods: new fields.SchemaField({
         highCrit: new fields.BooleanField(),
         pinhole: new fields.BooleanField(),

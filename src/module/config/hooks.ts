@@ -16,7 +16,7 @@ export async function createBasicStrike(
       type: "skill",
       img: "icons/skills/melee/unarmed-punch-fist.webp",
       system: {
-        attackData: { canDodge: true, hasPowerRoll: true, potency: 0 },
+        attackData: { canBeDodged: true, hasPowerRoll: true, potency: 0 },
       },
     },
   ]);

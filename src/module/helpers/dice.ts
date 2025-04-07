@@ -5,6 +5,23 @@ import { SmtItem } from "../documents/item/item.js";
 import SmtToken from "../documents/token.js";
 import { renderItemAttackCard, renderAttackCard } from "./chat.js";
 
+// Quick fix
+declare global {
+  interface TargetData {
+    name: string;
+    resist: {
+      phys: number;
+      mag: number;
+    };
+    fly: boolean;
+    affinities: CharacterAffinities;
+    damage?: number;
+    critDamage?: number;
+    // Patch until I can maybe refactor this, since I need to pass the token anyway
+    token?: SmtToken;
+  }
+}
+
 interface HitCheckData {
   tn?: number;
   autoFailThreshold?: number;
@@ -50,23 +67,6 @@ interface TargetProcessData {
   power?: number;
   critPower?: number;
   status?: StatusEffect;
-}
-
-// Quick fix
-declare global {
-  interface TargetData {
-    name: string;
-    resist: {
-      phys: number;
-      mag: number;
-    };
-    fly: boolean;
-    affinities: CharacterAffinities;
-    damage?: number;
-    critDamage?: number;
-    // Patch until I can maybe refactor this, since I need to pass the token anyway
-    token?: SmtToken;
-  }
 }
 
 interface StatRollData {
@@ -150,7 +150,7 @@ export default class SmtDice {
     return { power, critPower: power * 2, powerRoll: roll };
   }
 
-  // Main roll
+  // Refactor this since the item roll doesn't use it anyway
   static async sheetRoll({
     actor,
     tnType,
@@ -159,12 +159,8 @@ export default class SmtDice {
     checkName = "Unknown",
     tnMod = 0,
     potencyMod = 0,
-    item,
   }: SheetRollData = {}) {
-    if (item) {
-      // Call the item roll function
-      return;
-    } else if (actor && (tnType || attackType)) {
+    if (actor && (tnType || attackType)) {
       // Call the stat roll function
       return await this.statRoll({
         actor,
@@ -178,10 +174,22 @@ export default class SmtDice {
 
     const msg = game.i18n.localize("SMT.error.missingActor");
     ui.notifications.error(msg);
-    throw new TypeError(msg);
+    throw new Error(msg);
   }
 
-  // Sheet roll
+  static async ailmentRoll(rate = 5) {
+    const roll = await new Roll("1d100").roll();
+    const total = roll.total;
+
+    const inflict = total <= rate;
+
+    return {
+      inflict,
+      roll,
+    }
+  }
+
+  // TODO: Call this directly instead of using sheetRoll
   static async statRoll({
     actor,
     checkName,
@@ -286,7 +294,7 @@ export default class SmtDice {
       });
     }
 
-    await renderAttackCard(cardData);
+    return await renderAttackCard(cardData);
   }
 
   static async itemRoll({
@@ -344,7 +352,7 @@ export default class SmtDice {
       success: costPaid,
       criticalHit,
       fumble: false,
-      canDodge: attackData?.canDodge,
+      canBeDodged: attackData?.canBeDodged,
     };
 
     if (attackData && !auto && costPaid) {
@@ -483,6 +491,7 @@ export default class SmtDice {
       context: cardData,
       rolls,
       actor,
+      // @ts-expect-error idk about this TokenDocument vs. Token
       token: actor.token,
     });
   }

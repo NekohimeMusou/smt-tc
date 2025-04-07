@@ -444,11 +444,15 @@
       "tn": "TN {tn}%: {result}",
       "totalPower": "Total Power: {power}",
       "critPower": "Total Power: {critPower} ({power})",
-      "ailment": "{ailment}: {rate}%",
+      "rollTitle": "{name}: {rate}%",
       "ailmentButton": {
         "normal": "Resist",
         "half": "Half ({rate}%)",
         "double": "Dbl ({rate}%)"
+      },
+      "ailment": {
+        "inflict": "{name} inflicted!",
+        "resist": "{name} resisted!"
       },
       "targets": "Targets:",
       "targetType": "Target: {targetType}",
@@ -535,7 +539,9 @@
       "useItemPiles": "Use Item Piles functionality to move items.",
       "missingActor": "Missing actor in sheet roll.",
       "sheetRollError": "Missing item and power type in sheet roll.",
-      "missingTarget": "Missing target in target processing"
+      "missingTarget": "Missing target in target processing",
+      "missingToken": "Missing token",
+      "missingReactionTag": "Missing reaction tag"
     }
   },
   "TYPES": {

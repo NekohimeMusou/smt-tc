@@ -1,11 +1,13 @@
 import SmtActor from "../documents/actor/actor.js";
-import SmtTokenDocument from "../documents/token-document.js";
+import SmtToken from "../documents/token.js";
+import { showAttackModifierDialog } from "./dialog.js";
+import SmtDice from "./dice.js";
 
 interface ItemAttackCardData {
   context: object;
   rolls: Roll[];
   actor?: SmtActor;
-  token?: SmtTokenDocument;
+  token?: SmtToken;
 }
 
 interface AilmentCardData {
@@ -45,6 +47,13 @@ interface RollCardData {
   mods?: object;
   rolls?: Roll[];
   targets?: TargetData[];
+}
+
+interface CardRollTokenData {
+  token?: SmtToken;
+  reactionTag?: ReactionTag;
+  ailmentRate?: number;
+  tnMod?: number;
 }
 
 export async function renderItemAttackCard(
@@ -105,6 +114,7 @@ export async function renderAttackCard({
 
   // Attach event handler to ".card-ailment-roll"
   // data-ailment-rate, data-ailment-id
+  $(content).find(".card-reaction-roll").on("click", _onCardRoll);
 
   const chatData = {
     author: game.user.id,
@@ -120,22 +130,97 @@ export async function renderAttackCard({
   return await ChatMessage.create(chatData);
 }
 
+type ReactionTag = AilmentId | "dodge";
 interface ItemCardReactionData {
-  ailmentId?: AilmentId;
+  reactionTag?: ReactionTag;
   ailmentRate?: number;
-  isDodge?: boolean;
 }
 
-function _onCardRoll(event: JQuery.ClickEvent) {
+// TODO: Also limit this to only tokens that were targeted?
+async function _onCardRoll(event: JQuery.ClickEvent) {
   event.preventDefault();
 
-  // @ts-expect-error isOwner exists on tokens too
-  const tokens = canvas.tokens.controlled.filter((token) => token.isOwner);
+  const tokens = canvas.tokens.controlled.filter(
+    // @ts-expect-error isOwner exists on tokens too
+    (token) => token.isOwner,
+  ) as SmtToken[];
 
   const element = $(event.currentTarget);
-  const { ailmentId, ailmentRate, isDodge }: ItemCardReactionData =
-    element.data();
+  const { reactionTag, ailmentRate }: ItemCardReactionData = element.data();
 
-  // Allow a popup dialog to modify rolls
-  // Extra/house ailment mods, dodge TN mods
+  // Allow a popup dialog to modify rolls BEFORE processing tokens
+  const showDialog =
+    event.shiftKey != game.settings.get("smt-tc", "showRollDialogByDefault");
+
+  const { tnMod, cancelled } = showDialog
+    ? await showAttackModifierDialog("Bill")
+    : { tnMod: 0, cancelled: false };
+
+  if (cancelled) {
+    return;
+  }
+
+  // Process each token
+  return await Promise.all(
+    tokens.map(async (token) =>
+      _processCardRollToken({
+        token,
+        reactionTag,
+        ailmentRate,
+        tnMod,
+      }),
+    ),
+  );
+}
+
+async function _processCardRollToken({
+  token,
+  reactionTag,
+  ailmentRate = 0,
+  tnMod = 0,
+}: CardRollTokenData = {}) {
+  if (!token) {
+    const msg = game.i18n.localize("SMT.error.missingToken");
+    ui.notifications.error(msg);
+    throw new Error(msg);
+  }
+
+  if (!reactionTag) {
+    const msg = game.i18n.localize("SMT.error.missingReactionTag");
+    ui.notifications.error(msg);
+    throw new Error(msg);
+  }
+
+  if (reactionTag === "dodge") {
+    // Make a statRoll and pass in the TN mod and checkName and tnType "dodge"
+    const checkName = game.i18n.localize("SMT.tn.dodge");
+    return await SmtDice.statRoll({ actor: token.actor, checkName, tnMod });
+  } else {
+    // Do an ailment roll
+    const name = game.i18n.localize(`SMT.ailments.${reactionTag}`);
+    const context = {
+      ...(await SmtDice.ailmentRoll(Math.clamp(ailmentRate + tnMod, 5, 95))),
+      name,
+    };
+
+    foundry.utils.mergeObject(context, {
+      roll: await context.roll.render(),
+    });
+
+    const template = "systems/smt-tc/templates/chat/ailment-roll-card.hbs";
+    const content = await renderTemplate(template, context);
+
+    const chatData = {
+      author: game.user.id,
+      content,
+      speaker: {
+        scene: game.scenes.current,
+        actor: token.actor,
+        token,
+      },
+      rolls: [context.roll],
+    };
+
+    return await ChatMessage.create(chatData);
+  }
 }
