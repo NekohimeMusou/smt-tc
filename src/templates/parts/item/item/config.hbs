@@ -54,6 +54,13 @@
           <input type="checkbox" id="hasPowerRoll" name="system.attackData.hasPowerRoll" data-dtype="Boolean"
             {{checked system.attackData.hasPowerRoll}} />
         </div>
+
+        {{!-- Can be dodged? --}}
+        <label for="canBeDodged" class="item-prop">{{localize "SMT.itemSheet.canBeDodged"}}</label>
+        <div class="item-prop">
+          <input type="checkbox" id="canBeDodged" name="system.attackData.canBeDodged" data-dtype="Boolean"
+            {{checked system.attackData.canBeDodged}} />
+        </div>
       </li>
     </ol>
   </div>

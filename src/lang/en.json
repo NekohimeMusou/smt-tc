@@ -98,6 +98,7 @@
       "learned": "Learned",
       "highCrit": "High Crit",
       "halfResist": "Half Resist/Dodge",
+      "canBeDodged": "Can Be Dodged",
       "config": {
         "applyStatus": "Apply Status"
       }

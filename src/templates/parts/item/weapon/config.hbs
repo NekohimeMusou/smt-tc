@@ -33,16 +33,23 @@
           <input type="number" id="ammo-max" name="system.ammo.max" value="{{system.ammo.max}}" placeholder="0" data-dtype="Number" />
         </div>
         {{else}}
-        {{#if (eq system.weaponType "grenade")}}
-        <label for="qty" class="item-prop">{{localize "SMT.itemSheet.qty"}}</label>
-        <div class="item-prop">
-          <input type="number" id="qty" name="system.qty" value="{{system.qty}}" placeholder="0" data-dtype="Number" />
-        </div>
-        {{/if}}
+          {{#if (eq system.weaponType "grenade")}}
+          <label for="qty" class="item-prop">{{localize "SMT.itemSheet.qty"}}</label>
+          <div class="item-prop">
+            <input type="number" id="qty" name="system.qty" value="{{system.qty}}" placeholder="0" data-dtype="Number" />
+          </div>
+          {{/if}}
         {{/if}}
 
         <label for="price" class="item-prop">{{localize "SMT.itemSheet.price"}}</label>
         <input type="number" id="price" name="system.price" value="{{system.price}}" placeholder="0" data-dtype="Number" />
+
+        {{!-- Can be dodged? --}}
+        <label for="canBeDodged" class="item-prop">{{localize "SMT.itemSheet.canBeDodged"}}</label>
+        <div class="item-prop">
+          <input type="checkbox" id="canBeDodged" name="system.attackData.canBeDodged" data-dtype="Boolean"
+            {{checked system.attackData.canBeDodged}} />
+        </div>
       </li>
     </ol>
   </div>

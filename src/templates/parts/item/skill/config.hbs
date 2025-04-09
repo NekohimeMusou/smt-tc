@@ -106,11 +106,11 @@
             {{checked system.attackData.mods.pinhole}} />
         </div>
 
-        <label for="applyStatus" class="item-prop">{{localize "SMT.itemSheet.config.applyStatus"}}</label>
+        {{!-- Can be dodged? --}}
+        <label for="canBeDodged" class="item-prop">{{localize "SMT.itemSheet.canBeDodged"}}</label>
         <div class="item-prop">
-          <select id="applyStatus" name="system.attackData.status">
-            {{selectOptions SMT.statuses localize=true selected=system.attackData.status blank=(localize "SMT.none")}}
-          </select>
+          <input type="checkbox" id="canBeDodged" name="system.attackData.canBeDodged" data-dtype="Boolean"
+            {{checked system.attackData.canBeDodged}} />
         </div>
       </li>
       {{/unless}}
@@ -121,6 +121,13 @@
         <div class="item-prop flex3">
           <input type="text" id="inheritType" name="system.inheritType" value="{{system.inheritType}}"
             placeholder="{{localize "SMT.none"}}" data-dtype="String" />
+        </div>
+
+        <label for="applyStatus" class="item-prop">{{localize "SMT.itemSheet.config.applyStatus"}}</label>
+        <div class="item-prop">
+          <select id="applyStatus" name="system.attackData.status">
+            {{selectOptions SMT.statuses localize=true selected=system.attackData.status blank=(localize "SMT.none")}}
+          </select>
         </div>
       </li>
     </ol>
