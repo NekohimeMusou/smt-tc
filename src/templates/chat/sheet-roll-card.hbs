@@ -50,7 +50,7 @@
   {{/if}}
 
   {{!-- Dodge Button --}}
-  {{#if canBeDodged}}
+  {{#if (and success canBeDodged)}}
   <button type="button" class="card-reaction-roll" data-reaction-tag="dodge">
     {{localize "SMT.tn.dodge"}}
   </button>
