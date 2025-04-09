@@ -451,8 +451,8 @@
         "double": "Dbl ({rate}%)"
       },
       "ailment": {
-        "inflict": "{name} inflicted!",
-        "resist": "{name} resisted!"
+        "inflict": "{name} inflicted! ({rate}%)",
+        "resist": "{name} resisted! ({rate}%)"
       },
       "targets": "Targets:",
       "targetType": "Target: {targetType}",

@@ -79,6 +79,13 @@ export async function renderItemAttackCard(
   return await ChatMessage.create(chatData);
 }
 
+// eslint-disable-next-line @typescript-eslint/require-await
+Hooks.on("renderChatMessage", async (message: ChatMessage, html: JQuery) => {
+  if ((message.author ?? message.user) == game.user) {
+    html.find(".card-reaction-roll").on("click", _onCardRoll);
+  }
+});
+
 export async function renderAttackCard({
   actor,
   checkName = "Unknown",
@@ -111,10 +118,6 @@ export async function renderAttackCard({
 
   const template = "systems/smt-tc/templates/chat/sheet-roll-card.hbs";
   const content = await renderTemplate(template, context);
-
-  // Attach event handler to ".card-ailment-roll"
-  // data-ailment-rate, data-ailment-id
-  $(content).find(".card-reaction-roll").on("click", _onCardRoll);
 
   const chatData = {
     author: game.user.id,
@@ -191,20 +194,23 @@ async function _processCardRollToken({
     throw new Error(msg);
   }
 
+  console.log(token);
+
   if (reactionTag === "dodge") {
     // Make a statRoll and pass in the TN mod and checkName and tnType "dodge"
     const checkName = game.i18n.localize("SMT.tn.dodge");
-    return await SmtDice.statRoll({ actor: token.actor, checkName, tnMod });
+    return await SmtDice.statRoll({ actor: token.actor, tnType: "dodge", checkName, tnMod });
   } else {
     // Do an ailment roll
     const name = game.i18n.localize(`SMT.ailments.${reactionTag}`);
     const context = {
       ...(await SmtDice.ailmentRoll(Math.clamp(ailmentRate + tnMod, 5, 95))),
+      rate: ailmentRate,
       name,
     };
 
     foundry.utils.mergeObject(context, {
-      roll: await context.roll.render(),
+      rollRender: await context.roll.render(),
     });
 
     const template = "systems/smt-tc/templates/chat/ailment-roll-card.hbs";
@@ -216,7 +222,7 @@ async function _processCardRollToken({
       speaker: {
         scene: game.scenes.current,
         actor: token.actor,
-        token,
+        token: token.document,
       },
       rolls: [context.roll],
     };
