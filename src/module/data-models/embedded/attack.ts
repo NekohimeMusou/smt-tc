@@ -157,7 +157,10 @@ export default class AttackDataModel extends BaseEmbeddedDataModel {
 
     // Set this to true so the button will show up by default if you forget
     if ("canDodge" in source) {
-      source.canBeDodged = true;
+      const passiveOrTalk =
+        "attackType" in source &&
+        (source.attackType === "passive" || source.attackType === "talk");
+      source.canBeDodged = passiveOrTalk ? false : true;
       delete source.canDodge;
     }
 
