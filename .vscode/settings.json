@@ -48,6 +48,7 @@
     "makarakarn",
     "Megami",
     "mitama",
+    "musubi",
     "navette",
     "publicroll",
     "rakukaja",
@@ -57,6 +58,7 @@
     "rulebook",
     "Samael",
     "selfroll",
+    "shijima",
     "stackable",
     "statuscounter",
     "sukukaja",
@@ -78,7 +80,8 @@
     "wingfoot",
     "workon",
     "yingyang",
-    "yoma"
+    "yoma",
+    "yosuga"
   ],
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -94,5 +97,7 @@
   },
   "[handlebars]": {
     "editor.tabSize": 2
-  }
+  },
+  "i18n-ally.localesPaths": ["src/lang"],
+  "i18n-ally.keystyle": "nested"
 }

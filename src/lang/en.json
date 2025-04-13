@@ -130,6 +130,11 @@
       "evolvePath": "Evolve Path",
       "favoredStat": "Favored Stat"
     },
+    "reasons": {
+      "shijima": "Shijima",
+      "yosuga": "Yosuga",
+      "musubi": "Musubi"
+    },
     "resources": {
       "hp": "HP",
       "mp": "MP",

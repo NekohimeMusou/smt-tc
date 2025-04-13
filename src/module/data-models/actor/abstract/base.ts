@@ -1,3 +1,4 @@
+import { SMT } from "../../../config/config.js";
 import SmtActor from "../../../documents/actor/actor.js";
 import { Magatama } from "../../../documents/item/item.js";
 import DefenseAffinityData from "../../embedded/defense-affinities.js";
@@ -192,6 +193,17 @@ export default abstract class SmtBaseActorData extends foundry.abstract
         neutral: new fields.NumberField({ integer: true, min: 0 }),
         heeHo: new fields.NumberField({ integer: true, min: 0 }),
       }),
+      reasons: new fields.ArrayField(
+        new fields.SchemaField({
+          name: new fields.StringField(),
+          endorsementPoints: new fields.NumberField({ integer: true, min: 0 }),
+        }),
+        {
+          initial: Object.values(SMT.defaultReasons).map((reason) => {
+            return { name: game.i18n.localize(reason), endorsementPoints: 0 };
+          }),
+        },
+      ),
       behavior: new fields.StringField(),
     };
 
