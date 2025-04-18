@@ -326,6 +326,11 @@ export default class SmtDice {
     const hasPowerRoll = attackData?.hasPowerRoll;
     const targetType = attackData?.target;
 
+    // Clear TN mods if it's not auto
+    if (!auto) {
+      await actor.update({ "system.tnBoosts": 0 });
+    }
+
     let success = auto;
     let criticalHit = false;
     let fumble = false;
