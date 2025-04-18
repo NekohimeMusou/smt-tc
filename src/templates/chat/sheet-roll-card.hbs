@@ -49,26 +49,9 @@
     {{> "systems/smt-tc/templates/parts/chat/power-card-segment.hbs"}}
   {{/if}}
 
-  {{!-- Dodge Button --}}
-  {{#if (and success canBeDodged)}}
-  <button type="button" class="card-reaction-roll" data-reaction-tag="dodge">
-    {{localize "SMT.tn.dodge"}}
-  </button>
-  {{/if}}
-
   {{!-- Ailment --}}
   {{#if (and (or fumble success) ailmentData)}}
     <h3>{{localize "SMT.itemRoll.rollTitle" name=(localize (concat "SMT.ailments." ailmentData.id)) rate=ailmentData.rate.normal}}</h3>
-    {{!-- Display buttons to roll vs. ailment (normal/weak/strong) --}}
-    <div class="flexrow">
-      {{#with ailmentData}}
-      {{#each rate as |rate key|}}
-      <button type="button" class="card-reaction-roll" data-ailment-rate="{{rate}}" data-reaction-tag="{{../id}}">
-        {{localize (concat "SMT.itemRoll.ailmentButton." key) rate=rate}}
-      </button>
-      {{/each}}
-      {{/with}}
-    </div>
   {{/if}}
 
   {{!-- Curse --}}
