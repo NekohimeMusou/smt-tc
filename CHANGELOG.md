@@ -2,6 +2,24 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.6.10] - 2025-04-18
+
+### Changed
+
+- Clear 20% TN mods on non-auto roll
+
+### Added
+
+- Add bio sheet pane for Reason endorsements
+
+### Removed
+
+- Get rid of chat card reaction buttons til I can fix them
+
+### Fixed
+
+- Fix curse effect rolls not displaying on chat card
+
 ## [0.6.9] - 2025-04-09
 
 *Nice.*
@@ -417,6 +435,7 @@ _Added separate Human and Demon actor types with some custom behavior, and added
 
 _Initial preview release.*
 
+[0.6.10]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.10
 [0.6.9]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.9
 [0.6.8]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.8
 [0.6.7]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.7
