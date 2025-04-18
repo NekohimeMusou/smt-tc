@@ -1,0 +1,35 @@
+<section class="reasons">
+  <div class="items-list flexcol flexlarge">
+    <ol class="stat-list">
+      <li class="item flexrow items-header">
+        <div>
+          {{localize "SMT.reason.endorsements"}}
+        </div>
+
+        <div class="item-controls">
+          <a class="item-control add-reason" title="{{localize "SMT.sheet.addReason"}}">
+            <i class="fas fa-plus"></i></a>
+        </div>
+      </li>
+
+      {{#each system.endorsements}}
+      <li class="item item-entry flexrow">
+        <div class="item-prop flex3">
+          <input type="text" name="system.endorsements.{{@key}}.name" value="{{name}}"
+            placeholder="{{localize "SMT.actorSheet.name"}}" data-dtype="String" />
+        </div>
+
+        <div class="item-prop">
+          <input type="number" name="system.endorsements.{{@key}}.value" value="{{value}}"
+            placeholder="0" data-dtype="Number" />
+        </div>
+
+        <div class="item-controls">
+          <a class="item-control delete-reason" title="{{localize "SMT.sheet.deleteItem"}}" data-reason-key="{{@key}}"><i
+              class="fas fa-trash"></i></a>
+        </div>
+      </li>
+      {{/each}}
+    </ol>
+  </div>
+</section>

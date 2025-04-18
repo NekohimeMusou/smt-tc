@@ -217,6 +217,12 @@ const alignment = {
   heeHo: "SMT.alignment.heeHo",
 } as const;
 
+const defaultReasons = {
+  shijima: "SMT.reason.shijima",
+  musubi: "SMT.reason.musubi",
+  yosuga: "SMT.reason.yosuga",
+} as const;
+
 const attackTypes = {
   phys: "SMT.attackTypes.phys",
   mag: "SMT.attackTypes.mag",
@@ -358,6 +364,7 @@ export const SMT = {
   debuffSpells,
   tn,
   alignment,
+  defaultReasons,
   attackTypes,
   damageTypes,
   skillTypes,

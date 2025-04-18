@@ -32,6 +32,7 @@ export const templatePaths = [
   "systems/smt-tc/templates/parts/actor/background.hbs",
   "systems/smt-tc/templates/parts/actor/demon.hbs",
   "systems/smt-tc/templates/parts/actor/settings.hbs",
+  "systems/smt-tc/templates/parts/actor/reason.hbs",
 
   "systems/smt-tc/templates/parts/affinities.hbs",
   "systems/smt-tc/templates/parts/effects.hbs",

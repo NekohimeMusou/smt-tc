@@ -173,6 +173,10 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
 
     // Test new sheet rolls
     html.find(".sheet-roll").on("click", this.#onSheetRoll.bind(this));
+
+    // Add/delete Reason
+    html.find(".add-reason").on("click", this.#onAddReason.bind(this));
+    html.find(".delete-reason").on("click", this.#onDeleteReason.bind(this));
   }
 
   /**
@@ -430,5 +434,33 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       tnMod,
       potencyMod,
     });
+  }
+
+  async #onAddReason(event: JQuery.ClickEvent) {
+    event.preventDefault();
+
+    const endorsements = this.actor.system.endorsements;
+
+    const newReason = { name: game.i18n.format("SMT.sheet.newItem", { name: game.i18n.localize("SMT.reason.reason") }), value: 0 };
+    const newReasonArray = endorsements.concat([newReason]);
+    await this.actor.update({ "system.endorsements": newReasonArray });
+  }
+
+  async #onDeleteReason(event: JQuery.ClickEvent) {
+    event.preventDefault();
+
+    const endorsements = foundry.utils.deepClone(this.actor.system.endorsements);
+    const reasonKey = $(event.currentTarget).data("reasonKey") as string;
+    const key = parseInt(reasonKey);
+
+    if (isNaN(key) || key >= endorsements.length) {
+      const msg = game.i18n.localize("SMT.error.invalidReasonKey");
+      ui.notifications.warn(msg);
+      throw new Error(msg);
+    }
+
+    endorsements.splice(key, 1);
+
+    await this.actor.update({ "system.endorsements": endorsements });
   }
 }
