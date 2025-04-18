@@ -1,6 +1,12 @@
+import { SMT } from "../../../config/config.js";
 import SmtActor from "../../../documents/actor/actor.js";
 import { Magatama } from "../../../documents/item/item.js";
 import DefenseAffinityData from "../../embedded/defense-affinities.js";
+
+interface ReasonEndorsement {
+  name: string;
+  value: number;
+}
 
 export default abstract class SmtBaseActorData extends foundry.abstract
   .TypeDataModel {
@@ -192,6 +198,15 @@ export default abstract class SmtBaseActorData extends foundry.abstract
         neutral: new fields.NumberField({ integer: true, min: 0 }),
         heeHo: new fields.NumberField({ integer: true, min: 0 }),
       }),
+      endorsements: new fields.ArrayField(
+        new fields.ObjectField<ReasonEndorsement>(),
+        {
+          initial: Object.values(SMT.defaultReasons).map((locName) => ({
+            name: game.i18n.localize(locName),
+            value: 0,
+          })),
+        },
+      ),
       behavior: new fields.StringField(),
     };
 

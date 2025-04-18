@@ -17,7 +17,8 @@
       "newItem": "New {name}",
       "addItem": "Add Item",
       "editItem": "Edit Item",
-      "deleteItem": "Delete Item"
+      "deleteItem": "Delete Item",
+      "addReason": "Add Reason"
     },
     "tabs": {
       "main": "Main",
@@ -65,7 +66,8 @@
       "overrides.lv": "Override Lv",
       "overrides.hp": "Override HP",
       "overrides.mp": "Override MP",
-      "overrides.fp": "Override FP"
+      "overrides.fp": "Override FP",
+      "name": "Name"
     },
     "actorSettings": {
       "incenseUsed": "Incense Used"
@@ -184,6 +186,13 @@
       "light": "Light",
       "neutral": "Neutral",
       "heeHo": "Hee-Ho"
+    },
+    "reason": {
+      "endorsements": "Reason Endorsements",
+      "reason": "Reason",
+      "shijima": "Shijima",
+      "musubi": "Musubi",
+      "yosuga": "Yosuga"
     },
     "awards": {
       "xp": "XP",
@@ -542,7 +551,8 @@
       "sheetRollError": "Missing item and power type in sheet roll.",
       "missingTarget": "Missing target in target processing",
       "missingToken": "Missing token",
-      "missingReactionTag": "Missing reaction tag"
+      "missingReactionTag": "Missing reaction tag",
+      "invalidReasonKey": "Invalid Reason key"
     }
   },
   "TYPES": {
