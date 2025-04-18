@@ -384,7 +384,7 @@ export default class SmtDice {
         const curseRoll = hitCheckResult.curseRoll;
         rolls.push(curseRoll);
         foundry.utils.mergeObject(successData, {
-          curseRollRender: curseRoll.render(),
+          curseRollRender: await curseRoll.render(),
           curseResult: hitCheckResult.curseResult,
         });
       }
