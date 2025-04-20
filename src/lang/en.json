@@ -355,10 +355,12 @@
       "gun": "Gun",
       "grenade": "Grenade"
     },
-    "armorSlots": {
+    "equipSlots": {
       "head": "Head",
       "torso": "Torso",
-      "legs": "Legs"
+      "legs": "Legs",
+      "melee": "Melee",
+      "gun": "Gun"
     },
     "skills": {
       "basicStrike": "Basic Strike"

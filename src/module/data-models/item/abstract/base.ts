@@ -41,6 +41,28 @@ export default abstract class SmtBaseItemData extends foundry.abstract
       delete source.inheritanceTraits;
     }
 
+    if ("slot" in source) {
+      if (!("slots" in source)) {
+        const slot = source.slot as string;
+        const slots = {
+          head: false,
+          torso: false,
+          legs: false,
+          melee: false,
+          gun: false,
+          magatama: false,
+        };
+
+        if (slot in slots) {
+          slots[slot as keyof typeof slots] = true;
+        }
+
+        source.slots = slots;
+      }
+
+      delete source.slot;
+    }
+
     return super.migrateData(source);
   }
 
@@ -56,6 +78,14 @@ export default abstract class SmtBaseItemData extends foundry.abstract
       }),
       price: new fields.NumberField({ integer: true, min: 0 }),
       equipped: new fields.BooleanField(),
+      slots: new fields.SchemaField({
+        head: new fields.BooleanField(),
+        torso: new fields.BooleanField(),
+        legs: new fields.BooleanField(),
+        melee: new fields.BooleanField(),
+        gun: new fields.BooleanField(),
+        magatama: new fields.BooleanField(),
+      }),
       cost: new fields.NumberField({ integer: true, min: 0 }),
       costType: new fields.StringField({
         choices: CONFIG.SMT.costTypes,
