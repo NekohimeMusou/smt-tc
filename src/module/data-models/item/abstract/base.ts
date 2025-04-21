@@ -84,7 +84,6 @@ export default abstract class SmtBaseItemData extends foundry.abstract
         legs: new fields.BooleanField(),
         melee: new fields.BooleanField(),
         gun: new fields.BooleanField(),
-        magatama: new fields.BooleanField(),
       }),
       cost: new fields.NumberField({ integer: true, min: 0 }),
       costType: new fields.StringField({

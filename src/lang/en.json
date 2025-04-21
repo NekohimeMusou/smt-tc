@@ -95,6 +95,7 @@
       "ammo": "Ammo",
       "qty": "Qty",
       "slot": "Slot",
+      "slots": "Slots",
       "consumeOnUse": "Consume on Use",
       "hasAttack": "Has Attack",
       "learned": "Learned",

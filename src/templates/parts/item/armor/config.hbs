@@ -22,14 +22,24 @@
           <input type="number" id="price" name="system.price"
            value="{{system.price}}" placeholder="0" data-dtype="Number" />
         </div>
+      </li>
 
-        {{!-- Slot --}}
-        <label for="slot" class="item-prop">{{localize "SMT.itemSheet.slot"}}</label>
-        <div class="item-prop">
-          <select id="slot" name="system.slot">
-            {{selectOptions SMT.armorSlots localize=true selected=system.slot}}
-          </select>
-        </div>
+      <li class="item items-header">
+        <div>{{localize "SMT.itemSheet.slots"}}</div>
+      </li>
+
+      <li class="item flexrow">
+        <label for="head-slot" class="item-prop">{{localize "SMT.equipSlots.head"}}</label>
+        <input type="checkbox" id="head-slot" name="system.slots.head"
+          data-dtype="Boolean" {{checked system.slots.head}} />
+
+        <label for="torso-slot" class="item-prop">{{localize "SMT.equipSlots.torso"}}</label>
+        <input type="checkbox" id="torso-slot" name="system.slots.torso"
+          data-dtype="Boolean" {{checked system.slots.torso}} />
+
+        <label for="legs-slot" class="item-prop">{{localize "SMT.equipSlots.legs"}}</label>
+        <input type="checkbox" id="legs-slot" name="system.slots.legs"
+          data-dtype="Boolean" {{checked system.slots.legs}} />
       </li>
 
       <li class="item items-header">
