@@ -41,8 +41,7 @@
         <div class="item-prop">{{ifThen system.resist.mag system.resist.mag "0"}}</div>
 
         {{!-- Slot --}}
-        {{!-- Update this to work with new slot schema --}}
-        <div class="item-prop">{{localize (concat "SMT.equipSlots." system.slot)}}</div>
+        <div class="item-prop">{{system.armorSlotLabel}}</div>
 
         <div class="item-controls">
           <a class="item-control item-edit" title="{{localize "SMT.sheet.editItem"}}"><i class="fas fa-edit"></i></a>

@@ -12,6 +12,7 @@ declare global {
   type ResourceType = keyof typeof resourceTypes;
   type CostType = keyof typeof costTypes;
   type ItemType = keyof typeof itemTypes;
+  type ArmorSlot = keyof typeof armorSlots;
   type AttackType = keyof typeof attackTypes;
   type SkillType = keyof typeof skillTypes;
   type DamageType = keyof typeof damageTypes;

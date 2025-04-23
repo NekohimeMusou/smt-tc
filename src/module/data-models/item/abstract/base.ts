@@ -1,10 +1,26 @@
 import { SmtItem } from "../../../documents/item/item.js";
 
-export default abstract class SmtBaseItemData extends foundry.abstract
-  .TypeDataModel {
+export default abstract class SmtBaseItemData extends foundry.abstract.TypeDataModel {
   abstract override readonly type: ItemType;
 
   abstract readonly equippable: boolean;
+
+  get armorSlotLabel() {
+    const data = this._systemData;
+
+    const slots: string[] = [];
+
+    const slotNames = Object.keys(CONFIG.SMT.armorSlots) as ArmorSlot[];
+
+    for (const slotName of slotNames) {
+      if (data.slots[slotName]) {
+        const label = game.i18n.localize(CONFIG.SMT.armorSlots[slotName]);
+        slots.push(label);
+      }
+    }
+
+    return slots.join("/");
+  }
 
   static override migrateData(source: Record<string, unknown>) {
     // Fix old "combatants" to "allCombatants"
