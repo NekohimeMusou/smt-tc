@@ -172,7 +172,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     html.find(".item-roll").on("click", this.#onItemRoll.bind(this));
 
     // Reload a gun
-    // html.find(".item-reload").on("click", this.#onReload.bind(this));
+    html.find(".gun-reload").on("click", this.#onGunReload.bind(this));
 
     // Test new sheet rolls
     html.find(".sheet-roll").on("click", this.#onSheetRoll.bind(this));
@@ -474,30 +474,71 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     await this.actor.update({ "system.endorsements": endorsements });
   }
 
-  // #onReload(event: JQuery.ClickEvent) {
-  //   event.preventDefault();
+  async #onGunReload(event: JQuery.ClickEvent) {
+    event.preventDefault();
 
-  //   const element = $(event.currentTarget);
-  //   const itemId = element.closest(".item").data("itemId") as
-  //     | string
-  //     | undefined;
-  //   const weapon = this.actor.items.get(itemId ?? "");
+    const element = $(event.currentTarget);
+    const itemId = element.closest(".item").data("itemId") as
+      | string
+      | undefined;
+    const weapon = this.actor.items.get(itemId ?? "");
 
-  //   if (!weapon) {
-  //     const msg = game.i18n.localize("SMT.error.missingItem");
-  //     ui.notifications.error(msg);
-  //     throw new Error(msg);
-  //   }
+    if (!weapon) {
+      const msg = game.i18n.localize("SMT.error.missingItem");
+      ui.notifications.error(msg);
+      throw new Error(msg);
+    }
 
-  //   if (!weapon.isWeapon() || !weapon.isGun) {
-  //     const action = game.i18n.localize("SMT.error.notAGun.reload");
-  //     const msg = game.i18n.format("SMT.error.notAGun.msg", { action });
-  //     ui.notifications.warn(msg);
-  //     return;
-  //   }
+    if (!weapon.isWeapon() || !weapon.isGun) {
+      const action = game.i18n.localize("SMT.error.notAGun.reload");
+      const msg = game.i18n.format("SMT.error.notAGun.msg", { action });
+      ui.notifications.warn(msg);
+      return;
+    }
 
-  //   const bulletItem = this.actor.items.find((item) => item.type === "inventoryItem" && item.name === weapon.system.ammoType);
+    const currentAmmo = weapon.system.ammo.value;
+    const missingAmmo = weapon.system.ammo.max - currentAmmo;
 
-  //   const bulletItemQty = bulletItem?.system.qty;
-  // }
+    if (missingAmmo < 1) {
+      const msg = game.i18n.localize("SMT.error.magazineFull");
+      ui.notifications.notify(msg);
+      return;
+    }
+
+    const bulletItem = this.actor.items.find(
+      (item) =>
+        item.type === "inventoryItem" && item.name === weapon.system.ammoType,
+    );
+
+    if (!bulletItem) {
+      const msg = game.i18n.localize("SMT.error.noAmmoToReload");
+      ui.notifications.notify(msg);
+      return;
+    }
+
+    const ammoLoaded = await bulletItem.consumeItem(missingAmmo);
+
+    await weapon.update({ "system.ammo.value": currentAmmo + ammoLoaded });
+
+    const reloadMsg = game.i18n.format("SMT.ui.reloadGun", {
+      num: `${ammoLoaded}`,
+      ammo: bulletItem.name,
+      gun: weapon.name,
+    });
+
+    const chatData = {
+      author: game.user.id,
+      content: reloadMsg,
+      style: CONST.CHAT_MESSAGE_STYLES.EMOTE,
+      speaker: {
+        scene: game.scenes.current,
+        actor: this.actor,
+        token: this.actor.token,
+      },
+    };
+
+    // ui.notifications.notify(reloadMsg);
+
+    await ChatMessage.create(chatData);
+  }
 }

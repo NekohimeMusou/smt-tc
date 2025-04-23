@@ -541,7 +541,8 @@
     },
     "ui": {
       "gmOnly": "Only the GM is allowed to do this!",
-      "noTokensSelected": "You must select at least one token."
+      "noTokensSelected": "You must select at least one token.",
+      "reloadGun": "Loaded {num} {ammo} into {gun}!"
     },
     "error": {
       "missingHitRollTN": "Missing TN in hitRoll",
@@ -561,7 +562,9 @@
         "fire": "fire",
         "reload": "Reload"
       },
-      "insufficientAmmo": "Not enough ammo!"
+      "insufficientAmmo": "Not enough ammo!",
+      "noAmmoToReload": "No ammunition in inventory!",
+      "magazineFull": "No need to reload!"
     }
   },
   "TYPES": {

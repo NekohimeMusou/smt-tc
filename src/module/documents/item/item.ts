@@ -48,18 +48,22 @@ export class SmtItem extends Item<
     await this.update({ "system.qty": Math.max(data.qty + qty, 0) });
   }
 
-  async consumeItem() {
+  // Return: number of items successfully consumed (no overflow)
+  async consumeItem(num = 1) {
     const data = this.system;
 
     // Don't do anything if there's no actor
     if (!this.parent) {
-      return;
+      return 0;
     }
 
-    if (data.qty <= 1) {
+    if (data.qty <= num) {
+      const qty = data.qty;
       await this.delete();
+      return qty;
     } else {
-      await this.update({ "system.qty": data.qty - 1 });
+      await this.update({ "system.qty": data.qty - num });
+      return num;
     }
   }
 
