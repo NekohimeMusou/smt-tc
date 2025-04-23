@@ -142,7 +142,7 @@ export default class SmtDice {
   }: PowerRollData = {}): Promise<PowerRollResult> {
     const dice = powerBoost ? 2 : 1;
     const potencyModString = potencyMod ? ` + ${potencyMod}` : "";
-    const rollString = `${dice}d10x + ${basePower} + ${potency}${potencyModString}`;
+    const rollString = `${dice}d10x + ${basePower} + ${potency ?? 0}${potencyModString}`;
 
     const roll = await new Roll(rollString).roll();
     const power = Math.max(roll.total, 0);
