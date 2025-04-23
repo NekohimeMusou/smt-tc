@@ -9,11 +9,17 @@
         <div>{{localize "SMT.actorSheet.equipped"}}</div>
         {{/if}}
         {{!-- Ammo --}}
-        <div>{{localize "SMT.skillDetails.ammoQtyLabel"}}</div>
+        <div>{{localize "SMT.itemSheet.ammo"}}</div>
         {{!-- TN --}}
         <div>{{localize "SMT.actorSheet.tn"}}</div>
+        {{#if inventoryTab}}
+        {{!-- On the inventory tab, show potency}}
         {{!-- Potency --}}
         <div>{{localize "SMT.itemSheet.potency"}}</div>
+        {{else}}
+        {{!-- On the main tab, show fire selector --}}
+        <div>{{localize "SMT.actorSheet.fireSelect"}}</div>
+        {{/if}}
         {{!-- Total Power --}}
         <div>{{localize "SMT.itemSheet.power"}}</div>
         {{!-- Target --}}
@@ -64,8 +70,17 @@
         {{!-- TN --}}
         <div class="item-prop">{{system.attackData.tn}}%</div>
 
+        {{#if ../inventoryTab}}
         {{!-- Potency --}}
         <div class="item-prop">{{ifThen system.attackData.potency system.attackData.potency "0"}}</div>
+        {{else}}
+        {{!-- Fire Select --}}
+        <div class="item-prop flex-between">
+          <input type="checkbox" class="item-field-toggle" data-field-id="useAlternateCost" data-dtype="Boolean"
+            {{checked system.useAlternateCost}} {{ifThen (lt system.alternateCost 1) "disabled" ""}}/>
+          {{ifThen (gt system.alternateCost 0) (concat "<span>(" system.alternateCost ")</span>") ""}}
+        </div>
+        {{/if}}
 
         {{!-- Total Power --}}
         <div class="item-prop">{{ifThen system.attackData.totalPower system.attackData.totalPower "0"}}</div>

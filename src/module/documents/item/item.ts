@@ -10,18 +10,30 @@ export type Skill = Subtype<SmtItem, "skill">;
 
 export type AttackItem = InventoryItem | Weapon | Skill;
 
-export class SmtItem extends Item<typeof ITEMMODELS, SmtActor, SmtActiveEffect> {
+export class SmtItem extends Item<
+  typeof ITEMMODELS,
+  SmtActor,
+  SmtActiveEffect
+> {
   isAttackItem(): this is AttackItem {
     return (this as AttackItem).system.attackData !== undefined;
   }
 
-  async toggleField(fieldId: string, forcedState: boolean) {
+  isWeapon(): this is Weapon {
+    return this.system.type === "weapon";
+  }
+
+  get isGun(): boolean {
+    return this.isWeapon() && this.system.weaponType === "gun";
+  }
+
+  async toggleField(fieldId: string, forcedState: boolean | undefined) {
     if (!Object.hasOwn(this.system, fieldId)) {
       return;
     }
 
     //@ts-expect-error no-implicit-any: I'm being real lazy here
-    const newState = forcedState || !this.system?.[fieldId];
+    const newState = forcedState ?? !this.system?.[fieldId] ?? false;
 
     const updates = Object.fromEntries([[`system.${fieldId}`, newState]]);
 
@@ -51,13 +63,52 @@ export class SmtItem extends Item<typeof ITEMMODELS, SmtActor, SmtActiveEffect> 
     }
   }
 
+  /**
+   * Fire a gun, subtract ammo, and fail with a message if not enough
+   * Return value: Was it successfully fired?
+   */
+  async fireGun() {
+    if (!this.isGun) {
+      const action = game.i18n.localize("SMT.error.notAGun.fire");
+      const msg = game.i18n.format("SMT.error.notAGun.msg", { action });
+      ui.notifications.notify(msg);
+      return false;
+    }
+
+    const data = this.system;
+
+    const useAlternateCost = data.useAlternateCost;
+
+    const ammoCost = useAlternateCost ? data.alternateCost : data.cost;
+
+    const currentAmmo = (this as Weapon).system.ammo.value ?? 0;
+
+    if (ammoCost > currentAmmo) {
+      const msg = game.i18n.localize("SMT.error.insufficientAmmo");
+      ui.notifications.notify(msg);
+      return false;
+    }
+
+    const newAmmo = currentAmmo - ammoCost;
+
+    const updates = { "system.ammo.value": newAmmo };
+
+    await this.update(updates);
+
+    return true;
+  }
+
   // Return value: Was the cost paid?
   // Always returns true unless there's a cost to be paid
   async payCost() {
     const actor = this.parent;
     const costType = this.system.costType;
-    if (!actor || costType === "none" || costType === "consumeAmmo") {
+    if (!actor || costType === "none") {
       return true;
+    }
+
+    if (this.isGun) {
+      return await this.fireGun();
     }
 
     if (costType === "consumeItem") {

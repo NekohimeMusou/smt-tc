@@ -20,6 +20,13 @@
             {{selectOptions SMT.attackAffinities localize=true selected=system.attackData.affinity}}
           </select>
         </div>
+
+        {{!-- Alternate fire cost --}}
+        <label for="alternate-cost" class="item-prop">{{localize "SMT.itemSheet.alternateFireCost"}}</label>
+        <div class="item-prop">
+          <input type="number" id="alternate-cost" name="system.alternateCost" value="{{system.alternateCost}}"
+            placeholder="0" data-dtype="Number" />
+        </div>
       </li>
 
       <li class="item flexrow">

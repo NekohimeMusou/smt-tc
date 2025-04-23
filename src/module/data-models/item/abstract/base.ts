@@ -1,10 +1,15 @@
 import { SmtItem } from "../../../documents/item/item.js";
 
-export default abstract class SmtBaseItemData extends foundry.abstract
-  .TypeDataModel {
+export default abstract class SmtBaseItemData extends foundry.abstract.TypeDataModel {
   abstract override readonly type: ItemType;
 
   abstract readonly equippable: boolean;
+
+  get hasAlternateCost(): boolean {
+    const data = this._systemData;
+
+    return data.alternateCost > 0;
+  }
 
   static override migrateData(source: Record<string, unknown>) {
     // Fix old "combatants" to "allCombatants"
@@ -57,6 +62,9 @@ export default abstract class SmtBaseItemData extends foundry.abstract
       price: new fields.NumberField({ integer: true, min: 0 }),
       equipped: new fields.BooleanField(),
       cost: new fields.NumberField({ integer: true, min: 0 }),
+      // For e.g. the MP5's full-auto mode
+      alternateCost: new fields.NumberField({ integer: true, min: 0 }),
+      useAlternateCost: new fields.BooleanField(),
       costType: new fields.StringField({
         choices: CONFIG.SMT.costTypes,
         initial: "none",

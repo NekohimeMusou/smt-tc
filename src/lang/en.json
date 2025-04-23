@@ -67,7 +67,9 @@
       "overrides.hp": "Override HP",
       "overrides.mp": "Override MP",
       "overrides.fp": "Override FP",
-      "name": "Name"
+      "name": "Name",
+      "fireSelect": "Fire Select",
+      "reload": "Reload"
     },
     "actorSettings": {
       "incenseUsed": "Incense Used"
@@ -101,6 +103,7 @@
       "highCrit": "High Crit",
       "halfResist": "Half Resist/Dodge",
       "canBeDodged": "Can Be Dodged",
+      "alternateFireCost": "Alt Fire Cost",
       "config": {
         "applyStatus": "Apply Status"
       }
@@ -552,7 +555,13 @@
       "missingTarget": "Missing target in target processing",
       "missingToken": "Missing token",
       "missingReactionTag": "Missing reaction tag",
-      "invalidReasonKey": "Invalid Reason key"
+      "invalidReasonKey": "Invalid Reason key",
+      "notAGun": {
+        "msg": "Can't {action} a non-gun!",
+        "fire": "fire",
+        "reload": "Reload"
+      },
+      "insufficientAmmo": "Not enough ammo!"
     }
   },
   "TYPES": {
