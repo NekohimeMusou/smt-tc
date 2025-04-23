@@ -388,6 +388,12 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       throw new Error(msg);
     }
 
+    if (item.type === "inventoryItem" && !this.actor.system.canUseItems) {
+      const msg = game.i18n.localize("SMT.error.cantUseItems");
+      ui.notifications.notify(msg);
+      return;
+    }
+
     const targets =
       game.user.targets.size > 0
         ? ([...game.user.targets.values()] as SmtToken[]).map((token) => ({

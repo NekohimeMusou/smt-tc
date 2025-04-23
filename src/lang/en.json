@@ -552,7 +552,8 @@
       "missingTarget": "Missing target in target processing",
       "missingToken": "Missing token",
       "missingReactionTag": "Missing reaction tag",
-      "invalidReasonKey": "Invalid Reason key"
+      "invalidReasonKey": "Invalid Reason key",
+      "cantUseItems": "Demons can't use items!"
     }
   },
   "TYPES": {
