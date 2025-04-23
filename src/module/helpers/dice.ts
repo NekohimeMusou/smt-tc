@@ -340,7 +340,7 @@ export default class SmtDice {
       checkName: item.name,
       description: item.system.description,
       costType: itemData.costType,
-      cost: itemData.cost ?? 0,
+      cost: itemData.useAlternateCost ? itemData.alternateCost : itemData.cost,
       costPaid,
       costsAll: itemData.costsAll,
       auto,
