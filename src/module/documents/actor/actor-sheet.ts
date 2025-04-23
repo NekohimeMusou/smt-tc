@@ -171,6 +171,9 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     // Rolling an item (skill, weapon, etc)
     html.find(".item-roll").on("click", this.#onItemRoll.bind(this));
 
+    // Reload a gun
+    // html.find(".item-reload").on("click", this.#onReload.bind(this));
+
     // Test new sheet rolls
     html.find(".sheet-roll").on("click", this.#onSheetRoll.bind(this));
 
@@ -441,7 +444,12 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
 
     const endorsements = this.actor.system.endorsements;
 
-    const newReason = { name: game.i18n.format("SMT.sheet.newItem", { name: game.i18n.localize("SMT.reason.reason") }), value: 0 };
+    const newReason = {
+      name: game.i18n.format("SMT.sheet.newItem", {
+        name: game.i18n.localize("SMT.reason.reason"),
+      }),
+      value: 0,
+    };
     const newReasonArray = endorsements.concat([newReason]);
     await this.actor.update({ "system.endorsements": newReasonArray });
   }
@@ -449,7 +457,9 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
   async #onDeleteReason(event: JQuery.ClickEvent) {
     event.preventDefault();
 
-    const endorsements = foundry.utils.deepClone(this.actor.system.endorsements);
+    const endorsements = foundry.utils.deepClone(
+      this.actor.system.endorsements,
+    );
     const reasonKey = $(event.currentTarget).data("reasonKey") as string;
     const key = parseInt(reasonKey);
 
@@ -463,4 +473,31 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
 
     await this.actor.update({ "system.endorsements": endorsements });
   }
+
+  // #onReload(event: JQuery.ClickEvent) {
+  //   event.preventDefault();
+
+  //   const element = $(event.currentTarget);
+  //   const itemId = element.closest(".item").data("itemId") as
+  //     | string
+  //     | undefined;
+  //   const weapon = this.actor.items.get(itemId ?? "");
+
+  //   if (!weapon) {
+  //     const msg = game.i18n.localize("SMT.error.missingItem");
+  //     ui.notifications.error(msg);
+  //     throw new Error(msg);
+  //   }
+
+  //   if (!weapon.isWeapon() || !weapon.isGun) {
+  //     const action = game.i18n.localize("SMT.error.notAGun.reload");
+  //     const msg = game.i18n.format("SMT.error.notAGun.msg", { action });
+  //     ui.notifications.warn(msg);
+  //     return;
+  //   }
+
+  //   const bulletItem = this.actor.items.find((item) => item.type === "inventoryItem" && item.name === weapon.system.ammoType);
+
+  //   const bulletItemQty = bulletItem?.system.qty;
+  // }
 }

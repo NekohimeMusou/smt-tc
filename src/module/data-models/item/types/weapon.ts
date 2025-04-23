@@ -16,6 +16,8 @@ export default class WeaponData extends SmtBaseItemData {
         value: new fields.NumberField({ integer: true, min: 0 }),
       }),
       attackData: new fields.EmbeddedDataField(AttackDataModel),
+      //@ts-expect-error readonly exists
+      ammoType: new fields.StringField({ initial: "Bullets", readonly: true }),
     };
   }
 
