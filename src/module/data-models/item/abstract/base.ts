@@ -1,6 +1,7 @@
 import { SmtItem } from "../../../documents/item/item.js";
 
-export default abstract class SmtBaseItemData extends foundry.abstract.TypeDataModel {
+export default abstract class SmtBaseItemData extends foundry.abstract
+  .TypeDataModel {
   abstract override readonly type: ItemType;
 
   abstract readonly equippable: boolean;
@@ -9,6 +10,23 @@ export default abstract class SmtBaseItemData extends foundry.abstract.TypeDataM
     const data = this._systemData;
 
     return data.alternateCost > 0;
+  }
+
+  get armorSlotLabel() {
+    const data = this._systemData;
+
+    const slots: string[] = [];
+
+    const slotNames = Object.keys(CONFIG.SMT.armorSlots) as ArmorSlot[];
+
+    for (const slotName of slotNames) {
+      if (data.slots[slotName]) {
+        const label = game.i18n.localize(CONFIG.SMT.armorSlots[slotName]);
+        slots.push(label);
+      }
+    }
+
+    return slots.join("/");
   }
 
   static override migrateData(source: Record<string, unknown>) {
@@ -46,6 +64,28 @@ export default abstract class SmtBaseItemData extends foundry.abstract.TypeDataM
       delete source.inheritanceTraits;
     }
 
+    if ("slot" in source) {
+      if (!("slots" in source)) {
+        const slot = source.slot as string;
+        const slots = {
+          head: false,
+          torso: false,
+          legs: false,
+          melee: false,
+          gun: false,
+          magatama: false,
+        };
+
+        if (slot in slots) {
+          slots[slot as keyof typeof slots] = true;
+        }
+
+        source.slots = slots;
+      }
+
+      delete source.slot;
+    }
+
     return super.migrateData(source);
   }
 
@@ -61,6 +101,13 @@ export default abstract class SmtBaseItemData extends foundry.abstract.TypeDataM
       }),
       price: new fields.NumberField({ integer: true, min: 0 }),
       equipped: new fields.BooleanField(),
+      slots: new fields.SchemaField({
+        head: new fields.BooleanField(),
+        torso: new fields.BooleanField(),
+        legs: new fields.BooleanField(),
+        melee: new fields.BooleanField(),
+        gun: new fields.BooleanField(),
+      }),
       cost: new fields.NumberField({ integer: true, min: 0 }),
       // For e.g. the MP5's full-auto mode
       alternateCost: new fields.NumberField({ integer: true, min: 0 }),

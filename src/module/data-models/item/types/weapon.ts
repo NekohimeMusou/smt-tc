@@ -35,6 +35,8 @@ export default class WeaponData extends SmtBaseItemData {
       case "gun":
         data.costType = "consumeAmmo";
         data.cost = 1;
+        data.slots.melee = false;
+        data.slots.gun = true;
         break;
       case "grenade":
         data.costType = "consumeItem";
@@ -43,6 +45,8 @@ export default class WeaponData extends SmtBaseItemData {
       case "melee":
         data.costType = "none";
         data.cost = 0;
+        data.slots.melee = true;
+        data.slots.gun = false;
         break;
       default:
         data.weaponType satisfies never;

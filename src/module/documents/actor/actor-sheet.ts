@@ -3,7 +3,7 @@ import SmtDice from "../../helpers/dice.js";
 import { prepareActiveEffectCategories } from "../active-effect/helpers.js";
 import { onManageActiveEffect } from "../active-effect/helpers.js";
 import SmtActor from "./actor.js";
-import { Armor, AttackItem, InventoryItem } from "../item/item.js";
+import { AttackItem, InventoryItem } from "../item/item.js";
 import SmtToken from "../token.js";
 
 export default class SmtActorSheet extends ActorSheet<SmtActor> {
@@ -341,18 +341,18 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     }
 
     // If we're equipping armor, unequip other armor in the same slot
-    if (item.type === "armor" && fieldId === "equipped" && newState) {
-      await Promise.all(
-        this.actor.items
-          .filter(
-            (actorItem) =>
-              (actorItem as Armor | undefined)?.system.slot ===
-                (item as Armor | undefined)?.system.slot &&
-              actorItem.system.equipped,
-          )
-          .map(async (item) => await item.toggleField(fieldId, false)),
-      );
-    }
+    // if (item.type === "armor" && fieldId === "equipped" && newState) {
+    //   await Promise.all(
+    //     this.actor.items
+    //       .filter(
+    //         (actorItem) =>
+    //           (actorItem as Armor | undefined)?.system.slot ===
+    //             (item as Armor | undefined)?.system.slot &&
+    //           actorItem.system.equipped,
+    //       )
+    //       .map(async (item) => await item.toggleField(fieldId, false)),
+    //   );
+    // }
 
     await item.toggleField(fieldId, newState);
 

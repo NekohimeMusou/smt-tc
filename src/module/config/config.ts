@@ -12,6 +12,7 @@ declare global {
   type ResourceType = keyof typeof resourceTypes;
   type CostType = keyof typeof costTypes;
   type ItemType = keyof typeof itemTypes;
+  type ArmorSlot = keyof typeof armorSlots;
   type AttackType = keyof typeof attackTypes;
   type SkillType = keyof typeof skillTypes;
   type DamageType = keyof typeof damageTypes;
@@ -301,10 +302,18 @@ const skillProps = {
   applyFocus: "SMT.skillProps.applyFocus",
 } as const;
 
+const equipSlots = {
+  head: "SMT.equipSlots.head",
+  torso: "SMT.equipSlots.torso",
+  legs: "SMT.equipSlots.legs",
+  melee: "SMT.equipSlots.melee",
+  gun: "SMT.equipSlots.gun",
+} as const;
+
 const armorSlots = {
-  head: "SMT.armorSlots.head",
-  torso: "SMT.armorSlots.torso",
-  legs: "SMT.armorSlots.legs",
+  head: "SMT.equipSlots.head",
+  torso: "SMT.equipSlots.torso",
+  legs: "SMT.equipSlots.legs",
 } as const;
 
 const targets = {
@@ -374,6 +383,7 @@ export const SMT = {
   weaponTypes,
   powerBoost,
   skillProps,
+  equipSlots,
   armorSlots,
   targets,
   successLevels,
