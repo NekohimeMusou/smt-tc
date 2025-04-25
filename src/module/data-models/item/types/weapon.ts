@@ -14,10 +14,24 @@ export default class WeaponData extends SmtBaseItemData {
       ammo: new fields.SchemaField({
         max: new fields.NumberField({ integer: true, positive: true }),
         value: new fields.NumberField({ integer: true, min: 0 }),
+        itemName: new fields.StringField({ initial: "Bullets" }),
       }),
       attackData: new fields.EmbeddedDataField(AttackDataModel),
-      ammoType: new fields.StringField({ initial: "Bullets" }),
     };
+  }
+
+  static override migrateData(source: Record<string, unknown>) {
+    if ("ammoType" in source) {
+      foundry.utils.mergeObject(source, {
+        ammo: {
+          itemName: source.ammoType,
+        }
+      });
+
+      delete source.ammoType;
+    }
+
+    return super.migrateData(source);
   }
 
   override prepareBaseData() {

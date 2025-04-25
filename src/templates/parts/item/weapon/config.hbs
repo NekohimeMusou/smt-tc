@@ -29,25 +29,7 @@
         </div>
       </li>
 
-      <li class="item flexrow">
-        {{#if (eq system.weaponType "gun")}}
-        <label for="ammo-value" class="item-prop">{{localize "SMT.itemSheet.ammo"}}</label>
-        <div class="item-prop">
-          <input type="number" id="ammo-value" name="system.ammo.value" value="{{system.ammo.value}}" placeholder="0" data-dtype="Number" />
-        </div>
-        <span> / </span>
-        <div class="item-prop">
-          <input type="number" id="ammo-max" name="system.ammo.max" value="{{system.ammo.max}}" placeholder="0" data-dtype="Number" />
-        </div>
-        {{else}}
-          {{#if (eq system.weaponType "grenade")}}
-          <label for="qty" class="item-prop">{{localize "SMT.itemSheet.qty"}}</label>
-          <div class="item-prop">
-            <input type="number" id="qty" name="system.qty" value="{{system.qty}}" placeholder="0" data-dtype="Number" />
-          </div>
-          {{/if}}
-        {{/if}}
-
+      <li class="item flexrow flex-group-center">
         <label for="price" class="item-prop">{{localize "SMT.itemSheet.price"}}</label>
         <input type="number" id="price" name="system.price" value="{{system.price}}" placeholder="0" data-dtype="Number" />
 
@@ -58,6 +40,41 @@
             {{checked system.attackData.canBeDodged}} />
         </div>
       </li>
+
+      {{#if (eq system.weaponType "gun")}}
+        <li class="item flexrow flex-group-center">
+          <label for="ammo-value" class="item-prop">{{localize "SMT.itemSheet.ammo"}}</label>
+
+          <div class="item-prop">
+            <input type="number" id="ammo-value" name="system.ammo.value" value="{{system.ammo.value}}"
+              placeholder="0" data-dtype="Number" />
+          </div>
+
+          <span> / </span>
+
+          <div class="item-prop">
+            <input type="number" id="ammo-max" name="system.ammo.max" value="{{system.ammo.max}}"
+              placeholder="0" data-dtype="Number" />
+          </div>
+
+          <label for="ammo-item" class="item-prop">{{localize "SMT.itemSheet.ammoItem"}}</label>
+
+          <div class="item-prop">
+            <input type="text" id="ammo-item" name="system.ammo.itemName"
+              value="{{system.ammo.itemName}}" placeholder="Bullets" data-dtype="String" />
+          </div>
+        </li>
+        {{else}}
+          {{#if (eq system.weaponType "grenade")}}
+          <li class="item flexrow flex-group-center">
+            <label for="qty" class="item-prop">{{localize "SMT.itemSheet.qty"}}</label>
+            <div class="item-prop">
+              <input type="number" id="qty" name="system.qty" value="{{system.qty}}"
+                placeholder="0" data-dtype="Number" />
+            </div>
+          </li>
+          {{/if}}
+        {{/if}}
     </ol>
   </div>
 </section>

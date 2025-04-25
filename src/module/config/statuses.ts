@@ -169,6 +169,11 @@ export const statuses = [
     img: "icons/svg/aura.svg",
   },
   {
+    id: "pinhole",
+    name: "SMT.statusEffects.pinhole",
+    img: "icons/svg/target.svg",
+  },
+  {
     id: "liftoma",
     name: "SMT.statusEffects.liftoma",
     img: "icons/svg/angel.svg",
@@ -201,7 +206,7 @@ export const statuses = [
   {
     id: "riberama",
     name: "SMT.statusEffects.riberama",
-    img: "icons/svg/target.svg",
+    img: "icons/svg/anchor.svg",
   },
   {
     id: "curse",

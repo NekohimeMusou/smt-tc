@@ -8,11 +8,7 @@ export type Fiend = Subtype<SmtActor, "fiend">;
 export type Demon = Subtype<SmtActor, "demon">;
 export type Human = Subtype<SmtActor, "human">;
 
-export default class SmtActor extends Actor<
-  typeof ACTORMODELS,
-  SmtItem,
-  SmtActiveEffect
-> {
+export default class SmtActor extends Actor<typeof ACTORMODELS, SmtItem, SmtActiveEffect> {
   async inflictAilment(id: AilmentId): Promise<boolean> {
     const newAilment = ailmentData.find((ailment) => ailment.id === id);
     if (!newAilment) {
@@ -48,6 +44,16 @@ export default class SmtActor extends Actor<
 
     return false;
   }
+
+  // Use this with Item Piles vendors.
+  // Import the macro so Item Piles can find it.
+  // Create an item (the details are unimportant) and drop it onto a vendor.
+  // Open that item's settings and check "Item is Service", then put the macro's name,
+  // "Fountain of Life", in the Purchase Macro field just below it.
+  // Set the price to free. The macro will pop up a dialog that tells you
+  // the price before you commit and charge you automatically.
+
+  // buyer.healingFountain();
 
   async healingFountain() {
     const { value: hp, max: maxHp } = this.system.hp;

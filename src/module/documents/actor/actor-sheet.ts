@@ -513,7 +513,8 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
 
     const bulletItem = this.actor.items.find(
       (item) =>
-        item.type === "inventoryItem" && item.name === weapon.system.ammoType,
+        item.type === "inventoryItem" &&
+        item.name === weapon.system.ammo.itemName,
     );
 
     if (!bulletItem) {
