@@ -12,7 +12,7 @@ This system assumes you're playing Tokyo Conception. If you're into a different 
 
 Alternatively, you can download and extract the zip file for the latest release.
 
-**Step 2:** Install the [Item Piles](https://foundryvtt.com/packages/item-piles) module and take a quick glance at [its documentation](https://fantasycomputer.works/FoundryVTT-ItemPiles/#/). If I could make this a mandatory dependency I would. It saves so much time and bookkeeping on looting and shopping that I seriously don't recommend using the system without it. The system compendium includes a couple example vendors.
+**Step 2:** Install the [Item Piles](https://foundryvtt.com/packages/item-piles) module and take a quick glance at [its documentation](https://fantasycomputer.works/FoundryVTT-ItemPiles/#/). If I could make this a mandatory dependency I would. It saves so much time and bookkeeping on looting and shopping that I seriously don't recommend using the system without it. Full support is built into the system, and the compendium includes a couple example vendors.
 
 ## Documentation
 
