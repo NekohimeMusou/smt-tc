@@ -169,10 +169,6 @@ export default class AttackDataModel extends BaseEmbeddedDataModel {
       source.mods instanceof Object &&
       "pinhole" in source.mods
     ) {
-      if (source.mods.pinhole && "status" in source) {
-        source.status = "pinhole";
-      }
-
       delete source.mods.pinhole;
     }
 
