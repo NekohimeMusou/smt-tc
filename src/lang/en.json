@@ -564,7 +564,8 @@
       },
       "insufficientAmmo": "Not enough ammo!",
       "noAmmoToReload": "No ammunition in inventory!",
-      "magazineFull": "No need to reload!"
+      "magazineFull": "No need to reload!",
+      "cantUseItems": "Demons can't use items!"
     }
   },
   "TYPES": {

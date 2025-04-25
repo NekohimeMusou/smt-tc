@@ -8,8 +8,7 @@ interface ReasonEndorsement {
   value: number;
 }
 
-export default abstract class SmtBaseActorData extends foundry.abstract
-  .TypeDataModel {
+export default abstract class SmtBaseActorData extends foundry.abstract.TypeDataModel {
   abstract override readonly type: CharacterClass;
 
   get actor() {
@@ -70,6 +69,10 @@ export default abstract class SmtBaseActorData extends foundry.abstract
     );
 
     return data.lv - data.baseLv - statPoints + data.incenseUsed;
+  }
+
+  get canUseItems() {
+    return this.type !== "demon";
   }
 
   static override migrateData(source: Record<string, unknown>) {

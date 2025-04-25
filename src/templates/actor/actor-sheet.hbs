@@ -6,9 +6,7 @@
   <nav class="sheet-tabs tabs" data-group="primary">
     {{!-- Default tab is defined in actor-sheet.ts --}}
     <a class="item resource-label" data-tab="main">{{localize "SMT.tabs.main"}}</a>
-    {{#if (ne actor.type "demon")}}
     <a class="item resource-label" data-tab="inventory">{{localize "SMT.tabs.inventory"}}</a>
-    {{/if}}
     <a class="item resource-label" data-tab="bio">{{localize "SMT.tabs.bio"}}</a>
     <a class="item resource-label" data-tab="effects">{{localize "SMT.tabs.effects"}}</a>
   </nav>
@@ -21,11 +19,9 @@
     </div>
 
     {{!-- Inventory Tab --}}
-    {{#if (ne actor.type "demon")}}
     <div class="tab inventory" data-group="primary" data-tab="inventory">
       {{> "systems/smt-tc/templates/parts/actor/tabs/inventory.hbs"}}
     </div>
-    {{/if}}
 
     {{!-- Bio Tab --}}
     <div class="tab bio" data-group="primary" data-tab="bio">
