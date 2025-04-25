@@ -2,7 +2,7 @@
   "id": "smt-tc",
   "title": "SMT RPG: Tokyo Conception (Unofficial)",
   "description": "Unofficial Foundry VTT system for Shin Megami Tensei: Tokyo Conception. Not affiliated with LionWing Publishing or ATLUS.",
-  "version": "0.6.10",
+  "version": "0.6.11",
   "compatibility": {
     "minimum": 12,
     "verified": 12
@@ -10,7 +10,7 @@
 
   "url": "https://github.com/NekohimeMusou/smt-tc",
   "manifest": "https://github.com/NekohimeMusou/smt-tc/releases/latest/download/system.json",
-  "download": "https://github.com/NekohimeMusou/smt-tc/releases/download/v0.6.10/smt-tc-v0.6.10.zip",
+  "download": "https://github.com/NekohimeMusou/smt-tc/releases/download/v0.6.11/smt-tc-v0.6.11.zip",
 
   "authors": [
     {
@@ -19,41 +19,6 @@
       "discord": "nekohime.musou"
     }
   ],
-
-  "relationships": {
-    "recommends": [
-      {
-        "id": "item-piles",
-        "type": "module",
-        "reason": "Makes shopping and inventory management VASTLY more manageable. SMT: Tokyo Conception comes with built-in support. Seriously, don't play without it!"
-      },
-      {
-        "id": "statuscounter",
-        "type": "module",
-        "reason": "Keep track of the number of buff and debuff stacks currently applied to tokens."
-      },
-      {
-        "id": "multistatus",
-        "type": "module",
-        "reason": "Apply the same status effect to multiple tokens at once; great for buffs and debuffs that affect an entire side. Compatible with Status Icon Counters."
-      },
-      {
-        "id": "random-target",
-        "type": "module",
-        "reason": "Randomly select a target for your enemy demons' attacks."
-      },
-      {
-        "id": "smarttarget",
-        "type": "module",
-        "reason": "Alt-click tokens to target them instead of Foundry's default controls, along with other QoL improvements for targeting."
-      },
-      {
-        "id": "token-health",
-        "type": "module",
-        "reason": "Assign the same amount of damage or healing to multiple tokens at once. Works for HP and MP, and won't overflow your max."
-      }
-    ]
-  },
 
   "esmodules": ["module/smt-tc.js"],
   "styles": ["styles/smt-tc.css", "styles/smt-tc-supplemental.css"],

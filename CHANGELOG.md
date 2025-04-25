@@ -2,6 +2,29 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.6.11] - 2025-04-25
+
+*Tee-hee oops ;3c I accidentally committed a bunch of the gun stuff to main.*
+
+### Changed
+
+- Change Pinhole to a status ([#15](https://github.com/NekohimeMusou/smt-tc/pull/15))
+- Reorganize and consolidate docs into project wiki
+
+### Added
+
+- Let guns consume and reload ammo ([9d8f801](https://github.com/NekohimeMusou/smt-tc/commit/9d8f8018c03a4becaa0560187fa2757219e3cf2d))
+- Allow specifying different ammo items for guns ([#15](https://github.com/NekohimeMusou/smt-tc/pull/15))
+- Support armor that uses multiple slots ([#7](https://github.com/NekohimeMusou/smt-tc/pull/7))
+- Add workaround to skip costs for FP rerolls ([#16](https://github.com/NekohimeMusou/smt-tc/pull/16))
+
+### Fixed
+
+- Make demons' gem inventory visible ([#6](https://github.com/NekohimeMusou/smt-tc/pull/6))
+- Let demons caddy items ([#6](https://github.com/NekohimeMusou/smt-tc/pull/6))
+- Fix element boosts ignoring potency ([#13](https://github.com/NekohimeMusou/smt-tc/pull/13))
+- Fix some outdated/inconsistent compendium entries
+
 ## [0.6.10] - 2025-04-18
 
 ### Changed
@@ -435,6 +458,7 @@ _Added separate Human and Demon actor types with some custom behavior, and added
 
 _Initial preview release.*
 
+[0.6.11]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.11
 [0.6.10]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.10
 [0.6.9]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.9
 [0.6.8]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.8
