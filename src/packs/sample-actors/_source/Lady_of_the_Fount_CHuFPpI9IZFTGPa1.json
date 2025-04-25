@@ -265,7 +265,7 @@
           "purchaseOnly": true,
           "description": "<p>The enigmatic keeper of the Fountain of Life. Not known for modesty.</p>"
         },
-        "version": "3.2.1"
+        "version": "3.2.5"
       }
     },
     "randomImg": false
@@ -321,68 +321,6 @@
         "lastModifiedBy": null
       },
       "_key": "!actors.items!CHuFPpI9IZFTGPa1.j8aPB8RYxzcleeBn"
-    },
-    {
-      "name": "Fountain of Life",
-      "type": "inventoryItem",
-      "_id": "iMG6TVgc2XSI0nYZ",
-      "img": "icons/magic/life/heart-area-circle-red-green.webp",
-      "system": {
-        "description": "<p>Heal all HP and MP. Costs 1 macca per HP and 2 macca per MP.</p>",
-        "qty": 1,
-        "price": 0,
-        "equipped": false,
-        "cost": null,
-        "costType": "none",
-        "consumeOnUse": false,
-        "hasAttack": false,
-        "attackData": {
-          "auto": false,
-          "attackType": "phys",
-          "potency": null,
-          "affinity": "phys",
-          "target": "one",
-          "ailment": {
-            "rate": 5
-          },
-          "hasPowerRoll": false,
-          "canDodge": false,
-          "mods": {
-            "highCrit": false,
-            "pinhole": false
-          }
-        }
-      },
-      "effects": [],
-      "folder": null,
-      "sort": 0,
-      "ownership": {
-        "default": 0,
-        "D8v4rmnQdKr3E1iD": 3
-      },
-      "flags": {
-        "item-piles": {
-          "item": {
-            "isService": true,
-            "macro": "Fountain of Life"
-          },
-          "system": {
-            "quantityForPrice": 1
-          },
-          "version": "3.2.1"
-        }
-      },
-      "_stats": {
-        "compendiumSource": "Item.b3WSelgizF4GVpbM",
-        "duplicateSource": null,
-        "coreVersion": "12.331",
-        "systemId": "smt-tc",
-        "systemVersion": "0.5.8",
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null
-      },
-      "_key": "!actors.items!CHuFPpI9IZFTGPa1.iMG6TVgc2XSI0nYZ"
     },
     {
       "name": "Revive from Death",
@@ -583,7 +521,7 @@
         "purchaseOnly": true,
         "description": "<p>The enigmatic keeper of the Fountain of Life. Not known for modesty.</p>"
       },
-      "version": "3.2.1"
+      "version": "3.2.5"
     }
   },
   "_stats": {
@@ -593,7 +531,7 @@
     "systemId": "smt-tc",
     "systemVersion": "0.5.8",
     "createdTime": 1742582003500,
-    "modifiedTime": 1742582003500,
+    "modifiedTime": 1745606790780,
     "lastModifiedBy": "D8v4rmnQdKr3E1iD"
   },
   "_id": "CHuFPpI9IZFTGPa1",

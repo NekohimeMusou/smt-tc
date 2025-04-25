@@ -27,7 +27,8 @@
       "mods": {
         "highCrit": false,
         "pinhole": false
-      }
+      },
+      "status": "rakukaja"
     },
     "inheritType": ""
   },
@@ -38,9 +39,9 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "smt-tc",
-    "systemVersion": "0.5.8",
+    "systemVersion": "0.6.10",
     "createdTime": 1742582681115,
-    "modifiedTime": 1742582681115,
+    "modifiedTime": 1745606867960,
     "lastModifiedBy": "D8v4rmnQdKr3E1iD"
   },
   "_id": "zJ1kNoSuJRpjJJ12",

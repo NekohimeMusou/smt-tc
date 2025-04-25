@@ -27,7 +27,9 @@
       "mods": {
         "highCrit": false,
         "pinhole": false
-      }
+      },
+      "canBeDodged": false,
+      "status": ""
     },
     "inheritType": ""
   },
@@ -38,9 +40,9 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "smt-tc",
-    "systemVersion": "0.5.8",
+    "systemVersion": "0.6.10",
     "createdTime": 1742582767305,
-    "modifiedTime": 1742582767305,
+    "modifiedTime": 1745606955214,
     "lastModifiedBy": "D8v4rmnQdKr3E1iD"
   },
   "_id": "E13zyPiaflso8ess",

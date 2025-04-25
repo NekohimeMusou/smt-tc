@@ -4,7 +4,7 @@
   "type": "skill",
   "img": "icons/magic/symbols/runes-star-blue.webp",
   "system": {
-    "description": "<p>Increase allies' Mag Attack by 1d10. Stacks up to 4 times.</p>",
+    "description": "<p>Increase allies' Mag Attack by [/roll 1d10]. Stacks up to 4 times.</p>",
     "qty": 1,
     "price": null,
     "equipped": false,
@@ -14,7 +14,8 @@
     "attackData": {
       "attackType": "spell",
       "ailment": {
-        "rate": null
+        "rate": null,
+        "id": ""
       },
       "affinity": "support",
       "auto": true,
@@ -25,7 +26,8 @@
       "mods": {
         "highCrit": false,
         "pinhole": false
-      }
+      },
+      "status": "makakaja"
     },
     "inheritType": "",
     "costType": "none"
@@ -37,9 +39,9 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "smt-tc",
-    "systemVersion": "0.5.8",
+    "systemVersion": "0.6.10",
     "createdTime": 1742582681115,
-    "modifiedTime": 1742582681115,
+    "modifiedTime": 1745606881309,
     "lastModifiedBy": "D8v4rmnQdKr3E1iD"
   },
   "_id": "hZp6dfQFMrKBZmEi",

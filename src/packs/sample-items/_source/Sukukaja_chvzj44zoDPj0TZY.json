@@ -28,7 +28,8 @@
       "mods": {
         "highCrit": false,
         "pinhole": false
-      }
+      },
+      "status": "sukukaja"
     },
     "inheritType": ""
   },
@@ -44,9 +45,9 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "smt-tc",
-    "systemVersion": "0.5.8",
+    "systemVersion": "0.6.10",
     "createdTime": 1742582681115,
-    "modifiedTime": 1742582681115,
+    "modifiedTime": 1745606860527,
     "lastModifiedBy": "D8v4rmnQdKr3E1iD"
   },
   "_key": "!items!chvzj44zoDPj0TZY"
