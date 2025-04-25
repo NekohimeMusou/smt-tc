@@ -331,6 +331,9 @@ export default class SmtDice {
       await actor.update({ "system.tnBoosts": 0 });
     }
 
+    const focused = actor.statuses.has("focus");
+    const pinhole = actor.statuses.has("pinhole");
+
     let success = auto;
     let criticalHit = false;
     let fumble = false;
@@ -347,9 +350,7 @@ export default class SmtDice {
       status: attackData?.status,
       targetType,
       hasPowerRoll,
-      mods: {
-        pinhole: attackData?.mods.pinhole,
-      },
+      pinhole,
       rolls,
       targets,
 
@@ -422,7 +423,7 @@ export default class SmtDice {
         : { power: 0, critPower: 0, powerRoll: undefined };
 
       const focusMultiplier =
-        actor.statuses.has("focus") && attackData.damageType === "phys" ? 2 : 1;
+        focused && attackData.damageType === "phys" ? 2 : 1;
 
       if (powerRoll) {
         rolls.push(powerRoll);
@@ -436,7 +437,7 @@ export default class SmtDice {
                   target,
                   damageType: attackData.damageType,
                   attackAffinity: attackData.affinity ?? "unique",
-                  halfResist: cardData.mods.pinhole,
+                  halfResist: pinhole,
                   power: power * focusMultiplier,
                   critPower: critPower * focusMultiplier,
                   status: attackData.status,
@@ -483,7 +484,15 @@ export default class SmtDice {
       });
     }
 
-    await actor.toggleStatusEffect("focus", { overlay: false, active: false });
+    await Promise.all(
+      ["focus", "pinhole"].map(
+        async (status) =>
+          await actor.toggleStatusEffect(status, {
+            overlay: false,
+            active: false,
+          }),
+      ),
+    );
 
     if (attackData?.status && attackData.target === "self") {
       await actor.toggleStatusEffect(attackData.status, {

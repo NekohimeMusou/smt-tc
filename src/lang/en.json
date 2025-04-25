@@ -101,7 +101,6 @@
       "hasAttack": "Has Attack",
       "learned": "Learned",
       "highCrit": "High Crit",
-      "halfResist": "Half Resist/Dodge",
       "canBeDodged": "Can Be Dodged",
       "alternateFireCost": "Alt Fire Cost",
       "ammoItem": "Ammo Item",
@@ -262,6 +261,7 @@
     "statusEffects": {
       "defending": "Defending",
       "focus": "Focus",
+      "pinhole": "Pinhole",
       "liftoma": "Liftoma",
       "lightoma": "Lightoma",
       "tetraja": "Tetraja",

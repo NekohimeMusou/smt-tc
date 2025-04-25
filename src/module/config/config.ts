@@ -162,6 +162,7 @@ const statuses = {
   sukunda: "SMT.buffs.sukunda",
   defending: "SMT.statusEffects.defending",
   focus: "SMT.statusEffects.focus",
+  pinhole: "SMT.statusEffects.pinhole",
   liftoma: "SMT.statusEffects.liftoma",
   lightoma: "SMT.statusEffects.lightoma",
   tetraja: "SMT.statusEffects.tetraja",
