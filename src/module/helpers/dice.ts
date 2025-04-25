@@ -44,6 +44,7 @@ interface PowerRollData {
   potency?: number;
   potencyMod?: number;
   powerBoost?: boolean;
+  elementBoost?: boolean;
 }
 
 interface PowerRollResult {
@@ -139,10 +140,14 @@ export default class SmtDice {
     potency = 0,
     potencyMod = 0,
     powerBoost = false,
+    elementBoost = false,
   }: PowerRollData = {}): Promise<PowerRollResult> {
     const dice = powerBoost ? 2 : 1;
     const potencyModString = potencyMod ? ` + ${potencyMod}` : "";
-    const rollString = `${dice}d10x + ${basePower} + ${potency ?? 0}${potencyModString}`;
+    const powerString = elementBoost
+      ? `floor((${basePower} + ${potency ?? 0}${potencyModString}) * 1.5)`
+      : `${basePower} + ${potency ?? 0}${potencyModString}`;
+    const rollString = `${dice}d10x + ${powerString}`;
 
     const roll = await new Roll(rollString).roll();
     const power = Math.max(roll.total, 0);
@@ -186,7 +191,7 @@ export default class SmtDice {
     return {
       inflict,
       roll,
-    }
+    };
   }
 
   // TODO: Call this directly instead of using sheetRoll
@@ -410,14 +415,14 @@ export default class SmtDice {
         actor.system.elementBoost?.[
           affinity as keyof typeof actor.system.elementBoost
         ];
-      const boostMultiplier = elementBoost ? 1.5 : 1;
 
       const { power, critPower, powerRoll } = attackData.hasPowerRoll
         ? await this.powerRoll({
-            basePower: Math.floor(attackData.basePower * boostMultiplier),
+            basePower: Math.floor(attackData.basePower),
             potency: attackData.potency,
             potencyMod,
             powerBoost: attackData.powerBoost,
+            elementBoost,
           })
         : { power: 0, critPower: 0, powerRoll: undefined };
 
