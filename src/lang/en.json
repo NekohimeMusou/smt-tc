@@ -104,6 +104,7 @@
       "halfResist": "Half Resist/Dodge",
       "canBeDodged": "Can Be Dodged",
       "alternateFireCost": "Alt Fire Cost",
+      "ammoItem": "Ammo Item",
       "config": {
         "applyStatus": "Apply Status"
       }
