@@ -57,6 +57,7 @@ interface ItemRollData {
   targets?: TargetData[];
   tnMod?: number;
   potencyMod?: number;
+  skipCost?: boolean;
 }
 
 interface TargetProcessData {
@@ -186,7 +187,7 @@ export default class SmtDice {
     return {
       inflict,
       roll,
-    }
+    };
   }
 
   // TODO: Call this directly instead of using sheetRoll
@@ -302,6 +303,7 @@ export default class SmtDice {
     targets,
     tnMod = 0,
     potencyMod = 0,
+    skipCost = false,
   }: ItemRollData = {}) {
     const actor = item?.parent;
 
@@ -319,7 +321,7 @@ export default class SmtDice {
 
     const rolls: Roll[] = [];
 
-    const costPaid = await item.payCost();
+    const costPaid = skipCost ? true : await item.payCost();
 
     // If it's not an attack item, we don't roll an attack
     const auto = attackData?.auto ?? true;

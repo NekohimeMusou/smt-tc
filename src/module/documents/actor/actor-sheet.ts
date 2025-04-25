@@ -413,6 +413,8 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
     // Is the user signaling to show the dialog?
     const dialogKey =
       event.shiftKey != game.settings.get("smt-tc", "showRollDialogByDefault");
+    
+    const skipCost = event.ctrlKey;
 
     // Show the dialog anyway if it's a consumable item
     const showDialog = consumeOnUse || dialogKey;
@@ -436,6 +438,7 @@ export default class SmtActorSheet extends ActorSheet<SmtActor> {
       targets,
       tnMod,
       potencyMod,
+      skipCost,
     });
   }
 
