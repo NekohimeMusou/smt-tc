@@ -418,7 +418,7 @@ export default class SmtDice {
 
       const { power, critPower, powerRoll } = attackData.hasPowerRoll
         ? await this.powerRoll({
-            basePower: Math.floor(attackData.basePower),
+            basePower: attackData.basePower,
             potency: attackData.potency,
             potencyMod,
             powerBoost: attackData.powerBoost,
