@@ -10,6 +10,8 @@
   {{#if (eq actor.type "demon")}}
   {{> "systems/smt-tc/templates/parts/actor/demon.hbs"}}
   {{/if}}
-  {{> "systems/smt-tc/templates/parts/actor/awards.hbs"}}
+  {{#unless system.overrides.hideAwardsPane}}
+    {{> "systems/smt-tc/templates/parts/actor/awards.hbs"}}
+  {{/unless}}
   {{> "systems/smt-tc/templates/parts/actor/notes.hbs"}}
 </section>

@@ -59,6 +59,18 @@
             {{checked system.overrides.fp.toggle}} />
         </div>
       </li>
+
+      <li class="item item-prop flexrow">
+        {{!-- Hide Awards pane? --}}
+        <label for="system.overrides.hideAwardsPane" class="item-prop">
+          {{localize "SMT.actorSheet.overrides.hideAwardsPane"}}
+        </label>
+
+        <div class="item-prop">
+          <input type="checkbox" id="system.overrides.hideAwardsPane" name="system.overrides.hideAwardsPane" data-dtype="Boolean"
+            {{checked system.overrides.hideAwardsPane}} />
+        </div>
+      </li>
     </ol>
   </div>
 </section>

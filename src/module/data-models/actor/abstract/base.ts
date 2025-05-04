@@ -290,6 +290,7 @@ export default abstract class SmtBaseActorData extends foundry.abstract.TypeData
         toggle: new fields.BooleanField(),
         value: new fields.NumberField({ integer: true, min: 0 }),
       }),
+      hideAwardsPane: new fields.BooleanField(),
     });
 
     return {
