@@ -136,6 +136,15 @@ const affinityLevels = {
   repel: "SMT.affinityLevels.repel",
 } as const;
 
+const affinityPriorities = [
+  "weak",
+  "none",
+  "strong",
+  "null",
+  "drain",
+  "repel",
+] as const;
+
 const ailments = {
   shock: "SMT.ailments.shock",
   panic: "SMT.ailments.panic",
@@ -366,6 +375,7 @@ export const SMT = {
   attackAffinities,
   defenseAffinities,
   affinityLevels,
+  affinityPriorities,
   ailments,
   ailmentData,
   statuses,

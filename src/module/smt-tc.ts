@@ -5,6 +5,7 @@ import registerSystemSettings from "./config/settings.js";
 import { configureStatusEffects } from "./config/statuses.js";
 import { ACTORMODELS } from "./data-models/actor/actor-data-model.js";
 import { ITEMMODELS } from "./data-models/item/item-data-model.js";
+import { applyAffinityOverride } from "./documents/active-effect/helpers.js";
 import SmtActorSheet from "./documents/actor/actor-sheet.js";
 import SmtActor from "./documents/actor/actor.js";
 import SmtItemSheet from "./documents/item/item-sheet.js";
@@ -37,7 +38,6 @@ Hooks.once("init", async () => {
   registerSystemSettings();
   registerHooks();
   registerModuleAPIs();
-  registerHandlebarsHelpers();
 
   configureStatusEffects();
 
@@ -70,14 +70,7 @@ function registerSheetApplications() {
 
 function registerHooks() {
   Hooks.on("createActor", createBasicStrike);
-}
-
-function registerHandlebarsHelpers() {
-  Handlebars.registerHelper("incrementKey", (keyIn: string) => {
-    const key = parseInt(keyIn ?? "0") || 0;
-
-    return `${key + 1}`;
-  });
+  Hooks.on("applyActiveEffect", applyAffinityOverride);
 }
 
 async function preloadHandlebarsTemplates() {

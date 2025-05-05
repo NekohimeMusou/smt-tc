@@ -14,6 +14,8 @@ interface AECategories {
   inactive: AECategory;
 }
 
+type SystemAffinityPath = `system.affinities.${DefenseAffinity}`;
+
 /**
  * Manage Active Effect instances through the Actor Sheet via effect control buttons.
  * @param {MouseEvent} event      The left-click event on the effect control
@@ -97,4 +99,53 @@ export function prepareActiveEffectCategories(
     else categories.passive.effects.push(e);
   }
   return categories;
+}
+
+function isSystemAffinityPath(path: string): path is SystemAffinityPath {
+  const affinity = path.split(".")?.[2];
+
+  return (
+    path.startsWith("system.affinities.") &&
+    Object.keys(CONFIG.SMT.defenseAffinities).includes(affinity)
+  );
+}
+
+function isAffinityLevel(level: string): level is AffinityLevel {
+  // @ts-expect-error ???
+  return CONFIG.SMT.affinityPriorities.includes(level);
+}
+
+// TODO: Blows up here with `string "none" is not a function`
+export function applyAffinityOverride(
+  document: Actor,
+  change: AEChange,
+  current: string,
+  delta: string,
+  changes: Record<string, unknown>,
+) {
+  const changeKey = change.key;
+
+  if (
+    // Return if the change key isn't a valid affinity path
+    !isSystemAffinityPath(changeKey) ||
+    // Return if the document isn't an SmtActor
+    !(document instanceof SmtActor) ||
+    // Return if the current value isn't a valid affinity level
+    !isAffinityLevel(current) ||
+    // Make sure delta is a valid change
+    !isAffinityLevel(delta)
+  ) {
+    return;
+  }
+
+  // Find which affinity is "better"
+  // @ts-expect-error ???
+  const currentPriority = CONFIG.SMT.affinityPriorities.findIndex(current);
+  // @ts-expect-error ???
+  const deltaPriority = CONFIG.SMT.affinityPriorities.findIndex(delta);
+
+  // If the incoming affinity has a higher precedence, add it to the change object
+  if (deltaPriority > currentPriority) {
+    changes[changeKey] = delta;
+  }
 }
