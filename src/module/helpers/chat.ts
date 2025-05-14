@@ -75,7 +75,7 @@ export async function renderAttackCard({
   checkName = "Unknown",
   affinity,
   costType = "none",
-  cost,
+  cost = 0,
   description = "",
   costPaid = true,
   successData = {},
