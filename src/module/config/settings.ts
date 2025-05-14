@@ -72,7 +72,7 @@ export default function registerSystemSettings() {
     name: "SMT.settings.editableActorSheetBuffs.name",
     hint: "SMT.settings.editableActorSheetBuffs.hint",
     scope: "world",
-    config: true,
+    config: false,
     requiresReload: true,
     type: Boolean,
     default: false,
