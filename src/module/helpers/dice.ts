@@ -300,7 +300,12 @@ export default class SmtDice {
       });
     }
 
-    return await renderAttackCard(cardData);
+    const card = await renderAttackCard(cardData);
+
+    // Clear TN mods if it's not auto
+    await actor.update({ "system.tnBoosts": 0 });
+
+    return card;
   }
 
   static async itemRoll({
@@ -332,11 +337,6 @@ export default class SmtDice {
     const auto = attackData?.auto ?? true;
     const hasPowerRoll = attackData?.hasPowerRoll;
     const targetType = attackData?.target;
-
-    // Clear TN mods if it's not auto
-    if (!auto) {
-      await actor.update({ "system.tnBoosts": 0 });
-    }
 
     const focused = actor.statuses.has("focus");
     const pinhole = actor.statuses.has("pinhole");
@@ -508,13 +508,20 @@ export default class SmtDice {
       });
     }
 
-    return await renderItemAttackCard({
+    const card = await renderItemAttackCard({
       context: cardData,
       rolls,
       actor,
       // @ts-expect-error idk about this TokenDocument vs. Token
       token: actor.token,
     });
+
+    // Clear TN mods if it's not auto
+    if (!auto) {
+      await actor.update({ "system.tnBoosts": 0 });
+    }
+
+    return card;
   }
 
   static async #processTarget({
