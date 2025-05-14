@@ -2,6 +2,19 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.6.12] - 2025-05-14
+
+*Kept you waiting, huh?*
+
+### Removed
+
+- Remove editable buff field option because it didn't work ([#19](https://github.com/NekohimeMusou/smt-tc/pull/19))
+
+### Fixed
+
+- Fix TN boosts from the actor sheet not applying to rolls ([#19](https://github.com/NekohimeMusou/smt-tc/pull/19))
+- Fix "Cost: null MP" in skill output ([#19](https://github.com/NekohimeMusou/smt-tc/pull/19))
+
 ## [0.6.11] - 2025-04-25
 
 *Tee-hee oops ;3c I accidentally committed a bunch of the gun stuff to main.*
@@ -458,6 +471,7 @@ _Added separate Human and Demon actor types with some custom behavior, and added
 
 _Initial preview release.*
 
+[0.6.12]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.12
 [0.6.11]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.11
 [0.6.10]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.10
 [0.6.9]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.9
