@@ -249,6 +249,7 @@ export default abstract class SmtBaseActorData extends foundry.abstract.TypeData
       item: new fields.BooleanField(),
     });
 
+    // TODO: Make this a generic array of affinities or something
     const elementBoost = new fields.SchemaField({
       fire: new fields.BooleanField(),
       cold: new fields.BooleanField(),

@@ -64,8 +64,9 @@ export default class AttackDataModel extends BaseEmbeddedDataModel {
     }
 
     const basePower = data.basePower;
+    const elementBoostMultiplier = data.elementBoost ? 1.5 : 1;
 
-    return Math.max(potency + basePower, 0);
+    return Math.max(Math.floor((potency + basePower) * elementBoostMultiplier), 0);
   }
 
   get basePower() {
@@ -127,6 +128,20 @@ export default class AttackDataModel extends BaseEmbeddedDataModel {
       (["phys", "gun"].includes(data.attackType) && actor.system.mods.might) ||
       data.mods.highCrit
     );
+  }
+
+  get elementBoost() {
+    const actor = this.actor;
+
+    if (!actor) {
+      return false;
+    }
+
+    const affinity = this._systemData.affinity;
+
+    return actor.system.elementBoost?.[
+      affinity as keyof typeof actor.system.elementBoost
+    ];
   }
 
   get autoFailThreshold() {

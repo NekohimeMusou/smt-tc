@@ -40,11 +40,9 @@ interface HitCheckResult {
 }
 
 interface PowerRollData {
-  basePower?: number;
-  potency?: number;
-  potencyMod?: number;
+  power?: number;
+  powerMod?: number;
   powerBoost?: boolean;
-  elementBoost?: boolean;
 }
 
 interface PowerRollResult {
@@ -137,23 +135,25 @@ export default class SmtDice {
   }
 
   static async powerRoll({
-    basePower = 0,
-    potency = 0,
-    potencyMod = 0,
+    power = 0,
+    powerMod = 0,
     powerBoost = false,
-    elementBoost = false,
   }: PowerRollData = {}): Promise<PowerRollResult> {
-    const dice = powerBoost ? 2 : 1;
-    const potencyModString = potencyMod ? ` + ${potencyMod}` : "";
-    const powerString = elementBoost
-      ? `floor((${basePower} + ${potency ?? 0}${potencyModString}) * 1.5)`
-      : `${basePower} + ${potency ?? 0}${potencyModString}`;
-    const rollString = `${dice}d10x + ${powerString}`;
+    let rollString = `${powerBoost ? 2 : 1}d10x`;
+
+    if (power) {
+      rollString += ` + ${power}`;
+    }
+
+    if (powerMod) {
+      const sign = powerMod >= 0 ? "+" : "-";
+      rollString += ` ${sign} ${Math.abs(powerMod)}`;
+    }
 
     const roll = await new Roll(rollString).roll();
-    const power = Math.max(roll.total, 0);
+    const totalPower = Math.max(roll.total, 0);
 
-    return { power, critPower: power * 2, powerRoll: roll };
+    return { power: totalPower, critPower: totalPower * 2, powerRoll: roll };
   }
 
   // Refactor this since the item roll doesn't use it anyway
@@ -281,8 +281,8 @@ export default class SmtDice {
       const powerBoost = actor.system.powerBoost[powerBoostType];
 
       const { power, critPower, powerRoll } = await this.powerRoll({
-        basePower,
-        potencyMod,
+        power: basePower,
+        powerMod: potencyMod,
         powerBoost,
       });
 
@@ -415,19 +415,11 @@ export default class SmtDice {
     }
 
     if ((success || fumble) && attackData) {
-      const affinity = attackData.affinity;
-      const elementBoost =
-        actor.system.elementBoost?.[
-          affinity as keyof typeof actor.system.elementBoost
-        ];
-
       const { power, critPower, powerRoll } = attackData.hasPowerRoll
         ? await this.powerRoll({
-            basePower: attackData.basePower,
-            potency: attackData.potency,
-            potencyMod,
+            power: attackData.totalPower,
+            powerMod: potencyMod,
             powerBoost: attackData.powerBoost,
-            elementBoost,
           })
         : { power: 0, critPower: 0, powerRoll: undefined };
 
