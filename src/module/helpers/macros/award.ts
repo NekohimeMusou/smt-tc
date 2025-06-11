@@ -132,20 +132,11 @@ export async function grantRewards() {
   await luckyFindCheck(tokens);
 }
 
-export async function luckyFindCheck(tokens: SmtToken[]) {
+async function luckyFindCheck(tokens: SmtToken[]) {
   // GMs only!
   if (!game.user.isGM) {
     return ui.notifications.notify(game.i18n.localize("SMT.ui.gmOnly"));
   }
-
-  // const tokens = canvas.tokens.controlled as SmtToken[];
-
-  // If no tokens are controlled, display a notification
-  // if (tokens.length < 1) {
-  //   return ui.notifications.notify(
-  //     game.i18n.localize("SMT.ui.noTokensSelected"),
-  //   );
-  // }
 
   const results = await Promise.all(
     tokens
