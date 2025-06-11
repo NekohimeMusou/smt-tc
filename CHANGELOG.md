@@ -2,6 +2,28 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.6.14] - 2025-06-11
+
+### Changed
+
+- Collapse each item to one line in Resolve Conflict macro
+- Roll Lucky Find along with Award macro
+- Toggle status on or off when using buff macro
+
+### Added
+
+- Add GM-only Fountain of Life macro
+
+### Removed
+
+- Remove macca split checkbox
+- Remove redundant Lucky Find macro
+
+### Fixed
+
+- Fix: Sheet TN boost doesn't apply to negotiation
+- Fix: Bugged TN on item roll card if modifier entered in dialog
+
 ## [0.6.13] - 2025-06-06
 
 ### Fixed
@@ -477,6 +499,7 @@ _Added separate Human and Demon actor types with some custom behavior, and added
 
 _Initial preview release.*
 
+[0.6.14]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.14
 [0.6.13]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.13
 [0.6.12]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.12
 [0.6.11]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.11
