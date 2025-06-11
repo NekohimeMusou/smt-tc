@@ -131,6 +131,7 @@ export default class SmtActor extends Actor<
     const mpHealed = Math.max(maxMp - mp, 0);
 
     const { healed, insufficientMacca, cost } = await renderFountainDialog({
+      charName: this.name,
       hp: hpHealed,
       mp: mpHealed,
       macca,
