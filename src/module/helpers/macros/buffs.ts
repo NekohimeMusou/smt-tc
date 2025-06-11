@@ -36,43 +36,17 @@ export async function applyBuffs() {
   const clearDebuffs = action === "clearAll" || action === "dekunda";
   const applyBuffs = !clearBuffs && !clearDebuffs;
 
-  if (clearBuffs) {
-    await Promise.all(
-      tokens.map(async (token) => {
-        const updates = Object.fromEntries(
-          Object.keys(CONFIG.SMT.buffSpells).map((buff) => [
-            `system.buffs.${buff}`,
-            0,
-          ]),
-        );
-        await token.actor.update(updates);
-      }),
-    );
-  }
-
-  if (clearDebuffs) {
-    await Promise.all(
-      tokens.map(async (token) => {
-        const updates = Object.fromEntries(
-          Object.keys(CONFIG.SMT.debuffSpells).map((debuff) => [
-            `system.buffs.${debuff}`,
-            0,
-          ]),
-        );
-        await token.actor.update(updates);
-      }),
-    );
-  }
-
   if (applyBuffs) {
+    const buff = action;
     await Promise.all(
-      tokens.map(async (token) => {
-        const originalValue = token.actor.system.buffs[action];
-        const updates = Object.fromEntries([
-          [`system.buffs.${action}`, originalValue + buffAmt],
-        ]);
-        await token.actor.update(updates);
-      }),
+      tokens.map(async (token) => await token.actor.applyBuff(buff, buffAmt)),
+    );
+  } else {
+    await Promise.all(
+      tokens.map(
+        async (token) =>
+          await token.actor.clearBuffs({ clearBuffs, clearDebuffs }),
+      ),
     );
   }
 
@@ -105,4 +79,44 @@ export async function applyBuffs() {
   };
 
   return await ChatMessage.create(chatData);
+}
+
+interface BuffData {
+  tokens?: SmtToken[];
+  clearBuffs?: boolean;
+  clearDebuffs?: boolean;
+}
+
+export async function removeBuffs({
+  tokens = [],
+  clearBuffs = false,
+  clearDebuffs = false,
+}: BuffData = {}) {
+  if (clearBuffs) {
+    await Promise.all(
+      tokens.map(async (token) => {
+        const updates = Object.fromEntries(
+          Object.keys(CONFIG.SMT.buffSpells).map((buff) => [
+            `system.buffs.${buff}`,
+            0,
+          ]),
+        );
+        await token.actor.update(updates);
+      }),
+    );
+  }
+
+  if (clearDebuffs) {
+    await Promise.all(
+      tokens.map(async (token) => {
+        const updates = Object.fromEntries(
+          Object.keys(CONFIG.SMT.debuffSpells).map((debuff) => [
+            `system.buffs.${debuff}`,
+            0,
+          ]),
+        );
+        await token.actor.update(updates);
+      }),
+    );
+  }
 }

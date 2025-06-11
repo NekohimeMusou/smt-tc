@@ -8,7 +8,11 @@ export type Fiend = Subtype<SmtActor, "fiend">;
 export type Demon = Subtype<SmtActor, "demon">;
 export type Human = Subtype<SmtActor, "human">;
 
-export default class SmtActor extends Actor<typeof ACTORMODELS, SmtItem, SmtActiveEffect> {
+export default class SmtActor extends Actor<
+  typeof ACTORMODELS,
+  SmtItem,
+  SmtActiveEffect
+> {
   async inflictAilment(id: AilmentId): Promise<boolean> {
     const newAilment = ailmentData.find((ailment) => ailment.id === id);
     if (!newAilment) {
@@ -45,15 +49,72 @@ export default class SmtActor extends Actor<typeof ACTORMODELS, SmtItem, SmtActi
     return false;
   }
 
-  // Use this with Item Piles vendors.
-  // Import the macro so Item Piles can find it.
-  // Create an item (the details are unimportant) and drop it onto a vendor.
-  // Open that item's settings and check "Item is Service", then put the macro's name,
-  // "Fountain of Life", in the Purchase Macro field just below it.
-  // Set the price to free. The macro will pop up a dialog that tells you
-  // the price before you commit and charge you automatically.
+  async applyBuff(buff: keyof typeof CONFIG.SMT.buffs, amt: number) {
+    const originalValue = this.system.buffs[buff];
 
-  // buyer.healingFountain();
+    const updates = Object.fromEntries([
+      [`system.buffs.${buff}`, originalValue + amt],
+    ]);
+
+    await this.update(updates);
+
+    // TODO: Integrate with Token Status Counters
+    // Returns true if the effect existed already
+    await this.toggleStatusEffect(buff, { overlay: false, active: true });
+  }
+
+  async clearBuffs({ clearBuffs = false, clearDebuffs = false } = {}) {
+    if (!(clearBuffs || clearDebuffs)) {
+      return;
+    }
+    const updates = {};
+
+    if (clearBuffs) {
+      foundry.utils.mergeObject(
+        updates,
+        Object.fromEntries(
+          Object.keys(CONFIG.SMT.buffSpells).map((buff) => [
+            `system.buffs.${buff}`,
+            0,
+          ]),
+        ),
+      );
+
+      await Promise.all(
+        Object.keys(CONFIG.SMT.buffSpells).map(
+          async (buff) =>
+            await this.toggleStatusEffect(buff, {
+              overlay: false,
+              active: false,
+            }),
+        ),
+      );
+    }
+
+    if (clearDebuffs) {
+      foundry.utils.mergeObject(
+        updates,
+        Object.fromEntries(
+          Object.keys(CONFIG.SMT.debuffSpells).map((debuff) => [
+            `system.buffs.${debuff}`,
+            0,
+          ]),
+        ),
+      );
+
+      await Promise.all(
+        Object.keys(CONFIG.SMT.debuffSpells).map(
+          async (debuff) =>
+            await this.toggleStatusEffect(debuff, {
+              overlay: false,
+              active: false,
+            }),
+        ),
+      );
+    }
+
+    await this.update(updates);
+  }
 
   async healingFountain() {
     const { value: hp, max: maxHp } = this.system.hp;

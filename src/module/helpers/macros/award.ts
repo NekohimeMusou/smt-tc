@@ -36,9 +36,23 @@ export async function resolveConflict() {
     0,
   );
 
-  const itemDrops = tokens
+  const dropList = tokens
     .filter((token) => token.actor.system.awards.itemDrops)
     .map((token) => token.actor.system.awards.itemDrops);
+
+  const itemDrops: { item: string; qty: number }[] = [];
+
+  for (const item of dropList) {
+    // Try to find the item in the list of drops
+    const dropEntry = itemDrops.find((drop) => drop.item === item);
+
+    // If it isn't there, add it
+    if (!dropEntry) {
+      itemDrops.push({ item, qty: 1 });
+    } else {
+      dropEntry.qty += 1;
+    }
+  }
 
   const template =
     "systems/smt-tc/templates/chat/macro/conflict-resolution.hbs";
@@ -112,22 +126,16 @@ export async function grantRewards() {
     },
   };
 
-  return await ChatMessage.create(chatData);
+  await ChatMessage.create(chatData);
+
+  // Do Lucky Find checks
+  await luckyFindCheck(tokens);
 }
 
-export async function luckyFindCheck() {
+async function luckyFindCheck(tokens: SmtToken[]) {
   // GMs only!
   if (!game.user.isGM) {
     return ui.notifications.notify(game.i18n.localize("SMT.ui.gmOnly"));
-  }
-
-  const tokens = canvas.tokens.controlled as SmtToken[];
-
-  // If no tokens are controlled, display a notification
-  if (tokens.length < 1) {
-    return ui.notifications.notify(
-      game.i18n.localize("SMT.ui.noTokensSelected"),
-    );
   }
 
   const results = await Promise.all(
