@@ -167,6 +167,7 @@ export async function renderBuffDialog(): Promise<BuffDialogResult> {
 }
 
 interface FountainDialogData {
+  charName?: string;
   hp?: number;
   mp?: number;
   macca?: number;
@@ -179,6 +180,7 @@ interface FountainDialogResult {
 }
 
 export async function renderFountainDialog({
+  charName = "",
   hp = 0,
   mp = 0,
   macca = 0,
@@ -188,6 +190,7 @@ export async function renderFountainDialog({
   const template = "systems/smt-tc/templates/dialog/fountain-of-life.hbs";
 
   const content = await renderTemplate(template, {
+    charName,
     hp,
     mp,
     cost,
