@@ -443,7 +443,7 @@ export default abstract class SmtBaseActorData extends foundry.abstract.TypeData
     data.tn.mag += data.tn.ma + accuracyBuff;
     data.tn.save += data.tn.vi;
     data.tn.dodge += stats.ag.value + 10 + tnBoostMod + accuracyBuff;
-    data.tn.negotiation += stats.lu.value * 2 + 20;
+    data.tn.negotiation += stats.lu.value * 2 + 20 + tnBoostMod;
     data.tn.gun += data.tn.ag + accuracyBuff;
 
     // NOW apply multi-attack
