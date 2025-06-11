@@ -49,16 +49,6 @@ export default function registerSystemSettings() {
     default: "raw",
   });
 
-  game.settings.register("smt-tc", "defaultDivideMacca", {
-    name: "SMT.settings.defaultDivideMacca.name",
-    hint: "SMT.settings.defaultDivideMacca.hint",
-    scope: "world",
-    config: true,
-    requiresReload: false,
-    type: Boolean,
-    default: false,
-  });
-
   game.settings.register("smt-tc", "editableGems", {
     name: "SMT.settings.editableGems.name",
     hint: "SMT.settings.editableGems.hint",

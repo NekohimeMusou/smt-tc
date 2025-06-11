@@ -73,29 +73,20 @@ export async function grantRewards() {
     );
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
-  const defaultDivideMacca = game.settings.get(
-    "smt-tc",
-    "defaultDivideMacca",
-  ) as boolean;
-
   const {
     xp: xpEarned,
     macca: maccaEarned,
-    divideMacca,
     cancelled,
-  } = await renderAwardDialog(defaultDivideMacca);
+  } = await renderAwardDialog();
 
   if (cancelled) {
     return;
   }
 
-  const shares = divideMacca ? selectedTokens : 1;
-
   const xp = xpEarned ?? 0;
   const totalMacca = maccaEarned ?? 0;
 
-  const macca = Math.floor(totalMacca / shares);
+  const macca = Math.floor(totalMacca / selectedTokens);
 
   await Promise.all(
     tokens.map(
