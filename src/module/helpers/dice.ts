@@ -371,8 +371,9 @@ export default class SmtDice {
     };
 
     if (attackData && !auto && costPaid) {
+      const tn = Math.max(attackData.tn + tnMod, 0);
       const hitCheckResult = await this.hitCheck({
-        tn: Math.max(attackData.tn + tnMod, 0),
+        tn,
         autoFailThreshold: attackData.autoFailThreshold,
         critBoost: attackData.critBoost,
         cursed: actor.statuses.has("curse"),
@@ -390,7 +391,7 @@ export default class SmtDice {
         criticalHit,
         fumble,
         auto,
-        tn: attackData.tn,
+        tn,
         autoFailThreshold: attackData.autoFailThreshold,
         successRollRender: await hitCheckResult.successRoll.render(),
       };
