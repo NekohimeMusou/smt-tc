@@ -36,9 +36,23 @@ export async function resolveConflict() {
     0,
   );
 
-  const itemDrops = tokens
+  const dropList = tokens
     .filter((token) => token.actor.system.awards.itemDrops)
     .map((token) => token.actor.system.awards.itemDrops);
+
+  const itemDrops: { item: string; qty: number }[] = [];
+
+  for (const item of dropList) {
+    // Try to find the item in the list of drops
+    const dropEntry = itemDrops.find((drop) => drop.item === item);
+
+    // If it isn't there, add it
+    if (!dropEntry) {
+      itemDrops.push({ item, qty: 1 });
+    } else {
+      dropEntry.qty += 1;
+    }
+  }
 
   const template =
     "systems/smt-tc/templates/chat/macro/conflict-resolution.hbs";
