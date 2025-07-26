@@ -2,6 +2,12 @@
 
 <!-- markdownlint-disable MD024 -->
 
+## [0.6.15] - 2025-07-25
+
+### Added
+
+- Add TN and phys/mag damage override fields to skill and weapon sheets
+
 ## [0.6.14] - 2025-06-11
 
 ### Changed
@@ -499,6 +505,7 @@ _Added separate Human and Demon actor types with some custom behavior, and added
 
 _Initial preview release.*
 
+[0.6.15]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.15
 [0.6.14]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.14
 [0.6.13]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.13
 [0.6.12]: https://github.com/NekohimeMusou/smt-tc/releases/tag/v0.6.12
