@@ -1,9 +1,16 @@
+import { SMT } from "../../config/config.js";
 import { AttackItem } from "../../documents/item/item.js";
 import BaseEmbeddedDataModel from "./abstract/base-embedded-data.js";
 
 export default class AttackDataModel extends BaseEmbeddedDataModel {
   get damageType(): DamageType {
     const data = this._systemData;
+
+    const dmgTypeOverride = data.dmgTypeOverride;
+
+    if (dmgTypeOverride) {
+      return dmgTypeOverride;
+    }
 
     return data.attackType === "phys" || data.attackType === "gun"
       ? "phys"
@@ -23,30 +30,33 @@ export default class AttackDataModel extends BaseEmbeddedDataModel {
       return 100;
     }
 
-    let tnType: TargetNumber = "st";
+    const tnOverride = data.tnOverride;
 
-    switch (data.attackType) {
-      case "item":
-        return 100;
-        break;
-      case "phys":
-        tnType = "phys";
-        break;
-      case "mag":
-      case "spell":
-        tnType = "mag";
-        break;
-      case "gun":
-        tnType = "gun";
-        break;
-      case "passive":
-        tnType = "lu";
-        break;
-      case "talk":
-        tnType = "negotiation";
-        break;
-      default:
-        data.attackType satisfies never;
+    let tnType: TargetNumber = tnOverride ? tnOverride : "st";
+
+    if (!tnOverride) {
+      switch (data.attackType) {
+        case "item":
+          return 100;
+        case "phys":
+          tnType = "phys";
+          break;
+        case "mag":
+        case "spell":
+          tnType = "mag";
+          break;
+        case "gun":
+          tnType = "gun";
+          break;
+        case "passive":
+          tnType = "lu";
+          break;
+        case "talk":
+          tnType = "negotiation";
+          break;
+        default:
+          data.attackType satisfies never;
+      }
     }
 
     const tn = actor.system.tn[tnType];
@@ -66,7 +76,10 @@ export default class AttackDataModel extends BaseEmbeddedDataModel {
     const basePower = data.basePower;
     const elementBoostMultiplier = data.elementBoost ? 1.5 : 1;
 
-    return Math.max(Math.floor((potency + basePower) * elementBoostMultiplier), 0);
+    return Math.max(
+      Math.floor((potency + basePower) * elementBoostMultiplier),
+      0,
+    );
   }
 
   get basePower() {
@@ -197,7 +210,7 @@ export default class AttackDataModel extends BaseEmbeddedDataModel {
       auto: new fields.BooleanField(),
       attackType: new fields.StringField({
         choices: {
-          ...CONFIG.SMT.skillTypes,
+          ...SMT.skillTypes,
           item: "SMT.skillTypes.item",
         },
         initial: "phys",
@@ -205,18 +218,18 @@ export default class AttackDataModel extends BaseEmbeddedDataModel {
       potency: new fields.NumberField({ integer: true, min: 0 }),
       affinity: new fields.StringField({
         choices: {
-          ...CONFIG.SMT.attackAffinities,
+          ...SMT.attackAffinities,
           talk: "SMT.affinities.talk",
         },
         initial: "phys",
       }),
       target: new fields.StringField({
-        choices: CONFIG.SMT.targets,
+        choices: SMT.targets,
         initial: "one",
       }),
       ailment: new fields.SchemaField({
         id: new fields.StringField({
-          choices: CONFIG.SMT.ailments,
+          choices: SMT.ailments,
           blank: true,
         }),
         rate: new fields.NumberField({
@@ -228,13 +241,21 @@ export default class AttackDataModel extends BaseEmbeddedDataModel {
       }),
       status: new fields.StringField({
         blank: true,
-        choices: CONFIG.SMT.statuses,
+        choices: SMT.statuses,
       }),
       hasPowerRoll: new fields.BooleanField(),
       canBeDodged: new fields.BooleanField(),
       mods: new fields.SchemaField({
         highCrit: new fields.BooleanField(),
         pinhole: new fields.BooleanField(),
+      }),
+      tnOverride: new fields.StringField({
+        choices: SMT.statsFull,
+        blank: true,
+      }),
+      dmgTypeOverride: new fields.StringField({
+        choices: SMT.damageTypes,
+        blank: true,
       }),
     };
   }

@@ -106,7 +106,9 @@
       "alternateFireCost": "Alt Fire Cost",
       "ammoItem": "Ammo Item",
       "config": {
-        "applyStatus": "Apply Status"
+        "applyStatus": "Apply Status",
+        "tnOverride": "Override TN",
+        "dmgTypeOverride": "Override Dmg"
       }
     },
     "skillDetails": {

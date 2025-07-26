@@ -75,6 +75,24 @@
           </li>
           {{/if}}
         {{/if}}
+
+        <li class="item flexrow flex-group-center">
+          {{!-- Override TN --}}
+          <label for="tnOverride" class="item-prop">{{localize "SMT.itemSheet.config.tnOverride"}}</label>
+          <div class="item-prop">
+            <select id="tnOverride" name="system.attackData.tnOverride">
+              {{selectOptions SMT.statsFull localize=true selected=system.attackData.tnOverride blank="—"}}
+            </select>
+          </div>
+
+          {{!-- Override Dmg Type --}}
+          <label for="dmgTypeOverride" class="item-prop">{{localize "SMT.itemSheet.config.dmgTypeOverride"}}</label>
+          <div class="item-prop">
+            <select id="dmgTypeOverride" name="system.attackData.dmgTypeOverride">
+              {{selectOptions SMT.damageTypes localize=true selected=system.attackData.dmgTypeOverride blank="—"}}
+            </select>
+          </div>
+        </li>
     </ol>
   </div>
 </section>

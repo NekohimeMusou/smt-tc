@@ -112,7 +112,7 @@
       <li class="item flexrow">
         {{!-- Inheritance Traits --}}
         <label for="inheritType" class="item-prop">{{localize "SMT.itemSheet.inheritType"}}</label>
-        <div class="item-prop flex3">
+        <div class="item-prop">
           <input type="text" id="inheritType" name="system.inheritType" value="{{system.inheritType}}"
             placeholder="{{localize "SMT.none"}}" data-dtype="String" />
         </div>
@@ -121,6 +121,22 @@
         <div class="item-prop">
           <select id="applyStatus" name="system.attackData.status">
             {{selectOptions SMT.statuses localize=true selected=system.attackData.status blank=(localize "SMT.none")}}
+          </select>
+        </div>
+
+        {{!-- Override TN --}}
+        <label for="tnOverride" class="item-prop">{{localize "SMT.itemSheet.config.tnOverride"}}</label>
+        <div class="item-prop">
+          <select id="tnOverride" name="system.attackData.tnOverride">
+            {{selectOptions SMT.statsFull localize=true selected=system.attackData.tnOverride blank="—"}}
+          </select>
+        </div>
+
+        {{!-- Override Dmg Type --}}
+        <label for="dmgTypeOverride" class="item-prop">{{localize "SMT.itemSheet.config.dmgTypeOverride"}}</label>
+        <div class="item-prop">
+          <select id="dmgTypeOverride" name="system.attackData.dmgTypeOverride">
+            {{selectOptions SMT.damageTypes localize=true selected=system.attackData.dmgTypeOverride blank="—"}}
           </select>
         </div>
       </li>
