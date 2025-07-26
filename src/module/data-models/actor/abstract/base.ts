@@ -322,7 +322,7 @@ export default abstract class SmtBaseActorData extends foundry.abstract.TypeData
       xp: new fields.NumberField({ integer: true, min: 0 }),
       macca: new fields.NumberField({ integer: true, min: 0 }),
       affinities: new fields.EmbeddedDataField(DefenseAffinityData),
-    } as const;
+    };
   }
 
   override prepareBaseData() {
@@ -330,9 +330,7 @@ export default abstract class SmtBaseActorData extends foundry.abstract.TypeData
     const data = this._systemData;
     const actor = this.actor;
 
-    // @ts-expect-error This isn't readonly
     data.hpMultiplier = actor.type === "human" ? 4 : 6;
-    // @ts-expect-error This isn't readonly
     data.mpMultiplier = actor.type === "human" ? 2 : 3;
 
     // Calculate stat values

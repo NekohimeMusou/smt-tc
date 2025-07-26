@@ -10,7 +10,6 @@ export default class SmtFiendData extends SmtBaseActorData {
     const equippedMagatama = data.equippedMagatama;
 
     if (equippedMagatama) {
-      // @ts-expect-error This isn't readonly
       data.affinities = equippedMagatama.system.affinities;
     }
   }
